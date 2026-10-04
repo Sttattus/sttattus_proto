@@ -15061,6 +15061,78 @@ export class EvidenceSource extends Message<EvidenceSource> {
    */
   retrievedAt?: Timestamp;
 
+  /**
+   * Choice 19 — lifecycle and identity metadata. These fields describe the
+   * source record only; immutable citations keep their original anchors.
+   *
+   * @generated from field: string doi = 19;
+   */
+  doi = "";
+
+  /**
+   * @generated from field: string isbn = 20;
+   */
+  isbn = "";
+
+  /**
+   * @generated from field: string normalized_url = 21;
+   */
+  normalizedUrl = "";
+
+  /**
+   * @generated from field: string duplicate_group_key = 22;
+   */
+  duplicateGroupKey = "";
+
+  /**
+   * @generated from field: int32 duplicate_count = 23;
+   */
+  duplicateCount = 0;
+
+  /**
+   * unknown | healthy | unreachable | withdrawn | restricted
+   *
+   * @generated from field: string health_status = 24;
+   */
+  healthStatus = "";
+
+  /**
+   * @generated from field: int32 health_http_status = 25;
+   */
+  healthHttpStatus = 0;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp health_checked_at = 26;
+   */
+  healthCheckedAt?: Timestamp;
+
+  /**
+   * @generated from field: string health_error = 27;
+   */
+  healthError = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp withdrawal_detected_at = 28;
+   */
+  withdrawalDetectedAt?: Timestamp;
+
+  /**
+   * @generated from field: string withdrawal_reason = 29;
+   */
+  withdrawalReason = "";
+
+  /**
+   * @generated from field: string superseded_by_source_id = 30;
+   */
+  supersededBySourceId = "";
+
+  /**
+   * none | suggested | in_review | verified | rejected
+   *
+   * @generated from field: string replacement_status = 31;
+   */
+  replacementStatus = "";
+
   constructor(data?: PartialMessage<EvidenceSource>) {
     super();
     proto3.util.initPartial(data, this);
@@ -15087,6 +15159,19 @@ export class EvidenceSource extends Message<EvidenceSource> {
     { no: 16, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 17, name: "published_at", kind: "message", T: Timestamp },
     { no: 18, name: "retrieved_at", kind: "message", T: Timestamp },
+    { no: 19, name: "doi", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 20, name: "isbn", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 21, name: "normalized_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 22, name: "duplicate_group_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 23, name: "duplicate_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 24, name: "health_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 25, name: "health_http_status", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 26, name: "health_checked_at", kind: "message", T: Timestamp },
+    { no: 27, name: "health_error", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 28, name: "withdrawal_detected_at", kind: "message", T: Timestamp },
+    { no: 29, name: "withdrawal_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 30, name: "superseded_by_source_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 31, name: "replacement_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvidenceSource {
@@ -15476,6 +15561,274 @@ export class GetEvidenceWorkspaceResponse extends Message<GetEvidenceWorkspaceRe
 
   static equals(a: GetEvidenceWorkspaceResponse | PlainMessage<GetEvidenceWorkspaceResponse> | undefined, b: GetEvidenceWorkspaceResponse | PlainMessage<GetEvidenceWorkspaceResponse> | undefined): boolean {
     return proto3.util.equals(GetEvidenceWorkspaceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetEvidenceSourceHistoryRequest
+ */
+export class GetEvidenceSourceHistoryRequest extends Message<GetEvidenceSourceHistoryRequest> {
+  /**
+   * @generated from field: string source_id = 1;
+   */
+  sourceId = "";
+
+  constructor(data?: PartialMessage<GetEvidenceSourceHistoryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetEvidenceSourceHistoryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEvidenceSourceHistoryRequest {
+    return new GetEvidenceSourceHistoryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEvidenceSourceHistoryRequest {
+    return new GetEvidenceSourceHistoryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEvidenceSourceHistoryRequest {
+    return new GetEvidenceSourceHistoryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetEvidenceSourceHistoryRequest | PlainMessage<GetEvidenceSourceHistoryRequest> | undefined, b: GetEvidenceSourceHistoryRequest | PlainMessage<GetEvidenceSourceHistoryRequest> | undefined): boolean {
+    return proto3.util.equals(GetEvidenceSourceHistoryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.EvidenceSourceLifecycleEvent
+ */
+export class EvidenceSourceLifecycleEvent extends Message<EvidenceSourceLifecycleEvent> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string source_id = 2;
+   */
+  sourceId = "";
+
+  /**
+   * @generated from field: string event_kind = 3;
+   */
+  eventKind = "";
+
+  /**
+   * @generated from field: string from_status = 4;
+   */
+  fromStatus = "";
+
+  /**
+   * @generated from field: string to_status = 5;
+   */
+  toStatus = "";
+
+  /**
+   * @generated from field: string reason = 6;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: string replacement_source_id = 7;
+   */
+  replacementSourceId = "";
+
+  /**
+   * @generated from field: string actor_id = 8;
+   */
+  actorId = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 9;
+   */
+  createdAt?: Timestamp;
+
+  constructor(data?: PartialMessage<EvidenceSourceLifecycleEvent>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.EvidenceSourceLifecycleEvent";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "source_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "event_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "from_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "to_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "replacement_source_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "actor_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "created_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvidenceSourceLifecycleEvent {
+    return new EvidenceSourceLifecycleEvent().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EvidenceSourceLifecycleEvent {
+    return new EvidenceSourceLifecycleEvent().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EvidenceSourceLifecycleEvent {
+    return new EvidenceSourceLifecycleEvent().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EvidenceSourceLifecycleEvent | PlainMessage<EvidenceSourceLifecycleEvent> | undefined, b: EvidenceSourceLifecycleEvent | PlainMessage<EvidenceSourceLifecycleEvent> | undefined): boolean {
+    return proto3.util.equals(EvidenceSourceLifecycleEvent, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.EvidenceSourceReplacement
+ */
+export class EvidenceSourceReplacement extends Message<EvidenceSourceReplacement> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string source_id = 2;
+   */
+  sourceId = "";
+
+  /**
+   * @generated from field: string replacement_source_id = 3;
+   */
+  replacementSourceId = "";
+
+  /**
+   * @generated from field: string replacement_title = 4;
+   */
+  replacementTitle = "";
+
+  /**
+   * @generated from field: string status = 5;
+   */
+  status = "";
+
+  /**
+   * @generated from field: double confidence = 6;
+   */
+  confidence = 0;
+
+  /**
+   * @generated from field: string rationale = 7;
+   */
+  rationale = "";
+
+  /**
+   * @generated from field: string created_by = 8;
+   */
+  createdBy = "";
+
+  /**
+   * @generated from field: string verified_by = 9;
+   */
+  verifiedBy = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp verified_at = 10;
+   */
+  verifiedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 11;
+   */
+  createdAt?: Timestamp;
+
+  constructor(data?: PartialMessage<EvidenceSourceReplacement>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.EvidenceSourceReplacement";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "source_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "replacement_source_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "replacement_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "confidence", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "rationale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "created_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "verified_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "verified_at", kind: "message", T: Timestamp },
+    { no: 11, name: "created_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvidenceSourceReplacement {
+    return new EvidenceSourceReplacement().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EvidenceSourceReplacement {
+    return new EvidenceSourceReplacement().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EvidenceSourceReplacement {
+    return new EvidenceSourceReplacement().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EvidenceSourceReplacement | PlainMessage<EvidenceSourceReplacement> | undefined, b: EvidenceSourceReplacement | PlainMessage<EvidenceSourceReplacement> | undefined): boolean {
+    return proto3.util.equals(EvidenceSourceReplacement, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetEvidenceSourceHistoryResponse
+ */
+export class GetEvidenceSourceHistoryResponse extends Message<GetEvidenceSourceHistoryResponse> {
+  /**
+   * @generated from field: string source_id = 1;
+   */
+  sourceId = "";
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.EvidenceSourceLifecycleEvent events = 2;
+   */
+  events: EvidenceSourceLifecycleEvent[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.EvidenceSourceReplacement replacements = 3;
+   */
+  replacements: EvidenceSourceReplacement[] = [];
+
+  constructor(data?: PartialMessage<GetEvidenceSourceHistoryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetEvidenceSourceHistoryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "events", kind: "message", T: EvidenceSourceLifecycleEvent, repeated: true },
+    { no: 3, name: "replacements", kind: "message", T: EvidenceSourceReplacement, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEvidenceSourceHistoryResponse {
+    return new GetEvidenceSourceHistoryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEvidenceSourceHistoryResponse {
+    return new GetEvidenceSourceHistoryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEvidenceSourceHistoryResponse {
+    return new GetEvidenceSourceHistoryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetEvidenceSourceHistoryResponse | PlainMessage<GetEvidenceSourceHistoryResponse> | undefined, b: GetEvidenceSourceHistoryResponse | PlainMessage<GetEvidenceSourceHistoryResponse> | undefined): boolean {
+    return proto3.util.equals(GetEvidenceSourceHistoryResponse, a, b);
   }
 }
 

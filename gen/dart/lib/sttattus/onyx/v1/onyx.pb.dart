@@ -23162,6 +23162,19 @@ class EvidenceSource extends $pb.GeneratedMessage {
     $core.String? status,
     $1.Timestamp? publishedAt,
     $1.Timestamp? retrievedAt,
+    $core.String? doi,
+    $core.String? isbn,
+    $core.String? normalizedUrl,
+    $core.String? duplicateGroupKey,
+    $core.int? duplicateCount,
+    $core.String? healthStatus,
+    $core.int? healthHttpStatus,
+    $1.Timestamp? healthCheckedAt,
+    $core.String? healthError,
+    $1.Timestamp? withdrawalDetectedAt,
+    $core.String? withdrawalReason,
+    $core.String? supersededBySourceId,
+    $core.String? replacementStatus,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -23182,6 +23195,21 @@ class EvidenceSource extends $pb.GeneratedMessage {
     if (status != null) result.status = status;
     if (publishedAt != null) result.publishedAt = publishedAt;
     if (retrievedAt != null) result.retrievedAt = retrievedAt;
+    if (doi != null) result.doi = doi;
+    if (isbn != null) result.isbn = isbn;
+    if (normalizedUrl != null) result.normalizedUrl = normalizedUrl;
+    if (duplicateGroupKey != null) result.duplicateGroupKey = duplicateGroupKey;
+    if (duplicateCount != null) result.duplicateCount = duplicateCount;
+    if (healthStatus != null) result.healthStatus = healthStatus;
+    if (healthHttpStatus != null) result.healthHttpStatus = healthHttpStatus;
+    if (healthCheckedAt != null) result.healthCheckedAt = healthCheckedAt;
+    if (healthError != null) result.healthError = healthError;
+    if (withdrawalDetectedAt != null)
+      result.withdrawalDetectedAt = withdrawalDetectedAt;
+    if (withdrawalReason != null) result.withdrawalReason = withdrawalReason;
+    if (supersededBySourceId != null)
+      result.supersededBySourceId = supersededBySourceId;
+    if (replacementStatus != null) result.replacementStatus = replacementStatus;
     return result;
   }
 
@@ -23219,6 +23247,21 @@ class EvidenceSource extends $pb.GeneratedMessage {
         subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(18, _omitFieldNames ? '' : 'retrievedAt',
         subBuilder: $1.Timestamp.create)
+    ..aOS(19, _omitFieldNames ? '' : 'doi')
+    ..aOS(20, _omitFieldNames ? '' : 'isbn')
+    ..aOS(21, _omitFieldNames ? '' : 'normalizedUrl')
+    ..aOS(22, _omitFieldNames ? '' : 'duplicateGroupKey')
+    ..aI(23, _omitFieldNames ? '' : 'duplicateCount')
+    ..aOS(24, _omitFieldNames ? '' : 'healthStatus')
+    ..aI(25, _omitFieldNames ? '' : 'healthHttpStatus')
+    ..aOM<$1.Timestamp>(26, _omitFieldNames ? '' : 'healthCheckedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(27, _omitFieldNames ? '' : 'healthError')
+    ..aOM<$1.Timestamp>(28, _omitFieldNames ? '' : 'withdrawalDetectedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(29, _omitFieldNames ? '' : 'withdrawalReason')
+    ..aOS(30, _omitFieldNames ? '' : 'supersededBySourceId')
+    ..aOS(31, _omitFieldNames ? '' : 'replacementStatus')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -23405,6 +23448,129 @@ class EvidenceSource extends $pb.GeneratedMessage {
   void clearRetrievedAt() => $_clearField(18);
   @$pb.TagNumber(18)
   $1.Timestamp ensureRetrievedAt() => $_ensure(17);
+
+  /// Choice 19 — lifecycle and identity metadata. These fields describe the
+  /// source record only; immutable citations keep their original anchors.
+  @$pb.TagNumber(19)
+  $core.String get doi => $_getSZ(18);
+  @$pb.TagNumber(19)
+  set doi($core.String value) => $_setString(18, value);
+  @$pb.TagNumber(19)
+  $core.bool hasDoi() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearDoi() => $_clearField(19);
+
+  @$pb.TagNumber(20)
+  $core.String get isbn => $_getSZ(19);
+  @$pb.TagNumber(20)
+  set isbn($core.String value) => $_setString(19, value);
+  @$pb.TagNumber(20)
+  $core.bool hasIsbn() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearIsbn() => $_clearField(20);
+
+  @$pb.TagNumber(21)
+  $core.String get normalizedUrl => $_getSZ(20);
+  @$pb.TagNumber(21)
+  set normalizedUrl($core.String value) => $_setString(20, value);
+  @$pb.TagNumber(21)
+  $core.bool hasNormalizedUrl() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearNormalizedUrl() => $_clearField(21);
+
+  @$pb.TagNumber(22)
+  $core.String get duplicateGroupKey => $_getSZ(21);
+  @$pb.TagNumber(22)
+  set duplicateGroupKey($core.String value) => $_setString(21, value);
+  @$pb.TagNumber(22)
+  $core.bool hasDuplicateGroupKey() => $_has(21);
+  @$pb.TagNumber(22)
+  void clearDuplicateGroupKey() => $_clearField(22);
+
+  @$pb.TagNumber(23)
+  $core.int get duplicateCount => $_getIZ(22);
+  @$pb.TagNumber(23)
+  set duplicateCount($core.int value) => $_setSignedInt32(22, value);
+  @$pb.TagNumber(23)
+  $core.bool hasDuplicateCount() => $_has(22);
+  @$pb.TagNumber(23)
+  void clearDuplicateCount() => $_clearField(23);
+
+  @$pb.TagNumber(24)
+  $core.String get healthStatus => $_getSZ(23);
+  @$pb.TagNumber(24)
+  set healthStatus($core.String value) => $_setString(23, value);
+  @$pb.TagNumber(24)
+  $core.bool hasHealthStatus() => $_has(23);
+  @$pb.TagNumber(24)
+  void clearHealthStatus() => $_clearField(24);
+
+  @$pb.TagNumber(25)
+  $core.int get healthHttpStatus => $_getIZ(24);
+  @$pb.TagNumber(25)
+  set healthHttpStatus($core.int value) => $_setSignedInt32(24, value);
+  @$pb.TagNumber(25)
+  $core.bool hasHealthHttpStatus() => $_has(24);
+  @$pb.TagNumber(25)
+  void clearHealthHttpStatus() => $_clearField(25);
+
+  @$pb.TagNumber(26)
+  $1.Timestamp get healthCheckedAt => $_getN(25);
+  @$pb.TagNumber(26)
+  set healthCheckedAt($1.Timestamp value) => $_setField(26, value);
+  @$pb.TagNumber(26)
+  $core.bool hasHealthCheckedAt() => $_has(25);
+  @$pb.TagNumber(26)
+  void clearHealthCheckedAt() => $_clearField(26);
+  @$pb.TagNumber(26)
+  $1.Timestamp ensureHealthCheckedAt() => $_ensure(25);
+
+  @$pb.TagNumber(27)
+  $core.String get healthError => $_getSZ(26);
+  @$pb.TagNumber(27)
+  set healthError($core.String value) => $_setString(26, value);
+  @$pb.TagNumber(27)
+  $core.bool hasHealthError() => $_has(26);
+  @$pb.TagNumber(27)
+  void clearHealthError() => $_clearField(27);
+
+  @$pb.TagNumber(28)
+  $1.Timestamp get withdrawalDetectedAt => $_getN(27);
+  @$pb.TagNumber(28)
+  set withdrawalDetectedAt($1.Timestamp value) => $_setField(28, value);
+  @$pb.TagNumber(28)
+  $core.bool hasWithdrawalDetectedAt() => $_has(27);
+  @$pb.TagNumber(28)
+  void clearWithdrawalDetectedAt() => $_clearField(28);
+  @$pb.TagNumber(28)
+  $1.Timestamp ensureWithdrawalDetectedAt() => $_ensure(27);
+
+  @$pb.TagNumber(29)
+  $core.String get withdrawalReason => $_getSZ(28);
+  @$pb.TagNumber(29)
+  set withdrawalReason($core.String value) => $_setString(28, value);
+  @$pb.TagNumber(29)
+  $core.bool hasWithdrawalReason() => $_has(28);
+  @$pb.TagNumber(29)
+  void clearWithdrawalReason() => $_clearField(29);
+
+  @$pb.TagNumber(30)
+  $core.String get supersededBySourceId => $_getSZ(29);
+  @$pb.TagNumber(30)
+  set supersededBySourceId($core.String value) => $_setString(29, value);
+  @$pb.TagNumber(30)
+  $core.bool hasSupersededBySourceId() => $_has(29);
+  @$pb.TagNumber(30)
+  void clearSupersededBySourceId() => $_clearField(30);
+
+  @$pb.TagNumber(31)
+  $core.String get replacementStatus => $_getSZ(30);
+  @$pb.TagNumber(31)
+  set replacementStatus($core.String value) => $_setString(30, value);
+  @$pb.TagNumber(31)
+  $core.bool hasReplacementStatus() => $_has(30);
+  @$pb.TagNumber(31)
+  void clearReplacementStatus() => $_clearField(31);
 }
 
 class EvidenceCitation extends $pb.GeneratedMessage {
@@ -24033,6 +24199,480 @@ class GetEvidenceWorkspaceResponse extends $pb.GeneratedMessage {
   $core.bool hasPolicyNotice() => $_has(7);
   @$pb.TagNumber(8)
   void clearPolicyNotice() => $_clearField(8);
+}
+
+class GetEvidenceSourceHistoryRequest extends $pb.GeneratedMessage {
+  factory GetEvidenceSourceHistoryRequest({
+    $core.String? sourceId,
+  }) {
+    final result = create();
+    if (sourceId != null) result.sourceId = sourceId;
+    return result;
+  }
+
+  GetEvidenceSourceHistoryRequest._();
+
+  factory GetEvidenceSourceHistoryRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetEvidenceSourceHistoryRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetEvidenceSourceHistoryRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sourceId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEvidenceSourceHistoryRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEvidenceSourceHistoryRequest copyWith(
+          void Function(GetEvidenceSourceHistoryRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetEvidenceSourceHistoryRequest))
+          as GetEvidenceSourceHistoryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetEvidenceSourceHistoryRequest create() =>
+      GetEvidenceSourceHistoryRequest._();
+  @$core.override
+  GetEvidenceSourceHistoryRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetEvidenceSourceHistoryRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetEvidenceSourceHistoryRequest>(
+          create);
+  static GetEvidenceSourceHistoryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sourceId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sourceId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSourceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSourceId() => $_clearField(1);
+}
+
+class EvidenceSourceLifecycleEvent extends $pb.GeneratedMessage {
+  factory EvidenceSourceLifecycleEvent({
+    $core.String? id,
+    $core.String? sourceId,
+    $core.String? eventKind,
+    $core.String? fromStatus,
+    $core.String? toStatus,
+    $core.String? reason,
+    $core.String? replacementSourceId,
+    $core.String? actorId,
+    $1.Timestamp? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (sourceId != null) result.sourceId = sourceId;
+    if (eventKind != null) result.eventKind = eventKind;
+    if (fromStatus != null) result.fromStatus = fromStatus;
+    if (toStatus != null) result.toStatus = toStatus;
+    if (reason != null) result.reason = reason;
+    if (replacementSourceId != null)
+      result.replacementSourceId = replacementSourceId;
+    if (actorId != null) result.actorId = actorId;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  EvidenceSourceLifecycleEvent._();
+
+  factory EvidenceSourceLifecycleEvent.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EvidenceSourceLifecycleEvent.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EvidenceSourceLifecycleEvent',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'sourceId')
+    ..aOS(3, _omitFieldNames ? '' : 'eventKind')
+    ..aOS(4, _omitFieldNames ? '' : 'fromStatus')
+    ..aOS(5, _omitFieldNames ? '' : 'toStatus')
+    ..aOS(6, _omitFieldNames ? '' : 'reason')
+    ..aOS(7, _omitFieldNames ? '' : 'replacementSourceId')
+    ..aOS(8, _omitFieldNames ? '' : 'actorId')
+    ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvidenceSourceLifecycleEvent clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvidenceSourceLifecycleEvent copyWith(
+          void Function(EvidenceSourceLifecycleEvent) updates) =>
+      super.copyWith(
+              (message) => updates(message as EvidenceSourceLifecycleEvent))
+          as EvidenceSourceLifecycleEvent;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EvidenceSourceLifecycleEvent create() =>
+      EvidenceSourceLifecycleEvent._();
+  @$core.override
+  EvidenceSourceLifecycleEvent createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EvidenceSourceLifecycleEvent getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EvidenceSourceLifecycleEvent>(create);
+  static EvidenceSourceLifecycleEvent? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sourceId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourceId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSourceId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get eventKind => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set eventKind($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEventKind() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEventKind() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get fromStatus => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set fromStatus($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasFromStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFromStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get toStatus => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set toStatus($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasToStatus() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearToStatus() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get reason => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set reason($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasReason() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearReason() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get replacementSourceId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set replacementSourceId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasReplacementSourceId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearReplacementSourceId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get actorId => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set actorId($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasActorId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearActorId() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $1.Timestamp get createdAt => $_getN(8);
+  @$pb.TagNumber(9)
+  set createdAt($1.Timestamp value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCreatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCreatedAt() => $_clearField(9);
+  @$pb.TagNumber(9)
+  $1.Timestamp ensureCreatedAt() => $_ensure(8);
+}
+
+class EvidenceSourceReplacement extends $pb.GeneratedMessage {
+  factory EvidenceSourceReplacement({
+    $core.String? id,
+    $core.String? sourceId,
+    $core.String? replacementSourceId,
+    $core.String? replacementTitle,
+    $core.String? status,
+    $core.double? confidence,
+    $core.String? rationale,
+    $core.String? createdBy,
+    $core.String? verifiedBy,
+    $1.Timestamp? verifiedAt,
+    $1.Timestamp? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (sourceId != null) result.sourceId = sourceId;
+    if (replacementSourceId != null)
+      result.replacementSourceId = replacementSourceId;
+    if (replacementTitle != null) result.replacementTitle = replacementTitle;
+    if (status != null) result.status = status;
+    if (confidence != null) result.confidence = confidence;
+    if (rationale != null) result.rationale = rationale;
+    if (createdBy != null) result.createdBy = createdBy;
+    if (verifiedBy != null) result.verifiedBy = verifiedBy;
+    if (verifiedAt != null) result.verifiedAt = verifiedAt;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  EvidenceSourceReplacement._();
+
+  factory EvidenceSourceReplacement.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EvidenceSourceReplacement.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EvidenceSourceReplacement',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'sourceId')
+    ..aOS(3, _omitFieldNames ? '' : 'replacementSourceId')
+    ..aOS(4, _omitFieldNames ? '' : 'replacementTitle')
+    ..aOS(5, _omitFieldNames ? '' : 'status')
+    ..aD(6, _omitFieldNames ? '' : 'confidence')
+    ..aOS(7, _omitFieldNames ? '' : 'rationale')
+    ..aOS(8, _omitFieldNames ? '' : 'createdBy')
+    ..aOS(9, _omitFieldNames ? '' : 'verifiedBy')
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'verifiedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvidenceSourceReplacement clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvidenceSourceReplacement copyWith(
+          void Function(EvidenceSourceReplacement) updates) =>
+      super.copyWith((message) => updates(message as EvidenceSourceReplacement))
+          as EvidenceSourceReplacement;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EvidenceSourceReplacement create() => EvidenceSourceReplacement._();
+  @$core.override
+  EvidenceSourceReplacement createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EvidenceSourceReplacement getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EvidenceSourceReplacement>(create);
+  static EvidenceSourceReplacement? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sourceId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourceId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSourceId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get replacementSourceId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set replacementSourceId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReplacementSourceId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReplacementSourceId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get replacementTitle => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set replacementTitle($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasReplacementTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReplacementTitle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get status => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set status($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStatus() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStatus() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.double get confidence => $_getN(5);
+  @$pb.TagNumber(6)
+  set confidence($core.double value) => $_setDouble(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasConfidence() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearConfidence() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get rationale => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set rationale($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRationale() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRationale() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get createdBy => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set createdBy($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCreatedBy() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCreatedBy() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get verifiedBy => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set verifiedBy($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasVerifiedBy() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearVerifiedBy() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $1.Timestamp get verifiedAt => $_getN(9);
+  @$pb.TagNumber(10)
+  set verifiedAt($1.Timestamp value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasVerifiedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearVerifiedAt() => $_clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureVerifiedAt() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get createdAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set createdAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCreatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCreatedAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureCreatedAt() => $_ensure(10);
+}
+
+class GetEvidenceSourceHistoryResponse extends $pb.GeneratedMessage {
+  factory GetEvidenceSourceHistoryResponse({
+    $core.String? sourceId,
+    $core.Iterable<EvidenceSourceLifecycleEvent>? events,
+    $core.Iterable<EvidenceSourceReplacement>? replacements,
+  }) {
+    final result = create();
+    if (sourceId != null) result.sourceId = sourceId;
+    if (events != null) result.events.addAll(events);
+    if (replacements != null) result.replacements.addAll(replacements);
+    return result;
+  }
+
+  GetEvidenceSourceHistoryResponse._();
+
+  factory GetEvidenceSourceHistoryResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetEvidenceSourceHistoryResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetEvidenceSourceHistoryResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sourceId')
+    ..pPM<EvidenceSourceLifecycleEvent>(2, _omitFieldNames ? '' : 'events',
+        subBuilder: EvidenceSourceLifecycleEvent.create)
+    ..pPM<EvidenceSourceReplacement>(3, _omitFieldNames ? '' : 'replacements',
+        subBuilder: EvidenceSourceReplacement.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEvidenceSourceHistoryResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEvidenceSourceHistoryResponse copyWith(
+          void Function(GetEvidenceSourceHistoryResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetEvidenceSourceHistoryResponse))
+          as GetEvidenceSourceHistoryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetEvidenceSourceHistoryResponse create() =>
+      GetEvidenceSourceHistoryResponse._();
+  @$core.override
+  GetEvidenceSourceHistoryResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetEvidenceSourceHistoryResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetEvidenceSourceHistoryResponse>(
+          create);
+  static GetEvidenceSourceHistoryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sourceId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sourceId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSourceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSourceId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EvidenceSourceLifecycleEvent> get events => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<EvidenceSourceReplacement> get replacements => $_getList(2);
 }
 
 class BriefPoint extends $pb.GeneratedMessage {

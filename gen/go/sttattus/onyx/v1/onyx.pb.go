@@ -18175,8 +18175,23 @@ type EvidenceSource struct {
 	Status         string                 `protobuf:"bytes,16,opt,name=status,proto3" json:"status,omitempty"`
 	PublishedAt    *timestamppb.Timestamp `protobuf:"bytes,17,opt,name=published_at,json=publishedAt,proto3" json:"published_at,omitempty"`
 	RetrievedAt    *timestamppb.Timestamp `protobuf:"bytes,18,opt,name=retrieved_at,json=retrievedAt,proto3" json:"retrieved_at,omitempty"`
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	// Choice 19 — lifecycle and identity metadata. These fields describe the
+	// source record only; immutable citations keep their original anchors.
+	Doi                  string                 `protobuf:"bytes,19,opt,name=doi,proto3" json:"doi,omitempty"`
+	Isbn                 string                 `protobuf:"bytes,20,opt,name=isbn,proto3" json:"isbn,omitempty"`
+	NormalizedUrl        string                 `protobuf:"bytes,21,opt,name=normalized_url,json=normalizedUrl,proto3" json:"normalized_url,omitempty"`
+	DuplicateGroupKey    string                 `protobuf:"bytes,22,opt,name=duplicate_group_key,json=duplicateGroupKey,proto3" json:"duplicate_group_key,omitempty"`
+	DuplicateCount       int32                  `protobuf:"varint,23,opt,name=duplicate_count,json=duplicateCount,proto3" json:"duplicate_count,omitempty"`
+	HealthStatus         string                 `protobuf:"bytes,24,opt,name=health_status,json=healthStatus,proto3" json:"health_status,omitempty"` // unknown | healthy | unreachable | withdrawn | restricted
+	HealthHttpStatus     int32                  `protobuf:"varint,25,opt,name=health_http_status,json=healthHttpStatus,proto3" json:"health_http_status,omitempty"`
+	HealthCheckedAt      *timestamppb.Timestamp `protobuf:"bytes,26,opt,name=health_checked_at,json=healthCheckedAt,proto3" json:"health_checked_at,omitempty"`
+	HealthError          string                 `protobuf:"bytes,27,opt,name=health_error,json=healthError,proto3" json:"health_error,omitempty"`
+	WithdrawalDetectedAt *timestamppb.Timestamp `protobuf:"bytes,28,opt,name=withdrawal_detected_at,json=withdrawalDetectedAt,proto3" json:"withdrawal_detected_at,omitempty"`
+	WithdrawalReason     string                 `protobuf:"bytes,29,opt,name=withdrawal_reason,json=withdrawalReason,proto3" json:"withdrawal_reason,omitempty"`
+	SupersededBySourceId string                 `protobuf:"bytes,30,opt,name=superseded_by_source_id,json=supersededBySourceId,proto3" json:"superseded_by_source_id,omitempty"`
+	ReplacementStatus    string                 `protobuf:"bytes,31,opt,name=replacement_status,json=replacementStatus,proto3" json:"replacement_status,omitempty"` // none | suggested | in_review | verified | rejected
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
 }
 
 func (x *EvidenceSource) Reset() {
@@ -18333,6 +18348,97 @@ func (x *EvidenceSource) GetRetrievedAt() *timestamppb.Timestamp {
 		return x.RetrievedAt
 	}
 	return nil
+}
+
+func (x *EvidenceSource) GetDoi() string {
+	if x != nil {
+		return x.Doi
+	}
+	return ""
+}
+
+func (x *EvidenceSource) GetIsbn() string {
+	if x != nil {
+		return x.Isbn
+	}
+	return ""
+}
+
+func (x *EvidenceSource) GetNormalizedUrl() string {
+	if x != nil {
+		return x.NormalizedUrl
+	}
+	return ""
+}
+
+func (x *EvidenceSource) GetDuplicateGroupKey() string {
+	if x != nil {
+		return x.DuplicateGroupKey
+	}
+	return ""
+}
+
+func (x *EvidenceSource) GetDuplicateCount() int32 {
+	if x != nil {
+		return x.DuplicateCount
+	}
+	return 0
+}
+
+func (x *EvidenceSource) GetHealthStatus() string {
+	if x != nil {
+		return x.HealthStatus
+	}
+	return ""
+}
+
+func (x *EvidenceSource) GetHealthHttpStatus() int32 {
+	if x != nil {
+		return x.HealthHttpStatus
+	}
+	return 0
+}
+
+func (x *EvidenceSource) GetHealthCheckedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.HealthCheckedAt
+	}
+	return nil
+}
+
+func (x *EvidenceSource) GetHealthError() string {
+	if x != nil {
+		return x.HealthError
+	}
+	return ""
+}
+
+func (x *EvidenceSource) GetWithdrawalDetectedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.WithdrawalDetectedAt
+	}
+	return nil
+}
+
+func (x *EvidenceSource) GetWithdrawalReason() string {
+	if x != nil {
+		return x.WithdrawalReason
+	}
+	return ""
+}
+
+func (x *EvidenceSource) GetSupersededBySourceId() string {
+	if x != nil {
+		return x.SupersededBySourceId
+	}
+	return ""
+}
+
+func (x *EvidenceSource) GetReplacementStatus() string {
+	if x != nil {
+		return x.ReplacementStatus
+	}
+	return ""
 }
 
 type EvidenceCitation struct {
@@ -18795,6 +18901,342 @@ func (x *GetEvidenceWorkspaceResponse) GetPolicyNotice() string {
 	return ""
 }
 
+type GetEvidenceSourceHistoryRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	SourceId      string                 `protobuf:"bytes,1,opt,name=source_id,json=sourceId,proto3" json:"source_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetEvidenceSourceHistoryRequest) Reset() {
+	*x = GetEvidenceSourceHistoryRequest{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[274]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetEvidenceSourceHistoryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetEvidenceSourceHistoryRequest) ProtoMessage() {}
+
+func (x *GetEvidenceSourceHistoryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[274]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetEvidenceSourceHistoryRequest.ProtoReflect.Descriptor instead.
+func (*GetEvidenceSourceHistoryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{274}
+}
+
+func (x *GetEvidenceSourceHistoryRequest) GetSourceId() string {
+	if x != nil {
+		return x.SourceId
+	}
+	return ""
+}
+
+type EvidenceSourceLifecycleEvent struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	Id                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	SourceId            string                 `protobuf:"bytes,2,opt,name=source_id,json=sourceId,proto3" json:"source_id,omitempty"`
+	EventKind           string                 `protobuf:"bytes,3,opt,name=event_kind,json=eventKind,proto3" json:"event_kind,omitempty"`
+	FromStatus          string                 `protobuf:"bytes,4,opt,name=from_status,json=fromStatus,proto3" json:"from_status,omitempty"`
+	ToStatus            string                 `protobuf:"bytes,5,opt,name=to_status,json=toStatus,proto3" json:"to_status,omitempty"`
+	Reason              string                 `protobuf:"bytes,6,opt,name=reason,proto3" json:"reason,omitempty"`
+	ReplacementSourceId string                 `protobuf:"bytes,7,opt,name=replacement_source_id,json=replacementSourceId,proto3" json:"replacement_source_id,omitempty"`
+	ActorId             string                 `protobuf:"bytes,8,opt,name=actor_id,json=actorId,proto3" json:"actor_id,omitempty"`
+	CreatedAt           *timestamppb.Timestamp `protobuf:"bytes,9,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
+}
+
+func (x *EvidenceSourceLifecycleEvent) Reset() {
+	*x = EvidenceSourceLifecycleEvent{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[275]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EvidenceSourceLifecycleEvent) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EvidenceSourceLifecycleEvent) ProtoMessage() {}
+
+func (x *EvidenceSourceLifecycleEvent) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[275]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EvidenceSourceLifecycleEvent.ProtoReflect.Descriptor instead.
+func (*EvidenceSourceLifecycleEvent) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{275}
+}
+
+func (x *EvidenceSourceLifecycleEvent) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *EvidenceSourceLifecycleEvent) GetSourceId() string {
+	if x != nil {
+		return x.SourceId
+	}
+	return ""
+}
+
+func (x *EvidenceSourceLifecycleEvent) GetEventKind() string {
+	if x != nil {
+		return x.EventKind
+	}
+	return ""
+}
+
+func (x *EvidenceSourceLifecycleEvent) GetFromStatus() string {
+	if x != nil {
+		return x.FromStatus
+	}
+	return ""
+}
+
+func (x *EvidenceSourceLifecycleEvent) GetToStatus() string {
+	if x != nil {
+		return x.ToStatus
+	}
+	return ""
+}
+
+func (x *EvidenceSourceLifecycleEvent) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+func (x *EvidenceSourceLifecycleEvent) GetReplacementSourceId() string {
+	if x != nil {
+		return x.ReplacementSourceId
+	}
+	return ""
+}
+
+func (x *EvidenceSourceLifecycleEvent) GetActorId() string {
+	if x != nil {
+		return x.ActorId
+	}
+	return ""
+}
+
+func (x *EvidenceSourceLifecycleEvent) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+type EvidenceSourceReplacement struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	Id                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	SourceId            string                 `protobuf:"bytes,2,opt,name=source_id,json=sourceId,proto3" json:"source_id,omitempty"`
+	ReplacementSourceId string                 `protobuf:"bytes,3,opt,name=replacement_source_id,json=replacementSourceId,proto3" json:"replacement_source_id,omitempty"`
+	ReplacementTitle    string                 `protobuf:"bytes,4,opt,name=replacement_title,json=replacementTitle,proto3" json:"replacement_title,omitempty"`
+	Status              string                 `protobuf:"bytes,5,opt,name=status,proto3" json:"status,omitempty"`
+	Confidence          float64                `protobuf:"fixed64,6,opt,name=confidence,proto3" json:"confidence,omitempty"`
+	Rationale           string                 `protobuf:"bytes,7,opt,name=rationale,proto3" json:"rationale,omitempty"`
+	CreatedBy           string                 `protobuf:"bytes,8,opt,name=created_by,json=createdBy,proto3" json:"created_by,omitempty"`
+	VerifiedBy          string                 `protobuf:"bytes,9,opt,name=verified_by,json=verifiedBy,proto3" json:"verified_by,omitempty"`
+	VerifiedAt          *timestamppb.Timestamp `protobuf:"bytes,10,opt,name=verified_at,json=verifiedAt,proto3" json:"verified_at,omitempty"`
+	CreatedAt           *timestamppb.Timestamp `protobuf:"bytes,11,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
+}
+
+func (x *EvidenceSourceReplacement) Reset() {
+	*x = EvidenceSourceReplacement{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[276]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EvidenceSourceReplacement) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EvidenceSourceReplacement) ProtoMessage() {}
+
+func (x *EvidenceSourceReplacement) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[276]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EvidenceSourceReplacement.ProtoReflect.Descriptor instead.
+func (*EvidenceSourceReplacement) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{276}
+}
+
+func (x *EvidenceSourceReplacement) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *EvidenceSourceReplacement) GetSourceId() string {
+	if x != nil {
+		return x.SourceId
+	}
+	return ""
+}
+
+func (x *EvidenceSourceReplacement) GetReplacementSourceId() string {
+	if x != nil {
+		return x.ReplacementSourceId
+	}
+	return ""
+}
+
+func (x *EvidenceSourceReplacement) GetReplacementTitle() string {
+	if x != nil {
+		return x.ReplacementTitle
+	}
+	return ""
+}
+
+func (x *EvidenceSourceReplacement) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *EvidenceSourceReplacement) GetConfidence() float64 {
+	if x != nil {
+		return x.Confidence
+	}
+	return 0
+}
+
+func (x *EvidenceSourceReplacement) GetRationale() string {
+	if x != nil {
+		return x.Rationale
+	}
+	return ""
+}
+
+func (x *EvidenceSourceReplacement) GetCreatedBy() string {
+	if x != nil {
+		return x.CreatedBy
+	}
+	return ""
+}
+
+func (x *EvidenceSourceReplacement) GetVerifiedBy() string {
+	if x != nil {
+		return x.VerifiedBy
+	}
+	return ""
+}
+
+func (x *EvidenceSourceReplacement) GetVerifiedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.VerifiedAt
+	}
+	return nil
+}
+
+func (x *EvidenceSourceReplacement) GetCreatedAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return nil
+}
+
+type GetEvidenceSourceHistoryResponse struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	SourceId      string                          `protobuf:"bytes,1,opt,name=source_id,json=sourceId,proto3" json:"source_id,omitempty"`
+	Events        []*EvidenceSourceLifecycleEvent `protobuf:"bytes,2,rep,name=events,proto3" json:"events,omitempty"`
+	Replacements  []*EvidenceSourceReplacement    `protobuf:"bytes,3,rep,name=replacements,proto3" json:"replacements,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetEvidenceSourceHistoryResponse) Reset() {
+	*x = GetEvidenceSourceHistoryResponse{}
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[277]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetEvidenceSourceHistoryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetEvidenceSourceHistoryResponse) ProtoMessage() {}
+
+func (x *GetEvidenceSourceHistoryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[277]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetEvidenceSourceHistoryResponse.ProtoReflect.Descriptor instead.
+func (*GetEvidenceSourceHistoryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{277}
+}
+
+func (x *GetEvidenceSourceHistoryResponse) GetSourceId() string {
+	if x != nil {
+		return x.SourceId
+	}
+	return ""
+}
+
+func (x *GetEvidenceSourceHistoryResponse) GetEvents() []*EvidenceSourceLifecycleEvent {
+	if x != nil {
+		return x.Events
+	}
+	return nil
+}
+
+func (x *GetEvidenceSourceHistoryResponse) GetReplacements() []*EvidenceSourceReplacement {
+	if x != nil {
+		return x.Replacements
+	}
+	return nil
+}
+
 type BriefPoint struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	Text           string                 `protobuf:"bytes,1,opt,name=text,proto3" json:"text,omitempty"`
@@ -18806,7 +19248,7 @@ type BriefPoint struct {
 
 func (x *BriefPoint) Reset() {
 	*x = BriefPoint{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[274]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[278]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -18818,7 +19260,7 @@ func (x *BriefPoint) String() string {
 func (*BriefPoint) ProtoMessage() {}
 
 func (x *BriefPoint) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[274]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[278]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18831,7 +19273,7 @@ func (x *BriefPoint) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BriefPoint.ProtoReflect.Descriptor instead.
 func (*BriefPoint) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{274}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{278}
 }
 
 func (x *BriefPoint) GetText() string {
@@ -18883,7 +19325,7 @@ type EvidenceBrief struct {
 
 func (x *EvidenceBrief) Reset() {
 	*x = EvidenceBrief{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[275]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[279]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -18895,7 +19337,7 @@ func (x *EvidenceBrief) String() string {
 func (*EvidenceBrief) ProtoMessage() {}
 
 func (x *EvidenceBrief) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[275]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[279]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -18908,7 +19350,7 @@ func (x *EvidenceBrief) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EvidenceBrief.ProtoReflect.Descriptor instead.
 func (*EvidenceBrief) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{275}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{279}
 }
 
 func (x *EvidenceBrief) GetId() string {
@@ -19067,7 +19509,7 @@ type CreateEvidenceBriefRequest struct {
 
 func (x *CreateEvidenceBriefRequest) Reset() {
 	*x = CreateEvidenceBriefRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[276]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[280]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19079,7 +19521,7 @@ func (x *CreateEvidenceBriefRequest) String() string {
 func (*CreateEvidenceBriefRequest) ProtoMessage() {}
 
 func (x *CreateEvidenceBriefRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[276]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[280]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19092,7 +19534,7 @@ func (x *CreateEvidenceBriefRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateEvidenceBriefRequest.ProtoReflect.Descriptor instead.
 func (*CreateEvidenceBriefRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{276}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{280}
 }
 
 func (x *CreateEvidenceBriefRequest) GetContentIds() []string {
@@ -19160,7 +19602,7 @@ type CreateEvidenceBriefResponse struct {
 
 func (x *CreateEvidenceBriefResponse) Reset() {
 	*x = CreateEvidenceBriefResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[277]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[281]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19172,7 +19614,7 @@ func (x *CreateEvidenceBriefResponse) String() string {
 func (*CreateEvidenceBriefResponse) ProtoMessage() {}
 
 func (x *CreateEvidenceBriefResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[277]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[281]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19185,7 +19627,7 @@ func (x *CreateEvidenceBriefResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateEvidenceBriefResponse.ProtoReflect.Descriptor instead.
 func (*CreateEvidenceBriefResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{277}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{281}
 }
 
 func (x *CreateEvidenceBriefResponse) GetBrief() *EvidenceBrief {
@@ -19204,7 +19646,7 @@ type ListMyEvidenceBriefsRequest struct {
 
 func (x *ListMyEvidenceBriefsRequest) Reset() {
 	*x = ListMyEvidenceBriefsRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[278]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[282]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19216,7 +19658,7 @@ func (x *ListMyEvidenceBriefsRequest) String() string {
 func (*ListMyEvidenceBriefsRequest) ProtoMessage() {}
 
 func (x *ListMyEvidenceBriefsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[278]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[282]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19229,7 +19671,7 @@ func (x *ListMyEvidenceBriefsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyEvidenceBriefsRequest.ProtoReflect.Descriptor instead.
 func (*ListMyEvidenceBriefsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{278}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{282}
 }
 
 func (x *ListMyEvidenceBriefsRequest) GetLimit() int32 {
@@ -19248,7 +19690,7 @@ type ListMyEvidenceBriefsResponse struct {
 
 func (x *ListMyEvidenceBriefsResponse) Reset() {
 	*x = ListMyEvidenceBriefsResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[279]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[283]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19260,7 +19702,7 @@ func (x *ListMyEvidenceBriefsResponse) String() string {
 func (*ListMyEvidenceBriefsResponse) ProtoMessage() {}
 
 func (x *ListMyEvidenceBriefsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[279]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[283]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19273,7 +19715,7 @@ func (x *ListMyEvidenceBriefsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMyEvidenceBriefsResponse.ProtoReflect.Descriptor instead.
 func (*ListMyEvidenceBriefsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{279}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{283}
 }
 
 func (x *ListMyEvidenceBriefsResponse) GetBriefs() []*EvidenceBrief {
@@ -19292,7 +19734,7 @@ type GetEvidenceBriefRequest struct {
 
 func (x *GetEvidenceBriefRequest) Reset() {
 	*x = GetEvidenceBriefRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[280]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[284]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19304,7 +19746,7 @@ func (x *GetEvidenceBriefRequest) String() string {
 func (*GetEvidenceBriefRequest) ProtoMessage() {}
 
 func (x *GetEvidenceBriefRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[280]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[284]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19317,7 +19759,7 @@ func (x *GetEvidenceBriefRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetEvidenceBriefRequest.ProtoReflect.Descriptor instead.
 func (*GetEvidenceBriefRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{280}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{284}
 }
 
 func (x *GetEvidenceBriefRequest) GetId() string {
@@ -19336,7 +19778,7 @@ type GetEvidenceBriefResponse struct {
 
 func (x *GetEvidenceBriefResponse) Reset() {
 	*x = GetEvidenceBriefResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[281]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[285]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19348,7 +19790,7 @@ func (x *GetEvidenceBriefResponse) String() string {
 func (*GetEvidenceBriefResponse) ProtoMessage() {}
 
 func (x *GetEvidenceBriefResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[281]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[285]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19361,7 +19803,7 @@ func (x *GetEvidenceBriefResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetEvidenceBriefResponse.ProtoReflect.Descriptor instead.
 func (*GetEvidenceBriefResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{281}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{285}
 }
 
 func (x *GetEvidenceBriefResponse) GetBrief() *EvidenceBrief {
@@ -19390,7 +19832,7 @@ type CreatorContract struct {
 
 func (x *CreatorContract) Reset() {
 	*x = CreatorContract{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[282]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[286]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19402,7 +19844,7 @@ func (x *CreatorContract) String() string {
 func (*CreatorContract) ProtoMessage() {}
 
 func (x *CreatorContract) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[282]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[286]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19415,7 +19857,7 @@ func (x *CreatorContract) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatorContract.ProtoReflect.Descriptor instead.
 func (*CreatorContract) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{282}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{286}
 }
 
 func (x *CreatorContract) GetId() string {
@@ -19508,7 +19950,7 @@ type EditorialReview struct {
 
 func (x *EditorialReview) Reset() {
 	*x = EditorialReview{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[283]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[287]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19520,7 +19962,7 @@ func (x *EditorialReview) String() string {
 func (*EditorialReview) ProtoMessage() {}
 
 func (x *EditorialReview) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[283]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[287]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19533,7 +19975,7 @@ func (x *EditorialReview) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EditorialReview.ProtoReflect.Descriptor instead.
 func (*EditorialReview) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{283}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{287}
 }
 
 func (x *EditorialReview) GetId() string {
@@ -19584,7 +20026,7 @@ type EditorialComment struct {
 
 func (x *EditorialComment) Reset() {
 	*x = EditorialComment{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[284]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[288]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19596,7 +20038,7 @@ func (x *EditorialComment) String() string {
 func (*EditorialComment) ProtoMessage() {}
 
 func (x *EditorialComment) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[284]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[288]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19609,7 +20051,7 @@ func (x *EditorialComment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EditorialComment.ProtoReflect.Descriptor instead.
 func (*EditorialComment) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{284}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{288}
 }
 
 func (x *EditorialComment) GetId() string {
@@ -19673,7 +20115,7 @@ type EditorialProject struct {
 
 func (x *EditorialProject) Reset() {
 	*x = EditorialProject{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[285]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[289]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19685,7 +20127,7 @@ func (x *EditorialProject) String() string {
 func (*EditorialProject) ProtoMessage() {}
 
 func (x *EditorialProject) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[285]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[289]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19698,7 +20140,7 @@ func (x *EditorialProject) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EditorialProject.ProtoReflect.Descriptor instead.
 func (*EditorialProject) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{285}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{289}
 }
 
 func (x *EditorialProject) GetId() string {
@@ -19847,7 +20289,7 @@ type CreatorStatement struct {
 
 func (x *CreatorStatement) Reset() {
 	*x = CreatorStatement{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[286]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[290]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19859,7 +20301,7 @@ func (x *CreatorStatement) String() string {
 func (*CreatorStatement) ProtoMessage() {}
 
 func (x *CreatorStatement) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[286]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[290]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -19872,7 +20314,7 @@ func (x *CreatorStatement) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatorStatement.ProtoReflect.Descriptor instead.
 func (*CreatorStatement) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{286}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{290}
 }
 
 func (x *CreatorStatement) GetId() string {
@@ -19976,7 +20418,7 @@ type CreatorMetric struct {
 
 func (x *CreatorMetric) Reset() {
 	*x = CreatorMetric{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[287]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[291]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -19988,7 +20430,7 @@ func (x *CreatorMetric) String() string {
 func (*CreatorMetric) ProtoMessage() {}
 
 func (x *CreatorMetric) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[287]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[291]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20001,7 +20443,7 @@ func (x *CreatorMetric) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatorMetric.ProtoReflect.Descriptor instead.
 func (*CreatorMetric) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{287}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{291}
 }
 
 func (x *CreatorMetric) GetMetricDate() string {
@@ -20084,7 +20526,7 @@ type CreatorStudio struct {
 
 func (x *CreatorStudio) Reset() {
 	*x = CreatorStudio{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[288]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[292]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20096,7 +20538,7 @@ func (x *CreatorStudio) String() string {
 func (*CreatorStudio) ProtoMessage() {}
 
 func (x *CreatorStudio) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[288]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[292]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20109,7 +20551,7 @@ func (x *CreatorStudio) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatorStudio.ProtoReflect.Descriptor instead.
 func (*CreatorStudio) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{288}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{292}
 }
 
 func (x *CreatorStudio) GetProfile() *OnyxProfile {
@@ -20183,7 +20625,7 @@ type GetCreatorStudioRequest struct {
 
 func (x *GetCreatorStudioRequest) Reset() {
 	*x = GetCreatorStudioRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[289]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[293]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20195,7 +20637,7 @@ func (x *GetCreatorStudioRequest) String() string {
 func (*GetCreatorStudioRequest) ProtoMessage() {}
 
 func (x *GetCreatorStudioRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[289]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[293]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20208,7 +20650,7 @@ func (x *GetCreatorStudioRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCreatorStudioRequest.ProtoReflect.Descriptor instead.
 func (*GetCreatorStudioRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{289}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{293}
 }
 
 type GetCreatorStudioResponse struct {
@@ -20220,7 +20662,7 @@ type GetCreatorStudioResponse struct {
 
 func (x *GetCreatorStudioResponse) Reset() {
 	*x = GetCreatorStudioResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[290]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[294]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20232,7 +20674,7 @@ func (x *GetCreatorStudioResponse) String() string {
 func (*GetCreatorStudioResponse) ProtoMessage() {}
 
 func (x *GetCreatorStudioResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[290]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[294]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20245,7 +20687,7 @@ func (x *GetCreatorStudioResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCreatorStudioResponse.ProtoReflect.Descriptor instead.
 func (*GetCreatorStudioResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{290}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{294}
 }
 
 func (x *GetCreatorStudioResponse) GetStudio() *CreatorStudio {
@@ -20268,7 +20710,7 @@ type SubmitCreatorPitchRequest struct {
 
 func (x *SubmitCreatorPitchRequest) Reset() {
 	*x = SubmitCreatorPitchRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[291]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[295]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20280,7 +20722,7 @@ func (x *SubmitCreatorPitchRequest) String() string {
 func (*SubmitCreatorPitchRequest) ProtoMessage() {}
 
 func (x *SubmitCreatorPitchRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[291]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[295]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20293,7 +20735,7 @@ func (x *SubmitCreatorPitchRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubmitCreatorPitchRequest.ProtoReflect.Descriptor instead.
 func (*SubmitCreatorPitchRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{291}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{295}
 }
 
 func (x *SubmitCreatorPitchRequest) GetPitchTitle() string {
@@ -20340,7 +20782,7 @@ type SubmitCreatorPitchResponse struct {
 
 func (x *SubmitCreatorPitchResponse) Reset() {
 	*x = SubmitCreatorPitchResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[292]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[296]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20352,7 +20794,7 @@ func (x *SubmitCreatorPitchResponse) String() string {
 func (*SubmitCreatorPitchResponse) ProtoMessage() {}
 
 func (x *SubmitCreatorPitchResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[292]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[296]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20365,7 +20807,7 @@ func (x *SubmitCreatorPitchResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubmitCreatorPitchResponse.ProtoReflect.Descriptor instead.
 func (*SubmitCreatorPitchResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{292}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{296}
 }
 
 func (x *SubmitCreatorPitchResponse) GetProject() *EditorialProject {
@@ -20389,7 +20831,7 @@ type UpdateCreatorProjectRequest struct {
 
 func (x *UpdateCreatorProjectRequest) Reset() {
 	*x = UpdateCreatorProjectRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[293]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[297]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20401,7 +20843,7 @@ func (x *UpdateCreatorProjectRequest) String() string {
 func (*UpdateCreatorProjectRequest) ProtoMessage() {}
 
 func (x *UpdateCreatorProjectRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[293]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[297]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20414,7 +20856,7 @@ func (x *UpdateCreatorProjectRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateCreatorProjectRequest.ProtoReflect.Descriptor instead.
 func (*UpdateCreatorProjectRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{293}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{297}
 }
 
 func (x *UpdateCreatorProjectRequest) GetProjectId() string {
@@ -20468,7 +20910,7 @@ type UpdateCreatorProjectResponse struct {
 
 func (x *UpdateCreatorProjectResponse) Reset() {
 	*x = UpdateCreatorProjectResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[294]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[298]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20480,7 +20922,7 @@ func (x *UpdateCreatorProjectResponse) String() string {
 func (*UpdateCreatorProjectResponse) ProtoMessage() {}
 
 func (x *UpdateCreatorProjectResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[294]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[298]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20493,7 +20935,7 @@ func (x *UpdateCreatorProjectResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateCreatorProjectResponse.ProtoReflect.Descriptor instead.
 func (*UpdateCreatorProjectResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{294}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{298}
 }
 
 func (x *UpdateCreatorProjectResponse) GetProject() *EditorialProject {
@@ -20513,7 +20955,7 @@ type SubmitCreatorProjectRequest struct {
 
 func (x *SubmitCreatorProjectRequest) Reset() {
 	*x = SubmitCreatorProjectRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[295]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[299]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20525,7 +20967,7 @@ func (x *SubmitCreatorProjectRequest) String() string {
 func (*SubmitCreatorProjectRequest) ProtoMessage() {}
 
 func (x *SubmitCreatorProjectRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[295]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[299]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20538,7 +20980,7 @@ func (x *SubmitCreatorProjectRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubmitCreatorProjectRequest.ProtoReflect.Descriptor instead.
 func (*SubmitCreatorProjectRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{295}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{299}
 }
 
 func (x *SubmitCreatorProjectRequest) GetProjectId() string {
@@ -20564,7 +21006,7 @@ type SubmitCreatorProjectResponse struct {
 
 func (x *SubmitCreatorProjectResponse) Reset() {
 	*x = SubmitCreatorProjectResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[296]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[300]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20576,7 +21018,7 @@ func (x *SubmitCreatorProjectResponse) String() string {
 func (*SubmitCreatorProjectResponse) ProtoMessage() {}
 
 func (x *SubmitCreatorProjectResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[296]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[300]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20589,7 +21031,7 @@ func (x *SubmitCreatorProjectResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubmitCreatorProjectResponse.ProtoReflect.Descriptor instead.
 func (*SubmitCreatorProjectResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{296}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{300}
 }
 
 func (x *SubmitCreatorProjectResponse) GetProject() *EditorialProject {
@@ -20609,7 +21051,7 @@ type SignCreatorContractRequest struct {
 
 func (x *SignCreatorContractRequest) Reset() {
 	*x = SignCreatorContractRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[297]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[301]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20621,7 +21063,7 @@ func (x *SignCreatorContractRequest) String() string {
 func (*SignCreatorContractRequest) ProtoMessage() {}
 
 func (x *SignCreatorContractRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[297]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[301]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20634,7 +21076,7 @@ func (x *SignCreatorContractRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SignCreatorContractRequest.ProtoReflect.Descriptor instead.
 func (*SignCreatorContractRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{297}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{301}
 }
 
 func (x *SignCreatorContractRequest) GetContractId() string {
@@ -20660,7 +21102,7 @@ type SignCreatorContractResponse struct {
 
 func (x *SignCreatorContractResponse) Reset() {
 	*x = SignCreatorContractResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[298]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[302]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20672,7 +21114,7 @@ func (x *SignCreatorContractResponse) String() string {
 func (*SignCreatorContractResponse) ProtoMessage() {}
 
 func (x *SignCreatorContractResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[298]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[302]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20685,7 +21127,7 @@ func (x *SignCreatorContractResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SignCreatorContractResponse.ProtoReflect.Descriptor instead.
 func (*SignCreatorContractResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{298}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{302}
 }
 
 func (x *SignCreatorContractResponse) GetContract() *CreatorContract {
@@ -20703,7 +21145,7 @@ type ListMyCreatorSubscriptionsDetailedRequest struct {
 
 func (x *ListMyCreatorSubscriptionsDetailedRequest) Reset() {
 	*x = ListMyCreatorSubscriptionsDetailedRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[299]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[303]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20715,7 +21157,7 @@ func (x *ListMyCreatorSubscriptionsDetailedRequest) String() string {
 func (*ListMyCreatorSubscriptionsDetailedRequest) ProtoMessage() {}
 
 func (x *ListMyCreatorSubscriptionsDetailedRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[299]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[303]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20728,7 +21170,7 @@ func (x *ListMyCreatorSubscriptionsDetailedRequest) ProtoReflect() protoreflect.
 
 // Deprecated: Use ListMyCreatorSubscriptionsDetailedRequest.ProtoReflect.Descriptor instead.
 func (*ListMyCreatorSubscriptionsDetailedRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{299}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{303}
 }
 
 type ListMyCreatorSubscriptionsDetailedResponse struct {
@@ -20740,7 +21182,7 @@ type ListMyCreatorSubscriptionsDetailedResponse struct {
 
 func (x *ListMyCreatorSubscriptionsDetailedResponse) Reset() {
 	*x = ListMyCreatorSubscriptionsDetailedResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[300]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[304]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20752,7 +21194,7 @@ func (x *ListMyCreatorSubscriptionsDetailedResponse) String() string {
 func (*ListMyCreatorSubscriptionsDetailedResponse) ProtoMessage() {}
 
 func (x *ListMyCreatorSubscriptionsDetailedResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[300]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[304]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20765,7 +21207,7 @@ func (x *ListMyCreatorSubscriptionsDetailedResponse) ProtoReflect() protoreflect
 
 // Deprecated: Use ListMyCreatorSubscriptionsDetailedResponse.ProtoReflect.Descriptor instead.
 func (*ListMyCreatorSubscriptionsDetailedResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{300}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{304}
 }
 
 func (x *ListMyCreatorSubscriptionsDetailedResponse) GetSubscriptions() []*Subscription {
@@ -20785,7 +21227,7 @@ type CancelCreatorSubscriptionRequest struct {
 
 func (x *CancelCreatorSubscriptionRequest) Reset() {
 	*x = CancelCreatorSubscriptionRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[301]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[305]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20797,7 +21239,7 @@ func (x *CancelCreatorSubscriptionRequest) String() string {
 func (*CancelCreatorSubscriptionRequest) ProtoMessage() {}
 
 func (x *CancelCreatorSubscriptionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[301]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[305]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20810,7 +21252,7 @@ func (x *CancelCreatorSubscriptionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CancelCreatorSubscriptionRequest.ProtoReflect.Descriptor instead.
 func (*CancelCreatorSubscriptionRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{301}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{305}
 }
 
 func (x *CancelCreatorSubscriptionRequest) GetCreatorId() string {
@@ -20836,7 +21278,7 @@ type CancelCreatorSubscriptionResponse struct {
 
 func (x *CancelCreatorSubscriptionResponse) Reset() {
 	*x = CancelCreatorSubscriptionResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[302]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[306]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20848,7 +21290,7 @@ func (x *CancelCreatorSubscriptionResponse) String() string {
 func (*CancelCreatorSubscriptionResponse) ProtoMessage() {}
 
 func (x *CancelCreatorSubscriptionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[302]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[306]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20861,7 +21303,7 @@ func (x *CancelCreatorSubscriptionResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use CancelCreatorSubscriptionResponse.ProtoReflect.Descriptor instead.
 func (*CancelCreatorSubscriptionResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{302}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{306}
 }
 
 func (x *CancelCreatorSubscriptionResponse) GetSubscription() *Subscription {
@@ -20889,7 +21331,7 @@ type CommerceInvoice struct {
 
 func (x *CommerceInvoice) Reset() {
 	*x = CommerceInvoice{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[303]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[307]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -20901,7 +21343,7 @@ func (x *CommerceInvoice) String() string {
 func (*CommerceInvoice) ProtoMessage() {}
 
 func (x *CommerceInvoice) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[303]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[307]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -20914,7 +21356,7 @@ func (x *CommerceInvoice) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CommerceInvoice.ProtoReflect.Descriptor instead.
 func (*CommerceInvoice) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{303}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{307}
 }
 
 func (x *CommerceInvoice) GetId() string {
@@ -21007,7 +21449,7 @@ type CommerceCase struct {
 
 func (x *CommerceCase) Reset() {
 	*x = CommerceCase{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[304]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[308]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21019,7 +21461,7 @@ func (x *CommerceCase) String() string {
 func (*CommerceCase) ProtoMessage() {}
 
 func (x *CommerceCase) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[304]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[308]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21032,7 +21474,7 @@ func (x *CommerceCase) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CommerceCase.ProtoReflect.Descriptor instead.
 func (*CommerceCase) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{304}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{308}
 }
 
 func (x *CommerceCase) GetId() string {
@@ -21127,7 +21569,7 @@ type GetMyCommerceRequest struct {
 
 func (x *GetMyCommerceRequest) Reset() {
 	*x = GetMyCommerceRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[305]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[309]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21139,7 +21581,7 @@ func (x *GetMyCommerceRequest) String() string {
 func (*GetMyCommerceRequest) ProtoMessage() {}
 
 func (x *GetMyCommerceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[305]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[309]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21152,7 +21594,7 @@ func (x *GetMyCommerceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMyCommerceRequest.ProtoReflect.Descriptor instead.
 func (*GetMyCommerceRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{305}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{309}
 }
 
 type GetMyCommerceResponse struct {
@@ -21167,7 +21609,7 @@ type GetMyCommerceResponse struct {
 
 func (x *GetMyCommerceResponse) Reset() {
 	*x = GetMyCommerceResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[306]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[310]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21179,7 +21621,7 @@ func (x *GetMyCommerceResponse) String() string {
 func (*GetMyCommerceResponse) ProtoMessage() {}
 
 func (x *GetMyCommerceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[306]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[310]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21192,7 +21634,7 @@ func (x *GetMyCommerceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMyCommerceResponse.ProtoReflect.Descriptor instead.
 func (*GetMyCommerceResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{306}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{310}
 }
 
 func (x *GetMyCommerceResponse) GetInvoices() []*CommerceInvoice {
@@ -21237,7 +21679,7 @@ type CreateCommerceCaseRequest struct {
 
 func (x *CreateCommerceCaseRequest) Reset() {
 	*x = CreateCommerceCaseRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[307]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[311]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21249,7 +21691,7 @@ func (x *CreateCommerceCaseRequest) String() string {
 func (*CreateCommerceCaseRequest) ProtoMessage() {}
 
 func (x *CreateCommerceCaseRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[307]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[311]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21262,7 +21704,7 @@ func (x *CreateCommerceCaseRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateCommerceCaseRequest.ProtoReflect.Descriptor instead.
 func (*CreateCommerceCaseRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{307}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{311}
 }
 
 func (x *CreateCommerceCaseRequest) GetKind() string {
@@ -21316,7 +21758,7 @@ type CreateCommerceCaseResponse struct {
 
 func (x *CreateCommerceCaseResponse) Reset() {
 	*x = CreateCommerceCaseResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[308]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[312]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21328,7 +21770,7 @@ func (x *CreateCommerceCaseResponse) String() string {
 func (*CreateCommerceCaseResponse) ProtoMessage() {}
 
 func (x *CreateCommerceCaseResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[308]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[312]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21341,7 +21783,7 @@ func (x *CreateCommerceCaseResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateCommerceCaseResponse.ProtoReflect.Descriptor instead.
 func (*CreateCommerceCaseResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{308}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{312}
 }
 
 func (x *CreateCommerceCaseResponse) GetCommerceCase() *CommerceCase {
@@ -21367,7 +21809,7 @@ type ResearchRoomPolicy struct {
 
 func (x *ResearchRoomPolicy) Reset() {
 	*x = ResearchRoomPolicy{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[309]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[313]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21379,7 +21821,7 @@ func (x *ResearchRoomPolicy) String() string {
 func (*ResearchRoomPolicy) ProtoMessage() {}
 
 func (x *ResearchRoomPolicy) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[309]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[313]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21392,7 +21834,7 @@ func (x *ResearchRoomPolicy) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResearchRoomPolicy.ProtoReflect.Descriptor instead.
 func (*ResearchRoomPolicy) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{309}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{313}
 }
 
 func (x *ResearchRoomPolicy) GetDownloadPolicy() string {
@@ -21470,7 +21912,7 @@ type ResearchRoomMember struct {
 
 func (x *ResearchRoomMember) Reset() {
 	*x = ResearchRoomMember{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[310]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[314]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21482,7 +21924,7 @@ func (x *ResearchRoomMember) String() string {
 func (*ResearchRoomMember) ProtoMessage() {}
 
 func (x *ResearchRoomMember) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[310]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[314]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21495,7 +21937,7 @@ func (x *ResearchRoomMember) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResearchRoomMember.ProtoReflect.Descriptor instead.
 func (*ResearchRoomMember) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{310}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{314}
 }
 
 func (x *ResearchRoomMember) GetUserId() string {
@@ -21599,7 +22041,7 @@ type ResearchRoom struct {
 
 func (x *ResearchRoom) Reset() {
 	*x = ResearchRoom{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[311]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[315]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21611,7 +22053,7 @@ func (x *ResearchRoom) String() string {
 func (*ResearchRoom) ProtoMessage() {}
 
 func (x *ResearchRoom) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[311]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[315]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21624,7 +22066,7 @@ func (x *ResearchRoom) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResearchRoom.ProtoReflect.Descriptor instead.
 func (*ResearchRoom) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{311}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{315}
 }
 
 func (x *ResearchRoom) GetId() string {
@@ -21761,7 +22203,7 @@ type ResearchRoomItem struct {
 
 func (x *ResearchRoomItem) Reset() {
 	*x = ResearchRoomItem{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[312]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[316]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21773,7 +22215,7 @@ func (x *ResearchRoomItem) String() string {
 func (*ResearchRoomItem) ProtoMessage() {}
 
 func (x *ResearchRoomItem) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[312]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[316]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21786,7 +22228,7 @@ func (x *ResearchRoomItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResearchRoomItem.ProtoReflect.Descriptor instead.
 func (*ResearchRoomItem) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{312}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{316}
 }
 
 func (x *ResearchRoomItem) GetId() string {
@@ -21909,7 +22351,7 @@ type ResearchRoomThread struct {
 
 func (x *ResearchRoomThread) Reset() {
 	*x = ResearchRoomThread{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[313]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[317]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -21921,7 +22363,7 @@ func (x *ResearchRoomThread) String() string {
 func (*ResearchRoomThread) ProtoMessage() {}
 
 func (x *ResearchRoomThread) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[313]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[317]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -21934,7 +22376,7 @@ func (x *ResearchRoomThread) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResearchRoomThread.ProtoReflect.Descriptor instead.
 func (*ResearchRoomThread) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{313}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{317}
 }
 
 func (x *ResearchRoomThread) GetId() string {
@@ -22056,7 +22498,7 @@ type ResearchRoomComment struct {
 
 func (x *ResearchRoomComment) Reset() {
 	*x = ResearchRoomComment{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[314]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[318]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22068,7 +22510,7 @@ func (x *ResearchRoomComment) String() string {
 func (*ResearchRoomComment) ProtoMessage() {}
 
 func (x *ResearchRoomComment) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[314]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[318]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22081,7 +22523,7 @@ func (x *ResearchRoomComment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResearchRoomComment.ProtoReflect.Descriptor instead.
 func (*ResearchRoomComment) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{314}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{318}
 }
 
 func (x *ResearchRoomComment) GetId() string {
@@ -22197,7 +22639,7 @@ type ResearchRoomTask struct {
 
 func (x *ResearchRoomTask) Reset() {
 	*x = ResearchRoomTask{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[315]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[319]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22209,7 +22651,7 @@ func (x *ResearchRoomTask) String() string {
 func (*ResearchRoomTask) ProtoMessage() {}
 
 func (x *ResearchRoomTask) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[315]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[319]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22222,7 +22664,7 @@ func (x *ResearchRoomTask) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResearchRoomTask.ProtoReflect.Descriptor instead.
 func (*ResearchRoomTask) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{315}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{319}
 }
 
 func (x *ResearchRoomTask) GetId() string {
@@ -22343,7 +22785,7 @@ type ResearchRoomMeeting struct {
 
 func (x *ResearchRoomMeeting) Reset() {
 	*x = ResearchRoomMeeting{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[316]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[320]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22355,7 +22797,7 @@ func (x *ResearchRoomMeeting) String() string {
 func (*ResearchRoomMeeting) ProtoMessage() {}
 
 func (x *ResearchRoomMeeting) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[316]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[320]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22368,7 +22810,7 @@ func (x *ResearchRoomMeeting) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResearchRoomMeeting.ProtoReflect.Descriptor instead.
 func (*ResearchRoomMeeting) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{316}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{320}
 }
 
 func (x *ResearchRoomMeeting) GetId() string {
@@ -22481,7 +22923,7 @@ type ResearchRoomDecision struct {
 
 func (x *ResearchRoomDecision) Reset() {
 	*x = ResearchRoomDecision{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[317]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[321]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22493,7 +22935,7 @@ func (x *ResearchRoomDecision) String() string {
 func (*ResearchRoomDecision) ProtoMessage() {}
 
 func (x *ResearchRoomDecision) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[317]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[321]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22506,7 +22948,7 @@ func (x *ResearchRoomDecision) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResearchRoomDecision.ProtoReflect.Descriptor instead.
 func (*ResearchRoomDecision) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{317}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{321}
 }
 
 func (x *ResearchRoomDecision) GetId() string {
@@ -22652,7 +23094,7 @@ type ResearchRoomApproval struct {
 
 func (x *ResearchRoomApproval) Reset() {
 	*x = ResearchRoomApproval{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[318]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[322]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22664,7 +23106,7 @@ func (x *ResearchRoomApproval) String() string {
 func (*ResearchRoomApproval) ProtoMessage() {}
 
 func (x *ResearchRoomApproval) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[318]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[322]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22677,7 +23119,7 @@ func (x *ResearchRoomApproval) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResearchRoomApproval.ProtoReflect.Descriptor instead.
 func (*ResearchRoomApproval) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{318}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{322}
 }
 
 func (x *ResearchRoomApproval) GetId() string {
@@ -22767,7 +23209,7 @@ type ResearchRoomExport struct {
 
 func (x *ResearchRoomExport) Reset() {
 	*x = ResearchRoomExport{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[319]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[323]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22779,7 +23221,7 @@ func (x *ResearchRoomExport) String() string {
 func (*ResearchRoomExport) ProtoMessage() {}
 
 func (x *ResearchRoomExport) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[319]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[323]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22792,7 +23234,7 @@ func (x *ResearchRoomExport) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResearchRoomExport.ProtoReflect.Descriptor instead.
 func (*ResearchRoomExport) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{319}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{323}
 }
 
 func (x *ResearchRoomExport) GetId() string {
@@ -22925,7 +23367,7 @@ type ResearchRoomAuditEvent struct {
 
 func (x *ResearchRoomAuditEvent) Reset() {
 	*x = ResearchRoomAuditEvent{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[320]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[324]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -22937,7 +23379,7 @@ func (x *ResearchRoomAuditEvent) String() string {
 func (*ResearchRoomAuditEvent) ProtoMessage() {}
 
 func (x *ResearchRoomAuditEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[320]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[324]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -22950,7 +23392,7 @@ func (x *ResearchRoomAuditEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResearchRoomAuditEvent.ProtoReflect.Descriptor instead.
 func (*ResearchRoomAuditEvent) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{320}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{324}
 }
 
 func (x *ResearchRoomAuditEvent) GetId() string {
@@ -23045,7 +23487,7 @@ type ResearchRoomGrant struct {
 
 func (x *ResearchRoomGrant) Reset() {
 	*x = ResearchRoomGrant{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[321]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[325]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23057,7 +23499,7 @@ func (x *ResearchRoomGrant) String() string {
 func (*ResearchRoomGrant) ProtoMessage() {}
 
 func (x *ResearchRoomGrant) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[321]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[325]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23070,7 +23512,7 @@ func (x *ResearchRoomGrant) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResearchRoomGrant.ProtoReflect.Descriptor instead.
 func (*ResearchRoomGrant) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{321}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{325}
 }
 
 func (x *ResearchRoomGrant) GetId() string {
@@ -23197,7 +23639,7 @@ type ResearchRoomShareLink struct {
 
 func (x *ResearchRoomShareLink) Reset() {
 	*x = ResearchRoomShareLink{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[322]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[326]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23209,7 +23651,7 @@ func (x *ResearchRoomShareLink) String() string {
 func (*ResearchRoomShareLink) ProtoMessage() {}
 
 func (x *ResearchRoomShareLink) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[322]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[326]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23222,7 +23664,7 @@ func (x *ResearchRoomShareLink) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResearchRoomShareLink.ProtoReflect.Descriptor instead.
 func (*ResearchRoomShareLink) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{322}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{326}
 }
 
 func (x *ResearchRoomShareLink) GetId() string {
@@ -23371,7 +23813,7 @@ type ResearchRoomOfflineManifest struct {
 
 func (x *ResearchRoomOfflineManifest) Reset() {
 	*x = ResearchRoomOfflineManifest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[323]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[327]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23383,7 +23825,7 @@ func (x *ResearchRoomOfflineManifest) String() string {
 func (*ResearchRoomOfflineManifest) ProtoMessage() {}
 
 func (x *ResearchRoomOfflineManifest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[323]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[327]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23396,7 +23838,7 @@ func (x *ResearchRoomOfflineManifest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResearchRoomOfflineManifest.ProtoReflect.Descriptor instead.
 func (*ResearchRoomOfflineManifest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{323}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{327}
 }
 
 func (x *ResearchRoomOfflineManifest) GetRoomId() string {
@@ -23497,7 +23939,7 @@ type ResearchRoomPurgeReceipt struct {
 
 func (x *ResearchRoomPurgeReceipt) Reset() {
 	*x = ResearchRoomPurgeReceipt{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[324]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[328]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23509,7 +23951,7 @@ func (x *ResearchRoomPurgeReceipt) String() string {
 func (*ResearchRoomPurgeReceipt) ProtoMessage() {}
 
 func (x *ResearchRoomPurgeReceipt) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[324]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[328]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23522,7 +23964,7 @@ func (x *ResearchRoomPurgeReceipt) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResearchRoomPurgeReceipt.ProtoReflect.Descriptor instead.
 func (*ResearchRoomPurgeReceipt) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{324}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{328}
 }
 
 func (x *ResearchRoomPurgeReceipt) GetId() string {
@@ -23585,7 +24027,7 @@ type ResearchRoomDetail struct {
 
 func (x *ResearchRoomDetail) Reset() {
 	*x = ResearchRoomDetail{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[325]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[329]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23597,7 +24039,7 @@ func (x *ResearchRoomDetail) String() string {
 func (*ResearchRoomDetail) ProtoMessage() {}
 
 func (x *ResearchRoomDetail) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[325]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[329]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23610,7 +24052,7 @@ func (x *ResearchRoomDetail) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResearchRoomDetail.ProtoReflect.Descriptor instead.
 func (*ResearchRoomDetail) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{325}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{329}
 }
 
 func (x *ResearchRoomDetail) GetRoom() *ResearchRoom {
@@ -23692,7 +24134,7 @@ type ListResearchRoomsRequest struct {
 
 func (x *ListResearchRoomsRequest) Reset() {
 	*x = ListResearchRoomsRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[326]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[330]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23704,7 +24146,7 @@ func (x *ListResearchRoomsRequest) String() string {
 func (*ListResearchRoomsRequest) ProtoMessage() {}
 
 func (x *ListResearchRoomsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[326]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[330]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23717,7 +24159,7 @@ func (x *ListResearchRoomsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListResearchRoomsRequest.ProtoReflect.Descriptor instead.
 func (*ListResearchRoomsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{326}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{330}
 }
 
 func (x *ListResearchRoomsRequest) GetIncludeArchived() bool {
@@ -23736,7 +24178,7 @@ type ListResearchRoomsResponse struct {
 
 func (x *ListResearchRoomsResponse) Reset() {
 	*x = ListResearchRoomsResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[327]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[331]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23748,7 +24190,7 @@ func (x *ListResearchRoomsResponse) String() string {
 func (*ListResearchRoomsResponse) ProtoMessage() {}
 
 func (x *ListResearchRoomsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[327]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[331]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23761,7 +24203,7 @@ func (x *ListResearchRoomsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListResearchRoomsResponse.ProtoReflect.Descriptor instead.
 func (*ListResearchRoomsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{327}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{331}
 }
 
 func (x *ListResearchRoomsResponse) GetRooms() []*ResearchRoom {
@@ -23780,7 +24222,7 @@ type GetResearchRoomRequest struct {
 
 func (x *GetResearchRoomRequest) Reset() {
 	*x = GetResearchRoomRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[328]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[332]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23792,7 +24234,7 @@ func (x *GetResearchRoomRequest) String() string {
 func (*GetResearchRoomRequest) ProtoMessage() {}
 
 func (x *GetResearchRoomRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[328]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[332]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23805,7 +24247,7 @@ func (x *GetResearchRoomRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetResearchRoomRequest.ProtoReflect.Descriptor instead.
 func (*GetResearchRoomRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{328}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{332}
 }
 
 func (x *GetResearchRoomRequest) GetRoomId() string {
@@ -23824,7 +24266,7 @@ type GetResearchRoomResponse struct {
 
 func (x *GetResearchRoomResponse) Reset() {
 	*x = GetResearchRoomResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[329]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[333]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23836,7 +24278,7 @@ func (x *GetResearchRoomResponse) String() string {
 func (*GetResearchRoomResponse) ProtoMessage() {}
 
 func (x *GetResearchRoomResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[329]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[333]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23849,7 +24291,7 @@ func (x *GetResearchRoomResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetResearchRoomResponse.ProtoReflect.Descriptor instead.
 func (*GetResearchRoomResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{329}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{333}
 }
 
 func (x *GetResearchRoomResponse) GetDetail() *ResearchRoomDetail {
@@ -23872,7 +24314,7 @@ type CreateResearchRoomRequest struct {
 
 func (x *CreateResearchRoomRequest) Reset() {
 	*x = CreateResearchRoomRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[330]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[334]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23884,7 +24326,7 @@ func (x *CreateResearchRoomRequest) String() string {
 func (*CreateResearchRoomRequest) ProtoMessage() {}
 
 func (x *CreateResearchRoomRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[330]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[334]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23897,7 +24339,7 @@ func (x *CreateResearchRoomRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateResearchRoomRequest.ProtoReflect.Descriptor instead.
 func (*CreateResearchRoomRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{330}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{334}
 }
 
 func (x *CreateResearchRoomRequest) GetTitle() string {
@@ -23944,7 +24386,7 @@ type CreateResearchRoomResponse struct {
 
 func (x *CreateResearchRoomResponse) Reset() {
 	*x = CreateResearchRoomResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[331]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[335]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -23956,7 +24398,7 @@ func (x *CreateResearchRoomResponse) String() string {
 func (*CreateResearchRoomResponse) ProtoMessage() {}
 
 func (x *CreateResearchRoomResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[331]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[335]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -23969,7 +24411,7 @@ func (x *CreateResearchRoomResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateResearchRoomResponse.ProtoReflect.Descriptor instead.
 func (*CreateResearchRoomResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{331}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{335}
 }
 
 func (x *CreateResearchRoomResponse) GetRoom() *ResearchRoom {
@@ -23995,7 +24437,7 @@ type UpdateResearchRoomRequest struct {
 
 func (x *UpdateResearchRoomRequest) Reset() {
 	*x = UpdateResearchRoomRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[332]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[336]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24007,7 +24449,7 @@ func (x *UpdateResearchRoomRequest) String() string {
 func (*UpdateResearchRoomRequest) ProtoMessage() {}
 
 func (x *UpdateResearchRoomRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[332]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[336]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24020,7 +24462,7 @@ func (x *UpdateResearchRoomRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateResearchRoomRequest.ProtoReflect.Descriptor instead.
 func (*UpdateResearchRoomRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{332}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{336}
 }
 
 func (x *UpdateResearchRoomRequest) GetRoomId() string {
@@ -24088,7 +24530,7 @@ type UpdateResearchRoomResponse struct {
 
 func (x *UpdateResearchRoomResponse) Reset() {
 	*x = UpdateResearchRoomResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[333]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[337]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24100,7 +24542,7 @@ func (x *UpdateResearchRoomResponse) String() string {
 func (*UpdateResearchRoomResponse) ProtoMessage() {}
 
 func (x *UpdateResearchRoomResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[333]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[337]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24113,7 +24555,7 @@ func (x *UpdateResearchRoomResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateResearchRoomResponse.ProtoReflect.Descriptor instead.
 func (*UpdateResearchRoomResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{333}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{337}
 }
 
 func (x *UpdateResearchRoomResponse) GetRoom() *ResearchRoom {
@@ -24137,7 +24579,7 @@ type InviteResearchRoomMemberRequest struct {
 
 func (x *InviteResearchRoomMemberRequest) Reset() {
 	*x = InviteResearchRoomMemberRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[334]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[338]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24149,7 +24591,7 @@ func (x *InviteResearchRoomMemberRequest) String() string {
 func (*InviteResearchRoomMemberRequest) ProtoMessage() {}
 
 func (x *InviteResearchRoomMemberRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[334]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[338]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24162,7 +24604,7 @@ func (x *InviteResearchRoomMemberRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InviteResearchRoomMemberRequest.ProtoReflect.Descriptor instead.
 func (*InviteResearchRoomMemberRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{334}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{338}
 }
 
 func (x *InviteResearchRoomMemberRequest) GetRoomId() string {
@@ -24216,7 +24658,7 @@ type InviteResearchRoomMemberResponse struct {
 
 func (x *InviteResearchRoomMemberResponse) Reset() {
 	*x = InviteResearchRoomMemberResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[335]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[339]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24228,7 +24670,7 @@ func (x *InviteResearchRoomMemberResponse) String() string {
 func (*InviteResearchRoomMemberResponse) ProtoMessage() {}
 
 func (x *InviteResearchRoomMemberResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[335]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[339]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24241,7 +24683,7 @@ func (x *InviteResearchRoomMemberResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InviteResearchRoomMemberResponse.ProtoReflect.Descriptor instead.
 func (*InviteResearchRoomMemberResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{335}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{339}
 }
 
 func (x *InviteResearchRoomMemberResponse) GetMember() *ResearchRoomMember {
@@ -24262,7 +24704,7 @@ type RespondResearchRoomInviteRequest struct {
 
 func (x *RespondResearchRoomInviteRequest) Reset() {
 	*x = RespondResearchRoomInviteRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[336]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[340]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24274,7 +24716,7 @@ func (x *RespondResearchRoomInviteRequest) String() string {
 func (*RespondResearchRoomInviteRequest) ProtoMessage() {}
 
 func (x *RespondResearchRoomInviteRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[336]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[340]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24287,7 +24729,7 @@ func (x *RespondResearchRoomInviteRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RespondResearchRoomInviteRequest.ProtoReflect.Descriptor instead.
 func (*RespondResearchRoomInviteRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{336}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{340}
 }
 
 func (x *RespondResearchRoomInviteRequest) GetRoomId() string {
@@ -24320,7 +24762,7 @@ type RespondResearchRoomInviteResponse struct {
 
 func (x *RespondResearchRoomInviteResponse) Reset() {
 	*x = RespondResearchRoomInviteResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[337]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[341]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24332,7 +24774,7 @@ func (x *RespondResearchRoomInviteResponse) String() string {
 func (*RespondResearchRoomInviteResponse) ProtoMessage() {}
 
 func (x *RespondResearchRoomInviteResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[337]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[341]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24345,7 +24787,7 @@ func (x *RespondResearchRoomInviteResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use RespondResearchRoomInviteResponse.ProtoReflect.Descriptor instead.
 func (*RespondResearchRoomInviteResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{337}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{341}
 }
 
 func (x *RespondResearchRoomInviteResponse) GetMember() *ResearchRoomMember {
@@ -24369,7 +24811,7 @@ type ChangeResearchRoomMemberRequest struct {
 
 func (x *ChangeResearchRoomMemberRequest) Reset() {
 	*x = ChangeResearchRoomMemberRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[338]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[342]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24381,7 +24823,7 @@ func (x *ChangeResearchRoomMemberRequest) String() string {
 func (*ChangeResearchRoomMemberRequest) ProtoMessage() {}
 
 func (x *ChangeResearchRoomMemberRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[338]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[342]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24394,7 +24836,7 @@ func (x *ChangeResearchRoomMemberRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChangeResearchRoomMemberRequest.ProtoReflect.Descriptor instead.
 func (*ChangeResearchRoomMemberRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{338}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{342}
 }
 
 func (x *ChangeResearchRoomMemberRequest) GetRoomId() string {
@@ -24448,7 +24890,7 @@ type ChangeResearchRoomMemberResponse struct {
 
 func (x *ChangeResearchRoomMemberResponse) Reset() {
 	*x = ChangeResearchRoomMemberResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[339]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[343]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24460,7 +24902,7 @@ func (x *ChangeResearchRoomMemberResponse) String() string {
 func (*ChangeResearchRoomMemberResponse) ProtoMessage() {}
 
 func (x *ChangeResearchRoomMemberResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[339]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[343]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24473,7 +24915,7 @@ func (x *ChangeResearchRoomMemberResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChangeResearchRoomMemberResponse.ProtoReflect.Descriptor instead.
 func (*ChangeResearchRoomMemberResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{339}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{343}
 }
 
 func (x *ChangeResearchRoomMemberResponse) GetMember() *ResearchRoomMember {
@@ -24496,7 +24938,7 @@ type RevokeResearchRoomMemberRequest struct {
 
 func (x *RevokeResearchRoomMemberRequest) Reset() {
 	*x = RevokeResearchRoomMemberRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[340]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[344]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24508,7 +24950,7 @@ func (x *RevokeResearchRoomMemberRequest) String() string {
 func (*RevokeResearchRoomMemberRequest) ProtoMessage() {}
 
 func (x *RevokeResearchRoomMemberRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[340]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[344]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24521,7 +24963,7 @@ func (x *RevokeResearchRoomMemberRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RevokeResearchRoomMemberRequest.ProtoReflect.Descriptor instead.
 func (*RevokeResearchRoomMemberRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{340}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{344}
 }
 
 func (x *RevokeResearchRoomMemberRequest) GetRoomId() string {
@@ -24568,7 +25010,7 @@ type RevokeResearchRoomMemberResponse struct {
 
 func (x *RevokeResearchRoomMemberResponse) Reset() {
 	*x = RevokeResearchRoomMemberResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[341]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[345]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24580,7 +25022,7 @@ func (x *RevokeResearchRoomMemberResponse) String() string {
 func (*RevokeResearchRoomMemberResponse) ProtoMessage() {}
 
 func (x *RevokeResearchRoomMemberResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[341]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[345]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24593,7 +25035,7 @@ func (x *RevokeResearchRoomMemberResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RevokeResearchRoomMemberResponse.ProtoReflect.Descriptor instead.
 func (*RevokeResearchRoomMemberResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{341}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{345}
 }
 
 func (x *RevokeResearchRoomMemberResponse) GetPermissionVersion() int64 {
@@ -24620,7 +25062,7 @@ type AddResearchRoomItemRequest struct {
 
 func (x *AddResearchRoomItemRequest) Reset() {
 	*x = AddResearchRoomItemRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[342]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[346]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24632,7 +25074,7 @@ func (x *AddResearchRoomItemRequest) String() string {
 func (*AddResearchRoomItemRequest) ProtoMessage() {}
 
 func (x *AddResearchRoomItemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[342]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[346]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24645,7 +25087,7 @@ func (x *AddResearchRoomItemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddResearchRoomItemRequest.ProtoReflect.Descriptor instead.
 func (*AddResearchRoomItemRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{342}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{346}
 }
 
 func (x *AddResearchRoomItemRequest) GetRoomId() string {
@@ -24720,7 +25162,7 @@ type AddResearchRoomItemResponse struct {
 
 func (x *AddResearchRoomItemResponse) Reset() {
 	*x = AddResearchRoomItemResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[343]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[347]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24732,7 +25174,7 @@ func (x *AddResearchRoomItemResponse) String() string {
 func (*AddResearchRoomItemResponse) ProtoMessage() {}
 
 func (x *AddResearchRoomItemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[343]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[347]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24745,7 +25187,7 @@ func (x *AddResearchRoomItemResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddResearchRoomItemResponse.ProtoReflect.Descriptor instead.
 func (*AddResearchRoomItemResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{343}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{347}
 }
 
 func (x *AddResearchRoomItemResponse) GetItem() *ResearchRoomItem {
@@ -24767,7 +25209,7 @@ type RemoveResearchRoomItemRequest struct {
 
 func (x *RemoveResearchRoomItemRequest) Reset() {
 	*x = RemoveResearchRoomItemRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[344]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[348]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24779,7 +25221,7 @@ func (x *RemoveResearchRoomItemRequest) String() string {
 func (*RemoveResearchRoomItemRequest) ProtoMessage() {}
 
 func (x *RemoveResearchRoomItemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[344]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[348]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24792,7 +25234,7 @@ func (x *RemoveResearchRoomItemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveResearchRoomItemRequest.ProtoReflect.Descriptor instead.
 func (*RemoveResearchRoomItemRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{344}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{348}
 }
 
 func (x *RemoveResearchRoomItemRequest) GetRoomId() string {
@@ -24831,7 +25273,7 @@ type RemoveResearchRoomItemResponse struct {
 
 func (x *RemoveResearchRoomItemResponse) Reset() {
 	*x = RemoveResearchRoomItemResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[345]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[349]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24843,7 +25285,7 @@ func (x *RemoveResearchRoomItemResponse) String() string {
 func (*RemoveResearchRoomItemResponse) ProtoMessage() {}
 
 func (x *RemoveResearchRoomItemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[345]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[349]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24856,7 +25298,7 @@ func (x *RemoveResearchRoomItemResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveResearchRoomItemResponse.ProtoReflect.Descriptor instead.
 func (*RemoveResearchRoomItemResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{345}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{349}
 }
 
 type PostResearchRoomCommentRequest struct {
@@ -24880,7 +25322,7 @@ type PostResearchRoomCommentRequest struct {
 
 func (x *PostResearchRoomCommentRequest) Reset() {
 	*x = PostResearchRoomCommentRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[346]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[350]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -24892,7 +25334,7 @@ func (x *PostResearchRoomCommentRequest) String() string {
 func (*PostResearchRoomCommentRequest) ProtoMessage() {}
 
 func (x *PostResearchRoomCommentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[346]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[350]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -24905,7 +25347,7 @@ func (x *PostResearchRoomCommentRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PostResearchRoomCommentRequest.ProtoReflect.Descriptor instead.
 func (*PostResearchRoomCommentRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{346}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{350}
 }
 
 func (x *PostResearchRoomCommentRequest) GetRoomId() string {
@@ -25009,7 +25451,7 @@ type PostResearchRoomCommentResponse struct {
 
 func (x *PostResearchRoomCommentResponse) Reset() {
 	*x = PostResearchRoomCommentResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[347]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[351]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25021,7 +25463,7 @@ func (x *PostResearchRoomCommentResponse) String() string {
 func (*PostResearchRoomCommentResponse) ProtoMessage() {}
 
 func (x *PostResearchRoomCommentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[347]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[351]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25034,7 +25476,7 @@ func (x *PostResearchRoomCommentResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PostResearchRoomCommentResponse.ProtoReflect.Descriptor instead.
 func (*PostResearchRoomCommentResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{347}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{351}
 }
 
 func (x *PostResearchRoomCommentResponse) GetThread() *ResearchRoomThread {
@@ -25063,7 +25505,7 @@ type SetResearchRoomThreadStatusRequest struct {
 
 func (x *SetResearchRoomThreadStatusRequest) Reset() {
 	*x = SetResearchRoomThreadStatusRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[348]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[352]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25075,7 +25517,7 @@ func (x *SetResearchRoomThreadStatusRequest) String() string {
 func (*SetResearchRoomThreadStatusRequest) ProtoMessage() {}
 
 func (x *SetResearchRoomThreadStatusRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[348]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[352]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25088,7 +25530,7 @@ func (x *SetResearchRoomThreadStatusRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use SetResearchRoomThreadStatusRequest.ProtoReflect.Descriptor instead.
 func (*SetResearchRoomThreadStatusRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{348}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{352}
 }
 
 func (x *SetResearchRoomThreadStatusRequest) GetRoomId() string {
@@ -25128,7 +25570,7 @@ type SetResearchRoomThreadStatusResponse struct {
 
 func (x *SetResearchRoomThreadStatusResponse) Reset() {
 	*x = SetResearchRoomThreadStatusResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[349]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[353]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25140,7 +25582,7 @@ func (x *SetResearchRoomThreadStatusResponse) String() string {
 func (*SetResearchRoomThreadStatusResponse) ProtoMessage() {}
 
 func (x *SetResearchRoomThreadStatusResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[349]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[353]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25153,7 +25595,7 @@ func (x *SetResearchRoomThreadStatusResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use SetResearchRoomThreadStatusResponse.ProtoReflect.Descriptor instead.
 func (*SetResearchRoomThreadStatusResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{349}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{353}
 }
 
 func (x *SetResearchRoomThreadStatusResponse) GetThread() *ResearchRoomThread {
@@ -25183,7 +25625,7 @@ type UpsertResearchRoomTaskRequest struct {
 
 func (x *UpsertResearchRoomTaskRequest) Reset() {
 	*x = UpsertResearchRoomTaskRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[350]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[354]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25195,7 +25637,7 @@ func (x *UpsertResearchRoomTaskRequest) String() string {
 func (*UpsertResearchRoomTaskRequest) ProtoMessage() {}
 
 func (x *UpsertResearchRoomTaskRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[350]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[354]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25208,7 +25650,7 @@ func (x *UpsertResearchRoomTaskRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpsertResearchRoomTaskRequest.ProtoReflect.Descriptor instead.
 func (*UpsertResearchRoomTaskRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{350}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{354}
 }
 
 func (x *UpsertResearchRoomTaskRequest) GetRoomId() string {
@@ -25304,7 +25746,7 @@ type UpsertResearchRoomTaskResponse struct {
 
 func (x *UpsertResearchRoomTaskResponse) Reset() {
 	*x = UpsertResearchRoomTaskResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[351]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[355]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25316,7 +25758,7 @@ func (x *UpsertResearchRoomTaskResponse) String() string {
 func (*UpsertResearchRoomTaskResponse) ProtoMessage() {}
 
 func (x *UpsertResearchRoomTaskResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[351]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[355]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25329,7 +25771,7 @@ func (x *UpsertResearchRoomTaskResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpsertResearchRoomTaskResponse.ProtoReflect.Descriptor instead.
 func (*UpsertResearchRoomTaskResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{351}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{355}
 }
 
 func (x *UpsertResearchRoomTaskResponse) GetTask() *ResearchRoomTask {
@@ -25358,7 +25800,7 @@ type UpsertResearchRoomMeetingRequest struct {
 
 func (x *UpsertResearchRoomMeetingRequest) Reset() {
 	*x = UpsertResearchRoomMeetingRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[352]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[356]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25370,7 +25812,7 @@ func (x *UpsertResearchRoomMeetingRequest) String() string {
 func (*UpsertResearchRoomMeetingRequest) ProtoMessage() {}
 
 func (x *UpsertResearchRoomMeetingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[352]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[356]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25383,7 +25825,7 @@ func (x *UpsertResearchRoomMeetingRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpsertResearchRoomMeetingRequest.ProtoReflect.Descriptor instead.
 func (*UpsertResearchRoomMeetingRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{352}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{356}
 }
 
 func (x *UpsertResearchRoomMeetingRequest) GetRoomId() string {
@@ -25472,7 +25914,7 @@ type UpsertResearchRoomMeetingResponse struct {
 
 func (x *UpsertResearchRoomMeetingResponse) Reset() {
 	*x = UpsertResearchRoomMeetingResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[353]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[357]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25484,7 +25926,7 @@ func (x *UpsertResearchRoomMeetingResponse) String() string {
 func (*UpsertResearchRoomMeetingResponse) ProtoMessage() {}
 
 func (x *UpsertResearchRoomMeetingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[353]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[357]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25497,7 +25939,7 @@ func (x *UpsertResearchRoomMeetingResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use UpsertResearchRoomMeetingResponse.ProtoReflect.Descriptor instead.
 func (*UpsertResearchRoomMeetingResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{353}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{357}
 }
 
 func (x *UpsertResearchRoomMeetingResponse) GetMeeting() *ResearchRoomMeeting {
@@ -25523,7 +25965,7 @@ type UpsertResearchRoomDecisionRequest struct {
 
 func (x *UpsertResearchRoomDecisionRequest) Reset() {
 	*x = UpsertResearchRoomDecisionRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[354]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[358]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25535,7 +25977,7 @@ func (x *UpsertResearchRoomDecisionRequest) String() string {
 func (*UpsertResearchRoomDecisionRequest) ProtoMessage() {}
 
 func (x *UpsertResearchRoomDecisionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[354]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[358]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25548,7 +25990,7 @@ func (x *UpsertResearchRoomDecisionRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use UpsertResearchRoomDecisionRequest.ProtoReflect.Descriptor instead.
 func (*UpsertResearchRoomDecisionRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{354}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{358}
 }
 
 func (x *UpsertResearchRoomDecisionRequest) GetRoomId() string {
@@ -25616,7 +26058,7 @@ type UpsertResearchRoomDecisionResponse struct {
 
 func (x *UpsertResearchRoomDecisionResponse) Reset() {
 	*x = UpsertResearchRoomDecisionResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[355]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[359]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25628,7 +26070,7 @@ func (x *UpsertResearchRoomDecisionResponse) String() string {
 func (*UpsertResearchRoomDecisionResponse) ProtoMessage() {}
 
 func (x *UpsertResearchRoomDecisionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[355]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[359]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25641,7 +26083,7 @@ func (x *UpsertResearchRoomDecisionResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use UpsertResearchRoomDecisionResponse.ProtoReflect.Descriptor instead.
 func (*UpsertResearchRoomDecisionResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{355}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{359}
 }
 
 func (x *UpsertResearchRoomDecisionResponse) GetDecision() *ResearchRoomDecision {
@@ -25665,7 +26107,7 @@ type RecordResearchRoomApprovalRequest struct {
 
 func (x *RecordResearchRoomApprovalRequest) Reset() {
 	*x = RecordResearchRoomApprovalRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[356]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[360]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25677,7 +26119,7 @@ func (x *RecordResearchRoomApprovalRequest) String() string {
 func (*RecordResearchRoomApprovalRequest) ProtoMessage() {}
 
 func (x *RecordResearchRoomApprovalRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[356]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[360]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25690,7 +26132,7 @@ func (x *RecordResearchRoomApprovalRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use RecordResearchRoomApprovalRequest.ProtoReflect.Descriptor instead.
 func (*RecordResearchRoomApprovalRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{356}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{360}
 }
 
 func (x *RecordResearchRoomApprovalRequest) GetRoomId() string {
@@ -25744,7 +26186,7 @@ type RecordResearchRoomApprovalResponse struct {
 
 func (x *RecordResearchRoomApprovalResponse) Reset() {
 	*x = RecordResearchRoomApprovalResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[357]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[361]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25756,7 +26198,7 @@ func (x *RecordResearchRoomApprovalResponse) String() string {
 func (*RecordResearchRoomApprovalResponse) ProtoMessage() {}
 
 func (x *RecordResearchRoomApprovalResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[357]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[361]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25769,7 +26211,7 @@ func (x *RecordResearchRoomApprovalResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use RecordResearchRoomApprovalResponse.ProtoReflect.Descriptor instead.
 func (*RecordResearchRoomApprovalResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{357}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{361}
 }
 
 func (x *RecordResearchRoomApprovalResponse) GetApproval() *ResearchRoomApproval {
@@ -25791,7 +26233,7 @@ type SearchResearchRoomRequest struct {
 
 func (x *SearchResearchRoomRequest) Reset() {
 	*x = SearchResearchRoomRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[358]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[362]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25803,7 +26245,7 @@ func (x *SearchResearchRoomRequest) String() string {
 func (*SearchResearchRoomRequest) ProtoMessage() {}
 
 func (x *SearchResearchRoomRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[358]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[362]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25816,7 +26258,7 @@ func (x *SearchResearchRoomRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchResearchRoomRequest.ProtoReflect.Descriptor instead.
 func (*SearchResearchRoomRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{358}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{362}
 }
 
 func (x *SearchResearchRoomRequest) GetRoomId() string {
@@ -25866,7 +26308,7 @@ type SearchResearchRoomResult struct {
 
 func (x *SearchResearchRoomResult) Reset() {
 	*x = SearchResearchRoomResult{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[359]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[363]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25878,7 +26320,7 @@ func (x *SearchResearchRoomResult) String() string {
 func (*SearchResearchRoomResult) ProtoMessage() {}
 
 func (x *SearchResearchRoomResult) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[359]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[363]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -25891,7 +26333,7 @@ func (x *SearchResearchRoomResult) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchResearchRoomResult.ProtoReflect.Descriptor instead.
 func (*SearchResearchRoomResult) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{359}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{363}
 }
 
 func (x *SearchResearchRoomResult) GetObjectType() string {
@@ -25980,7 +26422,7 @@ type SearchResearchRoomResponse struct {
 
 func (x *SearchResearchRoomResponse) Reset() {
 	*x = SearchResearchRoomResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[360]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[364]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -25992,7 +26434,7 @@ func (x *SearchResearchRoomResponse) String() string {
 func (*SearchResearchRoomResponse) ProtoMessage() {}
 
 func (x *SearchResearchRoomResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[360]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[364]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26005,7 +26447,7 @@ func (x *SearchResearchRoomResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchResearchRoomResponse.ProtoReflect.Descriptor instead.
 func (*SearchResearchRoomResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{360}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{364}
 }
 
 func (x *SearchResearchRoomResponse) GetResults() []*SearchResearchRoomResult {
@@ -26027,7 +26469,7 @@ type RequestResearchRoomExportRequest struct {
 
 func (x *RequestResearchRoomExportRequest) Reset() {
 	*x = RequestResearchRoomExportRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[361]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[365]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26039,7 +26481,7 @@ func (x *RequestResearchRoomExportRequest) String() string {
 func (*RequestResearchRoomExportRequest) ProtoMessage() {}
 
 func (x *RequestResearchRoomExportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[361]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[365]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26052,7 +26494,7 @@ func (x *RequestResearchRoomExportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RequestResearchRoomExportRequest.ProtoReflect.Descriptor instead.
 func (*RequestResearchRoomExportRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{361}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{365}
 }
 
 func (x *RequestResearchRoomExportRequest) GetRoomId() string {
@@ -26092,7 +26534,7 @@ type RequestResearchRoomExportResponse struct {
 
 func (x *RequestResearchRoomExportResponse) Reset() {
 	*x = RequestResearchRoomExportResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[362]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[366]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26104,7 +26546,7 @@ func (x *RequestResearchRoomExportResponse) String() string {
 func (*RequestResearchRoomExportResponse) ProtoMessage() {}
 
 func (x *RequestResearchRoomExportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[362]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[366]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26117,7 +26559,7 @@ func (x *RequestResearchRoomExportResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use RequestResearchRoomExportResponse.ProtoReflect.Descriptor instead.
 func (*RequestResearchRoomExportResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{362}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{366}
 }
 
 func (x *RequestResearchRoomExportResponse) GetExport() *ResearchRoomExport {
@@ -26141,7 +26583,7 @@ type ReportResearchRoomAbuseRequest struct {
 
 func (x *ReportResearchRoomAbuseRequest) Reset() {
 	*x = ReportResearchRoomAbuseRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[363]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[367]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26153,7 +26595,7 @@ func (x *ReportResearchRoomAbuseRequest) String() string {
 func (*ReportResearchRoomAbuseRequest) ProtoMessage() {}
 
 func (x *ReportResearchRoomAbuseRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[363]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[367]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26166,7 +26608,7 @@ func (x *ReportResearchRoomAbuseRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReportResearchRoomAbuseRequest.ProtoReflect.Descriptor instead.
 func (*ReportResearchRoomAbuseRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{363}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{367}
 }
 
 func (x *ReportResearchRoomAbuseRequest) GetRoomId() string {
@@ -26220,7 +26662,7 @@ type ReportResearchRoomAbuseResponse struct {
 
 func (x *ReportResearchRoomAbuseResponse) Reset() {
 	*x = ReportResearchRoomAbuseResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[364]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[368]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26232,7 +26674,7 @@ func (x *ReportResearchRoomAbuseResponse) String() string {
 func (*ReportResearchRoomAbuseResponse) ProtoMessage() {}
 
 func (x *ReportResearchRoomAbuseResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[364]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[368]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26245,7 +26687,7 @@ func (x *ReportResearchRoomAbuseResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReportResearchRoomAbuseResponse.ProtoReflect.Descriptor instead.
 func (*ReportResearchRoomAbuseResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{364}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{368}
 }
 
 func (x *ReportResearchRoomAbuseResponse) GetReportId() string {
@@ -26265,7 +26707,7 @@ type ListResearchRoomAuditRequest struct {
 
 func (x *ListResearchRoomAuditRequest) Reset() {
 	*x = ListResearchRoomAuditRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[365]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[369]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26277,7 +26719,7 @@ func (x *ListResearchRoomAuditRequest) String() string {
 func (*ListResearchRoomAuditRequest) ProtoMessage() {}
 
 func (x *ListResearchRoomAuditRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[365]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[369]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26290,7 +26732,7 @@ func (x *ListResearchRoomAuditRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListResearchRoomAuditRequest.ProtoReflect.Descriptor instead.
 func (*ListResearchRoomAuditRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{365}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{369}
 }
 
 func (x *ListResearchRoomAuditRequest) GetRoomId() string {
@@ -26316,7 +26758,7 @@ type ListResearchRoomAuditResponse struct {
 
 func (x *ListResearchRoomAuditResponse) Reset() {
 	*x = ListResearchRoomAuditResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[366]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[370]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26328,7 +26770,7 @@ func (x *ListResearchRoomAuditResponse) String() string {
 func (*ListResearchRoomAuditResponse) ProtoMessage() {}
 
 func (x *ListResearchRoomAuditResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[366]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[370]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26341,7 +26783,7 @@ func (x *ListResearchRoomAuditResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListResearchRoomAuditResponse.ProtoReflect.Descriptor instead.
 func (*ListResearchRoomAuditResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{366}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{370}
 }
 
 func (x *ListResearchRoomAuditResponse) GetEvents() []*ResearchRoomAuditEvent {
@@ -26362,7 +26804,7 @@ type ListResearchRoomGrantsRequest struct {
 
 func (x *ListResearchRoomGrantsRequest) Reset() {
 	*x = ListResearchRoomGrantsRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[367]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[371]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26374,7 +26816,7 @@ func (x *ListResearchRoomGrantsRequest) String() string {
 func (*ListResearchRoomGrantsRequest) ProtoMessage() {}
 
 func (x *ListResearchRoomGrantsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[367]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[371]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26387,7 +26829,7 @@ func (x *ListResearchRoomGrantsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListResearchRoomGrantsRequest.ProtoReflect.Descriptor instead.
 func (*ListResearchRoomGrantsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{367}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{371}
 }
 
 func (x *ListResearchRoomGrantsRequest) GetRoomId() string {
@@ -26420,7 +26862,7 @@ type ListResearchRoomGrantsResponse struct {
 
 func (x *ListResearchRoomGrantsResponse) Reset() {
 	*x = ListResearchRoomGrantsResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[368]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[372]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26432,7 +26874,7 @@ func (x *ListResearchRoomGrantsResponse) String() string {
 func (*ListResearchRoomGrantsResponse) ProtoMessage() {}
 
 func (x *ListResearchRoomGrantsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[368]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[372]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26445,7 +26887,7 @@ func (x *ListResearchRoomGrantsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListResearchRoomGrantsResponse.ProtoReflect.Descriptor instead.
 func (*ListResearchRoomGrantsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{368}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{372}
 }
 
 func (x *ListResearchRoomGrantsResponse) GetGrants() []*ResearchRoomGrant {
@@ -26472,7 +26914,7 @@ type UpsertResearchRoomGrantRequest struct {
 
 func (x *UpsertResearchRoomGrantRequest) Reset() {
 	*x = UpsertResearchRoomGrantRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[369]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[373]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26484,7 +26926,7 @@ func (x *UpsertResearchRoomGrantRequest) String() string {
 func (*UpsertResearchRoomGrantRequest) ProtoMessage() {}
 
 func (x *UpsertResearchRoomGrantRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[369]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[373]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26497,7 +26939,7 @@ func (x *UpsertResearchRoomGrantRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpsertResearchRoomGrantRequest.ProtoReflect.Descriptor instead.
 func (*UpsertResearchRoomGrantRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{369}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{373}
 }
 
 func (x *UpsertResearchRoomGrantRequest) GetRoomId() string {
@@ -26572,7 +27014,7 @@ type UpsertResearchRoomGrantResponse struct {
 
 func (x *UpsertResearchRoomGrantResponse) Reset() {
 	*x = UpsertResearchRoomGrantResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[370]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[374]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26584,7 +27026,7 @@ func (x *UpsertResearchRoomGrantResponse) String() string {
 func (*UpsertResearchRoomGrantResponse) ProtoMessage() {}
 
 func (x *UpsertResearchRoomGrantResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[370]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[374]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26597,7 +27039,7 @@ func (x *UpsertResearchRoomGrantResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpsertResearchRoomGrantResponse.ProtoReflect.Descriptor instead.
 func (*UpsertResearchRoomGrantResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{370}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{374}
 }
 
 func (x *UpsertResearchRoomGrantResponse) GetGrant() *ResearchRoomGrant {
@@ -26619,7 +27061,7 @@ type RevokeResearchRoomGrantRequest struct {
 
 func (x *RevokeResearchRoomGrantRequest) Reset() {
 	*x = RevokeResearchRoomGrantRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[371]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[375]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26631,7 +27073,7 @@ func (x *RevokeResearchRoomGrantRequest) String() string {
 func (*RevokeResearchRoomGrantRequest) ProtoMessage() {}
 
 func (x *RevokeResearchRoomGrantRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[371]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[375]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26644,7 +27086,7 @@ func (x *RevokeResearchRoomGrantRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RevokeResearchRoomGrantRequest.ProtoReflect.Descriptor instead.
 func (*RevokeResearchRoomGrantRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{371}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{375}
 }
 
 func (x *RevokeResearchRoomGrantRequest) GetRoomId() string {
@@ -26684,7 +27126,7 @@ type RevokeResearchRoomGrantResponse struct {
 
 func (x *RevokeResearchRoomGrantResponse) Reset() {
 	*x = RevokeResearchRoomGrantResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[372]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[376]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26696,7 +27138,7 @@ func (x *RevokeResearchRoomGrantResponse) String() string {
 func (*RevokeResearchRoomGrantResponse) ProtoMessage() {}
 
 func (x *RevokeResearchRoomGrantResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[372]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[376]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26709,7 +27151,7 @@ func (x *RevokeResearchRoomGrantResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RevokeResearchRoomGrantResponse.ProtoReflect.Descriptor instead.
 func (*RevokeResearchRoomGrantResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{372}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{376}
 }
 
 func (x *RevokeResearchRoomGrantResponse) GetRoomAuthorizationEpoch() int64 {
@@ -26736,7 +27178,7 @@ type CreateResearchRoomShareLinkRequest struct {
 
 func (x *CreateResearchRoomShareLinkRequest) Reset() {
 	*x = CreateResearchRoomShareLinkRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[373]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[377]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26748,7 +27190,7 @@ func (x *CreateResearchRoomShareLinkRequest) String() string {
 func (*CreateResearchRoomShareLinkRequest) ProtoMessage() {}
 
 func (x *CreateResearchRoomShareLinkRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[373]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[377]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26761,7 +27203,7 @@ func (x *CreateResearchRoomShareLinkRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CreateResearchRoomShareLinkRequest.ProtoReflect.Descriptor instead.
 func (*CreateResearchRoomShareLinkRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{373}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{377}
 }
 
 func (x *CreateResearchRoomShareLinkRequest) GetRoomId() string {
@@ -26823,7 +27265,7 @@ type CreateResearchRoomShareLinkResponse struct {
 
 func (x *CreateResearchRoomShareLinkResponse) Reset() {
 	*x = CreateResearchRoomShareLinkResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[374]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[378]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26835,7 +27277,7 @@ func (x *CreateResearchRoomShareLinkResponse) String() string {
 func (*CreateResearchRoomShareLinkResponse) ProtoMessage() {}
 
 func (x *CreateResearchRoomShareLinkResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[374]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[378]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26848,7 +27290,7 @@ func (x *CreateResearchRoomShareLinkResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CreateResearchRoomShareLinkResponse.ProtoReflect.Descriptor instead.
 func (*CreateResearchRoomShareLinkResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{374}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{378}
 }
 
 func (x *CreateResearchRoomShareLinkResponse) GetShareLink() *ResearchRoomShareLink {
@@ -26874,7 +27316,7 @@ type ListResearchRoomShareLinksRequest struct {
 
 func (x *ListResearchRoomShareLinksRequest) Reset() {
 	*x = ListResearchRoomShareLinksRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[375]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[379]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26886,7 +27328,7 @@ func (x *ListResearchRoomShareLinksRequest) String() string {
 func (*ListResearchRoomShareLinksRequest) ProtoMessage() {}
 
 func (x *ListResearchRoomShareLinksRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[375]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[379]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26899,7 +27341,7 @@ func (x *ListResearchRoomShareLinksRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use ListResearchRoomShareLinksRequest.ProtoReflect.Descriptor instead.
 func (*ListResearchRoomShareLinksRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{375}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{379}
 }
 
 func (x *ListResearchRoomShareLinksRequest) GetRoomId() string {
@@ -26918,7 +27360,7 @@ type ListResearchRoomShareLinksResponse struct {
 
 func (x *ListResearchRoomShareLinksResponse) Reset() {
 	*x = ListResearchRoomShareLinksResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[376]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[380]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26930,7 +27372,7 @@ func (x *ListResearchRoomShareLinksResponse) String() string {
 func (*ListResearchRoomShareLinksResponse) ProtoMessage() {}
 
 func (x *ListResearchRoomShareLinksResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[376]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[380]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26943,7 +27385,7 @@ func (x *ListResearchRoomShareLinksResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use ListResearchRoomShareLinksResponse.ProtoReflect.Descriptor instead.
 func (*ListResearchRoomShareLinksResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{376}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{380}
 }
 
 func (x *ListResearchRoomShareLinksResponse) GetShareLinks() []*ResearchRoomShareLink {
@@ -26965,7 +27407,7 @@ type RevokeResearchRoomShareLinkRequest struct {
 
 func (x *RevokeResearchRoomShareLinkRequest) Reset() {
 	*x = RevokeResearchRoomShareLinkRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[377]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[381]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -26977,7 +27419,7 @@ func (x *RevokeResearchRoomShareLinkRequest) String() string {
 func (*RevokeResearchRoomShareLinkRequest) ProtoMessage() {}
 
 func (x *RevokeResearchRoomShareLinkRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[377]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[381]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -26990,7 +27432,7 @@ func (x *RevokeResearchRoomShareLinkRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use RevokeResearchRoomShareLinkRequest.ProtoReflect.Descriptor instead.
 func (*RevokeResearchRoomShareLinkRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{377}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{381}
 }
 
 func (x *RevokeResearchRoomShareLinkRequest) GetRoomId() string {
@@ -27029,7 +27471,7 @@ type RevokeResearchRoomShareLinkResponse struct {
 
 func (x *RevokeResearchRoomShareLinkResponse) Reset() {
 	*x = RevokeResearchRoomShareLinkResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[378]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[382]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27041,7 +27483,7 @@ func (x *RevokeResearchRoomShareLinkResponse) String() string {
 func (*RevokeResearchRoomShareLinkResponse) ProtoMessage() {}
 
 func (x *RevokeResearchRoomShareLinkResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[378]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[382]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27054,7 +27496,7 @@ func (x *RevokeResearchRoomShareLinkResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use RevokeResearchRoomShareLinkResponse.ProtoReflect.Descriptor instead.
 func (*RevokeResearchRoomShareLinkResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{378}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{382}
 }
 
 type ResolveResearchRoomShareLinkRequest struct {
@@ -27066,7 +27508,7 @@ type ResolveResearchRoomShareLinkRequest struct {
 
 func (x *ResolveResearchRoomShareLinkRequest) Reset() {
 	*x = ResolveResearchRoomShareLinkRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[379]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[383]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27078,7 +27520,7 @@ func (x *ResolveResearchRoomShareLinkRequest) String() string {
 func (*ResolveResearchRoomShareLinkRequest) ProtoMessage() {}
 
 func (x *ResolveResearchRoomShareLinkRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[379]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[383]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27091,7 +27533,7 @@ func (x *ResolveResearchRoomShareLinkRequest) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use ResolveResearchRoomShareLinkRequest.ProtoReflect.Descriptor instead.
 func (*ResolveResearchRoomShareLinkRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{379}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{383}
 }
 
 func (x *ResolveResearchRoomShareLinkRequest) GetToken() string {
@@ -27116,7 +27558,7 @@ type ResolveResearchRoomShareLinkResponse struct {
 
 func (x *ResolveResearchRoomShareLinkResponse) Reset() {
 	*x = ResolveResearchRoomShareLinkResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[380]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[384]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27128,7 +27570,7 @@ func (x *ResolveResearchRoomShareLinkResponse) String() string {
 func (*ResolveResearchRoomShareLinkResponse) ProtoMessage() {}
 
 func (x *ResolveResearchRoomShareLinkResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[380]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[384]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27141,7 +27583,7 @@ func (x *ResolveResearchRoomShareLinkResponse) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use ResolveResearchRoomShareLinkResponse.ProtoReflect.Descriptor instead.
 func (*ResolveResearchRoomShareLinkResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{380}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{384}
 }
 
 func (x *ResolveResearchRoomShareLinkResponse) GetRoom() *ResearchRoom {
@@ -27203,7 +27645,7 @@ type GetResearchRoomOfflineManifestRequest struct {
 
 func (x *GetResearchRoomOfflineManifestRequest) Reset() {
 	*x = GetResearchRoomOfflineManifestRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[381]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[385]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27215,7 +27657,7 @@ func (x *GetResearchRoomOfflineManifestRequest) String() string {
 func (*GetResearchRoomOfflineManifestRequest) ProtoMessage() {}
 
 func (x *GetResearchRoomOfflineManifestRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[381]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[385]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27228,7 +27670,7 @@ func (x *GetResearchRoomOfflineManifestRequest) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use GetResearchRoomOfflineManifestRequest.ProtoReflect.Descriptor instead.
 func (*GetResearchRoomOfflineManifestRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{381}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{385}
 }
 
 func (x *GetResearchRoomOfflineManifestRequest) GetRoomId() string {
@@ -27254,7 +27696,7 @@ type GetResearchRoomOfflineManifestResponse struct {
 
 func (x *GetResearchRoomOfflineManifestResponse) Reset() {
 	*x = GetResearchRoomOfflineManifestResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[382]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[386]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27266,7 +27708,7 @@ func (x *GetResearchRoomOfflineManifestResponse) String() string {
 func (*GetResearchRoomOfflineManifestResponse) ProtoMessage() {}
 
 func (x *GetResearchRoomOfflineManifestResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[382]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[386]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27279,7 +27721,7 @@ func (x *GetResearchRoomOfflineManifestResponse) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use GetResearchRoomOfflineManifestResponse.ProtoReflect.Descriptor instead.
 func (*GetResearchRoomOfflineManifestResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{382}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{386}
 }
 
 func (x *GetResearchRoomOfflineManifestResponse) GetManifest() *ResearchRoomOfflineManifest {
@@ -27302,7 +27744,7 @@ type AcknowledgeResearchRoomOfflinePurgeRequest struct {
 
 func (x *AcknowledgeResearchRoomOfflinePurgeRequest) Reset() {
 	*x = AcknowledgeResearchRoomOfflinePurgeRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[383]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[387]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27314,7 +27756,7 @@ func (x *AcknowledgeResearchRoomOfflinePurgeRequest) String() string {
 func (*AcknowledgeResearchRoomOfflinePurgeRequest) ProtoMessage() {}
 
 func (x *AcknowledgeResearchRoomOfflinePurgeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[383]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[387]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27327,7 +27769,7 @@ func (x *AcknowledgeResearchRoomOfflinePurgeRequest) ProtoReflect() protoreflect
 
 // Deprecated: Use AcknowledgeResearchRoomOfflinePurgeRequest.ProtoReflect.Descriptor instead.
 func (*AcknowledgeResearchRoomOfflinePurgeRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{383}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{387}
 }
 
 func (x *AcknowledgeResearchRoomOfflinePurgeRequest) GetRoomId() string {
@@ -27374,7 +27816,7 @@ type AcknowledgeResearchRoomOfflinePurgeResponse struct {
 
 func (x *AcknowledgeResearchRoomOfflinePurgeResponse) Reset() {
 	*x = AcknowledgeResearchRoomOfflinePurgeResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[384]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[388]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27386,7 +27828,7 @@ func (x *AcknowledgeResearchRoomOfflinePurgeResponse) String() string {
 func (*AcknowledgeResearchRoomOfflinePurgeResponse) ProtoMessage() {}
 
 func (x *AcknowledgeResearchRoomOfflinePurgeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[384]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[388]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27399,7 +27841,7 @@ func (x *AcknowledgeResearchRoomOfflinePurgeResponse) ProtoReflect() protoreflec
 
 // Deprecated: Use AcknowledgeResearchRoomOfflinePurgeResponse.ProtoReflect.Descriptor instead.
 func (*AcknowledgeResearchRoomOfflinePurgeResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{384}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{388}
 }
 
 func (x *AcknowledgeResearchRoomOfflinePurgeResponse) GetReceipt() *ResearchRoomPurgeReceipt {
@@ -27418,7 +27860,7 @@ type ListResearchRoomOfflinePurgesRequest struct {
 
 func (x *ListResearchRoomOfflinePurgesRequest) Reset() {
 	*x = ListResearchRoomOfflinePurgesRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[385]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[389]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27430,7 +27872,7 @@ func (x *ListResearchRoomOfflinePurgesRequest) String() string {
 func (*ListResearchRoomOfflinePurgesRequest) ProtoMessage() {}
 
 func (x *ListResearchRoomOfflinePurgesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[385]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[389]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27443,7 +27885,7 @@ func (x *ListResearchRoomOfflinePurgesRequest) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use ListResearchRoomOfflinePurgesRequest.ProtoReflect.Descriptor instead.
 func (*ListResearchRoomOfflinePurgesRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{385}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{389}
 }
 
 func (x *ListResearchRoomOfflinePurgesRequest) GetDeviceId() string {
@@ -27462,7 +27904,7 @@ type ListResearchRoomOfflinePurgesResponse struct {
 
 func (x *ListResearchRoomOfflinePurgesResponse) Reset() {
 	*x = ListResearchRoomOfflinePurgesResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[386]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[390]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27474,7 +27916,7 @@ func (x *ListResearchRoomOfflinePurgesResponse) String() string {
 func (*ListResearchRoomOfflinePurgesResponse) ProtoMessage() {}
 
 func (x *ListResearchRoomOfflinePurgesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[386]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[390]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27487,7 +27929,7 @@ func (x *ListResearchRoomOfflinePurgesResponse) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use ListResearchRoomOfflinePurgesResponse.ProtoReflect.Descriptor instead.
 func (*ListResearchRoomOfflinePurgesResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{386}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{390}
 }
 
 func (x *ListResearchRoomOfflinePurgesResponse) GetManifests() []*ResearchRoomOfflineManifest {
@@ -27509,7 +27951,7 @@ type LeaveResearchRoomRequest struct {
 
 func (x *LeaveResearchRoomRequest) Reset() {
 	*x = LeaveResearchRoomRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[387]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[391]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27521,7 +27963,7 @@ func (x *LeaveResearchRoomRequest) String() string {
 func (*LeaveResearchRoomRequest) ProtoMessage() {}
 
 func (x *LeaveResearchRoomRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[387]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[391]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27534,7 +27976,7 @@ func (x *LeaveResearchRoomRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LeaveResearchRoomRequest.ProtoReflect.Descriptor instead.
 func (*LeaveResearchRoomRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{387}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{391}
 }
 
 func (x *LeaveResearchRoomRequest) GetRoomId() string {
@@ -27573,7 +28015,7 @@ type LeaveResearchRoomResponse struct {
 
 func (x *LeaveResearchRoomResponse) Reset() {
 	*x = LeaveResearchRoomResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[388]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[392]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27585,7 +28027,7 @@ func (x *LeaveResearchRoomResponse) String() string {
 func (*LeaveResearchRoomResponse) ProtoMessage() {}
 
 func (x *LeaveResearchRoomResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[388]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[392]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27598,7 +28040,7 @@ func (x *LeaveResearchRoomResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LeaveResearchRoomResponse.ProtoReflect.Descriptor instead.
 func (*LeaveResearchRoomResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{388}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{392}
 }
 
 type IntelligenceGraphSourceAnchor struct {
@@ -27621,7 +28063,7 @@ type IntelligenceGraphSourceAnchor struct {
 
 func (x *IntelligenceGraphSourceAnchor) Reset() {
 	*x = IntelligenceGraphSourceAnchor{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[389]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[393]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27633,7 +28075,7 @@ func (x *IntelligenceGraphSourceAnchor) String() string {
 func (*IntelligenceGraphSourceAnchor) ProtoMessage() {}
 
 func (x *IntelligenceGraphSourceAnchor) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[389]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[393]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27646,7 +28088,7 @@ func (x *IntelligenceGraphSourceAnchor) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IntelligenceGraphSourceAnchor.ProtoReflect.Descriptor instead.
 func (*IntelligenceGraphSourceAnchor) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{389}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{393}
 }
 
 func (x *IntelligenceGraphSourceAnchor) GetId() string {
@@ -27763,7 +28205,7 @@ type IntelligenceGraphNode struct {
 
 func (x *IntelligenceGraphNode) Reset() {
 	*x = IntelligenceGraphNode{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[390]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[394]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27775,7 +28217,7 @@ func (x *IntelligenceGraphNode) String() string {
 func (*IntelligenceGraphNode) ProtoMessage() {}
 
 func (x *IntelligenceGraphNode) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[390]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[394]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27788,7 +28230,7 @@ func (x *IntelligenceGraphNode) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IntelligenceGraphNode.ProtoReflect.Descriptor instead.
 func (*IntelligenceGraphNode) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{390}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{394}
 }
 
 func (x *IntelligenceGraphNode) GetId() string {
@@ -27973,7 +28415,7 @@ type IntelligenceGraphEdge struct {
 
 func (x *IntelligenceGraphEdge) Reset() {
 	*x = IntelligenceGraphEdge{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[391]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[395]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -27985,7 +28427,7 @@ func (x *IntelligenceGraphEdge) String() string {
 func (*IntelligenceGraphEdge) ProtoMessage() {}
 
 func (x *IntelligenceGraphEdge) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[391]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[395]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -27998,7 +28440,7 @@ func (x *IntelligenceGraphEdge) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IntelligenceGraphEdge.ProtoReflect.Descriptor instead.
 func (*IntelligenceGraphEdge) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{391}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{395}
 }
 
 func (x *IntelligenceGraphEdge) GetId() string {
@@ -28163,7 +28605,7 @@ type IntelligenceGraphSuggestion struct {
 
 func (x *IntelligenceGraphSuggestion) Reset() {
 	*x = IntelligenceGraphSuggestion{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[392]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[396]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -28175,7 +28617,7 @@ func (x *IntelligenceGraphSuggestion) String() string {
 func (*IntelligenceGraphSuggestion) ProtoMessage() {}
 
 func (x *IntelligenceGraphSuggestion) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[392]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[396]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28188,7 +28630,7 @@ func (x *IntelligenceGraphSuggestion) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IntelligenceGraphSuggestion.ProtoReflect.Descriptor instead.
 func (*IntelligenceGraphSuggestion) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{392}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{396}
 }
 
 func (x *IntelligenceGraphSuggestion) GetId() string {
@@ -28311,7 +28753,7 @@ type IntelligenceGraphTimelineEvent struct {
 
 func (x *IntelligenceGraphTimelineEvent) Reset() {
 	*x = IntelligenceGraphTimelineEvent{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[393]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[397]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -28323,7 +28765,7 @@ func (x *IntelligenceGraphTimelineEvent) String() string {
 func (*IntelligenceGraphTimelineEvent) ProtoMessage() {}
 
 func (x *IntelligenceGraphTimelineEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[393]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[397]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28336,7 +28778,7 @@ func (x *IntelligenceGraphTimelineEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IntelligenceGraphTimelineEvent.ProtoReflect.Descriptor instead.
 func (*IntelligenceGraphTimelineEvent) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{393}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{397}
 }
 
 func (x *IntelligenceGraphTimelineEvent) GetId() string {
@@ -28457,7 +28899,7 @@ type IntelligenceGraphResurfacingItem struct {
 
 func (x *IntelligenceGraphResurfacingItem) Reset() {
 	*x = IntelligenceGraphResurfacingItem{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[394]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[398]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -28469,7 +28911,7 @@ func (x *IntelligenceGraphResurfacingItem) String() string {
 func (*IntelligenceGraphResurfacingItem) ProtoMessage() {}
 
 func (x *IntelligenceGraphResurfacingItem) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[394]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[398]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28482,7 +28924,7 @@ func (x *IntelligenceGraphResurfacingItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IntelligenceGraphResurfacingItem.ProtoReflect.Descriptor instead.
 func (*IntelligenceGraphResurfacingItem) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{394}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{398}
 }
 
 func (x *IntelligenceGraphResurfacingItem) GetId() string {
@@ -28582,7 +29024,7 @@ type IntelligenceGraphMeetingBriefSection struct {
 
 func (x *IntelligenceGraphMeetingBriefSection) Reset() {
 	*x = IntelligenceGraphMeetingBriefSection{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[395]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[399]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -28594,7 +29036,7 @@ func (x *IntelligenceGraphMeetingBriefSection) String() string {
 func (*IntelligenceGraphMeetingBriefSection) ProtoMessage() {}
 
 func (x *IntelligenceGraphMeetingBriefSection) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[395]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[399]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28607,7 +29049,7 @@ func (x *IntelligenceGraphMeetingBriefSection) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use IntelligenceGraphMeetingBriefSection.ProtoReflect.Descriptor instead.
 func (*IntelligenceGraphMeetingBriefSection) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{395}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{399}
 }
 
 func (x *IntelligenceGraphMeetingBriefSection) GetKind() string {
@@ -28667,7 +29109,7 @@ type IntelligenceGraphMeetingBrief struct {
 
 func (x *IntelligenceGraphMeetingBrief) Reset() {
 	*x = IntelligenceGraphMeetingBrief{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[396]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[400]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -28679,7 +29121,7 @@ func (x *IntelligenceGraphMeetingBrief) String() string {
 func (*IntelligenceGraphMeetingBrief) ProtoMessage() {}
 
 func (x *IntelligenceGraphMeetingBrief) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[396]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[400]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28692,7 +29134,7 @@ func (x *IntelligenceGraphMeetingBrief) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IntelligenceGraphMeetingBrief.ProtoReflect.Descriptor instead.
 func (*IntelligenceGraphMeetingBrief) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{396}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{400}
 }
 
 func (x *IntelligenceGraphMeetingBrief) GetId() string {
@@ -28809,7 +29251,7 @@ type IntelligenceGraphOverview struct {
 
 func (x *IntelligenceGraphOverview) Reset() {
 	*x = IntelligenceGraphOverview{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[397]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[401]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -28821,7 +29263,7 @@ func (x *IntelligenceGraphOverview) String() string {
 func (*IntelligenceGraphOverview) ProtoMessage() {}
 
 func (x *IntelligenceGraphOverview) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[397]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[401]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28834,7 +29276,7 @@ func (x *IntelligenceGraphOverview) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IntelligenceGraphOverview.ProtoReflect.Descriptor instead.
 func (*IntelligenceGraphOverview) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{397}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{401}
 }
 
 func (x *IntelligenceGraphOverview) GetActiveNodes() int32 {
@@ -28908,7 +29350,7 @@ type GetPersonalIntelligenceGraphRequest struct {
 
 func (x *GetPersonalIntelligenceGraphRequest) Reset() {
 	*x = GetPersonalIntelligenceGraphRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[398]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[402]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -28920,7 +29362,7 @@ func (x *GetPersonalIntelligenceGraphRequest) String() string {
 func (*GetPersonalIntelligenceGraphRequest) ProtoMessage() {}
 
 func (x *GetPersonalIntelligenceGraphRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[398]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[402]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -28933,7 +29375,7 @@ func (x *GetPersonalIntelligenceGraphRequest) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use GetPersonalIntelligenceGraphRequest.ProtoReflect.Descriptor instead.
 func (*GetPersonalIntelligenceGraphRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{398}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{402}
 }
 
 func (x *GetPersonalIntelligenceGraphRequest) GetQuery() string {
@@ -28996,7 +29438,7 @@ type GetPersonalIntelligenceGraphResponse struct {
 
 func (x *GetPersonalIntelligenceGraphResponse) Reset() {
 	*x = GetPersonalIntelligenceGraphResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[399]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[403]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29008,7 +29450,7 @@ func (x *GetPersonalIntelligenceGraphResponse) String() string {
 func (*GetPersonalIntelligenceGraphResponse) ProtoMessage() {}
 
 func (x *GetPersonalIntelligenceGraphResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[399]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[403]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29021,7 +29463,7 @@ func (x *GetPersonalIntelligenceGraphResponse) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use GetPersonalIntelligenceGraphResponse.ProtoReflect.Descriptor instead.
 func (*GetPersonalIntelligenceGraphResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{399}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{403}
 }
 
 func (x *GetPersonalIntelligenceGraphResponse) GetOverview() *IntelligenceGraphOverview {
@@ -29067,7 +29509,7 @@ type UpsertIntelligenceGraphNodeRequest struct {
 
 func (x *UpsertIntelligenceGraphNodeRequest) Reset() {
 	*x = UpsertIntelligenceGraphNodeRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[400]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[404]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29079,7 +29521,7 @@ func (x *UpsertIntelligenceGraphNodeRequest) String() string {
 func (*UpsertIntelligenceGraphNodeRequest) ProtoMessage() {}
 
 func (x *UpsertIntelligenceGraphNodeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[400]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[404]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29092,7 +29534,7 @@ func (x *UpsertIntelligenceGraphNodeRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use UpsertIntelligenceGraphNodeRequest.ProtoReflect.Descriptor instead.
 func (*UpsertIntelligenceGraphNodeRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{400}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{404}
 }
 
 func (x *UpsertIntelligenceGraphNodeRequest) GetId() string {
@@ -29202,7 +29644,7 @@ type UpsertIntelligenceGraphNodeResponse struct {
 
 func (x *UpsertIntelligenceGraphNodeResponse) Reset() {
 	*x = UpsertIntelligenceGraphNodeResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[401]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[405]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29214,7 +29656,7 @@ func (x *UpsertIntelligenceGraphNodeResponse) String() string {
 func (*UpsertIntelligenceGraphNodeResponse) ProtoMessage() {}
 
 func (x *UpsertIntelligenceGraphNodeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[401]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[405]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29227,7 +29669,7 @@ func (x *UpsertIntelligenceGraphNodeResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use UpsertIntelligenceGraphNodeResponse.ProtoReflect.Descriptor instead.
 func (*UpsertIntelligenceGraphNodeResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{401}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{405}
 }
 
 func (x *UpsertIntelligenceGraphNodeResponse) GetNode() *IntelligenceGraphNode {
@@ -29250,7 +29692,7 @@ type SetIntelligenceGraphNodeStateRequest struct {
 
 func (x *SetIntelligenceGraphNodeStateRequest) Reset() {
 	*x = SetIntelligenceGraphNodeStateRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[402]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[406]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29262,7 +29704,7 @@ func (x *SetIntelligenceGraphNodeStateRequest) String() string {
 func (*SetIntelligenceGraphNodeStateRequest) ProtoMessage() {}
 
 func (x *SetIntelligenceGraphNodeStateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[402]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[406]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29275,7 +29717,7 @@ func (x *SetIntelligenceGraphNodeStateRequest) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use SetIntelligenceGraphNodeStateRequest.ProtoReflect.Descriptor instead.
 func (*SetIntelligenceGraphNodeStateRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{402}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{406}
 }
 
 func (x *SetIntelligenceGraphNodeStateRequest) GetId() string {
@@ -29322,7 +29764,7 @@ type SetIntelligenceGraphNodeStateResponse struct {
 
 func (x *SetIntelligenceGraphNodeStateResponse) Reset() {
 	*x = SetIntelligenceGraphNodeStateResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[403]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[407]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29334,7 +29776,7 @@ func (x *SetIntelligenceGraphNodeStateResponse) String() string {
 func (*SetIntelligenceGraphNodeStateResponse) ProtoMessage() {}
 
 func (x *SetIntelligenceGraphNodeStateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[403]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[407]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29347,7 +29789,7 @@ func (x *SetIntelligenceGraphNodeStateResponse) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use SetIntelligenceGraphNodeStateResponse.ProtoReflect.Descriptor instead.
 func (*SetIntelligenceGraphNodeStateResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{403}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{407}
 }
 
 func (x *SetIntelligenceGraphNodeStateResponse) GetNode() *IntelligenceGraphNode {
@@ -29371,7 +29813,7 @@ type MergeIntelligenceGraphNodesRequest struct {
 
 func (x *MergeIntelligenceGraphNodesRequest) Reset() {
 	*x = MergeIntelligenceGraphNodesRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[404]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[408]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29383,7 +29825,7 @@ func (x *MergeIntelligenceGraphNodesRequest) String() string {
 func (*MergeIntelligenceGraphNodesRequest) ProtoMessage() {}
 
 func (x *MergeIntelligenceGraphNodesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[404]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[408]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29396,7 +29838,7 @@ func (x *MergeIntelligenceGraphNodesRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use MergeIntelligenceGraphNodesRequest.ProtoReflect.Descriptor instead.
 func (*MergeIntelligenceGraphNodesRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{404}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{408}
 }
 
 func (x *MergeIntelligenceGraphNodesRequest) GetPrimaryNodeId() string {
@@ -29451,7 +29893,7 @@ type MergeIntelligenceGraphNodesResponse struct {
 
 func (x *MergeIntelligenceGraphNodesResponse) Reset() {
 	*x = MergeIntelligenceGraphNodesResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[405]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[409]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29463,7 +29905,7 @@ func (x *MergeIntelligenceGraphNodesResponse) String() string {
 func (*MergeIntelligenceGraphNodesResponse) ProtoMessage() {}
 
 func (x *MergeIntelligenceGraphNodesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[405]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[409]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29476,7 +29918,7 @@ func (x *MergeIntelligenceGraphNodesResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use MergeIntelligenceGraphNodesResponse.ProtoReflect.Descriptor instead.
 func (*MergeIntelligenceGraphNodesResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{405}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{409}
 }
 
 func (x *MergeIntelligenceGraphNodesResponse) GetPrimaryNode() *IntelligenceGraphNode {
@@ -29509,7 +29951,7 @@ type SplitIntelligenceGraphNodeRequest struct {
 
 func (x *SplitIntelligenceGraphNodeRequest) Reset() {
 	*x = SplitIntelligenceGraphNodeRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[406]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[410]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29521,7 +29963,7 @@ func (x *SplitIntelligenceGraphNodeRequest) String() string {
 func (*SplitIntelligenceGraphNodeRequest) ProtoMessage() {}
 
 func (x *SplitIntelligenceGraphNodeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[406]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[410]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29534,7 +29976,7 @@ func (x *SplitIntelligenceGraphNodeRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use SplitIntelligenceGraphNodeRequest.ProtoReflect.Descriptor instead.
 func (*SplitIntelligenceGraphNodeRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{406}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{410}
 }
 
 func (x *SplitIntelligenceGraphNodeRequest) GetSourceNodeId() string {
@@ -29603,7 +30045,7 @@ type SplitIntelligenceGraphNodeResponse struct {
 
 func (x *SplitIntelligenceGraphNodeResponse) Reset() {
 	*x = SplitIntelligenceGraphNodeResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[407]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[411]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29615,7 +30057,7 @@ func (x *SplitIntelligenceGraphNodeResponse) String() string {
 func (*SplitIntelligenceGraphNodeResponse) ProtoMessage() {}
 
 func (x *SplitIntelligenceGraphNodeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[407]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[411]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29628,7 +30070,7 @@ func (x *SplitIntelligenceGraphNodeResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use SplitIntelligenceGraphNodeResponse.ProtoReflect.Descriptor instead.
 func (*SplitIntelligenceGraphNodeResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{407}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{411}
 }
 
 func (x *SplitIntelligenceGraphNodeResponse) GetSourceNode() *IntelligenceGraphNode {
@@ -29666,7 +30108,7 @@ type UpsertIntelligenceGraphEdgeRequest struct {
 
 func (x *UpsertIntelligenceGraphEdgeRequest) Reset() {
 	*x = UpsertIntelligenceGraphEdgeRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[408]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[412]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29678,7 +30120,7 @@ func (x *UpsertIntelligenceGraphEdgeRequest) String() string {
 func (*UpsertIntelligenceGraphEdgeRequest) ProtoMessage() {}
 
 func (x *UpsertIntelligenceGraphEdgeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[408]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[412]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29691,7 +30133,7 @@ func (x *UpsertIntelligenceGraphEdgeRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use UpsertIntelligenceGraphEdgeRequest.ProtoReflect.Descriptor instead.
 func (*UpsertIntelligenceGraphEdgeRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{408}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{412}
 }
 
 func (x *UpsertIntelligenceGraphEdgeRequest) GetId() string {
@@ -29794,7 +30236,7 @@ type UpsertIntelligenceGraphEdgeResponse struct {
 
 func (x *UpsertIntelligenceGraphEdgeResponse) Reset() {
 	*x = UpsertIntelligenceGraphEdgeResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[409]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[413]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29806,7 +30248,7 @@ func (x *UpsertIntelligenceGraphEdgeResponse) String() string {
 func (*UpsertIntelligenceGraphEdgeResponse) ProtoMessage() {}
 
 func (x *UpsertIntelligenceGraphEdgeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[409]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[413]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29819,7 +30261,7 @@ func (x *UpsertIntelligenceGraphEdgeResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use UpsertIntelligenceGraphEdgeResponse.ProtoReflect.Descriptor instead.
 func (*UpsertIntelligenceGraphEdgeResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{409}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{413}
 }
 
 func (x *UpsertIntelligenceGraphEdgeResponse) GetEdge() *IntelligenceGraphEdge {
@@ -29842,7 +30284,7 @@ type SetIntelligenceGraphEdgeStateRequest struct {
 
 func (x *SetIntelligenceGraphEdgeStateRequest) Reset() {
 	*x = SetIntelligenceGraphEdgeStateRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[410]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[414]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29854,7 +30296,7 @@ func (x *SetIntelligenceGraphEdgeStateRequest) String() string {
 func (*SetIntelligenceGraphEdgeStateRequest) ProtoMessage() {}
 
 func (x *SetIntelligenceGraphEdgeStateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[410]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[414]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29867,7 +30309,7 @@ func (x *SetIntelligenceGraphEdgeStateRequest) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use SetIntelligenceGraphEdgeStateRequest.ProtoReflect.Descriptor instead.
 func (*SetIntelligenceGraphEdgeStateRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{410}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{414}
 }
 
 func (x *SetIntelligenceGraphEdgeStateRequest) GetId() string {
@@ -29914,7 +30356,7 @@ type SetIntelligenceGraphEdgeStateResponse struct {
 
 func (x *SetIntelligenceGraphEdgeStateResponse) Reset() {
 	*x = SetIntelligenceGraphEdgeStateResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[411]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[415]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29926,7 +30368,7 @@ func (x *SetIntelligenceGraphEdgeStateResponse) String() string {
 func (*SetIntelligenceGraphEdgeStateResponse) ProtoMessage() {}
 
 func (x *SetIntelligenceGraphEdgeStateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[411]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[415]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29939,7 +30381,7 @@ func (x *SetIntelligenceGraphEdgeStateResponse) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use SetIntelligenceGraphEdgeStateResponse.ProtoReflect.Descriptor instead.
 func (*SetIntelligenceGraphEdgeStateResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{411}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{415}
 }
 
 func (x *SetIntelligenceGraphEdgeStateResponse) GetEdge() *IntelligenceGraphEdge {
@@ -29961,7 +30403,7 @@ type GenerateIntelligenceGraphSuggestionsRequest struct {
 
 func (x *GenerateIntelligenceGraphSuggestionsRequest) Reset() {
 	*x = GenerateIntelligenceGraphSuggestionsRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[412]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[416]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -29973,7 +30415,7 @@ func (x *GenerateIntelligenceGraphSuggestionsRequest) String() string {
 func (*GenerateIntelligenceGraphSuggestionsRequest) ProtoMessage() {}
 
 func (x *GenerateIntelligenceGraphSuggestionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[412]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[416]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -29986,7 +30428,7 @@ func (x *GenerateIntelligenceGraphSuggestionsRequest) ProtoReflect() protoreflec
 
 // Deprecated: Use GenerateIntelligenceGraphSuggestionsRequest.ProtoReflect.Descriptor instead.
 func (*GenerateIntelligenceGraphSuggestionsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{412}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{416}
 }
 
 func (x *GenerateIntelligenceGraphSuggestionsRequest) GetScope() string {
@@ -30027,7 +30469,7 @@ type GenerateIntelligenceGraphSuggestionsResponse struct {
 
 func (x *GenerateIntelligenceGraphSuggestionsResponse) Reset() {
 	*x = GenerateIntelligenceGraphSuggestionsResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[413]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[417]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30039,7 +30481,7 @@ func (x *GenerateIntelligenceGraphSuggestionsResponse) String() string {
 func (*GenerateIntelligenceGraphSuggestionsResponse) ProtoMessage() {}
 
 func (x *GenerateIntelligenceGraphSuggestionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[413]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[417]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30052,7 +30494,7 @@ func (x *GenerateIntelligenceGraphSuggestionsResponse) ProtoReflect() protorefle
 
 // Deprecated: Use GenerateIntelligenceGraphSuggestionsResponse.ProtoReflect.Descriptor instead.
 func (*GenerateIntelligenceGraphSuggestionsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{413}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{417}
 }
 
 func (x *GenerateIntelligenceGraphSuggestionsResponse) GetGenerated() int32 {
@@ -30079,7 +30521,7 @@ type ListIntelligenceGraphSuggestionsRequest struct {
 
 func (x *ListIntelligenceGraphSuggestionsRequest) Reset() {
 	*x = ListIntelligenceGraphSuggestionsRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[414]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[418]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30091,7 +30533,7 @@ func (x *ListIntelligenceGraphSuggestionsRequest) String() string {
 func (*ListIntelligenceGraphSuggestionsRequest) ProtoMessage() {}
 
 func (x *ListIntelligenceGraphSuggestionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[414]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[418]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30104,7 +30546,7 @@ func (x *ListIntelligenceGraphSuggestionsRequest) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use ListIntelligenceGraphSuggestionsRequest.ProtoReflect.Descriptor instead.
 func (*ListIntelligenceGraphSuggestionsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{414}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{418}
 }
 
 func (x *ListIntelligenceGraphSuggestionsRequest) GetStatus() string {
@@ -30130,7 +30572,7 @@ type ListIntelligenceGraphSuggestionsResponse struct {
 
 func (x *ListIntelligenceGraphSuggestionsResponse) Reset() {
 	*x = ListIntelligenceGraphSuggestionsResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[415]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[419]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30142,7 +30584,7 @@ func (x *ListIntelligenceGraphSuggestionsResponse) String() string {
 func (*ListIntelligenceGraphSuggestionsResponse) ProtoMessage() {}
 
 func (x *ListIntelligenceGraphSuggestionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[415]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[419]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30155,7 +30597,7 @@ func (x *ListIntelligenceGraphSuggestionsResponse) ProtoReflect() protoreflect.M
 
 // Deprecated: Use ListIntelligenceGraphSuggestionsResponse.ProtoReflect.Descriptor instead.
 func (*ListIntelligenceGraphSuggestionsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{415}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{419}
 }
 
 func (x *ListIntelligenceGraphSuggestionsResponse) GetSuggestions() []*IntelligenceGraphSuggestion {
@@ -30177,7 +30619,7 @@ type SetIntelligenceGraphSuggestionStateRequest struct {
 
 func (x *SetIntelligenceGraphSuggestionStateRequest) Reset() {
 	*x = SetIntelligenceGraphSuggestionStateRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[416]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[420]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30189,7 +30631,7 @@ func (x *SetIntelligenceGraphSuggestionStateRequest) String() string {
 func (*SetIntelligenceGraphSuggestionStateRequest) ProtoMessage() {}
 
 func (x *SetIntelligenceGraphSuggestionStateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[416]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[420]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30202,7 +30644,7 @@ func (x *SetIntelligenceGraphSuggestionStateRequest) ProtoReflect() protoreflect
 
 // Deprecated: Use SetIntelligenceGraphSuggestionStateRequest.ProtoReflect.Descriptor instead.
 func (*SetIntelligenceGraphSuggestionStateRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{416}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{420}
 }
 
 func (x *SetIntelligenceGraphSuggestionStateRequest) GetId() string {
@@ -30244,7 +30686,7 @@ type SetIntelligenceGraphSuggestionStateResponse struct {
 
 func (x *SetIntelligenceGraphSuggestionStateResponse) Reset() {
 	*x = SetIntelligenceGraphSuggestionStateResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[417]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[421]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30256,7 +30698,7 @@ func (x *SetIntelligenceGraphSuggestionStateResponse) String() string {
 func (*SetIntelligenceGraphSuggestionStateResponse) ProtoMessage() {}
 
 func (x *SetIntelligenceGraphSuggestionStateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[417]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[421]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30269,7 +30711,7 @@ func (x *SetIntelligenceGraphSuggestionStateResponse) ProtoReflect() protoreflec
 
 // Deprecated: Use SetIntelligenceGraphSuggestionStateResponse.ProtoReflect.Descriptor instead.
 func (*SetIntelligenceGraphSuggestionStateResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{417}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{421}
 }
 
 func (x *SetIntelligenceGraphSuggestionStateResponse) GetSuggestion() *IntelligenceGraphSuggestion {
@@ -30305,7 +30747,7 @@ type ListIntelligenceGraphTimelineRequest struct {
 
 func (x *ListIntelligenceGraphTimelineRequest) Reset() {
 	*x = ListIntelligenceGraphTimelineRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[418]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[422]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30317,7 +30759,7 @@ func (x *ListIntelligenceGraphTimelineRequest) String() string {
 func (*ListIntelligenceGraphTimelineRequest) ProtoMessage() {}
 
 func (x *ListIntelligenceGraphTimelineRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[418]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[422]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30330,7 +30772,7 @@ func (x *ListIntelligenceGraphTimelineRequest) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use ListIntelligenceGraphTimelineRequest.ProtoReflect.Descriptor instead.
 func (*ListIntelligenceGraphTimelineRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{418}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{422}
 }
 
 func (x *ListIntelligenceGraphTimelineRequest) GetNodeIds() []string {
@@ -30370,7 +30812,7 @@ type ListIntelligenceGraphTimelineResponse struct {
 
 func (x *ListIntelligenceGraphTimelineResponse) Reset() {
 	*x = ListIntelligenceGraphTimelineResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[419]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[423]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30382,7 +30824,7 @@ func (x *ListIntelligenceGraphTimelineResponse) String() string {
 func (*ListIntelligenceGraphTimelineResponse) ProtoMessage() {}
 
 func (x *ListIntelligenceGraphTimelineResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[419]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[423]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30395,7 +30837,7 @@ func (x *ListIntelligenceGraphTimelineResponse) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use ListIntelligenceGraphTimelineResponse.ProtoReflect.Descriptor instead.
 func (*ListIntelligenceGraphTimelineResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{419}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{423}
 }
 
 func (x *ListIntelligenceGraphTimelineResponse) GetEvents() []*IntelligenceGraphTimelineEvent {
@@ -30415,7 +30857,7 @@ type ListIntelligenceGraphResurfacingRequest struct {
 
 func (x *ListIntelligenceGraphResurfacingRequest) Reset() {
 	*x = ListIntelligenceGraphResurfacingRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[420]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[424]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30427,7 +30869,7 @@ func (x *ListIntelligenceGraphResurfacingRequest) String() string {
 func (*ListIntelligenceGraphResurfacingRequest) ProtoMessage() {}
 
 func (x *ListIntelligenceGraphResurfacingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[420]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[424]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30440,7 +30882,7 @@ func (x *ListIntelligenceGraphResurfacingRequest) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use ListIntelligenceGraphResurfacingRequest.ProtoReflect.Descriptor instead.
 func (*ListIntelligenceGraphResurfacingRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{420}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{424}
 }
 
 func (x *ListIntelligenceGraphResurfacingRequest) GetState() string {
@@ -30466,7 +30908,7 @@ type ListIntelligenceGraphResurfacingResponse struct {
 
 func (x *ListIntelligenceGraphResurfacingResponse) Reset() {
 	*x = ListIntelligenceGraphResurfacingResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[421]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[425]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30478,7 +30920,7 @@ func (x *ListIntelligenceGraphResurfacingResponse) String() string {
 func (*ListIntelligenceGraphResurfacingResponse) ProtoMessage() {}
 
 func (x *ListIntelligenceGraphResurfacingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[421]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[425]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30491,7 +30933,7 @@ func (x *ListIntelligenceGraphResurfacingResponse) ProtoReflect() protoreflect.M
 
 // Deprecated: Use ListIntelligenceGraphResurfacingResponse.ProtoReflect.Descriptor instead.
 func (*ListIntelligenceGraphResurfacingResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{421}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{425}
 }
 
 func (x *ListIntelligenceGraphResurfacingResponse) GetItems() []*IntelligenceGraphResurfacingItem {
@@ -30514,7 +30956,7 @@ type SetIntelligenceGraphResurfacingStateRequest struct {
 
 func (x *SetIntelligenceGraphResurfacingStateRequest) Reset() {
 	*x = SetIntelligenceGraphResurfacingStateRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[422]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[426]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30526,7 +30968,7 @@ func (x *SetIntelligenceGraphResurfacingStateRequest) String() string {
 func (*SetIntelligenceGraphResurfacingStateRequest) ProtoMessage() {}
 
 func (x *SetIntelligenceGraphResurfacingStateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[422]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[426]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30539,7 +30981,7 @@ func (x *SetIntelligenceGraphResurfacingStateRequest) ProtoReflect() protoreflec
 
 // Deprecated: Use SetIntelligenceGraphResurfacingStateRequest.ProtoReflect.Descriptor instead.
 func (*SetIntelligenceGraphResurfacingStateRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{422}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{426}
 }
 
 func (x *SetIntelligenceGraphResurfacingStateRequest) GetId() string {
@@ -30586,7 +31028,7 @@ type SetIntelligenceGraphResurfacingStateResponse struct {
 
 func (x *SetIntelligenceGraphResurfacingStateResponse) Reset() {
 	*x = SetIntelligenceGraphResurfacingStateResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[423]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[427]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30598,7 +31040,7 @@ func (x *SetIntelligenceGraphResurfacingStateResponse) String() string {
 func (*SetIntelligenceGraphResurfacingStateResponse) ProtoMessage() {}
 
 func (x *SetIntelligenceGraphResurfacingStateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[423]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[427]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30611,7 +31053,7 @@ func (x *SetIntelligenceGraphResurfacingStateResponse) ProtoReflect() protorefle
 
 // Deprecated: Use SetIntelligenceGraphResurfacingStateResponse.ProtoReflect.Descriptor instead.
 func (*SetIntelligenceGraphResurfacingStateResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{423}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{427}
 }
 
 func (x *SetIntelligenceGraphResurfacingStateResponse) GetItem() *IntelligenceGraphResurfacingItem {
@@ -30637,7 +31079,7 @@ type CreateIntelligenceGraphMeetingBriefRequest struct {
 
 func (x *CreateIntelligenceGraphMeetingBriefRequest) Reset() {
 	*x = CreateIntelligenceGraphMeetingBriefRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[424]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[428]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30649,7 +31091,7 @@ func (x *CreateIntelligenceGraphMeetingBriefRequest) String() string {
 func (*CreateIntelligenceGraphMeetingBriefRequest) ProtoMessage() {}
 
 func (x *CreateIntelligenceGraphMeetingBriefRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[424]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[428]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30662,7 +31104,7 @@ func (x *CreateIntelligenceGraphMeetingBriefRequest) ProtoReflect() protoreflect
 
 // Deprecated: Use CreateIntelligenceGraphMeetingBriefRequest.ProtoReflect.Descriptor instead.
 func (*CreateIntelligenceGraphMeetingBriefRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{424}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{428}
 }
 
 func (x *CreateIntelligenceGraphMeetingBriefRequest) GetTitle() string {
@@ -30730,7 +31172,7 @@ type CreateIntelligenceGraphMeetingBriefResponse struct {
 
 func (x *CreateIntelligenceGraphMeetingBriefResponse) Reset() {
 	*x = CreateIntelligenceGraphMeetingBriefResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[425]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[429]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30742,7 +31184,7 @@ func (x *CreateIntelligenceGraphMeetingBriefResponse) String() string {
 func (*CreateIntelligenceGraphMeetingBriefResponse) ProtoMessage() {}
 
 func (x *CreateIntelligenceGraphMeetingBriefResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[425]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[429]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30755,7 +31197,7 @@ func (x *CreateIntelligenceGraphMeetingBriefResponse) ProtoReflect() protoreflec
 
 // Deprecated: Use CreateIntelligenceGraphMeetingBriefResponse.ProtoReflect.Descriptor instead.
 func (*CreateIntelligenceGraphMeetingBriefResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{425}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{429}
 }
 
 func (x *CreateIntelligenceGraphMeetingBriefResponse) GetBrief() *IntelligenceGraphMeetingBrief {
@@ -30774,7 +31216,7 @@ type GetIntelligenceGraphMeetingBriefRequest struct {
 
 func (x *GetIntelligenceGraphMeetingBriefRequest) Reset() {
 	*x = GetIntelligenceGraphMeetingBriefRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[426]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[430]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30786,7 +31228,7 @@ func (x *GetIntelligenceGraphMeetingBriefRequest) String() string {
 func (*GetIntelligenceGraphMeetingBriefRequest) ProtoMessage() {}
 
 func (x *GetIntelligenceGraphMeetingBriefRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[426]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[430]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30799,7 +31241,7 @@ func (x *GetIntelligenceGraphMeetingBriefRequest) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use GetIntelligenceGraphMeetingBriefRequest.ProtoReflect.Descriptor instead.
 func (*GetIntelligenceGraphMeetingBriefRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{426}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{430}
 }
 
 func (x *GetIntelligenceGraphMeetingBriefRequest) GetId() string {
@@ -30818,7 +31260,7 @@ type GetIntelligenceGraphMeetingBriefResponse struct {
 
 func (x *GetIntelligenceGraphMeetingBriefResponse) Reset() {
 	*x = GetIntelligenceGraphMeetingBriefResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[427]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[431]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30830,7 +31272,7 @@ func (x *GetIntelligenceGraphMeetingBriefResponse) String() string {
 func (*GetIntelligenceGraphMeetingBriefResponse) ProtoMessage() {}
 
 func (x *GetIntelligenceGraphMeetingBriefResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[427]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[431]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30843,7 +31285,7 @@ func (x *GetIntelligenceGraphMeetingBriefResponse) ProtoReflect() protoreflect.M
 
 // Deprecated: Use GetIntelligenceGraphMeetingBriefResponse.ProtoReflect.Descriptor instead.
 func (*GetIntelligenceGraphMeetingBriefResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{427}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{431}
 }
 
 func (x *GetIntelligenceGraphMeetingBriefResponse) GetBrief() *IntelligenceGraphMeetingBrief {
@@ -30863,7 +31305,7 @@ type ListIntelligenceGraphMeetingBriefsRequest struct {
 
 func (x *ListIntelligenceGraphMeetingBriefsRequest) Reset() {
 	*x = ListIntelligenceGraphMeetingBriefsRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[428]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[432]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30875,7 +31317,7 @@ func (x *ListIntelligenceGraphMeetingBriefsRequest) String() string {
 func (*ListIntelligenceGraphMeetingBriefsRequest) ProtoMessage() {}
 
 func (x *ListIntelligenceGraphMeetingBriefsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[428]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[432]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30888,7 +31330,7 @@ func (x *ListIntelligenceGraphMeetingBriefsRequest) ProtoReflect() protoreflect.
 
 // Deprecated: Use ListIntelligenceGraphMeetingBriefsRequest.ProtoReflect.Descriptor instead.
 func (*ListIntelligenceGraphMeetingBriefsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{428}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{432}
 }
 
 func (x *ListIntelligenceGraphMeetingBriefsRequest) GetStatus() string {
@@ -30914,7 +31356,7 @@ type ListIntelligenceGraphMeetingBriefsResponse struct {
 
 func (x *ListIntelligenceGraphMeetingBriefsResponse) Reset() {
 	*x = ListIntelligenceGraphMeetingBriefsResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[429]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[433]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30926,7 +31368,7 @@ func (x *ListIntelligenceGraphMeetingBriefsResponse) String() string {
 func (*ListIntelligenceGraphMeetingBriefsResponse) ProtoMessage() {}
 
 func (x *ListIntelligenceGraphMeetingBriefsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[429]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[433]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30939,7 +31381,7 @@ func (x *ListIntelligenceGraphMeetingBriefsResponse) ProtoReflect() protoreflect
 
 // Deprecated: Use ListIntelligenceGraphMeetingBriefsResponse.ProtoReflect.Descriptor instead.
 func (*ListIntelligenceGraphMeetingBriefsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{429}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{433}
 }
 
 func (x *ListIntelligenceGraphMeetingBriefsResponse) GetBriefs() []*IntelligenceGraphMeetingBrief {
@@ -30959,7 +31401,7 @@ type ExportPersonalIntelligenceGraphRequest struct {
 
 func (x *ExportPersonalIntelligenceGraphRequest) Reset() {
 	*x = ExportPersonalIntelligenceGraphRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[430]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[434]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -30971,7 +31413,7 @@ func (x *ExportPersonalIntelligenceGraphRequest) String() string {
 func (*ExportPersonalIntelligenceGraphRequest) ProtoMessage() {}
 
 func (x *ExportPersonalIntelligenceGraphRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[430]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[434]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -30984,7 +31426,7 @@ func (x *ExportPersonalIntelligenceGraphRequest) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use ExportPersonalIntelligenceGraphRequest.ProtoReflect.Descriptor instead.
 func (*ExportPersonalIntelligenceGraphRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{430}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{434}
 }
 
 func (x *ExportPersonalIntelligenceGraphRequest) GetFormat() string {
@@ -31014,7 +31456,7 @@ type ExportPersonalIntelligenceGraphResponse struct {
 
 func (x *ExportPersonalIntelligenceGraphResponse) Reset() {
 	*x = ExportPersonalIntelligenceGraphResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[431]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[435]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31026,7 +31468,7 @@ func (x *ExportPersonalIntelligenceGraphResponse) String() string {
 func (*ExportPersonalIntelligenceGraphResponse) ProtoMessage() {}
 
 func (x *ExportPersonalIntelligenceGraphResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[431]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[435]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31039,7 +31481,7 @@ func (x *ExportPersonalIntelligenceGraphResponse) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use ExportPersonalIntelligenceGraphResponse.ProtoReflect.Descriptor instead.
 func (*ExportPersonalIntelligenceGraphResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{431}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{435}
 }
 
 func (x *ExportPersonalIntelligenceGraphResponse) GetFilename() string {
@@ -31087,7 +31529,7 @@ type RebuildPersonalIntelligenceGraphRequest struct {
 
 func (x *RebuildPersonalIntelligenceGraphRequest) Reset() {
 	*x = RebuildPersonalIntelligenceGraphRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[432]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[436]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31099,7 +31541,7 @@ func (x *RebuildPersonalIntelligenceGraphRequest) String() string {
 func (*RebuildPersonalIntelligenceGraphRequest) ProtoMessage() {}
 
 func (x *RebuildPersonalIntelligenceGraphRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[432]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[436]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31112,7 +31554,7 @@ func (x *RebuildPersonalIntelligenceGraphRequest) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use RebuildPersonalIntelligenceGraphRequest.ProtoReflect.Descriptor instead.
 func (*RebuildPersonalIntelligenceGraphRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{432}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{436}
 }
 
 func (x *RebuildPersonalIntelligenceGraphRequest) GetReason() string {
@@ -31139,7 +31581,7 @@ type RebuildPersonalIntelligenceGraphResponse struct {
 
 func (x *RebuildPersonalIntelligenceGraphResponse) Reset() {
 	*x = RebuildPersonalIntelligenceGraphResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[433]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[437]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31151,7 +31593,7 @@ func (x *RebuildPersonalIntelligenceGraphResponse) String() string {
 func (*RebuildPersonalIntelligenceGraphResponse) ProtoMessage() {}
 
 func (x *RebuildPersonalIntelligenceGraphResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[433]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[437]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31164,7 +31606,7 @@ func (x *RebuildPersonalIntelligenceGraphResponse) ProtoReflect() protoreflect.M
 
 // Deprecated: Use RebuildPersonalIntelligenceGraphResponse.ProtoReflect.Descriptor instead.
 func (*RebuildPersonalIntelligenceGraphResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{433}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{437}
 }
 
 func (x *RebuildPersonalIntelligenceGraphResponse) GetJobId() string {
@@ -31204,7 +31646,7 @@ type OnyxLanguageConfig struct {
 
 func (x *OnyxLanguageConfig) Reset() {
 	*x = OnyxLanguageConfig{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[434]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[438]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31216,7 +31658,7 @@ func (x *OnyxLanguageConfig) String() string {
 func (*OnyxLanguageConfig) ProtoMessage() {}
 
 func (x *OnyxLanguageConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[434]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[438]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31229,7 +31671,7 @@ func (x *OnyxLanguageConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxLanguageConfig.ProtoReflect.Descriptor instead.
 func (*OnyxLanguageConfig) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{434}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{438}
 }
 
 func (x *OnyxLanguageConfig) GetLanguageCode() string {
@@ -31339,7 +31781,7 @@ type OnyxMachineTranslationProvenance struct {
 
 func (x *OnyxMachineTranslationProvenance) Reset() {
 	*x = OnyxMachineTranslationProvenance{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[435]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[439]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31351,7 +31793,7 @@ func (x *OnyxMachineTranslationProvenance) String() string {
 func (*OnyxMachineTranslationProvenance) ProtoMessage() {}
 
 func (x *OnyxMachineTranslationProvenance) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[435]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[439]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31364,7 +31806,7 @@ func (x *OnyxMachineTranslationProvenance) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxMachineTranslationProvenance.ProtoReflect.Descriptor instead.
 func (*OnyxMachineTranslationProvenance) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{435}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{439}
 }
 
 func (x *OnyxMachineTranslationProvenance) GetProviderLabel() string {
@@ -31452,7 +31894,7 @@ type OnyxEditionLineage struct {
 
 func (x *OnyxEditionLineage) Reset() {
 	*x = OnyxEditionLineage{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[436]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[440]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31464,7 +31906,7 @@ func (x *OnyxEditionLineage) String() string {
 func (*OnyxEditionLineage) ProtoMessage() {}
 
 func (x *OnyxEditionLineage) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[436]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[440]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31477,7 +31919,7 @@ func (x *OnyxEditionLineage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxEditionLineage.ProtoReflect.Descriptor instead.
 func (*OnyxEditionLineage) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{436}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{440}
 }
 
 func (x *OnyxEditionLineage) GetEditionId() string {
@@ -31642,7 +32084,7 @@ type OnyxTranslationAcceptanceProvenance struct {
 
 func (x *OnyxTranslationAcceptanceProvenance) Reset() {
 	*x = OnyxTranslationAcceptanceProvenance{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[437]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[441]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31654,7 +32096,7 @@ func (x *OnyxTranslationAcceptanceProvenance) String() string {
 func (*OnyxTranslationAcceptanceProvenance) ProtoMessage() {}
 
 func (x *OnyxTranslationAcceptanceProvenance) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[437]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[441]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31667,7 +32109,7 @@ func (x *OnyxTranslationAcceptanceProvenance) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use OnyxTranslationAcceptanceProvenance.ProtoReflect.Descriptor instead.
 func (*OnyxTranslationAcceptanceProvenance) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{437}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{441}
 }
 
 func (x *OnyxTranslationAcceptanceProvenance) GetTranslationClass() OnyxTranslationClass {
@@ -31739,7 +32181,7 @@ type OnyxAlignedSegment struct {
 
 func (x *OnyxAlignedSegment) Reset() {
 	*x = OnyxAlignedSegment{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[438]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[442]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31751,7 +32193,7 @@ func (x *OnyxAlignedSegment) String() string {
 func (*OnyxAlignedSegment) ProtoMessage() {}
 
 func (x *OnyxAlignedSegment) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[438]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[442]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31764,7 +32206,7 @@ func (x *OnyxAlignedSegment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxAlignedSegment.ProtoReflect.Descriptor instead.
 func (*OnyxAlignedSegment) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{438}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{442}
 }
 
 func (x *OnyxAlignedSegment) GetId() string {
@@ -31868,7 +32310,7 @@ type OnyxAlignedBlock struct {
 
 func (x *OnyxAlignedBlock) Reset() {
 	*x = OnyxAlignedBlock{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[439]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[443]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31880,7 +32322,7 @@ func (x *OnyxAlignedBlock) String() string {
 func (*OnyxAlignedBlock) ProtoMessage() {}
 
 func (x *OnyxAlignedBlock) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[439]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[443]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -31893,7 +32335,7 @@ func (x *OnyxAlignedBlock) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxAlignedBlock.ProtoReflect.Descriptor instead.
 func (*OnyxAlignedBlock) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{439}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{443}
 }
 
 func (x *OnyxAlignedBlock) GetSourceBlockId() string {
@@ -31984,7 +32426,7 @@ type OnyxTermbaseEntry struct {
 
 func (x *OnyxTermbaseEntry) Reset() {
 	*x = OnyxTermbaseEntry{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[440]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[444]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -31996,7 +32438,7 @@ func (x *OnyxTermbaseEntry) String() string {
 func (*OnyxTermbaseEntry) ProtoMessage() {}
 
 func (x *OnyxTermbaseEntry) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[440]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[444]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -32009,7 +32451,7 @@ func (x *OnyxTermbaseEntry) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxTermbaseEntry.ProtoReflect.Descriptor instead.
 func (*OnyxTermbaseEntry) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{440}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{444}
 }
 
 func (x *OnyxTermbaseEntry) GetId() string {
@@ -32148,7 +32590,7 @@ type OnyxMultilingualPreferences struct {
 
 func (x *OnyxMultilingualPreferences) Reset() {
 	*x = OnyxMultilingualPreferences{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[441]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[445]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -32160,7 +32602,7 @@ func (x *OnyxMultilingualPreferences) String() string {
 func (*OnyxMultilingualPreferences) ProtoMessage() {}
 
 func (x *OnyxMultilingualPreferences) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[441]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[445]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -32173,7 +32615,7 @@ func (x *OnyxMultilingualPreferences) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxMultilingualPreferences.ProtoReflect.Descriptor instead.
 func (*OnyxMultilingualPreferences) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{441}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{445}
 }
 
 func (x *OnyxMultilingualPreferences) GetPreferredReadingLanguageCodes() []string {
@@ -32257,7 +32699,7 @@ type OnyxCrossLanguageSearchMatch struct {
 
 func (x *OnyxCrossLanguageSearchMatch) Reset() {
 	*x = OnyxCrossLanguageSearchMatch{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[442]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[446]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -32269,7 +32711,7 @@ func (x *OnyxCrossLanguageSearchMatch) String() string {
 func (*OnyxCrossLanguageSearchMatch) ProtoMessage() {}
 
 func (x *OnyxCrossLanguageSearchMatch) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[442]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[446]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -32282,7 +32724,7 @@ func (x *OnyxCrossLanguageSearchMatch) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxCrossLanguageSearchMatch.ProtoReflect.Descriptor instead.
 func (*OnyxCrossLanguageSearchMatch) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{442}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{446}
 }
 
 func (x *OnyxCrossLanguageSearchMatch) GetContent() *OnyxContent {
@@ -32369,7 +32811,7 @@ type OnyxCaptionCue struct {
 
 func (x *OnyxCaptionCue) Reset() {
 	*x = OnyxCaptionCue{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[443]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[447]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -32381,7 +32823,7 @@ func (x *OnyxCaptionCue) String() string {
 func (*OnyxCaptionCue) ProtoMessage() {}
 
 func (x *OnyxCaptionCue) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[443]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[447]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -32394,7 +32836,7 @@ func (x *OnyxCaptionCue) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxCaptionCue.ProtoReflect.Descriptor instead.
 func (*OnyxCaptionCue) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{443}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{447}
 }
 
 func (x *OnyxCaptionCue) GetId() string {
@@ -32455,7 +32897,7 @@ type OnyxCaptionTrack struct {
 
 func (x *OnyxCaptionTrack) Reset() {
 	*x = OnyxCaptionTrack{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[444]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[448]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -32467,7 +32909,7 @@ func (x *OnyxCaptionTrack) String() string {
 func (*OnyxCaptionTrack) ProtoMessage() {}
 
 func (x *OnyxCaptionTrack) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[444]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[448]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -32480,7 +32922,7 @@ func (x *OnyxCaptionTrack) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxCaptionTrack.ProtoReflect.Descriptor instead.
 func (*OnyxCaptionTrack) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{444}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{448}
 }
 
 func (x *OnyxCaptionTrack) GetId() string {
@@ -32554,7 +32996,7 @@ type OnyxMediaLanguageTrack struct {
 
 func (x *OnyxMediaLanguageTrack) Reset() {
 	*x = OnyxMediaLanguageTrack{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[445]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[449]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -32566,7 +33008,7 @@ func (x *OnyxMediaLanguageTrack) String() string {
 func (*OnyxMediaLanguageTrack) ProtoMessage() {}
 
 func (x *OnyxMediaLanguageTrack) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[445]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[449]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -32579,7 +33021,7 @@ func (x *OnyxMediaLanguageTrack) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxMediaLanguageTrack.ProtoReflect.Descriptor instead.
 func (*OnyxMediaLanguageTrack) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{445}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{449}
 }
 
 func (x *OnyxMediaLanguageTrack) GetId() string {
@@ -32647,7 +33089,7 @@ type OnyxMultilingualAudioVideo struct {
 
 func (x *OnyxMultilingualAudioVideo) Reset() {
 	*x = OnyxMultilingualAudioVideo{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[446]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[450]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -32659,7 +33101,7 @@ func (x *OnyxMultilingualAudioVideo) String() string {
 func (*OnyxMultilingualAudioVideo) ProtoMessage() {}
 
 func (x *OnyxMultilingualAudioVideo) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[446]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[450]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -32672,7 +33114,7 @@ func (x *OnyxMultilingualAudioVideo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxMultilingualAudioVideo.ProtoReflect.Descriptor instead.
 func (*OnyxMultilingualAudioVideo) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{446}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{450}
 }
 
 func (x *OnyxMultilingualAudioVideo) GetMediaId() string {
@@ -32753,7 +33195,7 @@ type OnyxTranslationReport struct {
 
 func (x *OnyxTranslationReport) Reset() {
 	*x = OnyxTranslationReport{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[447]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[451]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -32765,7 +33207,7 @@ func (x *OnyxTranslationReport) String() string {
 func (*OnyxTranslationReport) ProtoMessage() {}
 
 func (x *OnyxTranslationReport) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[447]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[451]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -32778,7 +33220,7 @@ func (x *OnyxTranslationReport) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxTranslationReport.ProtoReflect.Descriptor instead.
 func (*OnyxTranslationReport) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{447}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{451}
 }
 
 func (x *OnyxTranslationReport) GetId() string {
@@ -32905,7 +33347,7 @@ type OnyxMultilingualOfflineManifest struct {
 
 func (x *OnyxMultilingualOfflineManifest) Reset() {
 	*x = OnyxMultilingualOfflineManifest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[448]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[452]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -32917,7 +33359,7 @@ func (x *OnyxMultilingualOfflineManifest) String() string {
 func (*OnyxMultilingualOfflineManifest) ProtoMessage() {}
 
 func (x *OnyxMultilingualOfflineManifest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[448]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[452]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -32930,7 +33372,7 @@ func (x *OnyxMultilingualOfflineManifest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxMultilingualOfflineManifest.ProtoReflect.Descriptor instead.
 func (*OnyxMultilingualOfflineManifest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{448}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{452}
 }
 
 func (x *OnyxMultilingualOfflineManifest) GetManifestId() string {
@@ -33073,7 +33515,7 @@ type OnyxMultilingualExportManifestItem struct {
 
 func (x *OnyxMultilingualExportManifestItem) Reset() {
 	*x = OnyxMultilingualExportManifestItem{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[449]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[453]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -33085,7 +33527,7 @@ func (x *OnyxMultilingualExportManifestItem) String() string {
 func (*OnyxMultilingualExportManifestItem) ProtoMessage() {}
 
 func (x *OnyxMultilingualExportManifestItem) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[449]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[453]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -33098,7 +33540,7 @@ func (x *OnyxMultilingualExportManifestItem) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use OnyxMultilingualExportManifestItem.ProtoReflect.Descriptor instead.
 func (*OnyxMultilingualExportManifestItem) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{449}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{453}
 }
 
 func (x *OnyxMultilingualExportManifestItem) GetPath() string {
@@ -33174,7 +33616,7 @@ type OnyxMultilingualExport struct {
 
 func (x *OnyxMultilingualExport) Reset() {
 	*x = OnyxMultilingualExport{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[450]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[454]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -33186,7 +33628,7 @@ func (x *OnyxMultilingualExport) String() string {
 func (*OnyxMultilingualExport) ProtoMessage() {}
 
 func (x *OnyxMultilingualExport) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[450]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[454]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -33199,7 +33641,7 @@ func (x *OnyxMultilingualExport) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxMultilingualExport.ProtoReflect.Descriptor instead.
 func (*OnyxMultilingualExport) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{450}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{454}
 }
 
 func (x *OnyxMultilingualExport) GetId() string {
@@ -33371,7 +33813,7 @@ type ListLanguageConfigsRequest struct {
 
 func (x *ListLanguageConfigsRequest) Reset() {
 	*x = ListLanguageConfigsRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[451]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[455]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -33383,7 +33825,7 @@ func (x *ListLanguageConfigsRequest) String() string {
 func (*ListLanguageConfigsRequest) ProtoMessage() {}
 
 func (x *ListLanguageConfigsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[451]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[455]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -33396,7 +33838,7 @@ func (x *ListLanguageConfigsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListLanguageConfigsRequest.ProtoReflect.Descriptor instead.
 func (*ListLanguageConfigsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{451}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{455}
 }
 
 type ListLanguageConfigsResponse struct {
@@ -33408,7 +33850,7 @@ type ListLanguageConfigsResponse struct {
 
 func (x *ListLanguageConfigsResponse) Reset() {
 	*x = ListLanguageConfigsResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[452]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[456]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -33420,7 +33862,7 @@ func (x *ListLanguageConfigsResponse) String() string {
 func (*ListLanguageConfigsResponse) ProtoMessage() {}
 
 func (x *ListLanguageConfigsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[452]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[456]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -33433,7 +33875,7 @@ func (x *ListLanguageConfigsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListLanguageConfigsResponse.ProtoReflect.Descriptor instead.
 func (*ListLanguageConfigsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{452}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{456}
 }
 
 func (x *ListLanguageConfigsResponse) GetLanguages() []*OnyxLanguageConfig {
@@ -33453,7 +33895,7 @@ type ListContentEditionsRequest struct {
 
 func (x *ListContentEditionsRequest) Reset() {
 	*x = ListContentEditionsRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[453]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[457]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -33465,7 +33907,7 @@ func (x *ListContentEditionsRequest) String() string {
 func (*ListContentEditionsRequest) ProtoMessage() {}
 
 func (x *ListContentEditionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[453]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[457]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -33478,7 +33920,7 @@ func (x *ListContentEditionsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListContentEditionsRequest.ProtoReflect.Descriptor instead.
 func (*ListContentEditionsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{453}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{457}
 }
 
 func (x *ListContentEditionsRequest) GetContentId() string {
@@ -33505,7 +33947,7 @@ type ListContentEditionsResponse struct {
 
 func (x *ListContentEditionsResponse) Reset() {
 	*x = ListContentEditionsResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[454]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[458]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -33517,7 +33959,7 @@ func (x *ListContentEditionsResponse) String() string {
 func (*ListContentEditionsResponse) ProtoMessage() {}
 
 func (x *ListContentEditionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[454]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[458]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -33530,7 +33972,7 @@ func (x *ListContentEditionsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListContentEditionsResponse.ProtoReflect.Descriptor instead.
 func (*ListContentEditionsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{454}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{458}
 }
 
 func (x *ListContentEditionsResponse) GetOriginal() *OnyxContent {
@@ -33561,7 +34003,7 @@ type GetAlignedBlocksRequest struct {
 
 func (x *GetAlignedBlocksRequest) Reset() {
 	*x = GetAlignedBlocksRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[455]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[459]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -33573,7 +34015,7 @@ func (x *GetAlignedBlocksRequest) String() string {
 func (*GetAlignedBlocksRequest) ProtoMessage() {}
 
 func (x *GetAlignedBlocksRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[455]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[459]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -33586,7 +34028,7 @@ func (x *GetAlignedBlocksRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAlignedBlocksRequest.ProtoReflect.Descriptor instead.
 func (*GetAlignedBlocksRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{455}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{459}
 }
 
 func (x *GetAlignedBlocksRequest) GetContentId() string {
@@ -33643,7 +34085,7 @@ type GetAlignedBlocksResponse struct {
 
 func (x *GetAlignedBlocksResponse) Reset() {
 	*x = GetAlignedBlocksResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[456]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[460]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -33655,7 +34097,7 @@ func (x *GetAlignedBlocksResponse) String() string {
 func (*GetAlignedBlocksResponse) ProtoMessage() {}
 
 func (x *GetAlignedBlocksResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[456]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[460]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -33668,7 +34110,7 @@ func (x *GetAlignedBlocksResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAlignedBlocksResponse.ProtoReflect.Descriptor instead.
 func (*GetAlignedBlocksResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{456}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{460}
 }
 
 func (x *GetAlignedBlocksResponse) GetLineage() *OnyxEditionLineage {
@@ -33712,7 +34154,7 @@ type ListTermbaseEntriesRequest struct {
 
 func (x *ListTermbaseEntriesRequest) Reset() {
 	*x = ListTermbaseEntriesRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[457]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[461]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -33724,7 +34166,7 @@ func (x *ListTermbaseEntriesRequest) String() string {
 func (*ListTermbaseEntriesRequest) ProtoMessage() {}
 
 func (x *ListTermbaseEntriesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[457]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[461]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -33737,7 +34179,7 @@ func (x *ListTermbaseEntriesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListTermbaseEntriesRequest.ProtoReflect.Descriptor instead.
 func (*ListTermbaseEntriesRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{457}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{461}
 }
 
 func (x *ListTermbaseEntriesRequest) GetContentId() string {
@@ -33784,7 +34226,7 @@ type ListTermbaseEntriesResponse struct {
 
 func (x *ListTermbaseEntriesResponse) Reset() {
 	*x = ListTermbaseEntriesResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[458]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[462]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -33796,7 +34238,7 @@ func (x *ListTermbaseEntriesResponse) String() string {
 func (*ListTermbaseEntriesResponse) ProtoMessage() {}
 
 func (x *ListTermbaseEntriesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[458]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[462]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -33809,7 +34251,7 @@ func (x *ListTermbaseEntriesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListTermbaseEntriesResponse.ProtoReflect.Descriptor instead.
 func (*ListTermbaseEntriesResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{458}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{462}
 }
 
 func (x *ListTermbaseEntriesResponse) GetEntries() []*OnyxTermbaseEntry {
@@ -33835,7 +34277,7 @@ type CrossLanguageSearchRequest struct {
 
 func (x *CrossLanguageSearchRequest) Reset() {
 	*x = CrossLanguageSearchRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[459]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[463]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -33847,7 +34289,7 @@ func (x *CrossLanguageSearchRequest) String() string {
 func (*CrossLanguageSearchRequest) ProtoMessage() {}
 
 func (x *CrossLanguageSearchRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[459]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[463]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -33860,7 +34302,7 @@ func (x *CrossLanguageSearchRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CrossLanguageSearchRequest.ProtoReflect.Descriptor instead.
 func (*CrossLanguageSearchRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{459}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{463}
 }
 
 func (x *CrossLanguageSearchRequest) GetQuery() string {
@@ -33930,7 +34372,7 @@ type CrossLanguageSearchResponse struct {
 
 func (x *CrossLanguageSearchResponse) Reset() {
 	*x = CrossLanguageSearchResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[460]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[464]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -33942,7 +34384,7 @@ func (x *CrossLanguageSearchResponse) String() string {
 func (*CrossLanguageSearchResponse) ProtoMessage() {}
 
 func (x *CrossLanguageSearchResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[460]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[464]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -33955,7 +34397,7 @@ func (x *CrossLanguageSearchResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CrossLanguageSearchResponse.ProtoReflect.Descriptor instead.
 func (*CrossLanguageSearchResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{460}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{464}
 }
 
 func (x *CrossLanguageSearchResponse) GetMatches() []*OnyxCrossLanguageSearchMatch {
@@ -33987,7 +34429,7 @@ type GetMultilingualPreferencesRequest struct {
 
 func (x *GetMultilingualPreferencesRequest) Reset() {
 	*x = GetMultilingualPreferencesRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[461]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[465]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -33999,7 +34441,7 @@ func (x *GetMultilingualPreferencesRequest) String() string {
 func (*GetMultilingualPreferencesRequest) ProtoMessage() {}
 
 func (x *GetMultilingualPreferencesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[461]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[465]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -34012,7 +34454,7 @@ func (x *GetMultilingualPreferencesRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use GetMultilingualPreferencesRequest.ProtoReflect.Descriptor instead.
 func (*GetMultilingualPreferencesRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{461}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{465}
 }
 
 type GetMultilingualPreferencesResponse struct {
@@ -34024,7 +34466,7 @@ type GetMultilingualPreferencesResponse struct {
 
 func (x *GetMultilingualPreferencesResponse) Reset() {
 	*x = GetMultilingualPreferencesResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[462]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[466]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -34036,7 +34478,7 @@ func (x *GetMultilingualPreferencesResponse) String() string {
 func (*GetMultilingualPreferencesResponse) ProtoMessage() {}
 
 func (x *GetMultilingualPreferencesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[462]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[466]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -34049,7 +34491,7 @@ func (x *GetMultilingualPreferencesResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use GetMultilingualPreferencesResponse.ProtoReflect.Descriptor instead.
 func (*GetMultilingualPreferencesResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{462}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{466}
 }
 
 func (x *GetMultilingualPreferencesResponse) GetPreferences() *OnyxMultilingualPreferences {
@@ -34069,7 +34511,7 @@ type UpdateMultilingualPreferencesRequest struct {
 
 func (x *UpdateMultilingualPreferencesRequest) Reset() {
 	*x = UpdateMultilingualPreferencesRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[463]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[467]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -34081,7 +34523,7 @@ func (x *UpdateMultilingualPreferencesRequest) String() string {
 func (*UpdateMultilingualPreferencesRequest) ProtoMessage() {}
 
 func (x *UpdateMultilingualPreferencesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[463]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[467]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -34094,7 +34536,7 @@ func (x *UpdateMultilingualPreferencesRequest) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use UpdateMultilingualPreferencesRequest.ProtoReflect.Descriptor instead.
 func (*UpdateMultilingualPreferencesRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{463}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{467}
 }
 
 func (x *UpdateMultilingualPreferencesRequest) GetPreferences() *OnyxMultilingualPreferences {
@@ -34120,7 +34562,7 @@ type UpdateMultilingualPreferencesResponse struct {
 
 func (x *UpdateMultilingualPreferencesResponse) Reset() {
 	*x = UpdateMultilingualPreferencesResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[464]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[468]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -34132,7 +34574,7 @@ func (x *UpdateMultilingualPreferencesResponse) String() string {
 func (*UpdateMultilingualPreferencesResponse) ProtoMessage() {}
 
 func (x *UpdateMultilingualPreferencesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[464]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[468]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -34145,7 +34587,7 @@ func (x *UpdateMultilingualPreferencesResponse) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use UpdateMultilingualPreferencesResponse.ProtoReflect.Descriptor instead.
 func (*UpdateMultilingualPreferencesResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{464}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{468}
 }
 
 func (x *UpdateMultilingualPreferencesResponse) GetPreferences() *OnyxMultilingualPreferences {
@@ -34165,7 +34607,7 @@ type GetMultilingualAudioVideoRequest struct {
 
 func (x *GetMultilingualAudioVideoRequest) Reset() {
 	*x = GetMultilingualAudioVideoRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[465]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[469]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -34177,7 +34619,7 @@ func (x *GetMultilingualAudioVideoRequest) String() string {
 func (*GetMultilingualAudioVideoRequest) ProtoMessage() {}
 
 func (x *GetMultilingualAudioVideoRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[465]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[469]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -34190,7 +34632,7 @@ func (x *GetMultilingualAudioVideoRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMultilingualAudioVideoRequest.ProtoReflect.Descriptor instead.
 func (*GetMultilingualAudioVideoRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{465}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{469}
 }
 
 func (x *GetMultilingualAudioVideoRequest) GetMediaId() string {
@@ -34216,7 +34658,7 @@ type GetMultilingualAudioVideoResponse struct {
 
 func (x *GetMultilingualAudioVideoResponse) Reset() {
 	*x = GetMultilingualAudioVideoResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[466]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[470]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -34228,7 +34670,7 @@ func (x *GetMultilingualAudioVideoResponse) String() string {
 func (*GetMultilingualAudioVideoResponse) ProtoMessage() {}
 
 func (x *GetMultilingualAudioVideoResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[466]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[470]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -34241,7 +34683,7 @@ func (x *GetMultilingualAudioVideoResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use GetMultilingualAudioVideoResponse.ProtoReflect.Descriptor instead.
 func (*GetMultilingualAudioVideoResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{466}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{470}
 }
 
 func (x *GetMultilingualAudioVideoResponse) GetMedia() *OnyxMultilingualAudioVideo {
@@ -34266,7 +34708,7 @@ type GetMultilingualOfflineManifestRequest struct {
 
 func (x *GetMultilingualOfflineManifestRequest) Reset() {
 	*x = GetMultilingualOfflineManifestRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[467]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[471]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -34278,7 +34720,7 @@ func (x *GetMultilingualOfflineManifestRequest) String() string {
 func (*GetMultilingualOfflineManifestRequest) ProtoMessage() {}
 
 func (x *GetMultilingualOfflineManifestRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[467]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[471]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -34291,7 +34733,7 @@ func (x *GetMultilingualOfflineManifestRequest) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use GetMultilingualOfflineManifestRequest.ProtoReflect.Descriptor instead.
 func (*GetMultilingualOfflineManifestRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{467}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{471}
 }
 
 func (x *GetMultilingualOfflineManifestRequest) GetContentId() string {
@@ -34331,7 +34773,7 @@ type GetMultilingualOfflineManifestResponse struct {
 
 func (x *GetMultilingualOfflineManifestResponse) Reset() {
 	*x = GetMultilingualOfflineManifestResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[468]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[472]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -34343,7 +34785,7 @@ func (x *GetMultilingualOfflineManifestResponse) String() string {
 func (*GetMultilingualOfflineManifestResponse) ProtoMessage() {}
 
 func (x *GetMultilingualOfflineManifestResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[468]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[472]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -34356,7 +34798,7 @@ func (x *GetMultilingualOfflineManifestResponse) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use GetMultilingualOfflineManifestResponse.ProtoReflect.Descriptor instead.
 func (*GetMultilingualOfflineManifestResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{468}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{472}
 }
 
 func (x *GetMultilingualOfflineManifestResponse) GetManifest() *OnyxMultilingualOfflineManifest {
@@ -34384,7 +34826,7 @@ type ReportTranslationIssueRequest struct {
 
 func (x *ReportTranslationIssueRequest) Reset() {
 	*x = ReportTranslationIssueRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[469]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[473]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -34396,7 +34838,7 @@ func (x *ReportTranslationIssueRequest) String() string {
 func (*ReportTranslationIssueRequest) ProtoMessage() {}
 
 func (x *ReportTranslationIssueRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[469]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[473]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -34409,7 +34851,7 @@ func (x *ReportTranslationIssueRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReportTranslationIssueRequest.ProtoReflect.Descriptor instead.
 func (*ReportTranslationIssueRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{469}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{473}
 }
 
 func (x *ReportTranslationIssueRequest) GetContentId() string {
@@ -34491,7 +34933,7 @@ type ReportTranslationIssueResponse struct {
 
 func (x *ReportTranslationIssueResponse) Reset() {
 	*x = ReportTranslationIssueResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[470]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[474]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -34503,7 +34945,7 @@ func (x *ReportTranslationIssueResponse) String() string {
 func (*ReportTranslationIssueResponse) ProtoMessage() {}
 
 func (x *ReportTranslationIssueResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[470]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[474]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -34516,7 +34958,7 @@ func (x *ReportTranslationIssueResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReportTranslationIssueResponse.ProtoReflect.Descriptor instead.
 func (*ReportTranslationIssueResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{470}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{474}
 }
 
 func (x *ReportTranslationIssueResponse) GetReport() *OnyxTranslationReport {
@@ -34541,7 +34983,7 @@ type RequestMultilingualExportRequest struct {
 
 func (x *RequestMultilingualExportRequest) Reset() {
 	*x = RequestMultilingualExportRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[471]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[475]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -34553,7 +34995,7 @@ func (x *RequestMultilingualExportRequest) String() string {
 func (*RequestMultilingualExportRequest) ProtoMessage() {}
 
 func (x *RequestMultilingualExportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[471]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[475]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -34566,7 +35008,7 @@ func (x *RequestMultilingualExportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RequestMultilingualExportRequest.ProtoReflect.Descriptor instead.
 func (*RequestMultilingualExportRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{471}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{475}
 }
 
 func (x *RequestMultilingualExportRequest) GetContentId() string {
@@ -34627,7 +35069,7 @@ type RequestMultilingualExportResponse struct {
 
 func (x *RequestMultilingualExportResponse) Reset() {
 	*x = RequestMultilingualExportResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[472]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[476]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -34639,7 +35081,7 @@ func (x *RequestMultilingualExportResponse) String() string {
 func (*RequestMultilingualExportResponse) ProtoMessage() {}
 
 func (x *RequestMultilingualExportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[472]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[476]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -34652,7 +35094,7 @@ func (x *RequestMultilingualExportResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use RequestMultilingualExportResponse.ProtoReflect.Descriptor instead.
 func (*RequestMultilingualExportResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{472}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{476}
 }
 
 func (x *RequestMultilingualExportResponse) GetExport() *OnyxMultilingualExport {
@@ -34671,7 +35113,7 @@ type GetMultilingualExportRequest struct {
 
 func (x *GetMultilingualExportRequest) Reset() {
 	*x = GetMultilingualExportRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[473]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[477]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -34683,7 +35125,7 @@ func (x *GetMultilingualExportRequest) String() string {
 func (*GetMultilingualExportRequest) ProtoMessage() {}
 
 func (x *GetMultilingualExportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[473]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[477]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -34696,7 +35138,7 @@ func (x *GetMultilingualExportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMultilingualExportRequest.ProtoReflect.Descriptor instead.
 func (*GetMultilingualExportRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{473}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{477}
 }
 
 func (x *GetMultilingualExportRequest) GetExportId() string {
@@ -34715,7 +35157,7 @@ type GetMultilingualExportResponse struct {
 
 func (x *GetMultilingualExportResponse) Reset() {
 	*x = GetMultilingualExportResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[474]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[478]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -34727,7 +35169,7 @@ func (x *GetMultilingualExportResponse) String() string {
 func (*GetMultilingualExportResponse) ProtoMessage() {}
 
 func (x *GetMultilingualExportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[474]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[478]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -34740,7 +35182,7 @@ func (x *GetMultilingualExportResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetMultilingualExportResponse.ProtoReflect.Descriptor instead.
 func (*GetMultilingualExportResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{474}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{478}
 }
 
 func (x *GetMultilingualExportResponse) GetExport() *OnyxMultilingualExport {
@@ -34790,7 +35232,7 @@ type OnyxLivingArchivePolicy struct {
 
 func (x *OnyxLivingArchivePolicy) Reset() {
 	*x = OnyxLivingArchivePolicy{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[475]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[479]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -34802,7 +35244,7 @@ func (x *OnyxLivingArchivePolicy) String() string {
 func (*OnyxLivingArchivePolicy) ProtoMessage() {}
 
 func (x *OnyxLivingArchivePolicy) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[475]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[479]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -34815,7 +35257,7 @@ func (x *OnyxLivingArchivePolicy) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxLivingArchivePolicy.ProtoReflect.Descriptor instead.
 func (*OnyxLivingArchivePolicy) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{475}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{479}
 }
 
 func (x *OnyxLivingArchivePolicy) GetId() string {
@@ -35036,7 +35478,7 @@ type OnyxLivingArchiveContact struct {
 
 func (x *OnyxLivingArchiveContact) Reset() {
 	*x = OnyxLivingArchiveContact{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[476]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[480]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -35048,7 +35490,7 @@ func (x *OnyxLivingArchiveContact) String() string {
 func (*OnyxLivingArchiveContact) ProtoMessage() {}
 
 func (x *OnyxLivingArchiveContact) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[476]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[480]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -35061,7 +35503,7 @@ func (x *OnyxLivingArchiveContact) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxLivingArchiveContact.ProtoReflect.Descriptor instead.
 func (*OnyxLivingArchiveContact) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{476}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{480}
 }
 
 func (x *OnyxLivingArchiveContact) GetId() string {
@@ -35183,7 +35625,7 @@ type OnyxLivingArchiveReadiness struct {
 
 func (x *OnyxLivingArchiveReadiness) Reset() {
 	*x = OnyxLivingArchiveReadiness{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[477]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[481]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -35195,7 +35637,7 @@ func (x *OnyxLivingArchiveReadiness) String() string {
 func (*OnyxLivingArchiveReadiness) ProtoMessage() {}
 
 func (x *OnyxLivingArchiveReadiness) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[477]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[481]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -35208,7 +35650,7 @@ func (x *OnyxLivingArchiveReadiness) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxLivingArchiveReadiness.ProtoReflect.Descriptor instead.
 func (*OnyxLivingArchiveReadiness) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{477}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{481}
 }
 
 func (x *OnyxLivingArchiveReadiness) GetLegacyBeneficiaryCount() int32 {
@@ -35314,7 +35756,7 @@ type OnyxLivingArchivePreviewCount struct {
 
 func (x *OnyxLivingArchivePreviewCount) Reset() {
 	*x = OnyxLivingArchivePreviewCount{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[478]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[482]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -35326,7 +35768,7 @@ func (x *OnyxLivingArchivePreviewCount) String() string {
 func (*OnyxLivingArchivePreviewCount) ProtoMessage() {}
 
 func (x *OnyxLivingArchivePreviewCount) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[478]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[482]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -35339,7 +35781,7 @@ func (x *OnyxLivingArchivePreviewCount) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxLivingArchivePreviewCount.ProtoReflect.Descriptor instead.
 func (*OnyxLivingArchivePreviewCount) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{478}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{482}
 }
 
 func (x *OnyxLivingArchivePreviewCount) GetItemKind() string {
@@ -35385,7 +35827,7 @@ type OnyxLivingArchivePreview struct {
 
 func (x *OnyxLivingArchivePreview) Reset() {
 	*x = OnyxLivingArchivePreview{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[479]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[483]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -35397,7 +35839,7 @@ func (x *OnyxLivingArchivePreview) String() string {
 func (*OnyxLivingArchivePreview) ProtoMessage() {}
 
 func (x *OnyxLivingArchivePreview) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[479]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[483]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -35410,7 +35852,7 @@ func (x *OnyxLivingArchivePreview) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxLivingArchivePreview.ProtoReflect.Descriptor instead.
 func (*OnyxLivingArchivePreview) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{479}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{483}
 }
 
 func (x *OnyxLivingArchivePreview) GetPolicyId() string {
@@ -35489,7 +35931,7 @@ type OnyxLivingArchiveEdition struct {
 
 func (x *OnyxLivingArchiveEdition) Reset() {
 	*x = OnyxLivingArchiveEdition{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[480]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[484]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -35501,7 +35943,7 @@ func (x *OnyxLivingArchiveEdition) String() string {
 func (*OnyxLivingArchiveEdition) ProtoMessage() {}
 
 func (x *OnyxLivingArchiveEdition) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[480]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[484]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -35514,7 +35956,7 @@ func (x *OnyxLivingArchiveEdition) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxLivingArchiveEdition.ProtoReflect.Descriptor instead.
 func (*OnyxLivingArchiveEdition) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{480}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{484}
 }
 
 func (x *OnyxLivingArchiveEdition) GetId() string {
@@ -35673,7 +36115,7 @@ type OnyxLivingArchiveReleaseCase struct {
 
 func (x *OnyxLivingArchiveReleaseCase) Reset() {
 	*x = OnyxLivingArchiveReleaseCase{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[481]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[485]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -35685,7 +36127,7 @@ func (x *OnyxLivingArchiveReleaseCase) String() string {
 func (*OnyxLivingArchiveReleaseCase) ProtoMessage() {}
 
 func (x *OnyxLivingArchiveReleaseCase) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[481]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[485]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -35698,7 +36140,7 @@ func (x *OnyxLivingArchiveReleaseCase) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxLivingArchiveReleaseCase.ProtoReflect.Descriptor instead.
 func (*OnyxLivingArchiveReleaseCase) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{481}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{485}
 }
 
 func (x *OnyxLivingArchiveReleaseCase) GetId() string {
@@ -35825,7 +36267,7 @@ type OnyxLivingArchiveReceipt struct {
 
 func (x *OnyxLivingArchiveReceipt) Reset() {
 	*x = OnyxLivingArchiveReceipt{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[482]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[486]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -35837,7 +36279,7 @@ func (x *OnyxLivingArchiveReceipt) String() string {
 func (*OnyxLivingArchiveReceipt) ProtoMessage() {}
 
 func (x *OnyxLivingArchiveReceipt) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[482]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[486]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -35850,7 +36292,7 @@ func (x *OnyxLivingArchiveReceipt) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxLivingArchiveReceipt.ProtoReflect.Descriptor instead.
 func (*OnyxLivingArchiveReceipt) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{482}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{486}
 }
 
 func (x *OnyxLivingArchiveReceipt) GetId() string {
@@ -35938,7 +36380,7 @@ type GetLivingArchiveDashboardRequest struct {
 
 func (x *GetLivingArchiveDashboardRequest) Reset() {
 	*x = GetLivingArchiveDashboardRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[483]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[487]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -35950,7 +36392,7 @@ func (x *GetLivingArchiveDashboardRequest) String() string {
 func (*GetLivingArchiveDashboardRequest) ProtoMessage() {}
 
 func (x *GetLivingArchiveDashboardRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[483]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[487]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -35963,7 +36405,7 @@ func (x *GetLivingArchiveDashboardRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLivingArchiveDashboardRequest.ProtoReflect.Descriptor instead.
 func (*GetLivingArchiveDashboardRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{483}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{487}
 }
 
 type GetLivingArchiveDashboardResponse struct {
@@ -35980,7 +36422,7 @@ type GetLivingArchiveDashboardResponse struct {
 
 func (x *GetLivingArchiveDashboardResponse) Reset() {
 	*x = GetLivingArchiveDashboardResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[484]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[488]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -35992,7 +36434,7 @@ func (x *GetLivingArchiveDashboardResponse) String() string {
 func (*GetLivingArchiveDashboardResponse) ProtoMessage() {}
 
 func (x *GetLivingArchiveDashboardResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[484]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[488]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -36005,7 +36447,7 @@ func (x *GetLivingArchiveDashboardResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use GetLivingArchiveDashboardResponse.ProtoReflect.Descriptor instead.
 func (*GetLivingArchiveDashboardResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{484}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{488}
 }
 
 func (x *GetLivingArchiveDashboardResponse) GetPolicies() []*OnyxLivingArchivePolicy {
@@ -36081,7 +36523,7 @@ type UpsertLivingArchivePolicyRequest struct {
 
 func (x *UpsertLivingArchivePolicyRequest) Reset() {
 	*x = UpsertLivingArchivePolicyRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[485]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[489]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -36093,7 +36535,7 @@ func (x *UpsertLivingArchivePolicyRequest) String() string {
 func (*UpsertLivingArchivePolicyRequest) ProtoMessage() {}
 
 func (x *UpsertLivingArchivePolicyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[485]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[489]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -36106,7 +36548,7 @@ func (x *UpsertLivingArchivePolicyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpsertLivingArchivePolicyRequest.ProtoReflect.Descriptor instead.
 func (*UpsertLivingArchivePolicyRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{485}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{489}
 }
 
 func (x *UpsertLivingArchivePolicyRequest) GetPolicyId() string {
@@ -36279,7 +36721,7 @@ type UpsertLivingArchivePolicyResponse struct {
 
 func (x *UpsertLivingArchivePolicyResponse) Reset() {
 	*x = UpsertLivingArchivePolicyResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[486]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[490]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -36291,7 +36733,7 @@ func (x *UpsertLivingArchivePolicyResponse) String() string {
 func (*UpsertLivingArchivePolicyResponse) ProtoMessage() {}
 
 func (x *UpsertLivingArchivePolicyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[486]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[490]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -36304,7 +36746,7 @@ func (x *UpsertLivingArchivePolicyResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use UpsertLivingArchivePolicyResponse.ProtoReflect.Descriptor instead.
 func (*UpsertLivingArchivePolicyResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{486}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{490}
 }
 
 func (x *UpsertLivingArchivePolicyResponse) GetPolicy() *OnyxLivingArchivePolicy {
@@ -36323,7 +36765,7 @@ type PreviewLivingArchivePolicyRequest struct {
 
 func (x *PreviewLivingArchivePolicyRequest) Reset() {
 	*x = PreviewLivingArchivePolicyRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[487]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[491]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -36335,7 +36777,7 @@ func (x *PreviewLivingArchivePolicyRequest) String() string {
 func (*PreviewLivingArchivePolicyRequest) ProtoMessage() {}
 
 func (x *PreviewLivingArchivePolicyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[487]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[491]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -36348,7 +36790,7 @@ func (x *PreviewLivingArchivePolicyRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use PreviewLivingArchivePolicyRequest.ProtoReflect.Descriptor instead.
 func (*PreviewLivingArchivePolicyRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{487}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{491}
 }
 
 func (x *PreviewLivingArchivePolicyRequest) GetPolicyId() string {
@@ -36367,7 +36809,7 @@ type PreviewLivingArchivePolicyResponse struct {
 
 func (x *PreviewLivingArchivePolicyResponse) Reset() {
 	*x = PreviewLivingArchivePolicyResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[488]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[492]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -36379,7 +36821,7 @@ func (x *PreviewLivingArchivePolicyResponse) String() string {
 func (*PreviewLivingArchivePolicyResponse) ProtoMessage() {}
 
 func (x *PreviewLivingArchivePolicyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[488]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[492]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -36392,7 +36834,7 @@ func (x *PreviewLivingArchivePolicyResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use PreviewLivingArchivePolicyResponse.ProtoReflect.Descriptor instead.
 func (*PreviewLivingArchivePolicyResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{488}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{492}
 }
 
 func (x *PreviewLivingArchivePolicyResponse) GetPreview() *OnyxLivingArchivePreview {
@@ -36417,7 +36859,7 @@ type GenerateLivingArchiveEditionRequest struct {
 
 func (x *GenerateLivingArchiveEditionRequest) Reset() {
 	*x = GenerateLivingArchiveEditionRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[489]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[493]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -36429,7 +36871,7 @@ func (x *GenerateLivingArchiveEditionRequest) String() string {
 func (*GenerateLivingArchiveEditionRequest) ProtoMessage() {}
 
 func (x *GenerateLivingArchiveEditionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[489]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[493]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -36442,7 +36884,7 @@ func (x *GenerateLivingArchiveEditionRequest) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use GenerateLivingArchiveEditionRequest.ProtoReflect.Descriptor instead.
 func (*GenerateLivingArchiveEditionRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{489}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{493}
 }
 
 func (x *GenerateLivingArchiveEditionRequest) GetPolicyId() string {
@@ -36504,7 +36946,7 @@ type GenerateLivingArchiveEditionResponse struct {
 
 func (x *GenerateLivingArchiveEditionResponse) Reset() {
 	*x = GenerateLivingArchiveEditionResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[490]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[494]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -36516,7 +36958,7 @@ func (x *GenerateLivingArchiveEditionResponse) String() string {
 func (*GenerateLivingArchiveEditionResponse) ProtoMessage() {}
 
 func (x *GenerateLivingArchiveEditionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[490]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[494]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -36529,7 +36971,7 @@ func (x *GenerateLivingArchiveEditionResponse) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use GenerateLivingArchiveEditionResponse.ProtoReflect.Descriptor instead.
 func (*GenerateLivingArchiveEditionResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{490}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{494}
 }
 
 func (x *GenerateLivingArchiveEditionResponse) GetEdition() *OnyxLivingArchiveEdition {
@@ -36558,7 +37000,7 @@ type LinkLivingArchiveLegacyEscrowRequest struct {
 
 func (x *LinkLivingArchiveLegacyEscrowRequest) Reset() {
 	*x = LinkLivingArchiveLegacyEscrowRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[491]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[495]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -36570,7 +37012,7 @@ func (x *LinkLivingArchiveLegacyEscrowRequest) String() string {
 func (*LinkLivingArchiveLegacyEscrowRequest) ProtoMessage() {}
 
 func (x *LinkLivingArchiveLegacyEscrowRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[491]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[495]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -36583,7 +37025,7 @@ func (x *LinkLivingArchiveLegacyEscrowRequest) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use LinkLivingArchiveLegacyEscrowRequest.ProtoReflect.Descriptor instead.
 func (*LinkLivingArchiveLegacyEscrowRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{491}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{495}
 }
 
 func (x *LinkLivingArchiveLegacyEscrowRequest) GetEditionId() string {
@@ -36624,7 +37066,7 @@ type LinkLivingArchiveLegacyEscrowResponse struct {
 
 func (x *LinkLivingArchiveLegacyEscrowResponse) Reset() {
 	*x = LinkLivingArchiveLegacyEscrowResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[492]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[496]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -36636,7 +37078,7 @@ func (x *LinkLivingArchiveLegacyEscrowResponse) String() string {
 func (*LinkLivingArchiveLegacyEscrowResponse) ProtoMessage() {}
 
 func (x *LinkLivingArchiveLegacyEscrowResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[492]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[496]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -36649,7 +37091,7 @@ func (x *LinkLivingArchiveLegacyEscrowResponse) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use LinkLivingArchiveLegacyEscrowResponse.ProtoReflect.Descriptor instead.
 func (*LinkLivingArchiveLegacyEscrowResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{492}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{496}
 }
 
 func (x *LinkLivingArchiveLegacyEscrowResponse) GetEdition() *OnyxLivingArchiveEdition {
@@ -36683,7 +37125,7 @@ type UpsertLivingArchiveContactRequest struct {
 
 func (x *UpsertLivingArchiveContactRequest) Reset() {
 	*x = UpsertLivingArchiveContactRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[493]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[497]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -36695,7 +37137,7 @@ func (x *UpsertLivingArchiveContactRequest) String() string {
 func (*UpsertLivingArchiveContactRequest) ProtoMessage() {}
 
 func (x *UpsertLivingArchiveContactRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[493]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[497]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -36708,7 +37150,7 @@ func (x *UpsertLivingArchiveContactRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use UpsertLivingArchiveContactRequest.ProtoReflect.Descriptor instead.
 func (*UpsertLivingArchiveContactRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{493}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{497}
 }
 
 func (x *UpsertLivingArchiveContactRequest) GetContactId() string {
@@ -36784,7 +37226,7 @@ type UpsertLivingArchiveContactResponse struct {
 
 func (x *UpsertLivingArchiveContactResponse) Reset() {
 	*x = UpsertLivingArchiveContactResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[494]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[498]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -36796,7 +37238,7 @@ func (x *UpsertLivingArchiveContactResponse) String() string {
 func (*UpsertLivingArchiveContactResponse) ProtoMessage() {}
 
 func (x *UpsertLivingArchiveContactResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[494]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[498]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -36809,7 +37251,7 @@ func (x *UpsertLivingArchiveContactResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use UpsertLivingArchiveContactResponse.ProtoReflect.Descriptor instead.
 func (*UpsertLivingArchiveContactResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{494}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{498}
 }
 
 func (x *UpsertLivingArchiveContactResponse) GetContact() *OnyxLivingArchiveContact {
@@ -36838,7 +37280,7 @@ type DeleteLivingArchiveContactRequest struct {
 
 func (x *DeleteLivingArchiveContactRequest) Reset() {
 	*x = DeleteLivingArchiveContactRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[495]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[499]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -36850,7 +37292,7 @@ func (x *DeleteLivingArchiveContactRequest) String() string {
 func (*DeleteLivingArchiveContactRequest) ProtoMessage() {}
 
 func (x *DeleteLivingArchiveContactRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[495]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[499]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -36863,7 +37305,7 @@ func (x *DeleteLivingArchiveContactRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use DeleteLivingArchiveContactRequest.ProtoReflect.Descriptor instead.
 func (*DeleteLivingArchiveContactRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{495}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{499}
 }
 
 func (x *DeleteLivingArchiveContactRequest) GetContactId() string {
@@ -36903,7 +37345,7 @@ type DeleteLivingArchiveContactResponse struct {
 
 func (x *DeleteLivingArchiveContactResponse) Reset() {
 	*x = DeleteLivingArchiveContactResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[496]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[500]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -36915,7 +37357,7 @@ func (x *DeleteLivingArchiveContactResponse) String() string {
 func (*DeleteLivingArchiveContactResponse) ProtoMessage() {}
 
 func (x *DeleteLivingArchiveContactResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[496]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[500]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -36928,7 +37370,7 @@ func (x *DeleteLivingArchiveContactResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use DeleteLivingArchiveContactResponse.ProtoReflect.Descriptor instead.
 func (*DeleteLivingArchiveContactResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{496}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{500}
 }
 
 func (x *DeleteLivingArchiveContactResponse) GetReadiness() *OnyxLivingArchiveReadiness {
@@ -36949,7 +37391,7 @@ type SubmitLivingArchivePolicyRequest struct {
 
 func (x *SubmitLivingArchivePolicyRequest) Reset() {
 	*x = SubmitLivingArchivePolicyRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[497]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[501]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -36961,7 +37403,7 @@ func (x *SubmitLivingArchivePolicyRequest) String() string {
 func (*SubmitLivingArchivePolicyRequest) ProtoMessage() {}
 
 func (x *SubmitLivingArchivePolicyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[497]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[501]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -36974,7 +37416,7 @@ func (x *SubmitLivingArchivePolicyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubmitLivingArchivePolicyRequest.ProtoReflect.Descriptor instead.
 func (*SubmitLivingArchivePolicyRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{497}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{501}
 }
 
 func (x *SubmitLivingArchivePolicyRequest) GetPolicyId() string {
@@ -37008,7 +37450,7 @@ type SubmitLivingArchivePolicyResponse struct {
 
 func (x *SubmitLivingArchivePolicyResponse) Reset() {
 	*x = SubmitLivingArchivePolicyResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[498]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[502]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -37020,7 +37462,7 @@ func (x *SubmitLivingArchivePolicyResponse) String() string {
 func (*SubmitLivingArchivePolicyResponse) ProtoMessage() {}
 
 func (x *SubmitLivingArchivePolicyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[498]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[502]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -37033,7 +37475,7 @@ func (x *SubmitLivingArchivePolicyResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use SubmitLivingArchivePolicyResponse.ProtoReflect.Descriptor instead.
 func (*SubmitLivingArchivePolicyResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{498}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{502}
 }
 
 func (x *SubmitLivingArchivePolicyResponse) GetPolicy() *OnyxLivingArchivePolicy {
@@ -37062,7 +37504,7 @@ type RevokeLivingArchivePolicyRequest struct {
 
 func (x *RevokeLivingArchivePolicyRequest) Reset() {
 	*x = RevokeLivingArchivePolicyRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[499]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[503]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -37074,7 +37516,7 @@ func (x *RevokeLivingArchivePolicyRequest) String() string {
 func (*RevokeLivingArchivePolicyRequest) ProtoMessage() {}
 
 func (x *RevokeLivingArchivePolicyRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[499]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[503]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -37087,7 +37529,7 @@ func (x *RevokeLivingArchivePolicyRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RevokeLivingArchivePolicyRequest.ProtoReflect.Descriptor instead.
 func (*RevokeLivingArchivePolicyRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{499}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{503}
 }
 
 func (x *RevokeLivingArchivePolicyRequest) GetPolicyId() string {
@@ -37127,7 +37569,7 @@ type RevokeLivingArchivePolicyResponse struct {
 
 func (x *RevokeLivingArchivePolicyResponse) Reset() {
 	*x = RevokeLivingArchivePolicyResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[500]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[504]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -37139,7 +37581,7 @@ func (x *RevokeLivingArchivePolicyResponse) String() string {
 func (*RevokeLivingArchivePolicyResponse) ProtoMessage() {}
 
 func (x *RevokeLivingArchivePolicyResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[500]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[504]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -37152,7 +37594,7 @@ func (x *RevokeLivingArchivePolicyResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use RevokeLivingArchivePolicyResponse.ProtoReflect.Descriptor instead.
 func (*RevokeLivingArchivePolicyResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{500}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{504}
 }
 
 func (x *RevokeLivingArchivePolicyResponse) GetPolicy() *OnyxLivingArchivePolicy {
@@ -37173,7 +37615,7 @@ type ConfirmLivingArchiveReviewRequest struct {
 
 func (x *ConfirmLivingArchiveReviewRequest) Reset() {
 	*x = ConfirmLivingArchiveReviewRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[501]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[505]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -37185,7 +37627,7 @@ func (x *ConfirmLivingArchiveReviewRequest) String() string {
 func (*ConfirmLivingArchiveReviewRequest) ProtoMessage() {}
 
 func (x *ConfirmLivingArchiveReviewRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[501]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[505]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -37198,7 +37640,7 @@ func (x *ConfirmLivingArchiveReviewRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use ConfirmLivingArchiveReviewRequest.ProtoReflect.Descriptor instead.
 func (*ConfirmLivingArchiveReviewRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{501}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{505}
 }
 
 func (x *ConfirmLivingArchiveReviewRequest) GetPolicyId() string {
@@ -37231,7 +37673,7 @@ type ConfirmLivingArchiveReviewResponse struct {
 
 func (x *ConfirmLivingArchiveReviewResponse) Reset() {
 	*x = ConfirmLivingArchiveReviewResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[502]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[506]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -37243,7 +37685,7 @@ func (x *ConfirmLivingArchiveReviewResponse) String() string {
 func (*ConfirmLivingArchiveReviewResponse) ProtoMessage() {}
 
 func (x *ConfirmLivingArchiveReviewResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[502]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[506]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -37256,7 +37698,7 @@ func (x *ConfirmLivingArchiveReviewResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use ConfirmLivingArchiveReviewResponse.ProtoReflect.Descriptor instead.
 func (*ConfirmLivingArchiveReviewResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{502}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{506}
 }
 
 func (x *ConfirmLivingArchiveReviewResponse) GetPolicy() *OnyxLivingArchivePolicy {
@@ -37278,7 +37720,7 @@ type ContestLivingArchiveReleaseRequest struct {
 
 func (x *ContestLivingArchiveReleaseRequest) Reset() {
 	*x = ContestLivingArchiveReleaseRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[503]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[507]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -37290,7 +37732,7 @@ func (x *ContestLivingArchiveReleaseRequest) String() string {
 func (*ContestLivingArchiveReleaseRequest) ProtoMessage() {}
 
 func (x *ContestLivingArchiveReleaseRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[503]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[507]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -37303,7 +37745,7 @@ func (x *ContestLivingArchiveReleaseRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use ContestLivingArchiveReleaseRequest.ProtoReflect.Descriptor instead.
 func (*ContestLivingArchiveReleaseRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{503}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{507}
 }
 
 func (x *ContestLivingArchiveReleaseRequest) GetCaseId() string {
@@ -37343,7 +37785,7 @@ type ContestLivingArchiveReleaseResponse struct {
 
 func (x *ContestLivingArchiveReleaseResponse) Reset() {
 	*x = ContestLivingArchiveReleaseResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[504]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[508]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -37355,7 +37797,7 @@ func (x *ContestLivingArchiveReleaseResponse) String() string {
 func (*ContestLivingArchiveReleaseResponse) ProtoMessage() {}
 
 func (x *ContestLivingArchiveReleaseResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[504]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[508]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -37368,7 +37810,7 @@ func (x *ContestLivingArchiveReleaseResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use ContestLivingArchiveReleaseResponse.ProtoReflect.Descriptor instead.
 func (*ContestLivingArchiveReleaseResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{504}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{508}
 }
 
 func (x *ContestLivingArchiveReleaseResponse) GetReleaseCase() *OnyxLivingArchiveReleaseCase {
@@ -37393,7 +37835,7 @@ type OnyxForensicRuntime struct {
 
 func (x *OnyxForensicRuntime) Reset() {
 	*x = OnyxForensicRuntime{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[505]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[509]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -37405,7 +37847,7 @@ func (x *OnyxForensicRuntime) String() string {
 func (*OnyxForensicRuntime) ProtoMessage() {}
 
 func (x *OnyxForensicRuntime) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[505]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[509]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -37418,7 +37860,7 @@ func (x *OnyxForensicRuntime) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxForensicRuntime.ProtoReflect.Descriptor instead.
 func (*OnyxForensicRuntime) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{505}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{509}
 }
 
 func (x *OnyxForensicRuntime) GetStatus() string {
@@ -37488,7 +37930,7 @@ type OnyxForensicContentProtection struct {
 
 func (x *OnyxForensicContentProtection) Reset() {
 	*x = OnyxForensicContentProtection{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[506]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[510]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -37500,7 +37942,7 @@ func (x *OnyxForensicContentProtection) String() string {
 func (*OnyxForensicContentProtection) ProtoMessage() {}
 
 func (x *OnyxForensicContentProtection) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[506]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[510]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -37513,7 +37955,7 @@ func (x *OnyxForensicContentProtection) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxForensicContentProtection.ProtoReflect.Descriptor instead.
 func (*OnyxForensicContentProtection) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{506}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{510}
 }
 
 func (x *OnyxForensicContentProtection) GetPolicyId() string {
@@ -37614,7 +38056,7 @@ type OnyxForensicManifest struct {
 
 func (x *OnyxForensicManifest) Reset() {
 	*x = OnyxForensicManifest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[507]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[511]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -37626,7 +38068,7 @@ func (x *OnyxForensicManifest) String() string {
 func (*OnyxForensicManifest) ProtoMessage() {}
 
 func (x *OnyxForensicManifest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[507]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[511]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -37639,7 +38081,7 @@ func (x *OnyxForensicManifest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxForensicManifest.ProtoReflect.Descriptor instead.
 func (*OnyxForensicManifest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{507}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{511}
 }
 
 func (x *OnyxForensicManifest) GetId() string {
@@ -37798,7 +38240,7 @@ type OnyxForensicCustodyEvent struct {
 
 func (x *OnyxForensicCustodyEvent) Reset() {
 	*x = OnyxForensicCustodyEvent{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[508]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[512]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -37810,7 +38252,7 @@ func (x *OnyxForensicCustodyEvent) String() string {
 func (*OnyxForensicCustodyEvent) ProtoMessage() {}
 
 func (x *OnyxForensicCustodyEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[508]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[512]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -37823,7 +38265,7 @@ func (x *OnyxForensicCustodyEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxForensicCustodyEvent.ProtoReflect.Descriptor instead.
 func (*OnyxForensicCustodyEvent) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{508}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{512}
 }
 
 func (x *OnyxForensicCustodyEvent) GetId() string {
@@ -37895,7 +38337,7 @@ type OnyxForensicAppealMessage struct {
 
 func (x *OnyxForensicAppealMessage) Reset() {
 	*x = OnyxForensicAppealMessage{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[509]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[513]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -37907,7 +38349,7 @@ func (x *OnyxForensicAppealMessage) String() string {
 func (*OnyxForensicAppealMessage) ProtoMessage() {}
 
 func (x *OnyxForensicAppealMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[509]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[513]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -37920,7 +38362,7 @@ func (x *OnyxForensicAppealMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxForensicAppealMessage.ProtoReflect.Descriptor instead.
 func (*OnyxForensicAppealMessage) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{509}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{513}
 }
 
 func (x *OnyxForensicAppealMessage) GetId() string {
@@ -37975,7 +38417,7 @@ type OnyxForensicAppeal struct {
 
 func (x *OnyxForensicAppeal) Reset() {
 	*x = OnyxForensicAppeal{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[510]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[514]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -37987,7 +38429,7 @@ func (x *OnyxForensicAppeal) String() string {
 func (*OnyxForensicAppeal) ProtoMessage() {}
 
 func (x *OnyxForensicAppeal) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[510]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[514]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -38000,7 +38442,7 @@ func (x *OnyxForensicAppeal) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxForensicAppeal.ProtoReflect.Descriptor instead.
 func (*OnyxForensicAppeal) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{510}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{514}
 }
 
 func (x *OnyxForensicAppeal) GetId() string {
@@ -38094,7 +38536,7 @@ type OnyxForensicCase struct {
 
 func (x *OnyxForensicCase) Reset() {
 	*x = OnyxForensicCase{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[511]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[515]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -38106,7 +38548,7 @@ func (x *OnyxForensicCase) String() string {
 func (*OnyxForensicCase) ProtoMessage() {}
 
 func (x *OnyxForensicCase) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[511]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[515]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -38119,7 +38561,7 @@ func (x *OnyxForensicCase) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxForensicCase.ProtoReflect.Descriptor instead.
 func (*OnyxForensicCase) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{511}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{515}
 }
 
 func (x *OnyxForensicCase) GetId() string {
@@ -38271,7 +38713,7 @@ type GetForensicProtectionDashboardRequest struct {
 
 func (x *GetForensicProtectionDashboardRequest) Reset() {
 	*x = GetForensicProtectionDashboardRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[512]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[516]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -38283,7 +38725,7 @@ func (x *GetForensicProtectionDashboardRequest) String() string {
 func (*GetForensicProtectionDashboardRequest) ProtoMessage() {}
 
 func (x *GetForensicProtectionDashboardRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[512]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[516]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -38296,7 +38738,7 @@ func (x *GetForensicProtectionDashboardRequest) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use GetForensicProtectionDashboardRequest.ProtoReflect.Descriptor instead.
 func (*GetForensicProtectionDashboardRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{512}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{516}
 }
 
 func (x *GetForensicProtectionDashboardRequest) GetIncludeHistory() bool {
@@ -38318,7 +38760,7 @@ type GetForensicProtectionDashboardResponse struct {
 
 func (x *GetForensicProtectionDashboardResponse) Reset() {
 	*x = GetForensicProtectionDashboardResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[513]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[517]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -38330,7 +38772,7 @@ func (x *GetForensicProtectionDashboardResponse) String() string {
 func (*GetForensicProtectionDashboardResponse) ProtoMessage() {}
 
 func (x *GetForensicProtectionDashboardResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[513]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[517]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -38343,7 +38785,7 @@ func (x *GetForensicProtectionDashboardResponse) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use GetForensicProtectionDashboardResponse.ProtoReflect.Descriptor instead.
 func (*GetForensicProtectionDashboardResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{513}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{517}
 }
 
 func (x *GetForensicProtectionDashboardResponse) GetRuntime() *OnyxForensicRuntime {
@@ -38386,7 +38828,7 @@ type IssueForensicManifestRequest struct {
 
 func (x *IssueForensicManifestRequest) Reset() {
 	*x = IssueForensicManifestRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[514]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[518]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -38398,7 +38840,7 @@ func (x *IssueForensicManifestRequest) String() string {
 func (*IssueForensicManifestRequest) ProtoMessage() {}
 
 func (x *IssueForensicManifestRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[514]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[518]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -38411,7 +38853,7 @@ func (x *IssueForensicManifestRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IssueForensicManifestRequest.ProtoReflect.Descriptor instead.
 func (*IssueForensicManifestRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{514}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{518}
 }
 
 func (x *IssueForensicManifestRequest) GetContentId() string {
@@ -38455,7 +38897,7 @@ type IssueForensicManifestResponse struct {
 
 func (x *IssueForensicManifestResponse) Reset() {
 	*x = IssueForensicManifestResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[515]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[519]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -38467,7 +38909,7 @@ func (x *IssueForensicManifestResponse) String() string {
 func (*IssueForensicManifestResponse) ProtoMessage() {}
 
 func (x *IssueForensicManifestResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[515]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[519]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -38480,7 +38922,7 @@ func (x *IssueForensicManifestResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IssueForensicManifestResponse.ProtoReflect.Descriptor instead.
 func (*IssueForensicManifestResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{515}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{519}
 }
 
 func (x *IssueForensicManifestResponse) GetManifest() *OnyxForensicManifest {
@@ -38516,7 +38958,7 @@ type RevokeForensicManifestRequest struct {
 
 func (x *RevokeForensicManifestRequest) Reset() {
 	*x = RevokeForensicManifestRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[516]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[520]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -38528,7 +38970,7 @@ func (x *RevokeForensicManifestRequest) String() string {
 func (*RevokeForensicManifestRequest) ProtoMessage() {}
 
 func (x *RevokeForensicManifestRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[516]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[520]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -38541,7 +38983,7 @@ func (x *RevokeForensicManifestRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RevokeForensicManifestRequest.ProtoReflect.Descriptor instead.
 func (*RevokeForensicManifestRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{516}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{520}
 }
 
 func (x *RevokeForensicManifestRequest) GetManifestId() string {
@@ -38581,7 +39023,7 @@ type RevokeForensicManifestResponse struct {
 
 func (x *RevokeForensicManifestResponse) Reset() {
 	*x = RevokeForensicManifestResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[517]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[521]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -38593,7 +39035,7 @@ func (x *RevokeForensicManifestResponse) String() string {
 func (*RevokeForensicManifestResponse) ProtoMessage() {}
 
 func (x *RevokeForensicManifestResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[517]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[521]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -38606,7 +39048,7 @@ func (x *RevokeForensicManifestResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RevokeForensicManifestResponse.ProtoReflect.Descriptor instead.
 func (*RevokeForensicManifestResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{517}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{521}
 }
 
 func (x *RevokeForensicManifestResponse) GetManifest() *OnyxForensicManifest {
@@ -38629,7 +39071,7 @@ type RespondForensicCaseRequest struct {
 
 func (x *RespondForensicCaseRequest) Reset() {
 	*x = RespondForensicCaseRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[518]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[522]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -38641,7 +39083,7 @@ func (x *RespondForensicCaseRequest) String() string {
 func (*RespondForensicCaseRequest) ProtoMessage() {}
 
 func (x *RespondForensicCaseRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[518]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[522]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -38654,7 +39096,7 @@ func (x *RespondForensicCaseRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RespondForensicCaseRequest.ProtoReflect.Descriptor instead.
 func (*RespondForensicCaseRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{518}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{522}
 }
 
 func (x *RespondForensicCaseRequest) GetCaseId() string {
@@ -38701,7 +39143,7 @@ type RespondForensicCaseResponse struct {
 
 func (x *RespondForensicCaseResponse) Reset() {
 	*x = RespondForensicCaseResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[519]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[523]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -38713,7 +39155,7 @@ func (x *RespondForensicCaseResponse) String() string {
 func (*RespondForensicCaseResponse) ProtoMessage() {}
 
 func (x *RespondForensicCaseResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[519]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[523]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -38726,7 +39168,7 @@ func (x *RespondForensicCaseResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RespondForensicCaseResponse.ProtoReflect.Descriptor instead.
 func (*RespondForensicCaseResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{519}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{523}
 }
 
 func (x *RespondForensicCaseResponse) GetForensicCase() *OnyxForensicCase {
@@ -38749,7 +39191,7 @@ type FileForensicAppealRequest struct {
 
 func (x *FileForensicAppealRequest) Reset() {
 	*x = FileForensicAppealRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[520]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[524]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -38761,7 +39203,7 @@ func (x *FileForensicAppealRequest) String() string {
 func (*FileForensicAppealRequest) ProtoMessage() {}
 
 func (x *FileForensicAppealRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[520]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[524]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -38774,7 +39216,7 @@ func (x *FileForensicAppealRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FileForensicAppealRequest.ProtoReflect.Descriptor instead.
 func (*FileForensicAppealRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{520}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{524}
 }
 
 func (x *FileForensicAppealRequest) GetCaseId() string {
@@ -38821,7 +39263,7 @@ type FileForensicAppealResponse struct {
 
 func (x *FileForensicAppealResponse) Reset() {
 	*x = FileForensicAppealResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[521]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[525]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -38833,7 +39275,7 @@ func (x *FileForensicAppealResponse) String() string {
 func (*FileForensicAppealResponse) ProtoMessage() {}
 
 func (x *FileForensicAppealResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[521]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[525]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -38846,7 +39288,7 @@ func (x *FileForensicAppealResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FileForensicAppealResponse.ProtoReflect.Descriptor instead.
 func (*FileForensicAppealResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{521}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{525}
 }
 
 func (x *FileForensicAppealResponse) GetForensicCase() *OnyxForensicCase {
@@ -38869,7 +39311,7 @@ type PostForensicAppealMessageRequest struct {
 
 func (x *PostForensicAppealMessageRequest) Reset() {
 	*x = PostForensicAppealMessageRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[522]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[526]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -38881,7 +39323,7 @@ func (x *PostForensicAppealMessageRequest) String() string {
 func (*PostForensicAppealMessageRequest) ProtoMessage() {}
 
 func (x *PostForensicAppealMessageRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[522]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[526]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -38894,7 +39336,7 @@ func (x *PostForensicAppealMessageRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PostForensicAppealMessageRequest.ProtoReflect.Descriptor instead.
 func (*PostForensicAppealMessageRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{522}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{526}
 }
 
 func (x *PostForensicAppealMessageRequest) GetAppealId() string {
@@ -38941,7 +39383,7 @@ type PostForensicAppealMessageResponse struct {
 
 func (x *PostForensicAppealMessageResponse) Reset() {
 	*x = PostForensicAppealMessageResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[523]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[527]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -38953,7 +39395,7 @@ func (x *PostForensicAppealMessageResponse) String() string {
 func (*PostForensicAppealMessageResponse) ProtoMessage() {}
 
 func (x *PostForensicAppealMessageResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[523]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[527]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -38966,7 +39408,7 @@ func (x *PostForensicAppealMessageResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use PostForensicAppealMessageResponse.ProtoReflect.Descriptor instead.
 func (*PostForensicAppealMessageResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{523}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{527}
 }
 
 func (x *PostForensicAppealMessageResponse) GetForensicCase() *OnyxForensicCase {
@@ -38988,7 +39430,7 @@ type WithdrawForensicAppealRequest struct {
 
 func (x *WithdrawForensicAppealRequest) Reset() {
 	*x = WithdrawForensicAppealRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[524]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[528]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -39000,7 +39442,7 @@ func (x *WithdrawForensicAppealRequest) String() string {
 func (*WithdrawForensicAppealRequest) ProtoMessage() {}
 
 func (x *WithdrawForensicAppealRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[524]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[528]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -39013,7 +39455,7 @@ func (x *WithdrawForensicAppealRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WithdrawForensicAppealRequest.ProtoReflect.Descriptor instead.
 func (*WithdrawForensicAppealRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{524}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{528}
 }
 
 func (x *WithdrawForensicAppealRequest) GetAppealId() string {
@@ -39053,7 +39495,7 @@ type WithdrawForensicAppealResponse struct {
 
 func (x *WithdrawForensicAppealResponse) Reset() {
 	*x = WithdrawForensicAppealResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[525]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[529]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -39065,7 +39507,7 @@ func (x *WithdrawForensicAppealResponse) String() string {
 func (*WithdrawForensicAppealResponse) ProtoMessage() {}
 
 func (x *WithdrawForensicAppealResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[525]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[529]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -39078,7 +39520,7 @@ func (x *WithdrawForensicAppealResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WithdrawForensicAppealResponse.ProtoReflect.Descriptor instead.
 func (*WithdrawForensicAppealResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{525}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{529}
 }
 
 func (x *WithdrawForensicAppealResponse) GetForensicCase() *OnyxForensicCase {
@@ -39112,7 +39554,7 @@ type OnyxIntegrationRuntime struct {
 
 func (x *OnyxIntegrationRuntime) Reset() {
 	*x = OnyxIntegrationRuntime{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[526]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[530]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -39124,7 +39566,7 @@ func (x *OnyxIntegrationRuntime) String() string {
 func (*OnyxIntegrationRuntime) ProtoMessage() {}
 
 func (x *OnyxIntegrationRuntime) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[526]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[530]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -39137,7 +39579,7 @@ func (x *OnyxIntegrationRuntime) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxIntegrationRuntime.ProtoReflect.Descriptor instead.
 func (*OnyxIntegrationRuntime) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{526}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{530}
 }
 
 func (x *OnyxIntegrationRuntime) GetStatus() string {
@@ -39247,7 +39689,7 @@ type OnyxIntegrationClient struct {
 
 func (x *OnyxIntegrationClient) Reset() {
 	*x = OnyxIntegrationClient{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[527]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[531]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -39259,7 +39701,7 @@ func (x *OnyxIntegrationClient) String() string {
 func (*OnyxIntegrationClient) ProtoMessage() {}
 
 func (x *OnyxIntegrationClient) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[527]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[531]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -39272,7 +39714,7 @@ func (x *OnyxIntegrationClient) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxIntegrationClient.ProtoReflect.Descriptor instead.
 func (*OnyxIntegrationClient) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{527}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{531}
 }
 
 func (x *OnyxIntegrationClient) GetId() string {
@@ -39407,7 +39849,7 @@ type OnyxIntegrationGrant struct {
 
 func (x *OnyxIntegrationGrant) Reset() {
 	*x = OnyxIntegrationGrant{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[528]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[532]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -39419,7 +39861,7 @@ func (x *OnyxIntegrationGrant) String() string {
 func (*OnyxIntegrationGrant) ProtoMessage() {}
 
 func (x *OnyxIntegrationGrant) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[528]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[532]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -39432,7 +39874,7 @@ func (x *OnyxIntegrationGrant) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxIntegrationGrant.ProtoReflect.Descriptor instead.
 func (*OnyxIntegrationGrant) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{528}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{532}
 }
 
 func (x *OnyxIntegrationGrant) GetId() string {
@@ -39587,7 +40029,7 @@ type OnyxIntegrationCall struct {
 
 func (x *OnyxIntegrationCall) Reset() {
 	*x = OnyxIntegrationCall{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[529]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[533]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -39599,7 +40041,7 @@ func (x *OnyxIntegrationCall) String() string {
 func (*OnyxIntegrationCall) ProtoMessage() {}
 
 func (x *OnyxIntegrationCall) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[529]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[533]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -39612,7 +40054,7 @@ func (x *OnyxIntegrationCall) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxIntegrationCall.ProtoReflect.Descriptor instead.
 func (*OnyxIntegrationCall) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{529}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{533}
 }
 
 func (x *OnyxIntegrationCall) GetId() string {
@@ -39709,7 +40151,7 @@ type OnyxIntegrationConnectorDefinition struct {
 
 func (x *OnyxIntegrationConnectorDefinition) Reset() {
 	*x = OnyxIntegrationConnectorDefinition{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[530]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[534]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -39721,7 +40163,7 @@ func (x *OnyxIntegrationConnectorDefinition) String() string {
 func (*OnyxIntegrationConnectorDefinition) ProtoMessage() {}
 
 func (x *OnyxIntegrationConnectorDefinition) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[530]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[534]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -39734,7 +40176,7 @@ func (x *OnyxIntegrationConnectorDefinition) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use OnyxIntegrationConnectorDefinition.ProtoReflect.Descriptor instead.
 func (*OnyxIntegrationConnectorDefinition) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{530}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{534}
 }
 
 func (x *OnyxIntegrationConnectorDefinition) GetCode() string {
@@ -39823,7 +40265,7 @@ type OnyxIntegrationConnectorAccount struct {
 
 func (x *OnyxIntegrationConnectorAccount) Reset() {
 	*x = OnyxIntegrationConnectorAccount{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[531]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[535]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -39835,7 +40277,7 @@ func (x *OnyxIntegrationConnectorAccount) String() string {
 func (*OnyxIntegrationConnectorAccount) ProtoMessage() {}
 
 func (x *OnyxIntegrationConnectorAccount) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[531]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[535]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -39848,7 +40290,7 @@ func (x *OnyxIntegrationConnectorAccount) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxIntegrationConnectorAccount.ProtoReflect.Descriptor instead.
 func (*OnyxIntegrationConnectorAccount) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{531}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{535}
 }
 
 func (x *OnyxIntegrationConnectorAccount) GetId() string {
@@ -39979,7 +40421,7 @@ type OnyxIntegrationConnectorRun struct {
 
 func (x *OnyxIntegrationConnectorRun) Reset() {
 	*x = OnyxIntegrationConnectorRun{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[532]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[536]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -39991,7 +40433,7 @@ func (x *OnyxIntegrationConnectorRun) String() string {
 func (*OnyxIntegrationConnectorRun) ProtoMessage() {}
 
 func (x *OnyxIntegrationConnectorRun) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[532]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[536]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -40004,7 +40446,7 @@ func (x *OnyxIntegrationConnectorRun) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxIntegrationConnectorRun.ProtoReflect.Descriptor instead.
 func (*OnyxIntegrationConnectorRun) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{532}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{536}
 }
 
 func (x *OnyxIntegrationConnectorRun) GetId() string {
@@ -40130,7 +40572,7 @@ type OnyxIntegrationArtifact struct {
 
 func (x *OnyxIntegrationArtifact) Reset() {
 	*x = OnyxIntegrationArtifact{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[533]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[537]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -40142,7 +40584,7 @@ func (x *OnyxIntegrationArtifact) String() string {
 func (*OnyxIntegrationArtifact) ProtoMessage() {}
 
 func (x *OnyxIntegrationArtifact) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[533]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[537]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -40155,7 +40597,7 @@ func (x *OnyxIntegrationArtifact) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxIntegrationArtifact.ProtoReflect.Descriptor instead.
 func (*OnyxIntegrationArtifact) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{533}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{537}
 }
 
 func (x *OnyxIntegrationArtifact) GetId() string {
@@ -40246,7 +40688,7 @@ type OnyxIntegrationConflict struct {
 
 func (x *OnyxIntegrationConflict) Reset() {
 	*x = OnyxIntegrationConflict{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[534]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[538]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -40258,7 +40700,7 @@ func (x *OnyxIntegrationConflict) String() string {
 func (*OnyxIntegrationConflict) ProtoMessage() {}
 
 func (x *OnyxIntegrationConflict) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[534]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[538]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -40271,7 +40713,7 @@ func (x *OnyxIntegrationConflict) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxIntegrationConflict.ProtoReflect.Descriptor instead.
 func (*OnyxIntegrationConflict) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{534}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{538}
 }
 
 func (x *OnyxIntegrationConflict) GetId() string {
@@ -40365,7 +40807,7 @@ type OnyxIntegrationBridgeDispatch struct {
 
 func (x *OnyxIntegrationBridgeDispatch) Reset() {
 	*x = OnyxIntegrationBridgeDispatch{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[535]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[539]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -40377,7 +40819,7 @@ func (x *OnyxIntegrationBridgeDispatch) String() string {
 func (*OnyxIntegrationBridgeDispatch) ProtoMessage() {}
 
 func (x *OnyxIntegrationBridgeDispatch) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[535]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[539]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -40390,7 +40832,7 @@ func (x *OnyxIntegrationBridgeDispatch) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxIntegrationBridgeDispatch.ProtoReflect.Descriptor instead.
 func (*OnyxIntegrationBridgeDispatch) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{535}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{539}
 }
 
 func (x *OnyxIntegrationBridgeDispatch) GetId() string {
@@ -40498,7 +40940,7 @@ type OnyxIntegrationBridgeSource struct {
 
 func (x *OnyxIntegrationBridgeSource) Reset() {
 	*x = OnyxIntegrationBridgeSource{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[536]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[540]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -40510,7 +40952,7 @@ func (x *OnyxIntegrationBridgeSource) String() string {
 func (*OnyxIntegrationBridgeSource) ProtoMessage() {}
 
 func (x *OnyxIntegrationBridgeSource) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[536]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[540]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -40523,7 +40965,7 @@ func (x *OnyxIntegrationBridgeSource) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxIntegrationBridgeSource.ProtoReflect.Descriptor instead.
 func (*OnyxIntegrationBridgeSource) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{536}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{540}
 }
 
 func (x *OnyxIntegrationBridgeSource) GetId() string {
@@ -40586,7 +41028,7 @@ type OnyxIntegrationOperationsCase struct {
 
 func (x *OnyxIntegrationOperationsCase) Reset() {
 	*x = OnyxIntegrationOperationsCase{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[537]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[541]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -40598,7 +41040,7 @@ func (x *OnyxIntegrationOperationsCase) String() string {
 func (*OnyxIntegrationOperationsCase) ProtoMessage() {}
 
 func (x *OnyxIntegrationOperationsCase) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[537]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[541]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -40611,7 +41053,7 @@ func (x *OnyxIntegrationOperationsCase) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnyxIntegrationOperationsCase.ProtoReflect.Descriptor instead.
 func (*OnyxIntegrationOperationsCase) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{537}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{541}
 }
 
 func (x *OnyxIntegrationOperationsCase) GetId() string {
@@ -40693,7 +41135,7 @@ type GetIntegrationDashboardRequest struct {
 
 func (x *GetIntegrationDashboardRequest) Reset() {
 	*x = GetIntegrationDashboardRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[538]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[542]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -40705,7 +41147,7 @@ func (x *GetIntegrationDashboardRequest) String() string {
 func (*GetIntegrationDashboardRequest) ProtoMessage() {}
 
 func (x *GetIntegrationDashboardRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[538]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[542]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -40718,7 +41160,7 @@ func (x *GetIntegrationDashboardRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetIntegrationDashboardRequest.ProtoReflect.Descriptor instead.
 func (*GetIntegrationDashboardRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{538}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{542}
 }
 
 func (x *GetIntegrationDashboardRequest) GetIncludeHistory() bool {
@@ -40748,7 +41190,7 @@ type GetIntegrationDashboardResponse struct {
 
 func (x *GetIntegrationDashboardResponse) Reset() {
 	*x = GetIntegrationDashboardResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[539]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[543]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -40760,7 +41202,7 @@ func (x *GetIntegrationDashboardResponse) String() string {
 func (*GetIntegrationDashboardResponse) ProtoMessage() {}
 
 func (x *GetIntegrationDashboardResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[539]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[543]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -40773,7 +41215,7 @@ func (x *GetIntegrationDashboardResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetIntegrationDashboardResponse.ProtoReflect.Descriptor instead.
 func (*GetIntegrationDashboardResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{539}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{543}
 }
 
 func (x *GetIntegrationDashboardResponse) GetRuntime() *OnyxIntegrationRuntime {
@@ -40879,7 +41321,7 @@ type AuthorizeIntegrationRequest struct {
 
 func (x *AuthorizeIntegrationRequest) Reset() {
 	*x = AuthorizeIntegrationRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[540]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[544]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -40891,7 +41333,7 @@ func (x *AuthorizeIntegrationRequest) String() string {
 func (*AuthorizeIntegrationRequest) ProtoMessage() {}
 
 func (x *AuthorizeIntegrationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[540]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[544]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -40904,7 +41346,7 @@ func (x *AuthorizeIntegrationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AuthorizeIntegrationRequest.ProtoReflect.Descriptor instead.
 func (*AuthorizeIntegrationRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{540}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{544}
 }
 
 func (x *AuthorizeIntegrationRequest) GetClientId() string {
@@ -40995,7 +41437,7 @@ type AuthorizeIntegrationResponse struct {
 
 func (x *AuthorizeIntegrationResponse) Reset() {
 	*x = AuthorizeIntegrationResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[541]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[545]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -41007,7 +41449,7 @@ func (x *AuthorizeIntegrationResponse) String() string {
 func (*AuthorizeIntegrationResponse) ProtoMessage() {}
 
 func (x *AuthorizeIntegrationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[541]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[545]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -41020,7 +41462,7 @@ func (x *AuthorizeIntegrationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AuthorizeIntegrationResponse.ProtoReflect.Descriptor instead.
 func (*AuthorizeIntegrationResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{541}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{545}
 }
 
 func (x *AuthorizeIntegrationResponse) GetGrant() *OnyxIntegrationGrant {
@@ -41056,7 +41498,7 @@ type RevokeIntegrationGrantRequest struct {
 
 func (x *RevokeIntegrationGrantRequest) Reset() {
 	*x = RevokeIntegrationGrantRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[542]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[546]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -41068,7 +41510,7 @@ func (x *RevokeIntegrationGrantRequest) String() string {
 func (*RevokeIntegrationGrantRequest) ProtoMessage() {}
 
 func (x *RevokeIntegrationGrantRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[542]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[546]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -41081,7 +41523,7 @@ func (x *RevokeIntegrationGrantRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RevokeIntegrationGrantRequest.ProtoReflect.Descriptor instead.
 func (*RevokeIntegrationGrantRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{542}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{546}
 }
 
 func (x *RevokeIntegrationGrantRequest) GetGrantId() string {
@@ -41125,7 +41567,7 @@ type RevokeIntegrationGrantResponse struct {
 
 func (x *RevokeIntegrationGrantResponse) Reset() {
 	*x = RevokeIntegrationGrantResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[543]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[547]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -41137,7 +41579,7 @@ func (x *RevokeIntegrationGrantResponse) String() string {
 func (*RevokeIntegrationGrantResponse) ProtoMessage() {}
 
 func (x *RevokeIntegrationGrantResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[543]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[547]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -41150,7 +41592,7 @@ func (x *RevokeIntegrationGrantResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RevokeIntegrationGrantResponse.ProtoReflect.Descriptor instead.
 func (*RevokeIntegrationGrantResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{543}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{547}
 }
 
 func (x *RevokeIntegrationGrantResponse) GetGrant() *OnyxIntegrationGrant {
@@ -41203,7 +41645,7 @@ type UpsertIntegrationConnectorRequest struct {
 
 func (x *UpsertIntegrationConnectorRequest) Reset() {
 	*x = UpsertIntegrationConnectorRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[544]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[548]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -41215,7 +41657,7 @@ func (x *UpsertIntegrationConnectorRequest) String() string {
 func (*UpsertIntegrationConnectorRequest) ProtoMessage() {}
 
 func (x *UpsertIntegrationConnectorRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[544]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[548]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -41228,7 +41670,7 @@ func (x *UpsertIntegrationConnectorRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use UpsertIntegrationConnectorRequest.ProtoReflect.Descriptor instead.
 func (*UpsertIntegrationConnectorRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{544}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{548}
 }
 
 func (x *UpsertIntegrationConnectorRequest) GetAccountId() string {
@@ -41289,7 +41731,7 @@ type UpsertIntegrationConnectorResponse struct {
 
 func (x *UpsertIntegrationConnectorResponse) Reset() {
 	*x = UpsertIntegrationConnectorResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[545]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[549]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -41301,7 +41743,7 @@ func (x *UpsertIntegrationConnectorResponse) String() string {
 func (*UpsertIntegrationConnectorResponse) ProtoMessage() {}
 
 func (x *UpsertIntegrationConnectorResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[545]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[549]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -41314,7 +41756,7 @@ func (x *UpsertIntegrationConnectorResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use UpsertIntegrationConnectorResponse.ProtoReflect.Descriptor instead.
 func (*UpsertIntegrationConnectorResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{545}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{549}
 }
 
 func (x *UpsertIntegrationConnectorResponse) GetAccount() *OnyxIntegrationConnectorAccount {
@@ -41337,7 +41779,7 @@ type SetIntegrationConnectorStateRequest struct {
 
 func (x *SetIntegrationConnectorStateRequest) Reset() {
 	*x = SetIntegrationConnectorStateRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[546]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[550]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -41349,7 +41791,7 @@ func (x *SetIntegrationConnectorStateRequest) String() string {
 func (*SetIntegrationConnectorStateRequest) ProtoMessage() {}
 
 func (x *SetIntegrationConnectorStateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[546]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[550]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -41362,7 +41804,7 @@ func (x *SetIntegrationConnectorStateRequest) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use SetIntegrationConnectorStateRequest.ProtoReflect.Descriptor instead.
 func (*SetIntegrationConnectorStateRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{546}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{550}
 }
 
 func (x *SetIntegrationConnectorStateRequest) GetAccountId() string {
@@ -41409,7 +41851,7 @@ type SetIntegrationConnectorStateResponse struct {
 
 func (x *SetIntegrationConnectorStateResponse) Reset() {
 	*x = SetIntegrationConnectorStateResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[547]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[551]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -41421,7 +41863,7 @@ func (x *SetIntegrationConnectorStateResponse) String() string {
 func (*SetIntegrationConnectorStateResponse) ProtoMessage() {}
 
 func (x *SetIntegrationConnectorStateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[547]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[551]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -41434,7 +41876,7 @@ func (x *SetIntegrationConnectorStateResponse) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use SetIntegrationConnectorStateResponse.ProtoReflect.Descriptor instead.
 func (*SetIntegrationConnectorStateResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{547}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{551}
 }
 
 func (x *SetIntegrationConnectorStateResponse) GetAccount() *OnyxIntegrationConnectorAccount {
@@ -41457,7 +41899,7 @@ type RunIntegrationConnectorRequest struct {
 
 func (x *RunIntegrationConnectorRequest) Reset() {
 	*x = RunIntegrationConnectorRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[548]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[552]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -41469,7 +41911,7 @@ func (x *RunIntegrationConnectorRequest) String() string {
 func (*RunIntegrationConnectorRequest) ProtoMessage() {}
 
 func (x *RunIntegrationConnectorRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[548]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[552]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -41482,7 +41924,7 @@ func (x *RunIntegrationConnectorRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RunIntegrationConnectorRequest.ProtoReflect.Descriptor instead.
 func (*RunIntegrationConnectorRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{548}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{552}
 }
 
 func (x *RunIntegrationConnectorRequest) GetAccountId() string {
@@ -41531,7 +41973,7 @@ type RunIntegrationConnectorResponse struct {
 
 func (x *RunIntegrationConnectorResponse) Reset() {
 	*x = RunIntegrationConnectorResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[549]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[553]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -41543,7 +41985,7 @@ func (x *RunIntegrationConnectorResponse) String() string {
 func (*RunIntegrationConnectorResponse) ProtoMessage() {}
 
 func (x *RunIntegrationConnectorResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[549]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[553]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -41556,7 +41998,7 @@ func (x *RunIntegrationConnectorResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RunIntegrationConnectorResponse.ProtoReflect.Descriptor instead.
 func (*RunIntegrationConnectorResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{549}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{553}
 }
 
 func (x *RunIntegrationConnectorResponse) GetRun() *OnyxIntegrationConnectorRun {
@@ -41589,7 +42031,7 @@ type GetIntegrationArtifactRequest struct {
 
 func (x *GetIntegrationArtifactRequest) Reset() {
 	*x = GetIntegrationArtifactRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[550]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[554]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -41601,7 +42043,7 @@ func (x *GetIntegrationArtifactRequest) String() string {
 func (*GetIntegrationArtifactRequest) ProtoMessage() {}
 
 func (x *GetIntegrationArtifactRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[550]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[554]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -41614,7 +42056,7 @@ func (x *GetIntegrationArtifactRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetIntegrationArtifactRequest.ProtoReflect.Descriptor instead.
 func (*GetIntegrationArtifactRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{550}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{554}
 }
 
 func (x *GetIntegrationArtifactRequest) GetArtifactId() string {
@@ -41633,7 +42075,7 @@ type GetIntegrationArtifactResponse struct {
 
 func (x *GetIntegrationArtifactResponse) Reset() {
 	*x = GetIntegrationArtifactResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[551]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[555]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -41645,7 +42087,7 @@ func (x *GetIntegrationArtifactResponse) String() string {
 func (*GetIntegrationArtifactResponse) ProtoMessage() {}
 
 func (x *GetIntegrationArtifactResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[551]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[555]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -41658,7 +42100,7 @@ func (x *GetIntegrationArtifactResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetIntegrationArtifactResponse.ProtoReflect.Descriptor instead.
 func (*GetIntegrationArtifactResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{551}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{555}
 }
 
 func (x *GetIntegrationArtifactResponse) GetArtifact() *OnyxIntegrationArtifact {
@@ -41680,7 +42122,7 @@ type ResolveIntegrationConflictRequest struct {
 
 func (x *ResolveIntegrationConflictRequest) Reset() {
 	*x = ResolveIntegrationConflictRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[552]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[556]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -41692,7 +42134,7 @@ func (x *ResolveIntegrationConflictRequest) String() string {
 func (*ResolveIntegrationConflictRequest) ProtoMessage() {}
 
 func (x *ResolveIntegrationConflictRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[552]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[556]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -41705,7 +42147,7 @@ func (x *ResolveIntegrationConflictRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use ResolveIntegrationConflictRequest.ProtoReflect.Descriptor instead.
 func (*ResolveIntegrationConflictRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{552}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{556}
 }
 
 func (x *ResolveIntegrationConflictRequest) GetConflictId() string {
@@ -41745,7 +42187,7 @@ type ResolveIntegrationConflictResponse struct {
 
 func (x *ResolveIntegrationConflictResponse) Reset() {
 	*x = ResolveIntegrationConflictResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[553]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[557]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -41757,7 +42199,7 @@ func (x *ResolveIntegrationConflictResponse) String() string {
 func (*ResolveIntegrationConflictResponse) ProtoMessage() {}
 
 func (x *ResolveIntegrationConflictResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[553]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[557]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -41770,7 +42212,7 @@ func (x *ResolveIntegrationConflictResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use ResolveIntegrationConflictResponse.ProtoReflect.Descriptor instead.
 func (*ResolveIntegrationConflictResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{553}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{557}
 }
 
 func (x *ResolveIntegrationConflictResponse) GetConflict() *OnyxIntegrationConflict {
@@ -41795,7 +42237,7 @@ type DispatchIntegrationBridgeRequest struct {
 
 func (x *DispatchIntegrationBridgeRequest) Reset() {
 	*x = DispatchIntegrationBridgeRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[554]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[558]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -41807,7 +42249,7 @@ func (x *DispatchIntegrationBridgeRequest) String() string {
 func (*DispatchIntegrationBridgeRequest) ProtoMessage() {}
 
 func (x *DispatchIntegrationBridgeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[554]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[558]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -41820,7 +42262,7 @@ func (x *DispatchIntegrationBridgeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DispatchIntegrationBridgeRequest.ProtoReflect.Descriptor instead.
 func (*DispatchIntegrationBridgeRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{554}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{558}
 }
 
 func (x *DispatchIntegrationBridgeRequest) GetGrantId() string {
@@ -41881,7 +42323,7 @@ type DispatchIntegrationBridgeResponse struct {
 
 func (x *DispatchIntegrationBridgeResponse) Reset() {
 	*x = DispatchIntegrationBridgeResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[555]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[559]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -41893,7 +42335,7 @@ func (x *DispatchIntegrationBridgeResponse) String() string {
 func (*DispatchIntegrationBridgeResponse) ProtoMessage() {}
 
 func (x *DispatchIntegrationBridgeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[555]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[559]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -41906,7 +42348,7 @@ func (x *DispatchIntegrationBridgeResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use DispatchIntegrationBridgeResponse.ProtoReflect.Descriptor instead.
 func (*DispatchIntegrationBridgeResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{555}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{559}
 }
 
 func (x *DispatchIntegrationBridgeResponse) GetDispatch() *OnyxIntegrationBridgeDispatch {
@@ -41930,7 +42372,7 @@ type SubmitIntegrationOperationsCaseRequest struct {
 
 func (x *SubmitIntegrationOperationsCaseRequest) Reset() {
 	*x = SubmitIntegrationOperationsCaseRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[556]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[560]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -41942,7 +42384,7 @@ func (x *SubmitIntegrationOperationsCaseRequest) String() string {
 func (*SubmitIntegrationOperationsCaseRequest) ProtoMessage() {}
 
 func (x *SubmitIntegrationOperationsCaseRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[556]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[560]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -41955,7 +42397,7 @@ func (x *SubmitIntegrationOperationsCaseRequest) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use SubmitIntegrationOperationsCaseRequest.ProtoReflect.Descriptor instead.
 func (*SubmitIntegrationOperationsCaseRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{556}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{560}
 }
 
 func (x *SubmitIntegrationOperationsCaseRequest) GetCaseType() string {
@@ -42009,7 +42451,7 @@ type SubmitIntegrationOperationsCaseResponse struct {
 
 func (x *SubmitIntegrationOperationsCaseResponse) Reset() {
 	*x = SubmitIntegrationOperationsCaseResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[557]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[561]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -42021,7 +42463,7 @@ func (x *SubmitIntegrationOperationsCaseResponse) String() string {
 func (*SubmitIntegrationOperationsCaseResponse) ProtoMessage() {}
 
 func (x *SubmitIntegrationOperationsCaseResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[557]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[561]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -42034,7 +42476,7 @@ func (x *SubmitIntegrationOperationsCaseResponse) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use SubmitIntegrationOperationsCaseResponse.ProtoReflect.Descriptor instead.
 func (*SubmitIntegrationOperationsCaseResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{557}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{561}
 }
 
 func (x *SubmitIntegrationOperationsCaseResponse) GetOperationsCase() *OnyxIntegrationOperationsCase {
@@ -42064,7 +42506,7 @@ type SpatialCanvasSourceAnchor struct {
 
 func (x *SpatialCanvasSourceAnchor) Reset() {
 	*x = SpatialCanvasSourceAnchor{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[558]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[562]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -42076,7 +42518,7 @@ func (x *SpatialCanvasSourceAnchor) String() string {
 func (*SpatialCanvasSourceAnchor) ProtoMessage() {}
 
 func (x *SpatialCanvasSourceAnchor) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[558]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[562]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -42089,7 +42531,7 @@ func (x *SpatialCanvasSourceAnchor) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SpatialCanvasSourceAnchor.ProtoReflect.Descriptor instead.
 func (*SpatialCanvasSourceAnchor) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{558}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{562}
 }
 
 func (x *SpatialCanvasSourceAnchor) GetContentId() string {
@@ -42175,7 +42617,7 @@ type SpatialCanvasTemplate struct {
 
 func (x *SpatialCanvasTemplate) Reset() {
 	*x = SpatialCanvasTemplate{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[559]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[563]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -42187,7 +42629,7 @@ func (x *SpatialCanvasTemplate) String() string {
 func (*SpatialCanvasTemplate) ProtoMessage() {}
 
 func (x *SpatialCanvasTemplate) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[559]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[563]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -42200,7 +42642,7 @@ func (x *SpatialCanvasTemplate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SpatialCanvasTemplate.ProtoReflect.Descriptor instead.
 func (*SpatialCanvasTemplate) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{559}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{563}
 }
 
 func (x *SpatialCanvasTemplate) GetId() string {
@@ -42303,7 +42745,7 @@ type SpatialCanvasWorkspace struct {
 
 func (x *SpatialCanvasWorkspace) Reset() {
 	*x = SpatialCanvasWorkspace{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[560]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[564]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -42315,7 +42757,7 @@ func (x *SpatialCanvasWorkspace) String() string {
 func (*SpatialCanvasWorkspace) ProtoMessage() {}
 
 func (x *SpatialCanvasWorkspace) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[560]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[564]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -42328,7 +42770,7 @@ func (x *SpatialCanvasWorkspace) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SpatialCanvasWorkspace.ProtoReflect.Descriptor instead.
 func (*SpatialCanvasWorkspace) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{560}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{564}
 }
 
 func (x *SpatialCanvasWorkspace) GetId() string {
@@ -42409,7 +42851,7 @@ type SpatialCanvasSummary struct {
 
 func (x *SpatialCanvasSummary) Reset() {
 	*x = SpatialCanvasSummary{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[561]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[565]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -42421,7 +42863,7 @@ func (x *SpatialCanvasSummary) String() string {
 func (*SpatialCanvasSummary) ProtoMessage() {}
 
 func (x *SpatialCanvasSummary) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[561]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[565]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -42434,7 +42876,7 @@ func (x *SpatialCanvasSummary) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SpatialCanvasSummary.ProtoReflect.Descriptor instead.
 func (*SpatialCanvasSummary) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{561}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{565}
 }
 
 func (x *SpatialCanvasSummary) GetId() string {
@@ -42560,7 +43002,7 @@ type SpatialCanvasNode struct {
 
 func (x *SpatialCanvasNode) Reset() {
 	*x = SpatialCanvasNode{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[562]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[566]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -42572,7 +43014,7 @@ func (x *SpatialCanvasNode) String() string {
 func (*SpatialCanvasNode) ProtoMessage() {}
 
 func (x *SpatialCanvasNode) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[562]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[566]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -42585,7 +43027,7 @@ func (x *SpatialCanvasNode) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SpatialCanvasNode.ProtoReflect.Descriptor instead.
 func (*SpatialCanvasNode) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{562}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{566}
 }
 
 func (x *SpatialCanvasNode) GetId() string {
@@ -42727,7 +43169,7 @@ type SpatialCanvasEdge struct {
 
 func (x *SpatialCanvasEdge) Reset() {
 	*x = SpatialCanvasEdge{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[563]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[567]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -42739,7 +43181,7 @@ func (x *SpatialCanvasEdge) String() string {
 func (*SpatialCanvasEdge) ProtoMessage() {}
 
 func (x *SpatialCanvasEdge) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[563]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[567]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -42752,7 +43194,7 @@ func (x *SpatialCanvasEdge) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SpatialCanvasEdge.ProtoReflect.Descriptor instead.
 func (*SpatialCanvasEdge) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{563}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{567}
 }
 
 func (x *SpatialCanvasEdge) GetId() string {
@@ -42854,7 +43296,7 @@ type SpatialCanvasLayoutRevision struct {
 
 func (x *SpatialCanvasLayoutRevision) Reset() {
 	*x = SpatialCanvasLayoutRevision{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[564]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[568]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -42866,7 +43308,7 @@ func (x *SpatialCanvasLayoutRevision) String() string {
 func (*SpatialCanvasLayoutRevision) ProtoMessage() {}
 
 func (x *SpatialCanvasLayoutRevision) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[564]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[568]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -42879,7 +43321,7 @@ func (x *SpatialCanvasLayoutRevision) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SpatialCanvasLayoutRevision.ProtoReflect.Descriptor instead.
 func (*SpatialCanvasLayoutRevision) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{564}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{568}
 }
 
 func (x *SpatialCanvasLayoutRevision) GetId() string {
@@ -42951,7 +43393,7 @@ type SpatialCanvasConflict struct {
 
 func (x *SpatialCanvasConflict) Reset() {
 	*x = SpatialCanvasConflict{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[565]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[569]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -42963,7 +43405,7 @@ func (x *SpatialCanvasConflict) String() string {
 func (*SpatialCanvasConflict) ProtoMessage() {}
 
 func (x *SpatialCanvasConflict) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[565]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[569]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -42976,7 +43418,7 @@ func (x *SpatialCanvasConflict) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SpatialCanvasConflict.ProtoReflect.Descriptor instead.
 func (*SpatialCanvasConflict) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{565}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{569}
 }
 
 func (x *SpatialCanvasConflict) GetId() string {
@@ -43078,7 +43520,7 @@ type SpatialCanvasSnapshot struct {
 
 func (x *SpatialCanvasSnapshot) Reset() {
 	*x = SpatialCanvasSnapshot{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[566]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[570]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -43090,7 +43532,7 @@ func (x *SpatialCanvasSnapshot) String() string {
 func (*SpatialCanvasSnapshot) ProtoMessage() {}
 
 func (x *SpatialCanvasSnapshot) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[566]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[570]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -43103,7 +43545,7 @@ func (x *SpatialCanvasSnapshot) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SpatialCanvasSnapshot.ProtoReflect.Descriptor instead.
 func (*SpatialCanvasSnapshot) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{566}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{570}
 }
 
 func (x *SpatialCanvasSnapshot) GetId() string {
@@ -43173,7 +43615,7 @@ type SpatialCanvasComment struct {
 
 func (x *SpatialCanvasComment) Reset() {
 	*x = SpatialCanvasComment{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[567]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[571]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -43185,7 +43627,7 @@ func (x *SpatialCanvasComment) String() string {
 func (*SpatialCanvasComment) ProtoMessage() {}
 
 func (x *SpatialCanvasComment) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[567]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[571]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -43198,7 +43640,7 @@ func (x *SpatialCanvasComment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SpatialCanvasComment.ProtoReflect.Descriptor instead.
 func (*SpatialCanvasComment) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{567}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{571}
 }
 
 func (x *SpatialCanvasComment) GetId() string {
@@ -43291,7 +43733,7 @@ type SpatialCanvasProposal struct {
 
 func (x *SpatialCanvasProposal) Reset() {
 	*x = SpatialCanvasProposal{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[568]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[572]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -43303,7 +43745,7 @@ func (x *SpatialCanvasProposal) String() string {
 func (*SpatialCanvasProposal) ProtoMessage() {}
 
 func (x *SpatialCanvasProposal) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[568]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[572]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -43316,7 +43758,7 @@ func (x *SpatialCanvasProposal) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SpatialCanvasProposal.ProtoReflect.Descriptor instead.
 func (*SpatialCanvasProposal) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{568}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{572}
 }
 
 func (x *SpatialCanvasProposal) GetId() string {
@@ -43426,7 +43868,7 @@ type SpatialCanvasExport struct {
 
 func (x *SpatialCanvasExport) Reset() {
 	*x = SpatialCanvasExport{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[569]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[573]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -43438,7 +43880,7 @@ func (x *SpatialCanvasExport) String() string {
 func (*SpatialCanvasExport) ProtoMessage() {}
 
 func (x *SpatialCanvasExport) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[569]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[573]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -43451,7 +43893,7 @@ func (x *SpatialCanvasExport) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SpatialCanvasExport.ProtoReflect.Descriptor instead.
 func (*SpatialCanvasExport) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{569}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{573}
 }
 
 func (x *SpatialCanvasExport) GetId() string {
@@ -43576,7 +44018,7 @@ type SpatialCanvasOperation struct {
 
 func (x *SpatialCanvasOperation) Reset() {
 	*x = SpatialCanvasOperation{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[570]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[574]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -43588,7 +44030,7 @@ func (x *SpatialCanvasOperation) String() string {
 func (*SpatialCanvasOperation) ProtoMessage() {}
 
 func (x *SpatialCanvasOperation) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[570]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[574]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -43601,7 +44043,7 @@ func (x *SpatialCanvasOperation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SpatialCanvasOperation.ProtoReflect.Descriptor instead.
 func (*SpatialCanvasOperation) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{570}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{574}
 }
 
 func (x *SpatialCanvasOperation) GetOperationId() string {
@@ -43686,7 +44128,7 @@ type SpatialCanvasDetail struct {
 
 func (x *SpatialCanvasDetail) Reset() {
 	*x = SpatialCanvasDetail{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[571]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[575]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -43698,7 +44140,7 @@ func (x *SpatialCanvasDetail) String() string {
 func (*SpatialCanvasDetail) ProtoMessage() {}
 
 func (x *SpatialCanvasDetail) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[571]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[575]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -43711,7 +44153,7 @@ func (x *SpatialCanvasDetail) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SpatialCanvasDetail.ProtoReflect.Descriptor instead.
 func (*SpatialCanvasDetail) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{571}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{575}
 }
 
 func (x *SpatialCanvasDetail) GetCanvas() *SpatialCanvasSummary {
@@ -43799,7 +44241,7 @@ type GetSpatialCanvasDashboardRequest struct {
 
 func (x *GetSpatialCanvasDashboardRequest) Reset() {
 	*x = GetSpatialCanvasDashboardRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[572]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[576]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -43811,7 +44253,7 @@ func (x *GetSpatialCanvasDashboardRequest) String() string {
 func (*GetSpatialCanvasDashboardRequest) ProtoMessage() {}
 
 func (x *GetSpatialCanvasDashboardRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[572]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[576]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -43824,7 +44266,7 @@ func (x *GetSpatialCanvasDashboardRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSpatialCanvasDashboardRequest.ProtoReflect.Descriptor instead.
 func (*GetSpatialCanvasDashboardRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{572}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{576}
 }
 
 type GetSpatialCanvasDashboardResponse struct {
@@ -43844,7 +44286,7 @@ type GetSpatialCanvasDashboardResponse struct {
 
 func (x *GetSpatialCanvasDashboardResponse) Reset() {
 	*x = GetSpatialCanvasDashboardResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[573]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[577]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -43856,7 +44298,7 @@ func (x *GetSpatialCanvasDashboardResponse) String() string {
 func (*GetSpatialCanvasDashboardResponse) ProtoMessage() {}
 
 func (x *GetSpatialCanvasDashboardResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[573]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[577]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -43869,7 +44311,7 @@ func (x *GetSpatialCanvasDashboardResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use GetSpatialCanvasDashboardResponse.ProtoReflect.Descriptor instead.
 func (*GetSpatialCanvasDashboardResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{573}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{577}
 }
 
 func (x *GetSpatialCanvasDashboardResponse) GetWorkspaces() []*SpatialCanvasWorkspace {
@@ -43944,7 +44386,7 @@ type ListSpatialCanvasTemplatesRequest struct {
 
 func (x *ListSpatialCanvasTemplatesRequest) Reset() {
 	*x = ListSpatialCanvasTemplatesRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[574]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[578]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -43956,7 +44398,7 @@ func (x *ListSpatialCanvasTemplatesRequest) String() string {
 func (*ListSpatialCanvasTemplatesRequest) ProtoMessage() {}
 
 func (x *ListSpatialCanvasTemplatesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[574]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[578]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -43969,7 +44411,7 @@ func (x *ListSpatialCanvasTemplatesRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use ListSpatialCanvasTemplatesRequest.ProtoReflect.Descriptor instead.
 func (*ListSpatialCanvasTemplatesRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{574}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{578}
 }
 
 func (x *ListSpatialCanvasTemplatesRequest) GetIncludeRetired() bool {
@@ -43988,7 +44430,7 @@ type ListSpatialCanvasTemplatesResponse struct {
 
 func (x *ListSpatialCanvasTemplatesResponse) Reset() {
 	*x = ListSpatialCanvasTemplatesResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[575]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[579]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44000,7 +44442,7 @@ func (x *ListSpatialCanvasTemplatesResponse) String() string {
 func (*ListSpatialCanvasTemplatesResponse) ProtoMessage() {}
 
 func (x *ListSpatialCanvasTemplatesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[575]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[579]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -44013,7 +44455,7 @@ func (x *ListSpatialCanvasTemplatesResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use ListSpatialCanvasTemplatesResponse.ProtoReflect.Descriptor instead.
 func (*ListSpatialCanvasTemplatesResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{575}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{579}
 }
 
 func (x *ListSpatialCanvasTemplatesResponse) GetTemplates() []*SpatialCanvasTemplate {
@@ -44040,7 +44482,7 @@ type CreateSpatialCanvasRequest struct {
 
 func (x *CreateSpatialCanvasRequest) Reset() {
 	*x = CreateSpatialCanvasRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[576]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[580]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44052,7 +44494,7 @@ func (x *CreateSpatialCanvasRequest) String() string {
 func (*CreateSpatialCanvasRequest) ProtoMessage() {}
 
 func (x *CreateSpatialCanvasRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[576]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[580]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -44065,7 +44507,7 @@ func (x *CreateSpatialCanvasRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateSpatialCanvasRequest.ProtoReflect.Descriptor instead.
 func (*CreateSpatialCanvasRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{576}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{580}
 }
 
 func (x *CreateSpatialCanvasRequest) GetWorkspaceId() string {
@@ -44140,7 +44582,7 @@ type CreateSpatialCanvasResponse struct {
 
 func (x *CreateSpatialCanvasResponse) Reset() {
 	*x = CreateSpatialCanvasResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[577]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[581]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44152,7 +44594,7 @@ func (x *CreateSpatialCanvasResponse) String() string {
 func (*CreateSpatialCanvasResponse) ProtoMessage() {}
 
 func (x *CreateSpatialCanvasResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[577]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[581]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -44165,7 +44607,7 @@ func (x *CreateSpatialCanvasResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateSpatialCanvasResponse.ProtoReflect.Descriptor instead.
 func (*CreateSpatialCanvasResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{577}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{581}
 }
 
 func (x *CreateSpatialCanvasResponse) GetDetail() *SpatialCanvasDetail {
@@ -44186,7 +44628,7 @@ type GetSpatialCanvasRequest struct {
 
 func (x *GetSpatialCanvasRequest) Reset() {
 	*x = GetSpatialCanvasRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[578]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[582]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44198,7 +44640,7 @@ func (x *GetSpatialCanvasRequest) String() string {
 func (*GetSpatialCanvasRequest) ProtoMessage() {}
 
 func (x *GetSpatialCanvasRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[578]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[582]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -44211,7 +44653,7 @@ func (x *GetSpatialCanvasRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSpatialCanvasRequest.ProtoReflect.Descriptor instead.
 func (*GetSpatialCanvasRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{578}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{582}
 }
 
 func (x *GetSpatialCanvasRequest) GetCanvasId() string {
@@ -44244,7 +44686,7 @@ type GetSpatialCanvasResponse struct {
 
 func (x *GetSpatialCanvasResponse) Reset() {
 	*x = GetSpatialCanvasResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[579]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[583]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44256,7 +44698,7 @@ func (x *GetSpatialCanvasResponse) String() string {
 func (*GetSpatialCanvasResponse) ProtoMessage() {}
 
 func (x *GetSpatialCanvasResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[579]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[583]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -44269,7 +44711,7 @@ func (x *GetSpatialCanvasResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSpatialCanvasResponse.ProtoReflect.Descriptor instead.
 func (*GetSpatialCanvasResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{579}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{583}
 }
 
 func (x *GetSpatialCanvasResponse) GetDetail() *SpatialCanvasDetail {
@@ -44290,7 +44732,7 @@ type ApplySpatialCanvasOperationsRequest struct {
 
 func (x *ApplySpatialCanvasOperationsRequest) Reset() {
 	*x = ApplySpatialCanvasOperationsRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[580]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[584]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44302,7 +44744,7 @@ func (x *ApplySpatialCanvasOperationsRequest) String() string {
 func (*ApplySpatialCanvasOperationsRequest) ProtoMessage() {}
 
 func (x *ApplySpatialCanvasOperationsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[580]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[584]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -44315,7 +44757,7 @@ func (x *ApplySpatialCanvasOperationsRequest) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use ApplySpatialCanvasOperationsRequest.ProtoReflect.Descriptor instead.
 func (*ApplySpatialCanvasOperationsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{580}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{584}
 }
 
 func (x *ApplySpatialCanvasOperationsRequest) GetCanvasId() string {
@@ -44351,7 +44793,7 @@ type ApplySpatialCanvasOperationsResponse struct {
 
 func (x *ApplySpatialCanvasOperationsResponse) Reset() {
 	*x = ApplySpatialCanvasOperationsResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[581]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[585]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44363,7 +44805,7 @@ func (x *ApplySpatialCanvasOperationsResponse) String() string {
 func (*ApplySpatialCanvasOperationsResponse) ProtoMessage() {}
 
 func (x *ApplySpatialCanvasOperationsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[581]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[585]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -44376,7 +44818,7 @@ func (x *ApplySpatialCanvasOperationsResponse) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use ApplySpatialCanvasOperationsResponse.ProtoReflect.Descriptor instead.
 func (*ApplySpatialCanvasOperationsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{581}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{585}
 }
 
 func (x *ApplySpatialCanvasOperationsResponse) GetDetail() *SpatialCanvasDetail {
@@ -44420,7 +44862,7 @@ type ResolveSpatialCanvasConflictRequest struct {
 
 func (x *ResolveSpatialCanvasConflictRequest) Reset() {
 	*x = ResolveSpatialCanvasConflictRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[582]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[586]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44432,7 +44874,7 @@ func (x *ResolveSpatialCanvasConflictRequest) String() string {
 func (*ResolveSpatialCanvasConflictRequest) ProtoMessage() {}
 
 func (x *ResolveSpatialCanvasConflictRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[582]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[586]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -44445,7 +44887,7 @@ func (x *ResolveSpatialCanvasConflictRequest) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use ResolveSpatialCanvasConflictRequest.ProtoReflect.Descriptor instead.
 func (*ResolveSpatialCanvasConflictRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{582}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{586}
 }
 
 func (x *ResolveSpatialCanvasConflictRequest) GetConflictId() string {
@@ -44492,7 +44934,7 @@ type ResolveSpatialCanvasConflictResponse struct {
 
 func (x *ResolveSpatialCanvasConflictResponse) Reset() {
 	*x = ResolveSpatialCanvasConflictResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[583]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[587]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44504,7 +44946,7 @@ func (x *ResolveSpatialCanvasConflictResponse) String() string {
 func (*ResolveSpatialCanvasConflictResponse) ProtoMessage() {}
 
 func (x *ResolveSpatialCanvasConflictResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[583]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[587]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -44517,7 +44959,7 @@ func (x *ResolveSpatialCanvasConflictResponse) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use ResolveSpatialCanvasConflictResponse.ProtoReflect.Descriptor instead.
 func (*ResolveSpatialCanvasConflictResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{583}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{587}
 }
 
 func (x *ResolveSpatialCanvasConflictResponse) GetConflict() *SpatialCanvasConflict {
@@ -44538,7 +44980,7 @@ type CreateSpatialCanvasSnapshotRequest struct {
 
 func (x *CreateSpatialCanvasSnapshotRequest) Reset() {
 	*x = CreateSpatialCanvasSnapshotRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[584]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[588]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44550,7 +44992,7 @@ func (x *CreateSpatialCanvasSnapshotRequest) String() string {
 func (*CreateSpatialCanvasSnapshotRequest) ProtoMessage() {}
 
 func (x *CreateSpatialCanvasSnapshotRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[584]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[588]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -44563,7 +45005,7 @@ func (x *CreateSpatialCanvasSnapshotRequest) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use CreateSpatialCanvasSnapshotRequest.ProtoReflect.Descriptor instead.
 func (*CreateSpatialCanvasSnapshotRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{584}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{588}
 }
 
 func (x *CreateSpatialCanvasSnapshotRequest) GetCanvasId() string {
@@ -44596,7 +45038,7 @@ type CreateSpatialCanvasSnapshotResponse struct {
 
 func (x *CreateSpatialCanvasSnapshotResponse) Reset() {
 	*x = CreateSpatialCanvasSnapshotResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[585]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[589]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44608,7 +45050,7 @@ func (x *CreateSpatialCanvasSnapshotResponse) String() string {
 func (*CreateSpatialCanvasSnapshotResponse) ProtoMessage() {}
 
 func (x *CreateSpatialCanvasSnapshotResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[585]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[589]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -44621,7 +45063,7 @@ func (x *CreateSpatialCanvasSnapshotResponse) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use CreateSpatialCanvasSnapshotResponse.ProtoReflect.Descriptor instead.
 func (*CreateSpatialCanvasSnapshotResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{585}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{589}
 }
 
 func (x *CreateSpatialCanvasSnapshotResponse) GetSnapshot() *SpatialCanvasSnapshot {
@@ -44642,7 +45084,7 @@ type RestoreSpatialCanvasSnapshotRequest struct {
 
 func (x *RestoreSpatialCanvasSnapshotRequest) Reset() {
 	*x = RestoreSpatialCanvasSnapshotRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[586]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[590]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44654,7 +45096,7 @@ func (x *RestoreSpatialCanvasSnapshotRequest) String() string {
 func (*RestoreSpatialCanvasSnapshotRequest) ProtoMessage() {}
 
 func (x *RestoreSpatialCanvasSnapshotRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[586]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[590]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -44667,7 +45109,7 @@ func (x *RestoreSpatialCanvasSnapshotRequest) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use RestoreSpatialCanvasSnapshotRequest.ProtoReflect.Descriptor instead.
 func (*RestoreSpatialCanvasSnapshotRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{586}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{590}
 }
 
 func (x *RestoreSpatialCanvasSnapshotRequest) GetSnapshotId() string {
@@ -44700,7 +45142,7 @@ type RestoreSpatialCanvasSnapshotResponse struct {
 
 func (x *RestoreSpatialCanvasSnapshotResponse) Reset() {
 	*x = RestoreSpatialCanvasSnapshotResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[587]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[591]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44712,7 +45154,7 @@ func (x *RestoreSpatialCanvasSnapshotResponse) String() string {
 func (*RestoreSpatialCanvasSnapshotResponse) ProtoMessage() {}
 
 func (x *RestoreSpatialCanvasSnapshotResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[587]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[591]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -44725,7 +45167,7 @@ func (x *RestoreSpatialCanvasSnapshotResponse) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use RestoreSpatialCanvasSnapshotResponse.ProtoReflect.Descriptor instead.
 func (*RestoreSpatialCanvasSnapshotResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{587}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{591}
 }
 
 func (x *RestoreSpatialCanvasSnapshotResponse) GetDetail() *SpatialCanvasDetail {
@@ -44750,7 +45192,7 @@ type UpsertSpatialCanvasCommentRequest struct {
 
 func (x *UpsertSpatialCanvasCommentRequest) Reset() {
 	*x = UpsertSpatialCanvasCommentRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[588]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[592]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44762,7 +45204,7 @@ func (x *UpsertSpatialCanvasCommentRequest) String() string {
 func (*UpsertSpatialCanvasCommentRequest) ProtoMessage() {}
 
 func (x *UpsertSpatialCanvasCommentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[588]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[592]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -44775,7 +45217,7 @@ func (x *UpsertSpatialCanvasCommentRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use UpsertSpatialCanvasCommentRequest.ProtoReflect.Descriptor instead.
 func (*UpsertSpatialCanvasCommentRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{588}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{592}
 }
 
 func (x *UpsertSpatialCanvasCommentRequest) GetCanvasId() string {
@@ -44836,7 +45278,7 @@ type UpsertSpatialCanvasCommentResponse struct {
 
 func (x *UpsertSpatialCanvasCommentResponse) Reset() {
 	*x = UpsertSpatialCanvasCommentResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[589]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[593]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44848,7 +45290,7 @@ func (x *UpsertSpatialCanvasCommentResponse) String() string {
 func (*UpsertSpatialCanvasCommentResponse) ProtoMessage() {}
 
 func (x *UpsertSpatialCanvasCommentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[589]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[593]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -44861,7 +45303,7 @@ func (x *UpsertSpatialCanvasCommentResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use UpsertSpatialCanvasCommentResponse.ProtoReflect.Descriptor instead.
 func (*UpsertSpatialCanvasCommentResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{589}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{593}
 }
 
 func (x *UpsertSpatialCanvasCommentResponse) GetComment() *SpatialCanvasComment {
@@ -44883,7 +45325,7 @@ type SetSpatialCanvasCommentStateRequest struct {
 
 func (x *SetSpatialCanvasCommentStateRequest) Reset() {
 	*x = SetSpatialCanvasCommentStateRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[590]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[594]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44895,7 +45337,7 @@ func (x *SetSpatialCanvasCommentStateRequest) String() string {
 func (*SetSpatialCanvasCommentStateRequest) ProtoMessage() {}
 
 func (x *SetSpatialCanvasCommentStateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[590]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[594]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -44908,7 +45350,7 @@ func (x *SetSpatialCanvasCommentStateRequest) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use SetSpatialCanvasCommentStateRequest.ProtoReflect.Descriptor instead.
 func (*SetSpatialCanvasCommentStateRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{590}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{594}
 }
 
 func (x *SetSpatialCanvasCommentStateRequest) GetCommentId() string {
@@ -44948,7 +45390,7 @@ type SetSpatialCanvasCommentStateResponse struct {
 
 func (x *SetSpatialCanvasCommentStateResponse) Reset() {
 	*x = SetSpatialCanvasCommentStateResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[591]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[595]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44960,7 +45402,7 @@ func (x *SetSpatialCanvasCommentStateResponse) String() string {
 func (*SetSpatialCanvasCommentStateResponse) ProtoMessage() {}
 
 func (x *SetSpatialCanvasCommentStateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[591]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[595]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -44973,7 +45415,7 @@ func (x *SetSpatialCanvasCommentStateResponse) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use SetSpatialCanvasCommentStateResponse.ProtoReflect.Descriptor instead.
 func (*SetSpatialCanvasCommentStateResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{591}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{595}
 }
 
 func (x *SetSpatialCanvasCommentStateResponse) GetComment() *SpatialCanvasComment {
@@ -44994,7 +45436,7 @@ type GenerateSpatialCanvasProposalsRequest struct {
 
 func (x *GenerateSpatialCanvasProposalsRequest) Reset() {
 	*x = GenerateSpatialCanvasProposalsRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[592]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[596]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -45006,7 +45448,7 @@ func (x *GenerateSpatialCanvasProposalsRequest) String() string {
 func (*GenerateSpatialCanvasProposalsRequest) ProtoMessage() {}
 
 func (x *GenerateSpatialCanvasProposalsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[592]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[596]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -45019,7 +45461,7 @@ func (x *GenerateSpatialCanvasProposalsRequest) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use GenerateSpatialCanvasProposalsRequest.ProtoReflect.Descriptor instead.
 func (*GenerateSpatialCanvasProposalsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{592}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{596}
 }
 
 func (x *GenerateSpatialCanvasProposalsRequest) GetCanvasId() string {
@@ -45052,7 +45494,7 @@ type GenerateSpatialCanvasProposalsResponse struct {
 
 func (x *GenerateSpatialCanvasProposalsResponse) Reset() {
 	*x = GenerateSpatialCanvasProposalsResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[593]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[597]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -45064,7 +45506,7 @@ func (x *GenerateSpatialCanvasProposalsResponse) String() string {
 func (*GenerateSpatialCanvasProposalsResponse) ProtoMessage() {}
 
 func (x *GenerateSpatialCanvasProposalsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[593]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[597]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -45077,7 +45519,7 @@ func (x *GenerateSpatialCanvasProposalsResponse) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use GenerateSpatialCanvasProposalsResponse.ProtoReflect.Descriptor instead.
 func (*GenerateSpatialCanvasProposalsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{593}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{597}
 }
 
 func (x *GenerateSpatialCanvasProposalsResponse) GetProposals() []*SpatialCanvasProposal {
@@ -45099,7 +45541,7 @@ type SetSpatialCanvasProposalStateRequest struct {
 
 func (x *SetSpatialCanvasProposalStateRequest) Reset() {
 	*x = SetSpatialCanvasProposalStateRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[594]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[598]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -45111,7 +45553,7 @@ func (x *SetSpatialCanvasProposalStateRequest) String() string {
 func (*SetSpatialCanvasProposalStateRequest) ProtoMessage() {}
 
 func (x *SetSpatialCanvasProposalStateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[594]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[598]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -45124,7 +45566,7 @@ func (x *SetSpatialCanvasProposalStateRequest) ProtoReflect() protoreflect.Messa
 
 // Deprecated: Use SetSpatialCanvasProposalStateRequest.ProtoReflect.Descriptor instead.
 func (*SetSpatialCanvasProposalStateRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{594}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{598}
 }
 
 func (x *SetSpatialCanvasProposalStateRequest) GetProposalId() string {
@@ -45165,7 +45607,7 @@ type SetSpatialCanvasProposalStateResponse struct {
 
 func (x *SetSpatialCanvasProposalStateResponse) Reset() {
 	*x = SetSpatialCanvasProposalStateResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[595]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[599]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -45177,7 +45619,7 @@ func (x *SetSpatialCanvasProposalStateResponse) String() string {
 func (*SetSpatialCanvasProposalStateResponse) ProtoMessage() {}
 
 func (x *SetSpatialCanvasProposalStateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[595]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[599]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -45190,7 +45632,7 @@ func (x *SetSpatialCanvasProposalStateResponse) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use SetSpatialCanvasProposalStateResponse.ProtoReflect.Descriptor instead.
 func (*SetSpatialCanvasProposalStateResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{595}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{599}
 }
 
 func (x *SetSpatialCanvasProposalStateResponse) GetProposal() *SpatialCanvasProposal {
@@ -45220,7 +45662,7 @@ type RequestSpatialCanvasExportRequest struct {
 
 func (x *RequestSpatialCanvasExportRequest) Reset() {
 	*x = RequestSpatialCanvasExportRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[596]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[600]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -45232,7 +45674,7 @@ func (x *RequestSpatialCanvasExportRequest) String() string {
 func (*RequestSpatialCanvasExportRequest) ProtoMessage() {}
 
 func (x *RequestSpatialCanvasExportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[596]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[600]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -45245,7 +45687,7 @@ func (x *RequestSpatialCanvasExportRequest) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use RequestSpatialCanvasExportRequest.ProtoReflect.Descriptor instead.
 func (*RequestSpatialCanvasExportRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{596}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{600}
 }
 
 func (x *RequestSpatialCanvasExportRequest) GetCanvasId() string {
@@ -45292,7 +45734,7 @@ type RequestSpatialCanvasExportResponse struct {
 
 func (x *RequestSpatialCanvasExportResponse) Reset() {
 	*x = RequestSpatialCanvasExportResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[597]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[601]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -45304,7 +45746,7 @@ func (x *RequestSpatialCanvasExportResponse) String() string {
 func (*RequestSpatialCanvasExportResponse) ProtoMessage() {}
 
 func (x *RequestSpatialCanvasExportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[597]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[601]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -45317,7 +45759,7 @@ func (x *RequestSpatialCanvasExportResponse) ProtoReflect() protoreflect.Message
 
 // Deprecated: Use RequestSpatialCanvasExportResponse.ProtoReflect.Descriptor instead.
 func (*RequestSpatialCanvasExportResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{597}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{601}
 }
 
 func (x *RequestSpatialCanvasExportResponse) GetExport() *SpatialCanvasExport {
@@ -45336,7 +45778,7 @@ type GetSpatialCanvasExportRequest struct {
 
 func (x *GetSpatialCanvasExportRequest) Reset() {
 	*x = GetSpatialCanvasExportRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[598]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[602]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -45348,7 +45790,7 @@ func (x *GetSpatialCanvasExportRequest) String() string {
 func (*GetSpatialCanvasExportRequest) ProtoMessage() {}
 
 func (x *GetSpatialCanvasExportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[598]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[602]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -45361,7 +45803,7 @@ func (x *GetSpatialCanvasExportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSpatialCanvasExportRequest.ProtoReflect.Descriptor instead.
 func (*GetSpatialCanvasExportRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{598}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{602}
 }
 
 func (x *GetSpatialCanvasExportRequest) GetExportId() string {
@@ -45380,7 +45822,7 @@ type GetSpatialCanvasExportResponse struct {
 
 func (x *GetSpatialCanvasExportResponse) Reset() {
 	*x = GetSpatialCanvasExportResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[599]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[603]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -45392,7 +45834,7 @@ func (x *GetSpatialCanvasExportResponse) String() string {
 func (*GetSpatialCanvasExportResponse) ProtoMessage() {}
 
 func (x *GetSpatialCanvasExportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[599]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[603]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -45405,7 +45847,7 @@ func (x *GetSpatialCanvasExportResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSpatialCanvasExportResponse.ProtoReflect.Descriptor instead.
 func (*GetSpatialCanvasExportResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{599}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{603}
 }
 
 func (x *GetSpatialCanvasExportResponse) GetExport() *SpatialCanvasExport {
@@ -45428,7 +45870,7 @@ type UpsertSpatialCanvasCollaboratorRequest struct {
 
 func (x *UpsertSpatialCanvasCollaboratorRequest) Reset() {
 	*x = UpsertSpatialCanvasCollaboratorRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[600]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[604]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -45440,7 +45882,7 @@ func (x *UpsertSpatialCanvasCollaboratorRequest) String() string {
 func (*UpsertSpatialCanvasCollaboratorRequest) ProtoMessage() {}
 
 func (x *UpsertSpatialCanvasCollaboratorRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[600]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[604]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -45453,7 +45895,7 @@ func (x *UpsertSpatialCanvasCollaboratorRequest) ProtoReflect() protoreflect.Mes
 
 // Deprecated: Use UpsertSpatialCanvasCollaboratorRequest.ProtoReflect.Descriptor instead.
 func (*UpsertSpatialCanvasCollaboratorRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{600}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{604}
 }
 
 func (x *UpsertSpatialCanvasCollaboratorRequest) GetCanvasId() string {
@@ -45503,7 +45945,7 @@ type UpsertSpatialCanvasCollaboratorResponse struct {
 
 func (x *UpsertSpatialCanvasCollaboratorResponse) Reset() {
 	*x = UpsertSpatialCanvasCollaboratorResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[601]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[605]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -45515,7 +45957,7 @@ func (x *UpsertSpatialCanvasCollaboratorResponse) String() string {
 func (*UpsertSpatialCanvasCollaboratorResponse) ProtoMessage() {}
 
 func (x *UpsertSpatialCanvasCollaboratorResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[601]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[605]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -45528,7 +45970,7 @@ func (x *UpsertSpatialCanvasCollaboratorResponse) ProtoReflect() protoreflect.Me
 
 // Deprecated: Use UpsertSpatialCanvasCollaboratorResponse.ProtoReflect.Descriptor instead.
 func (*UpsertSpatialCanvasCollaboratorResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{601}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{605}
 }
 
 func (x *UpsertSpatialCanvasCollaboratorResponse) GetCollaboratorUserId() string {
@@ -45573,7 +46015,7 @@ type ReportSpatialCanvasAbuseRequest struct {
 
 func (x *ReportSpatialCanvasAbuseRequest) Reset() {
 	*x = ReportSpatialCanvasAbuseRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[602]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[606]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -45585,7 +46027,7 @@ func (x *ReportSpatialCanvasAbuseRequest) String() string {
 func (*ReportSpatialCanvasAbuseRequest) ProtoMessage() {}
 
 func (x *ReportSpatialCanvasAbuseRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[602]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[606]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -45598,7 +46040,7 @@ func (x *ReportSpatialCanvasAbuseRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReportSpatialCanvasAbuseRequest.ProtoReflect.Descriptor instead.
 func (*ReportSpatialCanvasAbuseRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{602}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{606}
 }
 
 func (x *ReportSpatialCanvasAbuseRequest) GetCanvasId() string {
@@ -45654,7 +46096,7 @@ type ReportSpatialCanvasAbuseResponse struct {
 
 func (x *ReportSpatialCanvasAbuseResponse) Reset() {
 	*x = ReportSpatialCanvasAbuseResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[603]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[607]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -45666,7 +46108,7 @@ func (x *ReportSpatialCanvasAbuseResponse) String() string {
 func (*ReportSpatialCanvasAbuseResponse) ProtoMessage() {}
 
 func (x *ReportSpatialCanvasAbuseResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[603]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[607]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -45679,7 +46121,7 @@ func (x *ReportSpatialCanvasAbuseResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReportSpatialCanvasAbuseResponse.ProtoReflect.Descriptor instead.
 func (*ReportSpatialCanvasAbuseResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{603}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{607}
 }
 
 func (x *ReportSpatialCanvasAbuseResponse) GetCaseId() string {
@@ -45727,7 +46169,7 @@ type RecallSourceAnchor struct {
 
 func (x *RecallSourceAnchor) Reset() {
 	*x = RecallSourceAnchor{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[604]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[608]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -45739,7 +46181,7 @@ func (x *RecallSourceAnchor) String() string {
 func (*RecallSourceAnchor) ProtoMessage() {}
 
 func (x *RecallSourceAnchor) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[604]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[608]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -45752,7 +46194,7 @@ func (x *RecallSourceAnchor) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecallSourceAnchor.ProtoReflect.Descriptor instead.
 func (*RecallSourceAnchor) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{604}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{608}
 }
 
 func (x *RecallSourceAnchor) GetSourceType() string {
@@ -45867,7 +46309,7 @@ type RecallDeck struct {
 
 func (x *RecallDeck) Reset() {
 	*x = RecallDeck{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[605]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[609]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -45879,7 +46321,7 @@ func (x *RecallDeck) String() string {
 func (*RecallDeck) ProtoMessage() {}
 
 func (x *RecallDeck) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[605]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[609]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -45892,7 +46334,7 @@ func (x *RecallDeck) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecallDeck.ProtoReflect.Descriptor instead.
 func (*RecallDeck) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{605}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{609}
 }
 
 func (x *RecallDeck) GetId() string {
@@ -46007,7 +46449,7 @@ type RecallPromptVariant struct {
 
 func (x *RecallPromptVariant) Reset() {
 	*x = RecallPromptVariant{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[606]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[610]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -46019,7 +46461,7 @@ func (x *RecallPromptVariant) String() string {
 func (*RecallPromptVariant) ProtoMessage() {}
 
 func (x *RecallPromptVariant) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[606]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[610]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -46032,7 +46474,7 @@ func (x *RecallPromptVariant) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecallPromptVariant.ProtoReflect.Descriptor instead.
 func (*RecallPromptVariant) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{606}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{610}
 }
 
 func (x *RecallPromptVariant) GetId() string {
@@ -46148,7 +46590,7 @@ type RecallSchedule struct {
 
 func (x *RecallSchedule) Reset() {
 	*x = RecallSchedule{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[607]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[611]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -46160,7 +46602,7 @@ func (x *RecallSchedule) String() string {
 func (*RecallSchedule) ProtoMessage() {}
 
 func (x *RecallSchedule) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[607]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[611]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -46173,7 +46615,7 @@ func (x *RecallSchedule) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecallSchedule.ProtoReflect.Descriptor instead.
 func (*RecallSchedule) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{607}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{611}
 }
 
 func (x *RecallSchedule) GetItemId() string {
@@ -46303,7 +46745,7 @@ type MemoryItem struct {
 
 func (x *MemoryItem) Reset() {
 	*x = MemoryItem{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[608]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[612]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -46315,7 +46757,7 @@ func (x *MemoryItem) String() string {
 func (*MemoryItem) ProtoMessage() {}
 
 func (x *MemoryItem) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[608]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[612]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -46328,7 +46770,7 @@ func (x *MemoryItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MemoryItem.ProtoReflect.Descriptor instead.
 func (*MemoryItem) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{608}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{612}
 }
 
 func (x *MemoryItem) GetId() string {
@@ -46499,7 +46941,7 @@ type RecallReviewEvent struct {
 
 func (x *RecallReviewEvent) Reset() {
 	*x = RecallReviewEvent{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[609]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[613]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -46511,7 +46953,7 @@ func (x *RecallReviewEvent) String() string {
 func (*RecallReviewEvent) ProtoMessage() {}
 
 func (x *RecallReviewEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[609]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[613]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -46524,7 +46966,7 @@ func (x *RecallReviewEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecallReviewEvent.ProtoReflect.Descriptor instead.
 func (*RecallReviewEvent) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{609}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{613}
 }
 
 func (x *RecallReviewEvent) GetId() string {
@@ -46636,7 +47078,7 @@ type RecallSourceInvalidation struct {
 
 func (x *RecallSourceInvalidation) Reset() {
 	*x = RecallSourceInvalidation{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[610]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[614]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -46648,7 +47090,7 @@ func (x *RecallSourceInvalidation) String() string {
 func (*RecallSourceInvalidation) ProtoMessage() {}
 
 func (x *RecallSourceInvalidation) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[610]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[614]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -46661,7 +47103,7 @@ func (x *RecallSourceInvalidation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecallSourceInvalidation.ProtoReflect.Descriptor instead.
 func (*RecallSourceInvalidation) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{610}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{614}
 }
 
 func (x *RecallSourceInvalidation) GetId() string {
@@ -46751,7 +47193,7 @@ type RecallRetentionMeasure struct {
 
 func (x *RecallRetentionMeasure) Reset() {
 	*x = RecallRetentionMeasure{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[611]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[615]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -46763,7 +47205,7 @@ func (x *RecallRetentionMeasure) String() string {
 func (*RecallRetentionMeasure) ProtoMessage() {}
 
 func (x *RecallRetentionMeasure) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[611]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[615]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -46776,7 +47218,7 @@ func (x *RecallRetentionMeasure) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecallRetentionMeasure.ProtoReflect.Descriptor instead.
 func (*RecallRetentionMeasure) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{611}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{615}
 }
 
 func (x *RecallRetentionMeasure) GetId() string {
@@ -46857,7 +47299,7 @@ type RecallPreferences struct {
 
 func (x *RecallPreferences) Reset() {
 	*x = RecallPreferences{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[612]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[616]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -46869,7 +47311,7 @@ func (x *RecallPreferences) String() string {
 func (*RecallPreferences) ProtoMessage() {}
 
 func (x *RecallPreferences) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[612]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[616]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -46882,7 +47324,7 @@ func (x *RecallPreferences) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecallPreferences.ProtoReflect.Descriptor instead.
 func (*RecallPreferences) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{612}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{616}
 }
 
 func (x *RecallPreferences) GetDailyMinutes() int32 {
@@ -46942,7 +47384,7 @@ type GetRecallDashboardRequest struct {
 
 func (x *GetRecallDashboardRequest) Reset() {
 	*x = GetRecallDashboardRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[613]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[617]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -46954,7 +47396,7 @@ func (x *GetRecallDashboardRequest) String() string {
 func (*GetRecallDashboardRequest) ProtoMessage() {}
 
 func (x *GetRecallDashboardRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[613]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[617]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -46967,7 +47409,7 @@ func (x *GetRecallDashboardRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetRecallDashboardRequest.ProtoReflect.Descriptor instead.
 func (*GetRecallDashboardRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{613}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{617}
 }
 
 type GetRecallDashboardResponse struct {
@@ -46990,7 +47432,7 @@ type GetRecallDashboardResponse struct {
 
 func (x *GetRecallDashboardResponse) Reset() {
 	*x = GetRecallDashboardResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[614]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[618]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -47002,7 +47444,7 @@ func (x *GetRecallDashboardResponse) String() string {
 func (*GetRecallDashboardResponse) ProtoMessage() {}
 
 func (x *GetRecallDashboardResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[614]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[618]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -47015,7 +47457,7 @@ func (x *GetRecallDashboardResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetRecallDashboardResponse.ProtoReflect.Descriptor instead.
 func (*GetRecallDashboardResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{614}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{618}
 }
 
 func (x *GetRecallDashboardResponse) GetDecks() []*RecallDeck {
@@ -47111,7 +47553,7 @@ type ListRecallDecksRequest struct {
 
 func (x *ListRecallDecksRequest) Reset() {
 	*x = ListRecallDecksRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[615]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[619]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -47123,7 +47565,7 @@ func (x *ListRecallDecksRequest) String() string {
 func (*ListRecallDecksRequest) ProtoMessage() {}
 
 func (x *ListRecallDecksRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[615]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[619]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -47136,7 +47578,7 @@ func (x *ListRecallDecksRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListRecallDecksRequest.ProtoReflect.Descriptor instead.
 func (*ListRecallDecksRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{615}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{619}
 }
 
 func (x *ListRecallDecksRequest) GetIncludeArchived() bool {
@@ -47155,7 +47597,7 @@ type ListRecallDecksResponse struct {
 
 func (x *ListRecallDecksResponse) Reset() {
 	*x = ListRecallDecksResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[616]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[620]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -47167,7 +47609,7 @@ func (x *ListRecallDecksResponse) String() string {
 func (*ListRecallDecksResponse) ProtoMessage() {}
 
 func (x *ListRecallDecksResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[616]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[620]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -47180,7 +47622,7 @@ func (x *ListRecallDecksResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListRecallDecksResponse.ProtoReflect.Descriptor instead.
 func (*ListRecallDecksResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{616}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{620}
 }
 
 func (x *ListRecallDecksResponse) GetDecks() []*RecallDeck {
@@ -47202,7 +47644,7 @@ type ListMemoryItemsRequest struct {
 
 func (x *ListMemoryItemsRequest) Reset() {
 	*x = ListMemoryItemsRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[617]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[621]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -47214,7 +47656,7 @@ func (x *ListMemoryItemsRequest) String() string {
 func (*ListMemoryItemsRequest) ProtoMessage() {}
 
 func (x *ListMemoryItemsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[617]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[621]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -47227,7 +47669,7 @@ func (x *ListMemoryItemsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMemoryItemsRequest.ProtoReflect.Descriptor instead.
 func (*ListMemoryItemsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{617}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{621}
 }
 
 func (x *ListMemoryItemsRequest) GetDeckId() string {
@@ -47268,7 +47710,7 @@ type ListMemoryItemsResponse struct {
 
 func (x *ListMemoryItemsResponse) Reset() {
 	*x = ListMemoryItemsResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[618]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[622]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -47280,7 +47722,7 @@ func (x *ListMemoryItemsResponse) String() string {
 func (*ListMemoryItemsResponse) ProtoMessage() {}
 
 func (x *ListMemoryItemsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[618]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[622]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -47293,7 +47735,7 @@ func (x *ListMemoryItemsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListMemoryItemsResponse.ProtoReflect.Descriptor instead.
 func (*ListMemoryItemsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{618}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{622}
 }
 
 func (x *ListMemoryItemsResponse) GetItems() []*MemoryItem {
@@ -47325,7 +47767,7 @@ type UpsertRecallDeckRequest struct {
 
 func (x *UpsertRecallDeckRequest) Reset() {
 	*x = UpsertRecallDeckRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[619]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[623]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -47337,7 +47779,7 @@ func (x *UpsertRecallDeckRequest) String() string {
 func (*UpsertRecallDeckRequest) ProtoMessage() {}
 
 func (x *UpsertRecallDeckRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[619]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[623]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -47350,7 +47792,7 @@ func (x *UpsertRecallDeckRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpsertRecallDeckRequest.ProtoReflect.Descriptor instead.
 func (*UpsertRecallDeckRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{619}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{623}
 }
 
 func (x *UpsertRecallDeckRequest) GetDeckId() string {
@@ -47411,7 +47853,7 @@ type UpsertRecallDeckResponse struct {
 
 func (x *UpsertRecallDeckResponse) Reset() {
 	*x = UpsertRecallDeckResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[620]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[624]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -47423,7 +47865,7 @@ func (x *UpsertRecallDeckResponse) String() string {
 func (*UpsertRecallDeckResponse) ProtoMessage() {}
 
 func (x *UpsertRecallDeckResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[620]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[624]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -47436,7 +47878,7 @@ func (x *UpsertRecallDeckResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpsertRecallDeckResponse.ProtoReflect.Descriptor instead.
 func (*UpsertRecallDeckResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{620}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{624}
 }
 
 func (x *UpsertRecallDeckResponse) GetDeck() *RecallDeck {
@@ -47460,7 +47902,7 @@ type GenerateRecallItemsRequest struct {
 
 func (x *GenerateRecallItemsRequest) Reset() {
 	*x = GenerateRecallItemsRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[621]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[625]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -47472,7 +47914,7 @@ func (x *GenerateRecallItemsRequest) String() string {
 func (*GenerateRecallItemsRequest) ProtoMessage() {}
 
 func (x *GenerateRecallItemsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[621]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[625]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -47485,7 +47927,7 @@ func (x *GenerateRecallItemsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateRecallItemsRequest.ProtoReflect.Descriptor instead.
 func (*GenerateRecallItemsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{621}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{625}
 }
 
 func (x *GenerateRecallItemsRequest) GetDeckId() string {
@@ -47542,7 +47984,7 @@ type GenerateRecallItemsResponse struct {
 
 func (x *GenerateRecallItemsResponse) Reset() {
 	*x = GenerateRecallItemsResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[622]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[626]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -47554,7 +47996,7 @@ func (x *GenerateRecallItemsResponse) String() string {
 func (*GenerateRecallItemsResponse) ProtoMessage() {}
 
 func (x *GenerateRecallItemsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[622]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[626]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -47567,7 +48009,7 @@ func (x *GenerateRecallItemsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateRecallItemsResponse.ProtoReflect.Descriptor instead.
 func (*GenerateRecallItemsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{622}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{626}
 }
 
 func (x *GenerateRecallItemsResponse) GetDrafts() []*MemoryItem {
@@ -47619,7 +48061,7 @@ type UpsertMemoryItemRequest struct {
 
 func (x *UpsertMemoryItemRequest) Reset() {
 	*x = UpsertMemoryItemRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[623]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[627]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -47631,7 +48073,7 @@ func (x *UpsertMemoryItemRequest) String() string {
 func (*UpsertMemoryItemRequest) ProtoMessage() {}
 
 func (x *UpsertMemoryItemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[623]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[627]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -47644,7 +48086,7 @@ func (x *UpsertMemoryItemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpsertMemoryItemRequest.ProtoReflect.Descriptor instead.
 func (*UpsertMemoryItemRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{623}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{627}
 }
 
 func (x *UpsertMemoryItemRequest) GetItemId() string {
@@ -47747,7 +48189,7 @@ type UpsertMemoryItemResponse struct {
 
 func (x *UpsertMemoryItemResponse) Reset() {
 	*x = UpsertMemoryItemResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[624]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[628]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -47759,7 +48201,7 @@ func (x *UpsertMemoryItemResponse) String() string {
 func (*UpsertMemoryItemResponse) ProtoMessage() {}
 
 func (x *UpsertMemoryItemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[624]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[628]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -47772,7 +48214,7 @@ func (x *UpsertMemoryItemResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpsertMemoryItemResponse.ProtoReflect.Descriptor instead.
 func (*UpsertMemoryItemResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{624}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{628}
 }
 
 func (x *UpsertMemoryItemResponse) GetItem() *MemoryItem {
@@ -47794,7 +48236,7 @@ type SetMemoryItemStateRequest struct {
 
 func (x *SetMemoryItemStateRequest) Reset() {
 	*x = SetMemoryItemStateRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[625]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[629]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -47806,7 +48248,7 @@ func (x *SetMemoryItemStateRequest) String() string {
 func (*SetMemoryItemStateRequest) ProtoMessage() {}
 
 func (x *SetMemoryItemStateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[625]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[629]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -47819,7 +48261,7 @@ func (x *SetMemoryItemStateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SetMemoryItemStateRequest.ProtoReflect.Descriptor instead.
 func (*SetMemoryItemStateRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{625}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{629}
 }
 
 func (x *SetMemoryItemStateRequest) GetItemId() string {
@@ -47859,7 +48301,7 @@ type SetMemoryItemStateResponse struct {
 
 func (x *SetMemoryItemStateResponse) Reset() {
 	*x = SetMemoryItemStateResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[626]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[630]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -47871,7 +48313,7 @@ func (x *SetMemoryItemStateResponse) String() string {
 func (*SetMemoryItemStateResponse) ProtoMessage() {}
 
 func (x *SetMemoryItemStateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[626]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[630]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -47884,7 +48326,7 @@ func (x *SetMemoryItemStateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SetMemoryItemStateResponse.ProtoReflect.Descriptor instead.
 func (*SetMemoryItemStateResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{626}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{630}
 }
 
 func (x *SetMemoryItemStateResponse) GetItem() *MemoryItem {
@@ -47908,7 +48350,7 @@ type GetRecallReviewQueueRequest struct {
 
 func (x *GetRecallReviewQueueRequest) Reset() {
 	*x = GetRecallReviewQueueRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[627]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[631]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -47920,7 +48362,7 @@ func (x *GetRecallReviewQueueRequest) String() string {
 func (*GetRecallReviewQueueRequest) ProtoMessage() {}
 
 func (x *GetRecallReviewQueueRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[627]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[631]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -47933,7 +48375,7 @@ func (x *GetRecallReviewQueueRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetRecallReviewQueueRequest.ProtoReflect.Descriptor instead.
 func (*GetRecallReviewQueueRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{627}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{631}
 }
 
 func (x *GetRecallReviewQueueRequest) GetSessionType() string {
@@ -47992,7 +48434,7 @@ type GetRecallReviewQueueResponse struct {
 
 func (x *GetRecallReviewQueueResponse) Reset() {
 	*x = GetRecallReviewQueueResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[628]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[632]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -48004,7 +48446,7 @@ func (x *GetRecallReviewQueueResponse) String() string {
 func (*GetRecallReviewQueueResponse) ProtoMessage() {}
 
 func (x *GetRecallReviewQueueResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[628]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[632]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -48017,7 +48459,7 @@ func (x *GetRecallReviewQueueResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetRecallReviewQueueResponse.ProtoReflect.Descriptor instead.
 func (*GetRecallReviewQueueResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{628}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{632}
 }
 
 func (x *GetRecallReviewQueueResponse) GetSessionId() string {
@@ -48073,7 +48515,7 @@ type RecordRecallReviewBatchRequest struct {
 
 func (x *RecordRecallReviewBatchRequest) Reset() {
 	*x = RecordRecallReviewBatchRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[629]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[633]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -48085,7 +48527,7 @@ func (x *RecordRecallReviewBatchRequest) String() string {
 func (*RecordRecallReviewBatchRequest) ProtoMessage() {}
 
 func (x *RecordRecallReviewBatchRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[629]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[633]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -48098,7 +48540,7 @@ func (x *RecordRecallReviewBatchRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecordRecallReviewBatchRequest.ProtoReflect.Descriptor instead.
 func (*RecordRecallReviewBatchRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{629}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{633}
 }
 
 func (x *RecordRecallReviewBatchRequest) GetEvents() []*RecallReviewEvent {
@@ -48135,7 +48577,7 @@ type RecordRecallReviewBatchResponse struct {
 
 func (x *RecordRecallReviewBatchResponse) Reset() {
 	*x = RecordRecallReviewBatchResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[630]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[634]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -48147,7 +48589,7 @@ func (x *RecordRecallReviewBatchResponse) String() string {
 func (*RecordRecallReviewBatchResponse) ProtoMessage() {}
 
 func (x *RecordRecallReviewBatchResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[630]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[634]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -48160,7 +48602,7 @@ func (x *RecordRecallReviewBatchResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecordRecallReviewBatchResponse.ProtoReflect.Descriptor instead.
 func (*RecordRecallReviewBatchResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{630}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{634}
 }
 
 func (x *RecordRecallReviewBatchResponse) GetAcceptedCount() int32 {
@@ -48213,7 +48655,7 @@ type ResolveRecallInvalidationRequest struct {
 
 func (x *ResolveRecallInvalidationRequest) Reset() {
 	*x = ResolveRecallInvalidationRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[631]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[635]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -48225,7 +48667,7 @@ func (x *ResolveRecallInvalidationRequest) String() string {
 func (*ResolveRecallInvalidationRequest) ProtoMessage() {}
 
 func (x *ResolveRecallInvalidationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[631]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[635]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -48238,7 +48680,7 @@ func (x *ResolveRecallInvalidationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResolveRecallInvalidationRequest.ProtoReflect.Descriptor instead.
 func (*ResolveRecallInvalidationRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{631}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{635}
 }
 
 func (x *ResolveRecallInvalidationRequest) GetInvalidationId() string {
@@ -48300,7 +48742,7 @@ type ResolveRecallInvalidationResponse struct {
 
 func (x *ResolveRecallInvalidationResponse) Reset() {
 	*x = ResolveRecallInvalidationResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[632]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[636]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -48312,7 +48754,7 @@ func (x *ResolveRecallInvalidationResponse) String() string {
 func (*ResolveRecallInvalidationResponse) ProtoMessage() {}
 
 func (x *ResolveRecallInvalidationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[632]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[636]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -48325,7 +48767,7 @@ func (x *ResolveRecallInvalidationResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use ResolveRecallInvalidationResponse.ProtoReflect.Descriptor instead.
 func (*ResolveRecallInvalidationResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{632}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{636}
 }
 
 func (x *ResolveRecallInvalidationResponse) GetInvalidation() *RecallSourceInvalidation {
@@ -48352,7 +48794,7 @@ type UpdateRecallPreferencesRequest struct {
 
 func (x *UpdateRecallPreferencesRequest) Reset() {
 	*x = UpdateRecallPreferencesRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[633]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[637]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -48364,7 +48806,7 @@ func (x *UpdateRecallPreferencesRequest) String() string {
 func (*UpdateRecallPreferencesRequest) ProtoMessage() {}
 
 func (x *UpdateRecallPreferencesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[633]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[637]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -48377,7 +48819,7 @@ func (x *UpdateRecallPreferencesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateRecallPreferencesRequest.ProtoReflect.Descriptor instead.
 func (*UpdateRecallPreferencesRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{633}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{637}
 }
 
 func (x *UpdateRecallPreferencesRequest) GetPreferences() *RecallPreferences {
@@ -48403,7 +48845,7 @@ type UpdateRecallPreferencesResponse struct {
 
 func (x *UpdateRecallPreferencesResponse) Reset() {
 	*x = UpdateRecallPreferencesResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[634]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[638]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -48415,7 +48857,7 @@ func (x *UpdateRecallPreferencesResponse) String() string {
 func (*UpdateRecallPreferencesResponse) ProtoMessage() {}
 
 func (x *UpdateRecallPreferencesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[634]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[638]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -48428,7 +48870,7 @@ func (x *UpdateRecallPreferencesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateRecallPreferencesResponse.ProtoReflect.Descriptor instead.
 func (*UpdateRecallPreferencesResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{634}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{638}
 }
 
 func (x *UpdateRecallPreferencesResponse) GetPreferences() *RecallPreferences {
@@ -48450,7 +48892,7 @@ type ExportRecallDataRequest struct {
 
 func (x *ExportRecallDataRequest) Reset() {
 	*x = ExportRecallDataRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[635]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[639]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -48462,7 +48904,7 @@ func (x *ExportRecallDataRequest) String() string {
 func (*ExportRecallDataRequest) ProtoMessage() {}
 
 func (x *ExportRecallDataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[635]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[639]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -48475,7 +48917,7 @@ func (x *ExportRecallDataRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExportRecallDataRequest.ProtoReflect.Descriptor instead.
 func (*ExportRecallDataRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{635}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{639}
 }
 
 func (x *ExportRecallDataRequest) GetFormat() string {
@@ -48523,7 +48965,7 @@ type ExportRecallDataResponse struct {
 
 func (x *ExportRecallDataResponse) Reset() {
 	*x = ExportRecallDataResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[636]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[640]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -48535,7 +48977,7 @@ func (x *ExportRecallDataResponse) String() string {
 func (*ExportRecallDataResponse) ProtoMessage() {}
 
 func (x *ExportRecallDataResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[636]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[640]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -48548,7 +48990,7 @@ func (x *ExportRecallDataResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExportRecallDataResponse.ProtoReflect.Descriptor instead.
 func (*ExportRecallDataResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{636}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{640}
 }
 
 func (x *ExportRecallDataResponse) GetExportId() string {
@@ -48627,7 +49069,7 @@ type ImportRecallDataRequest struct {
 
 func (x *ImportRecallDataRequest) Reset() {
 	*x = ImportRecallDataRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[637]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[641]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -48639,7 +49081,7 @@ func (x *ImportRecallDataRequest) String() string {
 func (*ImportRecallDataRequest) ProtoMessage() {}
 
 func (x *ImportRecallDataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[637]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[641]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -48652,7 +49094,7 @@ func (x *ImportRecallDataRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ImportRecallDataRequest.ProtoReflect.Descriptor instead.
 func (*ImportRecallDataRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{637}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{641}
 }
 
 func (x *ImportRecallDataRequest) GetFormat() string {
@@ -48703,7 +49145,7 @@ type ImportRecallDataResponse struct {
 
 func (x *ImportRecallDataResponse) Reset() {
 	*x = ImportRecallDataResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[638]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[642]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -48715,7 +49157,7 @@ func (x *ImportRecallDataResponse) String() string {
 func (*ImportRecallDataResponse) ProtoMessage() {}
 
 func (x *ImportRecallDataResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[638]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[642]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -48728,7 +49170,7 @@ func (x *ImportRecallDataResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ImportRecallDataResponse.ProtoReflect.Descriptor instead.
 func (*ImportRecallDataResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{638}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{642}
 }
 
 func (x *ImportRecallDataResponse) GetImportId() string {
@@ -48778,7 +49220,7 @@ type ReportRecallItemRequest struct {
 
 func (x *ReportRecallItemRequest) Reset() {
 	*x = ReportRecallItemRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[639]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[643]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -48790,7 +49232,7 @@ func (x *ReportRecallItemRequest) String() string {
 func (*ReportRecallItemRequest) ProtoMessage() {}
 
 func (x *ReportRecallItemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[639]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[643]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -48803,7 +49245,7 @@ func (x *ReportRecallItemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReportRecallItemRequest.ProtoReflect.Descriptor instead.
 func (*ReportRecallItemRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{639}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{643}
 }
 
 func (x *ReportRecallItemRequest) GetItemId() string {
@@ -48845,7 +49287,7 @@ type ReportRecallItemResponse struct {
 
 func (x *ReportRecallItemResponse) Reset() {
 	*x = ReportRecallItemResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[640]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[644]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -48857,7 +49299,7 @@ func (x *ReportRecallItemResponse) String() string {
 func (*ReportRecallItemResponse) ProtoMessage() {}
 
 func (x *ReportRecallItemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[640]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[644]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -48870,7 +49312,7 @@ func (x *ReportRecallItemResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReportRecallItemResponse.ProtoReflect.Descriptor instead.
 func (*ReportRecallItemResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{640}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{644}
 }
 
 func (x *ReportRecallItemResponse) GetReportId() string {
@@ -48907,7 +49349,7 @@ type RecordRecallTransferRequest struct {
 
 func (x *RecordRecallTransferRequest) Reset() {
 	*x = RecordRecallTransferRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[641]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[645]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -48919,7 +49361,7 @@ func (x *RecordRecallTransferRequest) String() string {
 func (*RecordRecallTransferRequest) ProtoMessage() {}
 
 func (x *RecordRecallTransferRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[641]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[645]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -48932,7 +49374,7 @@ func (x *RecordRecallTransferRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecordRecallTransferRequest.ProtoReflect.Descriptor instead.
 func (*RecordRecallTransferRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{641}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{645}
 }
 
 func (x *RecordRecallTransferRequest) GetItemId() string {
@@ -48979,7 +49421,7 @@ type RecordRecallTransferResponse struct {
 
 func (x *RecordRecallTransferResponse) Reset() {
 	*x = RecordRecallTransferResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[642]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[646]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -48991,7 +49433,7 @@ func (x *RecordRecallTransferResponse) String() string {
 func (*RecordRecallTransferResponse) ProtoMessage() {}
 
 func (x *RecordRecallTransferResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[642]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[646]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -49004,7 +49446,7 @@ func (x *RecordRecallTransferResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecordRecallTransferResponse.ProtoReflect.Descriptor instead.
 func (*RecordRecallTransferResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{642}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{646}
 }
 
 func (x *RecordRecallTransferResponse) GetMeasure() *RecallRetentionMeasure {
@@ -49031,7 +49473,7 @@ type DraftTemplate struct {
 
 func (x *DraftTemplate) Reset() {
 	*x = DraftTemplate{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[643]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[647]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -49043,7 +49485,7 @@ func (x *DraftTemplate) String() string {
 func (*DraftTemplate) ProtoMessage() {}
 
 func (x *DraftTemplate) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[643]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[647]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -49056,7 +49498,7 @@ func (x *DraftTemplate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DraftTemplate.ProtoReflect.Descriptor instead.
 func (*DraftTemplate) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{643}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{647}
 }
 
 func (x *DraftTemplate) GetCode() string {
@@ -49138,7 +49580,7 @@ type DraftStyle struct {
 
 func (x *DraftStyle) Reset() {
 	*x = DraftStyle{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[644]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[648]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -49150,7 +49592,7 @@ func (x *DraftStyle) String() string {
 func (*DraftStyle) ProtoMessage() {}
 
 func (x *DraftStyle) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[644]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[648]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -49163,7 +49605,7 @@ func (x *DraftStyle) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DraftStyle.ProtoReflect.Descriptor instead.
 func (*DraftStyle) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{644}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{648}
 }
 
 func (x *DraftStyle) GetCode() string {
@@ -49248,7 +49690,7 @@ type DraftCitation struct {
 
 func (x *DraftCitation) Reset() {
 	*x = DraftCitation{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[645]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[649]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -49260,7 +49702,7 @@ func (x *DraftCitation) String() string {
 func (*DraftCitation) ProtoMessage() {}
 
 func (x *DraftCitation) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[645]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[649]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -49273,7 +49715,7 @@ func (x *DraftCitation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DraftCitation.ProtoReflect.Descriptor instead.
 func (*DraftCitation) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{645}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{649}
 }
 
 func (x *DraftCitation) GetId() string {
@@ -49427,7 +49869,7 @@ type DraftBlock struct {
 
 func (x *DraftBlock) Reset() {
 	*x = DraftBlock{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[646]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[650]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -49439,7 +49881,7 @@ func (x *DraftBlock) String() string {
 func (*DraftBlock) ProtoMessage() {}
 
 func (x *DraftBlock) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[646]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[650]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -49452,7 +49894,7 @@ func (x *DraftBlock) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DraftBlock.ProtoReflect.Descriptor instead.
 func (*DraftBlock) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{646}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{650}
 }
 
 func (x *DraftBlock) GetId() string {
@@ -49595,7 +50037,7 @@ type DraftRevision struct {
 
 func (x *DraftRevision) Reset() {
 	*x = DraftRevision{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[647]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[651]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -49607,7 +50049,7 @@ func (x *DraftRevision) String() string {
 func (*DraftRevision) ProtoMessage() {}
 
 func (x *DraftRevision) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[647]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[651]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -49620,7 +50062,7 @@ func (x *DraftRevision) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DraftRevision.ProtoReflect.Descriptor instead.
 func (*DraftRevision) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{647}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{651}
 }
 
 func (x *DraftRevision) GetId() string {
@@ -49731,7 +50173,7 @@ type DraftBlockChange struct {
 
 func (x *DraftBlockChange) Reset() {
 	*x = DraftBlockChange{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[648]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[652]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -49743,7 +50185,7 @@ func (x *DraftBlockChange) String() string {
 func (*DraftBlockChange) ProtoMessage() {}
 
 func (x *DraftBlockChange) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[648]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[652]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -49756,7 +50198,7 @@ func (x *DraftBlockChange) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DraftBlockChange.ProtoReflect.Descriptor instead.
 func (*DraftBlockChange) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{648}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{652}
 }
 
 func (x *DraftBlockChange) GetBlockId() string {
@@ -49838,7 +50280,7 @@ type DraftRevisionComparison struct {
 
 func (x *DraftRevisionComparison) Reset() {
 	*x = DraftRevisionComparison{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[649]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[653]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -49850,7 +50292,7 @@ func (x *DraftRevisionComparison) String() string {
 func (*DraftRevisionComparison) ProtoMessage() {}
 
 func (x *DraftRevisionComparison) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[649]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[653]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -49863,7 +50305,7 @@ func (x *DraftRevisionComparison) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DraftRevisionComparison.ProtoReflect.Descriptor instead.
 func (*DraftRevisionComparison) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{649}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{653}
 }
 
 func (x *DraftRevisionComparison) GetFromRevision() *DraftRevision {
@@ -49939,7 +50381,7 @@ type DraftBranch struct {
 
 func (x *DraftBranch) Reset() {
 	*x = DraftBranch{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[650]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[654]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -49951,7 +50393,7 @@ func (x *DraftBranch) String() string {
 func (*DraftBranch) ProtoMessage() {}
 
 func (x *DraftBranch) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[650]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[654]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -49964,7 +50406,7 @@ func (x *DraftBranch) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DraftBranch.ProtoReflect.Descriptor instead.
 func (*DraftBranch) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{650}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{654}
 }
 
 func (x *DraftBranch) GetId() string {
@@ -50056,7 +50498,7 @@ type DraftSuggestion struct {
 
 func (x *DraftSuggestion) Reset() {
 	*x = DraftSuggestion{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[651]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[655]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -50068,7 +50510,7 @@ func (x *DraftSuggestion) String() string {
 func (*DraftSuggestion) ProtoMessage() {}
 
 func (x *DraftSuggestion) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[651]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[655]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -50081,7 +50523,7 @@ func (x *DraftSuggestion) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DraftSuggestion.ProtoReflect.Descriptor instead.
 func (*DraftSuggestion) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{651}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{655}
 }
 
 func (x *DraftSuggestion) GetId() string {
@@ -50230,7 +50672,7 @@ type DraftConflict struct {
 
 func (x *DraftConflict) Reset() {
 	*x = DraftConflict{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[652]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[656]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -50242,7 +50684,7 @@ func (x *DraftConflict) String() string {
 func (*DraftConflict) ProtoMessage() {}
 
 func (x *DraftConflict) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[652]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[656]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -50255,7 +50697,7 @@ func (x *DraftConflict) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DraftConflict.ProtoReflect.Descriptor instead.
 func (*DraftConflict) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{652}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{656}
 }
 
 func (x *DraftConflict) GetId() string {
@@ -50367,7 +50809,7 @@ type DraftExport struct {
 
 func (x *DraftExport) Reset() {
 	*x = DraftExport{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[653]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[657]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -50379,7 +50821,7 @@ func (x *DraftExport) String() string {
 func (*DraftExport) ProtoMessage() {}
 
 func (x *DraftExport) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[653]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[657]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -50392,7 +50834,7 @@ func (x *DraftExport) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DraftExport.ProtoReflect.Descriptor instead.
 func (*DraftExport) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{653}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{657}
 }
 
 func (x *DraftExport) GetId() string {
@@ -50532,7 +50974,7 @@ type DraftHandoff struct {
 
 func (x *DraftHandoff) Reset() {
 	*x = DraftHandoff{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[654]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[658]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -50544,7 +50986,7 @@ func (x *DraftHandoff) String() string {
 func (*DraftHandoff) ProtoMessage() {}
 
 func (x *DraftHandoff) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[654]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[658]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -50557,7 +50999,7 @@ func (x *DraftHandoff) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DraftHandoff.ProtoReflect.Descriptor instead.
 func (*DraftHandoff) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{654}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{658}
 }
 
 func (x *DraftHandoff) GetId() string {
@@ -50671,7 +51113,7 @@ type DraftDocument struct {
 
 func (x *DraftDocument) Reset() {
 	*x = DraftDocument{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[655]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[659]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -50683,7 +51125,7 @@ func (x *DraftDocument) String() string {
 func (*DraftDocument) ProtoMessage() {}
 
 func (x *DraftDocument) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[655]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[659]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -50696,7 +51138,7 @@ func (x *DraftDocument) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DraftDocument.ProtoReflect.Descriptor instead.
 func (*DraftDocument) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{655}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{659}
 }
 
 func (x *DraftDocument) GetId() string {
@@ -50952,7 +51394,7 @@ type DraftingDashboard struct {
 
 func (x *DraftingDashboard) Reset() {
 	*x = DraftingDashboard{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[656]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[660]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -50964,7 +51406,7 @@ func (x *DraftingDashboard) String() string {
 func (*DraftingDashboard) ProtoMessage() {}
 
 func (x *DraftingDashboard) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[656]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[660]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -50977,7 +51419,7 @@ func (x *DraftingDashboard) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DraftingDashboard.ProtoReflect.Descriptor instead.
 func (*DraftingDashboard) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{656}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{660}
 }
 
 func (x *DraftingDashboard) GetRuntimeStatus() string {
@@ -51086,7 +51528,7 @@ type GetDraftingDashboardRequest struct {
 
 func (x *GetDraftingDashboardRequest) Reset() {
 	*x = GetDraftingDashboardRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[657]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[661]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -51098,7 +51540,7 @@ func (x *GetDraftingDashboardRequest) String() string {
 func (*GetDraftingDashboardRequest) ProtoMessage() {}
 
 func (x *GetDraftingDashboardRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[657]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[661]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -51111,7 +51553,7 @@ func (x *GetDraftingDashboardRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDraftingDashboardRequest.ProtoReflect.Descriptor instead.
 func (*GetDraftingDashboardRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{657}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{661}
 }
 
 type GetDraftingDashboardResponse struct {
@@ -51123,7 +51565,7 @@ type GetDraftingDashboardResponse struct {
 
 func (x *GetDraftingDashboardResponse) Reset() {
 	*x = GetDraftingDashboardResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[658]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[662]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -51135,7 +51577,7 @@ func (x *GetDraftingDashboardResponse) String() string {
 func (*GetDraftingDashboardResponse) ProtoMessage() {}
 
 func (x *GetDraftingDashboardResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[658]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[662]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -51148,7 +51590,7 @@ func (x *GetDraftingDashboardResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDraftingDashboardResponse.ProtoReflect.Descriptor instead.
 func (*GetDraftingDashboardResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{658}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{662}
 }
 
 func (x *GetDraftingDashboardResponse) GetDashboard() *DraftingDashboard {
@@ -51167,7 +51609,7 @@ type ListDraftsRequest struct {
 
 func (x *ListDraftsRequest) Reset() {
 	*x = ListDraftsRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[659]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[663]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -51179,7 +51621,7 @@ func (x *ListDraftsRequest) String() string {
 func (*ListDraftsRequest) ProtoMessage() {}
 
 func (x *ListDraftsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[659]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[663]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -51192,7 +51634,7 @@ func (x *ListDraftsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListDraftsRequest.ProtoReflect.Descriptor instead.
 func (*ListDraftsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{659}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{663}
 }
 
 func (x *ListDraftsRequest) GetStatus() string {
@@ -51211,7 +51653,7 @@ type ListDraftsResponse struct {
 
 func (x *ListDraftsResponse) Reset() {
 	*x = ListDraftsResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[660]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[664]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -51223,7 +51665,7 @@ func (x *ListDraftsResponse) String() string {
 func (*ListDraftsResponse) ProtoMessage() {}
 
 func (x *ListDraftsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[660]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[664]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -51236,7 +51678,7 @@ func (x *ListDraftsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListDraftsResponse.ProtoReflect.Descriptor instead.
 func (*ListDraftsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{660}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{664}
 }
 
 func (x *ListDraftsResponse) GetDrafts() []*DraftDocument {
@@ -51255,7 +51697,7 @@ type GetDraftRequest struct {
 
 func (x *GetDraftRequest) Reset() {
 	*x = GetDraftRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[661]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[665]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -51267,7 +51709,7 @@ func (x *GetDraftRequest) String() string {
 func (*GetDraftRequest) ProtoMessage() {}
 
 func (x *GetDraftRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[661]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[665]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -51280,7 +51722,7 @@ func (x *GetDraftRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDraftRequest.ProtoReflect.Descriptor instead.
 func (*GetDraftRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{661}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{665}
 }
 
 func (x *GetDraftRequest) GetDraftId() string {
@@ -51299,7 +51741,7 @@ type GetDraftResponse struct {
 
 func (x *GetDraftResponse) Reset() {
 	*x = GetDraftResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[662]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[666]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -51311,7 +51753,7 @@ func (x *GetDraftResponse) String() string {
 func (*GetDraftResponse) ProtoMessage() {}
 
 func (x *GetDraftResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[662]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[666]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -51324,7 +51766,7 @@ func (x *GetDraftResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDraftResponse.ProtoReflect.Descriptor instead.
 func (*GetDraftResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{662}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{666}
 }
 
 func (x *GetDraftResponse) GetDraft() *DraftDocument {
@@ -51355,7 +51797,7 @@ type CreateDraftRequest struct {
 
 func (x *CreateDraftRequest) Reset() {
 	*x = CreateDraftRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[663]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[667]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -51367,7 +51809,7 @@ func (x *CreateDraftRequest) String() string {
 func (*CreateDraftRequest) ProtoMessage() {}
 
 func (x *CreateDraftRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[663]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[667]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -51380,7 +51822,7 @@ func (x *CreateDraftRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateDraftRequest.ProtoReflect.Descriptor instead.
 func (*CreateDraftRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{663}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{667}
 }
 
 func (x *CreateDraftRequest) GetTitle() string {
@@ -51483,7 +51925,7 @@ type CreateDraftResponse struct {
 
 func (x *CreateDraftResponse) Reset() {
 	*x = CreateDraftResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[664]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[668]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -51495,7 +51937,7 @@ func (x *CreateDraftResponse) String() string {
 func (*CreateDraftResponse) ProtoMessage() {}
 
 func (x *CreateDraftResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[664]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[668]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -51508,7 +51950,7 @@ func (x *CreateDraftResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateDraftResponse.ProtoReflect.Descriptor instead.
 func (*CreateDraftResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{664}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{668}
 }
 
 func (x *CreateDraftResponse) GetDraft() *DraftDocument {
@@ -51541,7 +51983,7 @@ type UpsertDraftBlockRequest struct {
 
 func (x *UpsertDraftBlockRequest) Reset() {
 	*x = UpsertDraftBlockRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[665]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[669]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -51553,7 +51995,7 @@ func (x *UpsertDraftBlockRequest) String() string {
 func (*UpsertDraftBlockRequest) ProtoMessage() {}
 
 func (x *UpsertDraftBlockRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[665]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[669]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -51566,7 +52008,7 @@ func (x *UpsertDraftBlockRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpsertDraftBlockRequest.ProtoReflect.Descriptor instead.
 func (*UpsertDraftBlockRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{665}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{669}
 }
 
 func (x *UpsertDraftBlockRequest) GetDraftId() string {
@@ -51685,7 +52127,7 @@ type UpsertDraftBlockResponse struct {
 
 func (x *UpsertDraftBlockResponse) Reset() {
 	*x = UpsertDraftBlockResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[666]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[670]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -51697,7 +52139,7 @@ func (x *UpsertDraftBlockResponse) String() string {
 func (*UpsertDraftBlockResponse) ProtoMessage() {}
 
 func (x *UpsertDraftBlockResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[666]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[670]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -51710,7 +52152,7 @@ func (x *UpsertDraftBlockResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpsertDraftBlockResponse.ProtoReflect.Descriptor instead.
 func (*UpsertDraftBlockResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{666}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{670}
 }
 
 func (x *UpsertDraftBlockResponse) GetBlock() *DraftBlock {
@@ -51748,7 +52190,7 @@ type DeleteDraftBlockRequest struct {
 
 func (x *DeleteDraftBlockRequest) Reset() {
 	*x = DeleteDraftBlockRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[667]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[671]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -51760,7 +52202,7 @@ func (x *DeleteDraftBlockRequest) String() string {
 func (*DeleteDraftBlockRequest) ProtoMessage() {}
 
 func (x *DeleteDraftBlockRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[667]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[671]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -51773,7 +52215,7 @@ func (x *DeleteDraftBlockRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteDraftBlockRequest.ProtoReflect.Descriptor instead.
 func (*DeleteDraftBlockRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{667}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{671}
 }
 
 func (x *DeleteDraftBlockRequest) GetDraftId() string {
@@ -51828,7 +52270,7 @@ type DeleteDraftBlockResponse struct {
 
 func (x *DeleteDraftBlockResponse) Reset() {
 	*x = DeleteDraftBlockResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[668]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[672]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -51840,7 +52282,7 @@ func (x *DeleteDraftBlockResponse) String() string {
 func (*DeleteDraftBlockResponse) ProtoMessage() {}
 
 func (x *DeleteDraftBlockResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[668]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[672]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -51853,7 +52295,7 @@ func (x *DeleteDraftBlockResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteDraftBlockResponse.ProtoReflect.Descriptor instead.
 func (*DeleteDraftBlockResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{668}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{672}
 }
 
 func (x *DeleteDraftBlockResponse) GetDeleted() bool {
@@ -51892,7 +52334,7 @@ type UpsertDraftCitationRequest struct {
 
 func (x *UpsertDraftCitationRequest) Reset() {
 	*x = UpsertDraftCitationRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[669]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[673]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -51904,7 +52346,7 @@ func (x *UpsertDraftCitationRequest) String() string {
 func (*UpsertDraftCitationRequest) ProtoMessage() {}
 
 func (x *UpsertDraftCitationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[669]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[673]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -51917,7 +52359,7 @@ func (x *UpsertDraftCitationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpsertDraftCitationRequest.ProtoReflect.Descriptor instead.
 func (*UpsertDraftCitationRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{669}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{673}
 }
 
 func (x *UpsertDraftCitationRequest) GetDraftId() string {
@@ -52027,7 +52469,7 @@ type UpsertDraftCitationResponse struct {
 
 func (x *UpsertDraftCitationResponse) Reset() {
 	*x = UpsertDraftCitationResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[670]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[674]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -52039,7 +52481,7 @@ func (x *UpsertDraftCitationResponse) String() string {
 func (*UpsertDraftCitationResponse) ProtoMessage() {}
 
 func (x *UpsertDraftCitationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[670]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[674]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -52052,7 +52494,7 @@ func (x *UpsertDraftCitationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpsertDraftCitationResponse.ProtoReflect.Descriptor instead.
 func (*UpsertDraftCitationResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{670}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{674}
 }
 
 func (x *UpsertDraftCitationResponse) GetCitation() *DraftCitation {
@@ -52071,7 +52513,7 @@ type VerifyDraftRequest struct {
 
 func (x *VerifyDraftRequest) Reset() {
 	*x = VerifyDraftRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[671]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[675]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -52083,7 +52525,7 @@ func (x *VerifyDraftRequest) String() string {
 func (*VerifyDraftRequest) ProtoMessage() {}
 
 func (x *VerifyDraftRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[671]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[675]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -52096,7 +52538,7 @@ func (x *VerifyDraftRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VerifyDraftRequest.ProtoReflect.Descriptor instead.
 func (*VerifyDraftRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{671}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{675}
 }
 
 func (x *VerifyDraftRequest) GetDraftId() string {
@@ -52119,7 +52561,7 @@ type VerifyDraftResponse struct {
 
 func (x *VerifyDraftResponse) Reset() {
 	*x = VerifyDraftResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[672]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[676]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -52131,7 +52573,7 @@ func (x *VerifyDraftResponse) String() string {
 func (*VerifyDraftResponse) ProtoMessage() {}
 
 func (x *VerifyDraftResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[672]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[676]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -52144,7 +52586,7 @@ func (x *VerifyDraftResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VerifyDraftResponse.ProtoReflect.Descriptor instead.
 func (*VerifyDraftResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{672}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{676}
 }
 
 func (x *VerifyDraftResponse) GetSupportedClaimCount() int32 {
@@ -52219,7 +52661,7 @@ type DraftEvidencePreview struct {
 
 func (x *DraftEvidencePreview) Reset() {
 	*x = DraftEvidencePreview{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[673]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[677]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -52231,7 +52673,7 @@ func (x *DraftEvidencePreview) String() string {
 func (*DraftEvidencePreview) ProtoMessage() {}
 
 func (x *DraftEvidencePreview) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[673]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[677]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -52244,7 +52686,7 @@ func (x *DraftEvidencePreview) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DraftEvidencePreview.ProtoReflect.Descriptor instead.
 func (*DraftEvidencePreview) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{673}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{677}
 }
 
 func (x *DraftEvidencePreview) GetCitationId() string {
@@ -52437,7 +52879,7 @@ type DraftClaimDiagnostic struct {
 
 func (x *DraftClaimDiagnostic) Reset() {
 	*x = DraftClaimDiagnostic{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[674]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[678]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -52449,7 +52891,7 @@ func (x *DraftClaimDiagnostic) String() string {
 func (*DraftClaimDiagnostic) ProtoMessage() {}
 
 func (x *DraftClaimDiagnostic) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[674]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[678]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -52462,7 +52904,7 @@ func (x *DraftClaimDiagnostic) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DraftClaimDiagnostic.ProtoReflect.Descriptor instead.
 func (*DraftClaimDiagnostic) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{674}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{678}
 }
 
 func (x *DraftClaimDiagnostic) GetBlockId() string {
@@ -52532,7 +52974,7 @@ type DraftEvidenceReview struct {
 
 func (x *DraftEvidenceReview) Reset() {
 	*x = DraftEvidenceReview{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[675]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[679]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -52544,7 +52986,7 @@ func (x *DraftEvidenceReview) String() string {
 func (*DraftEvidenceReview) ProtoMessage() {}
 
 func (x *DraftEvidenceReview) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[675]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[679]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -52557,7 +52999,7 @@ func (x *DraftEvidenceReview) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DraftEvidenceReview.ProtoReflect.Descriptor instead.
 func (*DraftEvidenceReview) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{675}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{679}
 }
 
 func (x *DraftEvidenceReview) GetDraftId() string {
@@ -52640,7 +53082,7 @@ type GetDraftEvidenceReviewRequest struct {
 
 func (x *GetDraftEvidenceReviewRequest) Reset() {
 	*x = GetDraftEvidenceReviewRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[676]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[680]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -52652,7 +53094,7 @@ func (x *GetDraftEvidenceReviewRequest) String() string {
 func (*GetDraftEvidenceReviewRequest) ProtoMessage() {}
 
 func (x *GetDraftEvidenceReviewRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[676]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[680]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -52665,7 +53107,7 @@ func (x *GetDraftEvidenceReviewRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDraftEvidenceReviewRequest.ProtoReflect.Descriptor instead.
 func (*GetDraftEvidenceReviewRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{676}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{680}
 }
 
 func (x *GetDraftEvidenceReviewRequest) GetDraftId() string {
@@ -52691,7 +53133,7 @@ type GetDraftEvidenceReviewResponse struct {
 
 func (x *GetDraftEvidenceReviewResponse) Reset() {
 	*x = GetDraftEvidenceReviewResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[677]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[681]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -52703,7 +53145,7 @@ func (x *GetDraftEvidenceReviewResponse) String() string {
 func (*GetDraftEvidenceReviewResponse) ProtoMessage() {}
 
 func (x *GetDraftEvidenceReviewResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[677]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[681]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -52716,7 +53158,7 @@ func (x *GetDraftEvidenceReviewResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDraftEvidenceReviewResponse.ProtoReflect.Descriptor instead.
 func (*GetDraftEvidenceReviewResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{677}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{681}
 }
 
 func (x *GetDraftEvidenceReviewResponse) GetReview() *DraftEvidenceReview {
@@ -52737,7 +53179,7 @@ type CompareDraftEvidenceRequest struct {
 
 func (x *CompareDraftEvidenceRequest) Reset() {
 	*x = CompareDraftEvidenceRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[678]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[682]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -52749,7 +53191,7 @@ func (x *CompareDraftEvidenceRequest) String() string {
 func (*CompareDraftEvidenceRequest) ProtoMessage() {}
 
 func (x *CompareDraftEvidenceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[678]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[682]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -52762,7 +53204,7 @@ func (x *CompareDraftEvidenceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CompareDraftEvidenceRequest.ProtoReflect.Descriptor instead.
 func (*CompareDraftEvidenceRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{678}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{682}
 }
 
 func (x *CompareDraftEvidenceRequest) GetDraftId() string {
@@ -52801,7 +53243,7 @@ type DraftEvidenceComparison struct {
 
 func (x *DraftEvidenceComparison) Reset() {
 	*x = DraftEvidenceComparison{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[679]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[683]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -52813,7 +53255,7 @@ func (x *DraftEvidenceComparison) String() string {
 func (*DraftEvidenceComparison) ProtoMessage() {}
 
 func (x *DraftEvidenceComparison) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[679]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[683]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -52826,7 +53268,7 @@ func (x *DraftEvidenceComparison) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DraftEvidenceComparison.ProtoReflect.Descriptor instead.
 func (*DraftEvidenceComparison) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{679}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{683}
 }
 
 func (x *DraftEvidenceComparison) GetLeft() *DraftEvidencePreview {
@@ -52887,7 +53329,7 @@ type CompareDraftEvidenceResponse struct {
 
 func (x *CompareDraftEvidenceResponse) Reset() {
 	*x = CompareDraftEvidenceResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[680]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[684]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -52899,7 +53341,7 @@ func (x *CompareDraftEvidenceResponse) String() string {
 func (*CompareDraftEvidenceResponse) ProtoMessage() {}
 
 func (x *CompareDraftEvidenceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[680]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[684]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -52912,7 +53354,7 @@ func (x *CompareDraftEvidenceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CompareDraftEvidenceResponse.ProtoReflect.Descriptor instead.
 func (*CompareDraftEvidenceResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{680}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{684}
 }
 
 func (x *CompareDraftEvidenceResponse) GetComparison() *DraftEvidenceComparison {
@@ -52935,7 +53377,7 @@ type CreateDraftRevisionRequest struct {
 
 func (x *CreateDraftRevisionRequest) Reset() {
 	*x = CreateDraftRevisionRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[681]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[685]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -52947,7 +53389,7 @@ func (x *CreateDraftRevisionRequest) String() string {
 func (*CreateDraftRevisionRequest) ProtoMessage() {}
 
 func (x *CreateDraftRevisionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[681]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[685]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -52960,7 +53402,7 @@ func (x *CreateDraftRevisionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateDraftRevisionRequest.ProtoReflect.Descriptor instead.
 func (*CreateDraftRevisionRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{681}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{685}
 }
 
 func (x *CreateDraftRevisionRequest) GetDraftId() string {
@@ -53007,7 +53449,7 @@ type CreateDraftRevisionResponse struct {
 
 func (x *CreateDraftRevisionResponse) Reset() {
 	*x = CreateDraftRevisionResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[682]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[686]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -53019,7 +53461,7 @@ func (x *CreateDraftRevisionResponse) String() string {
 func (*CreateDraftRevisionResponse) ProtoMessage() {}
 
 func (x *CreateDraftRevisionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[682]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[686]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -53032,7 +53474,7 @@ func (x *CreateDraftRevisionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateDraftRevisionResponse.ProtoReflect.Descriptor instead.
 func (*CreateDraftRevisionResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{682}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{686}
 }
 
 func (x *CreateDraftRevisionResponse) GetRevision() *DraftRevision {
@@ -53054,7 +53496,7 @@ type CreateDraftBranchRequest struct {
 
 func (x *CreateDraftBranchRequest) Reset() {
 	*x = CreateDraftBranchRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[683]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[687]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -53066,7 +53508,7 @@ func (x *CreateDraftBranchRequest) String() string {
 func (*CreateDraftBranchRequest) ProtoMessage() {}
 
 func (x *CreateDraftBranchRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[683]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[687]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -53079,7 +53521,7 @@ func (x *CreateDraftBranchRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateDraftBranchRequest.ProtoReflect.Descriptor instead.
 func (*CreateDraftBranchRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{683}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{687}
 }
 
 func (x *CreateDraftBranchRequest) GetDraftId() string {
@@ -53119,7 +53561,7 @@ type CreateDraftBranchResponse struct {
 
 func (x *CreateDraftBranchResponse) Reset() {
 	*x = CreateDraftBranchResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[684]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[688]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -53131,7 +53573,7 @@ func (x *CreateDraftBranchResponse) String() string {
 func (*CreateDraftBranchResponse) ProtoMessage() {}
 
 func (x *CreateDraftBranchResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[684]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[688]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -53144,7 +53586,7 @@ func (x *CreateDraftBranchResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateDraftBranchResponse.ProtoReflect.Descriptor instead.
 func (*CreateDraftBranchResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{684}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{688}
 }
 
 func (x *CreateDraftBranchResponse) GetBranch() *DraftBranch {
@@ -53166,7 +53608,7 @@ type RestoreDraftRevisionRequest struct {
 
 func (x *RestoreDraftRevisionRequest) Reset() {
 	*x = RestoreDraftRevisionRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[685]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[689]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -53178,7 +53620,7 @@ func (x *RestoreDraftRevisionRequest) String() string {
 func (*RestoreDraftRevisionRequest) ProtoMessage() {}
 
 func (x *RestoreDraftRevisionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[685]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[689]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -53191,7 +53633,7 @@ func (x *RestoreDraftRevisionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RestoreDraftRevisionRequest.ProtoReflect.Descriptor instead.
 func (*RestoreDraftRevisionRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{685}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{689}
 }
 
 func (x *RestoreDraftRevisionRequest) GetDraftId() string {
@@ -53232,7 +53674,7 @@ type RestoreDraftRevisionResponse struct {
 
 func (x *RestoreDraftRevisionResponse) Reset() {
 	*x = RestoreDraftRevisionResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[686]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[690]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -53244,7 +53686,7 @@ func (x *RestoreDraftRevisionResponse) String() string {
 func (*RestoreDraftRevisionResponse) ProtoMessage() {}
 
 func (x *RestoreDraftRevisionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[686]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[690]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -53257,7 +53699,7 @@ func (x *RestoreDraftRevisionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RestoreDraftRevisionResponse.ProtoReflect.Descriptor instead.
 func (*RestoreDraftRevisionResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{686}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{690}
 }
 
 func (x *RestoreDraftRevisionResponse) GetRevision() *DraftRevision {
@@ -53285,7 +53727,7 @@ type CompareDraftRevisionsRequest struct {
 
 func (x *CompareDraftRevisionsRequest) Reset() {
 	*x = CompareDraftRevisionsRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[687]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[691]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -53297,7 +53739,7 @@ func (x *CompareDraftRevisionsRequest) String() string {
 func (*CompareDraftRevisionsRequest) ProtoMessage() {}
 
 func (x *CompareDraftRevisionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[687]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[691]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -53310,7 +53752,7 @@ func (x *CompareDraftRevisionsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CompareDraftRevisionsRequest.ProtoReflect.Descriptor instead.
 func (*CompareDraftRevisionsRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{687}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{691}
 }
 
 func (x *CompareDraftRevisionsRequest) GetDraftId() string {
@@ -53343,7 +53785,7 @@ type CompareDraftRevisionsResponse struct {
 
 func (x *CompareDraftRevisionsResponse) Reset() {
 	*x = CompareDraftRevisionsResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[688]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[692]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -53355,7 +53797,7 @@ func (x *CompareDraftRevisionsResponse) String() string {
 func (*CompareDraftRevisionsResponse) ProtoMessage() {}
 
 func (x *CompareDraftRevisionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[688]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[692]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -53368,7 +53810,7 @@ func (x *CompareDraftRevisionsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CompareDraftRevisionsResponse.ProtoReflect.Descriptor instead.
 func (*CompareDraftRevisionsResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{688}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{692}
 }
 
 func (x *CompareDraftRevisionsResponse) GetComparison() *DraftRevisionComparison {
@@ -53393,7 +53835,7 @@ type GenerateDraftSuggestionRequest struct {
 
 func (x *GenerateDraftSuggestionRequest) Reset() {
 	*x = GenerateDraftSuggestionRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[689]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[693]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -53405,7 +53847,7 @@ func (x *GenerateDraftSuggestionRequest) String() string {
 func (*GenerateDraftSuggestionRequest) ProtoMessage() {}
 
 func (x *GenerateDraftSuggestionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[689]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[693]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -53418,7 +53860,7 @@ func (x *GenerateDraftSuggestionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateDraftSuggestionRequest.ProtoReflect.Descriptor instead.
 func (*GenerateDraftSuggestionRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{689}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{693}
 }
 
 func (x *GenerateDraftSuggestionRequest) GetDraftId() string {
@@ -53479,7 +53921,7 @@ type GenerateDraftSuggestionResponse struct {
 
 func (x *GenerateDraftSuggestionResponse) Reset() {
 	*x = GenerateDraftSuggestionResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[690]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[694]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -53491,7 +53933,7 @@ func (x *GenerateDraftSuggestionResponse) String() string {
 func (*GenerateDraftSuggestionResponse) ProtoMessage() {}
 
 func (x *GenerateDraftSuggestionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[690]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[694]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -53504,7 +53946,7 @@ func (x *GenerateDraftSuggestionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateDraftSuggestionResponse.ProtoReflect.Descriptor instead.
 func (*GenerateDraftSuggestionResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{690}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{694}
 }
 
 func (x *GenerateDraftSuggestionResponse) GetSuggestion() *DraftSuggestion {
@@ -53526,7 +53968,7 @@ type SetDraftSuggestionStateRequest struct {
 
 func (x *SetDraftSuggestionStateRequest) Reset() {
 	*x = SetDraftSuggestionStateRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[691]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[695]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -53538,7 +53980,7 @@ func (x *SetDraftSuggestionStateRequest) String() string {
 func (*SetDraftSuggestionStateRequest) ProtoMessage() {}
 
 func (x *SetDraftSuggestionStateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[691]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[695]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -53551,7 +53993,7 @@ func (x *SetDraftSuggestionStateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SetDraftSuggestionStateRequest.ProtoReflect.Descriptor instead.
 func (*SetDraftSuggestionStateRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{691}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{695}
 }
 
 func (x *SetDraftSuggestionStateRequest) GetSuggestionId() string {
@@ -53592,7 +54034,7 @@ type SetDraftSuggestionStateResponse struct {
 
 func (x *SetDraftSuggestionStateResponse) Reset() {
 	*x = SetDraftSuggestionStateResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[692]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[696]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -53604,7 +54046,7 @@ func (x *SetDraftSuggestionStateResponse) String() string {
 func (*SetDraftSuggestionStateResponse) ProtoMessage() {}
 
 func (x *SetDraftSuggestionStateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[692]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[696]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -53617,7 +54059,7 @@ func (x *SetDraftSuggestionStateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SetDraftSuggestionStateResponse.ProtoReflect.Descriptor instead.
 func (*SetDraftSuggestionStateResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{692}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{696}
 }
 
 func (x *SetDraftSuggestionStateResponse) GetSuggestion() *DraftSuggestion {
@@ -53646,7 +54088,7 @@ type ResolveDraftConflictRequest struct {
 
 func (x *ResolveDraftConflictRequest) Reset() {
 	*x = ResolveDraftConflictRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[693]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[697]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -53658,7 +54100,7 @@ func (x *ResolveDraftConflictRequest) String() string {
 func (*ResolveDraftConflictRequest) ProtoMessage() {}
 
 func (x *ResolveDraftConflictRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[693]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[697]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -53671,7 +54113,7 @@ func (x *ResolveDraftConflictRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResolveDraftConflictRequest.ProtoReflect.Descriptor instead.
 func (*ResolveDraftConflictRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{693}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{697}
 }
 
 func (x *ResolveDraftConflictRequest) GetConflictId() string {
@@ -53712,7 +54154,7 @@ type ResolveDraftConflictResponse struct {
 
 func (x *ResolveDraftConflictResponse) Reset() {
 	*x = ResolveDraftConflictResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[694]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[698]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -53724,7 +54166,7 @@ func (x *ResolveDraftConflictResponse) String() string {
 func (*ResolveDraftConflictResponse) ProtoMessage() {}
 
 func (x *ResolveDraftConflictResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[694]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[698]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -53737,7 +54179,7 @@ func (x *ResolveDraftConflictResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResolveDraftConflictResponse.ProtoReflect.Descriptor instead.
 func (*ResolveDraftConflictResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{694}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{698}
 }
 
 func (x *ResolveDraftConflictResponse) GetConflict() *DraftConflict {
@@ -53767,7 +54209,7 @@ type RequestDraftExportRequest struct {
 
 func (x *RequestDraftExportRequest) Reset() {
 	*x = RequestDraftExportRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[695]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[699]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -53779,7 +54221,7 @@ func (x *RequestDraftExportRequest) String() string {
 func (*RequestDraftExportRequest) ProtoMessage() {}
 
 func (x *RequestDraftExportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[695]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[699]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -53792,7 +54234,7 @@ func (x *RequestDraftExportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RequestDraftExportRequest.ProtoReflect.Descriptor instead.
 func (*RequestDraftExportRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{695}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{699}
 }
 
 func (x *RequestDraftExportRequest) GetDraftId() string {
@@ -53839,7 +54281,7 @@ type RequestDraftExportResponse struct {
 
 func (x *RequestDraftExportResponse) Reset() {
 	*x = RequestDraftExportResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[696]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[700]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -53851,7 +54293,7 @@ func (x *RequestDraftExportResponse) String() string {
 func (*RequestDraftExportResponse) ProtoMessage() {}
 
 func (x *RequestDraftExportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[696]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[700]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -53864,7 +54306,7 @@ func (x *RequestDraftExportResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RequestDraftExportResponse.ProtoReflect.Descriptor instead.
 func (*RequestDraftExportResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{696}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{700}
 }
 
 func (x *RequestDraftExportResponse) GetExport() *DraftExport {
@@ -53883,7 +54325,7 @@ type GetDraftExportRequest struct {
 
 func (x *GetDraftExportRequest) Reset() {
 	*x = GetDraftExportRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[697]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[701]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -53895,7 +54337,7 @@ func (x *GetDraftExportRequest) String() string {
 func (*GetDraftExportRequest) ProtoMessage() {}
 
 func (x *GetDraftExportRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[697]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[701]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -53908,7 +54350,7 @@ func (x *GetDraftExportRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDraftExportRequest.ProtoReflect.Descriptor instead.
 func (*GetDraftExportRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{697}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{701}
 }
 
 func (x *GetDraftExportRequest) GetExportId() string {
@@ -53927,7 +54369,7 @@ type GetDraftExportResponse struct {
 
 func (x *GetDraftExportResponse) Reset() {
 	*x = GetDraftExportResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[698]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[702]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -53939,7 +54381,7 @@ func (x *GetDraftExportResponse) String() string {
 func (*GetDraftExportResponse) ProtoMessage() {}
 
 func (x *GetDraftExportResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[698]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[702]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -53952,7 +54394,7 @@ func (x *GetDraftExportResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDraftExportResponse.ProtoReflect.Descriptor instead.
 func (*GetDraftExportResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{698}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{702}
 }
 
 func (x *GetDraftExportResponse) GetExport() *DraftExport {
@@ -53976,7 +54418,7 @@ type CreateDraftHandoffRequest struct {
 
 func (x *CreateDraftHandoffRequest) Reset() {
 	*x = CreateDraftHandoffRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[699]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[703]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -53988,7 +54430,7 @@ func (x *CreateDraftHandoffRequest) String() string {
 func (*CreateDraftHandoffRequest) ProtoMessage() {}
 
 func (x *CreateDraftHandoffRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[699]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[703]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -54001,7 +54443,7 @@ func (x *CreateDraftHandoffRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateDraftHandoffRequest.ProtoReflect.Descriptor instead.
 func (*CreateDraftHandoffRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{699}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{703}
 }
 
 func (x *CreateDraftHandoffRequest) GetDraftId() string {
@@ -54055,7 +54497,7 @@ type CreateDraftHandoffResponse struct {
 
 func (x *CreateDraftHandoffResponse) Reset() {
 	*x = CreateDraftHandoffResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[700]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[704]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -54067,7 +54509,7 @@ func (x *CreateDraftHandoffResponse) String() string {
 func (*CreateDraftHandoffResponse) ProtoMessage() {}
 
 func (x *CreateDraftHandoffResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[700]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[704]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -54080,7 +54522,7 @@ func (x *CreateDraftHandoffResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateDraftHandoffResponse.ProtoReflect.Descriptor instead.
 func (*CreateDraftHandoffResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{700}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{704}
 }
 
 func (x *CreateDraftHandoffResponse) GetHandoff() *DraftHandoff {
@@ -54102,7 +54544,7 @@ type ReportDraftIncidentRequest struct {
 
 func (x *ReportDraftIncidentRequest) Reset() {
 	*x = ReportDraftIncidentRequest{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[701]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[705]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -54114,7 +54556,7 @@ func (x *ReportDraftIncidentRequest) String() string {
 func (*ReportDraftIncidentRequest) ProtoMessage() {}
 
 func (x *ReportDraftIncidentRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[701]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[705]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -54127,7 +54569,7 @@ func (x *ReportDraftIncidentRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReportDraftIncidentRequest.ProtoReflect.Descriptor instead.
 func (*ReportDraftIncidentRequest) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{701}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{705}
 }
 
 func (x *ReportDraftIncidentRequest) GetDraftId() string {
@@ -54168,7 +54610,7 @@ type ReportDraftIncidentResponse struct {
 
 func (x *ReportDraftIncidentResponse) Reset() {
 	*x = ReportDraftIncidentResponse{}
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[702]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[706]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -54180,7 +54622,7 @@ func (x *ReportDraftIncidentResponse) String() string {
 func (*ReportDraftIncidentResponse) ProtoMessage() {}
 
 func (x *ReportDraftIncidentResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[702]
+	mi := &file_sttattus_onyx_v1_onyx_proto_msgTypes[706]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -54193,7 +54635,7 @@ func (x *ReportDraftIncidentResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReportDraftIncidentResponse.ProtoReflect.Descriptor instead.
 func (*ReportDraftIncidentResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{702}
+	return file_sttattus_onyx_v1_onyx_proto_rawDescGZIP(), []int{706}
 }
 
 func (x *ReportDraftIncidentResponse) GetIncidentId() string {
@@ -55677,7 +56119,7 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
 	"\x06action\x18\x02 \x01(\tR\x06action\"X\n" +
 	"!ResolveIngestionDuplicateResponse\x123\n" +
-	"\x04item\x18\x01 \x01(\v2\x1f.sttattus.onyx.v1.IngestionItemR\x04item\"\xed\x04\n" +
+	"\x04item\x18\x01 \x01(\v2\x1f.sttattus.onyx.v1.IngestionItemR\x04item\"\xb6\t\n" +
 	"\x0eEvidenceSource\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\n" +
@@ -55701,7 +56143,20 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\tconflicts\x18\x0f \x01(\tR\tconflicts\x12\x16\n" +
 	"\x06status\x18\x10 \x01(\tR\x06status\x12=\n" +
 	"\fpublished_at\x18\x11 \x01(\v2\x1a.google.protobuf.TimestampR\vpublishedAt\x12=\n" +
-	"\fretrieved_at\x18\x12 \x01(\v2\x1a.google.protobuf.TimestampR\vretrievedAt\"\xa6\x02\n" +
+	"\fretrieved_at\x18\x12 \x01(\v2\x1a.google.protobuf.TimestampR\vretrievedAt\x12\x10\n" +
+	"\x03doi\x18\x13 \x01(\tR\x03doi\x12\x12\n" +
+	"\x04isbn\x18\x14 \x01(\tR\x04isbn\x12%\n" +
+	"\x0enormalized_url\x18\x15 \x01(\tR\rnormalizedUrl\x12.\n" +
+	"\x13duplicate_group_key\x18\x16 \x01(\tR\x11duplicateGroupKey\x12'\n" +
+	"\x0fduplicate_count\x18\x17 \x01(\x05R\x0eduplicateCount\x12#\n" +
+	"\rhealth_status\x18\x18 \x01(\tR\fhealthStatus\x12,\n" +
+	"\x12health_http_status\x18\x19 \x01(\x05R\x10healthHttpStatus\x12F\n" +
+	"\x11health_checked_at\x18\x1a \x01(\v2\x1a.google.protobuf.TimestampR\x0fhealthCheckedAt\x12!\n" +
+	"\fhealth_error\x18\x1b \x01(\tR\vhealthError\x12P\n" +
+	"\x16withdrawal_detected_at\x18\x1c \x01(\v2\x1a.google.protobuf.TimestampR\x14withdrawalDetectedAt\x12+\n" +
+	"\x11withdrawal_reason\x18\x1d \x01(\tR\x10withdrawalReason\x125\n" +
+	"\x17superseded_by_source_id\x18\x1e \x01(\tR\x14supersededBySourceId\x12-\n" +
+	"\x12replacement_status\x18\x1f \x01(\tR\x11replacementStatus\"\xa6\x02\n" +
 	"\x10EvidenceCitation\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
 	"\tsource_id\x18\x02 \x01(\tR\bsourceId\x12!\n" +
@@ -55750,7 +56205,45 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\x06claims\x18\x05 \x03(\v2\x1f.sttattus.onyx.v1.EvidenceClaimR\x06claims\x12F\n" +
 	"\vcorrections\x18\x06 \x03(\v2$.sttattus.onyx.v1.EvidenceCorrectionR\vcorrections\x12\x1b\n" +
 	"\tcan_brief\x18\a \x01(\bR\bcanBrief\x12#\n" +
-	"\rpolicy_notice\x18\b \x01(\tR\fpolicyNotice\"\x8a\x01\n" +
+	"\rpolicy_notice\x18\b \x01(\tR\fpolicyNotice\">\n" +
+	"\x1fGetEvidenceSourceHistoryRequest\x12\x1b\n" +
+	"\tsource_id\x18\x01 \x01(\tR\bsourceId\"\xca\x02\n" +
+	"\x1cEvidenceSourceLifecycleEvent\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\tsource_id\x18\x02 \x01(\tR\bsourceId\x12\x1d\n" +
+	"\n" +
+	"event_kind\x18\x03 \x01(\tR\teventKind\x12\x1f\n" +
+	"\vfrom_status\x18\x04 \x01(\tR\n" +
+	"fromStatus\x12\x1b\n" +
+	"\tto_status\x18\x05 \x01(\tR\btoStatus\x12\x16\n" +
+	"\x06reason\x18\x06 \x01(\tR\x06reason\x122\n" +
+	"\x15replacement_source_id\x18\a \x01(\tR\x13replacementSourceId\x12\x19\n" +
+	"\bactor_id\x18\b \x01(\tR\aactorId\x129\n" +
+	"\n" +
+	"created_at\x18\t \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\"\xb7\x03\n" +
+	"\x19EvidenceSourceReplacement\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\tsource_id\x18\x02 \x01(\tR\bsourceId\x122\n" +
+	"\x15replacement_source_id\x18\x03 \x01(\tR\x13replacementSourceId\x12+\n" +
+	"\x11replacement_title\x18\x04 \x01(\tR\x10replacementTitle\x12\x16\n" +
+	"\x06status\x18\x05 \x01(\tR\x06status\x12\x1e\n" +
+	"\n" +
+	"confidence\x18\x06 \x01(\x01R\n" +
+	"confidence\x12\x1c\n" +
+	"\trationale\x18\a \x01(\tR\trationale\x12\x1d\n" +
+	"\n" +
+	"created_by\x18\b \x01(\tR\tcreatedBy\x12\x1f\n" +
+	"\vverified_by\x18\t \x01(\tR\n" +
+	"verifiedBy\x12;\n" +
+	"\vverified_at\x18\n" +
+	" \x01(\v2\x1a.google.protobuf.TimestampR\n" +
+	"verifiedAt\x129\n" +
+	"\n" +
+	"created_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\"\xd8\x01\n" +
+	" GetEvidenceSourceHistoryResponse\x12\x1b\n" +
+	"\tsource_id\x18\x01 \x01(\tR\bsourceId\x12F\n" +
+	"\x06events\x18\x02 \x03(\v2..sttattus.onyx.v1.EvidenceSourceLifecycleEventR\x06events\x12O\n" +
+	"\freplacements\x18\x03 \x03(\v2+.sttattus.onyx.v1.EvidenceSourceReplacementR\freplacements\"\x8a\x01\n" +
 	"\n" +
 	"BriefPoint\x12\x12\n" +
 	"\x04text\x18\x01 \x01(\tR\x04text\x12&\n" +
@@ -59344,7 +59837,7 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"$ONYX_MULTILINGUAL_EXPORT_STATE_READY\x10\x03\x12)\n" +
 	"%ONYX_MULTILINGUAL_EXPORT_STATE_FAILED\x10\x04\x12*\n" +
 	"&ONYX_MULTILINGUAL_EXPORT_STATE_REVOKED\x10\x05\x12*\n" +
-	"&ONYX_MULTILINGUAL_EXPORT_STATE_EXPIRED\x10\x062\xa7\xf6\x01\n" +
+	"&ONYX_MULTILINGUAL_EXPORT_STATE_EXPIRED\x10\x062\xab\xf7\x01\n" +
 	"\vOnyxService\x12`\n" +
 	"\rCreateProfile\x12&.sttattus.onyx.v1.CreateProfileRequest\x1a'.sttattus.onyx.v1.CreateProfileResponse\x12W\n" +
 	"\n" +
@@ -59459,7 +59952,8 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\x12RetryIngestionItem\x12+.sttattus.onyx.v1.RetryIngestionItemRequest\x1a,.sttattus.onyx.v1.RetryIngestionItemResponse\x12x\n" +
 	"\x15SetIngestionItemState\x12..sttattus.onyx.v1.SetIngestionItemStateRequest\x1a/.sttattus.onyx.v1.SetIngestionItemStateResponse\x12\x84\x01\n" +
 	"\x19ResolveIngestionDuplicate\x122.sttattus.onyx.v1.ResolveIngestionDuplicateRequest\x1a3.sttattus.onyx.v1.ResolveIngestionDuplicateResponse\x12u\n" +
-	"\x14GetEvidenceWorkspace\x12-.sttattus.onyx.v1.GetEvidenceWorkspaceRequest\x1a..sttattus.onyx.v1.GetEvidenceWorkspaceResponse\x12r\n" +
+	"\x14GetEvidenceWorkspace\x12-.sttattus.onyx.v1.GetEvidenceWorkspaceRequest\x1a..sttattus.onyx.v1.GetEvidenceWorkspaceResponse\x12\x81\x01\n" +
+	"\x18GetEvidenceSourceHistory\x121.sttattus.onyx.v1.GetEvidenceSourceHistoryRequest\x1a2.sttattus.onyx.v1.GetEvidenceSourceHistoryResponse\x12r\n" +
 	"\x13CreateEvidenceBrief\x12,.sttattus.onyx.v1.CreateEvidenceBriefRequest\x1a-.sttattus.onyx.v1.CreateEvidenceBriefResponse\x12u\n" +
 	"\x14ListMyEvidenceBriefs\x12-.sttattus.onyx.v1.ListMyEvidenceBriefsRequest\x1a..sttattus.onyx.v1.ListMyEvidenceBriefsResponse\x12i\n" +
 	"\x10GetEvidenceBrief\x12).sttattus.onyx.v1.GetEvidenceBriefRequest\x1a*.sttattus.onyx.v1.GetEvidenceBriefResponse\x12i\n" +
@@ -59628,7 +60122,7 @@ func file_sttattus_onyx_v1_onyx_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_onyx_v1_onyx_proto_enumTypes = make([]protoimpl.EnumInfo, 15)
-var file_sttattus_onyx_v1_onyx_proto_msgTypes = make([]protoimpl.MessageInfo, 703)
+var file_sttattus_onyx_v1_onyx_proto_msgTypes = make([]protoimpl.MessageInfo, 707)
 var file_sttattus_onyx_v1_onyx_proto_goTypes = []any{
 	(OnyxTranslationClass)(0),                            // 0: sttattus.onyx.v1.OnyxTranslationClass
 	(OnyxVerificationState)(0),                           // 1: sttattus.onyx.v1.OnyxVerificationState
@@ -59919,442 +60413,446 @@ var file_sttattus_onyx_v1_onyx_proto_goTypes = []any{
 	(*EvidenceCorrection)(nil),                           // 286: sttattus.onyx.v1.EvidenceCorrection
 	(*GetEvidenceWorkspaceRequest)(nil),                  // 287: sttattus.onyx.v1.GetEvidenceWorkspaceRequest
 	(*GetEvidenceWorkspaceResponse)(nil),                 // 288: sttattus.onyx.v1.GetEvidenceWorkspaceResponse
-	(*BriefPoint)(nil),                                   // 289: sttattus.onyx.v1.BriefPoint
-	(*EvidenceBrief)(nil),                                // 290: sttattus.onyx.v1.EvidenceBrief
-	(*CreateEvidenceBriefRequest)(nil),                   // 291: sttattus.onyx.v1.CreateEvidenceBriefRequest
-	(*CreateEvidenceBriefResponse)(nil),                  // 292: sttattus.onyx.v1.CreateEvidenceBriefResponse
-	(*ListMyEvidenceBriefsRequest)(nil),                  // 293: sttattus.onyx.v1.ListMyEvidenceBriefsRequest
-	(*ListMyEvidenceBriefsResponse)(nil),                 // 294: sttattus.onyx.v1.ListMyEvidenceBriefsResponse
-	(*GetEvidenceBriefRequest)(nil),                      // 295: sttattus.onyx.v1.GetEvidenceBriefRequest
-	(*GetEvidenceBriefResponse)(nil),                     // 296: sttattus.onyx.v1.GetEvidenceBriefResponse
-	(*CreatorContract)(nil),                              // 297: sttattus.onyx.v1.CreatorContract
-	(*EditorialReview)(nil),                              // 298: sttattus.onyx.v1.EditorialReview
-	(*EditorialComment)(nil),                             // 299: sttattus.onyx.v1.EditorialComment
-	(*EditorialProject)(nil),                             // 300: sttattus.onyx.v1.EditorialProject
-	(*CreatorStatement)(nil),                             // 301: sttattus.onyx.v1.CreatorStatement
-	(*CreatorMetric)(nil),                                // 302: sttattus.onyx.v1.CreatorMetric
-	(*CreatorStudio)(nil),                                // 303: sttattus.onyx.v1.CreatorStudio
-	(*GetCreatorStudioRequest)(nil),                      // 304: sttattus.onyx.v1.GetCreatorStudioRequest
-	(*GetCreatorStudioResponse)(nil),                     // 305: sttattus.onyx.v1.GetCreatorStudioResponse
-	(*SubmitCreatorPitchRequest)(nil),                    // 306: sttattus.onyx.v1.SubmitCreatorPitchRequest
-	(*SubmitCreatorPitchResponse)(nil),                   // 307: sttattus.onyx.v1.SubmitCreatorPitchResponse
-	(*UpdateCreatorProjectRequest)(nil),                  // 308: sttattus.onyx.v1.UpdateCreatorProjectRequest
-	(*UpdateCreatorProjectResponse)(nil),                 // 309: sttattus.onyx.v1.UpdateCreatorProjectResponse
-	(*SubmitCreatorProjectRequest)(nil),                  // 310: sttattus.onyx.v1.SubmitCreatorProjectRequest
-	(*SubmitCreatorProjectResponse)(nil),                 // 311: sttattus.onyx.v1.SubmitCreatorProjectResponse
-	(*SignCreatorContractRequest)(nil),                   // 312: sttattus.onyx.v1.SignCreatorContractRequest
-	(*SignCreatorContractResponse)(nil),                  // 313: sttattus.onyx.v1.SignCreatorContractResponse
-	(*ListMyCreatorSubscriptionsDetailedRequest)(nil),    // 314: sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedRequest
-	(*ListMyCreatorSubscriptionsDetailedResponse)(nil),   // 315: sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedResponse
-	(*CancelCreatorSubscriptionRequest)(nil),             // 316: sttattus.onyx.v1.CancelCreatorSubscriptionRequest
-	(*CancelCreatorSubscriptionResponse)(nil),            // 317: sttattus.onyx.v1.CancelCreatorSubscriptionResponse
-	(*CommerceInvoice)(nil),                              // 318: sttattus.onyx.v1.CommerceInvoice
-	(*CommerceCase)(nil),                                 // 319: sttattus.onyx.v1.CommerceCase
-	(*GetMyCommerceRequest)(nil),                         // 320: sttattus.onyx.v1.GetMyCommerceRequest
-	(*GetMyCommerceResponse)(nil),                        // 321: sttattus.onyx.v1.GetMyCommerceResponse
-	(*CreateCommerceCaseRequest)(nil),                    // 322: sttattus.onyx.v1.CreateCommerceCaseRequest
-	(*CreateCommerceCaseResponse)(nil),                   // 323: sttattus.onyx.v1.CreateCommerceCaseResponse
-	(*ResearchRoomPolicy)(nil),                           // 324: sttattus.onyx.v1.ResearchRoomPolicy
-	(*ResearchRoomMember)(nil),                           // 325: sttattus.onyx.v1.ResearchRoomMember
-	(*ResearchRoom)(nil),                                 // 326: sttattus.onyx.v1.ResearchRoom
-	(*ResearchRoomItem)(nil),                             // 327: sttattus.onyx.v1.ResearchRoomItem
-	(*ResearchRoomThread)(nil),                           // 328: sttattus.onyx.v1.ResearchRoomThread
-	(*ResearchRoomComment)(nil),                          // 329: sttattus.onyx.v1.ResearchRoomComment
-	(*ResearchRoomTask)(nil),                             // 330: sttattus.onyx.v1.ResearchRoomTask
-	(*ResearchRoomMeeting)(nil),                          // 331: sttattus.onyx.v1.ResearchRoomMeeting
-	(*ResearchRoomDecision)(nil),                         // 332: sttattus.onyx.v1.ResearchRoomDecision
-	(*ResearchRoomApproval)(nil),                         // 333: sttattus.onyx.v1.ResearchRoomApproval
-	(*ResearchRoomExport)(nil),                           // 334: sttattus.onyx.v1.ResearchRoomExport
-	(*ResearchRoomAuditEvent)(nil),                       // 335: sttattus.onyx.v1.ResearchRoomAuditEvent
-	(*ResearchRoomGrant)(nil),                            // 336: sttattus.onyx.v1.ResearchRoomGrant
-	(*ResearchRoomShareLink)(nil),                        // 337: sttattus.onyx.v1.ResearchRoomShareLink
-	(*ResearchRoomOfflineManifest)(nil),                  // 338: sttattus.onyx.v1.ResearchRoomOfflineManifest
-	(*ResearchRoomPurgeReceipt)(nil),                     // 339: sttattus.onyx.v1.ResearchRoomPurgeReceipt
-	(*ResearchRoomDetail)(nil),                           // 340: sttattus.onyx.v1.ResearchRoomDetail
-	(*ListResearchRoomsRequest)(nil),                     // 341: sttattus.onyx.v1.ListResearchRoomsRequest
-	(*ListResearchRoomsResponse)(nil),                    // 342: sttattus.onyx.v1.ListResearchRoomsResponse
-	(*GetResearchRoomRequest)(nil),                       // 343: sttattus.onyx.v1.GetResearchRoomRequest
-	(*GetResearchRoomResponse)(nil),                      // 344: sttattus.onyx.v1.GetResearchRoomResponse
-	(*CreateResearchRoomRequest)(nil),                    // 345: sttattus.onyx.v1.CreateResearchRoomRequest
-	(*CreateResearchRoomResponse)(nil),                   // 346: sttattus.onyx.v1.CreateResearchRoomResponse
-	(*UpdateResearchRoomRequest)(nil),                    // 347: sttattus.onyx.v1.UpdateResearchRoomRequest
-	(*UpdateResearchRoomResponse)(nil),                   // 348: sttattus.onyx.v1.UpdateResearchRoomResponse
-	(*InviteResearchRoomMemberRequest)(nil),              // 349: sttattus.onyx.v1.InviteResearchRoomMemberRequest
-	(*InviteResearchRoomMemberResponse)(nil),             // 350: sttattus.onyx.v1.InviteResearchRoomMemberResponse
-	(*RespondResearchRoomInviteRequest)(nil),             // 351: sttattus.onyx.v1.RespondResearchRoomInviteRequest
-	(*RespondResearchRoomInviteResponse)(nil),            // 352: sttattus.onyx.v1.RespondResearchRoomInviteResponse
-	(*ChangeResearchRoomMemberRequest)(nil),              // 353: sttattus.onyx.v1.ChangeResearchRoomMemberRequest
-	(*ChangeResearchRoomMemberResponse)(nil),             // 354: sttattus.onyx.v1.ChangeResearchRoomMemberResponse
-	(*RevokeResearchRoomMemberRequest)(nil),              // 355: sttattus.onyx.v1.RevokeResearchRoomMemberRequest
-	(*RevokeResearchRoomMemberResponse)(nil),             // 356: sttattus.onyx.v1.RevokeResearchRoomMemberResponse
-	(*AddResearchRoomItemRequest)(nil),                   // 357: sttattus.onyx.v1.AddResearchRoomItemRequest
-	(*AddResearchRoomItemResponse)(nil),                  // 358: sttattus.onyx.v1.AddResearchRoomItemResponse
-	(*RemoveResearchRoomItemRequest)(nil),                // 359: sttattus.onyx.v1.RemoveResearchRoomItemRequest
-	(*RemoveResearchRoomItemResponse)(nil),               // 360: sttattus.onyx.v1.RemoveResearchRoomItemResponse
-	(*PostResearchRoomCommentRequest)(nil),               // 361: sttattus.onyx.v1.PostResearchRoomCommentRequest
-	(*PostResearchRoomCommentResponse)(nil),              // 362: sttattus.onyx.v1.PostResearchRoomCommentResponse
-	(*SetResearchRoomThreadStatusRequest)(nil),           // 363: sttattus.onyx.v1.SetResearchRoomThreadStatusRequest
-	(*SetResearchRoomThreadStatusResponse)(nil),          // 364: sttattus.onyx.v1.SetResearchRoomThreadStatusResponse
-	(*UpsertResearchRoomTaskRequest)(nil),                // 365: sttattus.onyx.v1.UpsertResearchRoomTaskRequest
-	(*UpsertResearchRoomTaskResponse)(nil),               // 366: sttattus.onyx.v1.UpsertResearchRoomTaskResponse
-	(*UpsertResearchRoomMeetingRequest)(nil),             // 367: sttattus.onyx.v1.UpsertResearchRoomMeetingRequest
-	(*UpsertResearchRoomMeetingResponse)(nil),            // 368: sttattus.onyx.v1.UpsertResearchRoomMeetingResponse
-	(*UpsertResearchRoomDecisionRequest)(nil),            // 369: sttattus.onyx.v1.UpsertResearchRoomDecisionRequest
-	(*UpsertResearchRoomDecisionResponse)(nil),           // 370: sttattus.onyx.v1.UpsertResearchRoomDecisionResponse
-	(*RecordResearchRoomApprovalRequest)(nil),            // 371: sttattus.onyx.v1.RecordResearchRoomApprovalRequest
-	(*RecordResearchRoomApprovalResponse)(nil),           // 372: sttattus.onyx.v1.RecordResearchRoomApprovalResponse
-	(*SearchResearchRoomRequest)(nil),                    // 373: sttattus.onyx.v1.SearchResearchRoomRequest
-	(*SearchResearchRoomResult)(nil),                     // 374: sttattus.onyx.v1.SearchResearchRoomResult
-	(*SearchResearchRoomResponse)(nil),                   // 375: sttattus.onyx.v1.SearchResearchRoomResponse
-	(*RequestResearchRoomExportRequest)(nil),             // 376: sttattus.onyx.v1.RequestResearchRoomExportRequest
-	(*RequestResearchRoomExportResponse)(nil),            // 377: sttattus.onyx.v1.RequestResearchRoomExportResponse
-	(*ReportResearchRoomAbuseRequest)(nil),               // 378: sttattus.onyx.v1.ReportResearchRoomAbuseRequest
-	(*ReportResearchRoomAbuseResponse)(nil),              // 379: sttattus.onyx.v1.ReportResearchRoomAbuseResponse
-	(*ListResearchRoomAuditRequest)(nil),                 // 380: sttattus.onyx.v1.ListResearchRoomAuditRequest
-	(*ListResearchRoomAuditResponse)(nil),                // 381: sttattus.onyx.v1.ListResearchRoomAuditResponse
-	(*ListResearchRoomGrantsRequest)(nil),                // 382: sttattus.onyx.v1.ListResearchRoomGrantsRequest
-	(*ListResearchRoomGrantsResponse)(nil),               // 383: sttattus.onyx.v1.ListResearchRoomGrantsResponse
-	(*UpsertResearchRoomGrantRequest)(nil),               // 384: sttattus.onyx.v1.UpsertResearchRoomGrantRequest
-	(*UpsertResearchRoomGrantResponse)(nil),              // 385: sttattus.onyx.v1.UpsertResearchRoomGrantResponse
-	(*RevokeResearchRoomGrantRequest)(nil),               // 386: sttattus.onyx.v1.RevokeResearchRoomGrantRequest
-	(*RevokeResearchRoomGrantResponse)(nil),              // 387: sttattus.onyx.v1.RevokeResearchRoomGrantResponse
-	(*CreateResearchRoomShareLinkRequest)(nil),           // 388: sttattus.onyx.v1.CreateResearchRoomShareLinkRequest
-	(*CreateResearchRoomShareLinkResponse)(nil),          // 389: sttattus.onyx.v1.CreateResearchRoomShareLinkResponse
-	(*ListResearchRoomShareLinksRequest)(nil),            // 390: sttattus.onyx.v1.ListResearchRoomShareLinksRequest
-	(*ListResearchRoomShareLinksResponse)(nil),           // 391: sttattus.onyx.v1.ListResearchRoomShareLinksResponse
-	(*RevokeResearchRoomShareLinkRequest)(nil),           // 392: sttattus.onyx.v1.RevokeResearchRoomShareLinkRequest
-	(*RevokeResearchRoomShareLinkResponse)(nil),          // 393: sttattus.onyx.v1.RevokeResearchRoomShareLinkResponse
-	(*ResolveResearchRoomShareLinkRequest)(nil),          // 394: sttattus.onyx.v1.ResolveResearchRoomShareLinkRequest
-	(*ResolveResearchRoomShareLinkResponse)(nil),         // 395: sttattus.onyx.v1.ResolveResearchRoomShareLinkResponse
-	(*GetResearchRoomOfflineManifestRequest)(nil),        // 396: sttattus.onyx.v1.GetResearchRoomOfflineManifestRequest
-	(*GetResearchRoomOfflineManifestResponse)(nil),       // 397: sttattus.onyx.v1.GetResearchRoomOfflineManifestResponse
-	(*AcknowledgeResearchRoomOfflinePurgeRequest)(nil),   // 398: sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeRequest
-	(*AcknowledgeResearchRoomOfflinePurgeResponse)(nil),  // 399: sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeResponse
-	(*ListResearchRoomOfflinePurgesRequest)(nil),         // 400: sttattus.onyx.v1.ListResearchRoomOfflinePurgesRequest
-	(*ListResearchRoomOfflinePurgesResponse)(nil),        // 401: sttattus.onyx.v1.ListResearchRoomOfflinePurgesResponse
-	(*LeaveResearchRoomRequest)(nil),                     // 402: sttattus.onyx.v1.LeaveResearchRoomRequest
-	(*LeaveResearchRoomResponse)(nil),                    // 403: sttattus.onyx.v1.LeaveResearchRoomResponse
-	(*IntelligenceGraphSourceAnchor)(nil),                // 404: sttattus.onyx.v1.IntelligenceGraphSourceAnchor
-	(*IntelligenceGraphNode)(nil),                        // 405: sttattus.onyx.v1.IntelligenceGraphNode
-	(*IntelligenceGraphEdge)(nil),                        // 406: sttattus.onyx.v1.IntelligenceGraphEdge
-	(*IntelligenceGraphSuggestion)(nil),                  // 407: sttattus.onyx.v1.IntelligenceGraphSuggestion
-	(*IntelligenceGraphTimelineEvent)(nil),               // 408: sttattus.onyx.v1.IntelligenceGraphTimelineEvent
-	(*IntelligenceGraphResurfacingItem)(nil),             // 409: sttattus.onyx.v1.IntelligenceGraphResurfacingItem
-	(*IntelligenceGraphMeetingBriefSection)(nil),         // 410: sttattus.onyx.v1.IntelligenceGraphMeetingBriefSection
-	(*IntelligenceGraphMeetingBrief)(nil),                // 411: sttattus.onyx.v1.IntelligenceGraphMeetingBrief
-	(*IntelligenceGraphOverview)(nil),                    // 412: sttattus.onyx.v1.IntelligenceGraphOverview
-	(*GetPersonalIntelligenceGraphRequest)(nil),          // 413: sttattus.onyx.v1.GetPersonalIntelligenceGraphRequest
-	(*GetPersonalIntelligenceGraphResponse)(nil),         // 414: sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse
-	(*UpsertIntelligenceGraphNodeRequest)(nil),           // 415: sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest
-	(*UpsertIntelligenceGraphNodeResponse)(nil),          // 416: sttattus.onyx.v1.UpsertIntelligenceGraphNodeResponse
-	(*SetIntelligenceGraphNodeStateRequest)(nil),         // 417: sttattus.onyx.v1.SetIntelligenceGraphNodeStateRequest
-	(*SetIntelligenceGraphNodeStateResponse)(nil),        // 418: sttattus.onyx.v1.SetIntelligenceGraphNodeStateResponse
-	(*MergeIntelligenceGraphNodesRequest)(nil),           // 419: sttattus.onyx.v1.MergeIntelligenceGraphNodesRequest
-	(*MergeIntelligenceGraphNodesResponse)(nil),          // 420: sttattus.onyx.v1.MergeIntelligenceGraphNodesResponse
-	(*SplitIntelligenceGraphNodeRequest)(nil),            // 421: sttattus.onyx.v1.SplitIntelligenceGraphNodeRequest
-	(*SplitIntelligenceGraphNodeResponse)(nil),           // 422: sttattus.onyx.v1.SplitIntelligenceGraphNodeResponse
-	(*UpsertIntelligenceGraphEdgeRequest)(nil),           // 423: sttattus.onyx.v1.UpsertIntelligenceGraphEdgeRequest
-	(*UpsertIntelligenceGraphEdgeResponse)(nil),          // 424: sttattus.onyx.v1.UpsertIntelligenceGraphEdgeResponse
-	(*SetIntelligenceGraphEdgeStateRequest)(nil),         // 425: sttattus.onyx.v1.SetIntelligenceGraphEdgeStateRequest
-	(*SetIntelligenceGraphEdgeStateResponse)(nil),        // 426: sttattus.onyx.v1.SetIntelligenceGraphEdgeStateResponse
-	(*GenerateIntelligenceGraphSuggestionsRequest)(nil),  // 427: sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsRequest
-	(*GenerateIntelligenceGraphSuggestionsResponse)(nil), // 428: sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsResponse
-	(*ListIntelligenceGraphSuggestionsRequest)(nil),      // 429: sttattus.onyx.v1.ListIntelligenceGraphSuggestionsRequest
-	(*ListIntelligenceGraphSuggestionsResponse)(nil),     // 430: sttattus.onyx.v1.ListIntelligenceGraphSuggestionsResponse
-	(*SetIntelligenceGraphSuggestionStateRequest)(nil),   // 431: sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateRequest
-	(*SetIntelligenceGraphSuggestionStateResponse)(nil),  // 432: sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse
-	(*ListIntelligenceGraphTimelineRequest)(nil),         // 433: sttattus.onyx.v1.ListIntelligenceGraphTimelineRequest
-	(*ListIntelligenceGraphTimelineResponse)(nil),        // 434: sttattus.onyx.v1.ListIntelligenceGraphTimelineResponse
-	(*ListIntelligenceGraphResurfacingRequest)(nil),      // 435: sttattus.onyx.v1.ListIntelligenceGraphResurfacingRequest
-	(*ListIntelligenceGraphResurfacingResponse)(nil),     // 436: sttattus.onyx.v1.ListIntelligenceGraphResurfacingResponse
-	(*SetIntelligenceGraphResurfacingStateRequest)(nil),  // 437: sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateRequest
-	(*SetIntelligenceGraphResurfacingStateResponse)(nil), // 438: sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateResponse
-	(*CreateIntelligenceGraphMeetingBriefRequest)(nil),   // 439: sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefRequest
-	(*CreateIntelligenceGraphMeetingBriefResponse)(nil),  // 440: sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefResponse
-	(*GetIntelligenceGraphMeetingBriefRequest)(nil),      // 441: sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefRequest
-	(*GetIntelligenceGraphMeetingBriefResponse)(nil),     // 442: sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefResponse
-	(*ListIntelligenceGraphMeetingBriefsRequest)(nil),    // 443: sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsRequest
-	(*ListIntelligenceGraphMeetingBriefsResponse)(nil),   // 444: sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsResponse
-	(*ExportPersonalIntelligenceGraphRequest)(nil),       // 445: sttattus.onyx.v1.ExportPersonalIntelligenceGraphRequest
-	(*ExportPersonalIntelligenceGraphResponse)(nil),      // 446: sttattus.onyx.v1.ExportPersonalIntelligenceGraphResponse
-	(*RebuildPersonalIntelligenceGraphRequest)(nil),      // 447: sttattus.onyx.v1.RebuildPersonalIntelligenceGraphRequest
-	(*RebuildPersonalIntelligenceGraphResponse)(nil),     // 448: sttattus.onyx.v1.RebuildPersonalIntelligenceGraphResponse
-	(*OnyxLanguageConfig)(nil),                           // 449: sttattus.onyx.v1.OnyxLanguageConfig
-	(*OnyxMachineTranslationProvenance)(nil),             // 450: sttattus.onyx.v1.OnyxMachineTranslationProvenance
-	(*OnyxEditionLineage)(nil),                           // 451: sttattus.onyx.v1.OnyxEditionLineage
-	(*OnyxTranslationAcceptanceProvenance)(nil),          // 452: sttattus.onyx.v1.OnyxTranslationAcceptanceProvenance
-	(*OnyxAlignedSegment)(nil),                           // 453: sttattus.onyx.v1.OnyxAlignedSegment
-	(*OnyxAlignedBlock)(nil),                             // 454: sttattus.onyx.v1.OnyxAlignedBlock
-	(*OnyxTermbaseEntry)(nil),                            // 455: sttattus.onyx.v1.OnyxTermbaseEntry
-	(*OnyxMultilingualPreferences)(nil),                  // 456: sttattus.onyx.v1.OnyxMultilingualPreferences
-	(*OnyxCrossLanguageSearchMatch)(nil),                 // 457: sttattus.onyx.v1.OnyxCrossLanguageSearchMatch
-	(*OnyxCaptionCue)(nil),                               // 458: sttattus.onyx.v1.OnyxCaptionCue
-	(*OnyxCaptionTrack)(nil),                             // 459: sttattus.onyx.v1.OnyxCaptionTrack
-	(*OnyxMediaLanguageTrack)(nil),                       // 460: sttattus.onyx.v1.OnyxMediaLanguageTrack
-	(*OnyxMultilingualAudioVideo)(nil),                   // 461: sttattus.onyx.v1.OnyxMultilingualAudioVideo
-	(*OnyxTranslationReport)(nil),                        // 462: sttattus.onyx.v1.OnyxTranslationReport
-	(*OnyxMultilingualOfflineManifest)(nil),              // 463: sttattus.onyx.v1.OnyxMultilingualOfflineManifest
-	(*OnyxMultilingualExportManifestItem)(nil),           // 464: sttattus.onyx.v1.OnyxMultilingualExportManifestItem
-	(*OnyxMultilingualExport)(nil),                       // 465: sttattus.onyx.v1.OnyxMultilingualExport
-	(*ListLanguageConfigsRequest)(nil),                   // 466: sttattus.onyx.v1.ListLanguageConfigsRequest
-	(*ListLanguageConfigsResponse)(nil),                  // 467: sttattus.onyx.v1.ListLanguageConfigsResponse
-	(*ListContentEditionsRequest)(nil),                   // 468: sttattus.onyx.v1.ListContentEditionsRequest
-	(*ListContentEditionsResponse)(nil),                  // 469: sttattus.onyx.v1.ListContentEditionsResponse
-	(*GetAlignedBlocksRequest)(nil),                      // 470: sttattus.onyx.v1.GetAlignedBlocksRequest
-	(*GetAlignedBlocksResponse)(nil),                     // 471: sttattus.onyx.v1.GetAlignedBlocksResponse
-	(*ListTermbaseEntriesRequest)(nil),                   // 472: sttattus.onyx.v1.ListTermbaseEntriesRequest
-	(*ListTermbaseEntriesResponse)(nil),                  // 473: sttattus.onyx.v1.ListTermbaseEntriesResponse
-	(*CrossLanguageSearchRequest)(nil),                   // 474: sttattus.onyx.v1.CrossLanguageSearchRequest
-	(*CrossLanguageSearchResponse)(nil),                  // 475: sttattus.onyx.v1.CrossLanguageSearchResponse
-	(*GetMultilingualPreferencesRequest)(nil),            // 476: sttattus.onyx.v1.GetMultilingualPreferencesRequest
-	(*GetMultilingualPreferencesResponse)(nil),           // 477: sttattus.onyx.v1.GetMultilingualPreferencesResponse
-	(*UpdateMultilingualPreferencesRequest)(nil),         // 478: sttattus.onyx.v1.UpdateMultilingualPreferencesRequest
-	(*UpdateMultilingualPreferencesResponse)(nil),        // 479: sttattus.onyx.v1.UpdateMultilingualPreferencesResponse
-	(*GetMultilingualAudioVideoRequest)(nil),             // 480: sttattus.onyx.v1.GetMultilingualAudioVideoRequest
-	(*GetMultilingualAudioVideoResponse)(nil),            // 481: sttattus.onyx.v1.GetMultilingualAudioVideoResponse
-	(*GetMultilingualOfflineManifestRequest)(nil),        // 482: sttattus.onyx.v1.GetMultilingualOfflineManifestRequest
-	(*GetMultilingualOfflineManifestResponse)(nil),       // 483: sttattus.onyx.v1.GetMultilingualOfflineManifestResponse
-	(*ReportTranslationIssueRequest)(nil),                // 484: sttattus.onyx.v1.ReportTranslationIssueRequest
-	(*ReportTranslationIssueResponse)(nil),               // 485: sttattus.onyx.v1.ReportTranslationIssueResponse
-	(*RequestMultilingualExportRequest)(nil),             // 486: sttattus.onyx.v1.RequestMultilingualExportRequest
-	(*RequestMultilingualExportResponse)(nil),            // 487: sttattus.onyx.v1.RequestMultilingualExportResponse
-	(*GetMultilingualExportRequest)(nil),                 // 488: sttattus.onyx.v1.GetMultilingualExportRequest
-	(*GetMultilingualExportResponse)(nil),                // 489: sttattus.onyx.v1.GetMultilingualExportResponse
-	(*OnyxLivingArchivePolicy)(nil),                      // 490: sttattus.onyx.v1.OnyxLivingArchivePolicy
-	(*OnyxLivingArchiveContact)(nil),                     // 491: sttattus.onyx.v1.OnyxLivingArchiveContact
-	(*OnyxLivingArchiveReadiness)(nil),                   // 492: sttattus.onyx.v1.OnyxLivingArchiveReadiness
-	(*OnyxLivingArchivePreviewCount)(nil),                // 493: sttattus.onyx.v1.OnyxLivingArchivePreviewCount
-	(*OnyxLivingArchivePreview)(nil),                     // 494: sttattus.onyx.v1.OnyxLivingArchivePreview
-	(*OnyxLivingArchiveEdition)(nil),                     // 495: sttattus.onyx.v1.OnyxLivingArchiveEdition
-	(*OnyxLivingArchiveReleaseCase)(nil),                 // 496: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase
-	(*OnyxLivingArchiveReceipt)(nil),                     // 497: sttattus.onyx.v1.OnyxLivingArchiveReceipt
-	(*GetLivingArchiveDashboardRequest)(nil),             // 498: sttattus.onyx.v1.GetLivingArchiveDashboardRequest
-	(*GetLivingArchiveDashboardResponse)(nil),            // 499: sttattus.onyx.v1.GetLivingArchiveDashboardResponse
-	(*UpsertLivingArchivePolicyRequest)(nil),             // 500: sttattus.onyx.v1.UpsertLivingArchivePolicyRequest
-	(*UpsertLivingArchivePolicyResponse)(nil),            // 501: sttattus.onyx.v1.UpsertLivingArchivePolicyResponse
-	(*PreviewLivingArchivePolicyRequest)(nil),            // 502: sttattus.onyx.v1.PreviewLivingArchivePolicyRequest
-	(*PreviewLivingArchivePolicyResponse)(nil),           // 503: sttattus.onyx.v1.PreviewLivingArchivePolicyResponse
-	(*GenerateLivingArchiveEditionRequest)(nil),          // 504: sttattus.onyx.v1.GenerateLivingArchiveEditionRequest
-	(*GenerateLivingArchiveEditionResponse)(nil),         // 505: sttattus.onyx.v1.GenerateLivingArchiveEditionResponse
-	(*LinkLivingArchiveLegacyEscrowRequest)(nil),         // 506: sttattus.onyx.v1.LinkLivingArchiveLegacyEscrowRequest
-	(*LinkLivingArchiveLegacyEscrowResponse)(nil),        // 507: sttattus.onyx.v1.LinkLivingArchiveLegacyEscrowResponse
-	(*UpsertLivingArchiveContactRequest)(nil),            // 508: sttattus.onyx.v1.UpsertLivingArchiveContactRequest
-	(*UpsertLivingArchiveContactResponse)(nil),           // 509: sttattus.onyx.v1.UpsertLivingArchiveContactResponse
-	(*DeleteLivingArchiveContactRequest)(nil),            // 510: sttattus.onyx.v1.DeleteLivingArchiveContactRequest
-	(*DeleteLivingArchiveContactResponse)(nil),           // 511: sttattus.onyx.v1.DeleteLivingArchiveContactResponse
-	(*SubmitLivingArchivePolicyRequest)(nil),             // 512: sttattus.onyx.v1.SubmitLivingArchivePolicyRequest
-	(*SubmitLivingArchivePolicyResponse)(nil),            // 513: sttattus.onyx.v1.SubmitLivingArchivePolicyResponse
-	(*RevokeLivingArchivePolicyRequest)(nil),             // 514: sttattus.onyx.v1.RevokeLivingArchivePolicyRequest
-	(*RevokeLivingArchivePolicyResponse)(nil),            // 515: sttattus.onyx.v1.RevokeLivingArchivePolicyResponse
-	(*ConfirmLivingArchiveReviewRequest)(nil),            // 516: sttattus.onyx.v1.ConfirmLivingArchiveReviewRequest
-	(*ConfirmLivingArchiveReviewResponse)(nil),           // 517: sttattus.onyx.v1.ConfirmLivingArchiveReviewResponse
-	(*ContestLivingArchiveReleaseRequest)(nil),           // 518: sttattus.onyx.v1.ContestLivingArchiveReleaseRequest
-	(*ContestLivingArchiveReleaseResponse)(nil),          // 519: sttattus.onyx.v1.ContestLivingArchiveReleaseResponse
-	(*OnyxForensicRuntime)(nil),                          // 520: sttattus.onyx.v1.OnyxForensicRuntime
-	(*OnyxForensicContentProtection)(nil),                // 521: sttattus.onyx.v1.OnyxForensicContentProtection
-	(*OnyxForensicManifest)(nil),                         // 522: sttattus.onyx.v1.OnyxForensicManifest
-	(*OnyxForensicCustodyEvent)(nil),                     // 523: sttattus.onyx.v1.OnyxForensicCustodyEvent
-	(*OnyxForensicAppealMessage)(nil),                    // 524: sttattus.onyx.v1.OnyxForensicAppealMessage
-	(*OnyxForensicAppeal)(nil),                           // 525: sttattus.onyx.v1.OnyxForensicAppeal
-	(*OnyxForensicCase)(nil),                             // 526: sttattus.onyx.v1.OnyxForensicCase
-	(*GetForensicProtectionDashboardRequest)(nil),        // 527: sttattus.onyx.v1.GetForensicProtectionDashboardRequest
-	(*GetForensicProtectionDashboardResponse)(nil),       // 528: sttattus.onyx.v1.GetForensicProtectionDashboardResponse
-	(*IssueForensicManifestRequest)(nil),                 // 529: sttattus.onyx.v1.IssueForensicManifestRequest
-	(*IssueForensicManifestResponse)(nil),                // 530: sttattus.onyx.v1.IssueForensicManifestResponse
-	(*RevokeForensicManifestRequest)(nil),                // 531: sttattus.onyx.v1.RevokeForensicManifestRequest
-	(*RevokeForensicManifestResponse)(nil),               // 532: sttattus.onyx.v1.RevokeForensicManifestResponse
-	(*RespondForensicCaseRequest)(nil),                   // 533: sttattus.onyx.v1.RespondForensicCaseRequest
-	(*RespondForensicCaseResponse)(nil),                  // 534: sttattus.onyx.v1.RespondForensicCaseResponse
-	(*FileForensicAppealRequest)(nil),                    // 535: sttattus.onyx.v1.FileForensicAppealRequest
-	(*FileForensicAppealResponse)(nil),                   // 536: sttattus.onyx.v1.FileForensicAppealResponse
-	(*PostForensicAppealMessageRequest)(nil),             // 537: sttattus.onyx.v1.PostForensicAppealMessageRequest
-	(*PostForensicAppealMessageResponse)(nil),            // 538: sttattus.onyx.v1.PostForensicAppealMessageResponse
-	(*WithdrawForensicAppealRequest)(nil),                // 539: sttattus.onyx.v1.WithdrawForensicAppealRequest
-	(*WithdrawForensicAppealResponse)(nil),               // 540: sttattus.onyx.v1.WithdrawForensicAppealResponse
-	(*OnyxIntegrationRuntime)(nil),                       // 541: sttattus.onyx.v1.OnyxIntegrationRuntime
-	(*OnyxIntegrationClient)(nil),                        // 542: sttattus.onyx.v1.OnyxIntegrationClient
-	(*OnyxIntegrationGrant)(nil),                         // 543: sttattus.onyx.v1.OnyxIntegrationGrant
-	(*OnyxIntegrationCall)(nil),                          // 544: sttattus.onyx.v1.OnyxIntegrationCall
-	(*OnyxIntegrationConnectorDefinition)(nil),           // 545: sttattus.onyx.v1.OnyxIntegrationConnectorDefinition
-	(*OnyxIntegrationConnectorAccount)(nil),              // 546: sttattus.onyx.v1.OnyxIntegrationConnectorAccount
-	(*OnyxIntegrationConnectorRun)(nil),                  // 547: sttattus.onyx.v1.OnyxIntegrationConnectorRun
-	(*OnyxIntegrationArtifact)(nil),                      // 548: sttattus.onyx.v1.OnyxIntegrationArtifact
-	(*OnyxIntegrationConflict)(nil),                      // 549: sttattus.onyx.v1.OnyxIntegrationConflict
-	(*OnyxIntegrationBridgeDispatch)(nil),                // 550: sttattus.onyx.v1.OnyxIntegrationBridgeDispatch
-	(*OnyxIntegrationBridgeSource)(nil),                  // 551: sttattus.onyx.v1.OnyxIntegrationBridgeSource
-	(*OnyxIntegrationOperationsCase)(nil),                // 552: sttattus.onyx.v1.OnyxIntegrationOperationsCase
-	(*GetIntegrationDashboardRequest)(nil),               // 553: sttattus.onyx.v1.GetIntegrationDashboardRequest
-	(*GetIntegrationDashboardResponse)(nil),              // 554: sttattus.onyx.v1.GetIntegrationDashboardResponse
-	(*AuthorizeIntegrationRequest)(nil),                  // 555: sttattus.onyx.v1.AuthorizeIntegrationRequest
-	(*AuthorizeIntegrationResponse)(nil),                 // 556: sttattus.onyx.v1.AuthorizeIntegrationResponse
-	(*RevokeIntegrationGrantRequest)(nil),                // 557: sttattus.onyx.v1.RevokeIntegrationGrantRequest
-	(*RevokeIntegrationGrantResponse)(nil),               // 558: sttattus.onyx.v1.RevokeIntegrationGrantResponse
-	(*UpsertIntegrationConnectorRequest)(nil),            // 559: sttattus.onyx.v1.UpsertIntegrationConnectorRequest
-	(*UpsertIntegrationConnectorResponse)(nil),           // 560: sttattus.onyx.v1.UpsertIntegrationConnectorResponse
-	(*SetIntegrationConnectorStateRequest)(nil),          // 561: sttattus.onyx.v1.SetIntegrationConnectorStateRequest
-	(*SetIntegrationConnectorStateResponse)(nil),         // 562: sttattus.onyx.v1.SetIntegrationConnectorStateResponse
-	(*RunIntegrationConnectorRequest)(nil),               // 563: sttattus.onyx.v1.RunIntegrationConnectorRequest
-	(*RunIntegrationConnectorResponse)(nil),              // 564: sttattus.onyx.v1.RunIntegrationConnectorResponse
-	(*GetIntegrationArtifactRequest)(nil),                // 565: sttattus.onyx.v1.GetIntegrationArtifactRequest
-	(*GetIntegrationArtifactResponse)(nil),               // 566: sttattus.onyx.v1.GetIntegrationArtifactResponse
-	(*ResolveIntegrationConflictRequest)(nil),            // 567: sttattus.onyx.v1.ResolveIntegrationConflictRequest
-	(*ResolveIntegrationConflictResponse)(nil),           // 568: sttattus.onyx.v1.ResolveIntegrationConflictResponse
-	(*DispatchIntegrationBridgeRequest)(nil),             // 569: sttattus.onyx.v1.DispatchIntegrationBridgeRequest
-	(*DispatchIntegrationBridgeResponse)(nil),            // 570: sttattus.onyx.v1.DispatchIntegrationBridgeResponse
-	(*SubmitIntegrationOperationsCaseRequest)(nil),       // 571: sttattus.onyx.v1.SubmitIntegrationOperationsCaseRequest
-	(*SubmitIntegrationOperationsCaseResponse)(nil),      // 572: sttattus.onyx.v1.SubmitIntegrationOperationsCaseResponse
-	(*SpatialCanvasSourceAnchor)(nil),                    // 573: sttattus.onyx.v1.SpatialCanvasSourceAnchor
-	(*SpatialCanvasTemplate)(nil),                        // 574: sttattus.onyx.v1.SpatialCanvasTemplate
-	(*SpatialCanvasWorkspace)(nil),                       // 575: sttattus.onyx.v1.SpatialCanvasWorkspace
-	(*SpatialCanvasSummary)(nil),                         // 576: sttattus.onyx.v1.SpatialCanvasSummary
-	(*SpatialCanvasNode)(nil),                            // 577: sttattus.onyx.v1.SpatialCanvasNode
-	(*SpatialCanvasEdge)(nil),                            // 578: sttattus.onyx.v1.SpatialCanvasEdge
-	(*SpatialCanvasLayoutRevision)(nil),                  // 579: sttattus.onyx.v1.SpatialCanvasLayoutRevision
-	(*SpatialCanvasConflict)(nil),                        // 580: sttattus.onyx.v1.SpatialCanvasConflict
-	(*SpatialCanvasSnapshot)(nil),                        // 581: sttattus.onyx.v1.SpatialCanvasSnapshot
-	(*SpatialCanvasComment)(nil),                         // 582: sttattus.onyx.v1.SpatialCanvasComment
-	(*SpatialCanvasProposal)(nil),                        // 583: sttattus.onyx.v1.SpatialCanvasProposal
-	(*SpatialCanvasExport)(nil),                          // 584: sttattus.onyx.v1.SpatialCanvasExport
-	(*SpatialCanvasOperation)(nil),                       // 585: sttattus.onyx.v1.SpatialCanvasOperation
-	(*SpatialCanvasDetail)(nil),                          // 586: sttattus.onyx.v1.SpatialCanvasDetail
-	(*GetSpatialCanvasDashboardRequest)(nil),             // 587: sttattus.onyx.v1.GetSpatialCanvasDashboardRequest
-	(*GetSpatialCanvasDashboardResponse)(nil),            // 588: sttattus.onyx.v1.GetSpatialCanvasDashboardResponse
-	(*ListSpatialCanvasTemplatesRequest)(nil),            // 589: sttattus.onyx.v1.ListSpatialCanvasTemplatesRequest
-	(*ListSpatialCanvasTemplatesResponse)(nil),           // 590: sttattus.onyx.v1.ListSpatialCanvasTemplatesResponse
-	(*CreateSpatialCanvasRequest)(nil),                   // 591: sttattus.onyx.v1.CreateSpatialCanvasRequest
-	(*CreateSpatialCanvasResponse)(nil),                  // 592: sttattus.onyx.v1.CreateSpatialCanvasResponse
-	(*GetSpatialCanvasRequest)(nil),                      // 593: sttattus.onyx.v1.GetSpatialCanvasRequest
-	(*GetSpatialCanvasResponse)(nil),                     // 594: sttattus.onyx.v1.GetSpatialCanvasResponse
-	(*ApplySpatialCanvasOperationsRequest)(nil),          // 595: sttattus.onyx.v1.ApplySpatialCanvasOperationsRequest
-	(*ApplySpatialCanvasOperationsResponse)(nil),         // 596: sttattus.onyx.v1.ApplySpatialCanvasOperationsResponse
-	(*ResolveSpatialCanvasConflictRequest)(nil),          // 597: sttattus.onyx.v1.ResolveSpatialCanvasConflictRequest
-	(*ResolveSpatialCanvasConflictResponse)(nil),         // 598: sttattus.onyx.v1.ResolveSpatialCanvasConflictResponse
-	(*CreateSpatialCanvasSnapshotRequest)(nil),           // 599: sttattus.onyx.v1.CreateSpatialCanvasSnapshotRequest
-	(*CreateSpatialCanvasSnapshotResponse)(nil),          // 600: sttattus.onyx.v1.CreateSpatialCanvasSnapshotResponse
-	(*RestoreSpatialCanvasSnapshotRequest)(nil),          // 601: sttattus.onyx.v1.RestoreSpatialCanvasSnapshotRequest
-	(*RestoreSpatialCanvasSnapshotResponse)(nil),         // 602: sttattus.onyx.v1.RestoreSpatialCanvasSnapshotResponse
-	(*UpsertSpatialCanvasCommentRequest)(nil),            // 603: sttattus.onyx.v1.UpsertSpatialCanvasCommentRequest
-	(*UpsertSpatialCanvasCommentResponse)(nil),           // 604: sttattus.onyx.v1.UpsertSpatialCanvasCommentResponse
-	(*SetSpatialCanvasCommentStateRequest)(nil),          // 605: sttattus.onyx.v1.SetSpatialCanvasCommentStateRequest
-	(*SetSpatialCanvasCommentStateResponse)(nil),         // 606: sttattus.onyx.v1.SetSpatialCanvasCommentStateResponse
-	(*GenerateSpatialCanvasProposalsRequest)(nil),        // 607: sttattus.onyx.v1.GenerateSpatialCanvasProposalsRequest
-	(*GenerateSpatialCanvasProposalsResponse)(nil),       // 608: sttattus.onyx.v1.GenerateSpatialCanvasProposalsResponse
-	(*SetSpatialCanvasProposalStateRequest)(nil),         // 609: sttattus.onyx.v1.SetSpatialCanvasProposalStateRequest
-	(*SetSpatialCanvasProposalStateResponse)(nil),        // 610: sttattus.onyx.v1.SetSpatialCanvasProposalStateResponse
-	(*RequestSpatialCanvasExportRequest)(nil),            // 611: sttattus.onyx.v1.RequestSpatialCanvasExportRequest
-	(*RequestSpatialCanvasExportResponse)(nil),           // 612: sttattus.onyx.v1.RequestSpatialCanvasExportResponse
-	(*GetSpatialCanvasExportRequest)(nil),                // 613: sttattus.onyx.v1.GetSpatialCanvasExportRequest
-	(*GetSpatialCanvasExportResponse)(nil),               // 614: sttattus.onyx.v1.GetSpatialCanvasExportResponse
-	(*UpsertSpatialCanvasCollaboratorRequest)(nil),       // 615: sttattus.onyx.v1.UpsertSpatialCanvasCollaboratorRequest
-	(*UpsertSpatialCanvasCollaboratorResponse)(nil),      // 616: sttattus.onyx.v1.UpsertSpatialCanvasCollaboratorResponse
-	(*ReportSpatialCanvasAbuseRequest)(nil),              // 617: sttattus.onyx.v1.ReportSpatialCanvasAbuseRequest
-	(*ReportSpatialCanvasAbuseResponse)(nil),             // 618: sttattus.onyx.v1.ReportSpatialCanvasAbuseResponse
-	(*RecallSourceAnchor)(nil),                           // 619: sttattus.onyx.v1.RecallSourceAnchor
-	(*RecallDeck)(nil),                                   // 620: sttattus.onyx.v1.RecallDeck
-	(*RecallPromptVariant)(nil),                          // 621: sttattus.onyx.v1.RecallPromptVariant
-	(*RecallSchedule)(nil),                               // 622: sttattus.onyx.v1.RecallSchedule
-	(*MemoryItem)(nil),                                   // 623: sttattus.onyx.v1.MemoryItem
-	(*RecallReviewEvent)(nil),                            // 624: sttattus.onyx.v1.RecallReviewEvent
-	(*RecallSourceInvalidation)(nil),                     // 625: sttattus.onyx.v1.RecallSourceInvalidation
-	(*RecallRetentionMeasure)(nil),                       // 626: sttattus.onyx.v1.RecallRetentionMeasure
-	(*RecallPreferences)(nil),                            // 627: sttattus.onyx.v1.RecallPreferences
-	(*GetRecallDashboardRequest)(nil),                    // 628: sttattus.onyx.v1.GetRecallDashboardRequest
-	(*GetRecallDashboardResponse)(nil),                   // 629: sttattus.onyx.v1.GetRecallDashboardResponse
-	(*ListRecallDecksRequest)(nil),                       // 630: sttattus.onyx.v1.ListRecallDecksRequest
-	(*ListRecallDecksResponse)(nil),                      // 631: sttattus.onyx.v1.ListRecallDecksResponse
-	(*ListMemoryItemsRequest)(nil),                       // 632: sttattus.onyx.v1.ListMemoryItemsRequest
-	(*ListMemoryItemsResponse)(nil),                      // 633: sttattus.onyx.v1.ListMemoryItemsResponse
-	(*UpsertRecallDeckRequest)(nil),                      // 634: sttattus.onyx.v1.UpsertRecallDeckRequest
-	(*UpsertRecallDeckResponse)(nil),                     // 635: sttattus.onyx.v1.UpsertRecallDeckResponse
-	(*GenerateRecallItemsRequest)(nil),                   // 636: sttattus.onyx.v1.GenerateRecallItemsRequest
-	(*GenerateRecallItemsResponse)(nil),                  // 637: sttattus.onyx.v1.GenerateRecallItemsResponse
-	(*UpsertMemoryItemRequest)(nil),                      // 638: sttattus.onyx.v1.UpsertMemoryItemRequest
-	(*UpsertMemoryItemResponse)(nil),                     // 639: sttattus.onyx.v1.UpsertMemoryItemResponse
-	(*SetMemoryItemStateRequest)(nil),                    // 640: sttattus.onyx.v1.SetMemoryItemStateRequest
-	(*SetMemoryItemStateResponse)(nil),                   // 641: sttattus.onyx.v1.SetMemoryItemStateResponse
-	(*GetRecallReviewQueueRequest)(nil),                  // 642: sttattus.onyx.v1.GetRecallReviewQueueRequest
-	(*GetRecallReviewQueueResponse)(nil),                 // 643: sttattus.onyx.v1.GetRecallReviewQueueResponse
-	(*RecordRecallReviewBatchRequest)(nil),               // 644: sttattus.onyx.v1.RecordRecallReviewBatchRequest
-	(*RecordRecallReviewBatchResponse)(nil),              // 645: sttattus.onyx.v1.RecordRecallReviewBatchResponse
-	(*ResolveRecallInvalidationRequest)(nil),             // 646: sttattus.onyx.v1.ResolveRecallInvalidationRequest
-	(*ResolveRecallInvalidationResponse)(nil),            // 647: sttattus.onyx.v1.ResolveRecallInvalidationResponse
-	(*UpdateRecallPreferencesRequest)(nil),               // 648: sttattus.onyx.v1.UpdateRecallPreferencesRequest
-	(*UpdateRecallPreferencesResponse)(nil),              // 649: sttattus.onyx.v1.UpdateRecallPreferencesResponse
-	(*ExportRecallDataRequest)(nil),                      // 650: sttattus.onyx.v1.ExportRecallDataRequest
-	(*ExportRecallDataResponse)(nil),                     // 651: sttattus.onyx.v1.ExportRecallDataResponse
-	(*ImportRecallDataRequest)(nil),                      // 652: sttattus.onyx.v1.ImportRecallDataRequest
-	(*ImportRecallDataResponse)(nil),                     // 653: sttattus.onyx.v1.ImportRecallDataResponse
-	(*ReportRecallItemRequest)(nil),                      // 654: sttattus.onyx.v1.ReportRecallItemRequest
-	(*ReportRecallItemResponse)(nil),                     // 655: sttattus.onyx.v1.ReportRecallItemResponse
-	(*RecordRecallTransferRequest)(nil),                  // 656: sttattus.onyx.v1.RecordRecallTransferRequest
-	(*RecordRecallTransferResponse)(nil),                 // 657: sttattus.onyx.v1.RecordRecallTransferResponse
-	(*DraftTemplate)(nil),                                // 658: sttattus.onyx.v1.DraftTemplate
-	(*DraftStyle)(nil),                                   // 659: sttattus.onyx.v1.DraftStyle
-	(*DraftCitation)(nil),                                // 660: sttattus.onyx.v1.DraftCitation
-	(*DraftBlock)(nil),                                   // 661: sttattus.onyx.v1.DraftBlock
-	(*DraftRevision)(nil),                                // 662: sttattus.onyx.v1.DraftRevision
-	(*DraftBlockChange)(nil),                             // 663: sttattus.onyx.v1.DraftBlockChange
-	(*DraftRevisionComparison)(nil),                      // 664: sttattus.onyx.v1.DraftRevisionComparison
-	(*DraftBranch)(nil),                                  // 665: sttattus.onyx.v1.DraftBranch
-	(*DraftSuggestion)(nil),                              // 666: sttattus.onyx.v1.DraftSuggestion
-	(*DraftConflict)(nil),                                // 667: sttattus.onyx.v1.DraftConflict
-	(*DraftExport)(nil),                                  // 668: sttattus.onyx.v1.DraftExport
-	(*DraftHandoff)(nil),                                 // 669: sttattus.onyx.v1.DraftHandoff
-	(*DraftDocument)(nil),                                // 670: sttattus.onyx.v1.DraftDocument
-	(*DraftingDashboard)(nil),                            // 671: sttattus.onyx.v1.DraftingDashboard
-	(*GetDraftingDashboardRequest)(nil),                  // 672: sttattus.onyx.v1.GetDraftingDashboardRequest
-	(*GetDraftingDashboardResponse)(nil),                 // 673: sttattus.onyx.v1.GetDraftingDashboardResponse
-	(*ListDraftsRequest)(nil),                            // 674: sttattus.onyx.v1.ListDraftsRequest
-	(*ListDraftsResponse)(nil),                           // 675: sttattus.onyx.v1.ListDraftsResponse
-	(*GetDraftRequest)(nil),                              // 676: sttattus.onyx.v1.GetDraftRequest
-	(*GetDraftResponse)(nil),                             // 677: sttattus.onyx.v1.GetDraftResponse
-	(*CreateDraftRequest)(nil),                           // 678: sttattus.onyx.v1.CreateDraftRequest
-	(*CreateDraftResponse)(nil),                          // 679: sttattus.onyx.v1.CreateDraftResponse
-	(*UpsertDraftBlockRequest)(nil),                      // 680: sttattus.onyx.v1.UpsertDraftBlockRequest
-	(*UpsertDraftBlockResponse)(nil),                     // 681: sttattus.onyx.v1.UpsertDraftBlockResponse
-	(*DeleteDraftBlockRequest)(nil),                      // 682: sttattus.onyx.v1.DeleteDraftBlockRequest
-	(*DeleteDraftBlockResponse)(nil),                     // 683: sttattus.onyx.v1.DeleteDraftBlockResponse
-	(*UpsertDraftCitationRequest)(nil),                   // 684: sttattus.onyx.v1.UpsertDraftCitationRequest
-	(*UpsertDraftCitationResponse)(nil),                  // 685: sttattus.onyx.v1.UpsertDraftCitationResponse
-	(*VerifyDraftRequest)(nil),                           // 686: sttattus.onyx.v1.VerifyDraftRequest
-	(*VerifyDraftResponse)(nil),                          // 687: sttattus.onyx.v1.VerifyDraftResponse
-	(*DraftEvidencePreview)(nil),                         // 688: sttattus.onyx.v1.DraftEvidencePreview
-	(*DraftClaimDiagnostic)(nil),                         // 689: sttattus.onyx.v1.DraftClaimDiagnostic
-	(*DraftEvidenceReview)(nil),                          // 690: sttattus.onyx.v1.DraftEvidenceReview
-	(*GetDraftEvidenceReviewRequest)(nil),                // 691: sttattus.onyx.v1.GetDraftEvidenceReviewRequest
-	(*GetDraftEvidenceReviewResponse)(nil),               // 692: sttattus.onyx.v1.GetDraftEvidenceReviewResponse
-	(*CompareDraftEvidenceRequest)(nil),                  // 693: sttattus.onyx.v1.CompareDraftEvidenceRequest
-	(*DraftEvidenceComparison)(nil),                      // 694: sttattus.onyx.v1.DraftEvidenceComparison
-	(*CompareDraftEvidenceResponse)(nil),                 // 695: sttattus.onyx.v1.CompareDraftEvidenceResponse
-	(*CreateDraftRevisionRequest)(nil),                   // 696: sttattus.onyx.v1.CreateDraftRevisionRequest
-	(*CreateDraftRevisionResponse)(nil),                  // 697: sttattus.onyx.v1.CreateDraftRevisionResponse
-	(*CreateDraftBranchRequest)(nil),                     // 698: sttattus.onyx.v1.CreateDraftBranchRequest
-	(*CreateDraftBranchResponse)(nil),                    // 699: sttattus.onyx.v1.CreateDraftBranchResponse
-	(*RestoreDraftRevisionRequest)(nil),                  // 700: sttattus.onyx.v1.RestoreDraftRevisionRequest
-	(*RestoreDraftRevisionResponse)(nil),                 // 701: sttattus.onyx.v1.RestoreDraftRevisionResponse
-	(*CompareDraftRevisionsRequest)(nil),                 // 702: sttattus.onyx.v1.CompareDraftRevisionsRequest
-	(*CompareDraftRevisionsResponse)(nil),                // 703: sttattus.onyx.v1.CompareDraftRevisionsResponse
-	(*GenerateDraftSuggestionRequest)(nil),               // 704: sttattus.onyx.v1.GenerateDraftSuggestionRequest
-	(*GenerateDraftSuggestionResponse)(nil),              // 705: sttattus.onyx.v1.GenerateDraftSuggestionResponse
-	(*SetDraftSuggestionStateRequest)(nil),               // 706: sttattus.onyx.v1.SetDraftSuggestionStateRequest
-	(*SetDraftSuggestionStateResponse)(nil),              // 707: sttattus.onyx.v1.SetDraftSuggestionStateResponse
-	(*ResolveDraftConflictRequest)(nil),                  // 708: sttattus.onyx.v1.ResolveDraftConflictRequest
-	(*ResolveDraftConflictResponse)(nil),                 // 709: sttattus.onyx.v1.ResolveDraftConflictResponse
-	(*RequestDraftExportRequest)(nil),                    // 710: sttattus.onyx.v1.RequestDraftExportRequest
-	(*RequestDraftExportResponse)(nil),                   // 711: sttattus.onyx.v1.RequestDraftExportResponse
-	(*GetDraftExportRequest)(nil),                        // 712: sttattus.onyx.v1.GetDraftExportRequest
-	(*GetDraftExportResponse)(nil),                       // 713: sttattus.onyx.v1.GetDraftExportResponse
-	(*CreateDraftHandoffRequest)(nil),                    // 714: sttattus.onyx.v1.CreateDraftHandoffRequest
-	(*CreateDraftHandoffResponse)(nil),                   // 715: sttattus.onyx.v1.CreateDraftHandoffResponse
-	(*ReportDraftIncidentRequest)(nil),                   // 716: sttattus.onyx.v1.ReportDraftIncidentRequest
-	(*ReportDraftIncidentResponse)(nil),                  // 717: sttattus.onyx.v1.ReportDraftIncidentResponse
-	(*timestamppb.Timestamp)(nil),                        // 718: google.protobuf.Timestamp
+	(*GetEvidenceSourceHistoryRequest)(nil),              // 289: sttattus.onyx.v1.GetEvidenceSourceHistoryRequest
+	(*EvidenceSourceLifecycleEvent)(nil),                 // 290: sttattus.onyx.v1.EvidenceSourceLifecycleEvent
+	(*EvidenceSourceReplacement)(nil),                    // 291: sttattus.onyx.v1.EvidenceSourceReplacement
+	(*GetEvidenceSourceHistoryResponse)(nil),             // 292: sttattus.onyx.v1.GetEvidenceSourceHistoryResponse
+	(*BriefPoint)(nil),                                   // 293: sttattus.onyx.v1.BriefPoint
+	(*EvidenceBrief)(nil),                                // 294: sttattus.onyx.v1.EvidenceBrief
+	(*CreateEvidenceBriefRequest)(nil),                   // 295: sttattus.onyx.v1.CreateEvidenceBriefRequest
+	(*CreateEvidenceBriefResponse)(nil),                  // 296: sttattus.onyx.v1.CreateEvidenceBriefResponse
+	(*ListMyEvidenceBriefsRequest)(nil),                  // 297: sttattus.onyx.v1.ListMyEvidenceBriefsRequest
+	(*ListMyEvidenceBriefsResponse)(nil),                 // 298: sttattus.onyx.v1.ListMyEvidenceBriefsResponse
+	(*GetEvidenceBriefRequest)(nil),                      // 299: sttattus.onyx.v1.GetEvidenceBriefRequest
+	(*GetEvidenceBriefResponse)(nil),                     // 300: sttattus.onyx.v1.GetEvidenceBriefResponse
+	(*CreatorContract)(nil),                              // 301: sttattus.onyx.v1.CreatorContract
+	(*EditorialReview)(nil),                              // 302: sttattus.onyx.v1.EditorialReview
+	(*EditorialComment)(nil),                             // 303: sttattus.onyx.v1.EditorialComment
+	(*EditorialProject)(nil),                             // 304: sttattus.onyx.v1.EditorialProject
+	(*CreatorStatement)(nil),                             // 305: sttattus.onyx.v1.CreatorStatement
+	(*CreatorMetric)(nil),                                // 306: sttattus.onyx.v1.CreatorMetric
+	(*CreatorStudio)(nil),                                // 307: sttattus.onyx.v1.CreatorStudio
+	(*GetCreatorStudioRequest)(nil),                      // 308: sttattus.onyx.v1.GetCreatorStudioRequest
+	(*GetCreatorStudioResponse)(nil),                     // 309: sttattus.onyx.v1.GetCreatorStudioResponse
+	(*SubmitCreatorPitchRequest)(nil),                    // 310: sttattus.onyx.v1.SubmitCreatorPitchRequest
+	(*SubmitCreatorPitchResponse)(nil),                   // 311: sttattus.onyx.v1.SubmitCreatorPitchResponse
+	(*UpdateCreatorProjectRequest)(nil),                  // 312: sttattus.onyx.v1.UpdateCreatorProjectRequest
+	(*UpdateCreatorProjectResponse)(nil),                 // 313: sttattus.onyx.v1.UpdateCreatorProjectResponse
+	(*SubmitCreatorProjectRequest)(nil),                  // 314: sttattus.onyx.v1.SubmitCreatorProjectRequest
+	(*SubmitCreatorProjectResponse)(nil),                 // 315: sttattus.onyx.v1.SubmitCreatorProjectResponse
+	(*SignCreatorContractRequest)(nil),                   // 316: sttattus.onyx.v1.SignCreatorContractRequest
+	(*SignCreatorContractResponse)(nil),                  // 317: sttattus.onyx.v1.SignCreatorContractResponse
+	(*ListMyCreatorSubscriptionsDetailedRequest)(nil),    // 318: sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedRequest
+	(*ListMyCreatorSubscriptionsDetailedResponse)(nil),   // 319: sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedResponse
+	(*CancelCreatorSubscriptionRequest)(nil),             // 320: sttattus.onyx.v1.CancelCreatorSubscriptionRequest
+	(*CancelCreatorSubscriptionResponse)(nil),            // 321: sttattus.onyx.v1.CancelCreatorSubscriptionResponse
+	(*CommerceInvoice)(nil),                              // 322: sttattus.onyx.v1.CommerceInvoice
+	(*CommerceCase)(nil),                                 // 323: sttattus.onyx.v1.CommerceCase
+	(*GetMyCommerceRequest)(nil),                         // 324: sttattus.onyx.v1.GetMyCommerceRequest
+	(*GetMyCommerceResponse)(nil),                        // 325: sttattus.onyx.v1.GetMyCommerceResponse
+	(*CreateCommerceCaseRequest)(nil),                    // 326: sttattus.onyx.v1.CreateCommerceCaseRequest
+	(*CreateCommerceCaseResponse)(nil),                   // 327: sttattus.onyx.v1.CreateCommerceCaseResponse
+	(*ResearchRoomPolicy)(nil),                           // 328: sttattus.onyx.v1.ResearchRoomPolicy
+	(*ResearchRoomMember)(nil),                           // 329: sttattus.onyx.v1.ResearchRoomMember
+	(*ResearchRoom)(nil),                                 // 330: sttattus.onyx.v1.ResearchRoom
+	(*ResearchRoomItem)(nil),                             // 331: sttattus.onyx.v1.ResearchRoomItem
+	(*ResearchRoomThread)(nil),                           // 332: sttattus.onyx.v1.ResearchRoomThread
+	(*ResearchRoomComment)(nil),                          // 333: sttattus.onyx.v1.ResearchRoomComment
+	(*ResearchRoomTask)(nil),                             // 334: sttattus.onyx.v1.ResearchRoomTask
+	(*ResearchRoomMeeting)(nil),                          // 335: sttattus.onyx.v1.ResearchRoomMeeting
+	(*ResearchRoomDecision)(nil),                         // 336: sttattus.onyx.v1.ResearchRoomDecision
+	(*ResearchRoomApproval)(nil),                         // 337: sttattus.onyx.v1.ResearchRoomApproval
+	(*ResearchRoomExport)(nil),                           // 338: sttattus.onyx.v1.ResearchRoomExport
+	(*ResearchRoomAuditEvent)(nil),                       // 339: sttattus.onyx.v1.ResearchRoomAuditEvent
+	(*ResearchRoomGrant)(nil),                            // 340: sttattus.onyx.v1.ResearchRoomGrant
+	(*ResearchRoomShareLink)(nil),                        // 341: sttattus.onyx.v1.ResearchRoomShareLink
+	(*ResearchRoomOfflineManifest)(nil),                  // 342: sttattus.onyx.v1.ResearchRoomOfflineManifest
+	(*ResearchRoomPurgeReceipt)(nil),                     // 343: sttattus.onyx.v1.ResearchRoomPurgeReceipt
+	(*ResearchRoomDetail)(nil),                           // 344: sttattus.onyx.v1.ResearchRoomDetail
+	(*ListResearchRoomsRequest)(nil),                     // 345: sttattus.onyx.v1.ListResearchRoomsRequest
+	(*ListResearchRoomsResponse)(nil),                    // 346: sttattus.onyx.v1.ListResearchRoomsResponse
+	(*GetResearchRoomRequest)(nil),                       // 347: sttattus.onyx.v1.GetResearchRoomRequest
+	(*GetResearchRoomResponse)(nil),                      // 348: sttattus.onyx.v1.GetResearchRoomResponse
+	(*CreateResearchRoomRequest)(nil),                    // 349: sttattus.onyx.v1.CreateResearchRoomRequest
+	(*CreateResearchRoomResponse)(nil),                   // 350: sttattus.onyx.v1.CreateResearchRoomResponse
+	(*UpdateResearchRoomRequest)(nil),                    // 351: sttattus.onyx.v1.UpdateResearchRoomRequest
+	(*UpdateResearchRoomResponse)(nil),                   // 352: sttattus.onyx.v1.UpdateResearchRoomResponse
+	(*InviteResearchRoomMemberRequest)(nil),              // 353: sttattus.onyx.v1.InviteResearchRoomMemberRequest
+	(*InviteResearchRoomMemberResponse)(nil),             // 354: sttattus.onyx.v1.InviteResearchRoomMemberResponse
+	(*RespondResearchRoomInviteRequest)(nil),             // 355: sttattus.onyx.v1.RespondResearchRoomInviteRequest
+	(*RespondResearchRoomInviteResponse)(nil),            // 356: sttattus.onyx.v1.RespondResearchRoomInviteResponse
+	(*ChangeResearchRoomMemberRequest)(nil),              // 357: sttattus.onyx.v1.ChangeResearchRoomMemberRequest
+	(*ChangeResearchRoomMemberResponse)(nil),             // 358: sttattus.onyx.v1.ChangeResearchRoomMemberResponse
+	(*RevokeResearchRoomMemberRequest)(nil),              // 359: sttattus.onyx.v1.RevokeResearchRoomMemberRequest
+	(*RevokeResearchRoomMemberResponse)(nil),             // 360: sttattus.onyx.v1.RevokeResearchRoomMemberResponse
+	(*AddResearchRoomItemRequest)(nil),                   // 361: sttattus.onyx.v1.AddResearchRoomItemRequest
+	(*AddResearchRoomItemResponse)(nil),                  // 362: sttattus.onyx.v1.AddResearchRoomItemResponse
+	(*RemoveResearchRoomItemRequest)(nil),                // 363: sttattus.onyx.v1.RemoveResearchRoomItemRequest
+	(*RemoveResearchRoomItemResponse)(nil),               // 364: sttattus.onyx.v1.RemoveResearchRoomItemResponse
+	(*PostResearchRoomCommentRequest)(nil),               // 365: sttattus.onyx.v1.PostResearchRoomCommentRequest
+	(*PostResearchRoomCommentResponse)(nil),              // 366: sttattus.onyx.v1.PostResearchRoomCommentResponse
+	(*SetResearchRoomThreadStatusRequest)(nil),           // 367: sttattus.onyx.v1.SetResearchRoomThreadStatusRequest
+	(*SetResearchRoomThreadStatusResponse)(nil),          // 368: sttattus.onyx.v1.SetResearchRoomThreadStatusResponse
+	(*UpsertResearchRoomTaskRequest)(nil),                // 369: sttattus.onyx.v1.UpsertResearchRoomTaskRequest
+	(*UpsertResearchRoomTaskResponse)(nil),               // 370: sttattus.onyx.v1.UpsertResearchRoomTaskResponse
+	(*UpsertResearchRoomMeetingRequest)(nil),             // 371: sttattus.onyx.v1.UpsertResearchRoomMeetingRequest
+	(*UpsertResearchRoomMeetingResponse)(nil),            // 372: sttattus.onyx.v1.UpsertResearchRoomMeetingResponse
+	(*UpsertResearchRoomDecisionRequest)(nil),            // 373: sttattus.onyx.v1.UpsertResearchRoomDecisionRequest
+	(*UpsertResearchRoomDecisionResponse)(nil),           // 374: sttattus.onyx.v1.UpsertResearchRoomDecisionResponse
+	(*RecordResearchRoomApprovalRequest)(nil),            // 375: sttattus.onyx.v1.RecordResearchRoomApprovalRequest
+	(*RecordResearchRoomApprovalResponse)(nil),           // 376: sttattus.onyx.v1.RecordResearchRoomApprovalResponse
+	(*SearchResearchRoomRequest)(nil),                    // 377: sttattus.onyx.v1.SearchResearchRoomRequest
+	(*SearchResearchRoomResult)(nil),                     // 378: sttattus.onyx.v1.SearchResearchRoomResult
+	(*SearchResearchRoomResponse)(nil),                   // 379: sttattus.onyx.v1.SearchResearchRoomResponse
+	(*RequestResearchRoomExportRequest)(nil),             // 380: sttattus.onyx.v1.RequestResearchRoomExportRequest
+	(*RequestResearchRoomExportResponse)(nil),            // 381: sttattus.onyx.v1.RequestResearchRoomExportResponse
+	(*ReportResearchRoomAbuseRequest)(nil),               // 382: sttattus.onyx.v1.ReportResearchRoomAbuseRequest
+	(*ReportResearchRoomAbuseResponse)(nil),              // 383: sttattus.onyx.v1.ReportResearchRoomAbuseResponse
+	(*ListResearchRoomAuditRequest)(nil),                 // 384: sttattus.onyx.v1.ListResearchRoomAuditRequest
+	(*ListResearchRoomAuditResponse)(nil),                // 385: sttattus.onyx.v1.ListResearchRoomAuditResponse
+	(*ListResearchRoomGrantsRequest)(nil),                // 386: sttattus.onyx.v1.ListResearchRoomGrantsRequest
+	(*ListResearchRoomGrantsResponse)(nil),               // 387: sttattus.onyx.v1.ListResearchRoomGrantsResponse
+	(*UpsertResearchRoomGrantRequest)(nil),               // 388: sttattus.onyx.v1.UpsertResearchRoomGrantRequest
+	(*UpsertResearchRoomGrantResponse)(nil),              // 389: sttattus.onyx.v1.UpsertResearchRoomGrantResponse
+	(*RevokeResearchRoomGrantRequest)(nil),               // 390: sttattus.onyx.v1.RevokeResearchRoomGrantRequest
+	(*RevokeResearchRoomGrantResponse)(nil),              // 391: sttattus.onyx.v1.RevokeResearchRoomGrantResponse
+	(*CreateResearchRoomShareLinkRequest)(nil),           // 392: sttattus.onyx.v1.CreateResearchRoomShareLinkRequest
+	(*CreateResearchRoomShareLinkResponse)(nil),          // 393: sttattus.onyx.v1.CreateResearchRoomShareLinkResponse
+	(*ListResearchRoomShareLinksRequest)(nil),            // 394: sttattus.onyx.v1.ListResearchRoomShareLinksRequest
+	(*ListResearchRoomShareLinksResponse)(nil),           // 395: sttattus.onyx.v1.ListResearchRoomShareLinksResponse
+	(*RevokeResearchRoomShareLinkRequest)(nil),           // 396: sttattus.onyx.v1.RevokeResearchRoomShareLinkRequest
+	(*RevokeResearchRoomShareLinkResponse)(nil),          // 397: sttattus.onyx.v1.RevokeResearchRoomShareLinkResponse
+	(*ResolveResearchRoomShareLinkRequest)(nil),          // 398: sttattus.onyx.v1.ResolveResearchRoomShareLinkRequest
+	(*ResolveResearchRoomShareLinkResponse)(nil),         // 399: sttattus.onyx.v1.ResolveResearchRoomShareLinkResponse
+	(*GetResearchRoomOfflineManifestRequest)(nil),        // 400: sttattus.onyx.v1.GetResearchRoomOfflineManifestRequest
+	(*GetResearchRoomOfflineManifestResponse)(nil),       // 401: sttattus.onyx.v1.GetResearchRoomOfflineManifestResponse
+	(*AcknowledgeResearchRoomOfflinePurgeRequest)(nil),   // 402: sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeRequest
+	(*AcknowledgeResearchRoomOfflinePurgeResponse)(nil),  // 403: sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeResponse
+	(*ListResearchRoomOfflinePurgesRequest)(nil),         // 404: sttattus.onyx.v1.ListResearchRoomOfflinePurgesRequest
+	(*ListResearchRoomOfflinePurgesResponse)(nil),        // 405: sttattus.onyx.v1.ListResearchRoomOfflinePurgesResponse
+	(*LeaveResearchRoomRequest)(nil),                     // 406: sttattus.onyx.v1.LeaveResearchRoomRequest
+	(*LeaveResearchRoomResponse)(nil),                    // 407: sttattus.onyx.v1.LeaveResearchRoomResponse
+	(*IntelligenceGraphSourceAnchor)(nil),                // 408: sttattus.onyx.v1.IntelligenceGraphSourceAnchor
+	(*IntelligenceGraphNode)(nil),                        // 409: sttattus.onyx.v1.IntelligenceGraphNode
+	(*IntelligenceGraphEdge)(nil),                        // 410: sttattus.onyx.v1.IntelligenceGraphEdge
+	(*IntelligenceGraphSuggestion)(nil),                  // 411: sttattus.onyx.v1.IntelligenceGraphSuggestion
+	(*IntelligenceGraphTimelineEvent)(nil),               // 412: sttattus.onyx.v1.IntelligenceGraphTimelineEvent
+	(*IntelligenceGraphResurfacingItem)(nil),             // 413: sttattus.onyx.v1.IntelligenceGraphResurfacingItem
+	(*IntelligenceGraphMeetingBriefSection)(nil),         // 414: sttattus.onyx.v1.IntelligenceGraphMeetingBriefSection
+	(*IntelligenceGraphMeetingBrief)(nil),                // 415: sttattus.onyx.v1.IntelligenceGraphMeetingBrief
+	(*IntelligenceGraphOverview)(nil),                    // 416: sttattus.onyx.v1.IntelligenceGraphOverview
+	(*GetPersonalIntelligenceGraphRequest)(nil),          // 417: sttattus.onyx.v1.GetPersonalIntelligenceGraphRequest
+	(*GetPersonalIntelligenceGraphResponse)(nil),         // 418: sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse
+	(*UpsertIntelligenceGraphNodeRequest)(nil),           // 419: sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest
+	(*UpsertIntelligenceGraphNodeResponse)(nil),          // 420: sttattus.onyx.v1.UpsertIntelligenceGraphNodeResponse
+	(*SetIntelligenceGraphNodeStateRequest)(nil),         // 421: sttattus.onyx.v1.SetIntelligenceGraphNodeStateRequest
+	(*SetIntelligenceGraphNodeStateResponse)(nil),        // 422: sttattus.onyx.v1.SetIntelligenceGraphNodeStateResponse
+	(*MergeIntelligenceGraphNodesRequest)(nil),           // 423: sttattus.onyx.v1.MergeIntelligenceGraphNodesRequest
+	(*MergeIntelligenceGraphNodesResponse)(nil),          // 424: sttattus.onyx.v1.MergeIntelligenceGraphNodesResponse
+	(*SplitIntelligenceGraphNodeRequest)(nil),            // 425: sttattus.onyx.v1.SplitIntelligenceGraphNodeRequest
+	(*SplitIntelligenceGraphNodeResponse)(nil),           // 426: sttattus.onyx.v1.SplitIntelligenceGraphNodeResponse
+	(*UpsertIntelligenceGraphEdgeRequest)(nil),           // 427: sttattus.onyx.v1.UpsertIntelligenceGraphEdgeRequest
+	(*UpsertIntelligenceGraphEdgeResponse)(nil),          // 428: sttattus.onyx.v1.UpsertIntelligenceGraphEdgeResponse
+	(*SetIntelligenceGraphEdgeStateRequest)(nil),         // 429: sttattus.onyx.v1.SetIntelligenceGraphEdgeStateRequest
+	(*SetIntelligenceGraphEdgeStateResponse)(nil),        // 430: sttattus.onyx.v1.SetIntelligenceGraphEdgeStateResponse
+	(*GenerateIntelligenceGraphSuggestionsRequest)(nil),  // 431: sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsRequest
+	(*GenerateIntelligenceGraphSuggestionsResponse)(nil), // 432: sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsResponse
+	(*ListIntelligenceGraphSuggestionsRequest)(nil),      // 433: sttattus.onyx.v1.ListIntelligenceGraphSuggestionsRequest
+	(*ListIntelligenceGraphSuggestionsResponse)(nil),     // 434: sttattus.onyx.v1.ListIntelligenceGraphSuggestionsResponse
+	(*SetIntelligenceGraphSuggestionStateRequest)(nil),   // 435: sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateRequest
+	(*SetIntelligenceGraphSuggestionStateResponse)(nil),  // 436: sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse
+	(*ListIntelligenceGraphTimelineRequest)(nil),         // 437: sttattus.onyx.v1.ListIntelligenceGraphTimelineRequest
+	(*ListIntelligenceGraphTimelineResponse)(nil),        // 438: sttattus.onyx.v1.ListIntelligenceGraphTimelineResponse
+	(*ListIntelligenceGraphResurfacingRequest)(nil),      // 439: sttattus.onyx.v1.ListIntelligenceGraphResurfacingRequest
+	(*ListIntelligenceGraphResurfacingResponse)(nil),     // 440: sttattus.onyx.v1.ListIntelligenceGraphResurfacingResponse
+	(*SetIntelligenceGraphResurfacingStateRequest)(nil),  // 441: sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateRequest
+	(*SetIntelligenceGraphResurfacingStateResponse)(nil), // 442: sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateResponse
+	(*CreateIntelligenceGraphMeetingBriefRequest)(nil),   // 443: sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefRequest
+	(*CreateIntelligenceGraphMeetingBriefResponse)(nil),  // 444: sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefResponse
+	(*GetIntelligenceGraphMeetingBriefRequest)(nil),      // 445: sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefRequest
+	(*GetIntelligenceGraphMeetingBriefResponse)(nil),     // 446: sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefResponse
+	(*ListIntelligenceGraphMeetingBriefsRequest)(nil),    // 447: sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsRequest
+	(*ListIntelligenceGraphMeetingBriefsResponse)(nil),   // 448: sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsResponse
+	(*ExportPersonalIntelligenceGraphRequest)(nil),       // 449: sttattus.onyx.v1.ExportPersonalIntelligenceGraphRequest
+	(*ExportPersonalIntelligenceGraphResponse)(nil),      // 450: sttattus.onyx.v1.ExportPersonalIntelligenceGraphResponse
+	(*RebuildPersonalIntelligenceGraphRequest)(nil),      // 451: sttattus.onyx.v1.RebuildPersonalIntelligenceGraphRequest
+	(*RebuildPersonalIntelligenceGraphResponse)(nil),     // 452: sttattus.onyx.v1.RebuildPersonalIntelligenceGraphResponse
+	(*OnyxLanguageConfig)(nil),                           // 453: sttattus.onyx.v1.OnyxLanguageConfig
+	(*OnyxMachineTranslationProvenance)(nil),             // 454: sttattus.onyx.v1.OnyxMachineTranslationProvenance
+	(*OnyxEditionLineage)(nil),                           // 455: sttattus.onyx.v1.OnyxEditionLineage
+	(*OnyxTranslationAcceptanceProvenance)(nil),          // 456: sttattus.onyx.v1.OnyxTranslationAcceptanceProvenance
+	(*OnyxAlignedSegment)(nil),                           // 457: sttattus.onyx.v1.OnyxAlignedSegment
+	(*OnyxAlignedBlock)(nil),                             // 458: sttattus.onyx.v1.OnyxAlignedBlock
+	(*OnyxTermbaseEntry)(nil),                            // 459: sttattus.onyx.v1.OnyxTermbaseEntry
+	(*OnyxMultilingualPreferences)(nil),                  // 460: sttattus.onyx.v1.OnyxMultilingualPreferences
+	(*OnyxCrossLanguageSearchMatch)(nil),                 // 461: sttattus.onyx.v1.OnyxCrossLanguageSearchMatch
+	(*OnyxCaptionCue)(nil),                               // 462: sttattus.onyx.v1.OnyxCaptionCue
+	(*OnyxCaptionTrack)(nil),                             // 463: sttattus.onyx.v1.OnyxCaptionTrack
+	(*OnyxMediaLanguageTrack)(nil),                       // 464: sttattus.onyx.v1.OnyxMediaLanguageTrack
+	(*OnyxMultilingualAudioVideo)(nil),                   // 465: sttattus.onyx.v1.OnyxMultilingualAudioVideo
+	(*OnyxTranslationReport)(nil),                        // 466: sttattus.onyx.v1.OnyxTranslationReport
+	(*OnyxMultilingualOfflineManifest)(nil),              // 467: sttattus.onyx.v1.OnyxMultilingualOfflineManifest
+	(*OnyxMultilingualExportManifestItem)(nil),           // 468: sttattus.onyx.v1.OnyxMultilingualExportManifestItem
+	(*OnyxMultilingualExport)(nil),                       // 469: sttattus.onyx.v1.OnyxMultilingualExport
+	(*ListLanguageConfigsRequest)(nil),                   // 470: sttattus.onyx.v1.ListLanguageConfigsRequest
+	(*ListLanguageConfigsResponse)(nil),                  // 471: sttattus.onyx.v1.ListLanguageConfigsResponse
+	(*ListContentEditionsRequest)(nil),                   // 472: sttattus.onyx.v1.ListContentEditionsRequest
+	(*ListContentEditionsResponse)(nil),                  // 473: sttattus.onyx.v1.ListContentEditionsResponse
+	(*GetAlignedBlocksRequest)(nil),                      // 474: sttattus.onyx.v1.GetAlignedBlocksRequest
+	(*GetAlignedBlocksResponse)(nil),                     // 475: sttattus.onyx.v1.GetAlignedBlocksResponse
+	(*ListTermbaseEntriesRequest)(nil),                   // 476: sttattus.onyx.v1.ListTermbaseEntriesRequest
+	(*ListTermbaseEntriesResponse)(nil),                  // 477: sttattus.onyx.v1.ListTermbaseEntriesResponse
+	(*CrossLanguageSearchRequest)(nil),                   // 478: sttattus.onyx.v1.CrossLanguageSearchRequest
+	(*CrossLanguageSearchResponse)(nil),                  // 479: sttattus.onyx.v1.CrossLanguageSearchResponse
+	(*GetMultilingualPreferencesRequest)(nil),            // 480: sttattus.onyx.v1.GetMultilingualPreferencesRequest
+	(*GetMultilingualPreferencesResponse)(nil),           // 481: sttattus.onyx.v1.GetMultilingualPreferencesResponse
+	(*UpdateMultilingualPreferencesRequest)(nil),         // 482: sttattus.onyx.v1.UpdateMultilingualPreferencesRequest
+	(*UpdateMultilingualPreferencesResponse)(nil),        // 483: sttattus.onyx.v1.UpdateMultilingualPreferencesResponse
+	(*GetMultilingualAudioVideoRequest)(nil),             // 484: sttattus.onyx.v1.GetMultilingualAudioVideoRequest
+	(*GetMultilingualAudioVideoResponse)(nil),            // 485: sttattus.onyx.v1.GetMultilingualAudioVideoResponse
+	(*GetMultilingualOfflineManifestRequest)(nil),        // 486: sttattus.onyx.v1.GetMultilingualOfflineManifestRequest
+	(*GetMultilingualOfflineManifestResponse)(nil),       // 487: sttattus.onyx.v1.GetMultilingualOfflineManifestResponse
+	(*ReportTranslationIssueRequest)(nil),                // 488: sttattus.onyx.v1.ReportTranslationIssueRequest
+	(*ReportTranslationIssueResponse)(nil),               // 489: sttattus.onyx.v1.ReportTranslationIssueResponse
+	(*RequestMultilingualExportRequest)(nil),             // 490: sttattus.onyx.v1.RequestMultilingualExportRequest
+	(*RequestMultilingualExportResponse)(nil),            // 491: sttattus.onyx.v1.RequestMultilingualExportResponse
+	(*GetMultilingualExportRequest)(nil),                 // 492: sttattus.onyx.v1.GetMultilingualExportRequest
+	(*GetMultilingualExportResponse)(nil),                // 493: sttattus.onyx.v1.GetMultilingualExportResponse
+	(*OnyxLivingArchivePolicy)(nil),                      // 494: sttattus.onyx.v1.OnyxLivingArchivePolicy
+	(*OnyxLivingArchiveContact)(nil),                     // 495: sttattus.onyx.v1.OnyxLivingArchiveContact
+	(*OnyxLivingArchiveReadiness)(nil),                   // 496: sttattus.onyx.v1.OnyxLivingArchiveReadiness
+	(*OnyxLivingArchivePreviewCount)(nil),                // 497: sttattus.onyx.v1.OnyxLivingArchivePreviewCount
+	(*OnyxLivingArchivePreview)(nil),                     // 498: sttattus.onyx.v1.OnyxLivingArchivePreview
+	(*OnyxLivingArchiveEdition)(nil),                     // 499: sttattus.onyx.v1.OnyxLivingArchiveEdition
+	(*OnyxLivingArchiveReleaseCase)(nil),                 // 500: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase
+	(*OnyxLivingArchiveReceipt)(nil),                     // 501: sttattus.onyx.v1.OnyxLivingArchiveReceipt
+	(*GetLivingArchiveDashboardRequest)(nil),             // 502: sttattus.onyx.v1.GetLivingArchiveDashboardRequest
+	(*GetLivingArchiveDashboardResponse)(nil),            // 503: sttattus.onyx.v1.GetLivingArchiveDashboardResponse
+	(*UpsertLivingArchivePolicyRequest)(nil),             // 504: sttattus.onyx.v1.UpsertLivingArchivePolicyRequest
+	(*UpsertLivingArchivePolicyResponse)(nil),            // 505: sttattus.onyx.v1.UpsertLivingArchivePolicyResponse
+	(*PreviewLivingArchivePolicyRequest)(nil),            // 506: sttattus.onyx.v1.PreviewLivingArchivePolicyRequest
+	(*PreviewLivingArchivePolicyResponse)(nil),           // 507: sttattus.onyx.v1.PreviewLivingArchivePolicyResponse
+	(*GenerateLivingArchiveEditionRequest)(nil),          // 508: sttattus.onyx.v1.GenerateLivingArchiveEditionRequest
+	(*GenerateLivingArchiveEditionResponse)(nil),         // 509: sttattus.onyx.v1.GenerateLivingArchiveEditionResponse
+	(*LinkLivingArchiveLegacyEscrowRequest)(nil),         // 510: sttattus.onyx.v1.LinkLivingArchiveLegacyEscrowRequest
+	(*LinkLivingArchiveLegacyEscrowResponse)(nil),        // 511: sttattus.onyx.v1.LinkLivingArchiveLegacyEscrowResponse
+	(*UpsertLivingArchiveContactRequest)(nil),            // 512: sttattus.onyx.v1.UpsertLivingArchiveContactRequest
+	(*UpsertLivingArchiveContactResponse)(nil),           // 513: sttattus.onyx.v1.UpsertLivingArchiveContactResponse
+	(*DeleteLivingArchiveContactRequest)(nil),            // 514: sttattus.onyx.v1.DeleteLivingArchiveContactRequest
+	(*DeleteLivingArchiveContactResponse)(nil),           // 515: sttattus.onyx.v1.DeleteLivingArchiveContactResponse
+	(*SubmitLivingArchivePolicyRequest)(nil),             // 516: sttattus.onyx.v1.SubmitLivingArchivePolicyRequest
+	(*SubmitLivingArchivePolicyResponse)(nil),            // 517: sttattus.onyx.v1.SubmitLivingArchivePolicyResponse
+	(*RevokeLivingArchivePolicyRequest)(nil),             // 518: sttattus.onyx.v1.RevokeLivingArchivePolicyRequest
+	(*RevokeLivingArchivePolicyResponse)(nil),            // 519: sttattus.onyx.v1.RevokeLivingArchivePolicyResponse
+	(*ConfirmLivingArchiveReviewRequest)(nil),            // 520: sttattus.onyx.v1.ConfirmLivingArchiveReviewRequest
+	(*ConfirmLivingArchiveReviewResponse)(nil),           // 521: sttattus.onyx.v1.ConfirmLivingArchiveReviewResponse
+	(*ContestLivingArchiveReleaseRequest)(nil),           // 522: sttattus.onyx.v1.ContestLivingArchiveReleaseRequest
+	(*ContestLivingArchiveReleaseResponse)(nil),          // 523: sttattus.onyx.v1.ContestLivingArchiveReleaseResponse
+	(*OnyxForensicRuntime)(nil),                          // 524: sttattus.onyx.v1.OnyxForensicRuntime
+	(*OnyxForensicContentProtection)(nil),                // 525: sttattus.onyx.v1.OnyxForensicContentProtection
+	(*OnyxForensicManifest)(nil),                         // 526: sttattus.onyx.v1.OnyxForensicManifest
+	(*OnyxForensicCustodyEvent)(nil),                     // 527: sttattus.onyx.v1.OnyxForensicCustodyEvent
+	(*OnyxForensicAppealMessage)(nil),                    // 528: sttattus.onyx.v1.OnyxForensicAppealMessage
+	(*OnyxForensicAppeal)(nil),                           // 529: sttattus.onyx.v1.OnyxForensicAppeal
+	(*OnyxForensicCase)(nil),                             // 530: sttattus.onyx.v1.OnyxForensicCase
+	(*GetForensicProtectionDashboardRequest)(nil),        // 531: sttattus.onyx.v1.GetForensicProtectionDashboardRequest
+	(*GetForensicProtectionDashboardResponse)(nil),       // 532: sttattus.onyx.v1.GetForensicProtectionDashboardResponse
+	(*IssueForensicManifestRequest)(nil),                 // 533: sttattus.onyx.v1.IssueForensicManifestRequest
+	(*IssueForensicManifestResponse)(nil),                // 534: sttattus.onyx.v1.IssueForensicManifestResponse
+	(*RevokeForensicManifestRequest)(nil),                // 535: sttattus.onyx.v1.RevokeForensicManifestRequest
+	(*RevokeForensicManifestResponse)(nil),               // 536: sttattus.onyx.v1.RevokeForensicManifestResponse
+	(*RespondForensicCaseRequest)(nil),                   // 537: sttattus.onyx.v1.RespondForensicCaseRequest
+	(*RespondForensicCaseResponse)(nil),                  // 538: sttattus.onyx.v1.RespondForensicCaseResponse
+	(*FileForensicAppealRequest)(nil),                    // 539: sttattus.onyx.v1.FileForensicAppealRequest
+	(*FileForensicAppealResponse)(nil),                   // 540: sttattus.onyx.v1.FileForensicAppealResponse
+	(*PostForensicAppealMessageRequest)(nil),             // 541: sttattus.onyx.v1.PostForensicAppealMessageRequest
+	(*PostForensicAppealMessageResponse)(nil),            // 542: sttattus.onyx.v1.PostForensicAppealMessageResponse
+	(*WithdrawForensicAppealRequest)(nil),                // 543: sttattus.onyx.v1.WithdrawForensicAppealRequest
+	(*WithdrawForensicAppealResponse)(nil),               // 544: sttattus.onyx.v1.WithdrawForensicAppealResponse
+	(*OnyxIntegrationRuntime)(nil),                       // 545: sttattus.onyx.v1.OnyxIntegrationRuntime
+	(*OnyxIntegrationClient)(nil),                        // 546: sttattus.onyx.v1.OnyxIntegrationClient
+	(*OnyxIntegrationGrant)(nil),                         // 547: sttattus.onyx.v1.OnyxIntegrationGrant
+	(*OnyxIntegrationCall)(nil),                          // 548: sttattus.onyx.v1.OnyxIntegrationCall
+	(*OnyxIntegrationConnectorDefinition)(nil),           // 549: sttattus.onyx.v1.OnyxIntegrationConnectorDefinition
+	(*OnyxIntegrationConnectorAccount)(nil),              // 550: sttattus.onyx.v1.OnyxIntegrationConnectorAccount
+	(*OnyxIntegrationConnectorRun)(nil),                  // 551: sttattus.onyx.v1.OnyxIntegrationConnectorRun
+	(*OnyxIntegrationArtifact)(nil),                      // 552: sttattus.onyx.v1.OnyxIntegrationArtifact
+	(*OnyxIntegrationConflict)(nil),                      // 553: sttattus.onyx.v1.OnyxIntegrationConflict
+	(*OnyxIntegrationBridgeDispatch)(nil),                // 554: sttattus.onyx.v1.OnyxIntegrationBridgeDispatch
+	(*OnyxIntegrationBridgeSource)(nil),                  // 555: sttattus.onyx.v1.OnyxIntegrationBridgeSource
+	(*OnyxIntegrationOperationsCase)(nil),                // 556: sttattus.onyx.v1.OnyxIntegrationOperationsCase
+	(*GetIntegrationDashboardRequest)(nil),               // 557: sttattus.onyx.v1.GetIntegrationDashboardRequest
+	(*GetIntegrationDashboardResponse)(nil),              // 558: sttattus.onyx.v1.GetIntegrationDashboardResponse
+	(*AuthorizeIntegrationRequest)(nil),                  // 559: sttattus.onyx.v1.AuthorizeIntegrationRequest
+	(*AuthorizeIntegrationResponse)(nil),                 // 560: sttattus.onyx.v1.AuthorizeIntegrationResponse
+	(*RevokeIntegrationGrantRequest)(nil),                // 561: sttattus.onyx.v1.RevokeIntegrationGrantRequest
+	(*RevokeIntegrationGrantResponse)(nil),               // 562: sttattus.onyx.v1.RevokeIntegrationGrantResponse
+	(*UpsertIntegrationConnectorRequest)(nil),            // 563: sttattus.onyx.v1.UpsertIntegrationConnectorRequest
+	(*UpsertIntegrationConnectorResponse)(nil),           // 564: sttattus.onyx.v1.UpsertIntegrationConnectorResponse
+	(*SetIntegrationConnectorStateRequest)(nil),          // 565: sttattus.onyx.v1.SetIntegrationConnectorStateRequest
+	(*SetIntegrationConnectorStateResponse)(nil),         // 566: sttattus.onyx.v1.SetIntegrationConnectorStateResponse
+	(*RunIntegrationConnectorRequest)(nil),               // 567: sttattus.onyx.v1.RunIntegrationConnectorRequest
+	(*RunIntegrationConnectorResponse)(nil),              // 568: sttattus.onyx.v1.RunIntegrationConnectorResponse
+	(*GetIntegrationArtifactRequest)(nil),                // 569: sttattus.onyx.v1.GetIntegrationArtifactRequest
+	(*GetIntegrationArtifactResponse)(nil),               // 570: sttattus.onyx.v1.GetIntegrationArtifactResponse
+	(*ResolveIntegrationConflictRequest)(nil),            // 571: sttattus.onyx.v1.ResolveIntegrationConflictRequest
+	(*ResolveIntegrationConflictResponse)(nil),           // 572: sttattus.onyx.v1.ResolveIntegrationConflictResponse
+	(*DispatchIntegrationBridgeRequest)(nil),             // 573: sttattus.onyx.v1.DispatchIntegrationBridgeRequest
+	(*DispatchIntegrationBridgeResponse)(nil),            // 574: sttattus.onyx.v1.DispatchIntegrationBridgeResponse
+	(*SubmitIntegrationOperationsCaseRequest)(nil),       // 575: sttattus.onyx.v1.SubmitIntegrationOperationsCaseRequest
+	(*SubmitIntegrationOperationsCaseResponse)(nil),      // 576: sttattus.onyx.v1.SubmitIntegrationOperationsCaseResponse
+	(*SpatialCanvasSourceAnchor)(nil),                    // 577: sttattus.onyx.v1.SpatialCanvasSourceAnchor
+	(*SpatialCanvasTemplate)(nil),                        // 578: sttattus.onyx.v1.SpatialCanvasTemplate
+	(*SpatialCanvasWorkspace)(nil),                       // 579: sttattus.onyx.v1.SpatialCanvasWorkspace
+	(*SpatialCanvasSummary)(nil),                         // 580: sttattus.onyx.v1.SpatialCanvasSummary
+	(*SpatialCanvasNode)(nil),                            // 581: sttattus.onyx.v1.SpatialCanvasNode
+	(*SpatialCanvasEdge)(nil),                            // 582: sttattus.onyx.v1.SpatialCanvasEdge
+	(*SpatialCanvasLayoutRevision)(nil),                  // 583: sttattus.onyx.v1.SpatialCanvasLayoutRevision
+	(*SpatialCanvasConflict)(nil),                        // 584: sttattus.onyx.v1.SpatialCanvasConflict
+	(*SpatialCanvasSnapshot)(nil),                        // 585: sttattus.onyx.v1.SpatialCanvasSnapshot
+	(*SpatialCanvasComment)(nil),                         // 586: sttattus.onyx.v1.SpatialCanvasComment
+	(*SpatialCanvasProposal)(nil),                        // 587: sttattus.onyx.v1.SpatialCanvasProposal
+	(*SpatialCanvasExport)(nil),                          // 588: sttattus.onyx.v1.SpatialCanvasExport
+	(*SpatialCanvasOperation)(nil),                       // 589: sttattus.onyx.v1.SpatialCanvasOperation
+	(*SpatialCanvasDetail)(nil),                          // 590: sttattus.onyx.v1.SpatialCanvasDetail
+	(*GetSpatialCanvasDashboardRequest)(nil),             // 591: sttattus.onyx.v1.GetSpatialCanvasDashboardRequest
+	(*GetSpatialCanvasDashboardResponse)(nil),            // 592: sttattus.onyx.v1.GetSpatialCanvasDashboardResponse
+	(*ListSpatialCanvasTemplatesRequest)(nil),            // 593: sttattus.onyx.v1.ListSpatialCanvasTemplatesRequest
+	(*ListSpatialCanvasTemplatesResponse)(nil),           // 594: sttattus.onyx.v1.ListSpatialCanvasTemplatesResponse
+	(*CreateSpatialCanvasRequest)(nil),                   // 595: sttattus.onyx.v1.CreateSpatialCanvasRequest
+	(*CreateSpatialCanvasResponse)(nil),                  // 596: sttattus.onyx.v1.CreateSpatialCanvasResponse
+	(*GetSpatialCanvasRequest)(nil),                      // 597: sttattus.onyx.v1.GetSpatialCanvasRequest
+	(*GetSpatialCanvasResponse)(nil),                     // 598: sttattus.onyx.v1.GetSpatialCanvasResponse
+	(*ApplySpatialCanvasOperationsRequest)(nil),          // 599: sttattus.onyx.v1.ApplySpatialCanvasOperationsRequest
+	(*ApplySpatialCanvasOperationsResponse)(nil),         // 600: sttattus.onyx.v1.ApplySpatialCanvasOperationsResponse
+	(*ResolveSpatialCanvasConflictRequest)(nil),          // 601: sttattus.onyx.v1.ResolveSpatialCanvasConflictRequest
+	(*ResolveSpatialCanvasConflictResponse)(nil),         // 602: sttattus.onyx.v1.ResolveSpatialCanvasConflictResponse
+	(*CreateSpatialCanvasSnapshotRequest)(nil),           // 603: sttattus.onyx.v1.CreateSpatialCanvasSnapshotRequest
+	(*CreateSpatialCanvasSnapshotResponse)(nil),          // 604: sttattus.onyx.v1.CreateSpatialCanvasSnapshotResponse
+	(*RestoreSpatialCanvasSnapshotRequest)(nil),          // 605: sttattus.onyx.v1.RestoreSpatialCanvasSnapshotRequest
+	(*RestoreSpatialCanvasSnapshotResponse)(nil),         // 606: sttattus.onyx.v1.RestoreSpatialCanvasSnapshotResponse
+	(*UpsertSpatialCanvasCommentRequest)(nil),            // 607: sttattus.onyx.v1.UpsertSpatialCanvasCommentRequest
+	(*UpsertSpatialCanvasCommentResponse)(nil),           // 608: sttattus.onyx.v1.UpsertSpatialCanvasCommentResponse
+	(*SetSpatialCanvasCommentStateRequest)(nil),          // 609: sttattus.onyx.v1.SetSpatialCanvasCommentStateRequest
+	(*SetSpatialCanvasCommentStateResponse)(nil),         // 610: sttattus.onyx.v1.SetSpatialCanvasCommentStateResponse
+	(*GenerateSpatialCanvasProposalsRequest)(nil),        // 611: sttattus.onyx.v1.GenerateSpatialCanvasProposalsRequest
+	(*GenerateSpatialCanvasProposalsResponse)(nil),       // 612: sttattus.onyx.v1.GenerateSpatialCanvasProposalsResponse
+	(*SetSpatialCanvasProposalStateRequest)(nil),         // 613: sttattus.onyx.v1.SetSpatialCanvasProposalStateRequest
+	(*SetSpatialCanvasProposalStateResponse)(nil),        // 614: sttattus.onyx.v1.SetSpatialCanvasProposalStateResponse
+	(*RequestSpatialCanvasExportRequest)(nil),            // 615: sttattus.onyx.v1.RequestSpatialCanvasExportRequest
+	(*RequestSpatialCanvasExportResponse)(nil),           // 616: sttattus.onyx.v1.RequestSpatialCanvasExportResponse
+	(*GetSpatialCanvasExportRequest)(nil),                // 617: sttattus.onyx.v1.GetSpatialCanvasExportRequest
+	(*GetSpatialCanvasExportResponse)(nil),               // 618: sttattus.onyx.v1.GetSpatialCanvasExportResponse
+	(*UpsertSpatialCanvasCollaboratorRequest)(nil),       // 619: sttattus.onyx.v1.UpsertSpatialCanvasCollaboratorRequest
+	(*UpsertSpatialCanvasCollaboratorResponse)(nil),      // 620: sttattus.onyx.v1.UpsertSpatialCanvasCollaboratorResponse
+	(*ReportSpatialCanvasAbuseRequest)(nil),              // 621: sttattus.onyx.v1.ReportSpatialCanvasAbuseRequest
+	(*ReportSpatialCanvasAbuseResponse)(nil),             // 622: sttattus.onyx.v1.ReportSpatialCanvasAbuseResponse
+	(*RecallSourceAnchor)(nil),                           // 623: sttattus.onyx.v1.RecallSourceAnchor
+	(*RecallDeck)(nil),                                   // 624: sttattus.onyx.v1.RecallDeck
+	(*RecallPromptVariant)(nil),                          // 625: sttattus.onyx.v1.RecallPromptVariant
+	(*RecallSchedule)(nil),                               // 626: sttattus.onyx.v1.RecallSchedule
+	(*MemoryItem)(nil),                                   // 627: sttattus.onyx.v1.MemoryItem
+	(*RecallReviewEvent)(nil),                            // 628: sttattus.onyx.v1.RecallReviewEvent
+	(*RecallSourceInvalidation)(nil),                     // 629: sttattus.onyx.v1.RecallSourceInvalidation
+	(*RecallRetentionMeasure)(nil),                       // 630: sttattus.onyx.v1.RecallRetentionMeasure
+	(*RecallPreferences)(nil),                            // 631: sttattus.onyx.v1.RecallPreferences
+	(*GetRecallDashboardRequest)(nil),                    // 632: sttattus.onyx.v1.GetRecallDashboardRequest
+	(*GetRecallDashboardResponse)(nil),                   // 633: sttattus.onyx.v1.GetRecallDashboardResponse
+	(*ListRecallDecksRequest)(nil),                       // 634: sttattus.onyx.v1.ListRecallDecksRequest
+	(*ListRecallDecksResponse)(nil),                      // 635: sttattus.onyx.v1.ListRecallDecksResponse
+	(*ListMemoryItemsRequest)(nil),                       // 636: sttattus.onyx.v1.ListMemoryItemsRequest
+	(*ListMemoryItemsResponse)(nil),                      // 637: sttattus.onyx.v1.ListMemoryItemsResponse
+	(*UpsertRecallDeckRequest)(nil),                      // 638: sttattus.onyx.v1.UpsertRecallDeckRequest
+	(*UpsertRecallDeckResponse)(nil),                     // 639: sttattus.onyx.v1.UpsertRecallDeckResponse
+	(*GenerateRecallItemsRequest)(nil),                   // 640: sttattus.onyx.v1.GenerateRecallItemsRequest
+	(*GenerateRecallItemsResponse)(nil),                  // 641: sttattus.onyx.v1.GenerateRecallItemsResponse
+	(*UpsertMemoryItemRequest)(nil),                      // 642: sttattus.onyx.v1.UpsertMemoryItemRequest
+	(*UpsertMemoryItemResponse)(nil),                     // 643: sttattus.onyx.v1.UpsertMemoryItemResponse
+	(*SetMemoryItemStateRequest)(nil),                    // 644: sttattus.onyx.v1.SetMemoryItemStateRequest
+	(*SetMemoryItemStateResponse)(nil),                   // 645: sttattus.onyx.v1.SetMemoryItemStateResponse
+	(*GetRecallReviewQueueRequest)(nil),                  // 646: sttattus.onyx.v1.GetRecallReviewQueueRequest
+	(*GetRecallReviewQueueResponse)(nil),                 // 647: sttattus.onyx.v1.GetRecallReviewQueueResponse
+	(*RecordRecallReviewBatchRequest)(nil),               // 648: sttattus.onyx.v1.RecordRecallReviewBatchRequest
+	(*RecordRecallReviewBatchResponse)(nil),              // 649: sttattus.onyx.v1.RecordRecallReviewBatchResponse
+	(*ResolveRecallInvalidationRequest)(nil),             // 650: sttattus.onyx.v1.ResolveRecallInvalidationRequest
+	(*ResolveRecallInvalidationResponse)(nil),            // 651: sttattus.onyx.v1.ResolveRecallInvalidationResponse
+	(*UpdateRecallPreferencesRequest)(nil),               // 652: sttattus.onyx.v1.UpdateRecallPreferencesRequest
+	(*UpdateRecallPreferencesResponse)(nil),              // 653: sttattus.onyx.v1.UpdateRecallPreferencesResponse
+	(*ExportRecallDataRequest)(nil),                      // 654: sttattus.onyx.v1.ExportRecallDataRequest
+	(*ExportRecallDataResponse)(nil),                     // 655: sttattus.onyx.v1.ExportRecallDataResponse
+	(*ImportRecallDataRequest)(nil),                      // 656: sttattus.onyx.v1.ImportRecallDataRequest
+	(*ImportRecallDataResponse)(nil),                     // 657: sttattus.onyx.v1.ImportRecallDataResponse
+	(*ReportRecallItemRequest)(nil),                      // 658: sttattus.onyx.v1.ReportRecallItemRequest
+	(*ReportRecallItemResponse)(nil),                     // 659: sttattus.onyx.v1.ReportRecallItemResponse
+	(*RecordRecallTransferRequest)(nil),                  // 660: sttattus.onyx.v1.RecordRecallTransferRequest
+	(*RecordRecallTransferResponse)(nil),                 // 661: sttattus.onyx.v1.RecordRecallTransferResponse
+	(*DraftTemplate)(nil),                                // 662: sttattus.onyx.v1.DraftTemplate
+	(*DraftStyle)(nil),                                   // 663: sttattus.onyx.v1.DraftStyle
+	(*DraftCitation)(nil),                                // 664: sttattus.onyx.v1.DraftCitation
+	(*DraftBlock)(nil),                                   // 665: sttattus.onyx.v1.DraftBlock
+	(*DraftRevision)(nil),                                // 666: sttattus.onyx.v1.DraftRevision
+	(*DraftBlockChange)(nil),                             // 667: sttattus.onyx.v1.DraftBlockChange
+	(*DraftRevisionComparison)(nil),                      // 668: sttattus.onyx.v1.DraftRevisionComparison
+	(*DraftBranch)(nil),                                  // 669: sttattus.onyx.v1.DraftBranch
+	(*DraftSuggestion)(nil),                              // 670: sttattus.onyx.v1.DraftSuggestion
+	(*DraftConflict)(nil),                                // 671: sttattus.onyx.v1.DraftConflict
+	(*DraftExport)(nil),                                  // 672: sttattus.onyx.v1.DraftExport
+	(*DraftHandoff)(nil),                                 // 673: sttattus.onyx.v1.DraftHandoff
+	(*DraftDocument)(nil),                                // 674: sttattus.onyx.v1.DraftDocument
+	(*DraftingDashboard)(nil),                            // 675: sttattus.onyx.v1.DraftingDashboard
+	(*GetDraftingDashboardRequest)(nil),                  // 676: sttattus.onyx.v1.GetDraftingDashboardRequest
+	(*GetDraftingDashboardResponse)(nil),                 // 677: sttattus.onyx.v1.GetDraftingDashboardResponse
+	(*ListDraftsRequest)(nil),                            // 678: sttattus.onyx.v1.ListDraftsRequest
+	(*ListDraftsResponse)(nil),                           // 679: sttattus.onyx.v1.ListDraftsResponse
+	(*GetDraftRequest)(nil),                              // 680: sttattus.onyx.v1.GetDraftRequest
+	(*GetDraftResponse)(nil),                             // 681: sttattus.onyx.v1.GetDraftResponse
+	(*CreateDraftRequest)(nil),                           // 682: sttattus.onyx.v1.CreateDraftRequest
+	(*CreateDraftResponse)(nil),                          // 683: sttattus.onyx.v1.CreateDraftResponse
+	(*UpsertDraftBlockRequest)(nil),                      // 684: sttattus.onyx.v1.UpsertDraftBlockRequest
+	(*UpsertDraftBlockResponse)(nil),                     // 685: sttattus.onyx.v1.UpsertDraftBlockResponse
+	(*DeleteDraftBlockRequest)(nil),                      // 686: sttattus.onyx.v1.DeleteDraftBlockRequest
+	(*DeleteDraftBlockResponse)(nil),                     // 687: sttattus.onyx.v1.DeleteDraftBlockResponse
+	(*UpsertDraftCitationRequest)(nil),                   // 688: sttattus.onyx.v1.UpsertDraftCitationRequest
+	(*UpsertDraftCitationResponse)(nil),                  // 689: sttattus.onyx.v1.UpsertDraftCitationResponse
+	(*VerifyDraftRequest)(nil),                           // 690: sttattus.onyx.v1.VerifyDraftRequest
+	(*VerifyDraftResponse)(nil),                          // 691: sttattus.onyx.v1.VerifyDraftResponse
+	(*DraftEvidencePreview)(nil),                         // 692: sttattus.onyx.v1.DraftEvidencePreview
+	(*DraftClaimDiagnostic)(nil),                         // 693: sttattus.onyx.v1.DraftClaimDiagnostic
+	(*DraftEvidenceReview)(nil),                          // 694: sttattus.onyx.v1.DraftEvidenceReview
+	(*GetDraftEvidenceReviewRequest)(nil),                // 695: sttattus.onyx.v1.GetDraftEvidenceReviewRequest
+	(*GetDraftEvidenceReviewResponse)(nil),               // 696: sttattus.onyx.v1.GetDraftEvidenceReviewResponse
+	(*CompareDraftEvidenceRequest)(nil),                  // 697: sttattus.onyx.v1.CompareDraftEvidenceRequest
+	(*DraftEvidenceComparison)(nil),                      // 698: sttattus.onyx.v1.DraftEvidenceComparison
+	(*CompareDraftEvidenceResponse)(nil),                 // 699: sttattus.onyx.v1.CompareDraftEvidenceResponse
+	(*CreateDraftRevisionRequest)(nil),                   // 700: sttattus.onyx.v1.CreateDraftRevisionRequest
+	(*CreateDraftRevisionResponse)(nil),                  // 701: sttattus.onyx.v1.CreateDraftRevisionResponse
+	(*CreateDraftBranchRequest)(nil),                     // 702: sttattus.onyx.v1.CreateDraftBranchRequest
+	(*CreateDraftBranchResponse)(nil),                    // 703: sttattus.onyx.v1.CreateDraftBranchResponse
+	(*RestoreDraftRevisionRequest)(nil),                  // 704: sttattus.onyx.v1.RestoreDraftRevisionRequest
+	(*RestoreDraftRevisionResponse)(nil),                 // 705: sttattus.onyx.v1.RestoreDraftRevisionResponse
+	(*CompareDraftRevisionsRequest)(nil),                 // 706: sttattus.onyx.v1.CompareDraftRevisionsRequest
+	(*CompareDraftRevisionsResponse)(nil),                // 707: sttattus.onyx.v1.CompareDraftRevisionsResponse
+	(*GenerateDraftSuggestionRequest)(nil),               // 708: sttattus.onyx.v1.GenerateDraftSuggestionRequest
+	(*GenerateDraftSuggestionResponse)(nil),              // 709: sttattus.onyx.v1.GenerateDraftSuggestionResponse
+	(*SetDraftSuggestionStateRequest)(nil),               // 710: sttattus.onyx.v1.SetDraftSuggestionStateRequest
+	(*SetDraftSuggestionStateResponse)(nil),              // 711: sttattus.onyx.v1.SetDraftSuggestionStateResponse
+	(*ResolveDraftConflictRequest)(nil),                  // 712: sttattus.onyx.v1.ResolveDraftConflictRequest
+	(*ResolveDraftConflictResponse)(nil),                 // 713: sttattus.onyx.v1.ResolveDraftConflictResponse
+	(*RequestDraftExportRequest)(nil),                    // 714: sttattus.onyx.v1.RequestDraftExportRequest
+	(*RequestDraftExportResponse)(nil),                   // 715: sttattus.onyx.v1.RequestDraftExportResponse
+	(*GetDraftExportRequest)(nil),                        // 716: sttattus.onyx.v1.GetDraftExportRequest
+	(*GetDraftExportResponse)(nil),                       // 717: sttattus.onyx.v1.GetDraftExportResponse
+	(*CreateDraftHandoffRequest)(nil),                    // 718: sttattus.onyx.v1.CreateDraftHandoffRequest
+	(*CreateDraftHandoffResponse)(nil),                   // 719: sttattus.onyx.v1.CreateDraftHandoffResponse
+	(*ReportDraftIncidentRequest)(nil),                   // 720: sttattus.onyx.v1.ReportDraftIncidentRequest
+	(*ReportDraftIncidentResponse)(nil),                  // 721: sttattus.onyx.v1.ReportDraftIncidentResponse
+	(*timestamppb.Timestamp)(nil),                        // 722: google.protobuf.Timestamp
 }
 var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
-	718, // 0: sttattus.onyx.v1.OnyxProfile.verified_at:type_name -> google.protobuf.Timestamp
+	722, // 0: sttattus.onyx.v1.OnyxProfile.verified_at:type_name -> google.protobuf.Timestamp
 	15,  // 1: sttattus.onyx.v1.OnyxContent.gating:type_name -> sttattus.onyx.v1.GatingCriteria
-	718, // 2: sttattus.onyx.v1.OnyxContent.created_at:type_name -> google.protobuf.Timestamp
-	718, // 3: sttattus.onyx.v1.OnyxContent.expires_at:type_name -> google.protobuf.Timestamp
+	722, // 2: sttattus.onyx.v1.OnyxContent.created_at:type_name -> google.protobuf.Timestamp
+	722, // 3: sttattus.onyx.v1.OnyxContent.expires_at:type_name -> google.protobuf.Timestamp
 	19,  // 4: sttattus.onyx.v1.OnyxContent.document_blocks:type_name -> sttattus.onyx.v1.DocumentBlock
 	0,   // 5: sttattus.onyx.v1.OnyxContent.translation_class:type_name -> sttattus.onyx.v1.OnyxTranslationClass
 	1,   // 6: sttattus.onyx.v1.OnyxContent.translation_verification_state:type_name -> sttattus.onyx.v1.OnyxVerificationState
@@ -60363,65 +60861,65 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	0,   // 9: sttattus.onyx.v1.OnyxContentEdition.translation_class:type_name -> sttattus.onyx.v1.OnyxTranslationClass
 	1,   // 10: sttattus.onyx.v1.OnyxContentEdition.verification_state:type_name -> sttattus.onyx.v1.OnyxVerificationState
 	2,   // 11: sttattus.onyx.v1.OnyxContentEdition.availability:type_name -> sttattus.onyx.v1.OnyxEditionAvailability
-	718, // 12: sttattus.onyx.v1.OnyxContentEdition.published_at:type_name -> google.protobuf.Timestamp
-	718, // 13: sttattus.onyx.v1.OnyxContentEdition.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 14: sttattus.onyx.v1.Subscription.granted_at:type_name -> google.protobuf.Timestamp
-	718, // 15: sttattus.onyx.v1.Subscription.expires_at:type_name -> google.protobuf.Timestamp
-	718, // 16: sttattus.onyx.v1.Subscription.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 12: sttattus.onyx.v1.OnyxContentEdition.published_at:type_name -> google.protobuf.Timestamp
+	722, // 13: sttattus.onyx.v1.OnyxContentEdition.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 14: sttattus.onyx.v1.Subscription.granted_at:type_name -> google.protobuf.Timestamp
+	722, // 15: sttattus.onyx.v1.Subscription.expires_at:type_name -> google.protobuf.Timestamp
+	722, // 16: sttattus.onyx.v1.Subscription.updated_at:type_name -> google.protobuf.Timestamp
 	16,  // 17: sttattus.onyx.v1.CreateProfileResponse.profile:type_name -> sttattus.onyx.v1.OnyxProfile
 	16,  // 18: sttattus.onyx.v1.GetProfileResponse.profile:type_name -> sttattus.onyx.v1.OnyxProfile
 	17,  // 19: sttattus.onyx.v1.ListContentResponse.content:type_name -> sttattus.onyx.v1.OnyxContent
 	20,  // 20: sttattus.onyx.v1.SubscribeResponse.subscription:type_name -> sttattus.onyx.v1.Subscription
 	17,  // 21: sttattus.onyx.v1.GetContentResponse.content:type_name -> sttattus.onyx.v1.OnyxContent
-	522, // 22: sttattus.onyx.v1.GetContentResponse.forensic_manifest:type_name -> sttattus.onyx.v1.OnyxForensicManifest
+	526, // 22: sttattus.onyx.v1.GetContentResponse.forensic_manifest:type_name -> sttattus.onyx.v1.OnyxForensicManifest
 	17,  // 23: sttattus.onyx.v1.ListShelfResponse.items:type_name -> sttattus.onyx.v1.OnyxContent
 	17,  // 24: sttattus.onyx.v1.ListContinueResponse.items:type_name -> sttattus.onyx.v1.OnyxContent
 	17,  // 25: sttattus.onyx.v1.Shelf.items:type_name -> sttattus.onyx.v1.OnyxContent
 	36,  // 26: sttattus.onyx.v1.GetShelvesResponse.shelves:type_name -> sttattus.onyx.v1.Shelf
-	718, // 27: sttattus.onyx.v1.RecordProgressRequest.observed_at:type_name -> google.protobuf.Timestamp
-	718, // 28: sttattus.onyx.v1.RecordProgressResponse.observed_at:type_name -> google.protobuf.Timestamp
+	722, // 27: sttattus.onyx.v1.RecordProgressRequest.observed_at:type_name -> google.protobuf.Timestamp
+	722, // 28: sttattus.onyx.v1.RecordProgressResponse.observed_at:type_name -> google.protobuf.Timestamp
 	44,  // 29: sttattus.onyx.v1.GetCreatorResponse.creator:type_name -> sttattus.onyx.v1.CreatorProfile
 	17,  // 30: sttattus.onyx.v1.ListCreatorWorksResponse.items:type_name -> sttattus.onyx.v1.OnyxContent
 	17,  // 31: sttattus.onyx.v1.SearchContentResponse.items:type_name -> sttattus.onyx.v1.OnyxContent
-	718, // 32: sttattus.onyx.v1.Note.created_at:type_name -> google.protobuf.Timestamp
+	722, // 32: sttattus.onyx.v1.Note.created_at:type_name -> google.protobuf.Timestamp
 	53,  // 33: sttattus.onyx.v1.AddNoteResponse.note:type_name -> sttattus.onyx.v1.Note
 	53,  // 34: sttattus.onyx.v1.ListMyNotesResponse.notes:type_name -> sttattus.onyx.v1.Note
-	718, // 35: sttattus.onyx.v1.ReaderAnnotation.created_at:type_name -> google.protobuf.Timestamp
-	718, // 36: sttattus.onyx.v1.ReaderAnnotation.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 35: sttattus.onyx.v1.ReaderAnnotation.created_at:type_name -> google.protobuf.Timestamp
+	722, // 36: sttattus.onyx.v1.ReaderAnnotation.updated_at:type_name -> google.protobuf.Timestamp
 	60,  // 37: sttattus.onyx.v1.UpsertReaderAnnotationResponse.annotation:type_name -> sttattus.onyx.v1.ReaderAnnotation
 	60,  // 38: sttattus.onyx.v1.ListMyReaderAnnotationsResponse.annotations:type_name -> sttattus.onyx.v1.ReaderAnnotation
 	17,  // 39: sttattus.onyx.v1.ReaderSearchResult.content:type_name -> sttattus.onyx.v1.OnyxContent
 	60,  // 40: sttattus.onyx.v1.ReaderSearchResult.annotation:type_name -> sttattus.onyx.v1.ReaderAnnotation
 	67,  // 41: sttattus.onyx.v1.SearchReaderResponse.results:type_name -> sttattus.onyx.v1.ReaderSearchResult
-	718, // 42: sttattus.onyx.v1.IntelligenceSearchFilters.published_after:type_name -> google.protobuf.Timestamp
-	718, // 43: sttattus.onyx.v1.IntelligenceSearchFilters.published_before:type_name -> google.protobuf.Timestamp
+	722, // 42: sttattus.onyx.v1.IntelligenceSearchFilters.published_after:type_name -> google.protobuf.Timestamp
+	722, // 43: sttattus.onyx.v1.IntelligenceSearchFilters.published_before:type_name -> google.protobuf.Timestamp
 	70,  // 44: sttattus.onyx.v1.SearchIntelligenceRequest.filters:type_name -> sttattus.onyx.v1.IntelligenceSearchFilters
 	17,  // 45: sttattus.onyx.v1.IntelligenceSearchResult.content:type_name -> sttattus.onyx.v1.OnyxContent
 	60,  // 46: sttattus.onyx.v1.IntelligenceSearchResult.annotation:type_name -> sttattus.onyx.v1.ReaderAnnotation
 	72,  // 47: sttattus.onyx.v1.SearchIntelligenceResponse.results:type_name -> sttattus.onyx.v1.IntelligenceSearchResult
 	70,  // 48: sttattus.onyx.v1.OnyxSavedQuery.filters:type_name -> sttattus.onyx.v1.IntelligenceSearchFilters
-	718, // 49: sttattus.onyx.v1.OnyxSavedQuery.created_at:type_name -> google.protobuf.Timestamp
-	718, // 50: sttattus.onyx.v1.OnyxSavedQuery.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 49: sttattus.onyx.v1.OnyxSavedQuery.created_at:type_name -> google.protobuf.Timestamp
+	722, // 50: sttattus.onyx.v1.OnyxSavedQuery.updated_at:type_name -> google.protobuf.Timestamp
 	76,  // 51: sttattus.onyx.v1.ListSavedQueriesResponse.queries:type_name -> sttattus.onyx.v1.OnyxSavedQuery
 	70,  // 52: sttattus.onyx.v1.UpsertSavedQueryRequest.filters:type_name -> sttattus.onyx.v1.IntelligenceSearchFilters
 	76,  // 53: sttattus.onyx.v1.UpsertSavedQueryResponse.query:type_name -> sttattus.onyx.v1.OnyxSavedQuery
 	83,  // 54: sttattus.onyx.v1.OnyxWatchlist.terms:type_name -> sttattus.onyx.v1.OnyxWatchlistTerm
-	718, // 55: sttattus.onyx.v1.OnyxWatchlist.last_refreshed_at:type_name -> google.protobuf.Timestamp
-	718, // 56: sttattus.onyx.v1.OnyxWatchlist.created_at:type_name -> google.protobuf.Timestamp
-	718, // 57: sttattus.onyx.v1.OnyxWatchlist.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 55: sttattus.onyx.v1.OnyxWatchlist.last_refreshed_at:type_name -> google.protobuf.Timestamp
+	722, // 56: sttattus.onyx.v1.OnyxWatchlist.created_at:type_name -> google.protobuf.Timestamp
+	722, // 57: sttattus.onyx.v1.OnyxWatchlist.updated_at:type_name -> google.protobuf.Timestamp
 	84,  // 58: sttattus.onyx.v1.ListWatchlistsResponse.watchlists:type_name -> sttattus.onyx.v1.OnyxWatchlist
 	83,  // 59: sttattus.onyx.v1.UpsertWatchlistRequest.terms:type_name -> sttattus.onyx.v1.OnyxWatchlistTerm
 	84,  // 60: sttattus.onyx.v1.UpsertWatchlistResponse.watchlist:type_name -> sttattus.onyx.v1.OnyxWatchlist
 	84,  // 61: sttattus.onyx.v1.RefreshWatchlistResponse.watchlist:type_name -> sttattus.onyx.v1.OnyxWatchlist
 	17,  // 62: sttattus.onyx.v1.OnyxIntelligenceAlert.content:type_name -> sttattus.onyx.v1.OnyxContent
-	718, // 63: sttattus.onyx.v1.OnyxIntelligenceAlert.detected_at:type_name -> google.protobuf.Timestamp
+	722, // 63: sttattus.onyx.v1.OnyxIntelligenceAlert.detected_at:type_name -> google.protobuf.Timestamp
 	93,  // 64: sttattus.onyx.v1.ListIntelligenceAlertsResponse.alerts:type_name -> sttattus.onyx.v1.OnyxIntelligenceAlert
 	93,  // 65: sttattus.onyx.v1.SetIntelligenceAlertStateResponse.alert:type_name -> sttattus.onyx.v1.OnyxIntelligenceAlert
 	17,  // 66: sttattus.onyx.v1.OnyxIntelligenceQueueItem.content:type_name -> sttattus.onyx.v1.OnyxContent
 	98,  // 67: sttattus.onyx.v1.GetIntelligenceQueueResponse.items:type_name -> sttattus.onyx.v1.OnyxIntelligenceQueueItem
 	98,  // 68: sttattus.onyx.v1.RecordIntelligenceFeedbackResponse.item:type_name -> sttattus.onyx.v1.OnyxIntelligenceQueueItem
-	718, // 69: sttattus.onyx.v1.ExportReaderDataResponse.generated_at:type_name -> google.protobuf.Timestamp
-	718, // 70: sttattus.onyx.v1.ReaderSyncChange.changed_at:type_name -> google.protobuf.Timestamp
+	722, // 69: sttattus.onyx.v1.ExportReaderDataResponse.generated_at:type_name -> google.protobuf.Timestamp
+	722, // 70: sttattus.onyx.v1.ReaderSyncChange.changed_at:type_name -> google.protobuf.Timestamp
 	105, // 71: sttattus.onyx.v1.ListReaderSyncChangesResponse.changes:type_name -> sttattus.onyx.v1.ReaderSyncChange
 	17,  // 72: sttattus.onyx.v1.ListMyUnlocksResponse.items:type_name -> sttattus.onyx.v1.OnyxContent
 	44,  // 73: sttattus.onyx.v1.ListMySubscriptionsResponse.creators:type_name -> sttattus.onyx.v1.CreatorProfile
@@ -60431,23 +60929,23 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	17,  // 77: sttattus.onyx.v1.Series.parts:type_name -> sttattus.onyx.v1.OnyxContent
 	117, // 78: sttattus.onyx.v1.ListSeriesResponse.series:type_name -> sttattus.onyx.v1.Series
 	117, // 79: sttattus.onyx.v1.GetSeriesResponse.series:type_name -> sttattus.onyx.v1.Series
-	718, // 80: sttattus.onyx.v1.CaptionJob.next_attempt_at:type_name -> google.protobuf.Timestamp
+	722, // 80: sttattus.onyx.v1.CaptionJob.next_attempt_at:type_name -> google.protobuf.Timestamp
 	122, // 81: sttattus.onyx.v1.GenerateCaptionsResponse.job:type_name -> sttattus.onyx.v1.CaptionJob
 	122, // 82: sttattus.onyx.v1.GetCaptionJobResponse.job:type_name -> sttattus.onyx.v1.CaptionJob
-	718, // 83: sttattus.onyx.v1.ListeningPreferences.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 83: sttattus.onyx.v1.ListeningPreferences.updated_at:type_name -> google.protobuf.Timestamp
 	127, // 84: sttattus.onyx.v1.GetListeningPreferencesResponse.preferences:type_name -> sttattus.onyx.v1.ListeningPreferences
 	127, // 85: sttattus.onyx.v1.UpdateListeningPreferencesResponse.preferences:type_name -> sttattus.onyx.v1.ListeningPreferences
-	718, // 86: sttattus.onyx.v1.ListeningBookmark.created_at:type_name -> google.protobuf.Timestamp
-	718, // 87: sttattus.onyx.v1.ListeningBookmark.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 86: sttattus.onyx.v1.ListeningBookmark.created_at:type_name -> google.protobuf.Timestamp
+	722, // 87: sttattus.onyx.v1.ListeningBookmark.updated_at:type_name -> google.protobuf.Timestamp
 	132, // 88: sttattus.onyx.v1.CreateListeningBookmarkResponse.bookmark:type_name -> sttattus.onyx.v1.ListeningBookmark
 	132, // 89: sttattus.onyx.v1.ListListeningBookmarksResponse.bookmarks:type_name -> sttattus.onyx.v1.ListeningBookmark
 	17,  // 90: sttattus.onyx.v1.ListeningQueueEntry.content:type_name -> sttattus.onyx.v1.OnyxContent
-	718, // 91: sttattus.onyx.v1.ListeningQueueEntry.added_at:type_name -> google.protobuf.Timestamp
+	722, // 91: sttattus.onyx.v1.ListeningQueueEntry.added_at:type_name -> google.protobuf.Timestamp
 	139, // 92: sttattus.onyx.v1.ListListeningQueueResponse.entries:type_name -> sttattus.onyx.v1.ListeningQueueEntry
 	139, // 93: sttattus.onyx.v1.SetListeningQueueResponse.entries:type_name -> sttattus.onyx.v1.ListeningQueueEntry
 	144, // 94: sttattus.onyx.v1.AudioOverviewSegment.citations:type_name -> sttattus.onyx.v1.AudioOverviewCitation
-	718, // 95: sttattus.onyx.v1.AudioOverview.created_at:type_name -> google.protobuf.Timestamp
-	718, // 96: sttattus.onyx.v1.AudioOverview.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 95: sttattus.onyx.v1.AudioOverview.created_at:type_name -> google.protobuf.Timestamp
+	722, // 96: sttattus.onyx.v1.AudioOverview.updated_at:type_name -> google.protobuf.Timestamp
 	145, // 97: sttattus.onyx.v1.AudioOverview.segments:type_name -> sttattus.onyx.v1.AudioOverviewSegment
 	146, // 98: sttattus.onyx.v1.CreateAudioOverviewResponse.overview:type_name -> sttattus.onyx.v1.AudioOverview
 	146, // 99: sttattus.onyx.v1.ListAudioOverviewsResponse.overviews:type_name -> sttattus.onyx.v1.AudioOverview
@@ -60456,31 +60954,31 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	17,  // 102: sttattus.onyx.v1.GetTodaySummaryResponse.todays_drop:type_name -> sttattus.onyx.v1.OnyxContent
 	17,  // 103: sttattus.onyx.v1.CrossPillarUnlock.content:type_name -> sttattus.onyx.v1.OnyxContent
 	160, // 104: sttattus.onyx.v1.GetCrossPillarUnlocksResponse.unlocks:type_name -> sttattus.onyx.v1.CrossPillarUnlock
-	718, // 105: sttattus.onyx.v1.ConciergeMessage.created_at:type_name -> google.protobuf.Timestamp
-	718, // 106: sttattus.onyx.v1.ConciergeThread.sla_due_at:type_name -> google.protobuf.Timestamp
-	718, // 107: sttattus.onyx.v1.ConciergeThread.created_at:type_name -> google.protobuf.Timestamp
+	722, // 105: sttattus.onyx.v1.ConciergeMessage.created_at:type_name -> google.protobuf.Timestamp
+	722, // 106: sttattus.onyx.v1.ConciergeThread.sla_due_at:type_name -> google.protobuf.Timestamp
+	722, // 107: sttattus.onyx.v1.ConciergeThread.created_at:type_name -> google.protobuf.Timestamp
 	163, // 108: sttattus.onyx.v1.ConciergeThread.messages:type_name -> sttattus.onyx.v1.ConciergeMessage
 	164, // 109: sttattus.onyx.v1.StartConciergeThreadResponse.thread:type_name -> sttattus.onyx.v1.ConciergeThread
 	164, // 110: sttattus.onyx.v1.ListMyConciergeThreadsResponse.threads:type_name -> sttattus.onyx.v1.ConciergeThread
 	164, // 111: sttattus.onyx.v1.GetConciergeThreadResponse.thread:type_name -> sttattus.onyx.v1.ConciergeThread
 	163, // 112: sttattus.onyx.v1.PostConciergeMessageResponse.message:type_name -> sttattus.onyx.v1.ConciergeMessage
-	718, // 113: sttattus.onyx.v1.LiveEvent.starts_at:type_name -> google.protobuf.Timestamp
-	718, // 114: sttattus.onyx.v1.LiveEvent.ends_at:type_name -> google.protobuf.Timestamp
+	722, // 113: sttattus.onyx.v1.LiveEvent.starts_at:type_name -> google.protobuf.Timestamp
+	722, // 114: sttattus.onyx.v1.LiveEvent.ends_at:type_name -> google.protobuf.Timestamp
 	173, // 115: sttattus.onyx.v1.ListLiveEventsResponse.events:type_name -> sttattus.onyx.v1.LiveEvent
 	173, // 116: sttattus.onyx.v1.GetLiveEventResponse.event:type_name -> sttattus.onyx.v1.LiveEvent
-	718, // 117: sttattus.onyx.v1.LiveGuestInvitation.expires_at:type_name -> google.protobuf.Timestamp
-	718, // 118: sttattus.onyx.v1.LiveReservation.promoted_at:type_name -> google.protobuf.Timestamp
-	718, // 119: sttattus.onyx.v1.LiveReservation.checked_in_at:type_name -> google.protobuf.Timestamp
+	722, // 117: sttattus.onyx.v1.LiveGuestInvitation.expires_at:type_name -> google.protobuf.Timestamp
+	722, // 118: sttattus.onyx.v1.LiveReservation.promoted_at:type_name -> google.protobuf.Timestamp
+	722, // 119: sttattus.onyx.v1.LiveReservation.checked_in_at:type_name -> google.protobuf.Timestamp
 	183, // 120: sttattus.onyx.v1.LiveReservation.guest_invitations:type_name -> sttattus.onyx.v1.LiveGuestInvitation
-	718, // 121: sttattus.onyx.v1.LiveMessage.created_at:type_name -> google.protobuf.Timestamp
-	718, // 122: sttattus.onyx.v1.LiveMessage.answered_at:type_name -> google.protobuf.Timestamp
+	722, // 121: sttattus.onyx.v1.LiveMessage.created_at:type_name -> google.protobuf.Timestamp
+	722, // 122: sttattus.onyx.v1.LiveMessage.answered_at:type_name -> google.protobuf.Timestamp
 	186, // 123: sttattus.onyx.v1.LivePoll.options:type_name -> sttattus.onyx.v1.LivePollOption
-	718, // 124: sttattus.onyx.v1.LivePoll.opened_at:type_name -> google.protobuf.Timestamp
-	718, // 125: sttattus.onyx.v1.LivePoll.closed_at:type_name -> google.protobuf.Timestamp
-	718, // 126: sttattus.onyx.v1.LiveNote.created_at:type_name -> google.protobuf.Timestamp
-	718, // 127: sttattus.onyx.v1.LiveNote.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 124: sttattus.onyx.v1.LivePoll.opened_at:type_name -> google.protobuf.Timestamp
+	722, // 125: sttattus.onyx.v1.LivePoll.closed_at:type_name -> google.protobuf.Timestamp
+	722, // 126: sttattus.onyx.v1.LiveNote.created_at:type_name -> google.protobuf.Timestamp
+	722, // 127: sttattus.onyx.v1.LiveNote.updated_at:type_name -> google.protobuf.Timestamp
 	189, // 128: sttattus.onyx.v1.LiveReplay.segments:type_name -> sttattus.onyx.v1.LiveReplaySegment
-	718, // 129: sttattus.onyx.v1.LiveReplay.published_at:type_name -> google.protobuf.Timestamp
+	722, // 129: sttattus.onyx.v1.LiveReplay.published_at:type_name -> google.protobuf.Timestamp
 	173, // 130: sttattus.onyx.v1.LiveSalon.event:type_name -> sttattus.onyx.v1.LiveEvent
 	180, // 131: sttattus.onyx.v1.LiveSalon.speakers:type_name -> sttattus.onyx.v1.LiveSpeaker
 	181, // 132: sttattus.onyx.v1.LiveSalon.agenda:type_name -> sttattus.onyx.v1.LiveAgendaItem
@@ -60490,7 +60988,7 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	191, // 136: sttattus.onyx.v1.GetLiveSalonResponse.salon:type_name -> sttattus.onyx.v1.LiveSalon
 	184, // 137: sttattus.onyx.v1.UpsertLiveReservationResponse.reservation:type_name -> sttattus.onyx.v1.LiveReservation
 	183, // 138: sttattus.onyx.v1.InviteLiveGuestResponse.invitation:type_name -> sttattus.onyx.v1.LiveGuestInvitation
-	718, // 139: sttattus.onyx.v1.JoinLiveEventResponse.expires_at:type_name -> google.protobuf.Timestamp
+	722, // 139: sttattus.onyx.v1.JoinLiveEventResponse.expires_at:type_name -> google.protobuf.Timestamp
 	185, // 140: sttattus.onyx.v1.ListLiveActivityResponse.messages:type_name -> sttattus.onyx.v1.LiveMessage
 	187, // 141: sttattus.onyx.v1.ListLiveActivityResponse.polls:type_name -> sttattus.onyx.v1.LivePoll
 	185, // 142: sttattus.onyx.v1.PostLiveMessageResponse.message:type_name -> sttattus.onyx.v1.LiveMessage
@@ -60499,1088 +60997,1097 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	188, // 145: sttattus.onyx.v1.UpsertLiveNoteResponse.note:type_name -> sttattus.onyx.v1.LiveNote
 	188, // 146: sttattus.onyx.v1.ListLiveNotesResponse.notes:type_name -> sttattus.onyx.v1.LiveNote
 	190, // 147: sttattus.onyx.v1.GetLiveReplayResponse.replay:type_name -> sttattus.onyx.v1.LiveReplay
-	718, // 148: sttattus.onyx.v1.PosthumousArchive.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 148: sttattus.onyx.v1.PosthumousArchive.updated_at:type_name -> google.protobuf.Timestamp
 	222, // 149: sttattus.onyx.v1.SetPosthumousArchiveResponse.archive:type_name -> sttattus.onyx.v1.PosthumousArchive
 	222, // 150: sttattus.onyx.v1.GetPosthumousArchiveResponse.archive:type_name -> sttattus.onyx.v1.PosthumousArchive
 	17,  // 151: sttattus.onyx.v1.Anthology.pieces:type_name -> sttattus.onyx.v1.OnyxContent
 	227, // 152: sttattus.onyx.v1.ListAnthologiesResponse.anthologies:type_name -> sttattus.onyx.v1.Anthology
 	227, // 153: sttattus.onyx.v1.GetAnthologyResponse.anthology:type_name -> sttattus.onyx.v1.Anthology
-	718, // 154: sttattus.onyx.v1.ShareLink.expires_at:type_name -> google.protobuf.Timestamp
+	722, // 154: sttattus.onyx.v1.ShareLink.expires_at:type_name -> google.protobuf.Timestamp
 	232, // 155: sttattus.onyx.v1.CreateShareLinkResponse.link:type_name -> sttattus.onyx.v1.ShareLink
 	232, // 156: sttattus.onyx.v1.ListMyShareLinksResponse.links:type_name -> sttattus.onyx.v1.ShareLink
 	13,  // 157: sttattus.onyx.v1.EncryptedRendition.status:type_name -> sttattus.onyx.v1.EncryptedRendition.RenditionStatus
-	718, // 158: sttattus.onyx.v1.EncryptedRendition.url_expires_at:type_name -> google.protobuf.Timestamp
+	722, // 158: sttattus.onyx.v1.EncryptedRendition.url_expires_at:type_name -> google.protobuf.Timestamp
 	14,  // 159: sttattus.onyx.v1.EncryptedRendition.package_type:type_name -> sttattus.onyx.v1.EncryptedRendition.OfflinePackageType
-	522, // 160: sttattus.onyx.v1.EncryptedRendition.forensic_manifest:type_name -> sttattus.onyx.v1.OnyxForensicManifest
+	526, // 160: sttattus.onyx.v1.EncryptedRendition.forensic_manifest:type_name -> sttattus.onyx.v1.OnyxForensicManifest
 	17,  // 161: sttattus.onyx.v1.GetOfflineManifestResponse.items:type_name -> sttattus.onyx.v1.OnyxContent
 	239, // 162: sttattus.onyx.v1.GetOfflineManifestResponse.encrypted_renditions:type_name -> sttattus.onyx.v1.EncryptedRendition
-	718, // 163: sttattus.onyx.v1.GetOfflineManifestResponse.grant_expires_at:type_name -> google.protobuf.Timestamp
-	718, // 164: sttattus.onyx.v1.RegisterDeviceResponse.expires_at:type_name -> google.protobuf.Timestamp
-	718, // 165: sttattus.onyx.v1.DeviceGrantInfo.created_at:type_name -> google.protobuf.Timestamp
-	718, // 166: sttattus.onyx.v1.DeviceGrantInfo.expires_at:type_name -> google.protobuf.Timestamp
-	718, // 167: sttattus.onyx.v1.DeviceGrantInfo.last_sync_at:type_name -> google.protobuf.Timestamp
+	722, // 163: sttattus.onyx.v1.GetOfflineManifestResponse.grant_expires_at:type_name -> google.protobuf.Timestamp
+	722, // 164: sttattus.onyx.v1.RegisterDeviceResponse.expires_at:type_name -> google.protobuf.Timestamp
+	722, // 165: sttattus.onyx.v1.DeviceGrantInfo.created_at:type_name -> google.protobuf.Timestamp
+	722, // 166: sttattus.onyx.v1.DeviceGrantInfo.expires_at:type_name -> google.protobuf.Timestamp
+	722, // 167: sttattus.onyx.v1.DeviceGrantInfo.last_sync_at:type_name -> google.protobuf.Timestamp
 	247, // 168: sttattus.onyx.v1.GetDeviceGrantsResponse.grants:type_name -> sttattus.onyx.v1.DeviceGrantInfo
-	718, // 169: sttattus.onyx.v1.GetPurgeReceiptResponse.created_at:type_name -> google.protobuf.Timestamp
-	718, // 170: sttattus.onyx.v1.OfflineManifestItemInfo.created_at:type_name -> google.protobuf.Timestamp
+	722, // 169: sttattus.onyx.v1.GetPurgeReceiptResponse.created_at:type_name -> google.protobuf.Timestamp
+	722, // 170: sttattus.onyx.v1.OfflineManifestItemInfo.created_at:type_name -> google.protobuf.Timestamp
 	256, // 171: sttattus.onyx.v1.ListOfflineManifestItemsResponse.items:type_name -> sttattus.onyx.v1.OfflineManifestItemInfo
-	718, // 172: sttattus.onyx.v1.RefreshedRendition.expires_at:type_name -> google.protobuf.Timestamp
+	722, // 172: sttattus.onyx.v1.RefreshedRendition.expires_at:type_name -> google.protobuf.Timestamp
 	259, // 173: sttattus.onyx.v1.RefreshOfflineRenditionsResponse.renditions:type_name -> sttattus.onyx.v1.RefreshedRendition
 	265, // 174: sttattus.onyx.v1.GetYearInOnyxResponse.latest_archive:type_name -> sttattus.onyx.v1.AnnualArchive
-	718, // 175: sttattus.onyx.v1.AnnualArchive.generated_at:type_name -> google.protobuf.Timestamp
-	718, // 176: sttattus.onyx.v1.GenerateAnnualArchiveResponse.generated_at:type_name -> google.protobuf.Timestamp
-	718, // 177: sttattus.onyx.v1.IngestionItem.created_at:type_name -> google.protobuf.Timestamp
-	718, // 178: sttattus.onyx.v1.IngestionItem.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 175: sttattus.onyx.v1.AnnualArchive.generated_at:type_name -> google.protobuf.Timestamp
+	722, // 176: sttattus.onyx.v1.GenerateAnnualArchiveResponse.generated_at:type_name -> google.protobuf.Timestamp
+	722, // 177: sttattus.onyx.v1.IngestionItem.created_at:type_name -> google.protobuf.Timestamp
+	722, // 178: sttattus.onyx.v1.IngestionItem.updated_at:type_name -> google.protobuf.Timestamp
 	270, // 179: sttattus.onyx.v1.CreateIngestionItemResponse.item:type_name -> sttattus.onyx.v1.IngestionItem
 	270, // 180: sttattus.onyx.v1.ListMyIngestionItemsResponse.items:type_name -> sttattus.onyx.v1.IngestionItem
 	270, // 181: sttattus.onyx.v1.GetIngestionItemResponse.item:type_name -> sttattus.onyx.v1.IngestionItem
 	270, // 182: sttattus.onyx.v1.RetryIngestionItemResponse.item:type_name -> sttattus.onyx.v1.IngestionItem
 	270, // 183: sttattus.onyx.v1.SetIngestionItemStateResponse.item:type_name -> sttattus.onyx.v1.IngestionItem
 	270, // 184: sttattus.onyx.v1.ResolveIngestionDuplicateResponse.item:type_name -> sttattus.onyx.v1.IngestionItem
-	718, // 185: sttattus.onyx.v1.EvidenceSource.published_at:type_name -> google.protobuf.Timestamp
-	718, // 186: sttattus.onyx.v1.EvidenceSource.retrieved_at:type_name -> google.protobuf.Timestamp
-	284, // 187: sttattus.onyx.v1.EvidenceClaim.citations:type_name -> sttattus.onyx.v1.EvidenceCitation
-	718, // 188: sttattus.onyx.v1.EvidenceCorrection.effective_at:type_name -> google.protobuf.Timestamp
-	718, // 189: sttattus.onyx.v1.EvidenceCorrection.published_at:type_name -> google.protobuf.Timestamp
-	283, // 190: sttattus.onyx.v1.GetEvidenceWorkspaceResponse.sources:type_name -> sttattus.onyx.v1.EvidenceSource
-	285, // 191: sttattus.onyx.v1.GetEvidenceWorkspaceResponse.claims:type_name -> sttattus.onyx.v1.EvidenceClaim
-	286, // 192: sttattus.onyx.v1.GetEvidenceWorkspaceResponse.corrections:type_name -> sttattus.onyx.v1.EvidenceCorrection
-	284, // 193: sttattus.onyx.v1.BriefPoint.citations:type_name -> sttattus.onyx.v1.EvidenceCitation
-	289, // 194: sttattus.onyx.v1.EvidenceBrief.points:type_name -> sttattus.onyx.v1.BriefPoint
-	718, // 195: sttattus.onyx.v1.EvidenceBrief.cutoff_at:type_name -> google.protobuf.Timestamp
-	718, // 196: sttattus.onyx.v1.EvidenceBrief.generated_at:type_name -> google.protobuf.Timestamp
-	286, // 197: sttattus.onyx.v1.EvidenceBrief.corrections:type_name -> sttattus.onyx.v1.EvidenceCorrection
-	718, // 198: sttattus.onyx.v1.CreateEvidenceBriefRequest.cutoff_at:type_name -> google.protobuf.Timestamp
-	290, // 199: sttattus.onyx.v1.CreateEvidenceBriefResponse.brief:type_name -> sttattus.onyx.v1.EvidenceBrief
-	290, // 200: sttattus.onyx.v1.ListMyEvidenceBriefsResponse.briefs:type_name -> sttattus.onyx.v1.EvidenceBrief
-	290, // 201: sttattus.onyx.v1.GetEvidenceBriefResponse.brief:type_name -> sttattus.onyx.v1.EvidenceBrief
-	718, // 202: sttattus.onyx.v1.CreatorContract.starts_at:type_name -> google.protobuf.Timestamp
-	718, // 203: sttattus.onyx.v1.CreatorContract.ends_at:type_name -> google.protobuf.Timestamp
-	718, // 204: sttattus.onyx.v1.CreatorContract.signed_at:type_name -> google.protobuf.Timestamp
-	718, // 205: sttattus.onyx.v1.EditorialReview.reviewed_at:type_name -> google.protobuf.Timestamp
-	718, // 206: sttattus.onyx.v1.EditorialComment.created_at:type_name -> google.protobuf.Timestamp
-	718, // 207: sttattus.onyx.v1.EditorialProject.submitted_at:type_name -> google.protobuf.Timestamp
-	718, // 208: sttattus.onyx.v1.EditorialProject.publish_at:type_name -> google.protobuf.Timestamp
-	718, // 209: sttattus.onyx.v1.EditorialProject.rights_expire_at:type_name -> google.protobuf.Timestamp
-	718, // 210: sttattus.onyx.v1.EditorialProject.published_at:type_name -> google.protobuf.Timestamp
-	298, // 211: sttattus.onyx.v1.EditorialProject.reviews:type_name -> sttattus.onyx.v1.EditorialReview
-	299, // 212: sttattus.onyx.v1.EditorialProject.comments:type_name -> sttattus.onyx.v1.EditorialComment
-	718, // 213: sttattus.onyx.v1.EditorialProject.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 214: sttattus.onyx.v1.CreatorStatement.paid_at:type_name -> google.protobuf.Timestamp
-	16,  // 215: sttattus.onyx.v1.CreatorStudio.profile:type_name -> sttattus.onyx.v1.OnyxProfile
-	297, // 216: sttattus.onyx.v1.CreatorStudio.contracts:type_name -> sttattus.onyx.v1.CreatorContract
-	300, // 217: sttattus.onyx.v1.CreatorStudio.projects:type_name -> sttattus.onyx.v1.EditorialProject
-	301, // 218: sttattus.onyx.v1.CreatorStudio.statements:type_name -> sttattus.onyx.v1.CreatorStatement
-	302, // 219: sttattus.onyx.v1.CreatorStudio.metrics:type_name -> sttattus.onyx.v1.CreatorMetric
-	303, // 220: sttattus.onyx.v1.GetCreatorStudioResponse.studio:type_name -> sttattus.onyx.v1.CreatorStudio
-	300, // 221: sttattus.onyx.v1.SubmitCreatorPitchResponse.project:type_name -> sttattus.onyx.v1.EditorialProject
-	300, // 222: sttattus.onyx.v1.UpdateCreatorProjectResponse.project:type_name -> sttattus.onyx.v1.EditorialProject
-	300, // 223: sttattus.onyx.v1.SubmitCreatorProjectResponse.project:type_name -> sttattus.onyx.v1.EditorialProject
-	297, // 224: sttattus.onyx.v1.SignCreatorContractResponse.contract:type_name -> sttattus.onyx.v1.CreatorContract
-	20,  // 225: sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedResponse.subscriptions:type_name -> sttattus.onyx.v1.Subscription
-	20,  // 226: sttattus.onyx.v1.CancelCreatorSubscriptionResponse.subscription:type_name -> sttattus.onyx.v1.Subscription
-	718, // 227: sttattus.onyx.v1.CommerceInvoice.issued_at:type_name -> google.protobuf.Timestamp
-	718, // 228: sttattus.onyx.v1.CommerceInvoice.paid_at:type_name -> google.protobuf.Timestamp
-	718, // 229: sttattus.onyx.v1.CommerceCase.created_at:type_name -> google.protobuf.Timestamp
-	718, // 230: sttattus.onyx.v1.CommerceCase.resolved_at:type_name -> google.protobuf.Timestamp
-	318, // 231: sttattus.onyx.v1.GetMyCommerceResponse.invoices:type_name -> sttattus.onyx.v1.CommerceInvoice
-	319, // 232: sttattus.onyx.v1.GetMyCommerceResponse.cases:type_name -> sttattus.onyx.v1.CommerceCase
-	20,  // 233: sttattus.onyx.v1.GetMyCommerceResponse.creator_subscriptions:type_name -> sttattus.onyx.v1.Subscription
-	319, // 234: sttattus.onyx.v1.CreateCommerceCaseResponse.commerce_case:type_name -> sttattus.onyx.v1.CommerceCase
-	718, // 235: sttattus.onyx.v1.ResearchRoomMember.expires_at:type_name -> google.protobuf.Timestamp
-	718, // 236: sttattus.onyx.v1.ResearchRoomMember.invited_at:type_name -> google.protobuf.Timestamp
-	718, // 237: sttattus.onyx.v1.ResearchRoomMember.joined_at:type_name -> google.protobuf.Timestamp
-	718, // 238: sttattus.onyx.v1.ResearchRoomMember.revoked_at:type_name -> google.protobuf.Timestamp
-	324, // 239: sttattus.onyx.v1.ResearchRoom.policy:type_name -> sttattus.onyx.v1.ResearchRoomPolicy
-	718, // 240: sttattus.onyx.v1.ResearchRoom.created_at:type_name -> google.protobuf.Timestamp
-	718, // 241: sttattus.onyx.v1.ResearchRoom.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 242: sttattus.onyx.v1.ResearchRoomItem.created_at:type_name -> google.protobuf.Timestamp
-	718, // 243: sttattus.onyx.v1.ResearchRoomItem.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 244: sttattus.onyx.v1.ResearchRoomThread.resolved_at:type_name -> google.protobuf.Timestamp
-	718, // 245: sttattus.onyx.v1.ResearchRoomThread.created_at:type_name -> google.protobuf.Timestamp
-	718, // 246: sttattus.onyx.v1.ResearchRoomThread.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 247: sttattus.onyx.v1.ResearchRoomComment.created_at:type_name -> google.protobuf.Timestamp
-	718, // 248: sttattus.onyx.v1.ResearchRoomComment.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 249: sttattus.onyx.v1.ResearchRoomTask.due_at:type_name -> google.protobuf.Timestamp
-	718, // 250: sttattus.onyx.v1.ResearchRoomTask.created_at:type_name -> google.protobuf.Timestamp
-	718, // 251: sttattus.onyx.v1.ResearchRoomTask.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 252: sttattus.onyx.v1.ResearchRoomMeeting.starts_at:type_name -> google.protobuf.Timestamp
-	718, // 253: sttattus.onyx.v1.ResearchRoomMeeting.ends_at:type_name -> google.protobuf.Timestamp
-	718, // 254: sttattus.onyx.v1.ResearchRoomMeeting.created_at:type_name -> google.protobuf.Timestamp
-	718, // 255: sttattus.onyx.v1.ResearchRoomMeeting.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 256: sttattus.onyx.v1.ResearchRoomDecision.decided_at:type_name -> google.protobuf.Timestamp
-	718, // 257: sttattus.onyx.v1.ResearchRoomDecision.created_at:type_name -> google.protobuf.Timestamp
-	718, // 258: sttattus.onyx.v1.ResearchRoomDecision.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 259: sttattus.onyx.v1.ResearchRoomApproval.created_at:type_name -> google.protobuf.Timestamp
-	718, // 260: sttattus.onyx.v1.ResearchRoomExport.expires_at:type_name -> google.protobuf.Timestamp
-	718, // 261: sttattus.onyx.v1.ResearchRoomExport.created_at:type_name -> google.protobuf.Timestamp
-	718, // 262: sttattus.onyx.v1.ResearchRoomExport.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 263: sttattus.onyx.v1.ResearchRoomAuditEvent.created_at:type_name -> google.protobuf.Timestamp
-	718, // 264: sttattus.onyx.v1.ResearchRoomGrant.expires_at:type_name -> google.protobuf.Timestamp
-	718, // 265: sttattus.onyx.v1.ResearchRoomGrant.revoked_at:type_name -> google.protobuf.Timestamp
-	718, // 266: sttattus.onyx.v1.ResearchRoomGrant.created_at:type_name -> google.protobuf.Timestamp
-	718, // 267: sttattus.onyx.v1.ResearchRoomShareLink.last_accessed_at:type_name -> google.protobuf.Timestamp
-	718, // 268: sttattus.onyx.v1.ResearchRoomShareLink.expires_at:type_name -> google.protobuf.Timestamp
-	718, // 269: sttattus.onyx.v1.ResearchRoomShareLink.revoked_at:type_name -> google.protobuf.Timestamp
-	718, // 270: sttattus.onyx.v1.ResearchRoomShareLink.created_at:type_name -> google.protobuf.Timestamp
-	17,  // 271: sttattus.onyx.v1.ResearchRoomOfflineManifest.items:type_name -> sttattus.onyx.v1.OnyxContent
-	239, // 272: sttattus.onyx.v1.ResearchRoomOfflineManifest.encrypted_renditions:type_name -> sttattus.onyx.v1.EncryptedRendition
-	718, // 273: sttattus.onyx.v1.ResearchRoomOfflineManifest.grant_expires_at:type_name -> google.protobuf.Timestamp
-	718, // 274: sttattus.onyx.v1.ResearchRoomPurgeReceipt.created_at:type_name -> google.protobuf.Timestamp
-	326, // 275: sttattus.onyx.v1.ResearchRoomDetail.room:type_name -> sttattus.onyx.v1.ResearchRoom
-	325, // 276: sttattus.onyx.v1.ResearchRoomDetail.members:type_name -> sttattus.onyx.v1.ResearchRoomMember
-	327, // 277: sttattus.onyx.v1.ResearchRoomDetail.items:type_name -> sttattus.onyx.v1.ResearchRoomItem
-	328, // 278: sttattus.onyx.v1.ResearchRoomDetail.threads:type_name -> sttattus.onyx.v1.ResearchRoomThread
-	329, // 279: sttattus.onyx.v1.ResearchRoomDetail.comments:type_name -> sttattus.onyx.v1.ResearchRoomComment
-	330, // 280: sttattus.onyx.v1.ResearchRoomDetail.tasks:type_name -> sttattus.onyx.v1.ResearchRoomTask
-	331, // 281: sttattus.onyx.v1.ResearchRoomDetail.meetings:type_name -> sttattus.onyx.v1.ResearchRoomMeeting
-	332, // 282: sttattus.onyx.v1.ResearchRoomDetail.decisions:type_name -> sttattus.onyx.v1.ResearchRoomDecision
-	333, // 283: sttattus.onyx.v1.ResearchRoomDetail.approvals:type_name -> sttattus.onyx.v1.ResearchRoomApproval
-	334, // 284: sttattus.onyx.v1.ResearchRoomDetail.exports:type_name -> sttattus.onyx.v1.ResearchRoomExport
-	326, // 285: sttattus.onyx.v1.ListResearchRoomsResponse.rooms:type_name -> sttattus.onyx.v1.ResearchRoom
-	340, // 286: sttattus.onyx.v1.GetResearchRoomResponse.detail:type_name -> sttattus.onyx.v1.ResearchRoomDetail
-	324, // 287: sttattus.onyx.v1.CreateResearchRoomRequest.policy:type_name -> sttattus.onyx.v1.ResearchRoomPolicy
-	326, // 288: sttattus.onyx.v1.CreateResearchRoomResponse.room:type_name -> sttattus.onyx.v1.ResearchRoom
-	324, // 289: sttattus.onyx.v1.UpdateResearchRoomRequest.policy:type_name -> sttattus.onyx.v1.ResearchRoomPolicy
-	326, // 290: sttattus.onyx.v1.UpdateResearchRoomResponse.room:type_name -> sttattus.onyx.v1.ResearchRoom
-	325, // 291: sttattus.onyx.v1.InviteResearchRoomMemberResponse.member:type_name -> sttattus.onyx.v1.ResearchRoomMember
-	325, // 292: sttattus.onyx.v1.RespondResearchRoomInviteResponse.member:type_name -> sttattus.onyx.v1.ResearchRoomMember
-	718, // 293: sttattus.onyx.v1.ChangeResearchRoomMemberRequest.expires_at:type_name -> google.protobuf.Timestamp
-	325, // 294: sttattus.onyx.v1.ChangeResearchRoomMemberResponse.member:type_name -> sttattus.onyx.v1.ResearchRoomMember
-	327, // 295: sttattus.onyx.v1.AddResearchRoomItemResponse.item:type_name -> sttattus.onyx.v1.ResearchRoomItem
-	328, // 296: sttattus.onyx.v1.PostResearchRoomCommentResponse.thread:type_name -> sttattus.onyx.v1.ResearchRoomThread
-	329, // 297: sttattus.onyx.v1.PostResearchRoomCommentResponse.comment:type_name -> sttattus.onyx.v1.ResearchRoomComment
-	328, // 298: sttattus.onyx.v1.SetResearchRoomThreadStatusResponse.thread:type_name -> sttattus.onyx.v1.ResearchRoomThread
-	718, // 299: sttattus.onyx.v1.UpsertResearchRoomTaskRequest.due_at:type_name -> google.protobuf.Timestamp
-	330, // 300: sttattus.onyx.v1.UpsertResearchRoomTaskResponse.task:type_name -> sttattus.onyx.v1.ResearchRoomTask
-	718, // 301: sttattus.onyx.v1.UpsertResearchRoomMeetingRequest.starts_at:type_name -> google.protobuf.Timestamp
-	718, // 302: sttattus.onyx.v1.UpsertResearchRoomMeetingRequest.ends_at:type_name -> google.protobuf.Timestamp
-	331, // 303: sttattus.onyx.v1.UpsertResearchRoomMeetingResponse.meeting:type_name -> sttattus.onyx.v1.ResearchRoomMeeting
-	332, // 304: sttattus.onyx.v1.UpsertResearchRoomDecisionResponse.decision:type_name -> sttattus.onyx.v1.ResearchRoomDecision
-	333, // 305: sttattus.onyx.v1.RecordResearchRoomApprovalResponse.approval:type_name -> sttattus.onyx.v1.ResearchRoomApproval
-	374, // 306: sttattus.onyx.v1.SearchResearchRoomResponse.results:type_name -> sttattus.onyx.v1.SearchResearchRoomResult
-	334, // 307: sttattus.onyx.v1.RequestResearchRoomExportResponse.export:type_name -> sttattus.onyx.v1.ResearchRoomExport
-	335, // 308: sttattus.onyx.v1.ListResearchRoomAuditResponse.events:type_name -> sttattus.onyx.v1.ResearchRoomAuditEvent
-	336, // 309: sttattus.onyx.v1.ListResearchRoomGrantsResponse.grants:type_name -> sttattus.onyx.v1.ResearchRoomGrant
-	718, // 310: sttattus.onyx.v1.UpsertResearchRoomGrantRequest.expires_at:type_name -> google.protobuf.Timestamp
-	336, // 311: sttattus.onyx.v1.UpsertResearchRoomGrantResponse.grant:type_name -> sttattus.onyx.v1.ResearchRoomGrant
-	718, // 312: sttattus.onyx.v1.CreateResearchRoomShareLinkRequest.expires_at:type_name -> google.protobuf.Timestamp
-	337, // 313: sttattus.onyx.v1.CreateResearchRoomShareLinkResponse.share_link:type_name -> sttattus.onyx.v1.ResearchRoomShareLink
-	337, // 314: sttattus.onyx.v1.ListResearchRoomShareLinksResponse.share_links:type_name -> sttattus.onyx.v1.ResearchRoomShareLink
-	326, // 315: sttattus.onyx.v1.ResolveResearchRoomShareLinkResponse.room:type_name -> sttattus.onyx.v1.ResearchRoom
-	327, // 316: sttattus.onyx.v1.ResolveResearchRoomShareLinkResponse.item:type_name -> sttattus.onyx.v1.ResearchRoomItem
-	17,  // 317: sttattus.onyx.v1.ResolveResearchRoomShareLinkResponse.content:type_name -> sttattus.onyx.v1.OnyxContent
-	338, // 318: sttattus.onyx.v1.GetResearchRoomOfflineManifestResponse.manifest:type_name -> sttattus.onyx.v1.ResearchRoomOfflineManifest
-	339, // 319: sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeResponse.receipt:type_name -> sttattus.onyx.v1.ResearchRoomPurgeReceipt
-	338, // 320: sttattus.onyx.v1.ListResearchRoomOfflinePurgesResponse.manifests:type_name -> sttattus.onyx.v1.ResearchRoomOfflineManifest
-	718, // 321: sttattus.onyx.v1.IntelligenceGraphSourceAnchor.created_at:type_name -> google.protobuf.Timestamp
-	718, // 322: sttattus.onyx.v1.IntelligenceGraphNode.valid_from:type_name -> google.protobuf.Timestamp
-	718, // 323: sttattus.onyx.v1.IntelligenceGraphNode.valid_to:type_name -> google.protobuf.Timestamp
-	404, // 324: sttattus.onyx.v1.IntelligenceGraphNode.anchors:type_name -> sttattus.onyx.v1.IntelligenceGraphSourceAnchor
-	718, // 325: sttattus.onyx.v1.IntelligenceGraphNode.created_at:type_name -> google.protobuf.Timestamp
-	718, // 326: sttattus.onyx.v1.IntelligenceGraphNode.updated_at:type_name -> google.protobuf.Timestamp
-	404, // 327: sttattus.onyx.v1.IntelligenceGraphEdge.anchors:type_name -> sttattus.onyx.v1.IntelligenceGraphSourceAnchor
-	718, // 328: sttattus.onyx.v1.IntelligenceGraphEdge.created_at:type_name -> google.protobuf.Timestamp
-	718, // 329: sttattus.onyx.v1.IntelligenceGraphEdge.updated_at:type_name -> google.protobuf.Timestamp
-	405, // 330: sttattus.onyx.v1.IntelligenceGraphSuggestion.proposed_node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
-	406, // 331: sttattus.onyx.v1.IntelligenceGraphSuggestion.proposed_edge:type_name -> sttattus.onyx.v1.IntelligenceGraphEdge
-	718, // 332: sttattus.onyx.v1.IntelligenceGraphSuggestion.expires_at:type_name -> google.protobuf.Timestamp
-	718, // 333: sttattus.onyx.v1.IntelligenceGraphSuggestion.created_at:type_name -> google.protobuf.Timestamp
-	718, // 334: sttattus.onyx.v1.IntelligenceGraphSuggestion.decided_at:type_name -> google.protobuf.Timestamp
-	718, // 335: sttattus.onyx.v1.IntelligenceGraphTimelineEvent.event_at:type_name -> google.protobuf.Timestamp
-	718, // 336: sttattus.onyx.v1.IntelligenceGraphTimelineEvent.recorded_at:type_name -> google.protobuf.Timestamp
-	718, // 337: sttattus.onyx.v1.IntelligenceGraphResurfacingItem.due_at:type_name -> google.protobuf.Timestamp
-	718, // 338: sttattus.onyx.v1.IntelligenceGraphResurfacingItem.snoozed_until:type_name -> google.protobuf.Timestamp
-	718, // 339: sttattus.onyx.v1.IntelligenceGraphResurfacingItem.created_at:type_name -> google.protobuf.Timestamp
-	718, // 340: sttattus.onyx.v1.IntelligenceGraphResurfacingItem.updated_at:type_name -> google.protobuf.Timestamp
-	404, // 341: sttattus.onyx.v1.IntelligenceGraphMeetingBriefSection.citations:type_name -> sttattus.onyx.v1.IntelligenceGraphSourceAnchor
-	410, // 342: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.sections:type_name -> sttattus.onyx.v1.IntelligenceGraphMeetingBriefSection
-	718, // 343: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.window_start:type_name -> google.protobuf.Timestamp
-	718, // 344: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.window_end:type_name -> google.protobuf.Timestamp
-	718, // 345: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.created_at:type_name -> google.protobuf.Timestamp
-	718, // 346: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 347: sttattus.onyx.v1.IntelligenceGraphOverview.last_changed_at:type_name -> google.protobuf.Timestamp
-	412, // 348: sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse.overview:type_name -> sttattus.onyx.v1.IntelligenceGraphOverview
-	405, // 349: sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse.nodes:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
-	406, // 350: sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse.edges:type_name -> sttattus.onyx.v1.IntelligenceGraphEdge
-	718, // 351: sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest.valid_from:type_name -> google.protobuf.Timestamp
-	718, // 352: sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest.valid_to:type_name -> google.protobuf.Timestamp
-	404, // 353: sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest.anchors:type_name -> sttattus.onyx.v1.IntelligenceGraphSourceAnchor
-	405, // 354: sttattus.onyx.v1.UpsertIntelligenceGraphNodeResponse.node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
-	405, // 355: sttattus.onyx.v1.SetIntelligenceGraphNodeStateResponse.node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
-	405, // 356: sttattus.onyx.v1.MergeIntelligenceGraphNodesResponse.primary_node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
-	405, // 357: sttattus.onyx.v1.MergeIntelligenceGraphNodesResponse.merged_node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
-	405, // 358: sttattus.onyx.v1.SplitIntelligenceGraphNodeResponse.source_node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
-	405, // 359: sttattus.onyx.v1.SplitIntelligenceGraphNodeResponse.new_node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
-	404, // 360: sttattus.onyx.v1.UpsertIntelligenceGraphEdgeRequest.anchors:type_name -> sttattus.onyx.v1.IntelligenceGraphSourceAnchor
-	406, // 361: sttattus.onyx.v1.UpsertIntelligenceGraphEdgeResponse.edge:type_name -> sttattus.onyx.v1.IntelligenceGraphEdge
-	406, // 362: sttattus.onyx.v1.SetIntelligenceGraphEdgeStateResponse.edge:type_name -> sttattus.onyx.v1.IntelligenceGraphEdge
-	407, // 363: sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsResponse.suggestions:type_name -> sttattus.onyx.v1.IntelligenceGraphSuggestion
-	407, // 364: sttattus.onyx.v1.ListIntelligenceGraphSuggestionsResponse.suggestions:type_name -> sttattus.onyx.v1.IntelligenceGraphSuggestion
-	407, // 365: sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse.suggestion:type_name -> sttattus.onyx.v1.IntelligenceGraphSuggestion
-	405, // 366: sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse.accepted_node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
-	406, // 367: sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse.accepted_edge:type_name -> sttattus.onyx.v1.IntelligenceGraphEdge
-	718, // 368: sttattus.onyx.v1.ListIntelligenceGraphTimelineRequest.from:type_name -> google.protobuf.Timestamp
-	718, // 369: sttattus.onyx.v1.ListIntelligenceGraphTimelineRequest.to:type_name -> google.protobuf.Timestamp
-	408, // 370: sttattus.onyx.v1.ListIntelligenceGraphTimelineResponse.events:type_name -> sttattus.onyx.v1.IntelligenceGraphTimelineEvent
-	409, // 371: sttattus.onyx.v1.ListIntelligenceGraphResurfacingResponse.items:type_name -> sttattus.onyx.v1.IntelligenceGraphResurfacingItem
-	718, // 372: sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateRequest.snoozed_until:type_name -> google.protobuf.Timestamp
-	409, // 373: sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateResponse.item:type_name -> sttattus.onyx.v1.IntelligenceGraphResurfacingItem
-	718, // 374: sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefRequest.window_start:type_name -> google.protobuf.Timestamp
-	718, // 375: sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefRequest.window_end:type_name -> google.protobuf.Timestamp
-	411, // 376: sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefResponse.brief:type_name -> sttattus.onyx.v1.IntelligenceGraphMeetingBrief
-	411, // 377: sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefResponse.brief:type_name -> sttattus.onyx.v1.IntelligenceGraphMeetingBrief
-	411, // 378: sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsResponse.briefs:type_name -> sttattus.onyx.v1.IntelligenceGraphMeetingBrief
-	718, // 379: sttattus.onyx.v1.ExportPersonalIntelligenceGraphResponse.generated_at:type_name -> google.protobuf.Timestamp
-	3,   // 380: sttattus.onyx.v1.OnyxLanguageConfig.capabilities:type_name -> sttattus.onyx.v1.OnyxLanguageCapability
-	718, // 381: sttattus.onyx.v1.OnyxLanguageConfig.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 382: sttattus.onyx.v1.OnyxMachineTranslationProvenance.generated_at:type_name -> google.protobuf.Timestamp
-	0,   // 383: sttattus.onyx.v1.OnyxEditionLineage.translation_class:type_name -> sttattus.onyx.v1.OnyxTranslationClass
-	1,   // 384: sttattus.onyx.v1.OnyxEditionLineage.verification_state:type_name -> sttattus.onyx.v1.OnyxVerificationState
-	2,   // 385: sttattus.onyx.v1.OnyxEditionLineage.availability:type_name -> sttattus.onyx.v1.OnyxEditionAvailability
-	450, // 386: sttattus.onyx.v1.OnyxEditionLineage.machine_provenance:type_name -> sttattus.onyx.v1.OnyxMachineTranslationProvenance
-	718, // 387: sttattus.onyx.v1.OnyxEditionLineage.published_at:type_name -> google.protobuf.Timestamp
-	718, // 388: sttattus.onyx.v1.OnyxEditionLineage.updated_at:type_name -> google.protobuf.Timestamp
-	0,   // 389: sttattus.onyx.v1.OnyxTranslationAcceptanceProvenance.translation_class:type_name -> sttattus.onyx.v1.OnyxTranslationClass
-	450, // 390: sttattus.onyx.v1.OnyxTranslationAcceptanceProvenance.machine_provenance:type_name -> sttattus.onyx.v1.OnyxMachineTranslationProvenance
-	718, // 391: sttattus.onyx.v1.OnyxTranslationAcceptanceProvenance.accepted_at:type_name -> google.protobuf.Timestamp
-	452, // 392: sttattus.onyx.v1.OnyxAlignedSegment.acceptance:type_name -> sttattus.onyx.v1.OnyxTranslationAcceptanceProvenance
-	453, // 393: sttattus.onyx.v1.OnyxAlignedBlock.segments:type_name -> sttattus.onyx.v1.OnyxAlignedSegment
-	718, // 394: sttattus.onyx.v1.OnyxTermbaseEntry.updated_at:type_name -> google.protobuf.Timestamp
-	4,   // 395: sttattus.onyx.v1.OnyxMultilingualPreferences.reader_mode:type_name -> sttattus.onyx.v1.OnyxParallelReaderMode
-	6,   // 396: sttattus.onyx.v1.OnyxMultilingualPreferences.listening_mode:type_name -> sttattus.onyx.v1.OnyxBilingualListeningMode
-	718, // 397: sttattus.onyx.v1.OnyxMultilingualPreferences.updated_at:type_name -> google.protobuf.Timestamp
-	17,  // 398: sttattus.onyx.v1.OnyxCrossLanguageSearchMatch.content:type_name -> sttattus.onyx.v1.OnyxContent
-	18,  // 399: sttattus.onyx.v1.OnyxCrossLanguageSearchMatch.edition:type_name -> sttattus.onyx.v1.OnyxContentEdition
-	5,   // 400: sttattus.onyx.v1.OnyxCrossLanguageSearchMatch.match_reason:type_name -> sttattus.onyx.v1.OnyxSearchMatchReason
-	0,   // 401: sttattus.onyx.v1.OnyxCaptionTrack.translation_class:type_name -> sttattus.onyx.v1.OnyxTranslationClass
-	1,   // 402: sttattus.onyx.v1.OnyxCaptionTrack.verification_state:type_name -> sttattus.onyx.v1.OnyxVerificationState
-	458, // 403: sttattus.onyx.v1.OnyxCaptionTrack.cues:type_name -> sttattus.onyx.v1.OnyxCaptionCue
-	7,   // 404: sttattus.onyx.v1.OnyxMediaLanguageTrack.delivery:type_name -> sttattus.onyx.v1.OnyxVoiceDelivery
-	460, // 405: sttattus.onyx.v1.OnyxMultilingualAudioVideo.audio_tracks:type_name -> sttattus.onyx.v1.OnyxMediaLanguageTrack
-	459, // 406: sttattus.onyx.v1.OnyxMultilingualAudioVideo.caption_tracks:type_name -> sttattus.onyx.v1.OnyxCaptionTrack
-	8,   // 407: sttattus.onyx.v1.OnyxMultilingualAudioVideo.live_interpretation_state:type_name -> sttattus.onyx.v1.OnyxLiveInterpretationState
-	9,   // 408: sttattus.onyx.v1.OnyxTranslationReport.issue_type:type_name -> sttattus.onyx.v1.OnyxTranslationIssueType
-	10,  // 409: sttattus.onyx.v1.OnyxTranslationReport.status:type_name -> sttattus.onyx.v1.OnyxTranslationReportStatus
-	718, // 410: sttattus.onyx.v1.OnyxTranslationReport.created_at:type_name -> google.protobuf.Timestamp
-	718, // 411: sttattus.onyx.v1.OnyxTranslationReport.updated_at:type_name -> google.protobuf.Timestamp
-	2,   // 412: sttattus.onyx.v1.OnyxMultilingualOfflineManifest.availability:type_name -> sttattus.onyx.v1.OnyxEditionAvailability
-	718, // 413: sttattus.onyx.v1.OnyxMultilingualOfflineManifest.rights_expire_at:type_name -> google.protobuf.Timestamp
-	718, // 414: sttattus.onyx.v1.OnyxMultilingualOfflineManifest.generated_at:type_name -> google.protobuf.Timestamp
-	11,  // 415: sttattus.onyx.v1.OnyxMultilingualExport.format:type_name -> sttattus.onyx.v1.OnyxMultilingualExportFormat
-	12,  // 416: sttattus.onyx.v1.OnyxMultilingualExport.state:type_name -> sttattus.onyx.v1.OnyxMultilingualExportState
-	464, // 417: sttattus.onyx.v1.OnyxMultilingualExport.manifest:type_name -> sttattus.onyx.v1.OnyxMultilingualExportManifestItem
-	718, // 418: sttattus.onyx.v1.OnyxMultilingualExport.expires_at:type_name -> google.protobuf.Timestamp
-	718, // 419: sttattus.onyx.v1.OnyxMultilingualExport.created_at:type_name -> google.protobuf.Timestamp
-	718, // 420: sttattus.onyx.v1.OnyxMultilingualExport.updated_at:type_name -> google.protobuf.Timestamp
-	449, // 421: sttattus.onyx.v1.ListLanguageConfigsResponse.languages:type_name -> sttattus.onyx.v1.OnyxLanguageConfig
-	17,  // 422: sttattus.onyx.v1.ListContentEditionsResponse.original:type_name -> sttattus.onyx.v1.OnyxContent
-	18,  // 423: sttattus.onyx.v1.ListContentEditionsResponse.editions:type_name -> sttattus.onyx.v1.OnyxContentEdition
-	451, // 424: sttattus.onyx.v1.GetAlignedBlocksResponse.lineage:type_name -> sttattus.onyx.v1.OnyxEditionLineage
-	454, // 425: sttattus.onyx.v1.GetAlignedBlocksResponse.blocks:type_name -> sttattus.onyx.v1.OnyxAlignedBlock
-	455, // 426: sttattus.onyx.v1.ListTermbaseEntriesResponse.entries:type_name -> sttattus.onyx.v1.OnyxTermbaseEntry
-	457, // 427: sttattus.onyx.v1.CrossLanguageSearchResponse.matches:type_name -> sttattus.onyx.v1.OnyxCrossLanguageSearchMatch
-	456, // 428: sttattus.onyx.v1.GetMultilingualPreferencesResponse.preferences:type_name -> sttattus.onyx.v1.OnyxMultilingualPreferences
-	456, // 429: sttattus.onyx.v1.UpdateMultilingualPreferencesRequest.preferences:type_name -> sttattus.onyx.v1.OnyxMultilingualPreferences
-	456, // 430: sttattus.onyx.v1.UpdateMultilingualPreferencesResponse.preferences:type_name -> sttattus.onyx.v1.OnyxMultilingualPreferences
-	461, // 431: sttattus.onyx.v1.GetMultilingualAudioVideoResponse.media:type_name -> sttattus.onyx.v1.OnyxMultilingualAudioVideo
-	463, // 432: sttattus.onyx.v1.GetMultilingualOfflineManifestResponse.manifest:type_name -> sttattus.onyx.v1.OnyxMultilingualOfflineManifest
-	9,   // 433: sttattus.onyx.v1.ReportTranslationIssueRequest.issue_type:type_name -> sttattus.onyx.v1.OnyxTranslationIssueType
-	462, // 434: sttattus.onyx.v1.ReportTranslationIssueResponse.report:type_name -> sttattus.onyx.v1.OnyxTranslationReport
-	11,  // 435: sttattus.onyx.v1.RequestMultilingualExportRequest.format:type_name -> sttattus.onyx.v1.OnyxMultilingualExportFormat
-	465, // 436: sttattus.onyx.v1.RequestMultilingualExportResponse.export:type_name -> sttattus.onyx.v1.OnyxMultilingualExport
-	465, // 437: sttattus.onyx.v1.GetMultilingualExportResponse.export:type_name -> sttattus.onyx.v1.OnyxMultilingualExport
-	718, // 438: sttattus.onyx.v1.OnyxLivingArchivePolicy.period_starts_at:type_name -> google.protobuf.Timestamp
-	718, // 439: sttattus.onyx.v1.OnyxLivingArchivePolicy.period_ends_at:type_name -> google.protobuf.Timestamp
-	718, // 440: sttattus.onyx.v1.OnyxLivingArchivePolicy.submitted_at:type_name -> google.protobuf.Timestamp
-	718, // 441: sttattus.onyx.v1.OnyxLivingArchivePolicy.activated_at:type_name -> google.protobuf.Timestamp
-	718, // 442: sttattus.onyx.v1.OnyxLivingArchivePolicy.review_due_at:type_name -> google.protobuf.Timestamp
-	718, // 443: sttattus.onyx.v1.OnyxLivingArchivePolicy.revoked_at:type_name -> google.protobuf.Timestamp
-	718, // 444: sttattus.onyx.v1.OnyxLivingArchivePolicy.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 445: sttattus.onyx.v1.OnyxLivingArchiveContact.verified_at:type_name -> google.protobuf.Timestamp
-	718, // 446: sttattus.onyx.v1.OnyxLivingArchiveContact.review_due_at:type_name -> google.protobuf.Timestamp
-	718, // 447: sttattus.onyx.v1.OnyxLivingArchiveContact.revoked_at:type_name -> google.protobuf.Timestamp
-	718, // 448: sttattus.onyx.v1.OnyxLivingArchiveContact.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 449: sttattus.onyx.v1.OnyxLivingArchiveReadiness.next_legacy_checkin_at:type_name -> google.protobuf.Timestamp
-	493, // 450: sttattus.onyx.v1.OnyxLivingArchivePreview.counts:type_name -> sttattus.onyx.v1.OnyxLivingArchivePreviewCount
-	718, // 451: sttattus.onyx.v1.OnyxLivingArchivePreview.generated_at:type_name -> google.protobuf.Timestamp
-	718, // 452: sttattus.onyx.v1.OnyxLivingArchiveEdition.period_starts_at:type_name -> google.protobuf.Timestamp
-	718, // 453: sttattus.onyx.v1.OnyxLivingArchiveEdition.period_ends_at:type_name -> google.protobuf.Timestamp
-	718, // 454: sttattus.onyx.v1.OnyxLivingArchiveEdition.generated_at:type_name -> google.protobuf.Timestamp
-	718, // 455: sttattus.onyx.v1.OnyxLivingArchiveEdition.escrowed_at:type_name -> google.protobuf.Timestamp
-	718, // 456: sttattus.onyx.v1.OnyxLivingArchiveEdition.released_at:type_name -> google.protobuf.Timestamp
-	718, // 457: sttattus.onyx.v1.OnyxLivingArchiveEdition.revoked_at:type_name -> google.protobuf.Timestamp
-	718, // 458: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.opened_at:type_name -> google.protobuf.Timestamp
-	718, // 459: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.waiting_until:type_name -> google.protobuf.Timestamp
-	718, // 460: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.contested_at:type_name -> google.protobuf.Timestamp
-	718, // 461: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.approved_at:type_name -> google.protobuf.Timestamp
-	718, // 462: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.released_at:type_name -> google.protobuf.Timestamp
-	718, // 463: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.closed_at:type_name -> google.protobuf.Timestamp
-	718, // 464: sttattus.onyx.v1.OnyxLivingArchiveReceipt.released_at:type_name -> google.protobuf.Timestamp
-	718, // 465: sttattus.onyx.v1.OnyxLivingArchiveReceipt.created_at:type_name -> google.protobuf.Timestamp
-	490, // 466: sttattus.onyx.v1.GetLivingArchiveDashboardResponse.policies:type_name -> sttattus.onyx.v1.OnyxLivingArchivePolicy
-	491, // 467: sttattus.onyx.v1.GetLivingArchiveDashboardResponse.contacts:type_name -> sttattus.onyx.v1.OnyxLivingArchiveContact
-	495, // 468: sttattus.onyx.v1.GetLivingArchiveDashboardResponse.editions:type_name -> sttattus.onyx.v1.OnyxLivingArchiveEdition
-	496, // 469: sttattus.onyx.v1.GetLivingArchiveDashboardResponse.release_cases:type_name -> sttattus.onyx.v1.OnyxLivingArchiveReleaseCase
-	497, // 470: sttattus.onyx.v1.GetLivingArchiveDashboardResponse.receipts:type_name -> sttattus.onyx.v1.OnyxLivingArchiveReceipt
-	492, // 471: sttattus.onyx.v1.GetLivingArchiveDashboardResponse.readiness:type_name -> sttattus.onyx.v1.OnyxLivingArchiveReadiness
-	718, // 472: sttattus.onyx.v1.UpsertLivingArchivePolicyRequest.period_starts_at:type_name -> google.protobuf.Timestamp
-	718, // 473: sttattus.onyx.v1.UpsertLivingArchivePolicyRequest.period_ends_at:type_name -> google.protobuf.Timestamp
-	490, // 474: sttattus.onyx.v1.UpsertLivingArchivePolicyResponse.policy:type_name -> sttattus.onyx.v1.OnyxLivingArchivePolicy
-	494, // 475: sttattus.onyx.v1.PreviewLivingArchivePolicyResponse.preview:type_name -> sttattus.onyx.v1.OnyxLivingArchivePreview
-	718, // 476: sttattus.onyx.v1.GenerateLivingArchiveEditionRequest.period_starts_at:type_name -> google.protobuf.Timestamp
-	718, // 477: sttattus.onyx.v1.GenerateLivingArchiveEditionRequest.period_ends_at:type_name -> google.protobuf.Timestamp
-	495, // 478: sttattus.onyx.v1.GenerateLivingArchiveEditionResponse.edition:type_name -> sttattus.onyx.v1.OnyxLivingArchiveEdition
-	494, // 479: sttattus.onyx.v1.GenerateLivingArchiveEditionResponse.preview:type_name -> sttattus.onyx.v1.OnyxLivingArchivePreview
-	495, // 480: sttattus.onyx.v1.LinkLivingArchiveLegacyEscrowResponse.edition:type_name -> sttattus.onyx.v1.OnyxLivingArchiveEdition
-	492, // 481: sttattus.onyx.v1.LinkLivingArchiveLegacyEscrowResponse.readiness:type_name -> sttattus.onyx.v1.OnyxLivingArchiveReadiness
-	491, // 482: sttattus.onyx.v1.UpsertLivingArchiveContactResponse.contact:type_name -> sttattus.onyx.v1.OnyxLivingArchiveContact
-	492, // 483: sttattus.onyx.v1.UpsertLivingArchiveContactResponse.readiness:type_name -> sttattus.onyx.v1.OnyxLivingArchiveReadiness
-	492, // 484: sttattus.onyx.v1.DeleteLivingArchiveContactResponse.readiness:type_name -> sttattus.onyx.v1.OnyxLivingArchiveReadiness
-	490, // 485: sttattus.onyx.v1.SubmitLivingArchivePolicyResponse.policy:type_name -> sttattus.onyx.v1.OnyxLivingArchivePolicy
-	492, // 486: sttattus.onyx.v1.SubmitLivingArchivePolicyResponse.readiness:type_name -> sttattus.onyx.v1.OnyxLivingArchiveReadiness
-	490, // 487: sttattus.onyx.v1.RevokeLivingArchivePolicyResponse.policy:type_name -> sttattus.onyx.v1.OnyxLivingArchivePolicy
-	490, // 488: sttattus.onyx.v1.ConfirmLivingArchiveReviewResponse.policy:type_name -> sttattus.onyx.v1.OnyxLivingArchivePolicy
-	496, // 489: sttattus.onyx.v1.ContestLivingArchiveReleaseResponse.release_case:type_name -> sttattus.onyx.v1.OnyxLivingArchiveReleaseCase
-	718, // 490: sttattus.onyx.v1.OnyxForensicContentProtection.activated_at:type_name -> google.protobuf.Timestamp
-	718, // 491: sttattus.onyx.v1.OnyxForensicManifest.issued_at:type_name -> google.protobuf.Timestamp
-	718, // 492: sttattus.onyx.v1.OnyxForensicManifest.expires_at:type_name -> google.protobuf.Timestamp
-	718, // 493: sttattus.onyx.v1.OnyxForensicManifest.first_used_at:type_name -> google.protobuf.Timestamp
-	718, // 494: sttattus.onyx.v1.OnyxForensicManifest.revoked_at:type_name -> google.protobuf.Timestamp
-	718, // 495: sttattus.onyx.v1.OnyxForensicCustodyEvent.created_at:type_name -> google.protobuf.Timestamp
-	718, // 496: sttattus.onyx.v1.OnyxForensicAppealMessage.created_at:type_name -> google.protobuf.Timestamp
-	524, // 497: sttattus.onyx.v1.OnyxForensicAppeal.messages:type_name -> sttattus.onyx.v1.OnyxForensicAppealMessage
-	718, // 498: sttattus.onyx.v1.OnyxForensicAppeal.filed_at:type_name -> google.protobuf.Timestamp
-	718, // 499: sttattus.onyx.v1.OnyxForensicAppeal.decided_at:type_name -> google.protobuf.Timestamp
-	718, // 500: sttattus.onyx.v1.OnyxForensicCase.opened_at:type_name -> google.protobuf.Timestamp
-	718, // 501: sttattus.onyx.v1.OnyxForensicCase.response_due_at:type_name -> google.protobuf.Timestamp
-	718, // 502: sttattus.onyx.v1.OnyxForensicCase.decided_at:type_name -> google.protobuf.Timestamp
-	523, // 503: sttattus.onyx.v1.OnyxForensicCase.custody:type_name -> sttattus.onyx.v1.OnyxForensicCustodyEvent
-	525, // 504: sttattus.onyx.v1.OnyxForensicCase.appeal:type_name -> sttattus.onyx.v1.OnyxForensicAppeal
-	520, // 505: sttattus.onyx.v1.GetForensicProtectionDashboardResponse.runtime:type_name -> sttattus.onyx.v1.OnyxForensicRuntime
-	521, // 506: sttattus.onyx.v1.GetForensicProtectionDashboardResponse.protected_content:type_name -> sttattus.onyx.v1.OnyxForensicContentProtection
-	522, // 507: sttattus.onyx.v1.GetForensicProtectionDashboardResponse.manifests:type_name -> sttattus.onyx.v1.OnyxForensicManifest
-	526, // 508: sttattus.onyx.v1.GetForensicProtectionDashboardResponse.cases:type_name -> sttattus.onyx.v1.OnyxForensicCase
-	522, // 509: sttattus.onyx.v1.IssueForensicManifestResponse.manifest:type_name -> sttattus.onyx.v1.OnyxForensicManifest
-	239, // 510: sttattus.onyx.v1.IssueForensicManifestResponse.encrypted_renditions:type_name -> sttattus.onyx.v1.EncryptedRendition
-	17,  // 511: sttattus.onyx.v1.IssueForensicManifestResponse.content:type_name -> sttattus.onyx.v1.OnyxContent
-	522, // 512: sttattus.onyx.v1.RevokeForensicManifestResponse.manifest:type_name -> sttattus.onyx.v1.OnyxForensicManifest
-	526, // 513: sttattus.onyx.v1.RespondForensicCaseResponse.forensic_case:type_name -> sttattus.onyx.v1.OnyxForensicCase
-	526, // 514: sttattus.onyx.v1.FileForensicAppealResponse.forensic_case:type_name -> sttattus.onyx.v1.OnyxForensicCase
-	526, // 515: sttattus.onyx.v1.PostForensicAppealMessageResponse.forensic_case:type_name -> sttattus.onyx.v1.OnyxForensicCase
-	526, // 516: sttattus.onyx.v1.WithdrawForensicAppealResponse.forensic_case:type_name -> sttattus.onyx.v1.OnyxForensicCase
-	718, // 517: sttattus.onyx.v1.OnyxIntegrationClient.reviewed_at:type_name -> google.protobuf.Timestamp
-	718, // 518: sttattus.onyx.v1.OnyxIntegrationGrant.granted_at:type_name -> google.protobuf.Timestamp
-	718, // 519: sttattus.onyx.v1.OnyxIntegrationGrant.expires_at:type_name -> google.protobuf.Timestamp
-	718, // 520: sttattus.onyx.v1.OnyxIntegrationGrant.revoked_at:type_name -> google.protobuf.Timestamp
-	718, // 521: sttattus.onyx.v1.OnyxIntegrationCall.created_at:type_name -> google.protobuf.Timestamp
-	718, // 522: sttattus.onyx.v1.OnyxIntegrationConnectorAccount.last_sync_at:type_name -> google.protobuf.Timestamp
-	718, // 523: sttattus.onyx.v1.OnyxIntegrationConnectorAccount.next_sync_at:type_name -> google.protobuf.Timestamp
-	718, // 524: sttattus.onyx.v1.OnyxIntegrationConnectorAccount.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 525: sttattus.onyx.v1.OnyxIntegrationConnectorRun.queued_at:type_name -> google.protobuf.Timestamp
-	718, // 526: sttattus.onyx.v1.OnyxIntegrationConnectorRun.completed_at:type_name -> google.protobuf.Timestamp
-	718, // 527: sttattus.onyx.v1.OnyxIntegrationArtifact.expires_at:type_name -> google.protobuf.Timestamp
-	718, // 528: sttattus.onyx.v1.OnyxIntegrationArtifact.created_at:type_name -> google.protobuf.Timestamp
-	718, // 529: sttattus.onyx.v1.OnyxIntegrationConflict.created_at:type_name -> google.protobuf.Timestamp
-	718, // 530: sttattus.onyx.v1.OnyxIntegrationConflict.resolved_at:type_name -> google.protobuf.Timestamp
-	718, // 531: sttattus.onyx.v1.OnyxIntegrationBridgeDispatch.created_at:type_name -> google.protobuf.Timestamp
-	718, // 532: sttattus.onyx.v1.OnyxIntegrationBridgeDispatch.completed_at:type_name -> google.protobuf.Timestamp
-	718, // 533: sttattus.onyx.v1.OnyxIntegrationBridgeSource.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 534: sttattus.onyx.v1.OnyxIntegrationOperationsCase.opened_at:type_name -> google.protobuf.Timestamp
-	718, // 535: sttattus.onyx.v1.OnyxIntegrationOperationsCase.resolved_at:type_name -> google.protobuf.Timestamp
-	541, // 536: sttattus.onyx.v1.GetIntegrationDashboardResponse.runtime:type_name -> sttattus.onyx.v1.OnyxIntegrationRuntime
-	542, // 537: sttattus.onyx.v1.GetIntegrationDashboardResponse.available_clients:type_name -> sttattus.onyx.v1.OnyxIntegrationClient
-	543, // 538: sttattus.onyx.v1.GetIntegrationDashboardResponse.grants:type_name -> sttattus.onyx.v1.OnyxIntegrationGrant
-	545, // 539: sttattus.onyx.v1.GetIntegrationDashboardResponse.connector_catalog:type_name -> sttattus.onyx.v1.OnyxIntegrationConnectorDefinition
-	546, // 540: sttattus.onyx.v1.GetIntegrationDashboardResponse.connector_accounts:type_name -> sttattus.onyx.v1.OnyxIntegrationConnectorAccount
-	547, // 541: sttattus.onyx.v1.GetIntegrationDashboardResponse.connector_runs:type_name -> sttattus.onyx.v1.OnyxIntegrationConnectorRun
-	548, // 542: sttattus.onyx.v1.GetIntegrationDashboardResponse.artifacts:type_name -> sttattus.onyx.v1.OnyxIntegrationArtifact
-	549, // 543: sttattus.onyx.v1.GetIntegrationDashboardResponse.conflicts:type_name -> sttattus.onyx.v1.OnyxIntegrationConflict
-	550, // 544: sttattus.onyx.v1.GetIntegrationDashboardResponse.bridge_dispatches:type_name -> sttattus.onyx.v1.OnyxIntegrationBridgeDispatch
-	544, // 545: sttattus.onyx.v1.GetIntegrationDashboardResponse.recent_calls:type_name -> sttattus.onyx.v1.OnyxIntegrationCall
-	552, // 546: sttattus.onyx.v1.GetIntegrationDashboardResponse.operations_cases:type_name -> sttattus.onyx.v1.OnyxIntegrationOperationsCase
-	551, // 547: sttattus.onyx.v1.GetIntegrationDashboardResponse.bridge_sources:type_name -> sttattus.onyx.v1.OnyxIntegrationBridgeSource
-	543, // 548: sttattus.onyx.v1.AuthorizeIntegrationResponse.grant:type_name -> sttattus.onyx.v1.OnyxIntegrationGrant
-	718, // 549: sttattus.onyx.v1.AuthorizeIntegrationResponse.authorization_code_expires_at:type_name -> google.protobuf.Timestamp
-	543, // 550: sttattus.onyx.v1.RevokeIntegrationGrantResponse.grant:type_name -> sttattus.onyx.v1.OnyxIntegrationGrant
-	546, // 551: sttattus.onyx.v1.UpsertIntegrationConnectorResponse.account:type_name -> sttattus.onyx.v1.OnyxIntegrationConnectorAccount
-	546, // 552: sttattus.onyx.v1.SetIntegrationConnectorStateResponse.account:type_name -> sttattus.onyx.v1.OnyxIntegrationConnectorAccount
-	547, // 553: sttattus.onyx.v1.RunIntegrationConnectorResponse.run:type_name -> sttattus.onyx.v1.OnyxIntegrationConnectorRun
-	548, // 554: sttattus.onyx.v1.RunIntegrationConnectorResponse.artifact:type_name -> sttattus.onyx.v1.OnyxIntegrationArtifact
-	549, // 555: sttattus.onyx.v1.RunIntegrationConnectorResponse.conflicts:type_name -> sttattus.onyx.v1.OnyxIntegrationConflict
-	548, // 556: sttattus.onyx.v1.GetIntegrationArtifactResponse.artifact:type_name -> sttattus.onyx.v1.OnyxIntegrationArtifact
-	549, // 557: sttattus.onyx.v1.ResolveIntegrationConflictResponse.conflict:type_name -> sttattus.onyx.v1.OnyxIntegrationConflict
-	550, // 558: sttattus.onyx.v1.DispatchIntegrationBridgeResponse.dispatch:type_name -> sttattus.onyx.v1.OnyxIntegrationBridgeDispatch
-	552, // 559: sttattus.onyx.v1.SubmitIntegrationOperationsCaseResponse.operations_case:type_name -> sttattus.onyx.v1.OnyxIntegrationOperationsCase
-	718, // 560: sttattus.onyx.v1.SpatialCanvasTemplate.published_at:type_name -> google.protobuf.Timestamp
-	718, // 561: sttattus.onyx.v1.SpatialCanvasTemplate.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 562: sttattus.onyx.v1.SpatialCanvasWorkspace.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 563: sttattus.onyx.v1.SpatialCanvasSummary.updated_at:type_name -> google.protobuf.Timestamp
-	573, // 564: sttattus.onyx.v1.SpatialCanvasNode.source_anchor:type_name -> sttattus.onyx.v1.SpatialCanvasSourceAnchor
-	718, // 565: sttattus.onyx.v1.SpatialCanvasNode.updated_at:type_name -> google.protobuf.Timestamp
-	573, // 566: sttattus.onyx.v1.SpatialCanvasEdge.source_anchor:type_name -> sttattus.onyx.v1.SpatialCanvasSourceAnchor
-	718, // 567: sttattus.onyx.v1.SpatialCanvasEdge.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 568: sttattus.onyx.v1.SpatialCanvasLayoutRevision.created_at:type_name -> google.protobuf.Timestamp
-	718, // 569: sttattus.onyx.v1.SpatialCanvasConflict.detected_at:type_name -> google.protobuf.Timestamp
-	718, // 570: sttattus.onyx.v1.SpatialCanvasConflict.resolved_at:type_name -> google.protobuf.Timestamp
-	718, // 571: sttattus.onyx.v1.SpatialCanvasSnapshot.created_at:type_name -> google.protobuf.Timestamp
-	718, // 572: sttattus.onyx.v1.SpatialCanvasComment.created_at:type_name -> google.protobuf.Timestamp
-	718, // 573: sttattus.onyx.v1.SpatialCanvasComment.resolved_at:type_name -> google.protobuf.Timestamp
-	718, // 574: sttattus.onyx.v1.SpatialCanvasProposal.created_at:type_name -> google.protobuf.Timestamp
-	718, // 575: sttattus.onyx.v1.SpatialCanvasProposal.decided_at:type_name -> google.protobuf.Timestamp
-	718, // 576: sttattus.onyx.v1.SpatialCanvasExport.expires_at:type_name -> google.protobuf.Timestamp
-	718, // 577: sttattus.onyx.v1.SpatialCanvasExport.created_at:type_name -> google.protobuf.Timestamp
-	718, // 578: sttattus.onyx.v1.SpatialCanvasOperation.occurred_at:type_name -> google.protobuf.Timestamp
-	576, // 579: sttattus.onyx.v1.SpatialCanvasDetail.canvas:type_name -> sttattus.onyx.v1.SpatialCanvasSummary
-	577, // 580: sttattus.onyx.v1.SpatialCanvasDetail.nodes:type_name -> sttattus.onyx.v1.SpatialCanvasNode
-	578, // 581: sttattus.onyx.v1.SpatialCanvasDetail.edges:type_name -> sttattus.onyx.v1.SpatialCanvasEdge
-	580, // 582: sttattus.onyx.v1.SpatialCanvasDetail.conflicts:type_name -> sttattus.onyx.v1.SpatialCanvasConflict
-	581, // 583: sttattus.onyx.v1.SpatialCanvasDetail.snapshots:type_name -> sttattus.onyx.v1.SpatialCanvasSnapshot
-	582, // 584: sttattus.onyx.v1.SpatialCanvasDetail.comments:type_name -> sttattus.onyx.v1.SpatialCanvasComment
-	583, // 585: sttattus.onyx.v1.SpatialCanvasDetail.proposals:type_name -> sttattus.onyx.v1.SpatialCanvasProposal
-	579, // 586: sttattus.onyx.v1.SpatialCanvasDetail.revisions:type_name -> sttattus.onyx.v1.SpatialCanvasLayoutRevision
-	575, // 587: sttattus.onyx.v1.GetSpatialCanvasDashboardResponse.workspaces:type_name -> sttattus.onyx.v1.SpatialCanvasWorkspace
-	576, // 588: sttattus.onyx.v1.GetSpatialCanvasDashboardResponse.canvases:type_name -> sttattus.onyx.v1.SpatialCanvasSummary
-	574, // 589: sttattus.onyx.v1.GetSpatialCanvasDashboardResponse.templates:type_name -> sttattus.onyx.v1.SpatialCanvasTemplate
-	574, // 590: sttattus.onyx.v1.ListSpatialCanvasTemplatesResponse.templates:type_name -> sttattus.onyx.v1.SpatialCanvasTemplate
-	586, // 591: sttattus.onyx.v1.CreateSpatialCanvasResponse.detail:type_name -> sttattus.onyx.v1.SpatialCanvasDetail
-	586, // 592: sttattus.onyx.v1.GetSpatialCanvasResponse.detail:type_name -> sttattus.onyx.v1.SpatialCanvasDetail
-	585, // 593: sttattus.onyx.v1.ApplySpatialCanvasOperationsRequest.operations:type_name -> sttattus.onyx.v1.SpatialCanvasOperation
-	586, // 594: sttattus.onyx.v1.ApplySpatialCanvasOperationsResponse.detail:type_name -> sttattus.onyx.v1.SpatialCanvasDetail
-	580, // 595: sttattus.onyx.v1.ApplySpatialCanvasOperationsResponse.conflicts:type_name -> sttattus.onyx.v1.SpatialCanvasConflict
-	580, // 596: sttattus.onyx.v1.ResolveSpatialCanvasConflictResponse.conflict:type_name -> sttattus.onyx.v1.SpatialCanvasConflict
-	581, // 597: sttattus.onyx.v1.CreateSpatialCanvasSnapshotResponse.snapshot:type_name -> sttattus.onyx.v1.SpatialCanvasSnapshot
-	586, // 598: sttattus.onyx.v1.RestoreSpatialCanvasSnapshotResponse.detail:type_name -> sttattus.onyx.v1.SpatialCanvasDetail
-	582, // 599: sttattus.onyx.v1.UpsertSpatialCanvasCommentResponse.comment:type_name -> sttattus.onyx.v1.SpatialCanvasComment
-	582, // 600: sttattus.onyx.v1.SetSpatialCanvasCommentStateResponse.comment:type_name -> sttattus.onyx.v1.SpatialCanvasComment
-	583, // 601: sttattus.onyx.v1.GenerateSpatialCanvasProposalsResponse.proposals:type_name -> sttattus.onyx.v1.SpatialCanvasProposal
-	583, // 602: sttattus.onyx.v1.SetSpatialCanvasProposalStateResponse.proposal:type_name -> sttattus.onyx.v1.SpatialCanvasProposal
-	586, // 603: sttattus.onyx.v1.SetSpatialCanvasProposalStateResponse.detail:type_name -> sttattus.onyx.v1.SpatialCanvasDetail
-	584, // 604: sttattus.onyx.v1.RequestSpatialCanvasExportResponse.export:type_name -> sttattus.onyx.v1.SpatialCanvasExport
-	584, // 605: sttattus.onyx.v1.GetSpatialCanvasExportResponse.export:type_name -> sttattus.onyx.v1.SpatialCanvasExport
-	718, // 606: sttattus.onyx.v1.ReportSpatialCanvasAbuseResponse.created_at:type_name -> google.protobuf.Timestamp
-	718, // 607: sttattus.onyx.v1.RecallDeck.created_at:type_name -> google.protobuf.Timestamp
-	718, // 608: sttattus.onyx.v1.RecallDeck.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 609: sttattus.onyx.v1.RecallSchedule.due_at:type_name -> google.protobuf.Timestamp
-	718, // 610: sttattus.onyx.v1.RecallSchedule.last_reviewed_at:type_name -> google.protobuf.Timestamp
-	619, // 611: sttattus.onyx.v1.MemoryItem.source_anchor:type_name -> sttattus.onyx.v1.RecallSourceAnchor
-	621, // 612: sttattus.onyx.v1.MemoryItem.prompt_variants:type_name -> sttattus.onyx.v1.RecallPromptVariant
-	622, // 613: sttattus.onyx.v1.MemoryItem.schedule:type_name -> sttattus.onyx.v1.RecallSchedule
-	718, // 614: sttattus.onyx.v1.MemoryItem.created_at:type_name -> google.protobuf.Timestamp
-	718, // 615: sttattus.onyx.v1.MemoryItem.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 616: sttattus.onyx.v1.RecallReviewEvent.reviewed_at:type_name -> google.protobuf.Timestamp
-	718, // 617: sttattus.onyx.v1.RecallReviewEvent.received_at:type_name -> google.protobuf.Timestamp
-	718, // 618: sttattus.onyx.v1.RecallSourceInvalidation.created_at:type_name -> google.protobuf.Timestamp
-	718, // 619: sttattus.onyx.v1.RecallSourceInvalidation.resolved_at:type_name -> google.protobuf.Timestamp
-	718, // 620: sttattus.onyx.v1.RecallRetentionMeasure.measured_at:type_name -> google.protobuf.Timestamp
-	718, // 621: sttattus.onyx.v1.RecallPreferences.vacation_until:type_name -> google.protobuf.Timestamp
-	620, // 622: sttattus.onyx.v1.GetRecallDashboardResponse.decks:type_name -> sttattus.onyx.v1.RecallDeck
-	623, // 623: sttattus.onyx.v1.GetRecallDashboardResponse.due_items:type_name -> sttattus.onyx.v1.MemoryItem
-	625, // 624: sttattus.onyx.v1.GetRecallDashboardResponse.invalidations:type_name -> sttattus.onyx.v1.RecallSourceInvalidation
-	626, // 625: sttattus.onyx.v1.GetRecallDashboardResponse.retention:type_name -> sttattus.onyx.v1.RecallRetentionMeasure
-	627, // 626: sttattus.onyx.v1.GetRecallDashboardResponse.preferences:type_name -> sttattus.onyx.v1.RecallPreferences
-	620, // 627: sttattus.onyx.v1.ListRecallDecksResponse.decks:type_name -> sttattus.onyx.v1.RecallDeck
-	623, // 628: sttattus.onyx.v1.ListMemoryItemsResponse.items:type_name -> sttattus.onyx.v1.MemoryItem
-	620, // 629: sttattus.onyx.v1.UpsertRecallDeckResponse.deck:type_name -> sttattus.onyx.v1.RecallDeck
-	623, // 630: sttattus.onyx.v1.GenerateRecallItemsResponse.drafts:type_name -> sttattus.onyx.v1.MemoryItem
-	619, // 631: sttattus.onyx.v1.UpsertMemoryItemRequest.source_anchor:type_name -> sttattus.onyx.v1.RecallSourceAnchor
-	621, // 632: sttattus.onyx.v1.UpsertMemoryItemRequest.prompt_variants:type_name -> sttattus.onyx.v1.RecallPromptVariant
-	623, // 633: sttattus.onyx.v1.UpsertMemoryItemResponse.item:type_name -> sttattus.onyx.v1.MemoryItem
-	623, // 634: sttattus.onyx.v1.SetMemoryItemStateResponse.item:type_name -> sttattus.onyx.v1.MemoryItem
-	623, // 635: sttattus.onyx.v1.GetRecallReviewQueueResponse.items:type_name -> sttattus.onyx.v1.MemoryItem
-	718, // 636: sttattus.onyx.v1.GetRecallReviewQueueResponse.generated_at:type_name -> google.protobuf.Timestamp
-	624, // 637: sttattus.onyx.v1.RecordRecallReviewBatchRequest.events:type_name -> sttattus.onyx.v1.RecallReviewEvent
-	623, // 638: sttattus.onyx.v1.RecordRecallReviewBatchResponse.revised_items:type_name -> sttattus.onyx.v1.MemoryItem
-	718, // 639: sttattus.onyx.v1.RecordRecallReviewBatchResponse.server_time:type_name -> google.protobuf.Timestamp
-	625, // 640: sttattus.onyx.v1.ResolveRecallInvalidationResponse.invalidation:type_name -> sttattus.onyx.v1.RecallSourceInvalidation
-	623, // 641: sttattus.onyx.v1.ResolveRecallInvalidationResponse.item:type_name -> sttattus.onyx.v1.MemoryItem
-	627, // 642: sttattus.onyx.v1.UpdateRecallPreferencesRequest.preferences:type_name -> sttattus.onyx.v1.RecallPreferences
-	627, // 643: sttattus.onyx.v1.UpdateRecallPreferencesResponse.preferences:type_name -> sttattus.onyx.v1.RecallPreferences
-	718, // 644: sttattus.onyx.v1.ExportRecallDataResponse.expires_at:type_name -> google.protobuf.Timestamp
-	718, // 645: sttattus.onyx.v1.ReportRecallItemResponse.created_at:type_name -> google.protobuf.Timestamp
-	626, // 646: sttattus.onyx.v1.RecordRecallTransferResponse.measure:type_name -> sttattus.onyx.v1.RecallRetentionMeasure
-	718, // 647: sttattus.onyx.v1.DraftCitation.verified_at:type_name -> google.protobuf.Timestamp
-	660, // 648: sttattus.onyx.v1.DraftBlock.citations:type_name -> sttattus.onyx.v1.DraftCitation
-	718, // 649: sttattus.onyx.v1.DraftBlock.created_at:type_name -> google.protobuf.Timestamp
-	718, // 650: sttattus.onyx.v1.DraftBlock.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 651: sttattus.onyx.v1.DraftRevision.created_at:type_name -> google.protobuf.Timestamp
-	662, // 652: sttattus.onyx.v1.DraftRevisionComparison.from_revision:type_name -> sttattus.onyx.v1.DraftRevision
-	662, // 653: sttattus.onyx.v1.DraftRevisionComparison.to_revision:type_name -> sttattus.onyx.v1.DraftRevision
-	663, // 654: sttattus.onyx.v1.DraftRevisionComparison.changes:type_name -> sttattus.onyx.v1.DraftBlockChange
-	718, // 655: sttattus.onyx.v1.DraftBranch.created_at:type_name -> google.protobuf.Timestamp
-	718, // 656: sttattus.onyx.v1.DraftBranch.updated_at:type_name -> google.protobuf.Timestamp
-	718, // 657: sttattus.onyx.v1.DraftSuggestion.created_at:type_name -> google.protobuf.Timestamp
-	718, // 658: sttattus.onyx.v1.DraftSuggestion.reviewed_at:type_name -> google.protobuf.Timestamp
-	718, // 659: sttattus.onyx.v1.DraftConflict.created_at:type_name -> google.protobuf.Timestamp
-	718, // 660: sttattus.onyx.v1.DraftConflict.resolved_at:type_name -> google.protobuf.Timestamp
-	718, // 661: sttattus.onyx.v1.DraftExport.created_at:type_name -> google.protobuf.Timestamp
-	718, // 662: sttattus.onyx.v1.DraftExport.expires_at:type_name -> google.protobuf.Timestamp
-	718, // 663: sttattus.onyx.v1.DraftHandoff.created_at:type_name -> google.protobuf.Timestamp
-	718, // 664: sttattus.onyx.v1.DraftHandoff.revoked_at:type_name -> google.protobuf.Timestamp
-	661, // 665: sttattus.onyx.v1.DraftDocument.blocks:type_name -> sttattus.onyx.v1.DraftBlock
-	662, // 666: sttattus.onyx.v1.DraftDocument.revisions:type_name -> sttattus.onyx.v1.DraftRevision
-	665, // 667: sttattus.onyx.v1.DraftDocument.branches:type_name -> sttattus.onyx.v1.DraftBranch
-	666, // 668: sttattus.onyx.v1.DraftDocument.suggestions:type_name -> sttattus.onyx.v1.DraftSuggestion
-	667, // 669: sttattus.onyx.v1.DraftDocument.conflicts:type_name -> sttattus.onyx.v1.DraftConflict
-	668, // 670: sttattus.onyx.v1.DraftDocument.exports:type_name -> sttattus.onyx.v1.DraftExport
-	669, // 671: sttattus.onyx.v1.DraftDocument.handoffs:type_name -> sttattus.onyx.v1.DraftHandoff
-	718, // 672: sttattus.onyx.v1.DraftDocument.created_at:type_name -> google.protobuf.Timestamp
-	718, // 673: sttattus.onyx.v1.DraftDocument.updated_at:type_name -> google.protobuf.Timestamp
-	658, // 674: sttattus.onyx.v1.DraftingDashboard.templates:type_name -> sttattus.onyx.v1.DraftTemplate
-	659, // 675: sttattus.onyx.v1.DraftingDashboard.styles:type_name -> sttattus.onyx.v1.DraftStyle
-	670, // 676: sttattus.onyx.v1.DraftingDashboard.drafts:type_name -> sttattus.onyx.v1.DraftDocument
-	671, // 677: sttattus.onyx.v1.GetDraftingDashboardResponse.dashboard:type_name -> sttattus.onyx.v1.DraftingDashboard
-	670, // 678: sttattus.onyx.v1.ListDraftsResponse.drafts:type_name -> sttattus.onyx.v1.DraftDocument
-	670, // 679: sttattus.onyx.v1.GetDraftResponse.draft:type_name -> sttattus.onyx.v1.DraftDocument
-	670, // 680: sttattus.onyx.v1.CreateDraftResponse.draft:type_name -> sttattus.onyx.v1.DraftDocument
-	661, // 681: sttattus.onyx.v1.UpsertDraftBlockResponse.block:type_name -> sttattus.onyx.v1.DraftBlock
-	667, // 682: sttattus.onyx.v1.UpsertDraftBlockResponse.conflict:type_name -> sttattus.onyx.v1.DraftConflict
-	660, // 683: sttattus.onyx.v1.UpsertDraftCitationResponse.citation:type_name -> sttattus.onyx.v1.DraftCitation
-	689, // 684: sttattus.onyx.v1.DraftEvidenceReview.claims:type_name -> sttattus.onyx.v1.DraftClaimDiagnostic
-	688, // 685: sttattus.onyx.v1.DraftEvidenceReview.citations:type_name -> sttattus.onyx.v1.DraftEvidencePreview
-	690, // 686: sttattus.onyx.v1.GetDraftEvidenceReviewResponse.review:type_name -> sttattus.onyx.v1.DraftEvidenceReview
-	688, // 687: sttattus.onyx.v1.DraftEvidenceComparison.left:type_name -> sttattus.onyx.v1.DraftEvidencePreview
-	688, // 688: sttattus.onyx.v1.DraftEvidenceComparison.right:type_name -> sttattus.onyx.v1.DraftEvidencePreview
-	694, // 689: sttattus.onyx.v1.CompareDraftEvidenceResponse.comparison:type_name -> sttattus.onyx.v1.DraftEvidenceComparison
-	662, // 690: sttattus.onyx.v1.CreateDraftRevisionResponse.revision:type_name -> sttattus.onyx.v1.DraftRevision
-	665, // 691: sttattus.onyx.v1.CreateDraftBranchResponse.branch:type_name -> sttattus.onyx.v1.DraftBranch
-	662, // 692: sttattus.onyx.v1.RestoreDraftRevisionResponse.revision:type_name -> sttattus.onyx.v1.DraftRevision
-	670, // 693: sttattus.onyx.v1.RestoreDraftRevisionResponse.draft:type_name -> sttattus.onyx.v1.DraftDocument
-	664, // 694: sttattus.onyx.v1.CompareDraftRevisionsResponse.comparison:type_name -> sttattus.onyx.v1.DraftRevisionComparison
-	666, // 695: sttattus.onyx.v1.GenerateDraftSuggestionResponse.suggestion:type_name -> sttattus.onyx.v1.DraftSuggestion
-	666, // 696: sttattus.onyx.v1.SetDraftSuggestionStateResponse.suggestion:type_name -> sttattus.onyx.v1.DraftSuggestion
-	661, // 697: sttattus.onyx.v1.SetDraftSuggestionStateResponse.block:type_name -> sttattus.onyx.v1.DraftBlock
-	667, // 698: sttattus.onyx.v1.ResolveDraftConflictResponse.conflict:type_name -> sttattus.onyx.v1.DraftConflict
-	661, // 699: sttattus.onyx.v1.ResolveDraftConflictResponse.block:type_name -> sttattus.onyx.v1.DraftBlock
-	668, // 700: sttattus.onyx.v1.RequestDraftExportResponse.export:type_name -> sttattus.onyx.v1.DraftExport
-	668, // 701: sttattus.onyx.v1.GetDraftExportResponse.export:type_name -> sttattus.onyx.v1.DraftExport
-	669, // 702: sttattus.onyx.v1.CreateDraftHandoffResponse.handoff:type_name -> sttattus.onyx.v1.DraftHandoff
-	21,  // 703: sttattus.onyx.v1.OnyxService.CreateProfile:input_type -> sttattus.onyx.v1.CreateProfileRequest
-	23,  // 704: sttattus.onyx.v1.OnyxService.GetProfile:input_type -> sttattus.onyx.v1.GetProfileRequest
-	25,  // 705: sttattus.onyx.v1.OnyxService.ListContent:input_type -> sttattus.onyx.v1.ListContentRequest
-	27,  // 706: sttattus.onyx.v1.OnyxService.Subscribe:input_type -> sttattus.onyx.v1.SubscribeRequest
-	29,  // 707: sttattus.onyx.v1.OnyxService.GetContent:input_type -> sttattus.onyx.v1.GetContentRequest
-	31,  // 708: sttattus.onyx.v1.OnyxService.ListShelf:input_type -> sttattus.onyx.v1.ListShelfRequest
-	33,  // 709: sttattus.onyx.v1.OnyxService.ListContinue:input_type -> sttattus.onyx.v1.ListContinueRequest
-	35,  // 710: sttattus.onyx.v1.OnyxService.GetShelves:input_type -> sttattus.onyx.v1.GetShelvesRequest
-	38,  // 711: sttattus.onyx.v1.OnyxService.RecordProgress:input_type -> sttattus.onyx.v1.RecordProgressRequest
-	40,  // 712: sttattus.onyx.v1.OnyxService.RedeemContent:input_type -> sttattus.onyx.v1.RedeemContentRequest
-	42,  // 713: sttattus.onyx.v1.OnyxService.CreateSubscriptionCheckout:input_type -> sttattus.onyx.v1.CreateSubscriptionCheckoutRequest
-	45,  // 714: sttattus.onyx.v1.OnyxService.GetCreator:input_type -> sttattus.onyx.v1.GetCreatorRequest
-	47,  // 715: sttattus.onyx.v1.OnyxService.ListCreatorWorks:input_type -> sttattus.onyx.v1.ListCreatorWorksRequest
-	49,  // 716: sttattus.onyx.v1.OnyxService.FollowCreator:input_type -> sttattus.onyx.v1.FollowCreatorRequest
-	51,  // 717: sttattus.onyx.v1.OnyxService.SearchContent:input_type -> sttattus.onyx.v1.SearchContentRequest
-	54,  // 718: sttattus.onyx.v1.OnyxService.AddNote:input_type -> sttattus.onyx.v1.AddNoteRequest
-	56,  // 719: sttattus.onyx.v1.OnyxService.ListMyNotes:input_type -> sttattus.onyx.v1.ListMyNotesRequest
-	58,  // 720: sttattus.onyx.v1.OnyxService.DeleteNote:input_type -> sttattus.onyx.v1.DeleteNoteRequest
-	61,  // 721: sttattus.onyx.v1.OnyxService.UpsertReaderAnnotation:input_type -> sttattus.onyx.v1.UpsertReaderAnnotationRequest
-	63,  // 722: sttattus.onyx.v1.OnyxService.DeleteReaderAnnotation:input_type -> sttattus.onyx.v1.DeleteReaderAnnotationRequest
-	65,  // 723: sttattus.onyx.v1.OnyxService.ListMyReaderAnnotations:input_type -> sttattus.onyx.v1.ListMyReaderAnnotationsRequest
-	68,  // 724: sttattus.onyx.v1.OnyxService.SearchReader:input_type -> sttattus.onyx.v1.SearchReaderRequest
-	71,  // 725: sttattus.onyx.v1.OnyxService.SearchIntelligence:input_type -> sttattus.onyx.v1.SearchIntelligenceRequest
-	74,  // 726: sttattus.onyx.v1.OnyxService.RecordIntelligenceSearchOutcome:input_type -> sttattus.onyx.v1.RecordIntelligenceSearchOutcomeRequest
-	77,  // 727: sttattus.onyx.v1.OnyxService.ListSavedQueries:input_type -> sttattus.onyx.v1.ListSavedQueriesRequest
-	79,  // 728: sttattus.onyx.v1.OnyxService.UpsertSavedQuery:input_type -> sttattus.onyx.v1.UpsertSavedQueryRequest
-	81,  // 729: sttattus.onyx.v1.OnyxService.DeleteSavedQuery:input_type -> sttattus.onyx.v1.DeleteSavedQueryRequest
-	85,  // 730: sttattus.onyx.v1.OnyxService.ListWatchlists:input_type -> sttattus.onyx.v1.ListWatchlistsRequest
-	87,  // 731: sttattus.onyx.v1.OnyxService.UpsertWatchlist:input_type -> sttattus.onyx.v1.UpsertWatchlistRequest
-	89,  // 732: sttattus.onyx.v1.OnyxService.DeleteWatchlist:input_type -> sttattus.onyx.v1.DeleteWatchlistRequest
-	91,  // 733: sttattus.onyx.v1.OnyxService.RefreshWatchlist:input_type -> sttattus.onyx.v1.RefreshWatchlistRequest
-	94,  // 734: sttattus.onyx.v1.OnyxService.ListIntelligenceAlerts:input_type -> sttattus.onyx.v1.ListIntelligenceAlertsRequest
-	96,  // 735: sttattus.onyx.v1.OnyxService.SetIntelligenceAlertState:input_type -> sttattus.onyx.v1.SetIntelligenceAlertStateRequest
-	99,  // 736: sttattus.onyx.v1.OnyxService.GetIntelligenceQueue:input_type -> sttattus.onyx.v1.GetIntelligenceQueueRequest
-	101, // 737: sttattus.onyx.v1.OnyxService.RecordIntelligenceFeedback:input_type -> sttattus.onyx.v1.RecordIntelligenceFeedbackRequest
-	103, // 738: sttattus.onyx.v1.OnyxService.ExportReaderData:input_type -> sttattus.onyx.v1.ExportReaderDataRequest
-	106, // 739: sttattus.onyx.v1.OnyxService.ListReaderSyncChanges:input_type -> sttattus.onyx.v1.ListReaderSyncChangesRequest
-	108, // 740: sttattus.onyx.v1.OnyxService.ListMyUnlocks:input_type -> sttattus.onyx.v1.ListMyUnlocksRequest
-	110, // 741: sttattus.onyx.v1.OnyxService.ListMySubscriptions:input_type -> sttattus.onyx.v1.ListMySubscriptionsRequest
-	112, // 742: sttattus.onyx.v1.OnyxService.ListMyFollows:input_type -> sttattus.onyx.v1.ListMyFollowsRequest
-	115, // 743: sttattus.onyx.v1.OnyxService.ListSovereignWindow:input_type -> sttattus.onyx.v1.ListSovereignWindowRequest
-	118, // 744: sttattus.onyx.v1.OnyxService.ListSeries:input_type -> sttattus.onyx.v1.ListSeriesRequest
-	120, // 745: sttattus.onyx.v1.OnyxService.GetSeries:input_type -> sttattus.onyx.v1.GetSeriesRequest
-	123, // 746: sttattus.onyx.v1.OnyxService.GenerateCaptions:input_type -> sttattus.onyx.v1.GenerateCaptionsRequest
-	125, // 747: sttattus.onyx.v1.OnyxService.GetCaptionJob:input_type -> sttattus.onyx.v1.GetCaptionJobRequest
-	128, // 748: sttattus.onyx.v1.OnyxService.GetListeningPreferences:input_type -> sttattus.onyx.v1.GetListeningPreferencesRequest
-	130, // 749: sttattus.onyx.v1.OnyxService.UpdateListeningPreferences:input_type -> sttattus.onyx.v1.UpdateListeningPreferencesRequest
-	133, // 750: sttattus.onyx.v1.OnyxService.CreateListeningBookmark:input_type -> sttattus.onyx.v1.CreateListeningBookmarkRequest
-	135, // 751: sttattus.onyx.v1.OnyxService.ListListeningBookmarks:input_type -> sttattus.onyx.v1.ListListeningBookmarksRequest
-	137, // 752: sttattus.onyx.v1.OnyxService.DeleteListeningBookmark:input_type -> sttattus.onyx.v1.DeleteListeningBookmarkRequest
-	140, // 753: sttattus.onyx.v1.OnyxService.ListListeningQueue:input_type -> sttattus.onyx.v1.ListListeningQueueRequest
-	142, // 754: sttattus.onyx.v1.OnyxService.SetListeningQueue:input_type -> sttattus.onyx.v1.SetListeningQueueRequest
-	147, // 755: sttattus.onyx.v1.OnyxService.CreateAudioOverview:input_type -> sttattus.onyx.v1.CreateAudioOverviewRequest
-	149, // 756: sttattus.onyx.v1.OnyxService.ListAudioOverviews:input_type -> sttattus.onyx.v1.ListAudioOverviewsRequest
-	151, // 757: sttattus.onyx.v1.OnyxService.GetAudioOverview:input_type -> sttattus.onyx.v1.GetAudioOverviewRequest
-	153, // 758: sttattus.onyx.v1.OnyxService.DeleteAudioOverview:input_type -> sttattus.onyx.v1.DeleteAudioOverviewRequest
-	156, // 759: sttattus.onyx.v1.OnyxService.ListListeningPronunciations:input_type -> sttattus.onyx.v1.ListListeningPronunciationsRequest
-	158, // 760: sttattus.onyx.v1.OnyxService.GetTodaySummary:input_type -> sttattus.onyx.v1.GetTodaySummaryRequest
-	161, // 761: sttattus.onyx.v1.OnyxService.GetCrossPillarUnlocks:input_type -> sttattus.onyx.v1.GetCrossPillarUnlocksRequest
-	165, // 762: sttattus.onyx.v1.OnyxService.StartConciergeThread:input_type -> sttattus.onyx.v1.StartConciergeThreadRequest
-	167, // 763: sttattus.onyx.v1.OnyxService.ListMyConciergeThreads:input_type -> sttattus.onyx.v1.ListMyConciergeThreadsRequest
-	169, // 764: sttattus.onyx.v1.OnyxService.GetConciergeThread:input_type -> sttattus.onyx.v1.GetConciergeThreadRequest
-	171, // 765: sttattus.onyx.v1.OnyxService.PostConciergeMessage:input_type -> sttattus.onyx.v1.PostConciergeMessageRequest
-	174, // 766: sttattus.onyx.v1.OnyxService.ListLiveEvents:input_type -> sttattus.onyx.v1.ListLiveEventsRequest
-	176, // 767: sttattus.onyx.v1.OnyxService.GetLiveEvent:input_type -> sttattus.onyx.v1.GetLiveEventRequest
-	178, // 768: sttattus.onyx.v1.OnyxService.RsvpLiveEvent:input_type -> sttattus.onyx.v1.RsvpLiveEventRequest
-	192, // 769: sttattus.onyx.v1.OnyxService.GetLiveSalon:input_type -> sttattus.onyx.v1.GetLiveSalonRequest
-	194, // 770: sttattus.onyx.v1.OnyxService.UpsertLiveReservation:input_type -> sttattus.onyx.v1.UpsertLiveReservationRequest
-	196, // 771: sttattus.onyx.v1.OnyxService.InviteLiveGuest:input_type -> sttattus.onyx.v1.InviteLiveGuestRequest
-	198, // 772: sttattus.onyx.v1.OnyxService.GenerateLiveCalendarPass:input_type -> sttattus.onyx.v1.GenerateLiveCalendarPassRequest
-	200, // 773: sttattus.onyx.v1.OnyxService.JoinLiveEvent:input_type -> sttattus.onyx.v1.JoinLiveEventRequest
-	202, // 774: sttattus.onyx.v1.OnyxService.ListLiveActivity:input_type -> sttattus.onyx.v1.ListLiveActivityRequest
-	204, // 775: sttattus.onyx.v1.OnyxService.PostLiveMessage:input_type -> sttattus.onyx.v1.PostLiveMessageRequest
-	206, // 776: sttattus.onyx.v1.OnyxService.UpvoteLiveQuestion:input_type -> sttattus.onyx.v1.UpvoteLiveQuestionRequest
-	208, // 777: sttattus.onyx.v1.OnyxService.VoteLivePoll:input_type -> sttattus.onyx.v1.VoteLivePollRequest
-	210, // 778: sttattus.onyx.v1.OnyxService.SetLiveHandRaise:input_type -> sttattus.onyx.v1.SetLiveHandRaiseRequest
-	212, // 779: sttattus.onyx.v1.OnyxService.ReactLiveEvent:input_type -> sttattus.onyx.v1.ReactLiveEventRequest
-	214, // 780: sttattus.onyx.v1.OnyxService.UpsertLiveNote:input_type -> sttattus.onyx.v1.UpsertLiveNoteRequest
-	216, // 781: sttattus.onyx.v1.OnyxService.ListLiveNotes:input_type -> sttattus.onyx.v1.ListLiveNotesRequest
-	218, // 782: sttattus.onyx.v1.OnyxService.DeleteLiveNote:input_type -> sttattus.onyx.v1.DeleteLiveNoteRequest
-	220, // 783: sttattus.onyx.v1.OnyxService.GetLiveReplay:input_type -> sttattus.onyx.v1.GetLiveReplayRequest
-	223, // 784: sttattus.onyx.v1.OnyxService.SetPosthumousArchive:input_type -> sttattus.onyx.v1.SetPosthumousArchiveRequest
-	225, // 785: sttattus.onyx.v1.OnyxService.GetPosthumousArchive:input_type -> sttattus.onyx.v1.GetPosthumousArchiveRequest
-	228, // 786: sttattus.onyx.v1.OnyxService.ListAnthologies:input_type -> sttattus.onyx.v1.ListAnthologiesRequest
-	230, // 787: sttattus.onyx.v1.OnyxService.GetAnthology:input_type -> sttattus.onyx.v1.GetAnthologyRequest
-	233, // 788: sttattus.onyx.v1.OnyxService.CreateShareLink:input_type -> sttattus.onyx.v1.CreateShareLinkRequest
-	235, // 789: sttattus.onyx.v1.OnyxService.ListMyShareLinks:input_type -> sttattus.onyx.v1.ListMyShareLinksRequest
-	237, // 790: sttattus.onyx.v1.OnyxService.RevokeShareLink:input_type -> sttattus.onyx.v1.RevokeShareLinkRequest
-	240, // 791: sttattus.onyx.v1.OnyxService.GetOfflineManifest:input_type -> sttattus.onyx.v1.GetOfflineManifestRequest
-	242, // 792: sttattus.onyx.v1.OnyxService.RegisterDevice:input_type -> sttattus.onyx.v1.RegisterDeviceRequest
-	244, // 793: sttattus.onyx.v1.OnyxService.AcknowledgePurge:input_type -> sttattus.onyx.v1.AcknowledgePurgeRequest
-	246, // 794: sttattus.onyx.v1.OnyxService.GetDeviceGrants:input_type -> sttattus.onyx.v1.GetDeviceGrantsRequest
-	249, // 795: sttattus.onyx.v1.OnyxService.RevokeMyDevice:input_type -> sttattus.onyx.v1.RevokeMyDeviceRequest
-	251, // 796: sttattus.onyx.v1.OnyxService.MarkMyDeviceLost:input_type -> sttattus.onyx.v1.MarkMyDeviceLostRequest
-	253, // 797: sttattus.onyx.v1.OnyxService.GetPurgeReceipt:input_type -> sttattus.onyx.v1.GetPurgeReceiptRequest
-	255, // 798: sttattus.onyx.v1.OnyxService.ListOfflineManifestItems:input_type -> sttattus.onyx.v1.ListOfflineManifestItemsRequest
-	258, // 799: sttattus.onyx.v1.OnyxService.RefreshOfflineRenditions:input_type -> sttattus.onyx.v1.RefreshOfflineRenditionsRequest
-	261, // 800: sttattus.onyx.v1.OnyxService.RecordOfflineEvent:input_type -> sttattus.onyx.v1.RecordOfflineEventRequest
-	263, // 801: sttattus.onyx.v1.OnyxService.GetYearInOnyx:input_type -> sttattus.onyx.v1.GetYearInOnyxRequest
-	266, // 802: sttattus.onyx.v1.OnyxService.GenerateAnnualArchive:input_type -> sttattus.onyx.v1.GenerateAnnualArchiveRequest
-	268, // 803: sttattus.onyx.v1.OnyxService.ReactToContent:input_type -> sttattus.onyx.v1.ReactToContentRequest
-	271, // 804: sttattus.onyx.v1.OnyxService.CreateIngestionItem:input_type -> sttattus.onyx.v1.CreateIngestionItemRequest
-	273, // 805: sttattus.onyx.v1.OnyxService.ListMyIngestionItems:input_type -> sttattus.onyx.v1.ListMyIngestionItemsRequest
-	275, // 806: sttattus.onyx.v1.OnyxService.GetIngestionItem:input_type -> sttattus.onyx.v1.GetIngestionItemRequest
-	277, // 807: sttattus.onyx.v1.OnyxService.RetryIngestionItem:input_type -> sttattus.onyx.v1.RetryIngestionItemRequest
-	279, // 808: sttattus.onyx.v1.OnyxService.SetIngestionItemState:input_type -> sttattus.onyx.v1.SetIngestionItemStateRequest
-	281, // 809: sttattus.onyx.v1.OnyxService.ResolveIngestionDuplicate:input_type -> sttattus.onyx.v1.ResolveIngestionDuplicateRequest
-	287, // 810: sttattus.onyx.v1.OnyxService.GetEvidenceWorkspace:input_type -> sttattus.onyx.v1.GetEvidenceWorkspaceRequest
-	291, // 811: sttattus.onyx.v1.OnyxService.CreateEvidenceBrief:input_type -> sttattus.onyx.v1.CreateEvidenceBriefRequest
-	293, // 812: sttattus.onyx.v1.OnyxService.ListMyEvidenceBriefs:input_type -> sttattus.onyx.v1.ListMyEvidenceBriefsRequest
-	295, // 813: sttattus.onyx.v1.OnyxService.GetEvidenceBrief:input_type -> sttattus.onyx.v1.GetEvidenceBriefRequest
-	304, // 814: sttattus.onyx.v1.OnyxService.GetCreatorStudio:input_type -> sttattus.onyx.v1.GetCreatorStudioRequest
-	306, // 815: sttattus.onyx.v1.OnyxService.SubmitCreatorPitch:input_type -> sttattus.onyx.v1.SubmitCreatorPitchRequest
-	308, // 816: sttattus.onyx.v1.OnyxService.UpdateCreatorProject:input_type -> sttattus.onyx.v1.UpdateCreatorProjectRequest
-	310, // 817: sttattus.onyx.v1.OnyxService.SubmitCreatorProject:input_type -> sttattus.onyx.v1.SubmitCreatorProjectRequest
-	312, // 818: sttattus.onyx.v1.OnyxService.SignCreatorContract:input_type -> sttattus.onyx.v1.SignCreatorContractRequest
-	314, // 819: sttattus.onyx.v1.OnyxService.ListMyCreatorSubscriptionsDetailed:input_type -> sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedRequest
-	316, // 820: sttattus.onyx.v1.OnyxService.CancelCreatorSubscription:input_type -> sttattus.onyx.v1.CancelCreatorSubscriptionRequest
-	320, // 821: sttattus.onyx.v1.OnyxService.GetMyCommerce:input_type -> sttattus.onyx.v1.GetMyCommerceRequest
-	322, // 822: sttattus.onyx.v1.OnyxService.CreateCommerceCase:input_type -> sttattus.onyx.v1.CreateCommerceCaseRequest
-	341, // 823: sttattus.onyx.v1.OnyxService.ListResearchRooms:input_type -> sttattus.onyx.v1.ListResearchRoomsRequest
-	343, // 824: sttattus.onyx.v1.OnyxService.GetResearchRoom:input_type -> sttattus.onyx.v1.GetResearchRoomRequest
-	345, // 825: sttattus.onyx.v1.OnyxService.CreateResearchRoom:input_type -> sttattus.onyx.v1.CreateResearchRoomRequest
-	347, // 826: sttattus.onyx.v1.OnyxService.UpdateResearchRoom:input_type -> sttattus.onyx.v1.UpdateResearchRoomRequest
-	349, // 827: sttattus.onyx.v1.OnyxService.InviteResearchRoomMember:input_type -> sttattus.onyx.v1.InviteResearchRoomMemberRequest
-	351, // 828: sttattus.onyx.v1.OnyxService.RespondResearchRoomInvite:input_type -> sttattus.onyx.v1.RespondResearchRoomInviteRequest
-	353, // 829: sttattus.onyx.v1.OnyxService.ChangeResearchRoomMember:input_type -> sttattus.onyx.v1.ChangeResearchRoomMemberRequest
-	355, // 830: sttattus.onyx.v1.OnyxService.RevokeResearchRoomMember:input_type -> sttattus.onyx.v1.RevokeResearchRoomMemberRequest
-	357, // 831: sttattus.onyx.v1.OnyxService.AddResearchRoomItem:input_type -> sttattus.onyx.v1.AddResearchRoomItemRequest
-	359, // 832: sttattus.onyx.v1.OnyxService.RemoveResearchRoomItem:input_type -> sttattus.onyx.v1.RemoveResearchRoomItemRequest
-	361, // 833: sttattus.onyx.v1.OnyxService.PostResearchRoomComment:input_type -> sttattus.onyx.v1.PostResearchRoomCommentRequest
-	363, // 834: sttattus.onyx.v1.OnyxService.SetResearchRoomThreadStatus:input_type -> sttattus.onyx.v1.SetResearchRoomThreadStatusRequest
-	365, // 835: sttattus.onyx.v1.OnyxService.UpsertResearchRoomTask:input_type -> sttattus.onyx.v1.UpsertResearchRoomTaskRequest
-	367, // 836: sttattus.onyx.v1.OnyxService.UpsertResearchRoomMeeting:input_type -> sttattus.onyx.v1.UpsertResearchRoomMeetingRequest
-	369, // 837: sttattus.onyx.v1.OnyxService.UpsertResearchRoomDecision:input_type -> sttattus.onyx.v1.UpsertResearchRoomDecisionRequest
-	371, // 838: sttattus.onyx.v1.OnyxService.RecordResearchRoomApproval:input_type -> sttattus.onyx.v1.RecordResearchRoomApprovalRequest
-	373, // 839: sttattus.onyx.v1.OnyxService.SearchResearchRoom:input_type -> sttattus.onyx.v1.SearchResearchRoomRequest
-	376, // 840: sttattus.onyx.v1.OnyxService.RequestResearchRoomExport:input_type -> sttattus.onyx.v1.RequestResearchRoomExportRequest
-	378, // 841: sttattus.onyx.v1.OnyxService.ReportResearchRoomAbuse:input_type -> sttattus.onyx.v1.ReportResearchRoomAbuseRequest
-	380, // 842: sttattus.onyx.v1.OnyxService.ListResearchRoomAudit:input_type -> sttattus.onyx.v1.ListResearchRoomAuditRequest
-	382, // 843: sttattus.onyx.v1.OnyxService.ListResearchRoomGrants:input_type -> sttattus.onyx.v1.ListResearchRoomGrantsRequest
-	384, // 844: sttattus.onyx.v1.OnyxService.UpsertResearchRoomGrant:input_type -> sttattus.onyx.v1.UpsertResearchRoomGrantRequest
-	386, // 845: sttattus.onyx.v1.OnyxService.RevokeResearchRoomGrant:input_type -> sttattus.onyx.v1.RevokeResearchRoomGrantRequest
-	388, // 846: sttattus.onyx.v1.OnyxService.CreateResearchRoomShareLink:input_type -> sttattus.onyx.v1.CreateResearchRoomShareLinkRequest
-	390, // 847: sttattus.onyx.v1.OnyxService.ListResearchRoomShareLinks:input_type -> sttattus.onyx.v1.ListResearchRoomShareLinksRequest
-	392, // 848: sttattus.onyx.v1.OnyxService.RevokeResearchRoomShareLink:input_type -> sttattus.onyx.v1.RevokeResearchRoomShareLinkRequest
-	394, // 849: sttattus.onyx.v1.OnyxService.ResolveResearchRoomShareLink:input_type -> sttattus.onyx.v1.ResolveResearchRoomShareLinkRequest
-	396, // 850: sttattus.onyx.v1.OnyxService.GetResearchRoomOfflineManifest:input_type -> sttattus.onyx.v1.GetResearchRoomOfflineManifestRequest
-	398, // 851: sttattus.onyx.v1.OnyxService.AcknowledgeResearchRoomOfflinePurge:input_type -> sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeRequest
-	400, // 852: sttattus.onyx.v1.OnyxService.ListResearchRoomOfflinePurges:input_type -> sttattus.onyx.v1.ListResearchRoomOfflinePurgesRequest
-	402, // 853: sttattus.onyx.v1.OnyxService.LeaveResearchRoom:input_type -> sttattus.onyx.v1.LeaveResearchRoomRequest
-	413, // 854: sttattus.onyx.v1.OnyxService.GetPersonalIntelligenceGraph:input_type -> sttattus.onyx.v1.GetPersonalIntelligenceGraphRequest
-	415, // 855: sttattus.onyx.v1.OnyxService.UpsertIntelligenceGraphNode:input_type -> sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest
-	417, // 856: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphNodeState:input_type -> sttattus.onyx.v1.SetIntelligenceGraphNodeStateRequest
-	419, // 857: sttattus.onyx.v1.OnyxService.MergeIntelligenceGraphNodes:input_type -> sttattus.onyx.v1.MergeIntelligenceGraphNodesRequest
-	421, // 858: sttattus.onyx.v1.OnyxService.SplitIntelligenceGraphNode:input_type -> sttattus.onyx.v1.SplitIntelligenceGraphNodeRequest
-	423, // 859: sttattus.onyx.v1.OnyxService.UpsertIntelligenceGraphEdge:input_type -> sttattus.onyx.v1.UpsertIntelligenceGraphEdgeRequest
-	425, // 860: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphEdgeState:input_type -> sttattus.onyx.v1.SetIntelligenceGraphEdgeStateRequest
-	427, // 861: sttattus.onyx.v1.OnyxService.GenerateIntelligenceGraphSuggestions:input_type -> sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsRequest
-	429, // 862: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphSuggestions:input_type -> sttattus.onyx.v1.ListIntelligenceGraphSuggestionsRequest
-	431, // 863: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphSuggestionState:input_type -> sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateRequest
-	433, // 864: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphTimeline:input_type -> sttattus.onyx.v1.ListIntelligenceGraphTimelineRequest
-	435, // 865: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphResurfacing:input_type -> sttattus.onyx.v1.ListIntelligenceGraphResurfacingRequest
-	437, // 866: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphResurfacingState:input_type -> sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateRequest
-	439, // 867: sttattus.onyx.v1.OnyxService.CreateIntelligenceGraphMeetingBrief:input_type -> sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefRequest
-	441, // 868: sttattus.onyx.v1.OnyxService.GetIntelligenceGraphMeetingBrief:input_type -> sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefRequest
-	443, // 869: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphMeetingBriefs:input_type -> sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsRequest
-	445, // 870: sttattus.onyx.v1.OnyxService.ExportPersonalIntelligenceGraph:input_type -> sttattus.onyx.v1.ExportPersonalIntelligenceGraphRequest
-	447, // 871: sttattus.onyx.v1.OnyxService.RebuildPersonalIntelligenceGraph:input_type -> sttattus.onyx.v1.RebuildPersonalIntelligenceGraphRequest
-	466, // 872: sttattus.onyx.v1.OnyxService.ListLanguageConfigs:input_type -> sttattus.onyx.v1.ListLanguageConfigsRequest
-	468, // 873: sttattus.onyx.v1.OnyxService.ListContentEditions:input_type -> sttattus.onyx.v1.ListContentEditionsRequest
-	470, // 874: sttattus.onyx.v1.OnyxService.GetAlignedBlocks:input_type -> sttattus.onyx.v1.GetAlignedBlocksRequest
-	472, // 875: sttattus.onyx.v1.OnyxService.ListTermbaseEntries:input_type -> sttattus.onyx.v1.ListTermbaseEntriesRequest
-	474, // 876: sttattus.onyx.v1.OnyxService.CrossLanguageSearch:input_type -> sttattus.onyx.v1.CrossLanguageSearchRequest
-	476, // 877: sttattus.onyx.v1.OnyxService.GetMultilingualPreferences:input_type -> sttattus.onyx.v1.GetMultilingualPreferencesRequest
-	478, // 878: sttattus.onyx.v1.OnyxService.UpdateMultilingualPreferences:input_type -> sttattus.onyx.v1.UpdateMultilingualPreferencesRequest
-	480, // 879: sttattus.onyx.v1.OnyxService.GetMultilingualAudioVideo:input_type -> sttattus.onyx.v1.GetMultilingualAudioVideoRequest
-	482, // 880: sttattus.onyx.v1.OnyxService.GetMultilingualOfflineManifest:input_type -> sttattus.onyx.v1.GetMultilingualOfflineManifestRequest
-	484, // 881: sttattus.onyx.v1.OnyxService.ReportTranslationIssue:input_type -> sttattus.onyx.v1.ReportTranslationIssueRequest
-	486, // 882: sttattus.onyx.v1.OnyxService.RequestMultilingualExport:input_type -> sttattus.onyx.v1.RequestMultilingualExportRequest
-	488, // 883: sttattus.onyx.v1.OnyxService.GetMultilingualExport:input_type -> sttattus.onyx.v1.GetMultilingualExportRequest
-	498, // 884: sttattus.onyx.v1.OnyxService.GetLivingArchiveDashboard:input_type -> sttattus.onyx.v1.GetLivingArchiveDashboardRequest
-	500, // 885: sttattus.onyx.v1.OnyxService.UpsertLivingArchivePolicy:input_type -> sttattus.onyx.v1.UpsertLivingArchivePolicyRequest
-	502, // 886: sttattus.onyx.v1.OnyxService.PreviewLivingArchivePolicy:input_type -> sttattus.onyx.v1.PreviewLivingArchivePolicyRequest
-	504, // 887: sttattus.onyx.v1.OnyxService.GenerateLivingArchiveEdition:input_type -> sttattus.onyx.v1.GenerateLivingArchiveEditionRequest
-	506, // 888: sttattus.onyx.v1.OnyxService.LinkLivingArchiveLegacyEscrow:input_type -> sttattus.onyx.v1.LinkLivingArchiveLegacyEscrowRequest
-	508, // 889: sttattus.onyx.v1.OnyxService.UpsertLivingArchiveContact:input_type -> sttattus.onyx.v1.UpsertLivingArchiveContactRequest
-	510, // 890: sttattus.onyx.v1.OnyxService.DeleteLivingArchiveContact:input_type -> sttattus.onyx.v1.DeleteLivingArchiveContactRequest
-	512, // 891: sttattus.onyx.v1.OnyxService.SubmitLivingArchivePolicy:input_type -> sttattus.onyx.v1.SubmitLivingArchivePolicyRequest
-	514, // 892: sttattus.onyx.v1.OnyxService.RevokeLivingArchivePolicy:input_type -> sttattus.onyx.v1.RevokeLivingArchivePolicyRequest
-	516, // 893: sttattus.onyx.v1.OnyxService.ConfirmLivingArchiveReview:input_type -> sttattus.onyx.v1.ConfirmLivingArchiveReviewRequest
-	518, // 894: sttattus.onyx.v1.OnyxService.ContestLivingArchiveRelease:input_type -> sttattus.onyx.v1.ContestLivingArchiveReleaseRequest
-	527, // 895: sttattus.onyx.v1.OnyxService.GetForensicProtectionDashboard:input_type -> sttattus.onyx.v1.GetForensicProtectionDashboardRequest
-	529, // 896: sttattus.onyx.v1.OnyxService.IssueForensicManifest:input_type -> sttattus.onyx.v1.IssueForensicManifestRequest
-	531, // 897: sttattus.onyx.v1.OnyxService.RevokeForensicManifest:input_type -> sttattus.onyx.v1.RevokeForensicManifestRequest
-	533, // 898: sttattus.onyx.v1.OnyxService.RespondForensicCase:input_type -> sttattus.onyx.v1.RespondForensicCaseRequest
-	535, // 899: sttattus.onyx.v1.OnyxService.FileForensicAppeal:input_type -> sttattus.onyx.v1.FileForensicAppealRequest
-	537, // 900: sttattus.onyx.v1.OnyxService.PostForensicAppealMessage:input_type -> sttattus.onyx.v1.PostForensicAppealMessageRequest
-	539, // 901: sttattus.onyx.v1.OnyxService.WithdrawForensicAppeal:input_type -> sttattus.onyx.v1.WithdrawForensicAppealRequest
-	553, // 902: sttattus.onyx.v1.OnyxService.GetIntegrationDashboard:input_type -> sttattus.onyx.v1.GetIntegrationDashboardRequest
-	555, // 903: sttattus.onyx.v1.OnyxService.AuthorizeIntegration:input_type -> sttattus.onyx.v1.AuthorizeIntegrationRequest
-	557, // 904: sttattus.onyx.v1.OnyxService.RevokeIntegrationGrant:input_type -> sttattus.onyx.v1.RevokeIntegrationGrantRequest
-	559, // 905: sttattus.onyx.v1.OnyxService.UpsertIntegrationConnector:input_type -> sttattus.onyx.v1.UpsertIntegrationConnectorRequest
-	561, // 906: sttattus.onyx.v1.OnyxService.SetIntegrationConnectorState:input_type -> sttattus.onyx.v1.SetIntegrationConnectorStateRequest
-	563, // 907: sttattus.onyx.v1.OnyxService.RunIntegrationConnector:input_type -> sttattus.onyx.v1.RunIntegrationConnectorRequest
-	565, // 908: sttattus.onyx.v1.OnyxService.GetIntegrationArtifact:input_type -> sttattus.onyx.v1.GetIntegrationArtifactRequest
-	567, // 909: sttattus.onyx.v1.OnyxService.ResolveIntegrationConflict:input_type -> sttattus.onyx.v1.ResolveIntegrationConflictRequest
-	569, // 910: sttattus.onyx.v1.OnyxService.DispatchIntegrationBridge:input_type -> sttattus.onyx.v1.DispatchIntegrationBridgeRequest
-	571, // 911: sttattus.onyx.v1.OnyxService.SubmitIntegrationOperationsCase:input_type -> sttattus.onyx.v1.SubmitIntegrationOperationsCaseRequest
-	587, // 912: sttattus.onyx.v1.OnyxService.GetSpatialCanvasDashboard:input_type -> sttattus.onyx.v1.GetSpatialCanvasDashboardRequest
-	589, // 913: sttattus.onyx.v1.OnyxService.ListSpatialCanvasTemplates:input_type -> sttattus.onyx.v1.ListSpatialCanvasTemplatesRequest
-	591, // 914: sttattus.onyx.v1.OnyxService.CreateSpatialCanvas:input_type -> sttattus.onyx.v1.CreateSpatialCanvasRequest
-	593, // 915: sttattus.onyx.v1.OnyxService.GetSpatialCanvas:input_type -> sttattus.onyx.v1.GetSpatialCanvasRequest
-	595, // 916: sttattus.onyx.v1.OnyxService.ApplySpatialCanvasOperations:input_type -> sttattus.onyx.v1.ApplySpatialCanvasOperationsRequest
-	597, // 917: sttattus.onyx.v1.OnyxService.ResolveSpatialCanvasConflict:input_type -> sttattus.onyx.v1.ResolveSpatialCanvasConflictRequest
-	599, // 918: sttattus.onyx.v1.OnyxService.CreateSpatialCanvasSnapshot:input_type -> sttattus.onyx.v1.CreateSpatialCanvasSnapshotRequest
-	601, // 919: sttattus.onyx.v1.OnyxService.RestoreSpatialCanvasSnapshot:input_type -> sttattus.onyx.v1.RestoreSpatialCanvasSnapshotRequest
-	603, // 920: sttattus.onyx.v1.OnyxService.UpsertSpatialCanvasComment:input_type -> sttattus.onyx.v1.UpsertSpatialCanvasCommentRequest
-	605, // 921: sttattus.onyx.v1.OnyxService.SetSpatialCanvasCommentState:input_type -> sttattus.onyx.v1.SetSpatialCanvasCommentStateRequest
-	607, // 922: sttattus.onyx.v1.OnyxService.GenerateSpatialCanvasProposals:input_type -> sttattus.onyx.v1.GenerateSpatialCanvasProposalsRequest
-	609, // 923: sttattus.onyx.v1.OnyxService.SetSpatialCanvasProposalState:input_type -> sttattus.onyx.v1.SetSpatialCanvasProposalStateRequest
-	611, // 924: sttattus.onyx.v1.OnyxService.RequestSpatialCanvasExport:input_type -> sttattus.onyx.v1.RequestSpatialCanvasExportRequest
-	613, // 925: sttattus.onyx.v1.OnyxService.GetSpatialCanvasExport:input_type -> sttattus.onyx.v1.GetSpatialCanvasExportRequest
-	615, // 926: sttattus.onyx.v1.OnyxService.UpsertSpatialCanvasCollaborator:input_type -> sttattus.onyx.v1.UpsertSpatialCanvasCollaboratorRequest
-	617, // 927: sttattus.onyx.v1.OnyxService.ReportSpatialCanvasAbuse:input_type -> sttattus.onyx.v1.ReportSpatialCanvasAbuseRequest
-	628, // 928: sttattus.onyx.v1.OnyxService.GetRecallDashboard:input_type -> sttattus.onyx.v1.GetRecallDashboardRequest
-	630, // 929: sttattus.onyx.v1.OnyxService.ListRecallDecks:input_type -> sttattus.onyx.v1.ListRecallDecksRequest
-	632, // 930: sttattus.onyx.v1.OnyxService.ListMemoryItems:input_type -> sttattus.onyx.v1.ListMemoryItemsRequest
-	634, // 931: sttattus.onyx.v1.OnyxService.UpsertRecallDeck:input_type -> sttattus.onyx.v1.UpsertRecallDeckRequest
-	636, // 932: sttattus.onyx.v1.OnyxService.GenerateRecallItems:input_type -> sttattus.onyx.v1.GenerateRecallItemsRequest
-	638, // 933: sttattus.onyx.v1.OnyxService.UpsertMemoryItem:input_type -> sttattus.onyx.v1.UpsertMemoryItemRequest
-	640, // 934: sttattus.onyx.v1.OnyxService.SetMemoryItemState:input_type -> sttattus.onyx.v1.SetMemoryItemStateRequest
-	642, // 935: sttattus.onyx.v1.OnyxService.GetRecallReviewQueue:input_type -> sttattus.onyx.v1.GetRecallReviewQueueRequest
-	644, // 936: sttattus.onyx.v1.OnyxService.RecordRecallReviewBatch:input_type -> sttattus.onyx.v1.RecordRecallReviewBatchRequest
-	646, // 937: sttattus.onyx.v1.OnyxService.ResolveRecallInvalidation:input_type -> sttattus.onyx.v1.ResolveRecallInvalidationRequest
-	648, // 938: sttattus.onyx.v1.OnyxService.UpdateRecallPreferences:input_type -> sttattus.onyx.v1.UpdateRecallPreferencesRequest
-	650, // 939: sttattus.onyx.v1.OnyxService.ExportRecallData:input_type -> sttattus.onyx.v1.ExportRecallDataRequest
-	652, // 940: sttattus.onyx.v1.OnyxService.ImportRecallData:input_type -> sttattus.onyx.v1.ImportRecallDataRequest
-	654, // 941: sttattus.onyx.v1.OnyxService.ReportRecallItem:input_type -> sttattus.onyx.v1.ReportRecallItemRequest
-	656, // 942: sttattus.onyx.v1.OnyxService.RecordRecallTransfer:input_type -> sttattus.onyx.v1.RecordRecallTransferRequest
-	672, // 943: sttattus.onyx.v1.OnyxService.GetDraftingDashboard:input_type -> sttattus.onyx.v1.GetDraftingDashboardRequest
-	674, // 944: sttattus.onyx.v1.OnyxService.ListDrafts:input_type -> sttattus.onyx.v1.ListDraftsRequest
-	676, // 945: sttattus.onyx.v1.OnyxService.GetDraft:input_type -> sttattus.onyx.v1.GetDraftRequest
-	678, // 946: sttattus.onyx.v1.OnyxService.CreateDraft:input_type -> sttattus.onyx.v1.CreateDraftRequest
-	680, // 947: sttattus.onyx.v1.OnyxService.UpsertDraftBlock:input_type -> sttattus.onyx.v1.UpsertDraftBlockRequest
-	682, // 948: sttattus.onyx.v1.OnyxService.DeleteDraftBlock:input_type -> sttattus.onyx.v1.DeleteDraftBlockRequest
-	684, // 949: sttattus.onyx.v1.OnyxService.UpsertDraftCitation:input_type -> sttattus.onyx.v1.UpsertDraftCitationRequest
-	686, // 950: sttattus.onyx.v1.OnyxService.VerifyDraft:input_type -> sttattus.onyx.v1.VerifyDraftRequest
-	691, // 951: sttattus.onyx.v1.OnyxService.GetDraftEvidenceReview:input_type -> sttattus.onyx.v1.GetDraftEvidenceReviewRequest
-	693, // 952: sttattus.onyx.v1.OnyxService.CompareDraftEvidence:input_type -> sttattus.onyx.v1.CompareDraftEvidenceRequest
-	696, // 953: sttattus.onyx.v1.OnyxService.CreateDraftRevision:input_type -> sttattus.onyx.v1.CreateDraftRevisionRequest
-	698, // 954: sttattus.onyx.v1.OnyxService.CreateDraftBranch:input_type -> sttattus.onyx.v1.CreateDraftBranchRequest
-	700, // 955: sttattus.onyx.v1.OnyxService.RestoreDraftRevision:input_type -> sttattus.onyx.v1.RestoreDraftRevisionRequest
-	702, // 956: sttattus.onyx.v1.OnyxService.CompareDraftRevisions:input_type -> sttattus.onyx.v1.CompareDraftRevisionsRequest
-	704, // 957: sttattus.onyx.v1.OnyxService.GenerateDraftSuggestion:input_type -> sttattus.onyx.v1.GenerateDraftSuggestionRequest
-	706, // 958: sttattus.onyx.v1.OnyxService.SetDraftSuggestionState:input_type -> sttattus.onyx.v1.SetDraftSuggestionStateRequest
-	708, // 959: sttattus.onyx.v1.OnyxService.ResolveDraftConflict:input_type -> sttattus.onyx.v1.ResolveDraftConflictRequest
-	710, // 960: sttattus.onyx.v1.OnyxService.RequestDraftExport:input_type -> sttattus.onyx.v1.RequestDraftExportRequest
-	712, // 961: sttattus.onyx.v1.OnyxService.GetDraftExport:input_type -> sttattus.onyx.v1.GetDraftExportRequest
-	714, // 962: sttattus.onyx.v1.OnyxService.CreateDraftHandoff:input_type -> sttattus.onyx.v1.CreateDraftHandoffRequest
-	716, // 963: sttattus.onyx.v1.OnyxService.ReportDraftIncident:input_type -> sttattus.onyx.v1.ReportDraftIncidentRequest
-	22,  // 964: sttattus.onyx.v1.OnyxService.CreateProfile:output_type -> sttattus.onyx.v1.CreateProfileResponse
-	24,  // 965: sttattus.onyx.v1.OnyxService.GetProfile:output_type -> sttattus.onyx.v1.GetProfileResponse
-	26,  // 966: sttattus.onyx.v1.OnyxService.ListContent:output_type -> sttattus.onyx.v1.ListContentResponse
-	28,  // 967: sttattus.onyx.v1.OnyxService.Subscribe:output_type -> sttattus.onyx.v1.SubscribeResponse
-	30,  // 968: sttattus.onyx.v1.OnyxService.GetContent:output_type -> sttattus.onyx.v1.GetContentResponse
-	32,  // 969: sttattus.onyx.v1.OnyxService.ListShelf:output_type -> sttattus.onyx.v1.ListShelfResponse
-	34,  // 970: sttattus.onyx.v1.OnyxService.ListContinue:output_type -> sttattus.onyx.v1.ListContinueResponse
-	37,  // 971: sttattus.onyx.v1.OnyxService.GetShelves:output_type -> sttattus.onyx.v1.GetShelvesResponse
-	39,  // 972: sttattus.onyx.v1.OnyxService.RecordProgress:output_type -> sttattus.onyx.v1.RecordProgressResponse
-	41,  // 973: sttattus.onyx.v1.OnyxService.RedeemContent:output_type -> sttattus.onyx.v1.RedeemContentResponse
-	43,  // 974: sttattus.onyx.v1.OnyxService.CreateSubscriptionCheckout:output_type -> sttattus.onyx.v1.CreateSubscriptionCheckoutResponse
-	46,  // 975: sttattus.onyx.v1.OnyxService.GetCreator:output_type -> sttattus.onyx.v1.GetCreatorResponse
-	48,  // 976: sttattus.onyx.v1.OnyxService.ListCreatorWorks:output_type -> sttattus.onyx.v1.ListCreatorWorksResponse
-	50,  // 977: sttattus.onyx.v1.OnyxService.FollowCreator:output_type -> sttattus.onyx.v1.FollowCreatorResponse
-	52,  // 978: sttattus.onyx.v1.OnyxService.SearchContent:output_type -> sttattus.onyx.v1.SearchContentResponse
-	55,  // 979: sttattus.onyx.v1.OnyxService.AddNote:output_type -> sttattus.onyx.v1.AddNoteResponse
-	57,  // 980: sttattus.onyx.v1.OnyxService.ListMyNotes:output_type -> sttattus.onyx.v1.ListMyNotesResponse
-	59,  // 981: sttattus.onyx.v1.OnyxService.DeleteNote:output_type -> sttattus.onyx.v1.DeleteNoteResponse
-	62,  // 982: sttattus.onyx.v1.OnyxService.UpsertReaderAnnotation:output_type -> sttattus.onyx.v1.UpsertReaderAnnotationResponse
-	64,  // 983: sttattus.onyx.v1.OnyxService.DeleteReaderAnnotation:output_type -> sttattus.onyx.v1.DeleteReaderAnnotationResponse
-	66,  // 984: sttattus.onyx.v1.OnyxService.ListMyReaderAnnotations:output_type -> sttattus.onyx.v1.ListMyReaderAnnotationsResponse
-	69,  // 985: sttattus.onyx.v1.OnyxService.SearchReader:output_type -> sttattus.onyx.v1.SearchReaderResponse
-	73,  // 986: sttattus.onyx.v1.OnyxService.SearchIntelligence:output_type -> sttattus.onyx.v1.SearchIntelligenceResponse
-	75,  // 987: sttattus.onyx.v1.OnyxService.RecordIntelligenceSearchOutcome:output_type -> sttattus.onyx.v1.RecordIntelligenceSearchOutcomeResponse
-	78,  // 988: sttattus.onyx.v1.OnyxService.ListSavedQueries:output_type -> sttattus.onyx.v1.ListSavedQueriesResponse
-	80,  // 989: sttattus.onyx.v1.OnyxService.UpsertSavedQuery:output_type -> sttattus.onyx.v1.UpsertSavedQueryResponse
-	82,  // 990: sttattus.onyx.v1.OnyxService.DeleteSavedQuery:output_type -> sttattus.onyx.v1.DeleteSavedQueryResponse
-	86,  // 991: sttattus.onyx.v1.OnyxService.ListWatchlists:output_type -> sttattus.onyx.v1.ListWatchlistsResponse
-	88,  // 992: sttattus.onyx.v1.OnyxService.UpsertWatchlist:output_type -> sttattus.onyx.v1.UpsertWatchlistResponse
-	90,  // 993: sttattus.onyx.v1.OnyxService.DeleteWatchlist:output_type -> sttattus.onyx.v1.DeleteWatchlistResponse
-	92,  // 994: sttattus.onyx.v1.OnyxService.RefreshWatchlist:output_type -> sttattus.onyx.v1.RefreshWatchlistResponse
-	95,  // 995: sttattus.onyx.v1.OnyxService.ListIntelligenceAlerts:output_type -> sttattus.onyx.v1.ListIntelligenceAlertsResponse
-	97,  // 996: sttattus.onyx.v1.OnyxService.SetIntelligenceAlertState:output_type -> sttattus.onyx.v1.SetIntelligenceAlertStateResponse
-	100, // 997: sttattus.onyx.v1.OnyxService.GetIntelligenceQueue:output_type -> sttattus.onyx.v1.GetIntelligenceQueueResponse
-	102, // 998: sttattus.onyx.v1.OnyxService.RecordIntelligenceFeedback:output_type -> sttattus.onyx.v1.RecordIntelligenceFeedbackResponse
-	104, // 999: sttattus.onyx.v1.OnyxService.ExportReaderData:output_type -> sttattus.onyx.v1.ExportReaderDataResponse
-	107, // 1000: sttattus.onyx.v1.OnyxService.ListReaderSyncChanges:output_type -> sttattus.onyx.v1.ListReaderSyncChangesResponse
-	109, // 1001: sttattus.onyx.v1.OnyxService.ListMyUnlocks:output_type -> sttattus.onyx.v1.ListMyUnlocksResponse
-	111, // 1002: sttattus.onyx.v1.OnyxService.ListMySubscriptions:output_type -> sttattus.onyx.v1.ListMySubscriptionsResponse
-	113, // 1003: sttattus.onyx.v1.OnyxService.ListMyFollows:output_type -> sttattus.onyx.v1.ListMyFollowsResponse
-	116, // 1004: sttattus.onyx.v1.OnyxService.ListSovereignWindow:output_type -> sttattus.onyx.v1.ListSovereignWindowResponse
-	119, // 1005: sttattus.onyx.v1.OnyxService.ListSeries:output_type -> sttattus.onyx.v1.ListSeriesResponse
-	121, // 1006: sttattus.onyx.v1.OnyxService.GetSeries:output_type -> sttattus.onyx.v1.GetSeriesResponse
-	124, // 1007: sttattus.onyx.v1.OnyxService.GenerateCaptions:output_type -> sttattus.onyx.v1.GenerateCaptionsResponse
-	126, // 1008: sttattus.onyx.v1.OnyxService.GetCaptionJob:output_type -> sttattus.onyx.v1.GetCaptionJobResponse
-	129, // 1009: sttattus.onyx.v1.OnyxService.GetListeningPreferences:output_type -> sttattus.onyx.v1.GetListeningPreferencesResponse
-	131, // 1010: sttattus.onyx.v1.OnyxService.UpdateListeningPreferences:output_type -> sttattus.onyx.v1.UpdateListeningPreferencesResponse
-	134, // 1011: sttattus.onyx.v1.OnyxService.CreateListeningBookmark:output_type -> sttattus.onyx.v1.CreateListeningBookmarkResponse
-	136, // 1012: sttattus.onyx.v1.OnyxService.ListListeningBookmarks:output_type -> sttattus.onyx.v1.ListListeningBookmarksResponse
-	138, // 1013: sttattus.onyx.v1.OnyxService.DeleteListeningBookmark:output_type -> sttattus.onyx.v1.DeleteListeningBookmarkResponse
-	141, // 1014: sttattus.onyx.v1.OnyxService.ListListeningQueue:output_type -> sttattus.onyx.v1.ListListeningQueueResponse
-	143, // 1015: sttattus.onyx.v1.OnyxService.SetListeningQueue:output_type -> sttattus.onyx.v1.SetListeningQueueResponse
-	148, // 1016: sttattus.onyx.v1.OnyxService.CreateAudioOverview:output_type -> sttattus.onyx.v1.CreateAudioOverviewResponse
-	150, // 1017: sttattus.onyx.v1.OnyxService.ListAudioOverviews:output_type -> sttattus.onyx.v1.ListAudioOverviewsResponse
-	152, // 1018: sttattus.onyx.v1.OnyxService.GetAudioOverview:output_type -> sttattus.onyx.v1.GetAudioOverviewResponse
-	154, // 1019: sttattus.onyx.v1.OnyxService.DeleteAudioOverview:output_type -> sttattus.onyx.v1.DeleteAudioOverviewResponse
-	157, // 1020: sttattus.onyx.v1.OnyxService.ListListeningPronunciations:output_type -> sttattus.onyx.v1.ListListeningPronunciationsResponse
-	159, // 1021: sttattus.onyx.v1.OnyxService.GetTodaySummary:output_type -> sttattus.onyx.v1.GetTodaySummaryResponse
-	162, // 1022: sttattus.onyx.v1.OnyxService.GetCrossPillarUnlocks:output_type -> sttattus.onyx.v1.GetCrossPillarUnlocksResponse
-	166, // 1023: sttattus.onyx.v1.OnyxService.StartConciergeThread:output_type -> sttattus.onyx.v1.StartConciergeThreadResponse
-	168, // 1024: sttattus.onyx.v1.OnyxService.ListMyConciergeThreads:output_type -> sttattus.onyx.v1.ListMyConciergeThreadsResponse
-	170, // 1025: sttattus.onyx.v1.OnyxService.GetConciergeThread:output_type -> sttattus.onyx.v1.GetConciergeThreadResponse
-	172, // 1026: sttattus.onyx.v1.OnyxService.PostConciergeMessage:output_type -> sttattus.onyx.v1.PostConciergeMessageResponse
-	175, // 1027: sttattus.onyx.v1.OnyxService.ListLiveEvents:output_type -> sttattus.onyx.v1.ListLiveEventsResponse
-	177, // 1028: sttattus.onyx.v1.OnyxService.GetLiveEvent:output_type -> sttattus.onyx.v1.GetLiveEventResponse
-	179, // 1029: sttattus.onyx.v1.OnyxService.RsvpLiveEvent:output_type -> sttattus.onyx.v1.RsvpLiveEventResponse
-	193, // 1030: sttattus.onyx.v1.OnyxService.GetLiveSalon:output_type -> sttattus.onyx.v1.GetLiveSalonResponse
-	195, // 1031: sttattus.onyx.v1.OnyxService.UpsertLiveReservation:output_type -> sttattus.onyx.v1.UpsertLiveReservationResponse
-	197, // 1032: sttattus.onyx.v1.OnyxService.InviteLiveGuest:output_type -> sttattus.onyx.v1.InviteLiveGuestResponse
-	199, // 1033: sttattus.onyx.v1.OnyxService.GenerateLiveCalendarPass:output_type -> sttattus.onyx.v1.GenerateLiveCalendarPassResponse
-	201, // 1034: sttattus.onyx.v1.OnyxService.JoinLiveEvent:output_type -> sttattus.onyx.v1.JoinLiveEventResponse
-	203, // 1035: sttattus.onyx.v1.OnyxService.ListLiveActivity:output_type -> sttattus.onyx.v1.ListLiveActivityResponse
-	205, // 1036: sttattus.onyx.v1.OnyxService.PostLiveMessage:output_type -> sttattus.onyx.v1.PostLiveMessageResponse
-	207, // 1037: sttattus.onyx.v1.OnyxService.UpvoteLiveQuestion:output_type -> sttattus.onyx.v1.UpvoteLiveQuestionResponse
-	209, // 1038: sttattus.onyx.v1.OnyxService.VoteLivePoll:output_type -> sttattus.onyx.v1.VoteLivePollResponse
-	211, // 1039: sttattus.onyx.v1.OnyxService.SetLiveHandRaise:output_type -> sttattus.onyx.v1.SetLiveHandRaiseResponse
-	213, // 1040: sttattus.onyx.v1.OnyxService.ReactLiveEvent:output_type -> sttattus.onyx.v1.ReactLiveEventResponse
-	215, // 1041: sttattus.onyx.v1.OnyxService.UpsertLiveNote:output_type -> sttattus.onyx.v1.UpsertLiveNoteResponse
-	217, // 1042: sttattus.onyx.v1.OnyxService.ListLiveNotes:output_type -> sttattus.onyx.v1.ListLiveNotesResponse
-	219, // 1043: sttattus.onyx.v1.OnyxService.DeleteLiveNote:output_type -> sttattus.onyx.v1.DeleteLiveNoteResponse
-	221, // 1044: sttattus.onyx.v1.OnyxService.GetLiveReplay:output_type -> sttattus.onyx.v1.GetLiveReplayResponse
-	224, // 1045: sttattus.onyx.v1.OnyxService.SetPosthumousArchive:output_type -> sttattus.onyx.v1.SetPosthumousArchiveResponse
-	226, // 1046: sttattus.onyx.v1.OnyxService.GetPosthumousArchive:output_type -> sttattus.onyx.v1.GetPosthumousArchiveResponse
-	229, // 1047: sttattus.onyx.v1.OnyxService.ListAnthologies:output_type -> sttattus.onyx.v1.ListAnthologiesResponse
-	231, // 1048: sttattus.onyx.v1.OnyxService.GetAnthology:output_type -> sttattus.onyx.v1.GetAnthologyResponse
-	234, // 1049: sttattus.onyx.v1.OnyxService.CreateShareLink:output_type -> sttattus.onyx.v1.CreateShareLinkResponse
-	236, // 1050: sttattus.onyx.v1.OnyxService.ListMyShareLinks:output_type -> sttattus.onyx.v1.ListMyShareLinksResponse
-	238, // 1051: sttattus.onyx.v1.OnyxService.RevokeShareLink:output_type -> sttattus.onyx.v1.RevokeShareLinkResponse
-	241, // 1052: sttattus.onyx.v1.OnyxService.GetOfflineManifest:output_type -> sttattus.onyx.v1.GetOfflineManifestResponse
-	243, // 1053: sttattus.onyx.v1.OnyxService.RegisterDevice:output_type -> sttattus.onyx.v1.RegisterDeviceResponse
-	245, // 1054: sttattus.onyx.v1.OnyxService.AcknowledgePurge:output_type -> sttattus.onyx.v1.AcknowledgePurgeResponse
-	248, // 1055: sttattus.onyx.v1.OnyxService.GetDeviceGrants:output_type -> sttattus.onyx.v1.GetDeviceGrantsResponse
-	250, // 1056: sttattus.onyx.v1.OnyxService.RevokeMyDevice:output_type -> sttattus.onyx.v1.RevokeMyDeviceResponse
-	252, // 1057: sttattus.onyx.v1.OnyxService.MarkMyDeviceLost:output_type -> sttattus.onyx.v1.MarkMyDeviceLostResponse
-	254, // 1058: sttattus.onyx.v1.OnyxService.GetPurgeReceipt:output_type -> sttattus.onyx.v1.GetPurgeReceiptResponse
-	257, // 1059: sttattus.onyx.v1.OnyxService.ListOfflineManifestItems:output_type -> sttattus.onyx.v1.ListOfflineManifestItemsResponse
-	260, // 1060: sttattus.onyx.v1.OnyxService.RefreshOfflineRenditions:output_type -> sttattus.onyx.v1.RefreshOfflineRenditionsResponse
-	262, // 1061: sttattus.onyx.v1.OnyxService.RecordOfflineEvent:output_type -> sttattus.onyx.v1.RecordOfflineEventResponse
-	264, // 1062: sttattus.onyx.v1.OnyxService.GetYearInOnyx:output_type -> sttattus.onyx.v1.GetYearInOnyxResponse
-	267, // 1063: sttattus.onyx.v1.OnyxService.GenerateAnnualArchive:output_type -> sttattus.onyx.v1.GenerateAnnualArchiveResponse
-	269, // 1064: sttattus.onyx.v1.OnyxService.ReactToContent:output_type -> sttattus.onyx.v1.ReactToContentResponse
-	272, // 1065: sttattus.onyx.v1.OnyxService.CreateIngestionItem:output_type -> sttattus.onyx.v1.CreateIngestionItemResponse
-	274, // 1066: sttattus.onyx.v1.OnyxService.ListMyIngestionItems:output_type -> sttattus.onyx.v1.ListMyIngestionItemsResponse
-	276, // 1067: sttattus.onyx.v1.OnyxService.GetIngestionItem:output_type -> sttattus.onyx.v1.GetIngestionItemResponse
-	278, // 1068: sttattus.onyx.v1.OnyxService.RetryIngestionItem:output_type -> sttattus.onyx.v1.RetryIngestionItemResponse
-	280, // 1069: sttattus.onyx.v1.OnyxService.SetIngestionItemState:output_type -> sttattus.onyx.v1.SetIngestionItemStateResponse
-	282, // 1070: sttattus.onyx.v1.OnyxService.ResolveIngestionDuplicate:output_type -> sttattus.onyx.v1.ResolveIngestionDuplicateResponse
-	288, // 1071: sttattus.onyx.v1.OnyxService.GetEvidenceWorkspace:output_type -> sttattus.onyx.v1.GetEvidenceWorkspaceResponse
-	292, // 1072: sttattus.onyx.v1.OnyxService.CreateEvidenceBrief:output_type -> sttattus.onyx.v1.CreateEvidenceBriefResponse
-	294, // 1073: sttattus.onyx.v1.OnyxService.ListMyEvidenceBriefs:output_type -> sttattus.onyx.v1.ListMyEvidenceBriefsResponse
-	296, // 1074: sttattus.onyx.v1.OnyxService.GetEvidenceBrief:output_type -> sttattus.onyx.v1.GetEvidenceBriefResponse
-	305, // 1075: sttattus.onyx.v1.OnyxService.GetCreatorStudio:output_type -> sttattus.onyx.v1.GetCreatorStudioResponse
-	307, // 1076: sttattus.onyx.v1.OnyxService.SubmitCreatorPitch:output_type -> sttattus.onyx.v1.SubmitCreatorPitchResponse
-	309, // 1077: sttattus.onyx.v1.OnyxService.UpdateCreatorProject:output_type -> sttattus.onyx.v1.UpdateCreatorProjectResponse
-	311, // 1078: sttattus.onyx.v1.OnyxService.SubmitCreatorProject:output_type -> sttattus.onyx.v1.SubmitCreatorProjectResponse
-	313, // 1079: sttattus.onyx.v1.OnyxService.SignCreatorContract:output_type -> sttattus.onyx.v1.SignCreatorContractResponse
-	315, // 1080: sttattus.onyx.v1.OnyxService.ListMyCreatorSubscriptionsDetailed:output_type -> sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedResponse
-	317, // 1081: sttattus.onyx.v1.OnyxService.CancelCreatorSubscription:output_type -> sttattus.onyx.v1.CancelCreatorSubscriptionResponse
-	321, // 1082: sttattus.onyx.v1.OnyxService.GetMyCommerce:output_type -> sttattus.onyx.v1.GetMyCommerceResponse
-	323, // 1083: sttattus.onyx.v1.OnyxService.CreateCommerceCase:output_type -> sttattus.onyx.v1.CreateCommerceCaseResponse
-	342, // 1084: sttattus.onyx.v1.OnyxService.ListResearchRooms:output_type -> sttattus.onyx.v1.ListResearchRoomsResponse
-	344, // 1085: sttattus.onyx.v1.OnyxService.GetResearchRoom:output_type -> sttattus.onyx.v1.GetResearchRoomResponse
-	346, // 1086: sttattus.onyx.v1.OnyxService.CreateResearchRoom:output_type -> sttattus.onyx.v1.CreateResearchRoomResponse
-	348, // 1087: sttattus.onyx.v1.OnyxService.UpdateResearchRoom:output_type -> sttattus.onyx.v1.UpdateResearchRoomResponse
-	350, // 1088: sttattus.onyx.v1.OnyxService.InviteResearchRoomMember:output_type -> sttattus.onyx.v1.InviteResearchRoomMemberResponse
-	352, // 1089: sttattus.onyx.v1.OnyxService.RespondResearchRoomInvite:output_type -> sttattus.onyx.v1.RespondResearchRoomInviteResponse
-	354, // 1090: sttattus.onyx.v1.OnyxService.ChangeResearchRoomMember:output_type -> sttattus.onyx.v1.ChangeResearchRoomMemberResponse
-	356, // 1091: sttattus.onyx.v1.OnyxService.RevokeResearchRoomMember:output_type -> sttattus.onyx.v1.RevokeResearchRoomMemberResponse
-	358, // 1092: sttattus.onyx.v1.OnyxService.AddResearchRoomItem:output_type -> sttattus.onyx.v1.AddResearchRoomItemResponse
-	360, // 1093: sttattus.onyx.v1.OnyxService.RemoveResearchRoomItem:output_type -> sttattus.onyx.v1.RemoveResearchRoomItemResponse
-	362, // 1094: sttattus.onyx.v1.OnyxService.PostResearchRoomComment:output_type -> sttattus.onyx.v1.PostResearchRoomCommentResponse
-	364, // 1095: sttattus.onyx.v1.OnyxService.SetResearchRoomThreadStatus:output_type -> sttattus.onyx.v1.SetResearchRoomThreadStatusResponse
-	366, // 1096: sttattus.onyx.v1.OnyxService.UpsertResearchRoomTask:output_type -> sttattus.onyx.v1.UpsertResearchRoomTaskResponse
-	368, // 1097: sttattus.onyx.v1.OnyxService.UpsertResearchRoomMeeting:output_type -> sttattus.onyx.v1.UpsertResearchRoomMeetingResponse
-	370, // 1098: sttattus.onyx.v1.OnyxService.UpsertResearchRoomDecision:output_type -> sttattus.onyx.v1.UpsertResearchRoomDecisionResponse
-	372, // 1099: sttattus.onyx.v1.OnyxService.RecordResearchRoomApproval:output_type -> sttattus.onyx.v1.RecordResearchRoomApprovalResponse
-	375, // 1100: sttattus.onyx.v1.OnyxService.SearchResearchRoom:output_type -> sttattus.onyx.v1.SearchResearchRoomResponse
-	377, // 1101: sttattus.onyx.v1.OnyxService.RequestResearchRoomExport:output_type -> sttattus.onyx.v1.RequestResearchRoomExportResponse
-	379, // 1102: sttattus.onyx.v1.OnyxService.ReportResearchRoomAbuse:output_type -> sttattus.onyx.v1.ReportResearchRoomAbuseResponse
-	381, // 1103: sttattus.onyx.v1.OnyxService.ListResearchRoomAudit:output_type -> sttattus.onyx.v1.ListResearchRoomAuditResponse
-	383, // 1104: sttattus.onyx.v1.OnyxService.ListResearchRoomGrants:output_type -> sttattus.onyx.v1.ListResearchRoomGrantsResponse
-	385, // 1105: sttattus.onyx.v1.OnyxService.UpsertResearchRoomGrant:output_type -> sttattus.onyx.v1.UpsertResearchRoomGrantResponse
-	387, // 1106: sttattus.onyx.v1.OnyxService.RevokeResearchRoomGrant:output_type -> sttattus.onyx.v1.RevokeResearchRoomGrantResponse
-	389, // 1107: sttattus.onyx.v1.OnyxService.CreateResearchRoomShareLink:output_type -> sttattus.onyx.v1.CreateResearchRoomShareLinkResponse
-	391, // 1108: sttattus.onyx.v1.OnyxService.ListResearchRoomShareLinks:output_type -> sttattus.onyx.v1.ListResearchRoomShareLinksResponse
-	393, // 1109: sttattus.onyx.v1.OnyxService.RevokeResearchRoomShareLink:output_type -> sttattus.onyx.v1.RevokeResearchRoomShareLinkResponse
-	395, // 1110: sttattus.onyx.v1.OnyxService.ResolveResearchRoomShareLink:output_type -> sttattus.onyx.v1.ResolveResearchRoomShareLinkResponse
-	397, // 1111: sttattus.onyx.v1.OnyxService.GetResearchRoomOfflineManifest:output_type -> sttattus.onyx.v1.GetResearchRoomOfflineManifestResponse
-	399, // 1112: sttattus.onyx.v1.OnyxService.AcknowledgeResearchRoomOfflinePurge:output_type -> sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeResponse
-	401, // 1113: sttattus.onyx.v1.OnyxService.ListResearchRoomOfflinePurges:output_type -> sttattus.onyx.v1.ListResearchRoomOfflinePurgesResponse
-	403, // 1114: sttattus.onyx.v1.OnyxService.LeaveResearchRoom:output_type -> sttattus.onyx.v1.LeaveResearchRoomResponse
-	414, // 1115: sttattus.onyx.v1.OnyxService.GetPersonalIntelligenceGraph:output_type -> sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse
-	416, // 1116: sttattus.onyx.v1.OnyxService.UpsertIntelligenceGraphNode:output_type -> sttattus.onyx.v1.UpsertIntelligenceGraphNodeResponse
-	418, // 1117: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphNodeState:output_type -> sttattus.onyx.v1.SetIntelligenceGraphNodeStateResponse
-	420, // 1118: sttattus.onyx.v1.OnyxService.MergeIntelligenceGraphNodes:output_type -> sttattus.onyx.v1.MergeIntelligenceGraphNodesResponse
-	422, // 1119: sttattus.onyx.v1.OnyxService.SplitIntelligenceGraphNode:output_type -> sttattus.onyx.v1.SplitIntelligenceGraphNodeResponse
-	424, // 1120: sttattus.onyx.v1.OnyxService.UpsertIntelligenceGraphEdge:output_type -> sttattus.onyx.v1.UpsertIntelligenceGraphEdgeResponse
-	426, // 1121: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphEdgeState:output_type -> sttattus.onyx.v1.SetIntelligenceGraphEdgeStateResponse
-	428, // 1122: sttattus.onyx.v1.OnyxService.GenerateIntelligenceGraphSuggestions:output_type -> sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsResponse
-	430, // 1123: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphSuggestions:output_type -> sttattus.onyx.v1.ListIntelligenceGraphSuggestionsResponse
-	432, // 1124: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphSuggestionState:output_type -> sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse
-	434, // 1125: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphTimeline:output_type -> sttattus.onyx.v1.ListIntelligenceGraphTimelineResponse
-	436, // 1126: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphResurfacing:output_type -> sttattus.onyx.v1.ListIntelligenceGraphResurfacingResponse
-	438, // 1127: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphResurfacingState:output_type -> sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateResponse
-	440, // 1128: sttattus.onyx.v1.OnyxService.CreateIntelligenceGraphMeetingBrief:output_type -> sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefResponse
-	442, // 1129: sttattus.onyx.v1.OnyxService.GetIntelligenceGraphMeetingBrief:output_type -> sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefResponse
-	444, // 1130: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphMeetingBriefs:output_type -> sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsResponse
-	446, // 1131: sttattus.onyx.v1.OnyxService.ExportPersonalIntelligenceGraph:output_type -> sttattus.onyx.v1.ExportPersonalIntelligenceGraphResponse
-	448, // 1132: sttattus.onyx.v1.OnyxService.RebuildPersonalIntelligenceGraph:output_type -> sttattus.onyx.v1.RebuildPersonalIntelligenceGraphResponse
-	467, // 1133: sttattus.onyx.v1.OnyxService.ListLanguageConfigs:output_type -> sttattus.onyx.v1.ListLanguageConfigsResponse
-	469, // 1134: sttattus.onyx.v1.OnyxService.ListContentEditions:output_type -> sttattus.onyx.v1.ListContentEditionsResponse
-	471, // 1135: sttattus.onyx.v1.OnyxService.GetAlignedBlocks:output_type -> sttattus.onyx.v1.GetAlignedBlocksResponse
-	473, // 1136: sttattus.onyx.v1.OnyxService.ListTermbaseEntries:output_type -> sttattus.onyx.v1.ListTermbaseEntriesResponse
-	475, // 1137: sttattus.onyx.v1.OnyxService.CrossLanguageSearch:output_type -> sttattus.onyx.v1.CrossLanguageSearchResponse
-	477, // 1138: sttattus.onyx.v1.OnyxService.GetMultilingualPreferences:output_type -> sttattus.onyx.v1.GetMultilingualPreferencesResponse
-	479, // 1139: sttattus.onyx.v1.OnyxService.UpdateMultilingualPreferences:output_type -> sttattus.onyx.v1.UpdateMultilingualPreferencesResponse
-	481, // 1140: sttattus.onyx.v1.OnyxService.GetMultilingualAudioVideo:output_type -> sttattus.onyx.v1.GetMultilingualAudioVideoResponse
-	483, // 1141: sttattus.onyx.v1.OnyxService.GetMultilingualOfflineManifest:output_type -> sttattus.onyx.v1.GetMultilingualOfflineManifestResponse
-	485, // 1142: sttattus.onyx.v1.OnyxService.ReportTranslationIssue:output_type -> sttattus.onyx.v1.ReportTranslationIssueResponse
-	487, // 1143: sttattus.onyx.v1.OnyxService.RequestMultilingualExport:output_type -> sttattus.onyx.v1.RequestMultilingualExportResponse
-	489, // 1144: sttattus.onyx.v1.OnyxService.GetMultilingualExport:output_type -> sttattus.onyx.v1.GetMultilingualExportResponse
-	499, // 1145: sttattus.onyx.v1.OnyxService.GetLivingArchiveDashboard:output_type -> sttattus.onyx.v1.GetLivingArchiveDashboardResponse
-	501, // 1146: sttattus.onyx.v1.OnyxService.UpsertLivingArchivePolicy:output_type -> sttattus.onyx.v1.UpsertLivingArchivePolicyResponse
-	503, // 1147: sttattus.onyx.v1.OnyxService.PreviewLivingArchivePolicy:output_type -> sttattus.onyx.v1.PreviewLivingArchivePolicyResponse
-	505, // 1148: sttattus.onyx.v1.OnyxService.GenerateLivingArchiveEdition:output_type -> sttattus.onyx.v1.GenerateLivingArchiveEditionResponse
-	507, // 1149: sttattus.onyx.v1.OnyxService.LinkLivingArchiveLegacyEscrow:output_type -> sttattus.onyx.v1.LinkLivingArchiveLegacyEscrowResponse
-	509, // 1150: sttattus.onyx.v1.OnyxService.UpsertLivingArchiveContact:output_type -> sttattus.onyx.v1.UpsertLivingArchiveContactResponse
-	511, // 1151: sttattus.onyx.v1.OnyxService.DeleteLivingArchiveContact:output_type -> sttattus.onyx.v1.DeleteLivingArchiveContactResponse
-	513, // 1152: sttattus.onyx.v1.OnyxService.SubmitLivingArchivePolicy:output_type -> sttattus.onyx.v1.SubmitLivingArchivePolicyResponse
-	515, // 1153: sttattus.onyx.v1.OnyxService.RevokeLivingArchivePolicy:output_type -> sttattus.onyx.v1.RevokeLivingArchivePolicyResponse
-	517, // 1154: sttattus.onyx.v1.OnyxService.ConfirmLivingArchiveReview:output_type -> sttattus.onyx.v1.ConfirmLivingArchiveReviewResponse
-	519, // 1155: sttattus.onyx.v1.OnyxService.ContestLivingArchiveRelease:output_type -> sttattus.onyx.v1.ContestLivingArchiveReleaseResponse
-	528, // 1156: sttattus.onyx.v1.OnyxService.GetForensicProtectionDashboard:output_type -> sttattus.onyx.v1.GetForensicProtectionDashboardResponse
-	530, // 1157: sttattus.onyx.v1.OnyxService.IssueForensicManifest:output_type -> sttattus.onyx.v1.IssueForensicManifestResponse
-	532, // 1158: sttattus.onyx.v1.OnyxService.RevokeForensicManifest:output_type -> sttattus.onyx.v1.RevokeForensicManifestResponse
-	534, // 1159: sttattus.onyx.v1.OnyxService.RespondForensicCase:output_type -> sttattus.onyx.v1.RespondForensicCaseResponse
-	536, // 1160: sttattus.onyx.v1.OnyxService.FileForensicAppeal:output_type -> sttattus.onyx.v1.FileForensicAppealResponse
-	538, // 1161: sttattus.onyx.v1.OnyxService.PostForensicAppealMessage:output_type -> sttattus.onyx.v1.PostForensicAppealMessageResponse
-	540, // 1162: sttattus.onyx.v1.OnyxService.WithdrawForensicAppeal:output_type -> sttattus.onyx.v1.WithdrawForensicAppealResponse
-	554, // 1163: sttattus.onyx.v1.OnyxService.GetIntegrationDashboard:output_type -> sttattus.onyx.v1.GetIntegrationDashboardResponse
-	556, // 1164: sttattus.onyx.v1.OnyxService.AuthorizeIntegration:output_type -> sttattus.onyx.v1.AuthorizeIntegrationResponse
-	558, // 1165: sttattus.onyx.v1.OnyxService.RevokeIntegrationGrant:output_type -> sttattus.onyx.v1.RevokeIntegrationGrantResponse
-	560, // 1166: sttattus.onyx.v1.OnyxService.UpsertIntegrationConnector:output_type -> sttattus.onyx.v1.UpsertIntegrationConnectorResponse
-	562, // 1167: sttattus.onyx.v1.OnyxService.SetIntegrationConnectorState:output_type -> sttattus.onyx.v1.SetIntegrationConnectorStateResponse
-	564, // 1168: sttattus.onyx.v1.OnyxService.RunIntegrationConnector:output_type -> sttattus.onyx.v1.RunIntegrationConnectorResponse
-	566, // 1169: sttattus.onyx.v1.OnyxService.GetIntegrationArtifact:output_type -> sttattus.onyx.v1.GetIntegrationArtifactResponse
-	568, // 1170: sttattus.onyx.v1.OnyxService.ResolveIntegrationConflict:output_type -> sttattus.onyx.v1.ResolveIntegrationConflictResponse
-	570, // 1171: sttattus.onyx.v1.OnyxService.DispatchIntegrationBridge:output_type -> sttattus.onyx.v1.DispatchIntegrationBridgeResponse
-	572, // 1172: sttattus.onyx.v1.OnyxService.SubmitIntegrationOperationsCase:output_type -> sttattus.onyx.v1.SubmitIntegrationOperationsCaseResponse
-	588, // 1173: sttattus.onyx.v1.OnyxService.GetSpatialCanvasDashboard:output_type -> sttattus.onyx.v1.GetSpatialCanvasDashboardResponse
-	590, // 1174: sttattus.onyx.v1.OnyxService.ListSpatialCanvasTemplates:output_type -> sttattus.onyx.v1.ListSpatialCanvasTemplatesResponse
-	592, // 1175: sttattus.onyx.v1.OnyxService.CreateSpatialCanvas:output_type -> sttattus.onyx.v1.CreateSpatialCanvasResponse
-	594, // 1176: sttattus.onyx.v1.OnyxService.GetSpatialCanvas:output_type -> sttattus.onyx.v1.GetSpatialCanvasResponse
-	596, // 1177: sttattus.onyx.v1.OnyxService.ApplySpatialCanvasOperations:output_type -> sttattus.onyx.v1.ApplySpatialCanvasOperationsResponse
-	598, // 1178: sttattus.onyx.v1.OnyxService.ResolveSpatialCanvasConflict:output_type -> sttattus.onyx.v1.ResolveSpatialCanvasConflictResponse
-	600, // 1179: sttattus.onyx.v1.OnyxService.CreateSpatialCanvasSnapshot:output_type -> sttattus.onyx.v1.CreateSpatialCanvasSnapshotResponse
-	602, // 1180: sttattus.onyx.v1.OnyxService.RestoreSpatialCanvasSnapshot:output_type -> sttattus.onyx.v1.RestoreSpatialCanvasSnapshotResponse
-	604, // 1181: sttattus.onyx.v1.OnyxService.UpsertSpatialCanvasComment:output_type -> sttattus.onyx.v1.UpsertSpatialCanvasCommentResponse
-	606, // 1182: sttattus.onyx.v1.OnyxService.SetSpatialCanvasCommentState:output_type -> sttattus.onyx.v1.SetSpatialCanvasCommentStateResponse
-	608, // 1183: sttattus.onyx.v1.OnyxService.GenerateSpatialCanvasProposals:output_type -> sttattus.onyx.v1.GenerateSpatialCanvasProposalsResponse
-	610, // 1184: sttattus.onyx.v1.OnyxService.SetSpatialCanvasProposalState:output_type -> sttattus.onyx.v1.SetSpatialCanvasProposalStateResponse
-	612, // 1185: sttattus.onyx.v1.OnyxService.RequestSpatialCanvasExport:output_type -> sttattus.onyx.v1.RequestSpatialCanvasExportResponse
-	614, // 1186: sttattus.onyx.v1.OnyxService.GetSpatialCanvasExport:output_type -> sttattus.onyx.v1.GetSpatialCanvasExportResponse
-	616, // 1187: sttattus.onyx.v1.OnyxService.UpsertSpatialCanvasCollaborator:output_type -> sttattus.onyx.v1.UpsertSpatialCanvasCollaboratorResponse
-	618, // 1188: sttattus.onyx.v1.OnyxService.ReportSpatialCanvasAbuse:output_type -> sttattus.onyx.v1.ReportSpatialCanvasAbuseResponse
-	629, // 1189: sttattus.onyx.v1.OnyxService.GetRecallDashboard:output_type -> sttattus.onyx.v1.GetRecallDashboardResponse
-	631, // 1190: sttattus.onyx.v1.OnyxService.ListRecallDecks:output_type -> sttattus.onyx.v1.ListRecallDecksResponse
-	633, // 1191: sttattus.onyx.v1.OnyxService.ListMemoryItems:output_type -> sttattus.onyx.v1.ListMemoryItemsResponse
-	635, // 1192: sttattus.onyx.v1.OnyxService.UpsertRecallDeck:output_type -> sttattus.onyx.v1.UpsertRecallDeckResponse
-	637, // 1193: sttattus.onyx.v1.OnyxService.GenerateRecallItems:output_type -> sttattus.onyx.v1.GenerateRecallItemsResponse
-	639, // 1194: sttattus.onyx.v1.OnyxService.UpsertMemoryItem:output_type -> sttattus.onyx.v1.UpsertMemoryItemResponse
-	641, // 1195: sttattus.onyx.v1.OnyxService.SetMemoryItemState:output_type -> sttattus.onyx.v1.SetMemoryItemStateResponse
-	643, // 1196: sttattus.onyx.v1.OnyxService.GetRecallReviewQueue:output_type -> sttattus.onyx.v1.GetRecallReviewQueueResponse
-	645, // 1197: sttattus.onyx.v1.OnyxService.RecordRecallReviewBatch:output_type -> sttattus.onyx.v1.RecordRecallReviewBatchResponse
-	647, // 1198: sttattus.onyx.v1.OnyxService.ResolveRecallInvalidation:output_type -> sttattus.onyx.v1.ResolveRecallInvalidationResponse
-	649, // 1199: sttattus.onyx.v1.OnyxService.UpdateRecallPreferences:output_type -> sttattus.onyx.v1.UpdateRecallPreferencesResponse
-	651, // 1200: sttattus.onyx.v1.OnyxService.ExportRecallData:output_type -> sttattus.onyx.v1.ExportRecallDataResponse
-	653, // 1201: sttattus.onyx.v1.OnyxService.ImportRecallData:output_type -> sttattus.onyx.v1.ImportRecallDataResponse
-	655, // 1202: sttattus.onyx.v1.OnyxService.ReportRecallItem:output_type -> sttattus.onyx.v1.ReportRecallItemResponse
-	657, // 1203: sttattus.onyx.v1.OnyxService.RecordRecallTransfer:output_type -> sttattus.onyx.v1.RecordRecallTransferResponse
-	673, // 1204: sttattus.onyx.v1.OnyxService.GetDraftingDashboard:output_type -> sttattus.onyx.v1.GetDraftingDashboardResponse
-	675, // 1205: sttattus.onyx.v1.OnyxService.ListDrafts:output_type -> sttattus.onyx.v1.ListDraftsResponse
-	677, // 1206: sttattus.onyx.v1.OnyxService.GetDraft:output_type -> sttattus.onyx.v1.GetDraftResponse
-	679, // 1207: sttattus.onyx.v1.OnyxService.CreateDraft:output_type -> sttattus.onyx.v1.CreateDraftResponse
-	681, // 1208: sttattus.onyx.v1.OnyxService.UpsertDraftBlock:output_type -> sttattus.onyx.v1.UpsertDraftBlockResponse
-	683, // 1209: sttattus.onyx.v1.OnyxService.DeleteDraftBlock:output_type -> sttattus.onyx.v1.DeleteDraftBlockResponse
-	685, // 1210: sttattus.onyx.v1.OnyxService.UpsertDraftCitation:output_type -> sttattus.onyx.v1.UpsertDraftCitationResponse
-	687, // 1211: sttattus.onyx.v1.OnyxService.VerifyDraft:output_type -> sttattus.onyx.v1.VerifyDraftResponse
-	692, // 1212: sttattus.onyx.v1.OnyxService.GetDraftEvidenceReview:output_type -> sttattus.onyx.v1.GetDraftEvidenceReviewResponse
-	695, // 1213: sttattus.onyx.v1.OnyxService.CompareDraftEvidence:output_type -> sttattus.onyx.v1.CompareDraftEvidenceResponse
-	697, // 1214: sttattus.onyx.v1.OnyxService.CreateDraftRevision:output_type -> sttattus.onyx.v1.CreateDraftRevisionResponse
-	699, // 1215: sttattus.onyx.v1.OnyxService.CreateDraftBranch:output_type -> sttattus.onyx.v1.CreateDraftBranchResponse
-	701, // 1216: sttattus.onyx.v1.OnyxService.RestoreDraftRevision:output_type -> sttattus.onyx.v1.RestoreDraftRevisionResponse
-	703, // 1217: sttattus.onyx.v1.OnyxService.CompareDraftRevisions:output_type -> sttattus.onyx.v1.CompareDraftRevisionsResponse
-	705, // 1218: sttattus.onyx.v1.OnyxService.GenerateDraftSuggestion:output_type -> sttattus.onyx.v1.GenerateDraftSuggestionResponse
-	707, // 1219: sttattus.onyx.v1.OnyxService.SetDraftSuggestionState:output_type -> sttattus.onyx.v1.SetDraftSuggestionStateResponse
-	709, // 1220: sttattus.onyx.v1.OnyxService.ResolveDraftConflict:output_type -> sttattus.onyx.v1.ResolveDraftConflictResponse
-	711, // 1221: sttattus.onyx.v1.OnyxService.RequestDraftExport:output_type -> sttattus.onyx.v1.RequestDraftExportResponse
-	713, // 1222: sttattus.onyx.v1.OnyxService.GetDraftExport:output_type -> sttattus.onyx.v1.GetDraftExportResponse
-	715, // 1223: sttattus.onyx.v1.OnyxService.CreateDraftHandoff:output_type -> sttattus.onyx.v1.CreateDraftHandoffResponse
-	717, // 1224: sttattus.onyx.v1.OnyxService.ReportDraftIncident:output_type -> sttattus.onyx.v1.ReportDraftIncidentResponse
-	964, // [964:1225] is the sub-list for method output_type
-	703, // [703:964] is the sub-list for method input_type
-	703, // [703:703] is the sub-list for extension type_name
-	703, // [703:703] is the sub-list for extension extendee
-	0,   // [0:703] is the sub-list for field type_name
+	722, // 185: sttattus.onyx.v1.EvidenceSource.published_at:type_name -> google.protobuf.Timestamp
+	722, // 186: sttattus.onyx.v1.EvidenceSource.retrieved_at:type_name -> google.protobuf.Timestamp
+	722, // 187: sttattus.onyx.v1.EvidenceSource.health_checked_at:type_name -> google.protobuf.Timestamp
+	722, // 188: sttattus.onyx.v1.EvidenceSource.withdrawal_detected_at:type_name -> google.protobuf.Timestamp
+	284, // 189: sttattus.onyx.v1.EvidenceClaim.citations:type_name -> sttattus.onyx.v1.EvidenceCitation
+	722, // 190: sttattus.onyx.v1.EvidenceCorrection.effective_at:type_name -> google.protobuf.Timestamp
+	722, // 191: sttattus.onyx.v1.EvidenceCorrection.published_at:type_name -> google.protobuf.Timestamp
+	283, // 192: sttattus.onyx.v1.GetEvidenceWorkspaceResponse.sources:type_name -> sttattus.onyx.v1.EvidenceSource
+	285, // 193: sttattus.onyx.v1.GetEvidenceWorkspaceResponse.claims:type_name -> sttattus.onyx.v1.EvidenceClaim
+	286, // 194: sttattus.onyx.v1.GetEvidenceWorkspaceResponse.corrections:type_name -> sttattus.onyx.v1.EvidenceCorrection
+	722, // 195: sttattus.onyx.v1.EvidenceSourceLifecycleEvent.created_at:type_name -> google.protobuf.Timestamp
+	722, // 196: sttattus.onyx.v1.EvidenceSourceReplacement.verified_at:type_name -> google.protobuf.Timestamp
+	722, // 197: sttattus.onyx.v1.EvidenceSourceReplacement.created_at:type_name -> google.protobuf.Timestamp
+	290, // 198: sttattus.onyx.v1.GetEvidenceSourceHistoryResponse.events:type_name -> sttattus.onyx.v1.EvidenceSourceLifecycleEvent
+	291, // 199: sttattus.onyx.v1.GetEvidenceSourceHistoryResponse.replacements:type_name -> sttattus.onyx.v1.EvidenceSourceReplacement
+	284, // 200: sttattus.onyx.v1.BriefPoint.citations:type_name -> sttattus.onyx.v1.EvidenceCitation
+	293, // 201: sttattus.onyx.v1.EvidenceBrief.points:type_name -> sttattus.onyx.v1.BriefPoint
+	722, // 202: sttattus.onyx.v1.EvidenceBrief.cutoff_at:type_name -> google.protobuf.Timestamp
+	722, // 203: sttattus.onyx.v1.EvidenceBrief.generated_at:type_name -> google.protobuf.Timestamp
+	286, // 204: sttattus.onyx.v1.EvidenceBrief.corrections:type_name -> sttattus.onyx.v1.EvidenceCorrection
+	722, // 205: sttattus.onyx.v1.CreateEvidenceBriefRequest.cutoff_at:type_name -> google.protobuf.Timestamp
+	294, // 206: sttattus.onyx.v1.CreateEvidenceBriefResponse.brief:type_name -> sttattus.onyx.v1.EvidenceBrief
+	294, // 207: sttattus.onyx.v1.ListMyEvidenceBriefsResponse.briefs:type_name -> sttattus.onyx.v1.EvidenceBrief
+	294, // 208: sttattus.onyx.v1.GetEvidenceBriefResponse.brief:type_name -> sttattus.onyx.v1.EvidenceBrief
+	722, // 209: sttattus.onyx.v1.CreatorContract.starts_at:type_name -> google.protobuf.Timestamp
+	722, // 210: sttattus.onyx.v1.CreatorContract.ends_at:type_name -> google.protobuf.Timestamp
+	722, // 211: sttattus.onyx.v1.CreatorContract.signed_at:type_name -> google.protobuf.Timestamp
+	722, // 212: sttattus.onyx.v1.EditorialReview.reviewed_at:type_name -> google.protobuf.Timestamp
+	722, // 213: sttattus.onyx.v1.EditorialComment.created_at:type_name -> google.protobuf.Timestamp
+	722, // 214: sttattus.onyx.v1.EditorialProject.submitted_at:type_name -> google.protobuf.Timestamp
+	722, // 215: sttattus.onyx.v1.EditorialProject.publish_at:type_name -> google.protobuf.Timestamp
+	722, // 216: sttattus.onyx.v1.EditorialProject.rights_expire_at:type_name -> google.protobuf.Timestamp
+	722, // 217: sttattus.onyx.v1.EditorialProject.published_at:type_name -> google.protobuf.Timestamp
+	302, // 218: sttattus.onyx.v1.EditorialProject.reviews:type_name -> sttattus.onyx.v1.EditorialReview
+	303, // 219: sttattus.onyx.v1.EditorialProject.comments:type_name -> sttattus.onyx.v1.EditorialComment
+	722, // 220: sttattus.onyx.v1.EditorialProject.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 221: sttattus.onyx.v1.CreatorStatement.paid_at:type_name -> google.protobuf.Timestamp
+	16,  // 222: sttattus.onyx.v1.CreatorStudio.profile:type_name -> sttattus.onyx.v1.OnyxProfile
+	301, // 223: sttattus.onyx.v1.CreatorStudio.contracts:type_name -> sttattus.onyx.v1.CreatorContract
+	304, // 224: sttattus.onyx.v1.CreatorStudio.projects:type_name -> sttattus.onyx.v1.EditorialProject
+	305, // 225: sttattus.onyx.v1.CreatorStudio.statements:type_name -> sttattus.onyx.v1.CreatorStatement
+	306, // 226: sttattus.onyx.v1.CreatorStudio.metrics:type_name -> sttattus.onyx.v1.CreatorMetric
+	307, // 227: sttattus.onyx.v1.GetCreatorStudioResponse.studio:type_name -> sttattus.onyx.v1.CreatorStudio
+	304, // 228: sttattus.onyx.v1.SubmitCreatorPitchResponse.project:type_name -> sttattus.onyx.v1.EditorialProject
+	304, // 229: sttattus.onyx.v1.UpdateCreatorProjectResponse.project:type_name -> sttattus.onyx.v1.EditorialProject
+	304, // 230: sttattus.onyx.v1.SubmitCreatorProjectResponse.project:type_name -> sttattus.onyx.v1.EditorialProject
+	301, // 231: sttattus.onyx.v1.SignCreatorContractResponse.contract:type_name -> sttattus.onyx.v1.CreatorContract
+	20,  // 232: sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedResponse.subscriptions:type_name -> sttattus.onyx.v1.Subscription
+	20,  // 233: sttattus.onyx.v1.CancelCreatorSubscriptionResponse.subscription:type_name -> sttattus.onyx.v1.Subscription
+	722, // 234: sttattus.onyx.v1.CommerceInvoice.issued_at:type_name -> google.protobuf.Timestamp
+	722, // 235: sttattus.onyx.v1.CommerceInvoice.paid_at:type_name -> google.protobuf.Timestamp
+	722, // 236: sttattus.onyx.v1.CommerceCase.created_at:type_name -> google.protobuf.Timestamp
+	722, // 237: sttattus.onyx.v1.CommerceCase.resolved_at:type_name -> google.protobuf.Timestamp
+	322, // 238: sttattus.onyx.v1.GetMyCommerceResponse.invoices:type_name -> sttattus.onyx.v1.CommerceInvoice
+	323, // 239: sttattus.onyx.v1.GetMyCommerceResponse.cases:type_name -> sttattus.onyx.v1.CommerceCase
+	20,  // 240: sttattus.onyx.v1.GetMyCommerceResponse.creator_subscriptions:type_name -> sttattus.onyx.v1.Subscription
+	323, // 241: sttattus.onyx.v1.CreateCommerceCaseResponse.commerce_case:type_name -> sttattus.onyx.v1.CommerceCase
+	722, // 242: sttattus.onyx.v1.ResearchRoomMember.expires_at:type_name -> google.protobuf.Timestamp
+	722, // 243: sttattus.onyx.v1.ResearchRoomMember.invited_at:type_name -> google.protobuf.Timestamp
+	722, // 244: sttattus.onyx.v1.ResearchRoomMember.joined_at:type_name -> google.protobuf.Timestamp
+	722, // 245: sttattus.onyx.v1.ResearchRoomMember.revoked_at:type_name -> google.protobuf.Timestamp
+	328, // 246: sttattus.onyx.v1.ResearchRoom.policy:type_name -> sttattus.onyx.v1.ResearchRoomPolicy
+	722, // 247: sttattus.onyx.v1.ResearchRoom.created_at:type_name -> google.protobuf.Timestamp
+	722, // 248: sttattus.onyx.v1.ResearchRoom.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 249: sttattus.onyx.v1.ResearchRoomItem.created_at:type_name -> google.protobuf.Timestamp
+	722, // 250: sttattus.onyx.v1.ResearchRoomItem.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 251: sttattus.onyx.v1.ResearchRoomThread.resolved_at:type_name -> google.protobuf.Timestamp
+	722, // 252: sttattus.onyx.v1.ResearchRoomThread.created_at:type_name -> google.protobuf.Timestamp
+	722, // 253: sttattus.onyx.v1.ResearchRoomThread.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 254: sttattus.onyx.v1.ResearchRoomComment.created_at:type_name -> google.protobuf.Timestamp
+	722, // 255: sttattus.onyx.v1.ResearchRoomComment.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 256: sttattus.onyx.v1.ResearchRoomTask.due_at:type_name -> google.protobuf.Timestamp
+	722, // 257: sttattus.onyx.v1.ResearchRoomTask.created_at:type_name -> google.protobuf.Timestamp
+	722, // 258: sttattus.onyx.v1.ResearchRoomTask.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 259: sttattus.onyx.v1.ResearchRoomMeeting.starts_at:type_name -> google.protobuf.Timestamp
+	722, // 260: sttattus.onyx.v1.ResearchRoomMeeting.ends_at:type_name -> google.protobuf.Timestamp
+	722, // 261: sttattus.onyx.v1.ResearchRoomMeeting.created_at:type_name -> google.protobuf.Timestamp
+	722, // 262: sttattus.onyx.v1.ResearchRoomMeeting.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 263: sttattus.onyx.v1.ResearchRoomDecision.decided_at:type_name -> google.protobuf.Timestamp
+	722, // 264: sttattus.onyx.v1.ResearchRoomDecision.created_at:type_name -> google.protobuf.Timestamp
+	722, // 265: sttattus.onyx.v1.ResearchRoomDecision.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 266: sttattus.onyx.v1.ResearchRoomApproval.created_at:type_name -> google.protobuf.Timestamp
+	722, // 267: sttattus.onyx.v1.ResearchRoomExport.expires_at:type_name -> google.protobuf.Timestamp
+	722, // 268: sttattus.onyx.v1.ResearchRoomExport.created_at:type_name -> google.protobuf.Timestamp
+	722, // 269: sttattus.onyx.v1.ResearchRoomExport.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 270: sttattus.onyx.v1.ResearchRoomAuditEvent.created_at:type_name -> google.protobuf.Timestamp
+	722, // 271: sttattus.onyx.v1.ResearchRoomGrant.expires_at:type_name -> google.protobuf.Timestamp
+	722, // 272: sttattus.onyx.v1.ResearchRoomGrant.revoked_at:type_name -> google.protobuf.Timestamp
+	722, // 273: sttattus.onyx.v1.ResearchRoomGrant.created_at:type_name -> google.protobuf.Timestamp
+	722, // 274: sttattus.onyx.v1.ResearchRoomShareLink.last_accessed_at:type_name -> google.protobuf.Timestamp
+	722, // 275: sttattus.onyx.v1.ResearchRoomShareLink.expires_at:type_name -> google.protobuf.Timestamp
+	722, // 276: sttattus.onyx.v1.ResearchRoomShareLink.revoked_at:type_name -> google.protobuf.Timestamp
+	722, // 277: sttattus.onyx.v1.ResearchRoomShareLink.created_at:type_name -> google.protobuf.Timestamp
+	17,  // 278: sttattus.onyx.v1.ResearchRoomOfflineManifest.items:type_name -> sttattus.onyx.v1.OnyxContent
+	239, // 279: sttattus.onyx.v1.ResearchRoomOfflineManifest.encrypted_renditions:type_name -> sttattus.onyx.v1.EncryptedRendition
+	722, // 280: sttattus.onyx.v1.ResearchRoomOfflineManifest.grant_expires_at:type_name -> google.protobuf.Timestamp
+	722, // 281: sttattus.onyx.v1.ResearchRoomPurgeReceipt.created_at:type_name -> google.protobuf.Timestamp
+	330, // 282: sttattus.onyx.v1.ResearchRoomDetail.room:type_name -> sttattus.onyx.v1.ResearchRoom
+	329, // 283: sttattus.onyx.v1.ResearchRoomDetail.members:type_name -> sttattus.onyx.v1.ResearchRoomMember
+	331, // 284: sttattus.onyx.v1.ResearchRoomDetail.items:type_name -> sttattus.onyx.v1.ResearchRoomItem
+	332, // 285: sttattus.onyx.v1.ResearchRoomDetail.threads:type_name -> sttattus.onyx.v1.ResearchRoomThread
+	333, // 286: sttattus.onyx.v1.ResearchRoomDetail.comments:type_name -> sttattus.onyx.v1.ResearchRoomComment
+	334, // 287: sttattus.onyx.v1.ResearchRoomDetail.tasks:type_name -> sttattus.onyx.v1.ResearchRoomTask
+	335, // 288: sttattus.onyx.v1.ResearchRoomDetail.meetings:type_name -> sttattus.onyx.v1.ResearchRoomMeeting
+	336, // 289: sttattus.onyx.v1.ResearchRoomDetail.decisions:type_name -> sttattus.onyx.v1.ResearchRoomDecision
+	337, // 290: sttattus.onyx.v1.ResearchRoomDetail.approvals:type_name -> sttattus.onyx.v1.ResearchRoomApproval
+	338, // 291: sttattus.onyx.v1.ResearchRoomDetail.exports:type_name -> sttattus.onyx.v1.ResearchRoomExport
+	330, // 292: sttattus.onyx.v1.ListResearchRoomsResponse.rooms:type_name -> sttattus.onyx.v1.ResearchRoom
+	344, // 293: sttattus.onyx.v1.GetResearchRoomResponse.detail:type_name -> sttattus.onyx.v1.ResearchRoomDetail
+	328, // 294: sttattus.onyx.v1.CreateResearchRoomRequest.policy:type_name -> sttattus.onyx.v1.ResearchRoomPolicy
+	330, // 295: sttattus.onyx.v1.CreateResearchRoomResponse.room:type_name -> sttattus.onyx.v1.ResearchRoom
+	328, // 296: sttattus.onyx.v1.UpdateResearchRoomRequest.policy:type_name -> sttattus.onyx.v1.ResearchRoomPolicy
+	330, // 297: sttattus.onyx.v1.UpdateResearchRoomResponse.room:type_name -> sttattus.onyx.v1.ResearchRoom
+	329, // 298: sttattus.onyx.v1.InviteResearchRoomMemberResponse.member:type_name -> sttattus.onyx.v1.ResearchRoomMember
+	329, // 299: sttattus.onyx.v1.RespondResearchRoomInviteResponse.member:type_name -> sttattus.onyx.v1.ResearchRoomMember
+	722, // 300: sttattus.onyx.v1.ChangeResearchRoomMemberRequest.expires_at:type_name -> google.protobuf.Timestamp
+	329, // 301: sttattus.onyx.v1.ChangeResearchRoomMemberResponse.member:type_name -> sttattus.onyx.v1.ResearchRoomMember
+	331, // 302: sttattus.onyx.v1.AddResearchRoomItemResponse.item:type_name -> sttattus.onyx.v1.ResearchRoomItem
+	332, // 303: sttattus.onyx.v1.PostResearchRoomCommentResponse.thread:type_name -> sttattus.onyx.v1.ResearchRoomThread
+	333, // 304: sttattus.onyx.v1.PostResearchRoomCommentResponse.comment:type_name -> sttattus.onyx.v1.ResearchRoomComment
+	332, // 305: sttattus.onyx.v1.SetResearchRoomThreadStatusResponse.thread:type_name -> sttattus.onyx.v1.ResearchRoomThread
+	722, // 306: sttattus.onyx.v1.UpsertResearchRoomTaskRequest.due_at:type_name -> google.protobuf.Timestamp
+	334, // 307: sttattus.onyx.v1.UpsertResearchRoomTaskResponse.task:type_name -> sttattus.onyx.v1.ResearchRoomTask
+	722, // 308: sttattus.onyx.v1.UpsertResearchRoomMeetingRequest.starts_at:type_name -> google.protobuf.Timestamp
+	722, // 309: sttattus.onyx.v1.UpsertResearchRoomMeetingRequest.ends_at:type_name -> google.protobuf.Timestamp
+	335, // 310: sttattus.onyx.v1.UpsertResearchRoomMeetingResponse.meeting:type_name -> sttattus.onyx.v1.ResearchRoomMeeting
+	336, // 311: sttattus.onyx.v1.UpsertResearchRoomDecisionResponse.decision:type_name -> sttattus.onyx.v1.ResearchRoomDecision
+	337, // 312: sttattus.onyx.v1.RecordResearchRoomApprovalResponse.approval:type_name -> sttattus.onyx.v1.ResearchRoomApproval
+	378, // 313: sttattus.onyx.v1.SearchResearchRoomResponse.results:type_name -> sttattus.onyx.v1.SearchResearchRoomResult
+	338, // 314: sttattus.onyx.v1.RequestResearchRoomExportResponse.export:type_name -> sttattus.onyx.v1.ResearchRoomExport
+	339, // 315: sttattus.onyx.v1.ListResearchRoomAuditResponse.events:type_name -> sttattus.onyx.v1.ResearchRoomAuditEvent
+	340, // 316: sttattus.onyx.v1.ListResearchRoomGrantsResponse.grants:type_name -> sttattus.onyx.v1.ResearchRoomGrant
+	722, // 317: sttattus.onyx.v1.UpsertResearchRoomGrantRequest.expires_at:type_name -> google.protobuf.Timestamp
+	340, // 318: sttattus.onyx.v1.UpsertResearchRoomGrantResponse.grant:type_name -> sttattus.onyx.v1.ResearchRoomGrant
+	722, // 319: sttattus.onyx.v1.CreateResearchRoomShareLinkRequest.expires_at:type_name -> google.protobuf.Timestamp
+	341, // 320: sttattus.onyx.v1.CreateResearchRoomShareLinkResponse.share_link:type_name -> sttattus.onyx.v1.ResearchRoomShareLink
+	341, // 321: sttattus.onyx.v1.ListResearchRoomShareLinksResponse.share_links:type_name -> sttattus.onyx.v1.ResearchRoomShareLink
+	330, // 322: sttattus.onyx.v1.ResolveResearchRoomShareLinkResponse.room:type_name -> sttattus.onyx.v1.ResearchRoom
+	331, // 323: sttattus.onyx.v1.ResolveResearchRoomShareLinkResponse.item:type_name -> sttattus.onyx.v1.ResearchRoomItem
+	17,  // 324: sttattus.onyx.v1.ResolveResearchRoomShareLinkResponse.content:type_name -> sttattus.onyx.v1.OnyxContent
+	342, // 325: sttattus.onyx.v1.GetResearchRoomOfflineManifestResponse.manifest:type_name -> sttattus.onyx.v1.ResearchRoomOfflineManifest
+	343, // 326: sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeResponse.receipt:type_name -> sttattus.onyx.v1.ResearchRoomPurgeReceipt
+	342, // 327: sttattus.onyx.v1.ListResearchRoomOfflinePurgesResponse.manifests:type_name -> sttattus.onyx.v1.ResearchRoomOfflineManifest
+	722, // 328: sttattus.onyx.v1.IntelligenceGraphSourceAnchor.created_at:type_name -> google.protobuf.Timestamp
+	722, // 329: sttattus.onyx.v1.IntelligenceGraphNode.valid_from:type_name -> google.protobuf.Timestamp
+	722, // 330: sttattus.onyx.v1.IntelligenceGraphNode.valid_to:type_name -> google.protobuf.Timestamp
+	408, // 331: sttattus.onyx.v1.IntelligenceGraphNode.anchors:type_name -> sttattus.onyx.v1.IntelligenceGraphSourceAnchor
+	722, // 332: sttattus.onyx.v1.IntelligenceGraphNode.created_at:type_name -> google.protobuf.Timestamp
+	722, // 333: sttattus.onyx.v1.IntelligenceGraphNode.updated_at:type_name -> google.protobuf.Timestamp
+	408, // 334: sttattus.onyx.v1.IntelligenceGraphEdge.anchors:type_name -> sttattus.onyx.v1.IntelligenceGraphSourceAnchor
+	722, // 335: sttattus.onyx.v1.IntelligenceGraphEdge.created_at:type_name -> google.protobuf.Timestamp
+	722, // 336: sttattus.onyx.v1.IntelligenceGraphEdge.updated_at:type_name -> google.protobuf.Timestamp
+	409, // 337: sttattus.onyx.v1.IntelligenceGraphSuggestion.proposed_node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
+	410, // 338: sttattus.onyx.v1.IntelligenceGraphSuggestion.proposed_edge:type_name -> sttattus.onyx.v1.IntelligenceGraphEdge
+	722, // 339: sttattus.onyx.v1.IntelligenceGraphSuggestion.expires_at:type_name -> google.protobuf.Timestamp
+	722, // 340: sttattus.onyx.v1.IntelligenceGraphSuggestion.created_at:type_name -> google.protobuf.Timestamp
+	722, // 341: sttattus.onyx.v1.IntelligenceGraphSuggestion.decided_at:type_name -> google.protobuf.Timestamp
+	722, // 342: sttattus.onyx.v1.IntelligenceGraphTimelineEvent.event_at:type_name -> google.protobuf.Timestamp
+	722, // 343: sttattus.onyx.v1.IntelligenceGraphTimelineEvent.recorded_at:type_name -> google.protobuf.Timestamp
+	722, // 344: sttattus.onyx.v1.IntelligenceGraphResurfacingItem.due_at:type_name -> google.protobuf.Timestamp
+	722, // 345: sttattus.onyx.v1.IntelligenceGraphResurfacingItem.snoozed_until:type_name -> google.protobuf.Timestamp
+	722, // 346: sttattus.onyx.v1.IntelligenceGraphResurfacingItem.created_at:type_name -> google.protobuf.Timestamp
+	722, // 347: sttattus.onyx.v1.IntelligenceGraphResurfacingItem.updated_at:type_name -> google.protobuf.Timestamp
+	408, // 348: sttattus.onyx.v1.IntelligenceGraphMeetingBriefSection.citations:type_name -> sttattus.onyx.v1.IntelligenceGraphSourceAnchor
+	414, // 349: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.sections:type_name -> sttattus.onyx.v1.IntelligenceGraphMeetingBriefSection
+	722, // 350: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.window_start:type_name -> google.protobuf.Timestamp
+	722, // 351: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.window_end:type_name -> google.protobuf.Timestamp
+	722, // 352: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.created_at:type_name -> google.protobuf.Timestamp
+	722, // 353: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 354: sttattus.onyx.v1.IntelligenceGraphOverview.last_changed_at:type_name -> google.protobuf.Timestamp
+	416, // 355: sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse.overview:type_name -> sttattus.onyx.v1.IntelligenceGraphOverview
+	409, // 356: sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse.nodes:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
+	410, // 357: sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse.edges:type_name -> sttattus.onyx.v1.IntelligenceGraphEdge
+	722, // 358: sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest.valid_from:type_name -> google.protobuf.Timestamp
+	722, // 359: sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest.valid_to:type_name -> google.protobuf.Timestamp
+	408, // 360: sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest.anchors:type_name -> sttattus.onyx.v1.IntelligenceGraphSourceAnchor
+	409, // 361: sttattus.onyx.v1.UpsertIntelligenceGraphNodeResponse.node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
+	409, // 362: sttattus.onyx.v1.SetIntelligenceGraphNodeStateResponse.node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
+	409, // 363: sttattus.onyx.v1.MergeIntelligenceGraphNodesResponse.primary_node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
+	409, // 364: sttattus.onyx.v1.MergeIntelligenceGraphNodesResponse.merged_node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
+	409, // 365: sttattus.onyx.v1.SplitIntelligenceGraphNodeResponse.source_node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
+	409, // 366: sttattus.onyx.v1.SplitIntelligenceGraphNodeResponse.new_node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
+	408, // 367: sttattus.onyx.v1.UpsertIntelligenceGraphEdgeRequest.anchors:type_name -> sttattus.onyx.v1.IntelligenceGraphSourceAnchor
+	410, // 368: sttattus.onyx.v1.UpsertIntelligenceGraphEdgeResponse.edge:type_name -> sttattus.onyx.v1.IntelligenceGraphEdge
+	410, // 369: sttattus.onyx.v1.SetIntelligenceGraphEdgeStateResponse.edge:type_name -> sttattus.onyx.v1.IntelligenceGraphEdge
+	411, // 370: sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsResponse.suggestions:type_name -> sttattus.onyx.v1.IntelligenceGraphSuggestion
+	411, // 371: sttattus.onyx.v1.ListIntelligenceGraphSuggestionsResponse.suggestions:type_name -> sttattus.onyx.v1.IntelligenceGraphSuggestion
+	411, // 372: sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse.suggestion:type_name -> sttattus.onyx.v1.IntelligenceGraphSuggestion
+	409, // 373: sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse.accepted_node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
+	410, // 374: sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse.accepted_edge:type_name -> sttattus.onyx.v1.IntelligenceGraphEdge
+	722, // 375: sttattus.onyx.v1.ListIntelligenceGraphTimelineRequest.from:type_name -> google.protobuf.Timestamp
+	722, // 376: sttattus.onyx.v1.ListIntelligenceGraphTimelineRequest.to:type_name -> google.protobuf.Timestamp
+	412, // 377: sttattus.onyx.v1.ListIntelligenceGraphTimelineResponse.events:type_name -> sttattus.onyx.v1.IntelligenceGraphTimelineEvent
+	413, // 378: sttattus.onyx.v1.ListIntelligenceGraphResurfacingResponse.items:type_name -> sttattus.onyx.v1.IntelligenceGraphResurfacingItem
+	722, // 379: sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateRequest.snoozed_until:type_name -> google.protobuf.Timestamp
+	413, // 380: sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateResponse.item:type_name -> sttattus.onyx.v1.IntelligenceGraphResurfacingItem
+	722, // 381: sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefRequest.window_start:type_name -> google.protobuf.Timestamp
+	722, // 382: sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefRequest.window_end:type_name -> google.protobuf.Timestamp
+	415, // 383: sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefResponse.brief:type_name -> sttattus.onyx.v1.IntelligenceGraphMeetingBrief
+	415, // 384: sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefResponse.brief:type_name -> sttattus.onyx.v1.IntelligenceGraphMeetingBrief
+	415, // 385: sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsResponse.briefs:type_name -> sttattus.onyx.v1.IntelligenceGraphMeetingBrief
+	722, // 386: sttattus.onyx.v1.ExportPersonalIntelligenceGraphResponse.generated_at:type_name -> google.protobuf.Timestamp
+	3,   // 387: sttattus.onyx.v1.OnyxLanguageConfig.capabilities:type_name -> sttattus.onyx.v1.OnyxLanguageCapability
+	722, // 388: sttattus.onyx.v1.OnyxLanguageConfig.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 389: sttattus.onyx.v1.OnyxMachineTranslationProvenance.generated_at:type_name -> google.protobuf.Timestamp
+	0,   // 390: sttattus.onyx.v1.OnyxEditionLineage.translation_class:type_name -> sttattus.onyx.v1.OnyxTranslationClass
+	1,   // 391: sttattus.onyx.v1.OnyxEditionLineage.verification_state:type_name -> sttattus.onyx.v1.OnyxVerificationState
+	2,   // 392: sttattus.onyx.v1.OnyxEditionLineage.availability:type_name -> sttattus.onyx.v1.OnyxEditionAvailability
+	454, // 393: sttattus.onyx.v1.OnyxEditionLineage.machine_provenance:type_name -> sttattus.onyx.v1.OnyxMachineTranslationProvenance
+	722, // 394: sttattus.onyx.v1.OnyxEditionLineage.published_at:type_name -> google.protobuf.Timestamp
+	722, // 395: sttattus.onyx.v1.OnyxEditionLineage.updated_at:type_name -> google.protobuf.Timestamp
+	0,   // 396: sttattus.onyx.v1.OnyxTranslationAcceptanceProvenance.translation_class:type_name -> sttattus.onyx.v1.OnyxTranslationClass
+	454, // 397: sttattus.onyx.v1.OnyxTranslationAcceptanceProvenance.machine_provenance:type_name -> sttattus.onyx.v1.OnyxMachineTranslationProvenance
+	722, // 398: sttattus.onyx.v1.OnyxTranslationAcceptanceProvenance.accepted_at:type_name -> google.protobuf.Timestamp
+	456, // 399: sttattus.onyx.v1.OnyxAlignedSegment.acceptance:type_name -> sttattus.onyx.v1.OnyxTranslationAcceptanceProvenance
+	457, // 400: sttattus.onyx.v1.OnyxAlignedBlock.segments:type_name -> sttattus.onyx.v1.OnyxAlignedSegment
+	722, // 401: sttattus.onyx.v1.OnyxTermbaseEntry.updated_at:type_name -> google.protobuf.Timestamp
+	4,   // 402: sttattus.onyx.v1.OnyxMultilingualPreferences.reader_mode:type_name -> sttattus.onyx.v1.OnyxParallelReaderMode
+	6,   // 403: sttattus.onyx.v1.OnyxMultilingualPreferences.listening_mode:type_name -> sttattus.onyx.v1.OnyxBilingualListeningMode
+	722, // 404: sttattus.onyx.v1.OnyxMultilingualPreferences.updated_at:type_name -> google.protobuf.Timestamp
+	17,  // 405: sttattus.onyx.v1.OnyxCrossLanguageSearchMatch.content:type_name -> sttattus.onyx.v1.OnyxContent
+	18,  // 406: sttattus.onyx.v1.OnyxCrossLanguageSearchMatch.edition:type_name -> sttattus.onyx.v1.OnyxContentEdition
+	5,   // 407: sttattus.onyx.v1.OnyxCrossLanguageSearchMatch.match_reason:type_name -> sttattus.onyx.v1.OnyxSearchMatchReason
+	0,   // 408: sttattus.onyx.v1.OnyxCaptionTrack.translation_class:type_name -> sttattus.onyx.v1.OnyxTranslationClass
+	1,   // 409: sttattus.onyx.v1.OnyxCaptionTrack.verification_state:type_name -> sttattus.onyx.v1.OnyxVerificationState
+	462, // 410: sttattus.onyx.v1.OnyxCaptionTrack.cues:type_name -> sttattus.onyx.v1.OnyxCaptionCue
+	7,   // 411: sttattus.onyx.v1.OnyxMediaLanguageTrack.delivery:type_name -> sttattus.onyx.v1.OnyxVoiceDelivery
+	464, // 412: sttattus.onyx.v1.OnyxMultilingualAudioVideo.audio_tracks:type_name -> sttattus.onyx.v1.OnyxMediaLanguageTrack
+	463, // 413: sttattus.onyx.v1.OnyxMultilingualAudioVideo.caption_tracks:type_name -> sttattus.onyx.v1.OnyxCaptionTrack
+	8,   // 414: sttattus.onyx.v1.OnyxMultilingualAudioVideo.live_interpretation_state:type_name -> sttattus.onyx.v1.OnyxLiveInterpretationState
+	9,   // 415: sttattus.onyx.v1.OnyxTranslationReport.issue_type:type_name -> sttattus.onyx.v1.OnyxTranslationIssueType
+	10,  // 416: sttattus.onyx.v1.OnyxTranslationReport.status:type_name -> sttattus.onyx.v1.OnyxTranslationReportStatus
+	722, // 417: sttattus.onyx.v1.OnyxTranslationReport.created_at:type_name -> google.protobuf.Timestamp
+	722, // 418: sttattus.onyx.v1.OnyxTranslationReport.updated_at:type_name -> google.protobuf.Timestamp
+	2,   // 419: sttattus.onyx.v1.OnyxMultilingualOfflineManifest.availability:type_name -> sttattus.onyx.v1.OnyxEditionAvailability
+	722, // 420: sttattus.onyx.v1.OnyxMultilingualOfflineManifest.rights_expire_at:type_name -> google.protobuf.Timestamp
+	722, // 421: sttattus.onyx.v1.OnyxMultilingualOfflineManifest.generated_at:type_name -> google.protobuf.Timestamp
+	11,  // 422: sttattus.onyx.v1.OnyxMultilingualExport.format:type_name -> sttattus.onyx.v1.OnyxMultilingualExportFormat
+	12,  // 423: sttattus.onyx.v1.OnyxMultilingualExport.state:type_name -> sttattus.onyx.v1.OnyxMultilingualExportState
+	468, // 424: sttattus.onyx.v1.OnyxMultilingualExport.manifest:type_name -> sttattus.onyx.v1.OnyxMultilingualExportManifestItem
+	722, // 425: sttattus.onyx.v1.OnyxMultilingualExport.expires_at:type_name -> google.protobuf.Timestamp
+	722, // 426: sttattus.onyx.v1.OnyxMultilingualExport.created_at:type_name -> google.protobuf.Timestamp
+	722, // 427: sttattus.onyx.v1.OnyxMultilingualExport.updated_at:type_name -> google.protobuf.Timestamp
+	453, // 428: sttattus.onyx.v1.ListLanguageConfigsResponse.languages:type_name -> sttattus.onyx.v1.OnyxLanguageConfig
+	17,  // 429: sttattus.onyx.v1.ListContentEditionsResponse.original:type_name -> sttattus.onyx.v1.OnyxContent
+	18,  // 430: sttattus.onyx.v1.ListContentEditionsResponse.editions:type_name -> sttattus.onyx.v1.OnyxContentEdition
+	455, // 431: sttattus.onyx.v1.GetAlignedBlocksResponse.lineage:type_name -> sttattus.onyx.v1.OnyxEditionLineage
+	458, // 432: sttattus.onyx.v1.GetAlignedBlocksResponse.blocks:type_name -> sttattus.onyx.v1.OnyxAlignedBlock
+	459, // 433: sttattus.onyx.v1.ListTermbaseEntriesResponse.entries:type_name -> sttattus.onyx.v1.OnyxTermbaseEntry
+	461, // 434: sttattus.onyx.v1.CrossLanguageSearchResponse.matches:type_name -> sttattus.onyx.v1.OnyxCrossLanguageSearchMatch
+	460, // 435: sttattus.onyx.v1.GetMultilingualPreferencesResponse.preferences:type_name -> sttattus.onyx.v1.OnyxMultilingualPreferences
+	460, // 436: sttattus.onyx.v1.UpdateMultilingualPreferencesRequest.preferences:type_name -> sttattus.onyx.v1.OnyxMultilingualPreferences
+	460, // 437: sttattus.onyx.v1.UpdateMultilingualPreferencesResponse.preferences:type_name -> sttattus.onyx.v1.OnyxMultilingualPreferences
+	465, // 438: sttattus.onyx.v1.GetMultilingualAudioVideoResponse.media:type_name -> sttattus.onyx.v1.OnyxMultilingualAudioVideo
+	467, // 439: sttattus.onyx.v1.GetMultilingualOfflineManifestResponse.manifest:type_name -> sttattus.onyx.v1.OnyxMultilingualOfflineManifest
+	9,   // 440: sttattus.onyx.v1.ReportTranslationIssueRequest.issue_type:type_name -> sttattus.onyx.v1.OnyxTranslationIssueType
+	466, // 441: sttattus.onyx.v1.ReportTranslationIssueResponse.report:type_name -> sttattus.onyx.v1.OnyxTranslationReport
+	11,  // 442: sttattus.onyx.v1.RequestMultilingualExportRequest.format:type_name -> sttattus.onyx.v1.OnyxMultilingualExportFormat
+	469, // 443: sttattus.onyx.v1.RequestMultilingualExportResponse.export:type_name -> sttattus.onyx.v1.OnyxMultilingualExport
+	469, // 444: sttattus.onyx.v1.GetMultilingualExportResponse.export:type_name -> sttattus.onyx.v1.OnyxMultilingualExport
+	722, // 445: sttattus.onyx.v1.OnyxLivingArchivePolicy.period_starts_at:type_name -> google.protobuf.Timestamp
+	722, // 446: sttattus.onyx.v1.OnyxLivingArchivePolicy.period_ends_at:type_name -> google.protobuf.Timestamp
+	722, // 447: sttattus.onyx.v1.OnyxLivingArchivePolicy.submitted_at:type_name -> google.protobuf.Timestamp
+	722, // 448: sttattus.onyx.v1.OnyxLivingArchivePolicy.activated_at:type_name -> google.protobuf.Timestamp
+	722, // 449: sttattus.onyx.v1.OnyxLivingArchivePolicy.review_due_at:type_name -> google.protobuf.Timestamp
+	722, // 450: sttattus.onyx.v1.OnyxLivingArchivePolicy.revoked_at:type_name -> google.protobuf.Timestamp
+	722, // 451: sttattus.onyx.v1.OnyxLivingArchivePolicy.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 452: sttattus.onyx.v1.OnyxLivingArchiveContact.verified_at:type_name -> google.protobuf.Timestamp
+	722, // 453: sttattus.onyx.v1.OnyxLivingArchiveContact.review_due_at:type_name -> google.protobuf.Timestamp
+	722, // 454: sttattus.onyx.v1.OnyxLivingArchiveContact.revoked_at:type_name -> google.protobuf.Timestamp
+	722, // 455: sttattus.onyx.v1.OnyxLivingArchiveContact.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 456: sttattus.onyx.v1.OnyxLivingArchiveReadiness.next_legacy_checkin_at:type_name -> google.protobuf.Timestamp
+	497, // 457: sttattus.onyx.v1.OnyxLivingArchivePreview.counts:type_name -> sttattus.onyx.v1.OnyxLivingArchivePreviewCount
+	722, // 458: sttattus.onyx.v1.OnyxLivingArchivePreview.generated_at:type_name -> google.protobuf.Timestamp
+	722, // 459: sttattus.onyx.v1.OnyxLivingArchiveEdition.period_starts_at:type_name -> google.protobuf.Timestamp
+	722, // 460: sttattus.onyx.v1.OnyxLivingArchiveEdition.period_ends_at:type_name -> google.protobuf.Timestamp
+	722, // 461: sttattus.onyx.v1.OnyxLivingArchiveEdition.generated_at:type_name -> google.protobuf.Timestamp
+	722, // 462: sttattus.onyx.v1.OnyxLivingArchiveEdition.escrowed_at:type_name -> google.protobuf.Timestamp
+	722, // 463: sttattus.onyx.v1.OnyxLivingArchiveEdition.released_at:type_name -> google.protobuf.Timestamp
+	722, // 464: sttattus.onyx.v1.OnyxLivingArchiveEdition.revoked_at:type_name -> google.protobuf.Timestamp
+	722, // 465: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.opened_at:type_name -> google.protobuf.Timestamp
+	722, // 466: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.waiting_until:type_name -> google.protobuf.Timestamp
+	722, // 467: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.contested_at:type_name -> google.protobuf.Timestamp
+	722, // 468: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.approved_at:type_name -> google.protobuf.Timestamp
+	722, // 469: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.released_at:type_name -> google.protobuf.Timestamp
+	722, // 470: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.closed_at:type_name -> google.protobuf.Timestamp
+	722, // 471: sttattus.onyx.v1.OnyxLivingArchiveReceipt.released_at:type_name -> google.protobuf.Timestamp
+	722, // 472: sttattus.onyx.v1.OnyxLivingArchiveReceipt.created_at:type_name -> google.protobuf.Timestamp
+	494, // 473: sttattus.onyx.v1.GetLivingArchiveDashboardResponse.policies:type_name -> sttattus.onyx.v1.OnyxLivingArchivePolicy
+	495, // 474: sttattus.onyx.v1.GetLivingArchiveDashboardResponse.contacts:type_name -> sttattus.onyx.v1.OnyxLivingArchiveContact
+	499, // 475: sttattus.onyx.v1.GetLivingArchiveDashboardResponse.editions:type_name -> sttattus.onyx.v1.OnyxLivingArchiveEdition
+	500, // 476: sttattus.onyx.v1.GetLivingArchiveDashboardResponse.release_cases:type_name -> sttattus.onyx.v1.OnyxLivingArchiveReleaseCase
+	501, // 477: sttattus.onyx.v1.GetLivingArchiveDashboardResponse.receipts:type_name -> sttattus.onyx.v1.OnyxLivingArchiveReceipt
+	496, // 478: sttattus.onyx.v1.GetLivingArchiveDashboardResponse.readiness:type_name -> sttattus.onyx.v1.OnyxLivingArchiveReadiness
+	722, // 479: sttattus.onyx.v1.UpsertLivingArchivePolicyRequest.period_starts_at:type_name -> google.protobuf.Timestamp
+	722, // 480: sttattus.onyx.v1.UpsertLivingArchivePolicyRequest.period_ends_at:type_name -> google.protobuf.Timestamp
+	494, // 481: sttattus.onyx.v1.UpsertLivingArchivePolicyResponse.policy:type_name -> sttattus.onyx.v1.OnyxLivingArchivePolicy
+	498, // 482: sttattus.onyx.v1.PreviewLivingArchivePolicyResponse.preview:type_name -> sttattus.onyx.v1.OnyxLivingArchivePreview
+	722, // 483: sttattus.onyx.v1.GenerateLivingArchiveEditionRequest.period_starts_at:type_name -> google.protobuf.Timestamp
+	722, // 484: sttattus.onyx.v1.GenerateLivingArchiveEditionRequest.period_ends_at:type_name -> google.protobuf.Timestamp
+	499, // 485: sttattus.onyx.v1.GenerateLivingArchiveEditionResponse.edition:type_name -> sttattus.onyx.v1.OnyxLivingArchiveEdition
+	498, // 486: sttattus.onyx.v1.GenerateLivingArchiveEditionResponse.preview:type_name -> sttattus.onyx.v1.OnyxLivingArchivePreview
+	499, // 487: sttattus.onyx.v1.LinkLivingArchiveLegacyEscrowResponse.edition:type_name -> sttattus.onyx.v1.OnyxLivingArchiveEdition
+	496, // 488: sttattus.onyx.v1.LinkLivingArchiveLegacyEscrowResponse.readiness:type_name -> sttattus.onyx.v1.OnyxLivingArchiveReadiness
+	495, // 489: sttattus.onyx.v1.UpsertLivingArchiveContactResponse.contact:type_name -> sttattus.onyx.v1.OnyxLivingArchiveContact
+	496, // 490: sttattus.onyx.v1.UpsertLivingArchiveContactResponse.readiness:type_name -> sttattus.onyx.v1.OnyxLivingArchiveReadiness
+	496, // 491: sttattus.onyx.v1.DeleteLivingArchiveContactResponse.readiness:type_name -> sttattus.onyx.v1.OnyxLivingArchiveReadiness
+	494, // 492: sttattus.onyx.v1.SubmitLivingArchivePolicyResponse.policy:type_name -> sttattus.onyx.v1.OnyxLivingArchivePolicy
+	496, // 493: sttattus.onyx.v1.SubmitLivingArchivePolicyResponse.readiness:type_name -> sttattus.onyx.v1.OnyxLivingArchiveReadiness
+	494, // 494: sttattus.onyx.v1.RevokeLivingArchivePolicyResponse.policy:type_name -> sttattus.onyx.v1.OnyxLivingArchivePolicy
+	494, // 495: sttattus.onyx.v1.ConfirmLivingArchiveReviewResponse.policy:type_name -> sttattus.onyx.v1.OnyxLivingArchivePolicy
+	500, // 496: sttattus.onyx.v1.ContestLivingArchiveReleaseResponse.release_case:type_name -> sttattus.onyx.v1.OnyxLivingArchiveReleaseCase
+	722, // 497: sttattus.onyx.v1.OnyxForensicContentProtection.activated_at:type_name -> google.protobuf.Timestamp
+	722, // 498: sttattus.onyx.v1.OnyxForensicManifest.issued_at:type_name -> google.protobuf.Timestamp
+	722, // 499: sttattus.onyx.v1.OnyxForensicManifest.expires_at:type_name -> google.protobuf.Timestamp
+	722, // 500: sttattus.onyx.v1.OnyxForensicManifest.first_used_at:type_name -> google.protobuf.Timestamp
+	722, // 501: sttattus.onyx.v1.OnyxForensicManifest.revoked_at:type_name -> google.protobuf.Timestamp
+	722, // 502: sttattus.onyx.v1.OnyxForensicCustodyEvent.created_at:type_name -> google.protobuf.Timestamp
+	722, // 503: sttattus.onyx.v1.OnyxForensicAppealMessage.created_at:type_name -> google.protobuf.Timestamp
+	528, // 504: sttattus.onyx.v1.OnyxForensicAppeal.messages:type_name -> sttattus.onyx.v1.OnyxForensicAppealMessage
+	722, // 505: sttattus.onyx.v1.OnyxForensicAppeal.filed_at:type_name -> google.protobuf.Timestamp
+	722, // 506: sttattus.onyx.v1.OnyxForensicAppeal.decided_at:type_name -> google.protobuf.Timestamp
+	722, // 507: sttattus.onyx.v1.OnyxForensicCase.opened_at:type_name -> google.protobuf.Timestamp
+	722, // 508: sttattus.onyx.v1.OnyxForensicCase.response_due_at:type_name -> google.protobuf.Timestamp
+	722, // 509: sttattus.onyx.v1.OnyxForensicCase.decided_at:type_name -> google.protobuf.Timestamp
+	527, // 510: sttattus.onyx.v1.OnyxForensicCase.custody:type_name -> sttattus.onyx.v1.OnyxForensicCustodyEvent
+	529, // 511: sttattus.onyx.v1.OnyxForensicCase.appeal:type_name -> sttattus.onyx.v1.OnyxForensicAppeal
+	524, // 512: sttattus.onyx.v1.GetForensicProtectionDashboardResponse.runtime:type_name -> sttattus.onyx.v1.OnyxForensicRuntime
+	525, // 513: sttattus.onyx.v1.GetForensicProtectionDashboardResponse.protected_content:type_name -> sttattus.onyx.v1.OnyxForensicContentProtection
+	526, // 514: sttattus.onyx.v1.GetForensicProtectionDashboardResponse.manifests:type_name -> sttattus.onyx.v1.OnyxForensicManifest
+	530, // 515: sttattus.onyx.v1.GetForensicProtectionDashboardResponse.cases:type_name -> sttattus.onyx.v1.OnyxForensicCase
+	526, // 516: sttattus.onyx.v1.IssueForensicManifestResponse.manifest:type_name -> sttattus.onyx.v1.OnyxForensicManifest
+	239, // 517: sttattus.onyx.v1.IssueForensicManifestResponse.encrypted_renditions:type_name -> sttattus.onyx.v1.EncryptedRendition
+	17,  // 518: sttattus.onyx.v1.IssueForensicManifestResponse.content:type_name -> sttattus.onyx.v1.OnyxContent
+	526, // 519: sttattus.onyx.v1.RevokeForensicManifestResponse.manifest:type_name -> sttattus.onyx.v1.OnyxForensicManifest
+	530, // 520: sttattus.onyx.v1.RespondForensicCaseResponse.forensic_case:type_name -> sttattus.onyx.v1.OnyxForensicCase
+	530, // 521: sttattus.onyx.v1.FileForensicAppealResponse.forensic_case:type_name -> sttattus.onyx.v1.OnyxForensicCase
+	530, // 522: sttattus.onyx.v1.PostForensicAppealMessageResponse.forensic_case:type_name -> sttattus.onyx.v1.OnyxForensicCase
+	530, // 523: sttattus.onyx.v1.WithdrawForensicAppealResponse.forensic_case:type_name -> sttattus.onyx.v1.OnyxForensicCase
+	722, // 524: sttattus.onyx.v1.OnyxIntegrationClient.reviewed_at:type_name -> google.protobuf.Timestamp
+	722, // 525: sttattus.onyx.v1.OnyxIntegrationGrant.granted_at:type_name -> google.protobuf.Timestamp
+	722, // 526: sttattus.onyx.v1.OnyxIntegrationGrant.expires_at:type_name -> google.protobuf.Timestamp
+	722, // 527: sttattus.onyx.v1.OnyxIntegrationGrant.revoked_at:type_name -> google.protobuf.Timestamp
+	722, // 528: sttattus.onyx.v1.OnyxIntegrationCall.created_at:type_name -> google.protobuf.Timestamp
+	722, // 529: sttattus.onyx.v1.OnyxIntegrationConnectorAccount.last_sync_at:type_name -> google.protobuf.Timestamp
+	722, // 530: sttattus.onyx.v1.OnyxIntegrationConnectorAccount.next_sync_at:type_name -> google.protobuf.Timestamp
+	722, // 531: sttattus.onyx.v1.OnyxIntegrationConnectorAccount.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 532: sttattus.onyx.v1.OnyxIntegrationConnectorRun.queued_at:type_name -> google.protobuf.Timestamp
+	722, // 533: sttattus.onyx.v1.OnyxIntegrationConnectorRun.completed_at:type_name -> google.protobuf.Timestamp
+	722, // 534: sttattus.onyx.v1.OnyxIntegrationArtifact.expires_at:type_name -> google.protobuf.Timestamp
+	722, // 535: sttattus.onyx.v1.OnyxIntegrationArtifact.created_at:type_name -> google.protobuf.Timestamp
+	722, // 536: sttattus.onyx.v1.OnyxIntegrationConflict.created_at:type_name -> google.protobuf.Timestamp
+	722, // 537: sttattus.onyx.v1.OnyxIntegrationConflict.resolved_at:type_name -> google.protobuf.Timestamp
+	722, // 538: sttattus.onyx.v1.OnyxIntegrationBridgeDispatch.created_at:type_name -> google.protobuf.Timestamp
+	722, // 539: sttattus.onyx.v1.OnyxIntegrationBridgeDispatch.completed_at:type_name -> google.protobuf.Timestamp
+	722, // 540: sttattus.onyx.v1.OnyxIntegrationBridgeSource.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 541: sttattus.onyx.v1.OnyxIntegrationOperationsCase.opened_at:type_name -> google.protobuf.Timestamp
+	722, // 542: sttattus.onyx.v1.OnyxIntegrationOperationsCase.resolved_at:type_name -> google.protobuf.Timestamp
+	545, // 543: sttattus.onyx.v1.GetIntegrationDashboardResponse.runtime:type_name -> sttattus.onyx.v1.OnyxIntegrationRuntime
+	546, // 544: sttattus.onyx.v1.GetIntegrationDashboardResponse.available_clients:type_name -> sttattus.onyx.v1.OnyxIntegrationClient
+	547, // 545: sttattus.onyx.v1.GetIntegrationDashboardResponse.grants:type_name -> sttattus.onyx.v1.OnyxIntegrationGrant
+	549, // 546: sttattus.onyx.v1.GetIntegrationDashboardResponse.connector_catalog:type_name -> sttattus.onyx.v1.OnyxIntegrationConnectorDefinition
+	550, // 547: sttattus.onyx.v1.GetIntegrationDashboardResponse.connector_accounts:type_name -> sttattus.onyx.v1.OnyxIntegrationConnectorAccount
+	551, // 548: sttattus.onyx.v1.GetIntegrationDashboardResponse.connector_runs:type_name -> sttattus.onyx.v1.OnyxIntegrationConnectorRun
+	552, // 549: sttattus.onyx.v1.GetIntegrationDashboardResponse.artifacts:type_name -> sttattus.onyx.v1.OnyxIntegrationArtifact
+	553, // 550: sttattus.onyx.v1.GetIntegrationDashboardResponse.conflicts:type_name -> sttattus.onyx.v1.OnyxIntegrationConflict
+	554, // 551: sttattus.onyx.v1.GetIntegrationDashboardResponse.bridge_dispatches:type_name -> sttattus.onyx.v1.OnyxIntegrationBridgeDispatch
+	548, // 552: sttattus.onyx.v1.GetIntegrationDashboardResponse.recent_calls:type_name -> sttattus.onyx.v1.OnyxIntegrationCall
+	556, // 553: sttattus.onyx.v1.GetIntegrationDashboardResponse.operations_cases:type_name -> sttattus.onyx.v1.OnyxIntegrationOperationsCase
+	555, // 554: sttattus.onyx.v1.GetIntegrationDashboardResponse.bridge_sources:type_name -> sttattus.onyx.v1.OnyxIntegrationBridgeSource
+	547, // 555: sttattus.onyx.v1.AuthorizeIntegrationResponse.grant:type_name -> sttattus.onyx.v1.OnyxIntegrationGrant
+	722, // 556: sttattus.onyx.v1.AuthorizeIntegrationResponse.authorization_code_expires_at:type_name -> google.protobuf.Timestamp
+	547, // 557: sttattus.onyx.v1.RevokeIntegrationGrantResponse.grant:type_name -> sttattus.onyx.v1.OnyxIntegrationGrant
+	550, // 558: sttattus.onyx.v1.UpsertIntegrationConnectorResponse.account:type_name -> sttattus.onyx.v1.OnyxIntegrationConnectorAccount
+	550, // 559: sttattus.onyx.v1.SetIntegrationConnectorStateResponse.account:type_name -> sttattus.onyx.v1.OnyxIntegrationConnectorAccount
+	551, // 560: sttattus.onyx.v1.RunIntegrationConnectorResponse.run:type_name -> sttattus.onyx.v1.OnyxIntegrationConnectorRun
+	552, // 561: sttattus.onyx.v1.RunIntegrationConnectorResponse.artifact:type_name -> sttattus.onyx.v1.OnyxIntegrationArtifact
+	553, // 562: sttattus.onyx.v1.RunIntegrationConnectorResponse.conflicts:type_name -> sttattus.onyx.v1.OnyxIntegrationConflict
+	552, // 563: sttattus.onyx.v1.GetIntegrationArtifactResponse.artifact:type_name -> sttattus.onyx.v1.OnyxIntegrationArtifact
+	553, // 564: sttattus.onyx.v1.ResolveIntegrationConflictResponse.conflict:type_name -> sttattus.onyx.v1.OnyxIntegrationConflict
+	554, // 565: sttattus.onyx.v1.DispatchIntegrationBridgeResponse.dispatch:type_name -> sttattus.onyx.v1.OnyxIntegrationBridgeDispatch
+	556, // 566: sttattus.onyx.v1.SubmitIntegrationOperationsCaseResponse.operations_case:type_name -> sttattus.onyx.v1.OnyxIntegrationOperationsCase
+	722, // 567: sttattus.onyx.v1.SpatialCanvasTemplate.published_at:type_name -> google.protobuf.Timestamp
+	722, // 568: sttattus.onyx.v1.SpatialCanvasTemplate.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 569: sttattus.onyx.v1.SpatialCanvasWorkspace.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 570: sttattus.onyx.v1.SpatialCanvasSummary.updated_at:type_name -> google.protobuf.Timestamp
+	577, // 571: sttattus.onyx.v1.SpatialCanvasNode.source_anchor:type_name -> sttattus.onyx.v1.SpatialCanvasSourceAnchor
+	722, // 572: sttattus.onyx.v1.SpatialCanvasNode.updated_at:type_name -> google.protobuf.Timestamp
+	577, // 573: sttattus.onyx.v1.SpatialCanvasEdge.source_anchor:type_name -> sttattus.onyx.v1.SpatialCanvasSourceAnchor
+	722, // 574: sttattus.onyx.v1.SpatialCanvasEdge.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 575: sttattus.onyx.v1.SpatialCanvasLayoutRevision.created_at:type_name -> google.protobuf.Timestamp
+	722, // 576: sttattus.onyx.v1.SpatialCanvasConflict.detected_at:type_name -> google.protobuf.Timestamp
+	722, // 577: sttattus.onyx.v1.SpatialCanvasConflict.resolved_at:type_name -> google.protobuf.Timestamp
+	722, // 578: sttattus.onyx.v1.SpatialCanvasSnapshot.created_at:type_name -> google.protobuf.Timestamp
+	722, // 579: sttattus.onyx.v1.SpatialCanvasComment.created_at:type_name -> google.protobuf.Timestamp
+	722, // 580: sttattus.onyx.v1.SpatialCanvasComment.resolved_at:type_name -> google.protobuf.Timestamp
+	722, // 581: sttattus.onyx.v1.SpatialCanvasProposal.created_at:type_name -> google.protobuf.Timestamp
+	722, // 582: sttattus.onyx.v1.SpatialCanvasProposal.decided_at:type_name -> google.protobuf.Timestamp
+	722, // 583: sttattus.onyx.v1.SpatialCanvasExport.expires_at:type_name -> google.protobuf.Timestamp
+	722, // 584: sttattus.onyx.v1.SpatialCanvasExport.created_at:type_name -> google.protobuf.Timestamp
+	722, // 585: sttattus.onyx.v1.SpatialCanvasOperation.occurred_at:type_name -> google.protobuf.Timestamp
+	580, // 586: sttattus.onyx.v1.SpatialCanvasDetail.canvas:type_name -> sttattus.onyx.v1.SpatialCanvasSummary
+	581, // 587: sttattus.onyx.v1.SpatialCanvasDetail.nodes:type_name -> sttattus.onyx.v1.SpatialCanvasNode
+	582, // 588: sttattus.onyx.v1.SpatialCanvasDetail.edges:type_name -> sttattus.onyx.v1.SpatialCanvasEdge
+	584, // 589: sttattus.onyx.v1.SpatialCanvasDetail.conflicts:type_name -> sttattus.onyx.v1.SpatialCanvasConflict
+	585, // 590: sttattus.onyx.v1.SpatialCanvasDetail.snapshots:type_name -> sttattus.onyx.v1.SpatialCanvasSnapshot
+	586, // 591: sttattus.onyx.v1.SpatialCanvasDetail.comments:type_name -> sttattus.onyx.v1.SpatialCanvasComment
+	587, // 592: sttattus.onyx.v1.SpatialCanvasDetail.proposals:type_name -> sttattus.onyx.v1.SpatialCanvasProposal
+	583, // 593: sttattus.onyx.v1.SpatialCanvasDetail.revisions:type_name -> sttattus.onyx.v1.SpatialCanvasLayoutRevision
+	579, // 594: sttattus.onyx.v1.GetSpatialCanvasDashboardResponse.workspaces:type_name -> sttattus.onyx.v1.SpatialCanvasWorkspace
+	580, // 595: sttattus.onyx.v1.GetSpatialCanvasDashboardResponse.canvases:type_name -> sttattus.onyx.v1.SpatialCanvasSummary
+	578, // 596: sttattus.onyx.v1.GetSpatialCanvasDashboardResponse.templates:type_name -> sttattus.onyx.v1.SpatialCanvasTemplate
+	578, // 597: sttattus.onyx.v1.ListSpatialCanvasTemplatesResponse.templates:type_name -> sttattus.onyx.v1.SpatialCanvasTemplate
+	590, // 598: sttattus.onyx.v1.CreateSpatialCanvasResponse.detail:type_name -> sttattus.onyx.v1.SpatialCanvasDetail
+	590, // 599: sttattus.onyx.v1.GetSpatialCanvasResponse.detail:type_name -> sttattus.onyx.v1.SpatialCanvasDetail
+	589, // 600: sttattus.onyx.v1.ApplySpatialCanvasOperationsRequest.operations:type_name -> sttattus.onyx.v1.SpatialCanvasOperation
+	590, // 601: sttattus.onyx.v1.ApplySpatialCanvasOperationsResponse.detail:type_name -> sttattus.onyx.v1.SpatialCanvasDetail
+	584, // 602: sttattus.onyx.v1.ApplySpatialCanvasOperationsResponse.conflicts:type_name -> sttattus.onyx.v1.SpatialCanvasConflict
+	584, // 603: sttattus.onyx.v1.ResolveSpatialCanvasConflictResponse.conflict:type_name -> sttattus.onyx.v1.SpatialCanvasConflict
+	585, // 604: sttattus.onyx.v1.CreateSpatialCanvasSnapshotResponse.snapshot:type_name -> sttattus.onyx.v1.SpatialCanvasSnapshot
+	590, // 605: sttattus.onyx.v1.RestoreSpatialCanvasSnapshotResponse.detail:type_name -> sttattus.onyx.v1.SpatialCanvasDetail
+	586, // 606: sttattus.onyx.v1.UpsertSpatialCanvasCommentResponse.comment:type_name -> sttattus.onyx.v1.SpatialCanvasComment
+	586, // 607: sttattus.onyx.v1.SetSpatialCanvasCommentStateResponse.comment:type_name -> sttattus.onyx.v1.SpatialCanvasComment
+	587, // 608: sttattus.onyx.v1.GenerateSpatialCanvasProposalsResponse.proposals:type_name -> sttattus.onyx.v1.SpatialCanvasProposal
+	587, // 609: sttattus.onyx.v1.SetSpatialCanvasProposalStateResponse.proposal:type_name -> sttattus.onyx.v1.SpatialCanvasProposal
+	590, // 610: sttattus.onyx.v1.SetSpatialCanvasProposalStateResponse.detail:type_name -> sttattus.onyx.v1.SpatialCanvasDetail
+	588, // 611: sttattus.onyx.v1.RequestSpatialCanvasExportResponse.export:type_name -> sttattus.onyx.v1.SpatialCanvasExport
+	588, // 612: sttattus.onyx.v1.GetSpatialCanvasExportResponse.export:type_name -> sttattus.onyx.v1.SpatialCanvasExport
+	722, // 613: sttattus.onyx.v1.ReportSpatialCanvasAbuseResponse.created_at:type_name -> google.protobuf.Timestamp
+	722, // 614: sttattus.onyx.v1.RecallDeck.created_at:type_name -> google.protobuf.Timestamp
+	722, // 615: sttattus.onyx.v1.RecallDeck.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 616: sttattus.onyx.v1.RecallSchedule.due_at:type_name -> google.protobuf.Timestamp
+	722, // 617: sttattus.onyx.v1.RecallSchedule.last_reviewed_at:type_name -> google.protobuf.Timestamp
+	623, // 618: sttattus.onyx.v1.MemoryItem.source_anchor:type_name -> sttattus.onyx.v1.RecallSourceAnchor
+	625, // 619: sttattus.onyx.v1.MemoryItem.prompt_variants:type_name -> sttattus.onyx.v1.RecallPromptVariant
+	626, // 620: sttattus.onyx.v1.MemoryItem.schedule:type_name -> sttattus.onyx.v1.RecallSchedule
+	722, // 621: sttattus.onyx.v1.MemoryItem.created_at:type_name -> google.protobuf.Timestamp
+	722, // 622: sttattus.onyx.v1.MemoryItem.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 623: sttattus.onyx.v1.RecallReviewEvent.reviewed_at:type_name -> google.protobuf.Timestamp
+	722, // 624: sttattus.onyx.v1.RecallReviewEvent.received_at:type_name -> google.protobuf.Timestamp
+	722, // 625: sttattus.onyx.v1.RecallSourceInvalidation.created_at:type_name -> google.protobuf.Timestamp
+	722, // 626: sttattus.onyx.v1.RecallSourceInvalidation.resolved_at:type_name -> google.protobuf.Timestamp
+	722, // 627: sttattus.onyx.v1.RecallRetentionMeasure.measured_at:type_name -> google.protobuf.Timestamp
+	722, // 628: sttattus.onyx.v1.RecallPreferences.vacation_until:type_name -> google.protobuf.Timestamp
+	624, // 629: sttattus.onyx.v1.GetRecallDashboardResponse.decks:type_name -> sttattus.onyx.v1.RecallDeck
+	627, // 630: sttattus.onyx.v1.GetRecallDashboardResponse.due_items:type_name -> sttattus.onyx.v1.MemoryItem
+	629, // 631: sttattus.onyx.v1.GetRecallDashboardResponse.invalidations:type_name -> sttattus.onyx.v1.RecallSourceInvalidation
+	630, // 632: sttattus.onyx.v1.GetRecallDashboardResponse.retention:type_name -> sttattus.onyx.v1.RecallRetentionMeasure
+	631, // 633: sttattus.onyx.v1.GetRecallDashboardResponse.preferences:type_name -> sttattus.onyx.v1.RecallPreferences
+	624, // 634: sttattus.onyx.v1.ListRecallDecksResponse.decks:type_name -> sttattus.onyx.v1.RecallDeck
+	627, // 635: sttattus.onyx.v1.ListMemoryItemsResponse.items:type_name -> sttattus.onyx.v1.MemoryItem
+	624, // 636: sttattus.onyx.v1.UpsertRecallDeckResponse.deck:type_name -> sttattus.onyx.v1.RecallDeck
+	627, // 637: sttattus.onyx.v1.GenerateRecallItemsResponse.drafts:type_name -> sttattus.onyx.v1.MemoryItem
+	623, // 638: sttattus.onyx.v1.UpsertMemoryItemRequest.source_anchor:type_name -> sttattus.onyx.v1.RecallSourceAnchor
+	625, // 639: sttattus.onyx.v1.UpsertMemoryItemRequest.prompt_variants:type_name -> sttattus.onyx.v1.RecallPromptVariant
+	627, // 640: sttattus.onyx.v1.UpsertMemoryItemResponse.item:type_name -> sttattus.onyx.v1.MemoryItem
+	627, // 641: sttattus.onyx.v1.SetMemoryItemStateResponse.item:type_name -> sttattus.onyx.v1.MemoryItem
+	627, // 642: sttattus.onyx.v1.GetRecallReviewQueueResponse.items:type_name -> sttattus.onyx.v1.MemoryItem
+	722, // 643: sttattus.onyx.v1.GetRecallReviewQueueResponse.generated_at:type_name -> google.protobuf.Timestamp
+	628, // 644: sttattus.onyx.v1.RecordRecallReviewBatchRequest.events:type_name -> sttattus.onyx.v1.RecallReviewEvent
+	627, // 645: sttattus.onyx.v1.RecordRecallReviewBatchResponse.revised_items:type_name -> sttattus.onyx.v1.MemoryItem
+	722, // 646: sttattus.onyx.v1.RecordRecallReviewBatchResponse.server_time:type_name -> google.protobuf.Timestamp
+	629, // 647: sttattus.onyx.v1.ResolveRecallInvalidationResponse.invalidation:type_name -> sttattus.onyx.v1.RecallSourceInvalidation
+	627, // 648: sttattus.onyx.v1.ResolveRecallInvalidationResponse.item:type_name -> sttattus.onyx.v1.MemoryItem
+	631, // 649: sttattus.onyx.v1.UpdateRecallPreferencesRequest.preferences:type_name -> sttattus.onyx.v1.RecallPreferences
+	631, // 650: sttattus.onyx.v1.UpdateRecallPreferencesResponse.preferences:type_name -> sttattus.onyx.v1.RecallPreferences
+	722, // 651: sttattus.onyx.v1.ExportRecallDataResponse.expires_at:type_name -> google.protobuf.Timestamp
+	722, // 652: sttattus.onyx.v1.ReportRecallItemResponse.created_at:type_name -> google.protobuf.Timestamp
+	630, // 653: sttattus.onyx.v1.RecordRecallTransferResponse.measure:type_name -> sttattus.onyx.v1.RecallRetentionMeasure
+	722, // 654: sttattus.onyx.v1.DraftCitation.verified_at:type_name -> google.protobuf.Timestamp
+	664, // 655: sttattus.onyx.v1.DraftBlock.citations:type_name -> sttattus.onyx.v1.DraftCitation
+	722, // 656: sttattus.onyx.v1.DraftBlock.created_at:type_name -> google.protobuf.Timestamp
+	722, // 657: sttattus.onyx.v1.DraftBlock.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 658: sttattus.onyx.v1.DraftRevision.created_at:type_name -> google.protobuf.Timestamp
+	666, // 659: sttattus.onyx.v1.DraftRevisionComparison.from_revision:type_name -> sttattus.onyx.v1.DraftRevision
+	666, // 660: sttattus.onyx.v1.DraftRevisionComparison.to_revision:type_name -> sttattus.onyx.v1.DraftRevision
+	667, // 661: sttattus.onyx.v1.DraftRevisionComparison.changes:type_name -> sttattus.onyx.v1.DraftBlockChange
+	722, // 662: sttattus.onyx.v1.DraftBranch.created_at:type_name -> google.protobuf.Timestamp
+	722, // 663: sttattus.onyx.v1.DraftBranch.updated_at:type_name -> google.protobuf.Timestamp
+	722, // 664: sttattus.onyx.v1.DraftSuggestion.created_at:type_name -> google.protobuf.Timestamp
+	722, // 665: sttattus.onyx.v1.DraftSuggestion.reviewed_at:type_name -> google.protobuf.Timestamp
+	722, // 666: sttattus.onyx.v1.DraftConflict.created_at:type_name -> google.protobuf.Timestamp
+	722, // 667: sttattus.onyx.v1.DraftConflict.resolved_at:type_name -> google.protobuf.Timestamp
+	722, // 668: sttattus.onyx.v1.DraftExport.created_at:type_name -> google.protobuf.Timestamp
+	722, // 669: sttattus.onyx.v1.DraftExport.expires_at:type_name -> google.protobuf.Timestamp
+	722, // 670: sttattus.onyx.v1.DraftHandoff.created_at:type_name -> google.protobuf.Timestamp
+	722, // 671: sttattus.onyx.v1.DraftHandoff.revoked_at:type_name -> google.protobuf.Timestamp
+	665, // 672: sttattus.onyx.v1.DraftDocument.blocks:type_name -> sttattus.onyx.v1.DraftBlock
+	666, // 673: sttattus.onyx.v1.DraftDocument.revisions:type_name -> sttattus.onyx.v1.DraftRevision
+	669, // 674: sttattus.onyx.v1.DraftDocument.branches:type_name -> sttattus.onyx.v1.DraftBranch
+	670, // 675: sttattus.onyx.v1.DraftDocument.suggestions:type_name -> sttattus.onyx.v1.DraftSuggestion
+	671, // 676: sttattus.onyx.v1.DraftDocument.conflicts:type_name -> sttattus.onyx.v1.DraftConflict
+	672, // 677: sttattus.onyx.v1.DraftDocument.exports:type_name -> sttattus.onyx.v1.DraftExport
+	673, // 678: sttattus.onyx.v1.DraftDocument.handoffs:type_name -> sttattus.onyx.v1.DraftHandoff
+	722, // 679: sttattus.onyx.v1.DraftDocument.created_at:type_name -> google.protobuf.Timestamp
+	722, // 680: sttattus.onyx.v1.DraftDocument.updated_at:type_name -> google.protobuf.Timestamp
+	662, // 681: sttattus.onyx.v1.DraftingDashboard.templates:type_name -> sttattus.onyx.v1.DraftTemplate
+	663, // 682: sttattus.onyx.v1.DraftingDashboard.styles:type_name -> sttattus.onyx.v1.DraftStyle
+	674, // 683: sttattus.onyx.v1.DraftingDashboard.drafts:type_name -> sttattus.onyx.v1.DraftDocument
+	675, // 684: sttattus.onyx.v1.GetDraftingDashboardResponse.dashboard:type_name -> sttattus.onyx.v1.DraftingDashboard
+	674, // 685: sttattus.onyx.v1.ListDraftsResponse.drafts:type_name -> sttattus.onyx.v1.DraftDocument
+	674, // 686: sttattus.onyx.v1.GetDraftResponse.draft:type_name -> sttattus.onyx.v1.DraftDocument
+	674, // 687: sttattus.onyx.v1.CreateDraftResponse.draft:type_name -> sttattus.onyx.v1.DraftDocument
+	665, // 688: sttattus.onyx.v1.UpsertDraftBlockResponse.block:type_name -> sttattus.onyx.v1.DraftBlock
+	671, // 689: sttattus.onyx.v1.UpsertDraftBlockResponse.conflict:type_name -> sttattus.onyx.v1.DraftConflict
+	664, // 690: sttattus.onyx.v1.UpsertDraftCitationResponse.citation:type_name -> sttattus.onyx.v1.DraftCitation
+	693, // 691: sttattus.onyx.v1.DraftEvidenceReview.claims:type_name -> sttattus.onyx.v1.DraftClaimDiagnostic
+	692, // 692: sttattus.onyx.v1.DraftEvidenceReview.citations:type_name -> sttattus.onyx.v1.DraftEvidencePreview
+	694, // 693: sttattus.onyx.v1.GetDraftEvidenceReviewResponse.review:type_name -> sttattus.onyx.v1.DraftEvidenceReview
+	692, // 694: sttattus.onyx.v1.DraftEvidenceComparison.left:type_name -> sttattus.onyx.v1.DraftEvidencePreview
+	692, // 695: sttattus.onyx.v1.DraftEvidenceComparison.right:type_name -> sttattus.onyx.v1.DraftEvidencePreview
+	698, // 696: sttattus.onyx.v1.CompareDraftEvidenceResponse.comparison:type_name -> sttattus.onyx.v1.DraftEvidenceComparison
+	666, // 697: sttattus.onyx.v1.CreateDraftRevisionResponse.revision:type_name -> sttattus.onyx.v1.DraftRevision
+	669, // 698: sttattus.onyx.v1.CreateDraftBranchResponse.branch:type_name -> sttattus.onyx.v1.DraftBranch
+	666, // 699: sttattus.onyx.v1.RestoreDraftRevisionResponse.revision:type_name -> sttattus.onyx.v1.DraftRevision
+	674, // 700: sttattus.onyx.v1.RestoreDraftRevisionResponse.draft:type_name -> sttattus.onyx.v1.DraftDocument
+	668, // 701: sttattus.onyx.v1.CompareDraftRevisionsResponse.comparison:type_name -> sttattus.onyx.v1.DraftRevisionComparison
+	670, // 702: sttattus.onyx.v1.GenerateDraftSuggestionResponse.suggestion:type_name -> sttattus.onyx.v1.DraftSuggestion
+	670, // 703: sttattus.onyx.v1.SetDraftSuggestionStateResponse.suggestion:type_name -> sttattus.onyx.v1.DraftSuggestion
+	665, // 704: sttattus.onyx.v1.SetDraftSuggestionStateResponse.block:type_name -> sttattus.onyx.v1.DraftBlock
+	671, // 705: sttattus.onyx.v1.ResolveDraftConflictResponse.conflict:type_name -> sttattus.onyx.v1.DraftConflict
+	665, // 706: sttattus.onyx.v1.ResolveDraftConflictResponse.block:type_name -> sttattus.onyx.v1.DraftBlock
+	672, // 707: sttattus.onyx.v1.RequestDraftExportResponse.export:type_name -> sttattus.onyx.v1.DraftExport
+	672, // 708: sttattus.onyx.v1.GetDraftExportResponse.export:type_name -> sttattus.onyx.v1.DraftExport
+	673, // 709: sttattus.onyx.v1.CreateDraftHandoffResponse.handoff:type_name -> sttattus.onyx.v1.DraftHandoff
+	21,  // 710: sttattus.onyx.v1.OnyxService.CreateProfile:input_type -> sttattus.onyx.v1.CreateProfileRequest
+	23,  // 711: sttattus.onyx.v1.OnyxService.GetProfile:input_type -> sttattus.onyx.v1.GetProfileRequest
+	25,  // 712: sttattus.onyx.v1.OnyxService.ListContent:input_type -> sttattus.onyx.v1.ListContentRequest
+	27,  // 713: sttattus.onyx.v1.OnyxService.Subscribe:input_type -> sttattus.onyx.v1.SubscribeRequest
+	29,  // 714: sttattus.onyx.v1.OnyxService.GetContent:input_type -> sttattus.onyx.v1.GetContentRequest
+	31,  // 715: sttattus.onyx.v1.OnyxService.ListShelf:input_type -> sttattus.onyx.v1.ListShelfRequest
+	33,  // 716: sttattus.onyx.v1.OnyxService.ListContinue:input_type -> sttattus.onyx.v1.ListContinueRequest
+	35,  // 717: sttattus.onyx.v1.OnyxService.GetShelves:input_type -> sttattus.onyx.v1.GetShelvesRequest
+	38,  // 718: sttattus.onyx.v1.OnyxService.RecordProgress:input_type -> sttattus.onyx.v1.RecordProgressRequest
+	40,  // 719: sttattus.onyx.v1.OnyxService.RedeemContent:input_type -> sttattus.onyx.v1.RedeemContentRequest
+	42,  // 720: sttattus.onyx.v1.OnyxService.CreateSubscriptionCheckout:input_type -> sttattus.onyx.v1.CreateSubscriptionCheckoutRequest
+	45,  // 721: sttattus.onyx.v1.OnyxService.GetCreator:input_type -> sttattus.onyx.v1.GetCreatorRequest
+	47,  // 722: sttattus.onyx.v1.OnyxService.ListCreatorWorks:input_type -> sttattus.onyx.v1.ListCreatorWorksRequest
+	49,  // 723: sttattus.onyx.v1.OnyxService.FollowCreator:input_type -> sttattus.onyx.v1.FollowCreatorRequest
+	51,  // 724: sttattus.onyx.v1.OnyxService.SearchContent:input_type -> sttattus.onyx.v1.SearchContentRequest
+	54,  // 725: sttattus.onyx.v1.OnyxService.AddNote:input_type -> sttattus.onyx.v1.AddNoteRequest
+	56,  // 726: sttattus.onyx.v1.OnyxService.ListMyNotes:input_type -> sttattus.onyx.v1.ListMyNotesRequest
+	58,  // 727: sttattus.onyx.v1.OnyxService.DeleteNote:input_type -> sttattus.onyx.v1.DeleteNoteRequest
+	61,  // 728: sttattus.onyx.v1.OnyxService.UpsertReaderAnnotation:input_type -> sttattus.onyx.v1.UpsertReaderAnnotationRequest
+	63,  // 729: sttattus.onyx.v1.OnyxService.DeleteReaderAnnotation:input_type -> sttattus.onyx.v1.DeleteReaderAnnotationRequest
+	65,  // 730: sttattus.onyx.v1.OnyxService.ListMyReaderAnnotations:input_type -> sttattus.onyx.v1.ListMyReaderAnnotationsRequest
+	68,  // 731: sttattus.onyx.v1.OnyxService.SearchReader:input_type -> sttattus.onyx.v1.SearchReaderRequest
+	71,  // 732: sttattus.onyx.v1.OnyxService.SearchIntelligence:input_type -> sttattus.onyx.v1.SearchIntelligenceRequest
+	74,  // 733: sttattus.onyx.v1.OnyxService.RecordIntelligenceSearchOutcome:input_type -> sttattus.onyx.v1.RecordIntelligenceSearchOutcomeRequest
+	77,  // 734: sttattus.onyx.v1.OnyxService.ListSavedQueries:input_type -> sttattus.onyx.v1.ListSavedQueriesRequest
+	79,  // 735: sttattus.onyx.v1.OnyxService.UpsertSavedQuery:input_type -> sttattus.onyx.v1.UpsertSavedQueryRequest
+	81,  // 736: sttattus.onyx.v1.OnyxService.DeleteSavedQuery:input_type -> sttattus.onyx.v1.DeleteSavedQueryRequest
+	85,  // 737: sttattus.onyx.v1.OnyxService.ListWatchlists:input_type -> sttattus.onyx.v1.ListWatchlistsRequest
+	87,  // 738: sttattus.onyx.v1.OnyxService.UpsertWatchlist:input_type -> sttattus.onyx.v1.UpsertWatchlistRequest
+	89,  // 739: sttattus.onyx.v1.OnyxService.DeleteWatchlist:input_type -> sttattus.onyx.v1.DeleteWatchlistRequest
+	91,  // 740: sttattus.onyx.v1.OnyxService.RefreshWatchlist:input_type -> sttattus.onyx.v1.RefreshWatchlistRequest
+	94,  // 741: sttattus.onyx.v1.OnyxService.ListIntelligenceAlerts:input_type -> sttattus.onyx.v1.ListIntelligenceAlertsRequest
+	96,  // 742: sttattus.onyx.v1.OnyxService.SetIntelligenceAlertState:input_type -> sttattus.onyx.v1.SetIntelligenceAlertStateRequest
+	99,  // 743: sttattus.onyx.v1.OnyxService.GetIntelligenceQueue:input_type -> sttattus.onyx.v1.GetIntelligenceQueueRequest
+	101, // 744: sttattus.onyx.v1.OnyxService.RecordIntelligenceFeedback:input_type -> sttattus.onyx.v1.RecordIntelligenceFeedbackRequest
+	103, // 745: sttattus.onyx.v1.OnyxService.ExportReaderData:input_type -> sttattus.onyx.v1.ExportReaderDataRequest
+	106, // 746: sttattus.onyx.v1.OnyxService.ListReaderSyncChanges:input_type -> sttattus.onyx.v1.ListReaderSyncChangesRequest
+	108, // 747: sttattus.onyx.v1.OnyxService.ListMyUnlocks:input_type -> sttattus.onyx.v1.ListMyUnlocksRequest
+	110, // 748: sttattus.onyx.v1.OnyxService.ListMySubscriptions:input_type -> sttattus.onyx.v1.ListMySubscriptionsRequest
+	112, // 749: sttattus.onyx.v1.OnyxService.ListMyFollows:input_type -> sttattus.onyx.v1.ListMyFollowsRequest
+	115, // 750: sttattus.onyx.v1.OnyxService.ListSovereignWindow:input_type -> sttattus.onyx.v1.ListSovereignWindowRequest
+	118, // 751: sttattus.onyx.v1.OnyxService.ListSeries:input_type -> sttattus.onyx.v1.ListSeriesRequest
+	120, // 752: sttattus.onyx.v1.OnyxService.GetSeries:input_type -> sttattus.onyx.v1.GetSeriesRequest
+	123, // 753: sttattus.onyx.v1.OnyxService.GenerateCaptions:input_type -> sttattus.onyx.v1.GenerateCaptionsRequest
+	125, // 754: sttattus.onyx.v1.OnyxService.GetCaptionJob:input_type -> sttattus.onyx.v1.GetCaptionJobRequest
+	128, // 755: sttattus.onyx.v1.OnyxService.GetListeningPreferences:input_type -> sttattus.onyx.v1.GetListeningPreferencesRequest
+	130, // 756: sttattus.onyx.v1.OnyxService.UpdateListeningPreferences:input_type -> sttattus.onyx.v1.UpdateListeningPreferencesRequest
+	133, // 757: sttattus.onyx.v1.OnyxService.CreateListeningBookmark:input_type -> sttattus.onyx.v1.CreateListeningBookmarkRequest
+	135, // 758: sttattus.onyx.v1.OnyxService.ListListeningBookmarks:input_type -> sttattus.onyx.v1.ListListeningBookmarksRequest
+	137, // 759: sttattus.onyx.v1.OnyxService.DeleteListeningBookmark:input_type -> sttattus.onyx.v1.DeleteListeningBookmarkRequest
+	140, // 760: sttattus.onyx.v1.OnyxService.ListListeningQueue:input_type -> sttattus.onyx.v1.ListListeningQueueRequest
+	142, // 761: sttattus.onyx.v1.OnyxService.SetListeningQueue:input_type -> sttattus.onyx.v1.SetListeningQueueRequest
+	147, // 762: sttattus.onyx.v1.OnyxService.CreateAudioOverview:input_type -> sttattus.onyx.v1.CreateAudioOverviewRequest
+	149, // 763: sttattus.onyx.v1.OnyxService.ListAudioOverviews:input_type -> sttattus.onyx.v1.ListAudioOverviewsRequest
+	151, // 764: sttattus.onyx.v1.OnyxService.GetAudioOverview:input_type -> sttattus.onyx.v1.GetAudioOverviewRequest
+	153, // 765: sttattus.onyx.v1.OnyxService.DeleteAudioOverview:input_type -> sttattus.onyx.v1.DeleteAudioOverviewRequest
+	156, // 766: sttattus.onyx.v1.OnyxService.ListListeningPronunciations:input_type -> sttattus.onyx.v1.ListListeningPronunciationsRequest
+	158, // 767: sttattus.onyx.v1.OnyxService.GetTodaySummary:input_type -> sttattus.onyx.v1.GetTodaySummaryRequest
+	161, // 768: sttattus.onyx.v1.OnyxService.GetCrossPillarUnlocks:input_type -> sttattus.onyx.v1.GetCrossPillarUnlocksRequest
+	165, // 769: sttattus.onyx.v1.OnyxService.StartConciergeThread:input_type -> sttattus.onyx.v1.StartConciergeThreadRequest
+	167, // 770: sttattus.onyx.v1.OnyxService.ListMyConciergeThreads:input_type -> sttattus.onyx.v1.ListMyConciergeThreadsRequest
+	169, // 771: sttattus.onyx.v1.OnyxService.GetConciergeThread:input_type -> sttattus.onyx.v1.GetConciergeThreadRequest
+	171, // 772: sttattus.onyx.v1.OnyxService.PostConciergeMessage:input_type -> sttattus.onyx.v1.PostConciergeMessageRequest
+	174, // 773: sttattus.onyx.v1.OnyxService.ListLiveEvents:input_type -> sttattus.onyx.v1.ListLiveEventsRequest
+	176, // 774: sttattus.onyx.v1.OnyxService.GetLiveEvent:input_type -> sttattus.onyx.v1.GetLiveEventRequest
+	178, // 775: sttattus.onyx.v1.OnyxService.RsvpLiveEvent:input_type -> sttattus.onyx.v1.RsvpLiveEventRequest
+	192, // 776: sttattus.onyx.v1.OnyxService.GetLiveSalon:input_type -> sttattus.onyx.v1.GetLiveSalonRequest
+	194, // 777: sttattus.onyx.v1.OnyxService.UpsertLiveReservation:input_type -> sttattus.onyx.v1.UpsertLiveReservationRequest
+	196, // 778: sttattus.onyx.v1.OnyxService.InviteLiveGuest:input_type -> sttattus.onyx.v1.InviteLiveGuestRequest
+	198, // 779: sttattus.onyx.v1.OnyxService.GenerateLiveCalendarPass:input_type -> sttattus.onyx.v1.GenerateLiveCalendarPassRequest
+	200, // 780: sttattus.onyx.v1.OnyxService.JoinLiveEvent:input_type -> sttattus.onyx.v1.JoinLiveEventRequest
+	202, // 781: sttattus.onyx.v1.OnyxService.ListLiveActivity:input_type -> sttattus.onyx.v1.ListLiveActivityRequest
+	204, // 782: sttattus.onyx.v1.OnyxService.PostLiveMessage:input_type -> sttattus.onyx.v1.PostLiveMessageRequest
+	206, // 783: sttattus.onyx.v1.OnyxService.UpvoteLiveQuestion:input_type -> sttattus.onyx.v1.UpvoteLiveQuestionRequest
+	208, // 784: sttattus.onyx.v1.OnyxService.VoteLivePoll:input_type -> sttattus.onyx.v1.VoteLivePollRequest
+	210, // 785: sttattus.onyx.v1.OnyxService.SetLiveHandRaise:input_type -> sttattus.onyx.v1.SetLiveHandRaiseRequest
+	212, // 786: sttattus.onyx.v1.OnyxService.ReactLiveEvent:input_type -> sttattus.onyx.v1.ReactLiveEventRequest
+	214, // 787: sttattus.onyx.v1.OnyxService.UpsertLiveNote:input_type -> sttattus.onyx.v1.UpsertLiveNoteRequest
+	216, // 788: sttattus.onyx.v1.OnyxService.ListLiveNotes:input_type -> sttattus.onyx.v1.ListLiveNotesRequest
+	218, // 789: sttattus.onyx.v1.OnyxService.DeleteLiveNote:input_type -> sttattus.onyx.v1.DeleteLiveNoteRequest
+	220, // 790: sttattus.onyx.v1.OnyxService.GetLiveReplay:input_type -> sttattus.onyx.v1.GetLiveReplayRequest
+	223, // 791: sttattus.onyx.v1.OnyxService.SetPosthumousArchive:input_type -> sttattus.onyx.v1.SetPosthumousArchiveRequest
+	225, // 792: sttattus.onyx.v1.OnyxService.GetPosthumousArchive:input_type -> sttattus.onyx.v1.GetPosthumousArchiveRequest
+	228, // 793: sttattus.onyx.v1.OnyxService.ListAnthologies:input_type -> sttattus.onyx.v1.ListAnthologiesRequest
+	230, // 794: sttattus.onyx.v1.OnyxService.GetAnthology:input_type -> sttattus.onyx.v1.GetAnthologyRequest
+	233, // 795: sttattus.onyx.v1.OnyxService.CreateShareLink:input_type -> sttattus.onyx.v1.CreateShareLinkRequest
+	235, // 796: sttattus.onyx.v1.OnyxService.ListMyShareLinks:input_type -> sttattus.onyx.v1.ListMyShareLinksRequest
+	237, // 797: sttattus.onyx.v1.OnyxService.RevokeShareLink:input_type -> sttattus.onyx.v1.RevokeShareLinkRequest
+	240, // 798: sttattus.onyx.v1.OnyxService.GetOfflineManifest:input_type -> sttattus.onyx.v1.GetOfflineManifestRequest
+	242, // 799: sttattus.onyx.v1.OnyxService.RegisterDevice:input_type -> sttattus.onyx.v1.RegisterDeviceRequest
+	244, // 800: sttattus.onyx.v1.OnyxService.AcknowledgePurge:input_type -> sttattus.onyx.v1.AcknowledgePurgeRequest
+	246, // 801: sttattus.onyx.v1.OnyxService.GetDeviceGrants:input_type -> sttattus.onyx.v1.GetDeviceGrantsRequest
+	249, // 802: sttattus.onyx.v1.OnyxService.RevokeMyDevice:input_type -> sttattus.onyx.v1.RevokeMyDeviceRequest
+	251, // 803: sttattus.onyx.v1.OnyxService.MarkMyDeviceLost:input_type -> sttattus.onyx.v1.MarkMyDeviceLostRequest
+	253, // 804: sttattus.onyx.v1.OnyxService.GetPurgeReceipt:input_type -> sttattus.onyx.v1.GetPurgeReceiptRequest
+	255, // 805: sttattus.onyx.v1.OnyxService.ListOfflineManifestItems:input_type -> sttattus.onyx.v1.ListOfflineManifestItemsRequest
+	258, // 806: sttattus.onyx.v1.OnyxService.RefreshOfflineRenditions:input_type -> sttattus.onyx.v1.RefreshOfflineRenditionsRequest
+	261, // 807: sttattus.onyx.v1.OnyxService.RecordOfflineEvent:input_type -> sttattus.onyx.v1.RecordOfflineEventRequest
+	263, // 808: sttattus.onyx.v1.OnyxService.GetYearInOnyx:input_type -> sttattus.onyx.v1.GetYearInOnyxRequest
+	266, // 809: sttattus.onyx.v1.OnyxService.GenerateAnnualArchive:input_type -> sttattus.onyx.v1.GenerateAnnualArchiveRequest
+	268, // 810: sttattus.onyx.v1.OnyxService.ReactToContent:input_type -> sttattus.onyx.v1.ReactToContentRequest
+	271, // 811: sttattus.onyx.v1.OnyxService.CreateIngestionItem:input_type -> sttattus.onyx.v1.CreateIngestionItemRequest
+	273, // 812: sttattus.onyx.v1.OnyxService.ListMyIngestionItems:input_type -> sttattus.onyx.v1.ListMyIngestionItemsRequest
+	275, // 813: sttattus.onyx.v1.OnyxService.GetIngestionItem:input_type -> sttattus.onyx.v1.GetIngestionItemRequest
+	277, // 814: sttattus.onyx.v1.OnyxService.RetryIngestionItem:input_type -> sttattus.onyx.v1.RetryIngestionItemRequest
+	279, // 815: sttattus.onyx.v1.OnyxService.SetIngestionItemState:input_type -> sttattus.onyx.v1.SetIngestionItemStateRequest
+	281, // 816: sttattus.onyx.v1.OnyxService.ResolveIngestionDuplicate:input_type -> sttattus.onyx.v1.ResolveIngestionDuplicateRequest
+	287, // 817: sttattus.onyx.v1.OnyxService.GetEvidenceWorkspace:input_type -> sttattus.onyx.v1.GetEvidenceWorkspaceRequest
+	289, // 818: sttattus.onyx.v1.OnyxService.GetEvidenceSourceHistory:input_type -> sttattus.onyx.v1.GetEvidenceSourceHistoryRequest
+	295, // 819: sttattus.onyx.v1.OnyxService.CreateEvidenceBrief:input_type -> sttattus.onyx.v1.CreateEvidenceBriefRequest
+	297, // 820: sttattus.onyx.v1.OnyxService.ListMyEvidenceBriefs:input_type -> sttattus.onyx.v1.ListMyEvidenceBriefsRequest
+	299, // 821: sttattus.onyx.v1.OnyxService.GetEvidenceBrief:input_type -> sttattus.onyx.v1.GetEvidenceBriefRequest
+	308, // 822: sttattus.onyx.v1.OnyxService.GetCreatorStudio:input_type -> sttattus.onyx.v1.GetCreatorStudioRequest
+	310, // 823: sttattus.onyx.v1.OnyxService.SubmitCreatorPitch:input_type -> sttattus.onyx.v1.SubmitCreatorPitchRequest
+	312, // 824: sttattus.onyx.v1.OnyxService.UpdateCreatorProject:input_type -> sttattus.onyx.v1.UpdateCreatorProjectRequest
+	314, // 825: sttattus.onyx.v1.OnyxService.SubmitCreatorProject:input_type -> sttattus.onyx.v1.SubmitCreatorProjectRequest
+	316, // 826: sttattus.onyx.v1.OnyxService.SignCreatorContract:input_type -> sttattus.onyx.v1.SignCreatorContractRequest
+	318, // 827: sttattus.onyx.v1.OnyxService.ListMyCreatorSubscriptionsDetailed:input_type -> sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedRequest
+	320, // 828: sttattus.onyx.v1.OnyxService.CancelCreatorSubscription:input_type -> sttattus.onyx.v1.CancelCreatorSubscriptionRequest
+	324, // 829: sttattus.onyx.v1.OnyxService.GetMyCommerce:input_type -> sttattus.onyx.v1.GetMyCommerceRequest
+	326, // 830: sttattus.onyx.v1.OnyxService.CreateCommerceCase:input_type -> sttattus.onyx.v1.CreateCommerceCaseRequest
+	345, // 831: sttattus.onyx.v1.OnyxService.ListResearchRooms:input_type -> sttattus.onyx.v1.ListResearchRoomsRequest
+	347, // 832: sttattus.onyx.v1.OnyxService.GetResearchRoom:input_type -> sttattus.onyx.v1.GetResearchRoomRequest
+	349, // 833: sttattus.onyx.v1.OnyxService.CreateResearchRoom:input_type -> sttattus.onyx.v1.CreateResearchRoomRequest
+	351, // 834: sttattus.onyx.v1.OnyxService.UpdateResearchRoom:input_type -> sttattus.onyx.v1.UpdateResearchRoomRequest
+	353, // 835: sttattus.onyx.v1.OnyxService.InviteResearchRoomMember:input_type -> sttattus.onyx.v1.InviteResearchRoomMemberRequest
+	355, // 836: sttattus.onyx.v1.OnyxService.RespondResearchRoomInvite:input_type -> sttattus.onyx.v1.RespondResearchRoomInviteRequest
+	357, // 837: sttattus.onyx.v1.OnyxService.ChangeResearchRoomMember:input_type -> sttattus.onyx.v1.ChangeResearchRoomMemberRequest
+	359, // 838: sttattus.onyx.v1.OnyxService.RevokeResearchRoomMember:input_type -> sttattus.onyx.v1.RevokeResearchRoomMemberRequest
+	361, // 839: sttattus.onyx.v1.OnyxService.AddResearchRoomItem:input_type -> sttattus.onyx.v1.AddResearchRoomItemRequest
+	363, // 840: sttattus.onyx.v1.OnyxService.RemoveResearchRoomItem:input_type -> sttattus.onyx.v1.RemoveResearchRoomItemRequest
+	365, // 841: sttattus.onyx.v1.OnyxService.PostResearchRoomComment:input_type -> sttattus.onyx.v1.PostResearchRoomCommentRequest
+	367, // 842: sttattus.onyx.v1.OnyxService.SetResearchRoomThreadStatus:input_type -> sttattus.onyx.v1.SetResearchRoomThreadStatusRequest
+	369, // 843: sttattus.onyx.v1.OnyxService.UpsertResearchRoomTask:input_type -> sttattus.onyx.v1.UpsertResearchRoomTaskRequest
+	371, // 844: sttattus.onyx.v1.OnyxService.UpsertResearchRoomMeeting:input_type -> sttattus.onyx.v1.UpsertResearchRoomMeetingRequest
+	373, // 845: sttattus.onyx.v1.OnyxService.UpsertResearchRoomDecision:input_type -> sttattus.onyx.v1.UpsertResearchRoomDecisionRequest
+	375, // 846: sttattus.onyx.v1.OnyxService.RecordResearchRoomApproval:input_type -> sttattus.onyx.v1.RecordResearchRoomApprovalRequest
+	377, // 847: sttattus.onyx.v1.OnyxService.SearchResearchRoom:input_type -> sttattus.onyx.v1.SearchResearchRoomRequest
+	380, // 848: sttattus.onyx.v1.OnyxService.RequestResearchRoomExport:input_type -> sttattus.onyx.v1.RequestResearchRoomExportRequest
+	382, // 849: sttattus.onyx.v1.OnyxService.ReportResearchRoomAbuse:input_type -> sttattus.onyx.v1.ReportResearchRoomAbuseRequest
+	384, // 850: sttattus.onyx.v1.OnyxService.ListResearchRoomAudit:input_type -> sttattus.onyx.v1.ListResearchRoomAuditRequest
+	386, // 851: sttattus.onyx.v1.OnyxService.ListResearchRoomGrants:input_type -> sttattus.onyx.v1.ListResearchRoomGrantsRequest
+	388, // 852: sttattus.onyx.v1.OnyxService.UpsertResearchRoomGrant:input_type -> sttattus.onyx.v1.UpsertResearchRoomGrantRequest
+	390, // 853: sttattus.onyx.v1.OnyxService.RevokeResearchRoomGrant:input_type -> sttattus.onyx.v1.RevokeResearchRoomGrantRequest
+	392, // 854: sttattus.onyx.v1.OnyxService.CreateResearchRoomShareLink:input_type -> sttattus.onyx.v1.CreateResearchRoomShareLinkRequest
+	394, // 855: sttattus.onyx.v1.OnyxService.ListResearchRoomShareLinks:input_type -> sttattus.onyx.v1.ListResearchRoomShareLinksRequest
+	396, // 856: sttattus.onyx.v1.OnyxService.RevokeResearchRoomShareLink:input_type -> sttattus.onyx.v1.RevokeResearchRoomShareLinkRequest
+	398, // 857: sttattus.onyx.v1.OnyxService.ResolveResearchRoomShareLink:input_type -> sttattus.onyx.v1.ResolveResearchRoomShareLinkRequest
+	400, // 858: sttattus.onyx.v1.OnyxService.GetResearchRoomOfflineManifest:input_type -> sttattus.onyx.v1.GetResearchRoomOfflineManifestRequest
+	402, // 859: sttattus.onyx.v1.OnyxService.AcknowledgeResearchRoomOfflinePurge:input_type -> sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeRequest
+	404, // 860: sttattus.onyx.v1.OnyxService.ListResearchRoomOfflinePurges:input_type -> sttattus.onyx.v1.ListResearchRoomOfflinePurgesRequest
+	406, // 861: sttattus.onyx.v1.OnyxService.LeaveResearchRoom:input_type -> sttattus.onyx.v1.LeaveResearchRoomRequest
+	417, // 862: sttattus.onyx.v1.OnyxService.GetPersonalIntelligenceGraph:input_type -> sttattus.onyx.v1.GetPersonalIntelligenceGraphRequest
+	419, // 863: sttattus.onyx.v1.OnyxService.UpsertIntelligenceGraphNode:input_type -> sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest
+	421, // 864: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphNodeState:input_type -> sttattus.onyx.v1.SetIntelligenceGraphNodeStateRequest
+	423, // 865: sttattus.onyx.v1.OnyxService.MergeIntelligenceGraphNodes:input_type -> sttattus.onyx.v1.MergeIntelligenceGraphNodesRequest
+	425, // 866: sttattus.onyx.v1.OnyxService.SplitIntelligenceGraphNode:input_type -> sttattus.onyx.v1.SplitIntelligenceGraphNodeRequest
+	427, // 867: sttattus.onyx.v1.OnyxService.UpsertIntelligenceGraphEdge:input_type -> sttattus.onyx.v1.UpsertIntelligenceGraphEdgeRequest
+	429, // 868: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphEdgeState:input_type -> sttattus.onyx.v1.SetIntelligenceGraphEdgeStateRequest
+	431, // 869: sttattus.onyx.v1.OnyxService.GenerateIntelligenceGraphSuggestions:input_type -> sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsRequest
+	433, // 870: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphSuggestions:input_type -> sttattus.onyx.v1.ListIntelligenceGraphSuggestionsRequest
+	435, // 871: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphSuggestionState:input_type -> sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateRequest
+	437, // 872: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphTimeline:input_type -> sttattus.onyx.v1.ListIntelligenceGraphTimelineRequest
+	439, // 873: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphResurfacing:input_type -> sttattus.onyx.v1.ListIntelligenceGraphResurfacingRequest
+	441, // 874: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphResurfacingState:input_type -> sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateRequest
+	443, // 875: sttattus.onyx.v1.OnyxService.CreateIntelligenceGraphMeetingBrief:input_type -> sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefRequest
+	445, // 876: sttattus.onyx.v1.OnyxService.GetIntelligenceGraphMeetingBrief:input_type -> sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefRequest
+	447, // 877: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphMeetingBriefs:input_type -> sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsRequest
+	449, // 878: sttattus.onyx.v1.OnyxService.ExportPersonalIntelligenceGraph:input_type -> sttattus.onyx.v1.ExportPersonalIntelligenceGraphRequest
+	451, // 879: sttattus.onyx.v1.OnyxService.RebuildPersonalIntelligenceGraph:input_type -> sttattus.onyx.v1.RebuildPersonalIntelligenceGraphRequest
+	470, // 880: sttattus.onyx.v1.OnyxService.ListLanguageConfigs:input_type -> sttattus.onyx.v1.ListLanguageConfigsRequest
+	472, // 881: sttattus.onyx.v1.OnyxService.ListContentEditions:input_type -> sttattus.onyx.v1.ListContentEditionsRequest
+	474, // 882: sttattus.onyx.v1.OnyxService.GetAlignedBlocks:input_type -> sttattus.onyx.v1.GetAlignedBlocksRequest
+	476, // 883: sttattus.onyx.v1.OnyxService.ListTermbaseEntries:input_type -> sttattus.onyx.v1.ListTermbaseEntriesRequest
+	478, // 884: sttattus.onyx.v1.OnyxService.CrossLanguageSearch:input_type -> sttattus.onyx.v1.CrossLanguageSearchRequest
+	480, // 885: sttattus.onyx.v1.OnyxService.GetMultilingualPreferences:input_type -> sttattus.onyx.v1.GetMultilingualPreferencesRequest
+	482, // 886: sttattus.onyx.v1.OnyxService.UpdateMultilingualPreferences:input_type -> sttattus.onyx.v1.UpdateMultilingualPreferencesRequest
+	484, // 887: sttattus.onyx.v1.OnyxService.GetMultilingualAudioVideo:input_type -> sttattus.onyx.v1.GetMultilingualAudioVideoRequest
+	486, // 888: sttattus.onyx.v1.OnyxService.GetMultilingualOfflineManifest:input_type -> sttattus.onyx.v1.GetMultilingualOfflineManifestRequest
+	488, // 889: sttattus.onyx.v1.OnyxService.ReportTranslationIssue:input_type -> sttattus.onyx.v1.ReportTranslationIssueRequest
+	490, // 890: sttattus.onyx.v1.OnyxService.RequestMultilingualExport:input_type -> sttattus.onyx.v1.RequestMultilingualExportRequest
+	492, // 891: sttattus.onyx.v1.OnyxService.GetMultilingualExport:input_type -> sttattus.onyx.v1.GetMultilingualExportRequest
+	502, // 892: sttattus.onyx.v1.OnyxService.GetLivingArchiveDashboard:input_type -> sttattus.onyx.v1.GetLivingArchiveDashboardRequest
+	504, // 893: sttattus.onyx.v1.OnyxService.UpsertLivingArchivePolicy:input_type -> sttattus.onyx.v1.UpsertLivingArchivePolicyRequest
+	506, // 894: sttattus.onyx.v1.OnyxService.PreviewLivingArchivePolicy:input_type -> sttattus.onyx.v1.PreviewLivingArchivePolicyRequest
+	508, // 895: sttattus.onyx.v1.OnyxService.GenerateLivingArchiveEdition:input_type -> sttattus.onyx.v1.GenerateLivingArchiveEditionRequest
+	510, // 896: sttattus.onyx.v1.OnyxService.LinkLivingArchiveLegacyEscrow:input_type -> sttattus.onyx.v1.LinkLivingArchiveLegacyEscrowRequest
+	512, // 897: sttattus.onyx.v1.OnyxService.UpsertLivingArchiveContact:input_type -> sttattus.onyx.v1.UpsertLivingArchiveContactRequest
+	514, // 898: sttattus.onyx.v1.OnyxService.DeleteLivingArchiveContact:input_type -> sttattus.onyx.v1.DeleteLivingArchiveContactRequest
+	516, // 899: sttattus.onyx.v1.OnyxService.SubmitLivingArchivePolicy:input_type -> sttattus.onyx.v1.SubmitLivingArchivePolicyRequest
+	518, // 900: sttattus.onyx.v1.OnyxService.RevokeLivingArchivePolicy:input_type -> sttattus.onyx.v1.RevokeLivingArchivePolicyRequest
+	520, // 901: sttattus.onyx.v1.OnyxService.ConfirmLivingArchiveReview:input_type -> sttattus.onyx.v1.ConfirmLivingArchiveReviewRequest
+	522, // 902: sttattus.onyx.v1.OnyxService.ContestLivingArchiveRelease:input_type -> sttattus.onyx.v1.ContestLivingArchiveReleaseRequest
+	531, // 903: sttattus.onyx.v1.OnyxService.GetForensicProtectionDashboard:input_type -> sttattus.onyx.v1.GetForensicProtectionDashboardRequest
+	533, // 904: sttattus.onyx.v1.OnyxService.IssueForensicManifest:input_type -> sttattus.onyx.v1.IssueForensicManifestRequest
+	535, // 905: sttattus.onyx.v1.OnyxService.RevokeForensicManifest:input_type -> sttattus.onyx.v1.RevokeForensicManifestRequest
+	537, // 906: sttattus.onyx.v1.OnyxService.RespondForensicCase:input_type -> sttattus.onyx.v1.RespondForensicCaseRequest
+	539, // 907: sttattus.onyx.v1.OnyxService.FileForensicAppeal:input_type -> sttattus.onyx.v1.FileForensicAppealRequest
+	541, // 908: sttattus.onyx.v1.OnyxService.PostForensicAppealMessage:input_type -> sttattus.onyx.v1.PostForensicAppealMessageRequest
+	543, // 909: sttattus.onyx.v1.OnyxService.WithdrawForensicAppeal:input_type -> sttattus.onyx.v1.WithdrawForensicAppealRequest
+	557, // 910: sttattus.onyx.v1.OnyxService.GetIntegrationDashboard:input_type -> sttattus.onyx.v1.GetIntegrationDashboardRequest
+	559, // 911: sttattus.onyx.v1.OnyxService.AuthorizeIntegration:input_type -> sttattus.onyx.v1.AuthorizeIntegrationRequest
+	561, // 912: sttattus.onyx.v1.OnyxService.RevokeIntegrationGrant:input_type -> sttattus.onyx.v1.RevokeIntegrationGrantRequest
+	563, // 913: sttattus.onyx.v1.OnyxService.UpsertIntegrationConnector:input_type -> sttattus.onyx.v1.UpsertIntegrationConnectorRequest
+	565, // 914: sttattus.onyx.v1.OnyxService.SetIntegrationConnectorState:input_type -> sttattus.onyx.v1.SetIntegrationConnectorStateRequest
+	567, // 915: sttattus.onyx.v1.OnyxService.RunIntegrationConnector:input_type -> sttattus.onyx.v1.RunIntegrationConnectorRequest
+	569, // 916: sttattus.onyx.v1.OnyxService.GetIntegrationArtifact:input_type -> sttattus.onyx.v1.GetIntegrationArtifactRequest
+	571, // 917: sttattus.onyx.v1.OnyxService.ResolveIntegrationConflict:input_type -> sttattus.onyx.v1.ResolveIntegrationConflictRequest
+	573, // 918: sttattus.onyx.v1.OnyxService.DispatchIntegrationBridge:input_type -> sttattus.onyx.v1.DispatchIntegrationBridgeRequest
+	575, // 919: sttattus.onyx.v1.OnyxService.SubmitIntegrationOperationsCase:input_type -> sttattus.onyx.v1.SubmitIntegrationOperationsCaseRequest
+	591, // 920: sttattus.onyx.v1.OnyxService.GetSpatialCanvasDashboard:input_type -> sttattus.onyx.v1.GetSpatialCanvasDashboardRequest
+	593, // 921: sttattus.onyx.v1.OnyxService.ListSpatialCanvasTemplates:input_type -> sttattus.onyx.v1.ListSpatialCanvasTemplatesRequest
+	595, // 922: sttattus.onyx.v1.OnyxService.CreateSpatialCanvas:input_type -> sttattus.onyx.v1.CreateSpatialCanvasRequest
+	597, // 923: sttattus.onyx.v1.OnyxService.GetSpatialCanvas:input_type -> sttattus.onyx.v1.GetSpatialCanvasRequest
+	599, // 924: sttattus.onyx.v1.OnyxService.ApplySpatialCanvasOperations:input_type -> sttattus.onyx.v1.ApplySpatialCanvasOperationsRequest
+	601, // 925: sttattus.onyx.v1.OnyxService.ResolveSpatialCanvasConflict:input_type -> sttattus.onyx.v1.ResolveSpatialCanvasConflictRequest
+	603, // 926: sttattus.onyx.v1.OnyxService.CreateSpatialCanvasSnapshot:input_type -> sttattus.onyx.v1.CreateSpatialCanvasSnapshotRequest
+	605, // 927: sttattus.onyx.v1.OnyxService.RestoreSpatialCanvasSnapshot:input_type -> sttattus.onyx.v1.RestoreSpatialCanvasSnapshotRequest
+	607, // 928: sttattus.onyx.v1.OnyxService.UpsertSpatialCanvasComment:input_type -> sttattus.onyx.v1.UpsertSpatialCanvasCommentRequest
+	609, // 929: sttattus.onyx.v1.OnyxService.SetSpatialCanvasCommentState:input_type -> sttattus.onyx.v1.SetSpatialCanvasCommentStateRequest
+	611, // 930: sttattus.onyx.v1.OnyxService.GenerateSpatialCanvasProposals:input_type -> sttattus.onyx.v1.GenerateSpatialCanvasProposalsRequest
+	613, // 931: sttattus.onyx.v1.OnyxService.SetSpatialCanvasProposalState:input_type -> sttattus.onyx.v1.SetSpatialCanvasProposalStateRequest
+	615, // 932: sttattus.onyx.v1.OnyxService.RequestSpatialCanvasExport:input_type -> sttattus.onyx.v1.RequestSpatialCanvasExportRequest
+	617, // 933: sttattus.onyx.v1.OnyxService.GetSpatialCanvasExport:input_type -> sttattus.onyx.v1.GetSpatialCanvasExportRequest
+	619, // 934: sttattus.onyx.v1.OnyxService.UpsertSpatialCanvasCollaborator:input_type -> sttattus.onyx.v1.UpsertSpatialCanvasCollaboratorRequest
+	621, // 935: sttattus.onyx.v1.OnyxService.ReportSpatialCanvasAbuse:input_type -> sttattus.onyx.v1.ReportSpatialCanvasAbuseRequest
+	632, // 936: sttattus.onyx.v1.OnyxService.GetRecallDashboard:input_type -> sttattus.onyx.v1.GetRecallDashboardRequest
+	634, // 937: sttattus.onyx.v1.OnyxService.ListRecallDecks:input_type -> sttattus.onyx.v1.ListRecallDecksRequest
+	636, // 938: sttattus.onyx.v1.OnyxService.ListMemoryItems:input_type -> sttattus.onyx.v1.ListMemoryItemsRequest
+	638, // 939: sttattus.onyx.v1.OnyxService.UpsertRecallDeck:input_type -> sttattus.onyx.v1.UpsertRecallDeckRequest
+	640, // 940: sttattus.onyx.v1.OnyxService.GenerateRecallItems:input_type -> sttattus.onyx.v1.GenerateRecallItemsRequest
+	642, // 941: sttattus.onyx.v1.OnyxService.UpsertMemoryItem:input_type -> sttattus.onyx.v1.UpsertMemoryItemRequest
+	644, // 942: sttattus.onyx.v1.OnyxService.SetMemoryItemState:input_type -> sttattus.onyx.v1.SetMemoryItemStateRequest
+	646, // 943: sttattus.onyx.v1.OnyxService.GetRecallReviewQueue:input_type -> sttattus.onyx.v1.GetRecallReviewQueueRequest
+	648, // 944: sttattus.onyx.v1.OnyxService.RecordRecallReviewBatch:input_type -> sttattus.onyx.v1.RecordRecallReviewBatchRequest
+	650, // 945: sttattus.onyx.v1.OnyxService.ResolveRecallInvalidation:input_type -> sttattus.onyx.v1.ResolveRecallInvalidationRequest
+	652, // 946: sttattus.onyx.v1.OnyxService.UpdateRecallPreferences:input_type -> sttattus.onyx.v1.UpdateRecallPreferencesRequest
+	654, // 947: sttattus.onyx.v1.OnyxService.ExportRecallData:input_type -> sttattus.onyx.v1.ExportRecallDataRequest
+	656, // 948: sttattus.onyx.v1.OnyxService.ImportRecallData:input_type -> sttattus.onyx.v1.ImportRecallDataRequest
+	658, // 949: sttattus.onyx.v1.OnyxService.ReportRecallItem:input_type -> sttattus.onyx.v1.ReportRecallItemRequest
+	660, // 950: sttattus.onyx.v1.OnyxService.RecordRecallTransfer:input_type -> sttattus.onyx.v1.RecordRecallTransferRequest
+	676, // 951: sttattus.onyx.v1.OnyxService.GetDraftingDashboard:input_type -> sttattus.onyx.v1.GetDraftingDashboardRequest
+	678, // 952: sttattus.onyx.v1.OnyxService.ListDrafts:input_type -> sttattus.onyx.v1.ListDraftsRequest
+	680, // 953: sttattus.onyx.v1.OnyxService.GetDraft:input_type -> sttattus.onyx.v1.GetDraftRequest
+	682, // 954: sttattus.onyx.v1.OnyxService.CreateDraft:input_type -> sttattus.onyx.v1.CreateDraftRequest
+	684, // 955: sttattus.onyx.v1.OnyxService.UpsertDraftBlock:input_type -> sttattus.onyx.v1.UpsertDraftBlockRequest
+	686, // 956: sttattus.onyx.v1.OnyxService.DeleteDraftBlock:input_type -> sttattus.onyx.v1.DeleteDraftBlockRequest
+	688, // 957: sttattus.onyx.v1.OnyxService.UpsertDraftCitation:input_type -> sttattus.onyx.v1.UpsertDraftCitationRequest
+	690, // 958: sttattus.onyx.v1.OnyxService.VerifyDraft:input_type -> sttattus.onyx.v1.VerifyDraftRequest
+	695, // 959: sttattus.onyx.v1.OnyxService.GetDraftEvidenceReview:input_type -> sttattus.onyx.v1.GetDraftEvidenceReviewRequest
+	697, // 960: sttattus.onyx.v1.OnyxService.CompareDraftEvidence:input_type -> sttattus.onyx.v1.CompareDraftEvidenceRequest
+	700, // 961: sttattus.onyx.v1.OnyxService.CreateDraftRevision:input_type -> sttattus.onyx.v1.CreateDraftRevisionRequest
+	702, // 962: sttattus.onyx.v1.OnyxService.CreateDraftBranch:input_type -> sttattus.onyx.v1.CreateDraftBranchRequest
+	704, // 963: sttattus.onyx.v1.OnyxService.RestoreDraftRevision:input_type -> sttattus.onyx.v1.RestoreDraftRevisionRequest
+	706, // 964: sttattus.onyx.v1.OnyxService.CompareDraftRevisions:input_type -> sttattus.onyx.v1.CompareDraftRevisionsRequest
+	708, // 965: sttattus.onyx.v1.OnyxService.GenerateDraftSuggestion:input_type -> sttattus.onyx.v1.GenerateDraftSuggestionRequest
+	710, // 966: sttattus.onyx.v1.OnyxService.SetDraftSuggestionState:input_type -> sttattus.onyx.v1.SetDraftSuggestionStateRequest
+	712, // 967: sttattus.onyx.v1.OnyxService.ResolveDraftConflict:input_type -> sttattus.onyx.v1.ResolveDraftConflictRequest
+	714, // 968: sttattus.onyx.v1.OnyxService.RequestDraftExport:input_type -> sttattus.onyx.v1.RequestDraftExportRequest
+	716, // 969: sttattus.onyx.v1.OnyxService.GetDraftExport:input_type -> sttattus.onyx.v1.GetDraftExportRequest
+	718, // 970: sttattus.onyx.v1.OnyxService.CreateDraftHandoff:input_type -> sttattus.onyx.v1.CreateDraftHandoffRequest
+	720, // 971: sttattus.onyx.v1.OnyxService.ReportDraftIncident:input_type -> sttattus.onyx.v1.ReportDraftIncidentRequest
+	22,  // 972: sttattus.onyx.v1.OnyxService.CreateProfile:output_type -> sttattus.onyx.v1.CreateProfileResponse
+	24,  // 973: sttattus.onyx.v1.OnyxService.GetProfile:output_type -> sttattus.onyx.v1.GetProfileResponse
+	26,  // 974: sttattus.onyx.v1.OnyxService.ListContent:output_type -> sttattus.onyx.v1.ListContentResponse
+	28,  // 975: sttattus.onyx.v1.OnyxService.Subscribe:output_type -> sttattus.onyx.v1.SubscribeResponse
+	30,  // 976: sttattus.onyx.v1.OnyxService.GetContent:output_type -> sttattus.onyx.v1.GetContentResponse
+	32,  // 977: sttattus.onyx.v1.OnyxService.ListShelf:output_type -> sttattus.onyx.v1.ListShelfResponse
+	34,  // 978: sttattus.onyx.v1.OnyxService.ListContinue:output_type -> sttattus.onyx.v1.ListContinueResponse
+	37,  // 979: sttattus.onyx.v1.OnyxService.GetShelves:output_type -> sttattus.onyx.v1.GetShelvesResponse
+	39,  // 980: sttattus.onyx.v1.OnyxService.RecordProgress:output_type -> sttattus.onyx.v1.RecordProgressResponse
+	41,  // 981: sttattus.onyx.v1.OnyxService.RedeemContent:output_type -> sttattus.onyx.v1.RedeemContentResponse
+	43,  // 982: sttattus.onyx.v1.OnyxService.CreateSubscriptionCheckout:output_type -> sttattus.onyx.v1.CreateSubscriptionCheckoutResponse
+	46,  // 983: sttattus.onyx.v1.OnyxService.GetCreator:output_type -> sttattus.onyx.v1.GetCreatorResponse
+	48,  // 984: sttattus.onyx.v1.OnyxService.ListCreatorWorks:output_type -> sttattus.onyx.v1.ListCreatorWorksResponse
+	50,  // 985: sttattus.onyx.v1.OnyxService.FollowCreator:output_type -> sttattus.onyx.v1.FollowCreatorResponse
+	52,  // 986: sttattus.onyx.v1.OnyxService.SearchContent:output_type -> sttattus.onyx.v1.SearchContentResponse
+	55,  // 987: sttattus.onyx.v1.OnyxService.AddNote:output_type -> sttattus.onyx.v1.AddNoteResponse
+	57,  // 988: sttattus.onyx.v1.OnyxService.ListMyNotes:output_type -> sttattus.onyx.v1.ListMyNotesResponse
+	59,  // 989: sttattus.onyx.v1.OnyxService.DeleteNote:output_type -> sttattus.onyx.v1.DeleteNoteResponse
+	62,  // 990: sttattus.onyx.v1.OnyxService.UpsertReaderAnnotation:output_type -> sttattus.onyx.v1.UpsertReaderAnnotationResponse
+	64,  // 991: sttattus.onyx.v1.OnyxService.DeleteReaderAnnotation:output_type -> sttattus.onyx.v1.DeleteReaderAnnotationResponse
+	66,  // 992: sttattus.onyx.v1.OnyxService.ListMyReaderAnnotations:output_type -> sttattus.onyx.v1.ListMyReaderAnnotationsResponse
+	69,  // 993: sttattus.onyx.v1.OnyxService.SearchReader:output_type -> sttattus.onyx.v1.SearchReaderResponse
+	73,  // 994: sttattus.onyx.v1.OnyxService.SearchIntelligence:output_type -> sttattus.onyx.v1.SearchIntelligenceResponse
+	75,  // 995: sttattus.onyx.v1.OnyxService.RecordIntelligenceSearchOutcome:output_type -> sttattus.onyx.v1.RecordIntelligenceSearchOutcomeResponse
+	78,  // 996: sttattus.onyx.v1.OnyxService.ListSavedQueries:output_type -> sttattus.onyx.v1.ListSavedQueriesResponse
+	80,  // 997: sttattus.onyx.v1.OnyxService.UpsertSavedQuery:output_type -> sttattus.onyx.v1.UpsertSavedQueryResponse
+	82,  // 998: sttattus.onyx.v1.OnyxService.DeleteSavedQuery:output_type -> sttattus.onyx.v1.DeleteSavedQueryResponse
+	86,  // 999: sttattus.onyx.v1.OnyxService.ListWatchlists:output_type -> sttattus.onyx.v1.ListWatchlistsResponse
+	88,  // 1000: sttattus.onyx.v1.OnyxService.UpsertWatchlist:output_type -> sttattus.onyx.v1.UpsertWatchlistResponse
+	90,  // 1001: sttattus.onyx.v1.OnyxService.DeleteWatchlist:output_type -> sttattus.onyx.v1.DeleteWatchlistResponse
+	92,  // 1002: sttattus.onyx.v1.OnyxService.RefreshWatchlist:output_type -> sttattus.onyx.v1.RefreshWatchlistResponse
+	95,  // 1003: sttattus.onyx.v1.OnyxService.ListIntelligenceAlerts:output_type -> sttattus.onyx.v1.ListIntelligenceAlertsResponse
+	97,  // 1004: sttattus.onyx.v1.OnyxService.SetIntelligenceAlertState:output_type -> sttattus.onyx.v1.SetIntelligenceAlertStateResponse
+	100, // 1005: sttattus.onyx.v1.OnyxService.GetIntelligenceQueue:output_type -> sttattus.onyx.v1.GetIntelligenceQueueResponse
+	102, // 1006: sttattus.onyx.v1.OnyxService.RecordIntelligenceFeedback:output_type -> sttattus.onyx.v1.RecordIntelligenceFeedbackResponse
+	104, // 1007: sttattus.onyx.v1.OnyxService.ExportReaderData:output_type -> sttattus.onyx.v1.ExportReaderDataResponse
+	107, // 1008: sttattus.onyx.v1.OnyxService.ListReaderSyncChanges:output_type -> sttattus.onyx.v1.ListReaderSyncChangesResponse
+	109, // 1009: sttattus.onyx.v1.OnyxService.ListMyUnlocks:output_type -> sttattus.onyx.v1.ListMyUnlocksResponse
+	111, // 1010: sttattus.onyx.v1.OnyxService.ListMySubscriptions:output_type -> sttattus.onyx.v1.ListMySubscriptionsResponse
+	113, // 1011: sttattus.onyx.v1.OnyxService.ListMyFollows:output_type -> sttattus.onyx.v1.ListMyFollowsResponse
+	116, // 1012: sttattus.onyx.v1.OnyxService.ListSovereignWindow:output_type -> sttattus.onyx.v1.ListSovereignWindowResponse
+	119, // 1013: sttattus.onyx.v1.OnyxService.ListSeries:output_type -> sttattus.onyx.v1.ListSeriesResponse
+	121, // 1014: sttattus.onyx.v1.OnyxService.GetSeries:output_type -> sttattus.onyx.v1.GetSeriesResponse
+	124, // 1015: sttattus.onyx.v1.OnyxService.GenerateCaptions:output_type -> sttattus.onyx.v1.GenerateCaptionsResponse
+	126, // 1016: sttattus.onyx.v1.OnyxService.GetCaptionJob:output_type -> sttattus.onyx.v1.GetCaptionJobResponse
+	129, // 1017: sttattus.onyx.v1.OnyxService.GetListeningPreferences:output_type -> sttattus.onyx.v1.GetListeningPreferencesResponse
+	131, // 1018: sttattus.onyx.v1.OnyxService.UpdateListeningPreferences:output_type -> sttattus.onyx.v1.UpdateListeningPreferencesResponse
+	134, // 1019: sttattus.onyx.v1.OnyxService.CreateListeningBookmark:output_type -> sttattus.onyx.v1.CreateListeningBookmarkResponse
+	136, // 1020: sttattus.onyx.v1.OnyxService.ListListeningBookmarks:output_type -> sttattus.onyx.v1.ListListeningBookmarksResponse
+	138, // 1021: sttattus.onyx.v1.OnyxService.DeleteListeningBookmark:output_type -> sttattus.onyx.v1.DeleteListeningBookmarkResponse
+	141, // 1022: sttattus.onyx.v1.OnyxService.ListListeningQueue:output_type -> sttattus.onyx.v1.ListListeningQueueResponse
+	143, // 1023: sttattus.onyx.v1.OnyxService.SetListeningQueue:output_type -> sttattus.onyx.v1.SetListeningQueueResponse
+	148, // 1024: sttattus.onyx.v1.OnyxService.CreateAudioOverview:output_type -> sttattus.onyx.v1.CreateAudioOverviewResponse
+	150, // 1025: sttattus.onyx.v1.OnyxService.ListAudioOverviews:output_type -> sttattus.onyx.v1.ListAudioOverviewsResponse
+	152, // 1026: sttattus.onyx.v1.OnyxService.GetAudioOverview:output_type -> sttattus.onyx.v1.GetAudioOverviewResponse
+	154, // 1027: sttattus.onyx.v1.OnyxService.DeleteAudioOverview:output_type -> sttattus.onyx.v1.DeleteAudioOverviewResponse
+	157, // 1028: sttattus.onyx.v1.OnyxService.ListListeningPronunciations:output_type -> sttattus.onyx.v1.ListListeningPronunciationsResponse
+	159, // 1029: sttattus.onyx.v1.OnyxService.GetTodaySummary:output_type -> sttattus.onyx.v1.GetTodaySummaryResponse
+	162, // 1030: sttattus.onyx.v1.OnyxService.GetCrossPillarUnlocks:output_type -> sttattus.onyx.v1.GetCrossPillarUnlocksResponse
+	166, // 1031: sttattus.onyx.v1.OnyxService.StartConciergeThread:output_type -> sttattus.onyx.v1.StartConciergeThreadResponse
+	168, // 1032: sttattus.onyx.v1.OnyxService.ListMyConciergeThreads:output_type -> sttattus.onyx.v1.ListMyConciergeThreadsResponse
+	170, // 1033: sttattus.onyx.v1.OnyxService.GetConciergeThread:output_type -> sttattus.onyx.v1.GetConciergeThreadResponse
+	172, // 1034: sttattus.onyx.v1.OnyxService.PostConciergeMessage:output_type -> sttattus.onyx.v1.PostConciergeMessageResponse
+	175, // 1035: sttattus.onyx.v1.OnyxService.ListLiveEvents:output_type -> sttattus.onyx.v1.ListLiveEventsResponse
+	177, // 1036: sttattus.onyx.v1.OnyxService.GetLiveEvent:output_type -> sttattus.onyx.v1.GetLiveEventResponse
+	179, // 1037: sttattus.onyx.v1.OnyxService.RsvpLiveEvent:output_type -> sttattus.onyx.v1.RsvpLiveEventResponse
+	193, // 1038: sttattus.onyx.v1.OnyxService.GetLiveSalon:output_type -> sttattus.onyx.v1.GetLiveSalonResponse
+	195, // 1039: sttattus.onyx.v1.OnyxService.UpsertLiveReservation:output_type -> sttattus.onyx.v1.UpsertLiveReservationResponse
+	197, // 1040: sttattus.onyx.v1.OnyxService.InviteLiveGuest:output_type -> sttattus.onyx.v1.InviteLiveGuestResponse
+	199, // 1041: sttattus.onyx.v1.OnyxService.GenerateLiveCalendarPass:output_type -> sttattus.onyx.v1.GenerateLiveCalendarPassResponse
+	201, // 1042: sttattus.onyx.v1.OnyxService.JoinLiveEvent:output_type -> sttattus.onyx.v1.JoinLiveEventResponse
+	203, // 1043: sttattus.onyx.v1.OnyxService.ListLiveActivity:output_type -> sttattus.onyx.v1.ListLiveActivityResponse
+	205, // 1044: sttattus.onyx.v1.OnyxService.PostLiveMessage:output_type -> sttattus.onyx.v1.PostLiveMessageResponse
+	207, // 1045: sttattus.onyx.v1.OnyxService.UpvoteLiveQuestion:output_type -> sttattus.onyx.v1.UpvoteLiveQuestionResponse
+	209, // 1046: sttattus.onyx.v1.OnyxService.VoteLivePoll:output_type -> sttattus.onyx.v1.VoteLivePollResponse
+	211, // 1047: sttattus.onyx.v1.OnyxService.SetLiveHandRaise:output_type -> sttattus.onyx.v1.SetLiveHandRaiseResponse
+	213, // 1048: sttattus.onyx.v1.OnyxService.ReactLiveEvent:output_type -> sttattus.onyx.v1.ReactLiveEventResponse
+	215, // 1049: sttattus.onyx.v1.OnyxService.UpsertLiveNote:output_type -> sttattus.onyx.v1.UpsertLiveNoteResponse
+	217, // 1050: sttattus.onyx.v1.OnyxService.ListLiveNotes:output_type -> sttattus.onyx.v1.ListLiveNotesResponse
+	219, // 1051: sttattus.onyx.v1.OnyxService.DeleteLiveNote:output_type -> sttattus.onyx.v1.DeleteLiveNoteResponse
+	221, // 1052: sttattus.onyx.v1.OnyxService.GetLiveReplay:output_type -> sttattus.onyx.v1.GetLiveReplayResponse
+	224, // 1053: sttattus.onyx.v1.OnyxService.SetPosthumousArchive:output_type -> sttattus.onyx.v1.SetPosthumousArchiveResponse
+	226, // 1054: sttattus.onyx.v1.OnyxService.GetPosthumousArchive:output_type -> sttattus.onyx.v1.GetPosthumousArchiveResponse
+	229, // 1055: sttattus.onyx.v1.OnyxService.ListAnthologies:output_type -> sttattus.onyx.v1.ListAnthologiesResponse
+	231, // 1056: sttattus.onyx.v1.OnyxService.GetAnthology:output_type -> sttattus.onyx.v1.GetAnthologyResponse
+	234, // 1057: sttattus.onyx.v1.OnyxService.CreateShareLink:output_type -> sttattus.onyx.v1.CreateShareLinkResponse
+	236, // 1058: sttattus.onyx.v1.OnyxService.ListMyShareLinks:output_type -> sttattus.onyx.v1.ListMyShareLinksResponse
+	238, // 1059: sttattus.onyx.v1.OnyxService.RevokeShareLink:output_type -> sttattus.onyx.v1.RevokeShareLinkResponse
+	241, // 1060: sttattus.onyx.v1.OnyxService.GetOfflineManifest:output_type -> sttattus.onyx.v1.GetOfflineManifestResponse
+	243, // 1061: sttattus.onyx.v1.OnyxService.RegisterDevice:output_type -> sttattus.onyx.v1.RegisterDeviceResponse
+	245, // 1062: sttattus.onyx.v1.OnyxService.AcknowledgePurge:output_type -> sttattus.onyx.v1.AcknowledgePurgeResponse
+	248, // 1063: sttattus.onyx.v1.OnyxService.GetDeviceGrants:output_type -> sttattus.onyx.v1.GetDeviceGrantsResponse
+	250, // 1064: sttattus.onyx.v1.OnyxService.RevokeMyDevice:output_type -> sttattus.onyx.v1.RevokeMyDeviceResponse
+	252, // 1065: sttattus.onyx.v1.OnyxService.MarkMyDeviceLost:output_type -> sttattus.onyx.v1.MarkMyDeviceLostResponse
+	254, // 1066: sttattus.onyx.v1.OnyxService.GetPurgeReceipt:output_type -> sttattus.onyx.v1.GetPurgeReceiptResponse
+	257, // 1067: sttattus.onyx.v1.OnyxService.ListOfflineManifestItems:output_type -> sttattus.onyx.v1.ListOfflineManifestItemsResponse
+	260, // 1068: sttattus.onyx.v1.OnyxService.RefreshOfflineRenditions:output_type -> sttattus.onyx.v1.RefreshOfflineRenditionsResponse
+	262, // 1069: sttattus.onyx.v1.OnyxService.RecordOfflineEvent:output_type -> sttattus.onyx.v1.RecordOfflineEventResponse
+	264, // 1070: sttattus.onyx.v1.OnyxService.GetYearInOnyx:output_type -> sttattus.onyx.v1.GetYearInOnyxResponse
+	267, // 1071: sttattus.onyx.v1.OnyxService.GenerateAnnualArchive:output_type -> sttattus.onyx.v1.GenerateAnnualArchiveResponse
+	269, // 1072: sttattus.onyx.v1.OnyxService.ReactToContent:output_type -> sttattus.onyx.v1.ReactToContentResponse
+	272, // 1073: sttattus.onyx.v1.OnyxService.CreateIngestionItem:output_type -> sttattus.onyx.v1.CreateIngestionItemResponse
+	274, // 1074: sttattus.onyx.v1.OnyxService.ListMyIngestionItems:output_type -> sttattus.onyx.v1.ListMyIngestionItemsResponse
+	276, // 1075: sttattus.onyx.v1.OnyxService.GetIngestionItem:output_type -> sttattus.onyx.v1.GetIngestionItemResponse
+	278, // 1076: sttattus.onyx.v1.OnyxService.RetryIngestionItem:output_type -> sttattus.onyx.v1.RetryIngestionItemResponse
+	280, // 1077: sttattus.onyx.v1.OnyxService.SetIngestionItemState:output_type -> sttattus.onyx.v1.SetIngestionItemStateResponse
+	282, // 1078: sttattus.onyx.v1.OnyxService.ResolveIngestionDuplicate:output_type -> sttattus.onyx.v1.ResolveIngestionDuplicateResponse
+	288, // 1079: sttattus.onyx.v1.OnyxService.GetEvidenceWorkspace:output_type -> sttattus.onyx.v1.GetEvidenceWorkspaceResponse
+	292, // 1080: sttattus.onyx.v1.OnyxService.GetEvidenceSourceHistory:output_type -> sttattus.onyx.v1.GetEvidenceSourceHistoryResponse
+	296, // 1081: sttattus.onyx.v1.OnyxService.CreateEvidenceBrief:output_type -> sttattus.onyx.v1.CreateEvidenceBriefResponse
+	298, // 1082: sttattus.onyx.v1.OnyxService.ListMyEvidenceBriefs:output_type -> sttattus.onyx.v1.ListMyEvidenceBriefsResponse
+	300, // 1083: sttattus.onyx.v1.OnyxService.GetEvidenceBrief:output_type -> sttattus.onyx.v1.GetEvidenceBriefResponse
+	309, // 1084: sttattus.onyx.v1.OnyxService.GetCreatorStudio:output_type -> sttattus.onyx.v1.GetCreatorStudioResponse
+	311, // 1085: sttattus.onyx.v1.OnyxService.SubmitCreatorPitch:output_type -> sttattus.onyx.v1.SubmitCreatorPitchResponse
+	313, // 1086: sttattus.onyx.v1.OnyxService.UpdateCreatorProject:output_type -> sttattus.onyx.v1.UpdateCreatorProjectResponse
+	315, // 1087: sttattus.onyx.v1.OnyxService.SubmitCreatorProject:output_type -> sttattus.onyx.v1.SubmitCreatorProjectResponse
+	317, // 1088: sttattus.onyx.v1.OnyxService.SignCreatorContract:output_type -> sttattus.onyx.v1.SignCreatorContractResponse
+	319, // 1089: sttattus.onyx.v1.OnyxService.ListMyCreatorSubscriptionsDetailed:output_type -> sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedResponse
+	321, // 1090: sttattus.onyx.v1.OnyxService.CancelCreatorSubscription:output_type -> sttattus.onyx.v1.CancelCreatorSubscriptionResponse
+	325, // 1091: sttattus.onyx.v1.OnyxService.GetMyCommerce:output_type -> sttattus.onyx.v1.GetMyCommerceResponse
+	327, // 1092: sttattus.onyx.v1.OnyxService.CreateCommerceCase:output_type -> sttattus.onyx.v1.CreateCommerceCaseResponse
+	346, // 1093: sttattus.onyx.v1.OnyxService.ListResearchRooms:output_type -> sttattus.onyx.v1.ListResearchRoomsResponse
+	348, // 1094: sttattus.onyx.v1.OnyxService.GetResearchRoom:output_type -> sttattus.onyx.v1.GetResearchRoomResponse
+	350, // 1095: sttattus.onyx.v1.OnyxService.CreateResearchRoom:output_type -> sttattus.onyx.v1.CreateResearchRoomResponse
+	352, // 1096: sttattus.onyx.v1.OnyxService.UpdateResearchRoom:output_type -> sttattus.onyx.v1.UpdateResearchRoomResponse
+	354, // 1097: sttattus.onyx.v1.OnyxService.InviteResearchRoomMember:output_type -> sttattus.onyx.v1.InviteResearchRoomMemberResponse
+	356, // 1098: sttattus.onyx.v1.OnyxService.RespondResearchRoomInvite:output_type -> sttattus.onyx.v1.RespondResearchRoomInviteResponse
+	358, // 1099: sttattus.onyx.v1.OnyxService.ChangeResearchRoomMember:output_type -> sttattus.onyx.v1.ChangeResearchRoomMemberResponse
+	360, // 1100: sttattus.onyx.v1.OnyxService.RevokeResearchRoomMember:output_type -> sttattus.onyx.v1.RevokeResearchRoomMemberResponse
+	362, // 1101: sttattus.onyx.v1.OnyxService.AddResearchRoomItem:output_type -> sttattus.onyx.v1.AddResearchRoomItemResponse
+	364, // 1102: sttattus.onyx.v1.OnyxService.RemoveResearchRoomItem:output_type -> sttattus.onyx.v1.RemoveResearchRoomItemResponse
+	366, // 1103: sttattus.onyx.v1.OnyxService.PostResearchRoomComment:output_type -> sttattus.onyx.v1.PostResearchRoomCommentResponse
+	368, // 1104: sttattus.onyx.v1.OnyxService.SetResearchRoomThreadStatus:output_type -> sttattus.onyx.v1.SetResearchRoomThreadStatusResponse
+	370, // 1105: sttattus.onyx.v1.OnyxService.UpsertResearchRoomTask:output_type -> sttattus.onyx.v1.UpsertResearchRoomTaskResponse
+	372, // 1106: sttattus.onyx.v1.OnyxService.UpsertResearchRoomMeeting:output_type -> sttattus.onyx.v1.UpsertResearchRoomMeetingResponse
+	374, // 1107: sttattus.onyx.v1.OnyxService.UpsertResearchRoomDecision:output_type -> sttattus.onyx.v1.UpsertResearchRoomDecisionResponse
+	376, // 1108: sttattus.onyx.v1.OnyxService.RecordResearchRoomApproval:output_type -> sttattus.onyx.v1.RecordResearchRoomApprovalResponse
+	379, // 1109: sttattus.onyx.v1.OnyxService.SearchResearchRoom:output_type -> sttattus.onyx.v1.SearchResearchRoomResponse
+	381, // 1110: sttattus.onyx.v1.OnyxService.RequestResearchRoomExport:output_type -> sttattus.onyx.v1.RequestResearchRoomExportResponse
+	383, // 1111: sttattus.onyx.v1.OnyxService.ReportResearchRoomAbuse:output_type -> sttattus.onyx.v1.ReportResearchRoomAbuseResponse
+	385, // 1112: sttattus.onyx.v1.OnyxService.ListResearchRoomAudit:output_type -> sttattus.onyx.v1.ListResearchRoomAuditResponse
+	387, // 1113: sttattus.onyx.v1.OnyxService.ListResearchRoomGrants:output_type -> sttattus.onyx.v1.ListResearchRoomGrantsResponse
+	389, // 1114: sttattus.onyx.v1.OnyxService.UpsertResearchRoomGrant:output_type -> sttattus.onyx.v1.UpsertResearchRoomGrantResponse
+	391, // 1115: sttattus.onyx.v1.OnyxService.RevokeResearchRoomGrant:output_type -> sttattus.onyx.v1.RevokeResearchRoomGrantResponse
+	393, // 1116: sttattus.onyx.v1.OnyxService.CreateResearchRoomShareLink:output_type -> sttattus.onyx.v1.CreateResearchRoomShareLinkResponse
+	395, // 1117: sttattus.onyx.v1.OnyxService.ListResearchRoomShareLinks:output_type -> sttattus.onyx.v1.ListResearchRoomShareLinksResponse
+	397, // 1118: sttattus.onyx.v1.OnyxService.RevokeResearchRoomShareLink:output_type -> sttattus.onyx.v1.RevokeResearchRoomShareLinkResponse
+	399, // 1119: sttattus.onyx.v1.OnyxService.ResolveResearchRoomShareLink:output_type -> sttattus.onyx.v1.ResolveResearchRoomShareLinkResponse
+	401, // 1120: sttattus.onyx.v1.OnyxService.GetResearchRoomOfflineManifest:output_type -> sttattus.onyx.v1.GetResearchRoomOfflineManifestResponse
+	403, // 1121: sttattus.onyx.v1.OnyxService.AcknowledgeResearchRoomOfflinePurge:output_type -> sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeResponse
+	405, // 1122: sttattus.onyx.v1.OnyxService.ListResearchRoomOfflinePurges:output_type -> sttattus.onyx.v1.ListResearchRoomOfflinePurgesResponse
+	407, // 1123: sttattus.onyx.v1.OnyxService.LeaveResearchRoom:output_type -> sttattus.onyx.v1.LeaveResearchRoomResponse
+	418, // 1124: sttattus.onyx.v1.OnyxService.GetPersonalIntelligenceGraph:output_type -> sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse
+	420, // 1125: sttattus.onyx.v1.OnyxService.UpsertIntelligenceGraphNode:output_type -> sttattus.onyx.v1.UpsertIntelligenceGraphNodeResponse
+	422, // 1126: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphNodeState:output_type -> sttattus.onyx.v1.SetIntelligenceGraphNodeStateResponse
+	424, // 1127: sttattus.onyx.v1.OnyxService.MergeIntelligenceGraphNodes:output_type -> sttattus.onyx.v1.MergeIntelligenceGraphNodesResponse
+	426, // 1128: sttattus.onyx.v1.OnyxService.SplitIntelligenceGraphNode:output_type -> sttattus.onyx.v1.SplitIntelligenceGraphNodeResponse
+	428, // 1129: sttattus.onyx.v1.OnyxService.UpsertIntelligenceGraphEdge:output_type -> sttattus.onyx.v1.UpsertIntelligenceGraphEdgeResponse
+	430, // 1130: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphEdgeState:output_type -> sttattus.onyx.v1.SetIntelligenceGraphEdgeStateResponse
+	432, // 1131: sttattus.onyx.v1.OnyxService.GenerateIntelligenceGraphSuggestions:output_type -> sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsResponse
+	434, // 1132: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphSuggestions:output_type -> sttattus.onyx.v1.ListIntelligenceGraphSuggestionsResponse
+	436, // 1133: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphSuggestionState:output_type -> sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse
+	438, // 1134: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphTimeline:output_type -> sttattus.onyx.v1.ListIntelligenceGraphTimelineResponse
+	440, // 1135: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphResurfacing:output_type -> sttattus.onyx.v1.ListIntelligenceGraphResurfacingResponse
+	442, // 1136: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphResurfacingState:output_type -> sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateResponse
+	444, // 1137: sttattus.onyx.v1.OnyxService.CreateIntelligenceGraphMeetingBrief:output_type -> sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefResponse
+	446, // 1138: sttattus.onyx.v1.OnyxService.GetIntelligenceGraphMeetingBrief:output_type -> sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefResponse
+	448, // 1139: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphMeetingBriefs:output_type -> sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsResponse
+	450, // 1140: sttattus.onyx.v1.OnyxService.ExportPersonalIntelligenceGraph:output_type -> sttattus.onyx.v1.ExportPersonalIntelligenceGraphResponse
+	452, // 1141: sttattus.onyx.v1.OnyxService.RebuildPersonalIntelligenceGraph:output_type -> sttattus.onyx.v1.RebuildPersonalIntelligenceGraphResponse
+	471, // 1142: sttattus.onyx.v1.OnyxService.ListLanguageConfigs:output_type -> sttattus.onyx.v1.ListLanguageConfigsResponse
+	473, // 1143: sttattus.onyx.v1.OnyxService.ListContentEditions:output_type -> sttattus.onyx.v1.ListContentEditionsResponse
+	475, // 1144: sttattus.onyx.v1.OnyxService.GetAlignedBlocks:output_type -> sttattus.onyx.v1.GetAlignedBlocksResponse
+	477, // 1145: sttattus.onyx.v1.OnyxService.ListTermbaseEntries:output_type -> sttattus.onyx.v1.ListTermbaseEntriesResponse
+	479, // 1146: sttattus.onyx.v1.OnyxService.CrossLanguageSearch:output_type -> sttattus.onyx.v1.CrossLanguageSearchResponse
+	481, // 1147: sttattus.onyx.v1.OnyxService.GetMultilingualPreferences:output_type -> sttattus.onyx.v1.GetMultilingualPreferencesResponse
+	483, // 1148: sttattus.onyx.v1.OnyxService.UpdateMultilingualPreferences:output_type -> sttattus.onyx.v1.UpdateMultilingualPreferencesResponse
+	485, // 1149: sttattus.onyx.v1.OnyxService.GetMultilingualAudioVideo:output_type -> sttattus.onyx.v1.GetMultilingualAudioVideoResponse
+	487, // 1150: sttattus.onyx.v1.OnyxService.GetMultilingualOfflineManifest:output_type -> sttattus.onyx.v1.GetMultilingualOfflineManifestResponse
+	489, // 1151: sttattus.onyx.v1.OnyxService.ReportTranslationIssue:output_type -> sttattus.onyx.v1.ReportTranslationIssueResponse
+	491, // 1152: sttattus.onyx.v1.OnyxService.RequestMultilingualExport:output_type -> sttattus.onyx.v1.RequestMultilingualExportResponse
+	493, // 1153: sttattus.onyx.v1.OnyxService.GetMultilingualExport:output_type -> sttattus.onyx.v1.GetMultilingualExportResponse
+	503, // 1154: sttattus.onyx.v1.OnyxService.GetLivingArchiveDashboard:output_type -> sttattus.onyx.v1.GetLivingArchiveDashboardResponse
+	505, // 1155: sttattus.onyx.v1.OnyxService.UpsertLivingArchivePolicy:output_type -> sttattus.onyx.v1.UpsertLivingArchivePolicyResponse
+	507, // 1156: sttattus.onyx.v1.OnyxService.PreviewLivingArchivePolicy:output_type -> sttattus.onyx.v1.PreviewLivingArchivePolicyResponse
+	509, // 1157: sttattus.onyx.v1.OnyxService.GenerateLivingArchiveEdition:output_type -> sttattus.onyx.v1.GenerateLivingArchiveEditionResponse
+	511, // 1158: sttattus.onyx.v1.OnyxService.LinkLivingArchiveLegacyEscrow:output_type -> sttattus.onyx.v1.LinkLivingArchiveLegacyEscrowResponse
+	513, // 1159: sttattus.onyx.v1.OnyxService.UpsertLivingArchiveContact:output_type -> sttattus.onyx.v1.UpsertLivingArchiveContactResponse
+	515, // 1160: sttattus.onyx.v1.OnyxService.DeleteLivingArchiveContact:output_type -> sttattus.onyx.v1.DeleteLivingArchiveContactResponse
+	517, // 1161: sttattus.onyx.v1.OnyxService.SubmitLivingArchivePolicy:output_type -> sttattus.onyx.v1.SubmitLivingArchivePolicyResponse
+	519, // 1162: sttattus.onyx.v1.OnyxService.RevokeLivingArchivePolicy:output_type -> sttattus.onyx.v1.RevokeLivingArchivePolicyResponse
+	521, // 1163: sttattus.onyx.v1.OnyxService.ConfirmLivingArchiveReview:output_type -> sttattus.onyx.v1.ConfirmLivingArchiveReviewResponse
+	523, // 1164: sttattus.onyx.v1.OnyxService.ContestLivingArchiveRelease:output_type -> sttattus.onyx.v1.ContestLivingArchiveReleaseResponse
+	532, // 1165: sttattus.onyx.v1.OnyxService.GetForensicProtectionDashboard:output_type -> sttattus.onyx.v1.GetForensicProtectionDashboardResponse
+	534, // 1166: sttattus.onyx.v1.OnyxService.IssueForensicManifest:output_type -> sttattus.onyx.v1.IssueForensicManifestResponse
+	536, // 1167: sttattus.onyx.v1.OnyxService.RevokeForensicManifest:output_type -> sttattus.onyx.v1.RevokeForensicManifestResponse
+	538, // 1168: sttattus.onyx.v1.OnyxService.RespondForensicCase:output_type -> sttattus.onyx.v1.RespondForensicCaseResponse
+	540, // 1169: sttattus.onyx.v1.OnyxService.FileForensicAppeal:output_type -> sttattus.onyx.v1.FileForensicAppealResponse
+	542, // 1170: sttattus.onyx.v1.OnyxService.PostForensicAppealMessage:output_type -> sttattus.onyx.v1.PostForensicAppealMessageResponse
+	544, // 1171: sttattus.onyx.v1.OnyxService.WithdrawForensicAppeal:output_type -> sttattus.onyx.v1.WithdrawForensicAppealResponse
+	558, // 1172: sttattus.onyx.v1.OnyxService.GetIntegrationDashboard:output_type -> sttattus.onyx.v1.GetIntegrationDashboardResponse
+	560, // 1173: sttattus.onyx.v1.OnyxService.AuthorizeIntegration:output_type -> sttattus.onyx.v1.AuthorizeIntegrationResponse
+	562, // 1174: sttattus.onyx.v1.OnyxService.RevokeIntegrationGrant:output_type -> sttattus.onyx.v1.RevokeIntegrationGrantResponse
+	564, // 1175: sttattus.onyx.v1.OnyxService.UpsertIntegrationConnector:output_type -> sttattus.onyx.v1.UpsertIntegrationConnectorResponse
+	566, // 1176: sttattus.onyx.v1.OnyxService.SetIntegrationConnectorState:output_type -> sttattus.onyx.v1.SetIntegrationConnectorStateResponse
+	568, // 1177: sttattus.onyx.v1.OnyxService.RunIntegrationConnector:output_type -> sttattus.onyx.v1.RunIntegrationConnectorResponse
+	570, // 1178: sttattus.onyx.v1.OnyxService.GetIntegrationArtifact:output_type -> sttattus.onyx.v1.GetIntegrationArtifactResponse
+	572, // 1179: sttattus.onyx.v1.OnyxService.ResolveIntegrationConflict:output_type -> sttattus.onyx.v1.ResolveIntegrationConflictResponse
+	574, // 1180: sttattus.onyx.v1.OnyxService.DispatchIntegrationBridge:output_type -> sttattus.onyx.v1.DispatchIntegrationBridgeResponse
+	576, // 1181: sttattus.onyx.v1.OnyxService.SubmitIntegrationOperationsCase:output_type -> sttattus.onyx.v1.SubmitIntegrationOperationsCaseResponse
+	592, // 1182: sttattus.onyx.v1.OnyxService.GetSpatialCanvasDashboard:output_type -> sttattus.onyx.v1.GetSpatialCanvasDashboardResponse
+	594, // 1183: sttattus.onyx.v1.OnyxService.ListSpatialCanvasTemplates:output_type -> sttattus.onyx.v1.ListSpatialCanvasTemplatesResponse
+	596, // 1184: sttattus.onyx.v1.OnyxService.CreateSpatialCanvas:output_type -> sttattus.onyx.v1.CreateSpatialCanvasResponse
+	598, // 1185: sttattus.onyx.v1.OnyxService.GetSpatialCanvas:output_type -> sttattus.onyx.v1.GetSpatialCanvasResponse
+	600, // 1186: sttattus.onyx.v1.OnyxService.ApplySpatialCanvasOperations:output_type -> sttattus.onyx.v1.ApplySpatialCanvasOperationsResponse
+	602, // 1187: sttattus.onyx.v1.OnyxService.ResolveSpatialCanvasConflict:output_type -> sttattus.onyx.v1.ResolveSpatialCanvasConflictResponse
+	604, // 1188: sttattus.onyx.v1.OnyxService.CreateSpatialCanvasSnapshot:output_type -> sttattus.onyx.v1.CreateSpatialCanvasSnapshotResponse
+	606, // 1189: sttattus.onyx.v1.OnyxService.RestoreSpatialCanvasSnapshot:output_type -> sttattus.onyx.v1.RestoreSpatialCanvasSnapshotResponse
+	608, // 1190: sttattus.onyx.v1.OnyxService.UpsertSpatialCanvasComment:output_type -> sttattus.onyx.v1.UpsertSpatialCanvasCommentResponse
+	610, // 1191: sttattus.onyx.v1.OnyxService.SetSpatialCanvasCommentState:output_type -> sttattus.onyx.v1.SetSpatialCanvasCommentStateResponse
+	612, // 1192: sttattus.onyx.v1.OnyxService.GenerateSpatialCanvasProposals:output_type -> sttattus.onyx.v1.GenerateSpatialCanvasProposalsResponse
+	614, // 1193: sttattus.onyx.v1.OnyxService.SetSpatialCanvasProposalState:output_type -> sttattus.onyx.v1.SetSpatialCanvasProposalStateResponse
+	616, // 1194: sttattus.onyx.v1.OnyxService.RequestSpatialCanvasExport:output_type -> sttattus.onyx.v1.RequestSpatialCanvasExportResponse
+	618, // 1195: sttattus.onyx.v1.OnyxService.GetSpatialCanvasExport:output_type -> sttattus.onyx.v1.GetSpatialCanvasExportResponse
+	620, // 1196: sttattus.onyx.v1.OnyxService.UpsertSpatialCanvasCollaborator:output_type -> sttattus.onyx.v1.UpsertSpatialCanvasCollaboratorResponse
+	622, // 1197: sttattus.onyx.v1.OnyxService.ReportSpatialCanvasAbuse:output_type -> sttattus.onyx.v1.ReportSpatialCanvasAbuseResponse
+	633, // 1198: sttattus.onyx.v1.OnyxService.GetRecallDashboard:output_type -> sttattus.onyx.v1.GetRecallDashboardResponse
+	635, // 1199: sttattus.onyx.v1.OnyxService.ListRecallDecks:output_type -> sttattus.onyx.v1.ListRecallDecksResponse
+	637, // 1200: sttattus.onyx.v1.OnyxService.ListMemoryItems:output_type -> sttattus.onyx.v1.ListMemoryItemsResponse
+	639, // 1201: sttattus.onyx.v1.OnyxService.UpsertRecallDeck:output_type -> sttattus.onyx.v1.UpsertRecallDeckResponse
+	641, // 1202: sttattus.onyx.v1.OnyxService.GenerateRecallItems:output_type -> sttattus.onyx.v1.GenerateRecallItemsResponse
+	643, // 1203: sttattus.onyx.v1.OnyxService.UpsertMemoryItem:output_type -> sttattus.onyx.v1.UpsertMemoryItemResponse
+	645, // 1204: sttattus.onyx.v1.OnyxService.SetMemoryItemState:output_type -> sttattus.onyx.v1.SetMemoryItemStateResponse
+	647, // 1205: sttattus.onyx.v1.OnyxService.GetRecallReviewQueue:output_type -> sttattus.onyx.v1.GetRecallReviewQueueResponse
+	649, // 1206: sttattus.onyx.v1.OnyxService.RecordRecallReviewBatch:output_type -> sttattus.onyx.v1.RecordRecallReviewBatchResponse
+	651, // 1207: sttattus.onyx.v1.OnyxService.ResolveRecallInvalidation:output_type -> sttattus.onyx.v1.ResolveRecallInvalidationResponse
+	653, // 1208: sttattus.onyx.v1.OnyxService.UpdateRecallPreferences:output_type -> sttattus.onyx.v1.UpdateRecallPreferencesResponse
+	655, // 1209: sttattus.onyx.v1.OnyxService.ExportRecallData:output_type -> sttattus.onyx.v1.ExportRecallDataResponse
+	657, // 1210: sttattus.onyx.v1.OnyxService.ImportRecallData:output_type -> sttattus.onyx.v1.ImportRecallDataResponse
+	659, // 1211: sttattus.onyx.v1.OnyxService.ReportRecallItem:output_type -> sttattus.onyx.v1.ReportRecallItemResponse
+	661, // 1212: sttattus.onyx.v1.OnyxService.RecordRecallTransfer:output_type -> sttattus.onyx.v1.RecordRecallTransferResponse
+	677, // 1213: sttattus.onyx.v1.OnyxService.GetDraftingDashboard:output_type -> sttattus.onyx.v1.GetDraftingDashboardResponse
+	679, // 1214: sttattus.onyx.v1.OnyxService.ListDrafts:output_type -> sttattus.onyx.v1.ListDraftsResponse
+	681, // 1215: sttattus.onyx.v1.OnyxService.GetDraft:output_type -> sttattus.onyx.v1.GetDraftResponse
+	683, // 1216: sttattus.onyx.v1.OnyxService.CreateDraft:output_type -> sttattus.onyx.v1.CreateDraftResponse
+	685, // 1217: sttattus.onyx.v1.OnyxService.UpsertDraftBlock:output_type -> sttattus.onyx.v1.UpsertDraftBlockResponse
+	687, // 1218: sttattus.onyx.v1.OnyxService.DeleteDraftBlock:output_type -> sttattus.onyx.v1.DeleteDraftBlockResponse
+	689, // 1219: sttattus.onyx.v1.OnyxService.UpsertDraftCitation:output_type -> sttattus.onyx.v1.UpsertDraftCitationResponse
+	691, // 1220: sttattus.onyx.v1.OnyxService.VerifyDraft:output_type -> sttattus.onyx.v1.VerifyDraftResponse
+	696, // 1221: sttattus.onyx.v1.OnyxService.GetDraftEvidenceReview:output_type -> sttattus.onyx.v1.GetDraftEvidenceReviewResponse
+	699, // 1222: sttattus.onyx.v1.OnyxService.CompareDraftEvidence:output_type -> sttattus.onyx.v1.CompareDraftEvidenceResponse
+	701, // 1223: sttattus.onyx.v1.OnyxService.CreateDraftRevision:output_type -> sttattus.onyx.v1.CreateDraftRevisionResponse
+	703, // 1224: sttattus.onyx.v1.OnyxService.CreateDraftBranch:output_type -> sttattus.onyx.v1.CreateDraftBranchResponse
+	705, // 1225: sttattus.onyx.v1.OnyxService.RestoreDraftRevision:output_type -> sttattus.onyx.v1.RestoreDraftRevisionResponse
+	707, // 1226: sttattus.onyx.v1.OnyxService.CompareDraftRevisions:output_type -> sttattus.onyx.v1.CompareDraftRevisionsResponse
+	709, // 1227: sttattus.onyx.v1.OnyxService.GenerateDraftSuggestion:output_type -> sttattus.onyx.v1.GenerateDraftSuggestionResponse
+	711, // 1228: sttattus.onyx.v1.OnyxService.SetDraftSuggestionState:output_type -> sttattus.onyx.v1.SetDraftSuggestionStateResponse
+	713, // 1229: sttattus.onyx.v1.OnyxService.ResolveDraftConflict:output_type -> sttattus.onyx.v1.ResolveDraftConflictResponse
+	715, // 1230: sttattus.onyx.v1.OnyxService.RequestDraftExport:output_type -> sttattus.onyx.v1.RequestDraftExportResponse
+	717, // 1231: sttattus.onyx.v1.OnyxService.GetDraftExport:output_type -> sttattus.onyx.v1.GetDraftExportResponse
+	719, // 1232: sttattus.onyx.v1.OnyxService.CreateDraftHandoff:output_type -> sttattus.onyx.v1.CreateDraftHandoffResponse
+	721, // 1233: sttattus.onyx.v1.OnyxService.ReportDraftIncident:output_type -> sttattus.onyx.v1.ReportDraftIncidentResponse
+	972, // [972:1234] is the sub-list for method output_type
+	710, // [710:972] is the sub-list for method input_type
+	710, // [710:710] is the sub-list for extension type_name
+	710, // [710:710] is the sub-list for extension extendee
+	0,   // [0:710] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_onyx_v1_onyx_proto_init() }
@@ -61594,7 +62101,7 @@ func file_sttattus_onyx_v1_onyx_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_onyx_v1_onyx_proto_rawDesc), len(file_sttattus_onyx_v1_onyx_proto_rawDesc)),
 			NumEnums:      15,
-			NumMessages:   703,
+			NumMessages:   707,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

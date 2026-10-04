@@ -851,6 +851,15 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getEvidenceWorkspace, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.GetEvidenceSourceHistoryResponse>
+      getEvidenceSourceHistory(
+    $0.GetEvidenceSourceHistoryRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getEvidenceSourceHistory, request,
+        options: options);
+  }
+
   $grpc.ResponseFuture<$0.CreateEvidenceBriefResponse> createEvidenceBrief(
     $0.CreateEvidenceBriefRequest request, {
     $grpc.CallOptions? options,
@@ -2685,6 +2694,12 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/GetEvidenceWorkspace',
       ($0.GetEvidenceWorkspaceRequest value) => value.writeToBuffer(),
       $0.GetEvidenceWorkspaceResponse.fromBuffer);
+  static final _$getEvidenceSourceHistory = $grpc.ClientMethod<
+          $0.GetEvidenceSourceHistoryRequest,
+          $0.GetEvidenceSourceHistoryResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetEvidenceSourceHistory',
+      ($0.GetEvidenceSourceHistoryRequest value) => value.writeToBuffer(),
+      $0.GetEvidenceSourceHistoryResponse.fromBuffer);
   static final _$createEvidenceBrief = $grpc.ClientMethod<
           $0.CreateEvidenceBriefRequest, $0.CreateEvidenceBriefResponse>(
       '/sttattus.onyx.v1.OnyxService/CreateEvidenceBrief',
@@ -4511,6 +4526,15 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.GetEvidenceWorkspaceRequest.fromBuffer(value),
         ($0.GetEvidenceWorkspaceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetEvidenceSourceHistoryRequest,
+            $0.GetEvidenceSourceHistoryResponse>(
+        'GetEvidenceSourceHistory',
+        getEvidenceSourceHistory_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetEvidenceSourceHistoryRequest.fromBuffer(value),
+        ($0.GetEvidenceSourceHistoryResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.CreateEvidenceBriefRequest,
             $0.CreateEvidenceBriefResponse>(
         'CreateEvidenceBrief',
@@ -6912,6 +6936,15 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.GetEvidenceWorkspaceResponse> getEvidenceWorkspace(
       $grpc.ServiceCall call, $0.GetEvidenceWorkspaceRequest request);
+
+  $async.Future<$0.GetEvidenceSourceHistoryResponse>
+      getEvidenceSourceHistory_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.GetEvidenceSourceHistoryRequest> $request) async {
+    return getEvidenceSourceHistory($call, await $request);
+  }
+
+  $async.Future<$0.GetEvidenceSourceHistoryResponse> getEvidenceSourceHistory(
+      $grpc.ServiceCall call, $0.GetEvidenceSourceHistoryRequest request);
 
   $async.Future<$0.CreateEvidenceBriefResponse> createEvidenceBrief_Pre(
       $grpc.ServiceCall $call,

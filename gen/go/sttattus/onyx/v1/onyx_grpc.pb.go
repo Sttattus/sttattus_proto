@@ -127,6 +127,7 @@ const (
 	OnyxService_SetIngestionItemState_FullMethodName                = "/sttattus.onyx.v1.OnyxService/SetIngestionItemState"
 	OnyxService_ResolveIngestionDuplicate_FullMethodName            = "/sttattus.onyx.v1.OnyxService/ResolveIngestionDuplicate"
 	OnyxService_GetEvidenceWorkspace_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/GetEvidenceWorkspace"
+	OnyxService_GetEvidenceSourceHistory_FullMethodName             = "/sttattus.onyx.v1.OnyxService/GetEvidenceSourceHistory"
 	OnyxService_CreateEvidenceBrief_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/CreateEvidenceBrief"
 	OnyxService_ListMyEvidenceBriefs_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/ListMyEvidenceBriefs"
 	OnyxService_GetEvidenceBrief_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/GetEvidenceBrief"
@@ -419,6 +420,7 @@ type OnyxServiceClient interface {
 	// Evidence briefing — source cards, claim-level citations, reproducible
 	// selected-source runs, and correction overlays on historical output.
 	GetEvidenceWorkspace(ctx context.Context, in *GetEvidenceWorkspaceRequest, opts ...grpc.CallOption) (*GetEvidenceWorkspaceResponse, error)
+	GetEvidenceSourceHistory(ctx context.Context, in *GetEvidenceSourceHistoryRequest, opts ...grpc.CallOption) (*GetEvidenceSourceHistoryResponse, error)
 	CreateEvidenceBrief(ctx context.Context, in *CreateEvidenceBriefRequest, opts ...grpc.CallOption) (*CreateEvidenceBriefResponse, error)
 	ListMyEvidenceBriefs(ctx context.Context, in *ListMyEvidenceBriefsRequest, opts ...grpc.CallOption) (*ListMyEvidenceBriefsResponse, error)
 	GetEvidenceBrief(ctx context.Context, in *GetEvidenceBriefRequest, opts ...grpc.CallOption) (*GetEvidenceBriefResponse, error)
@@ -1676,6 +1678,16 @@ func (c *onyxServiceClient) GetEvidenceWorkspace(ctx context.Context, in *GetEvi
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetEvidenceWorkspaceResponse)
 	err := c.cc.Invoke(ctx, OnyxService_GetEvidenceWorkspace_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetEvidenceSourceHistory(ctx context.Context, in *GetEvidenceSourceHistoryRequest, opts ...grpc.CallOption) (*GetEvidenceSourceHistoryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetEvidenceSourceHistoryResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetEvidenceSourceHistory_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3349,6 +3361,7 @@ type OnyxServiceServer interface {
 	// Evidence briefing — source cards, claim-level citations, reproducible
 	// selected-source runs, and correction overlays on historical output.
 	GetEvidenceWorkspace(context.Context, *GetEvidenceWorkspaceRequest) (*GetEvidenceWorkspaceResponse, error)
+	GetEvidenceSourceHistory(context.Context, *GetEvidenceSourceHistoryRequest) (*GetEvidenceSourceHistoryResponse, error)
 	CreateEvidenceBrief(context.Context, *CreateEvidenceBriefRequest) (*CreateEvidenceBriefResponse, error)
 	ListMyEvidenceBriefs(context.Context, *ListMyEvidenceBriefsRequest) (*ListMyEvidenceBriefsResponse, error)
 	GetEvidenceBrief(context.Context, *GetEvidenceBriefRequest) (*GetEvidenceBriefResponse, error)
@@ -3855,6 +3868,9 @@ func (UnimplementedOnyxServiceServer) ResolveIngestionDuplicate(context.Context,
 }
 func (UnimplementedOnyxServiceServer) GetEvidenceWorkspace(context.Context, *GetEvidenceWorkspaceRequest) (*GetEvidenceWorkspaceResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetEvidenceWorkspace not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetEvidenceSourceHistory(context.Context, *GetEvidenceSourceHistoryRequest) (*GetEvidenceSourceHistoryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetEvidenceSourceHistory not implemented")
 }
 func (UnimplementedOnyxServiceServer) CreateEvidenceBrief(context.Context, *CreateEvidenceBriefRequest) (*CreateEvidenceBriefResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method CreateEvidenceBrief not implemented")
@@ -6276,6 +6292,24 @@ func _OnyxService_GetEvidenceWorkspace_Handler(srv interface{}, ctx context.Cont
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OnyxServiceServer).GetEvidenceWorkspace(ctx, req.(*GetEvidenceWorkspaceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetEvidenceSourceHistory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetEvidenceSourceHistoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetEvidenceSourceHistory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetEvidenceSourceHistory_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetEvidenceSourceHistory(ctx, req.(*GetEvidenceSourceHistoryRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -9472,6 +9506,10 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetEvidenceWorkspace",
 			Handler:    _OnyxService_GetEvidenceWorkspace_Handler,
+		},
+		{
+			MethodName: "GetEvidenceSourceHistory",
+			Handler:    _OnyxService_GetEvidenceSourceHistory_Handler,
 		},
 		{
 			MethodName: "CreateEvidenceBrief",

@@ -6767,6 +6767,63 @@ const EvidenceSource$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'retrievedAt'
     },
+    {'1': 'doi', '3': 19, '4': 1, '5': 9, '10': 'doi'},
+    {'1': 'isbn', '3': 20, '4': 1, '5': 9, '10': 'isbn'},
+    {'1': 'normalized_url', '3': 21, '4': 1, '5': 9, '10': 'normalizedUrl'},
+    {
+      '1': 'duplicate_group_key',
+      '3': 22,
+      '4': 1,
+      '5': 9,
+      '10': 'duplicateGroupKey'
+    },
+    {'1': 'duplicate_count', '3': 23, '4': 1, '5': 5, '10': 'duplicateCount'},
+    {'1': 'health_status', '3': 24, '4': 1, '5': 9, '10': 'healthStatus'},
+    {
+      '1': 'health_http_status',
+      '3': 25,
+      '4': 1,
+      '5': 5,
+      '10': 'healthHttpStatus'
+    },
+    {
+      '1': 'health_checked_at',
+      '3': 26,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'healthCheckedAt'
+    },
+    {'1': 'health_error', '3': 27, '4': 1, '5': 9, '10': 'healthError'},
+    {
+      '1': 'withdrawal_detected_at',
+      '3': 28,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'withdrawalDetectedAt'
+    },
+    {
+      '1': 'withdrawal_reason',
+      '3': 29,
+      '4': 1,
+      '5': 9,
+      '10': 'withdrawalReason'
+    },
+    {
+      '1': 'superseded_by_source_id',
+      '3': 30,
+      '4': 1,
+      '5': 9,
+      '10': 'supersededBySourceId'
+    },
+    {
+      '1': 'replacement_status',
+      '3': 31,
+      '4': 1,
+      '5': 9,
+      '10': 'replacementStatus'
+    },
   ],
 };
 
@@ -6783,7 +6840,17 @@ final $typed_data.Uint8List evidenceSourceDescriptor = $convert.base64Decode(
     'CWNvbmZsaWN0cxgPIAEoCVIJY29uZmxpY3RzEhYKBnN0YXR1cxgQIAEoCVIGc3RhdHVzEj0KDH'
     'B1Ymxpc2hlZF9hdBgRIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC3B1Ymxpc2hl'
     'ZEF0Ej0KDHJldHJpZXZlZF9hdBgSIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC3'
-    'JldHJpZXZlZEF0');
+    'JldHJpZXZlZEF0EhAKA2RvaRgTIAEoCVIDZG9pEhIKBGlzYm4YFCABKAlSBGlzYm4SJQoObm9y'
+    'bWFsaXplZF91cmwYFSABKAlSDW5vcm1hbGl6ZWRVcmwSLgoTZHVwbGljYXRlX2dyb3VwX2tleR'
+    'gWIAEoCVIRZHVwbGljYXRlR3JvdXBLZXkSJwoPZHVwbGljYXRlX2NvdW50GBcgASgFUg5kdXBs'
+    'aWNhdGVDb3VudBIjCg1oZWFsdGhfc3RhdHVzGBggASgJUgxoZWFsdGhTdGF0dXMSLAoSaGVhbH'
+    'RoX2h0dHBfc3RhdHVzGBkgASgFUhBoZWFsdGhIdHRwU3RhdHVzEkYKEWhlYWx0aF9jaGVja2Vk'
+    'X2F0GBogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIPaGVhbHRoQ2hlY2tlZEF0Ei'
+    'EKDGhlYWx0aF9lcnJvchgbIAEoCVILaGVhbHRoRXJyb3ISUAoWd2l0aGRyYXdhbF9kZXRlY3Rl'
+    'ZF9hdBgcIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSFHdpdGhkcmF3YWxEZXRlY3'
+    'RlZEF0EisKEXdpdGhkcmF3YWxfcmVhc29uGB0gASgJUhB3aXRoZHJhd2FsUmVhc29uEjUKF3N1'
+    'cGVyc2VkZWRfYnlfc291cmNlX2lkGB4gASgJUhRzdXBlcnNlZGVkQnlTb3VyY2VJZBItChJyZX'
+    'BsYWNlbWVudF9zdGF0dXMYHyABKAlSEXJlcGxhY2VtZW50U3RhdHVz');
 
 @$core.Deprecated('Use evidenceCitationDescriptor instead')
 const EvidenceCitation$json = {
@@ -6946,6 +7013,145 @@ final $typed_data.Uint8List getEvidenceWorkspaceResponseDescriptor = $convert.ba
     'eC52MS5FdmlkZW5jZUNsYWltUgZjbGFpbXMSRgoLY29ycmVjdGlvbnMYBiADKAsyJC5zdHRhdH'
     'R1cy5vbnl4LnYxLkV2aWRlbmNlQ29ycmVjdGlvblILY29ycmVjdGlvbnMSGwoJY2FuX2JyaWVm'
     'GAcgASgIUghjYW5CcmllZhIjCg1wb2xpY3lfbm90aWNlGAggASgJUgxwb2xpY3lOb3RpY2U=');
+
+@$core.Deprecated('Use getEvidenceSourceHistoryRequestDescriptor instead')
+const GetEvidenceSourceHistoryRequest$json = {
+  '1': 'GetEvidenceSourceHistoryRequest',
+  '2': [
+    {'1': 'source_id', '3': 1, '4': 1, '5': 9, '10': 'sourceId'},
+  ],
+};
+
+/// Descriptor for `GetEvidenceSourceHistoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getEvidenceSourceHistoryRequestDescriptor =
+    $convert.base64Decode(
+        'Ch9HZXRFdmlkZW5jZVNvdXJjZUhpc3RvcnlSZXF1ZXN0EhsKCXNvdXJjZV9pZBgBIAEoCVIIc2'
+        '91cmNlSWQ=');
+
+@$core.Deprecated('Use evidenceSourceLifecycleEventDescriptor instead')
+const EvidenceSourceLifecycleEvent$json = {
+  '1': 'EvidenceSourceLifecycleEvent',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'source_id', '3': 2, '4': 1, '5': 9, '10': 'sourceId'},
+    {'1': 'event_kind', '3': 3, '4': 1, '5': 9, '10': 'eventKind'},
+    {'1': 'from_status', '3': 4, '4': 1, '5': 9, '10': 'fromStatus'},
+    {'1': 'to_status', '3': 5, '4': 1, '5': 9, '10': 'toStatus'},
+    {'1': 'reason', '3': 6, '4': 1, '5': 9, '10': 'reason'},
+    {
+      '1': 'replacement_source_id',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'replacementSourceId'
+    },
+    {'1': 'actor_id', '3': 8, '4': 1, '5': 9, '10': 'actorId'},
+    {
+      '1': 'created_at',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+  ],
+};
+
+/// Descriptor for `EvidenceSourceLifecycleEvent`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List evidenceSourceLifecycleEventDescriptor = $convert.base64Decode(
+    'ChxFdmlkZW5jZVNvdXJjZUxpZmVjeWNsZUV2ZW50Eg4KAmlkGAEgASgJUgJpZBIbCglzb3VyY2'
+    'VfaWQYAiABKAlSCHNvdXJjZUlkEh0KCmV2ZW50X2tpbmQYAyABKAlSCWV2ZW50S2luZBIfCgtm'
+    'cm9tX3N0YXR1cxgEIAEoCVIKZnJvbVN0YXR1cxIbCgl0b19zdGF0dXMYBSABKAlSCHRvU3RhdH'
+    'VzEhYKBnJlYXNvbhgGIAEoCVIGcmVhc29uEjIKFXJlcGxhY2VtZW50X3NvdXJjZV9pZBgHIAEo'
+    'CVITcmVwbGFjZW1lbnRTb3VyY2VJZBIZCghhY3Rvcl9pZBgIIAEoCVIHYWN0b3JJZBI5Cgpjcm'
+    'VhdGVkX2F0GAkgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0');
+
+@$core.Deprecated('Use evidenceSourceReplacementDescriptor instead')
+const EvidenceSourceReplacement$json = {
+  '1': 'EvidenceSourceReplacement',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'source_id', '3': 2, '4': 1, '5': 9, '10': 'sourceId'},
+    {
+      '1': 'replacement_source_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'replacementSourceId'
+    },
+    {
+      '1': 'replacement_title',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'replacementTitle'
+    },
+    {'1': 'status', '3': 5, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'confidence', '3': 6, '4': 1, '5': 1, '10': 'confidence'},
+    {'1': 'rationale', '3': 7, '4': 1, '5': 9, '10': 'rationale'},
+    {'1': 'created_by', '3': 8, '4': 1, '5': 9, '10': 'createdBy'},
+    {'1': 'verified_by', '3': 9, '4': 1, '5': 9, '10': 'verifiedBy'},
+    {
+      '1': 'verified_at',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'verifiedAt'
+    },
+    {
+      '1': 'created_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+  ],
+};
+
+/// Descriptor for `EvidenceSourceReplacement`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List evidenceSourceReplacementDescriptor = $convert.base64Decode(
+    'ChlFdmlkZW5jZVNvdXJjZVJlcGxhY2VtZW50Eg4KAmlkGAEgASgJUgJpZBIbCglzb3VyY2VfaW'
+    'QYAiABKAlSCHNvdXJjZUlkEjIKFXJlcGxhY2VtZW50X3NvdXJjZV9pZBgDIAEoCVITcmVwbGFj'
+    'ZW1lbnRTb3VyY2VJZBIrChFyZXBsYWNlbWVudF90aXRsZRgEIAEoCVIQcmVwbGFjZW1lbnRUaX'
+    'RsZRIWCgZzdGF0dXMYBSABKAlSBnN0YXR1cxIeCgpjb25maWRlbmNlGAYgASgBUgpjb25maWRl'
+    'bmNlEhwKCXJhdGlvbmFsZRgHIAEoCVIJcmF0aW9uYWxlEh0KCmNyZWF0ZWRfYnkYCCABKAlSCW'
+    'NyZWF0ZWRCeRIfCgt2ZXJpZmllZF9ieRgJIAEoCVIKdmVyaWZpZWRCeRI7Cgt2ZXJpZmllZF9h'
+    'dBgKIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCnZlcmlmaWVkQXQSOQoKY3JlYX'
+    'RlZF9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdA==');
+
+@$core.Deprecated('Use getEvidenceSourceHistoryResponseDescriptor instead')
+const GetEvidenceSourceHistoryResponse$json = {
+  '1': 'GetEvidenceSourceHistoryResponse',
+  '2': [
+    {'1': 'source_id', '3': 1, '4': 1, '5': 9, '10': 'sourceId'},
+    {
+      '1': 'events',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.EvidenceSourceLifecycleEvent',
+      '10': 'events'
+    },
+    {
+      '1': 'replacements',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.EvidenceSourceReplacement',
+      '10': 'replacements'
+    },
+  ],
+};
+
+/// Descriptor for `GetEvidenceSourceHistoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getEvidenceSourceHistoryResponseDescriptor =
+    $convert.base64Decode(
+        'CiBHZXRFdmlkZW5jZVNvdXJjZUhpc3RvcnlSZXNwb25zZRIbCglzb3VyY2VfaWQYASABKAlSCH'
+        'NvdXJjZUlkEkYKBmV2ZW50cxgCIAMoCzIuLnN0dGF0dHVzLm9ueXgudjEuRXZpZGVuY2VTb3Vy'
+        'Y2VMaWZlY3ljbGVFdmVudFIGZXZlbnRzEk8KDHJlcGxhY2VtZW50cxgDIAMoCzIrLnN0dGF0dH'
+        'VzLm9ueXgudjEuRXZpZGVuY2VTb3VyY2VSZXBsYWNlbWVudFIMcmVwbGFjZW1lbnRz');
 
 @$core.Deprecated('Use briefPointDescriptor instead')
 const BriefPoint$json = {

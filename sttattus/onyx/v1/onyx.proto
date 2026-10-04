@@ -1754,6 +1754,21 @@ message EvidenceSource {
   string status = 16;
   google.protobuf.Timestamp published_at = 17;
   google.protobuf.Timestamp retrieved_at = 18;
+  // Choice 19 — lifecycle and identity metadata. These fields describe the
+  // source record only; immutable citations keep their original anchors.
+  string doi = 19;
+  string isbn = 20;
+  string normalized_url = 21;
+  string duplicate_group_key = 22;
+  int32 duplicate_count = 23;
+  string health_status = 24; // unknown | healthy | unreachable | withdrawn | restricted
+  int32 health_http_status = 25;
+  google.protobuf.Timestamp health_checked_at = 26;
+  string health_error = 27;
+  google.protobuf.Timestamp withdrawal_detected_at = 28;
+  string withdrawal_reason = 29;
+  string superseded_by_source_id = 30;
+  string replacement_status = 31; // none | suggested | in_review | verified | rejected
 }
 
 message EvidenceCitation {
@@ -1803,6 +1818,42 @@ message GetEvidenceWorkspaceResponse {
   repeated EvidenceCorrection corrections = 6;
   bool can_brief = 7;
   string policy_notice = 8;
+}
+
+message GetEvidenceSourceHistoryRequest {
+  string source_id = 1;
+}
+
+message EvidenceSourceLifecycleEvent {
+  string id = 1;
+  string source_id = 2;
+  string event_kind = 3;
+  string from_status = 4;
+  string to_status = 5;
+  string reason = 6;
+  string replacement_source_id = 7;
+  string actor_id = 8;
+  google.protobuf.Timestamp created_at = 9;
+}
+
+message EvidenceSourceReplacement {
+  string id = 1;
+  string source_id = 2;
+  string replacement_source_id = 3;
+  string replacement_title = 4;
+  string status = 5;
+  double confidence = 6;
+  string rationale = 7;
+  string created_by = 8;
+  string verified_by = 9;
+  google.protobuf.Timestamp verified_at = 10;
+  google.protobuf.Timestamp created_at = 11;
+}
+
+message GetEvidenceSourceHistoryResponse {
+  string source_id = 1;
+  repeated EvidenceSourceLifecycleEvent events = 2;
+  repeated EvidenceSourceReplacement replacements = 3;
 }
 
 message BriefPoint {
@@ -5666,6 +5717,7 @@ service OnyxService {
   // Evidence briefing — source cards, claim-level citations, reproducible
   // selected-source runs, and correction overlays on historical output.
   rpc GetEvidenceWorkspace(GetEvidenceWorkspaceRequest) returns (GetEvidenceWorkspaceResponse);
+  rpc GetEvidenceSourceHistory(GetEvidenceSourceHistoryRequest) returns (GetEvidenceSourceHistoryResponse);
   rpc CreateEvidenceBrief(CreateEvidenceBriefRequest) returns (CreateEvidenceBriefResponse);
   rpc ListMyEvidenceBriefs(ListMyEvidenceBriefsRequest) returns (ListMyEvidenceBriefsResponse);
   rpc GetEvidenceBrief(GetEvidenceBriefRequest) returns (GetEvidenceBriefResponse);
