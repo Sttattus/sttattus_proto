@@ -40750,6 +40750,29 @@ export class DraftBlockChange extends Message<DraftBlockChange> {
    */
   afterCitationCount = 0;
 
+  /**
+   * Human-readable, member-scoped comparison metadata. These fields never
+   * leave the private drafting owner boundary.
+   *
+   * @generated from field: string inline_diff = 10;
+   */
+  inlineDiff = "";
+
+  /**
+   * @generated from field: string explanation = 11;
+   */
+  explanation = "";
+
+  /**
+   * @generated from field: repeated string changed_fields = 12;
+   */
+  changedFields: string[] = [];
+
+  /**
+   * @generated from field: int32 word_delta = 13;
+   */
+  wordDelta = 0;
+
   constructor(data?: PartialMessage<DraftBlockChange>) {
     super();
     proto3.util.initPartial(data, this);
@@ -40767,6 +40790,10 @@ export class DraftBlockChange extends Message<DraftBlockChange> {
     { no: 7, name: "after_origin", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "before_citation_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 9, name: "after_citation_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "inline_diff", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "explanation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "changed_fields", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 13, name: "word_delta", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftBlockChange {
@@ -40830,6 +40857,11 @@ export class DraftRevisionComparison extends Message<DraftRevisionComparison> {
    */
   changes: DraftBlockChange[] = [];
 
+  /**
+   * @generated from field: string summary = 9;
+   */
+  summary = "";
+
   constructor(data?: PartialMessage<DraftRevisionComparison>) {
     super();
     proto3.util.initPartial(data, this);
@@ -40846,6 +40878,7 @@ export class DraftRevisionComparison extends Message<DraftRevisionComparison> {
     { no: 6, name: "unchanged_block_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 7, name: "word_count_delta", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 8, name: "changes", kind: "message", T: DraftBlockChange, repeated: true },
+    { no: 9, name: "summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftRevisionComparison {
@@ -43614,6 +43647,385 @@ export class CompareDraftRevisionsResponse extends Message<CompareDraftRevisions
 
   static equals(a: CompareDraftRevisionsResponse | PlainMessage<CompareDraftRevisionsResponse> | undefined, b: CompareDraftRevisionsResponse | PlainMessage<CompareDraftRevisionsResponse> | undefined): boolean {
     return proto3.util.equals(CompareDraftRevisionsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.PreviewDraftRestoreRequest
+ */
+export class PreviewDraftRestoreRequest extends Message<PreviewDraftRestoreRequest> {
+  /**
+   * @generated from field: string draft_id = 1;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: string revision_id = 2;
+   */
+  revisionId = "";
+
+  constructor(data?: PartialMessage<PreviewDraftRestoreRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.PreviewDraftRestoreRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PreviewDraftRestoreRequest {
+    return new PreviewDraftRestoreRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PreviewDraftRestoreRequest {
+    return new PreviewDraftRestoreRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PreviewDraftRestoreRequest {
+    return new PreviewDraftRestoreRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PreviewDraftRestoreRequest | PlainMessage<PreviewDraftRestoreRequest> | undefined, b: PreviewDraftRestoreRequest | PlainMessage<PreviewDraftRestoreRequest> | undefined): boolean {
+    return proto3.util.equals(PreviewDraftRestoreRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DraftRestorePreview
+ */
+export class DraftRestorePreview extends Message<DraftRestorePreview> {
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftRevision current_revision = 1;
+   */
+  currentRevision?: DraftRevision;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftRevision source_revision = 2;
+   */
+  sourceRevision?: DraftRevision;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftRevisionComparison comparison = 3;
+   */
+  comparison?: DraftRevisionComparison;
+
+  /**
+   * @generated from field: bool would_create_revision = 4;
+   */
+  wouldCreateRevision = false;
+
+  /**
+   * @generated from field: repeated string warnings = 5;
+   */
+  warnings: string[] = [];
+
+  constructor(data?: PartialMessage<DraftRestorePreview>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DraftRestorePreview";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "current_revision", kind: "message", T: DraftRevision },
+    { no: 2, name: "source_revision", kind: "message", T: DraftRevision },
+    { no: 3, name: "comparison", kind: "message", T: DraftRevisionComparison },
+    { no: 4, name: "would_create_revision", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "warnings", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftRestorePreview {
+    return new DraftRestorePreview().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DraftRestorePreview {
+    return new DraftRestorePreview().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DraftRestorePreview {
+    return new DraftRestorePreview().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DraftRestorePreview | PlainMessage<DraftRestorePreview> | undefined, b: DraftRestorePreview | PlainMessage<DraftRestorePreview> | undefined): boolean {
+    return proto3.util.equals(DraftRestorePreview, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.PreviewDraftRestoreResponse
+ */
+export class PreviewDraftRestoreResponse extends Message<PreviewDraftRestoreResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftRestorePreview preview = 1;
+   */
+  preview?: DraftRestorePreview;
+
+  constructor(data?: PartialMessage<PreviewDraftRestoreResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.PreviewDraftRestoreResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "preview", kind: "message", T: DraftRestorePreview },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PreviewDraftRestoreResponse {
+    return new PreviewDraftRestoreResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PreviewDraftRestoreResponse {
+    return new PreviewDraftRestoreResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PreviewDraftRestoreResponse {
+    return new PreviewDraftRestoreResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PreviewDraftRestoreResponse | PlainMessage<PreviewDraftRestoreResponse> | undefined, b: PreviewDraftRestoreResponse | PlainMessage<PreviewDraftRestoreResponse> | undefined): boolean {
+    return proto3.util.equals(PreviewDraftRestoreResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DraftMergeConflict
+ */
+export class DraftMergeConflict extends Message<DraftMergeConflict> {
+  /**
+   * @generated from field: string block_id = 1;
+   */
+  blockId = "";
+
+  /**
+   * @generated from field: string conflict_type = 2;
+   */
+  conflictType = "";
+
+  /**
+   * @generated from field: string base_body = 3;
+   */
+  baseBody = "";
+
+  /**
+   * @generated from field: string source_body = 4;
+   */
+  sourceBody = "";
+
+  /**
+   * @generated from field: string target_body = 5;
+   */
+  targetBody = "";
+
+  /**
+   * @generated from field: string explanation = 6;
+   */
+  explanation = "";
+
+  constructor(data?: PartialMessage<DraftMergeConflict>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DraftMergeConflict";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "block_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "conflict_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "base_body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "source_body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "target_body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "explanation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftMergeConflict {
+    return new DraftMergeConflict().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DraftMergeConflict {
+    return new DraftMergeConflict().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DraftMergeConflict {
+    return new DraftMergeConflict().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DraftMergeConflict | PlainMessage<DraftMergeConflict> | undefined, b: DraftMergeConflict | PlainMessage<DraftMergeConflict> | undefined): boolean {
+    return proto3.util.equals(DraftMergeConflict, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DraftMergePreview
+ */
+export class DraftMergePreview extends Message<DraftMergePreview> {
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftBranch source_branch = 1;
+   */
+  sourceBranch?: DraftBranch;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftBranch target_branch = 2;
+   */
+  targetBranch?: DraftBranch;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftRevision base_revision = 3;
+   */
+  baseRevision?: DraftRevision;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftRevision source_revision = 4;
+   */
+  sourceRevision?: DraftRevision;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftRevision target_revision = 5;
+   */
+  targetRevision?: DraftRevision;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftRevisionComparison comparison = 6;
+   */
+  comparison?: DraftRevisionComparison;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.DraftMergeConflict conflicts = 7;
+   */
+  conflicts: DraftMergeConflict[] = [];
+
+  /**
+   * @generated from field: bool safe_to_merge = 8;
+   */
+  safeToMerge = false;
+
+  /**
+   * @generated from field: repeated string warnings = 9;
+   */
+  warnings: string[] = [];
+
+  constructor(data?: PartialMessage<DraftMergePreview>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DraftMergePreview";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source_branch", kind: "message", T: DraftBranch },
+    { no: 2, name: "target_branch", kind: "message", T: DraftBranch },
+    { no: 3, name: "base_revision", kind: "message", T: DraftRevision },
+    { no: 4, name: "source_revision", kind: "message", T: DraftRevision },
+    { no: 5, name: "target_revision", kind: "message", T: DraftRevision },
+    { no: 6, name: "comparison", kind: "message", T: DraftRevisionComparison },
+    { no: 7, name: "conflicts", kind: "message", T: DraftMergeConflict, repeated: true },
+    { no: 8, name: "safe_to_merge", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "warnings", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftMergePreview {
+    return new DraftMergePreview().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DraftMergePreview {
+    return new DraftMergePreview().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DraftMergePreview {
+    return new DraftMergePreview().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DraftMergePreview | PlainMessage<DraftMergePreview> | undefined, b: DraftMergePreview | PlainMessage<DraftMergePreview> | undefined): boolean {
+    return proto3.util.equals(DraftMergePreview, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.PreviewDraftMergeRequest
+ */
+export class PreviewDraftMergeRequest extends Message<PreviewDraftMergeRequest> {
+  /**
+   * @generated from field: string draft_id = 1;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: string source_branch_id = 2;
+   */
+  sourceBranchId = "";
+
+  /**
+   * @generated from field: string target_branch_id = 3;
+   */
+  targetBranchId = "";
+
+  constructor(data?: PartialMessage<PreviewDraftMergeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.PreviewDraftMergeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "source_branch_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "target_branch_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PreviewDraftMergeRequest {
+    return new PreviewDraftMergeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PreviewDraftMergeRequest {
+    return new PreviewDraftMergeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PreviewDraftMergeRequest {
+    return new PreviewDraftMergeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PreviewDraftMergeRequest | PlainMessage<PreviewDraftMergeRequest> | undefined, b: PreviewDraftMergeRequest | PlainMessage<PreviewDraftMergeRequest> | undefined): boolean {
+    return proto3.util.equals(PreviewDraftMergeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.PreviewDraftMergeResponse
+ */
+export class PreviewDraftMergeResponse extends Message<PreviewDraftMergeResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftMergePreview preview = 1;
+   */
+  preview?: DraftMergePreview;
+
+  constructor(data?: PartialMessage<PreviewDraftMergeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.PreviewDraftMergeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "preview", kind: "message", T: DraftMergePreview },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PreviewDraftMergeResponse {
+    return new PreviewDraftMergeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PreviewDraftMergeResponse {
+    return new PreviewDraftMergeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PreviewDraftMergeResponse {
+    return new PreviewDraftMergeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PreviewDraftMergeResponse | PlainMessage<PreviewDraftMergeResponse> | undefined, b: PreviewDraftMergeResponse | PlainMessage<PreviewDraftMergeResponse> | undefined): boolean {
+    return proto3.util.equals(PreviewDraftMergeResponse, a, b);
   }
 }
 

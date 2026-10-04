@@ -68391,6 +68391,10 @@ class DraftBlockChange extends $pb.GeneratedMessage {
     $core.String? afterOrigin,
     $core.int? beforeCitationCount,
     $core.int? afterCitationCount,
+    $core.String? inlineDiff,
+    $core.String? explanation,
+    $core.Iterable<$core.String>? changedFields,
+    $core.int? wordDelta,
   }) {
     final result = create();
     if (blockId != null) result.blockId = blockId;
@@ -68404,6 +68408,10 @@ class DraftBlockChange extends $pb.GeneratedMessage {
       result.beforeCitationCount = beforeCitationCount;
     if (afterCitationCount != null)
       result.afterCitationCount = afterCitationCount;
+    if (inlineDiff != null) result.inlineDiff = inlineDiff;
+    if (explanation != null) result.explanation = explanation;
+    if (changedFields != null) result.changedFields.addAll(changedFields);
+    if (wordDelta != null) result.wordDelta = wordDelta;
     return result;
   }
 
@@ -68430,6 +68438,10 @@ class DraftBlockChange extends $pb.GeneratedMessage {
     ..aOS(7, _omitFieldNames ? '' : 'afterOrigin')
     ..aI(8, _omitFieldNames ? '' : 'beforeCitationCount')
     ..aI(9, _omitFieldNames ? '' : 'afterCitationCount')
+    ..aOS(10, _omitFieldNames ? '' : 'inlineDiff')
+    ..aOS(11, _omitFieldNames ? '' : 'explanation')
+    ..pPS(12, _omitFieldNames ? '' : 'changedFields')
+    ..aI(13, _omitFieldNames ? '' : 'wordDelta')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -68531,6 +68543,38 @@ class DraftBlockChange extends $pb.GeneratedMessage {
   $core.bool hasAfterCitationCount() => $_has(8);
   @$pb.TagNumber(9)
   void clearAfterCitationCount() => $_clearField(9);
+
+  /// Human-readable, member-scoped comparison metadata. These fields never
+  /// leave the private drafting owner boundary.
+  @$pb.TagNumber(10)
+  $core.String get inlineDiff => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set inlineDiff($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasInlineDiff() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearInlineDiff() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get explanation => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set explanation($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasExplanation() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearExplanation() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $pb.PbList<$core.String> get changedFields => $_getList(11);
+
+  @$pb.TagNumber(13)
+  $core.int get wordDelta => $_getIZ(12);
+  @$pb.TagNumber(13)
+  set wordDelta($core.int value) => $_setSignedInt32(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasWordDelta() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearWordDelta() => $_clearField(13);
 }
 
 class DraftRevisionComparison extends $pb.GeneratedMessage {
@@ -68543,6 +68587,7 @@ class DraftRevisionComparison extends $pb.GeneratedMessage {
     $core.int? unchangedBlockCount,
     $core.int? wordCountDelta,
     $core.Iterable<DraftBlockChange>? changes,
+    $core.String? summary,
   }) {
     final result = create();
     if (fromRevision != null) result.fromRevision = fromRevision;
@@ -68555,6 +68600,7 @@ class DraftRevisionComparison extends $pb.GeneratedMessage {
       result.unchangedBlockCount = unchangedBlockCount;
     if (wordCountDelta != null) result.wordCountDelta = wordCountDelta;
     if (changes != null) result.changes.addAll(changes);
+    if (summary != null) result.summary = summary;
     return result;
   }
 
@@ -68583,6 +68629,7 @@ class DraftRevisionComparison extends $pb.GeneratedMessage {
     ..aI(7, _omitFieldNames ? '' : 'wordCountDelta')
     ..pPM<DraftBlockChange>(8, _omitFieldNames ? '' : 'changes',
         subBuilder: DraftBlockChange.create)
+    ..aOS(9, _omitFieldNames ? '' : 'summary')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -68674,6 +68721,15 @@ class DraftRevisionComparison extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(8)
   $pb.PbList<DraftBlockChange> get changes => $_getList(7);
+
+  @$pb.TagNumber(9)
+  $core.String get summary => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set summary($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSummary() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSummary() => $_clearField(9);
 }
 
 class DraftBranch extends $pb.GeneratedMessage {
@@ -73468,6 +73524,655 @@ class CompareDraftRevisionsResponse extends $pb.GeneratedMessage {
   void clearComparison() => $_clearField(1);
   @$pb.TagNumber(1)
   DraftRevisionComparison ensureComparison() => $_ensure(0);
+}
+
+class PreviewDraftRestoreRequest extends $pb.GeneratedMessage {
+  factory PreviewDraftRestoreRequest({
+    $core.String? draftId,
+    $core.String? revisionId,
+  }) {
+    final result = create();
+    if (draftId != null) result.draftId = draftId;
+    if (revisionId != null) result.revisionId = revisionId;
+    return result;
+  }
+
+  PreviewDraftRestoreRequest._();
+
+  factory PreviewDraftRestoreRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PreviewDraftRestoreRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PreviewDraftRestoreRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'draftId')
+    ..aOS(2, _omitFieldNames ? '' : 'revisionId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewDraftRestoreRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewDraftRestoreRequest copyWith(
+          void Function(PreviewDraftRestoreRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as PreviewDraftRestoreRequest))
+          as PreviewDraftRestoreRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PreviewDraftRestoreRequest create() => PreviewDraftRestoreRequest._();
+  @$core.override
+  PreviewDraftRestoreRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PreviewDraftRestoreRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PreviewDraftRestoreRequest>(create);
+  static PreviewDraftRestoreRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get draftId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set draftId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDraftId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDraftId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get revisionId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set revisionId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRevisionId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRevisionId() => $_clearField(2);
+}
+
+class DraftRestorePreview extends $pb.GeneratedMessage {
+  factory DraftRestorePreview({
+    DraftRevision? currentRevision,
+    DraftRevision? sourceRevision,
+    DraftRevisionComparison? comparison,
+    $core.bool? wouldCreateRevision,
+    $core.Iterable<$core.String>? warnings,
+  }) {
+    final result = create();
+    if (currentRevision != null) result.currentRevision = currentRevision;
+    if (sourceRevision != null) result.sourceRevision = sourceRevision;
+    if (comparison != null) result.comparison = comparison;
+    if (wouldCreateRevision != null)
+      result.wouldCreateRevision = wouldCreateRevision;
+    if (warnings != null) result.warnings.addAll(warnings);
+    return result;
+  }
+
+  DraftRestorePreview._();
+
+  factory DraftRestorePreview.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DraftRestorePreview.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DraftRestorePreview',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<DraftRevision>(1, _omitFieldNames ? '' : 'currentRevision',
+        subBuilder: DraftRevision.create)
+    ..aOM<DraftRevision>(2, _omitFieldNames ? '' : 'sourceRevision',
+        subBuilder: DraftRevision.create)
+    ..aOM<DraftRevisionComparison>(3, _omitFieldNames ? '' : 'comparison',
+        subBuilder: DraftRevisionComparison.create)
+    ..aOB(4, _omitFieldNames ? '' : 'wouldCreateRevision')
+    ..pPS(5, _omitFieldNames ? '' : 'warnings')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftRestorePreview clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftRestorePreview copyWith(void Function(DraftRestorePreview) updates) =>
+      super.copyWith((message) => updates(message as DraftRestorePreview))
+          as DraftRestorePreview;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DraftRestorePreview create() => DraftRestorePreview._();
+  @$core.override
+  DraftRestorePreview createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DraftRestorePreview getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DraftRestorePreview>(create);
+  static DraftRestorePreview? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DraftRevision get currentRevision => $_getN(0);
+  @$pb.TagNumber(1)
+  set currentRevision(DraftRevision value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCurrentRevision() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCurrentRevision() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DraftRevision ensureCurrentRevision() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  DraftRevision get sourceRevision => $_getN(1);
+  @$pb.TagNumber(2)
+  set sourceRevision(DraftRevision value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSourceRevision() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceRevision() => $_clearField(2);
+  @$pb.TagNumber(2)
+  DraftRevision ensureSourceRevision() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  DraftRevisionComparison get comparison => $_getN(2);
+  @$pb.TagNumber(3)
+  set comparison(DraftRevisionComparison value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasComparison() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearComparison() => $_clearField(3);
+  @$pb.TagNumber(3)
+  DraftRevisionComparison ensureComparison() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $core.bool get wouldCreateRevision => $_getBF(3);
+  @$pb.TagNumber(4)
+  set wouldCreateRevision($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasWouldCreateRevision() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearWouldCreateRevision() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<$core.String> get warnings => $_getList(4);
+}
+
+class PreviewDraftRestoreResponse extends $pb.GeneratedMessage {
+  factory PreviewDraftRestoreResponse({
+    DraftRestorePreview? preview,
+  }) {
+    final result = create();
+    if (preview != null) result.preview = preview;
+    return result;
+  }
+
+  PreviewDraftRestoreResponse._();
+
+  factory PreviewDraftRestoreResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PreviewDraftRestoreResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PreviewDraftRestoreResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<DraftRestorePreview>(1, _omitFieldNames ? '' : 'preview',
+        subBuilder: DraftRestorePreview.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewDraftRestoreResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewDraftRestoreResponse copyWith(
+          void Function(PreviewDraftRestoreResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as PreviewDraftRestoreResponse))
+          as PreviewDraftRestoreResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PreviewDraftRestoreResponse create() =>
+      PreviewDraftRestoreResponse._();
+  @$core.override
+  PreviewDraftRestoreResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PreviewDraftRestoreResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PreviewDraftRestoreResponse>(create);
+  static PreviewDraftRestoreResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DraftRestorePreview get preview => $_getN(0);
+  @$pb.TagNumber(1)
+  set preview(DraftRestorePreview value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPreview() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPreview() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DraftRestorePreview ensurePreview() => $_ensure(0);
+}
+
+class DraftMergeConflict extends $pb.GeneratedMessage {
+  factory DraftMergeConflict({
+    $core.String? blockId,
+    $core.String? conflictType,
+    $core.String? baseBody,
+    $core.String? sourceBody,
+    $core.String? targetBody,
+    $core.String? explanation,
+  }) {
+    final result = create();
+    if (blockId != null) result.blockId = blockId;
+    if (conflictType != null) result.conflictType = conflictType;
+    if (baseBody != null) result.baseBody = baseBody;
+    if (sourceBody != null) result.sourceBody = sourceBody;
+    if (targetBody != null) result.targetBody = targetBody;
+    if (explanation != null) result.explanation = explanation;
+    return result;
+  }
+
+  DraftMergeConflict._();
+
+  factory DraftMergeConflict.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DraftMergeConflict.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DraftMergeConflict',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'blockId')
+    ..aOS(2, _omitFieldNames ? '' : 'conflictType')
+    ..aOS(3, _omitFieldNames ? '' : 'baseBody')
+    ..aOS(4, _omitFieldNames ? '' : 'sourceBody')
+    ..aOS(5, _omitFieldNames ? '' : 'targetBody')
+    ..aOS(6, _omitFieldNames ? '' : 'explanation')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftMergeConflict clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftMergeConflict copyWith(void Function(DraftMergeConflict) updates) =>
+      super.copyWith((message) => updates(message as DraftMergeConflict))
+          as DraftMergeConflict;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DraftMergeConflict create() => DraftMergeConflict._();
+  @$core.override
+  DraftMergeConflict createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DraftMergeConflict getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DraftMergeConflict>(create);
+  static DraftMergeConflict? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get blockId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set blockId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBlockId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBlockId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get conflictType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set conflictType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasConflictType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearConflictType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get baseBody => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set baseBody($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBaseBody() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBaseBody() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sourceBody => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set sourceBody($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSourceBody() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSourceBody() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get targetBody => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set targetBody($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTargetBody() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTargetBody() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get explanation => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set explanation($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasExplanation() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearExplanation() => $_clearField(6);
+}
+
+class DraftMergePreview extends $pb.GeneratedMessage {
+  factory DraftMergePreview({
+    DraftBranch? sourceBranch,
+    DraftBranch? targetBranch,
+    DraftRevision? baseRevision,
+    DraftRevision? sourceRevision,
+    DraftRevision? targetRevision,
+    DraftRevisionComparison? comparison,
+    $core.Iterable<DraftMergeConflict>? conflicts,
+    $core.bool? safeToMerge,
+    $core.Iterable<$core.String>? warnings,
+  }) {
+    final result = create();
+    if (sourceBranch != null) result.sourceBranch = sourceBranch;
+    if (targetBranch != null) result.targetBranch = targetBranch;
+    if (baseRevision != null) result.baseRevision = baseRevision;
+    if (sourceRevision != null) result.sourceRevision = sourceRevision;
+    if (targetRevision != null) result.targetRevision = targetRevision;
+    if (comparison != null) result.comparison = comparison;
+    if (conflicts != null) result.conflicts.addAll(conflicts);
+    if (safeToMerge != null) result.safeToMerge = safeToMerge;
+    if (warnings != null) result.warnings.addAll(warnings);
+    return result;
+  }
+
+  DraftMergePreview._();
+
+  factory DraftMergePreview.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DraftMergePreview.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DraftMergePreview',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<DraftBranch>(1, _omitFieldNames ? '' : 'sourceBranch',
+        subBuilder: DraftBranch.create)
+    ..aOM<DraftBranch>(2, _omitFieldNames ? '' : 'targetBranch',
+        subBuilder: DraftBranch.create)
+    ..aOM<DraftRevision>(3, _omitFieldNames ? '' : 'baseRevision',
+        subBuilder: DraftRevision.create)
+    ..aOM<DraftRevision>(4, _omitFieldNames ? '' : 'sourceRevision',
+        subBuilder: DraftRevision.create)
+    ..aOM<DraftRevision>(5, _omitFieldNames ? '' : 'targetRevision',
+        subBuilder: DraftRevision.create)
+    ..aOM<DraftRevisionComparison>(6, _omitFieldNames ? '' : 'comparison',
+        subBuilder: DraftRevisionComparison.create)
+    ..pPM<DraftMergeConflict>(7, _omitFieldNames ? '' : 'conflicts',
+        subBuilder: DraftMergeConflict.create)
+    ..aOB(8, _omitFieldNames ? '' : 'safeToMerge')
+    ..pPS(9, _omitFieldNames ? '' : 'warnings')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftMergePreview clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftMergePreview copyWith(void Function(DraftMergePreview) updates) =>
+      super.copyWith((message) => updates(message as DraftMergePreview))
+          as DraftMergePreview;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DraftMergePreview create() => DraftMergePreview._();
+  @$core.override
+  DraftMergePreview createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DraftMergePreview getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DraftMergePreview>(create);
+  static DraftMergePreview? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DraftBranch get sourceBranch => $_getN(0);
+  @$pb.TagNumber(1)
+  set sourceBranch(DraftBranch value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSourceBranch() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSourceBranch() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DraftBranch ensureSourceBranch() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  DraftBranch get targetBranch => $_getN(1);
+  @$pb.TagNumber(2)
+  set targetBranch(DraftBranch value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTargetBranch() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTargetBranch() => $_clearField(2);
+  @$pb.TagNumber(2)
+  DraftBranch ensureTargetBranch() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  DraftRevision get baseRevision => $_getN(2);
+  @$pb.TagNumber(3)
+  set baseRevision(DraftRevision value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBaseRevision() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBaseRevision() => $_clearField(3);
+  @$pb.TagNumber(3)
+  DraftRevision ensureBaseRevision() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  DraftRevision get sourceRevision => $_getN(3);
+  @$pb.TagNumber(4)
+  set sourceRevision(DraftRevision value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSourceRevision() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSourceRevision() => $_clearField(4);
+  @$pb.TagNumber(4)
+  DraftRevision ensureSourceRevision() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  DraftRevision get targetRevision => $_getN(4);
+  @$pb.TagNumber(5)
+  set targetRevision(DraftRevision value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTargetRevision() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTargetRevision() => $_clearField(5);
+  @$pb.TagNumber(5)
+  DraftRevision ensureTargetRevision() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  DraftRevisionComparison get comparison => $_getN(5);
+  @$pb.TagNumber(6)
+  set comparison(DraftRevisionComparison value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasComparison() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearComparison() => $_clearField(6);
+  @$pb.TagNumber(6)
+  DraftRevisionComparison ensureComparison() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<DraftMergeConflict> get conflicts => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.bool get safeToMerge => $_getBF(7);
+  @$pb.TagNumber(8)
+  set safeToMerge($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSafeToMerge() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSafeToMerge() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $pb.PbList<$core.String> get warnings => $_getList(8);
+}
+
+class PreviewDraftMergeRequest extends $pb.GeneratedMessage {
+  factory PreviewDraftMergeRequest({
+    $core.String? draftId,
+    $core.String? sourceBranchId,
+    $core.String? targetBranchId,
+  }) {
+    final result = create();
+    if (draftId != null) result.draftId = draftId;
+    if (sourceBranchId != null) result.sourceBranchId = sourceBranchId;
+    if (targetBranchId != null) result.targetBranchId = targetBranchId;
+    return result;
+  }
+
+  PreviewDraftMergeRequest._();
+
+  factory PreviewDraftMergeRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PreviewDraftMergeRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PreviewDraftMergeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'draftId')
+    ..aOS(2, _omitFieldNames ? '' : 'sourceBranchId')
+    ..aOS(3, _omitFieldNames ? '' : 'targetBranchId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewDraftMergeRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewDraftMergeRequest copyWith(
+          void Function(PreviewDraftMergeRequest) updates) =>
+      super.copyWith((message) => updates(message as PreviewDraftMergeRequest))
+          as PreviewDraftMergeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PreviewDraftMergeRequest create() => PreviewDraftMergeRequest._();
+  @$core.override
+  PreviewDraftMergeRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PreviewDraftMergeRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PreviewDraftMergeRequest>(create);
+  static PreviewDraftMergeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get draftId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set draftId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDraftId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDraftId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sourceBranchId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourceBranchId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSourceBranchId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceBranchId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get targetBranchId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set targetBranchId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTargetBranchId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTargetBranchId() => $_clearField(3);
+}
+
+class PreviewDraftMergeResponse extends $pb.GeneratedMessage {
+  factory PreviewDraftMergeResponse({
+    DraftMergePreview? preview,
+  }) {
+    final result = create();
+    if (preview != null) result.preview = preview;
+    return result;
+  }
+
+  PreviewDraftMergeResponse._();
+
+  factory PreviewDraftMergeResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PreviewDraftMergeResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PreviewDraftMergeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<DraftMergePreview>(1, _omitFieldNames ? '' : 'preview',
+        subBuilder: DraftMergePreview.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewDraftMergeResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewDraftMergeResponse copyWith(
+          void Function(PreviewDraftMergeResponse) updates) =>
+      super.copyWith((message) => updates(message as PreviewDraftMergeResponse))
+          as PreviewDraftMergeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PreviewDraftMergeResponse create() => PreviewDraftMergeResponse._();
+  @$core.override
+  PreviewDraftMergeResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PreviewDraftMergeResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PreviewDraftMergeResponse>(create);
+  static PreviewDraftMergeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DraftMergePreview get preview => $_getN(0);
+  @$pb.TagNumber(1)
+  set preview(DraftMergePreview value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPreview() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPreview() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DraftMergePreview ensurePreview() => $_ensure(0);
 }
 
 class GenerateDraftSuggestionRequest extends $pb.GeneratedMessage {

@@ -274,6 +274,8 @@ const (
 	OnyxService_CreateDraftBranch_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/CreateDraftBranch"
 	OnyxService_RestoreDraftRevision_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/RestoreDraftRevision"
 	OnyxService_CompareDraftRevisions_FullMethodName                = "/sttattus.onyx.v1.OnyxService/CompareDraftRevisions"
+	OnyxService_PreviewDraftRestore_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/PreviewDraftRestore"
+	OnyxService_PreviewDraftMerge_FullMethodName                    = "/sttattus.onyx.v1.OnyxService/PreviewDraftMerge"
 	OnyxService_GenerateDraftSuggestion_FullMethodName              = "/sttattus.onyx.v1.OnyxService/GenerateDraftSuggestion"
 	OnyxService_SetDraftSuggestionState_FullMethodName              = "/sttattus.onyx.v1.OnyxService/SetDraftSuggestionState"
 	OnyxService_ResolveDraftConflict_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/ResolveDraftConflict"
@@ -587,6 +589,8 @@ type OnyxServiceClient interface {
 	CreateDraftBranch(ctx context.Context, in *CreateDraftBranchRequest, opts ...grpc.CallOption) (*CreateDraftBranchResponse, error)
 	RestoreDraftRevision(ctx context.Context, in *RestoreDraftRevisionRequest, opts ...grpc.CallOption) (*RestoreDraftRevisionResponse, error)
 	CompareDraftRevisions(ctx context.Context, in *CompareDraftRevisionsRequest, opts ...grpc.CallOption) (*CompareDraftRevisionsResponse, error)
+	PreviewDraftRestore(ctx context.Context, in *PreviewDraftRestoreRequest, opts ...grpc.CallOption) (*PreviewDraftRestoreResponse, error)
+	PreviewDraftMerge(ctx context.Context, in *PreviewDraftMergeRequest, opts ...grpc.CallOption) (*PreviewDraftMergeResponse, error)
 	GenerateDraftSuggestion(ctx context.Context, in *GenerateDraftSuggestionRequest, opts ...grpc.CallOption) (*GenerateDraftSuggestionResponse, error)
 	SetDraftSuggestionState(ctx context.Context, in *SetDraftSuggestionStateRequest, opts ...grpc.CallOption) (*SetDraftSuggestionStateResponse, error)
 	ResolveDraftConflict(ctx context.Context, in *ResolveDraftConflictRequest, opts ...grpc.CallOption) (*ResolveDraftConflictResponse, error)
@@ -3154,6 +3158,26 @@ func (c *onyxServiceClient) CompareDraftRevisions(ctx context.Context, in *Compa
 	return out, nil
 }
 
+func (c *onyxServiceClient) PreviewDraftRestore(ctx context.Context, in *PreviewDraftRestoreRequest, opts ...grpc.CallOption) (*PreviewDraftRestoreResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PreviewDraftRestoreResponse)
+	err := c.cc.Invoke(ctx, OnyxService_PreviewDraftRestore_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) PreviewDraftMerge(ctx context.Context, in *PreviewDraftMergeRequest, opts ...grpc.CallOption) (*PreviewDraftMergeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PreviewDraftMergeResponse)
+	err := c.cc.Invoke(ctx, OnyxService_PreviewDraftMerge_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *onyxServiceClient) GenerateDraftSuggestion(ctx context.Context, in *GenerateDraftSuggestionRequest, opts ...grpc.CallOption) (*GenerateDraftSuggestionResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GenerateDraftSuggestionResponse)
@@ -3528,6 +3552,8 @@ type OnyxServiceServer interface {
 	CreateDraftBranch(context.Context, *CreateDraftBranchRequest) (*CreateDraftBranchResponse, error)
 	RestoreDraftRevision(context.Context, *RestoreDraftRevisionRequest) (*RestoreDraftRevisionResponse, error)
 	CompareDraftRevisions(context.Context, *CompareDraftRevisionsRequest) (*CompareDraftRevisionsResponse, error)
+	PreviewDraftRestore(context.Context, *PreviewDraftRestoreRequest) (*PreviewDraftRestoreResponse, error)
+	PreviewDraftMerge(context.Context, *PreviewDraftMergeRequest) (*PreviewDraftMergeResponse, error)
 	GenerateDraftSuggestion(context.Context, *GenerateDraftSuggestionRequest) (*GenerateDraftSuggestionResponse, error)
 	SetDraftSuggestionState(context.Context, *SetDraftSuggestionStateRequest) (*SetDraftSuggestionStateResponse, error)
 	ResolveDraftConflict(context.Context, *ResolveDraftConflictRequest) (*ResolveDraftConflictResponse, error)
@@ -4309,6 +4335,12 @@ func (UnimplementedOnyxServiceServer) RestoreDraftRevision(context.Context, *Res
 }
 func (UnimplementedOnyxServiceServer) CompareDraftRevisions(context.Context, *CompareDraftRevisionsRequest) (*CompareDraftRevisionsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method CompareDraftRevisions not implemented")
+}
+func (UnimplementedOnyxServiceServer) PreviewDraftRestore(context.Context, *PreviewDraftRestoreRequest) (*PreviewDraftRestoreResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PreviewDraftRestore not implemented")
+}
+func (UnimplementedOnyxServiceServer) PreviewDraftMerge(context.Context, *PreviewDraftMergeRequest) (*PreviewDraftMergeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PreviewDraftMerge not implemented")
 }
 func (UnimplementedOnyxServiceServer) GenerateDraftSuggestion(context.Context, *GenerateDraftSuggestionRequest) (*GenerateDraftSuggestionResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GenerateDraftSuggestion not implemented")
@@ -8942,6 +8974,42 @@ func _OnyxService_CompareDraftRevisions_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_PreviewDraftRestore_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PreviewDraftRestoreRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).PreviewDraftRestore(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_PreviewDraftRestore_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).PreviewDraftRestore(ctx, req.(*PreviewDraftRestoreRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_PreviewDraftMerge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PreviewDraftMergeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).PreviewDraftMerge(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_PreviewDraftMerge_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).PreviewDraftMerge(ctx, req.(*PreviewDraftMergeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _OnyxService_GenerateDraftSuggestion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GenerateDraftSuggestionRequest)
 	if err := dec(in); err != nil {
@@ -10094,6 +10162,14 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CompareDraftRevisions",
 			Handler:    _OnyxService_CompareDraftRevisions_Handler,
+		},
+		{
+			MethodName: "PreviewDraftRestore",
+			Handler:    _OnyxService_PreviewDraftRestore_Handler,
+		},
+		{
+			MethodName: "PreviewDraftMerge",
+			Handler:    _OnyxService_PreviewDraftMerge_Handler,
 		},
 		{
 			MethodName: "GenerateDraftSuggestion",

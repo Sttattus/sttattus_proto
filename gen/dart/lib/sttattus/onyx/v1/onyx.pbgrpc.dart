@@ -2084,6 +2084,20 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$compareDraftRevisions, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.PreviewDraftRestoreResponse> previewDraftRestore(
+    $0.PreviewDraftRestoreRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$previewDraftRestore, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PreviewDraftMergeResponse> previewDraftMerge(
+    $0.PreviewDraftMergeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$previewDraftMerge, request, options: options);
+  }
+
   $grpc.ResponseFuture<$0.GenerateDraftSuggestionResponse>
       generateDraftSuggestion(
     $0.GenerateDraftSuggestionRequest request, {
@@ -3525,6 +3539,16 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/CompareDraftRevisions',
       ($0.CompareDraftRevisionsRequest value) => value.writeToBuffer(),
       $0.CompareDraftRevisionsResponse.fromBuffer);
+  static final _$previewDraftRestore = $grpc.ClientMethod<
+          $0.PreviewDraftRestoreRequest, $0.PreviewDraftRestoreResponse>(
+      '/sttattus.onyx.v1.OnyxService/PreviewDraftRestore',
+      ($0.PreviewDraftRestoreRequest value) => value.writeToBuffer(),
+      $0.PreviewDraftRestoreResponse.fromBuffer);
+  static final _$previewDraftMerge = $grpc.ClientMethod<
+          $0.PreviewDraftMergeRequest, $0.PreviewDraftMergeResponse>(
+      '/sttattus.onyx.v1.OnyxService/PreviewDraftMerge',
+      ($0.PreviewDraftMergeRequest value) => value.writeToBuffer(),
+      $0.PreviewDraftMergeResponse.fromBuffer);
   static final _$generateDraftSuggestion = $grpc.ClientMethod<
           $0.GenerateDraftSuggestionRequest,
           $0.GenerateDraftSuggestionResponse>(
@@ -5905,6 +5929,24 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.CompareDraftRevisionsRequest.fromBuffer(value),
         ($0.CompareDraftRevisionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PreviewDraftRestoreRequest,
+            $0.PreviewDraftRestoreResponse>(
+        'PreviewDraftRestore',
+        previewDraftRestore_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.PreviewDraftRestoreRequest.fromBuffer(value),
+        ($0.PreviewDraftRestoreResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PreviewDraftMergeRequest,
+            $0.PreviewDraftMergeResponse>(
+        'PreviewDraftMerge',
+        previewDraftMerge_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.PreviewDraftMergeRequest.fromBuffer(value),
+        ($0.PreviewDraftMergeResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.GenerateDraftSuggestionRequest,
             $0.GenerateDraftSuggestionResponse>(
         'GenerateDraftSuggestion',
@@ -8376,6 +8418,24 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.CompareDraftRevisionsResponse> compareDraftRevisions(
       $grpc.ServiceCall call, $0.CompareDraftRevisionsRequest request);
+
+  $async.Future<$0.PreviewDraftRestoreResponse> previewDraftRestore_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.PreviewDraftRestoreRequest> $request) async {
+    return previewDraftRestore($call, await $request);
+  }
+
+  $async.Future<$0.PreviewDraftRestoreResponse> previewDraftRestore(
+      $grpc.ServiceCall call, $0.PreviewDraftRestoreRequest request);
+
+  $async.Future<$0.PreviewDraftMergeResponse> previewDraftMerge_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.PreviewDraftMergeRequest> $request) async {
+    return previewDraftMerge($call, await $request);
+  }
+
+  $async.Future<$0.PreviewDraftMergeResponse> previewDraftMerge(
+      $grpc.ServiceCall call, $0.PreviewDraftMergeRequest request);
 
   $async.Future<$0.GenerateDraftSuggestionResponse> generateDraftSuggestion_Pre(
       $grpc.ServiceCall $call,

@@ -20435,6 +20435,10 @@ const DraftBlockChange$json = {
       '5': 5,
       '10': 'afterCitationCount'
     },
+    {'1': 'inline_diff', '3': 10, '4': 1, '5': 9, '10': 'inlineDiff'},
+    {'1': 'explanation', '3': 11, '4': 1, '5': 9, '10': 'explanation'},
+    {'1': 'changed_fields', '3': 12, '4': 3, '5': 9, '10': 'changedFields'},
+    {'1': 'word_delta', '3': 13, '4': 1, '5': 5, '10': 'wordDelta'},
   ],
 };
 
@@ -20446,7 +20450,9 @@ final $typed_data.Uint8List draftBlockChangeDescriptor = $convert.base64Decode(
     'RlckJvZHkSIwoNYmVmb3JlX29yaWdpbhgGIAEoCVIMYmVmb3JlT3JpZ2luEiEKDGFmdGVyX29y'
     'aWdpbhgHIAEoCVILYWZ0ZXJPcmlnaW4SMgoVYmVmb3JlX2NpdGF0aW9uX2NvdW50GAggASgFUh'
     'NiZWZvcmVDaXRhdGlvbkNvdW50EjAKFGFmdGVyX2NpdGF0aW9uX2NvdW50GAkgASgFUhJhZnRl'
-    'ckNpdGF0aW9uQ291bnQ=');
+    'ckNpdGF0aW9uQ291bnQSHwoLaW5saW5lX2RpZmYYCiABKAlSCmlubGluZURpZmYSIAoLZXhwbG'
+    'FuYXRpb24YCyABKAlSC2V4cGxhbmF0aW9uEiUKDmNoYW5nZWRfZmllbGRzGAwgAygJUg1jaGFu'
+    'Z2VkRmllbGRzEh0KCndvcmRfZGVsdGEYDSABKAVSCXdvcmREZWx0YQ==');
 
 @$core.Deprecated('Use draftRevisionComparisonDescriptor instead')
 const DraftRevisionComparison$json = {
@@ -20499,6 +20505,7 @@ const DraftRevisionComparison$json = {
       '6': '.sttattus.onyx.v1.DraftBlockChange',
       '10': 'changes'
     },
+    {'1': 'summary', '3': 9, '4': 1, '5': 9, '10': 'summary'},
   ],
 };
 
@@ -20512,7 +20519,7 @@ final $typed_data.Uint8List draftRevisionComparisonDescriptor = $convert.base64D
     'gFIAEoBVISbW9kaWZpZWRCbG9ja0NvdW50EjIKFXVuY2hhbmdlZF9ibG9ja19jb3VudBgGIAEo'
     'BVITdW5jaGFuZ2VkQmxvY2tDb3VudBIoChB3b3JkX2NvdW50X2RlbHRhGAcgASgFUg53b3JkQ2'
     '91bnREZWx0YRI8CgdjaGFuZ2VzGAggAygLMiIuc3R0YXR0dXMub255eC52MS5EcmFmdEJsb2Nr'
-    'Q2hhbmdlUgdjaGFuZ2Vz');
+    'Q2hhbmdlUgdjaGFuZ2VzEhgKB3N1bW1hcnkYCSABKAlSB3N1bW1hcnk=');
 
 @$core.Deprecated('Use draftBranchDescriptor instead')
 const DraftBranch$json = {
@@ -21859,6 +21866,226 @@ final $typed_data.Uint8List compareDraftRevisionsResponseDescriptor =
     $convert.base64Decode(
         'Ch1Db21wYXJlRHJhZnRSZXZpc2lvbnNSZXNwb25zZRJJCgpjb21wYXJpc29uGAEgASgLMikuc3'
         'R0YXR0dXMub255eC52MS5EcmFmdFJldmlzaW9uQ29tcGFyaXNvblIKY29tcGFyaXNvbg==');
+
+@$core.Deprecated('Use previewDraftRestoreRequestDescriptor instead')
+const PreviewDraftRestoreRequest$json = {
+  '1': 'PreviewDraftRestoreRequest',
+  '2': [
+    {'1': 'draft_id', '3': 1, '4': 1, '5': 9, '10': 'draftId'},
+    {'1': 'revision_id', '3': 2, '4': 1, '5': 9, '10': 'revisionId'},
+  ],
+};
+
+/// Descriptor for `PreviewDraftRestoreRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List previewDraftRestoreRequestDescriptor =
+    $convert.base64Decode(
+        'ChpQcmV2aWV3RHJhZnRSZXN0b3JlUmVxdWVzdBIZCghkcmFmdF9pZBgBIAEoCVIHZHJhZnRJZB'
+        'IfCgtyZXZpc2lvbl9pZBgCIAEoCVIKcmV2aXNpb25JZA==');
+
+@$core.Deprecated('Use draftRestorePreviewDescriptor instead')
+const DraftRestorePreview$json = {
+  '1': 'DraftRestorePreview',
+  '2': [
+    {
+      '1': 'current_revision',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftRevision',
+      '10': 'currentRevision'
+    },
+    {
+      '1': 'source_revision',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftRevision',
+      '10': 'sourceRevision'
+    },
+    {
+      '1': 'comparison',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftRevisionComparison',
+      '10': 'comparison'
+    },
+    {
+      '1': 'would_create_revision',
+      '3': 4,
+      '4': 1,
+      '5': 8,
+      '10': 'wouldCreateRevision'
+    },
+    {'1': 'warnings', '3': 5, '4': 3, '5': 9, '10': 'warnings'},
+  ],
+};
+
+/// Descriptor for `DraftRestorePreview`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List draftRestorePreviewDescriptor = $convert.base64Decode(
+    'ChNEcmFmdFJlc3RvcmVQcmV2aWV3EkoKEGN1cnJlbnRfcmV2aXNpb24YASABKAsyHy5zdHRhdH'
+    'R1cy5vbnl4LnYxLkRyYWZ0UmV2aXNpb25SD2N1cnJlbnRSZXZpc2lvbhJICg9zb3VyY2VfcmV2'
+    'aXNpb24YAiABKAsyHy5zdHRhdHR1cy5vbnl4LnYxLkRyYWZ0UmV2aXNpb25SDnNvdXJjZVJldm'
+    'lzaW9uEkkKCmNvbXBhcmlzb24YAyABKAsyKS5zdHRhdHR1cy5vbnl4LnYxLkRyYWZ0UmV2aXNp'
+    'b25Db21wYXJpc29uUgpjb21wYXJpc29uEjIKFXdvdWxkX2NyZWF0ZV9yZXZpc2lvbhgEIAEoCF'
+    'ITd291bGRDcmVhdGVSZXZpc2lvbhIaCgh3YXJuaW5ncxgFIAMoCVIId2FybmluZ3M=');
+
+@$core.Deprecated('Use previewDraftRestoreResponseDescriptor instead')
+const PreviewDraftRestoreResponse$json = {
+  '1': 'PreviewDraftRestoreResponse',
+  '2': [
+    {
+      '1': 'preview',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftRestorePreview',
+      '10': 'preview'
+    },
+  ],
+};
+
+/// Descriptor for `PreviewDraftRestoreResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List previewDraftRestoreResponseDescriptor =
+    $convert.base64Decode(
+        'ChtQcmV2aWV3RHJhZnRSZXN0b3JlUmVzcG9uc2USPwoHcHJldmlldxgBIAEoCzIlLnN0dGF0dH'
+        'VzLm9ueXgudjEuRHJhZnRSZXN0b3JlUHJldmlld1IHcHJldmlldw==');
+
+@$core.Deprecated('Use draftMergeConflictDescriptor instead')
+const DraftMergeConflict$json = {
+  '1': 'DraftMergeConflict',
+  '2': [
+    {'1': 'block_id', '3': 1, '4': 1, '5': 9, '10': 'blockId'},
+    {'1': 'conflict_type', '3': 2, '4': 1, '5': 9, '10': 'conflictType'},
+    {'1': 'base_body', '3': 3, '4': 1, '5': 9, '10': 'baseBody'},
+    {'1': 'source_body', '3': 4, '4': 1, '5': 9, '10': 'sourceBody'},
+    {'1': 'target_body', '3': 5, '4': 1, '5': 9, '10': 'targetBody'},
+    {'1': 'explanation', '3': 6, '4': 1, '5': 9, '10': 'explanation'},
+  ],
+};
+
+/// Descriptor for `DraftMergeConflict`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List draftMergeConflictDescriptor = $convert.base64Decode(
+    'ChJEcmFmdE1lcmdlQ29uZmxpY3QSGQoIYmxvY2tfaWQYASABKAlSB2Jsb2NrSWQSIwoNY29uZm'
+    'xpY3RfdHlwZRgCIAEoCVIMY29uZmxpY3RUeXBlEhsKCWJhc2VfYm9keRgDIAEoCVIIYmFzZUJv'
+    'ZHkSHwoLc291cmNlX2JvZHkYBCABKAlSCnNvdXJjZUJvZHkSHwoLdGFyZ2V0X2JvZHkYBSABKA'
+    'lSCnRhcmdldEJvZHkSIAoLZXhwbGFuYXRpb24YBiABKAlSC2V4cGxhbmF0aW9u');
+
+@$core.Deprecated('Use draftMergePreviewDescriptor instead')
+const DraftMergePreview$json = {
+  '1': 'DraftMergePreview',
+  '2': [
+    {
+      '1': 'source_branch',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftBranch',
+      '10': 'sourceBranch'
+    },
+    {
+      '1': 'target_branch',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftBranch',
+      '10': 'targetBranch'
+    },
+    {
+      '1': 'base_revision',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftRevision',
+      '10': 'baseRevision'
+    },
+    {
+      '1': 'source_revision',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftRevision',
+      '10': 'sourceRevision'
+    },
+    {
+      '1': 'target_revision',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftRevision',
+      '10': 'targetRevision'
+    },
+    {
+      '1': 'comparison',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftRevisionComparison',
+      '10': 'comparison'
+    },
+    {
+      '1': 'conflicts',
+      '3': 7,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftMergeConflict',
+      '10': 'conflicts'
+    },
+    {'1': 'safe_to_merge', '3': 8, '4': 1, '5': 8, '10': 'safeToMerge'},
+    {'1': 'warnings', '3': 9, '4': 3, '5': 9, '10': 'warnings'},
+  ],
+};
+
+/// Descriptor for `DraftMergePreview`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List draftMergePreviewDescriptor = $convert.base64Decode(
+    'ChFEcmFmdE1lcmdlUHJldmlldxJCCg1zb3VyY2VfYnJhbmNoGAEgASgLMh0uc3R0YXR0dXMub2'
+    '55eC52MS5EcmFmdEJyYW5jaFIMc291cmNlQnJhbmNoEkIKDXRhcmdldF9icmFuY2gYAiABKAsy'
+    'HS5zdHRhdHR1cy5vbnl4LnYxLkRyYWZ0QnJhbmNoUgx0YXJnZXRCcmFuY2gSRAoNYmFzZV9yZX'
+    'Zpc2lvbhgDIAEoCzIfLnN0dGF0dHVzLm9ueXgudjEuRHJhZnRSZXZpc2lvblIMYmFzZVJldmlz'
+    'aW9uEkgKD3NvdXJjZV9yZXZpc2lvbhgEIAEoCzIfLnN0dGF0dHVzLm9ueXgudjEuRHJhZnRSZX'
+    'Zpc2lvblIOc291cmNlUmV2aXNpb24SSAoPdGFyZ2V0X3JldmlzaW9uGAUgASgLMh8uc3R0YXR0'
+    'dXMub255eC52MS5EcmFmdFJldmlzaW9uUg50YXJnZXRSZXZpc2lvbhJJCgpjb21wYXJpc29uGA'
+    'YgASgLMikuc3R0YXR0dXMub255eC52MS5EcmFmdFJldmlzaW9uQ29tcGFyaXNvblIKY29tcGFy'
+    'aXNvbhJCCgljb25mbGljdHMYByADKAsyJC5zdHRhdHR1cy5vbnl4LnYxLkRyYWZ0TWVyZ2VDb2'
+    '5mbGljdFIJY29uZmxpY3RzEiIKDXNhZmVfdG9fbWVyZ2UYCCABKAhSC3NhZmVUb01lcmdlEhoK'
+    'CHdhcm5pbmdzGAkgAygJUgh3YXJuaW5ncw==');
+
+@$core.Deprecated('Use previewDraftMergeRequestDescriptor instead')
+const PreviewDraftMergeRequest$json = {
+  '1': 'PreviewDraftMergeRequest',
+  '2': [
+    {'1': 'draft_id', '3': 1, '4': 1, '5': 9, '10': 'draftId'},
+    {'1': 'source_branch_id', '3': 2, '4': 1, '5': 9, '10': 'sourceBranchId'},
+    {'1': 'target_branch_id', '3': 3, '4': 1, '5': 9, '10': 'targetBranchId'},
+  ],
+};
+
+/// Descriptor for `PreviewDraftMergeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List previewDraftMergeRequestDescriptor = $convert.base64Decode(
+    'ChhQcmV2aWV3RHJhZnRNZXJnZVJlcXVlc3QSGQoIZHJhZnRfaWQYASABKAlSB2RyYWZ0SWQSKA'
+    'oQc291cmNlX2JyYW5jaF9pZBgCIAEoCVIOc291cmNlQnJhbmNoSWQSKAoQdGFyZ2V0X2JyYW5j'
+    'aF9pZBgDIAEoCVIOdGFyZ2V0QnJhbmNoSWQ=');
+
+@$core.Deprecated('Use previewDraftMergeResponseDescriptor instead')
+const PreviewDraftMergeResponse$json = {
+  '1': 'PreviewDraftMergeResponse',
+  '2': [
+    {
+      '1': 'preview',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftMergePreview',
+      '10': 'preview'
+    },
+  ],
+};
+
+/// Descriptor for `PreviewDraftMergeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List previewDraftMergeResponseDescriptor =
+    $convert.base64Decode(
+        'ChlQcmV2aWV3RHJhZnRNZXJnZVJlc3BvbnNlEj0KB3ByZXZpZXcYASABKAsyIy5zdHRhdHR1cy'
+        '5vbnl4LnYxLkRyYWZ0TWVyZ2VQcmV2aWV3UgdwcmV2aWV3');
 
 @$core.Deprecated('Use generateDraftSuggestionRequestDescriptor instead')
 const GenerateDraftSuggestionRequest$json = {

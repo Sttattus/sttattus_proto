@@ -5167,6 +5167,12 @@ message DraftBlockChange {
   string after_origin = 7;
   int32 before_citation_count = 8;
   int32 after_citation_count = 9;
+  // Human-readable, member-scoped comparison metadata. These fields never
+  // leave the private drafting owner boundary.
+  string inline_diff = 10;
+  string explanation = 11;
+  repeated string changed_fields = 12;
+  int32 word_delta = 13;
 }
 
 message DraftRevisionComparison {
@@ -5178,6 +5184,7 @@ message DraftRevisionComparison {
   int32 unchanged_block_count = 6;
   int32 word_count_delta = 7;
   repeated DraftBlockChange changes = 8;
+  string summary = 9;
 }
 
 message DraftBranch {
@@ -5506,6 +5513,45 @@ message CompareDraftRevisionsRequest {
   string to_revision_id = 3;
 }
 message CompareDraftRevisionsResponse { DraftRevisionComparison comparison = 1; }
+
+message PreviewDraftRestoreRequest {
+  string draft_id = 1;
+  string revision_id = 2;
+}
+message DraftRestorePreview {
+  DraftRevision current_revision = 1;
+  DraftRevision source_revision = 2;
+  DraftRevisionComparison comparison = 3;
+  bool would_create_revision = 4;
+  repeated string warnings = 5;
+}
+message PreviewDraftRestoreResponse { DraftRestorePreview preview = 1; }
+
+message DraftMergeConflict {
+  string block_id = 1;
+  string conflict_type = 2;
+  string base_body = 3;
+  string source_body = 4;
+  string target_body = 5;
+  string explanation = 6;
+}
+message DraftMergePreview {
+  DraftBranch source_branch = 1;
+  DraftBranch target_branch = 2;
+  DraftRevision base_revision = 3;
+  DraftRevision source_revision = 4;
+  DraftRevision target_revision = 5;
+  DraftRevisionComparison comparison = 6;
+  repeated DraftMergeConflict conflicts = 7;
+  bool safe_to_merge = 8;
+  repeated string warnings = 9;
+}
+message PreviewDraftMergeRequest {
+  string draft_id = 1;
+  string source_branch_id = 2;
+  string target_branch_id = 3;
+}
+message PreviewDraftMergeResponse { DraftMergePreview preview = 1; }
 
 message GenerateDraftSuggestionRequest {
   string draft_id = 1;
@@ -5894,6 +5940,8 @@ service OnyxService {
   rpc CreateDraftBranch(CreateDraftBranchRequest) returns (CreateDraftBranchResponse);
   rpc RestoreDraftRevision(RestoreDraftRevisionRequest) returns (RestoreDraftRevisionResponse);
   rpc CompareDraftRevisions(CompareDraftRevisionsRequest) returns (CompareDraftRevisionsResponse);
+  rpc PreviewDraftRestore(PreviewDraftRestoreRequest) returns (PreviewDraftRestoreResponse);
+  rpc PreviewDraftMerge(PreviewDraftMergeRequest) returns (PreviewDraftMergeResponse);
   rpc GenerateDraftSuggestion(GenerateDraftSuggestionRequest) returns (GenerateDraftSuggestionResponse);
   rpc SetDraftSuggestionState(SetDraftSuggestionStateRequest) returns (SetDraftSuggestionStateResponse);
   rpc ResolveDraftConflict(ResolveDraftConflictRequest) returns (ResolveDraftConflictResponse);
