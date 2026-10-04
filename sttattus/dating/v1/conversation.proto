@@ -190,7 +190,8 @@ message HeldMessage {
   string category = 4;
   // The member's own words; empty once they expired.
   string body = 5;
-  // none | open | overturned | upheld
+  // none | open | overturned | upheld | overturned_unsent (a person agreed,
+  // but the conversation had ended, so it was not delivered)
   string appeal = 6;
   string decision_note = 7;
   int64 created_at = 8;

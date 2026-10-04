@@ -1972,7 +1972,8 @@ class HeldMessage extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearBody() => $_clearField(5);
 
-  /// none | open | overturned | upheld
+  /// none | open | overturned | upheld | overturned_unsent (a person agreed,
+  /// but the conversation had ended, so it was not delivered)
   @$pb.TagNumber(6)
   $core.String get appeal => $_getSZ(5);
   @$pb.TagNumber(6)

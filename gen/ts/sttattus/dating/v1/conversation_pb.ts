@@ -1208,7 +1208,8 @@ export class HeldMessage extends Message<HeldMessage> {
   body = "";
 
   /**
-   * none | open | overturned | upheld
+   * none | open | overturned | upheld | overturned_unsent (a person agreed,
+   * but the conversation had ended, so it was not delivered)
    *
    * @generated from field: string appeal = 6;
    */

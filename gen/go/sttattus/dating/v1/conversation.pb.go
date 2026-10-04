@@ -1414,7 +1414,8 @@ type HeldMessage struct {
 	Category string `protobuf:"bytes,4,opt,name=category,proto3" json:"category,omitempty"`
 	// The member's own words; empty once they expired.
 	Body string `protobuf:"bytes,5,opt,name=body,proto3" json:"body,omitempty"`
-	// none | open | overturned | upheld
+	// none | open | overturned | upheld | overturned_unsent (a person agreed,
+	// but the conversation had ended, so it was not delivered)
 	Appeal        string `protobuf:"bytes,6,opt,name=appeal,proto3" json:"appeal,omitempty"`
 	DecisionNote  string `protobuf:"bytes,7,opt,name=decision_note,json=decisionNote,proto3" json:"decision_note,omitempty"`
 	CreatedAt     int64  `protobuf:"varint,8,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
