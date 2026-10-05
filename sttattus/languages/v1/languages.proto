@@ -1145,6 +1145,7 @@ enum AnswerErrorKind {
   ANSWER_ERROR_KIND_REGISTER = 8; // formal / informal
   ANSWER_ERROR_KIND_PRONUNCIATION = 9;
   ANSWER_ERROR_KIND_CONCEPT_GAP = 10; // not known yet
+  ANSWER_ERROR_KIND_EXTRA_WORDS = 11; // the right answer, with words around it (grader g4)
 }
 
 enum AnswerDiffOp {

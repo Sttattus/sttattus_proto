@@ -145,6 +145,7 @@ const AnswerErrorKind$json = {
     {'1': 'ANSWER_ERROR_KIND_REGISTER', '2': 8},
     {'1': 'ANSWER_ERROR_KIND_PRONUNCIATION', '2': 9},
     {'1': 'ANSWER_ERROR_KIND_CONCEPT_GAP', '2': 10},
+    {'1': 'ANSWER_ERROR_KIND_EXTRA_WORDS', '2': 11},
   ],
 };
 
@@ -157,7 +158,7 @@ final $typed_data.Uint8List answerErrorKindDescriptor = $convert.base64Decode(
     'Ul9FUlJPUl9LSU5EX0xJU1RFTklOR19ESVNDUklNSU5BVElPThAGEiIKHkFOU1dFUl9FUlJPUl'
     '9LSU5EX0ZBTFNFX0ZSSUVORBAHEh4KGkFOU1dFUl9FUlJPUl9LSU5EX1JFR0lTVEVSEAgSIwof'
     'QU5TV0VSX0VSUk9SX0tJTkRfUFJPTlVOQ0lBVElPThAJEiEKHUFOU1dFUl9FUlJPUl9LSU5EX0'
-    'NPTkNFUFRfR0FQEAo=');
+    'NPTkNFUFRfR0FQEAoSIQodQU5TV0VSX0VSUk9SX0tJTkRfRVhUUkFfV09SRFMQCw==');
 
 @$core.Deprecated('Use answerDiffOpDescriptor instead')
 const AnswerDiffOp$json = {

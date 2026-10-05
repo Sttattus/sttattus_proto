@@ -254,6 +254,9 @@ class AnswerErrorKind extends $pb.ProtobufEnum {
   static const AnswerErrorKind ANSWER_ERROR_KIND_CONCEPT_GAP =
       AnswerErrorKind._(
           10, _omitEnumNames ? '' : 'ANSWER_ERROR_KIND_CONCEPT_GAP');
+  static const AnswerErrorKind ANSWER_ERROR_KIND_EXTRA_WORDS =
+      AnswerErrorKind._(
+          11, _omitEnumNames ? '' : 'ANSWER_ERROR_KIND_EXTRA_WORDS');
 
   static const $core.List<AnswerErrorKind> values = <AnswerErrorKind>[
     ANSWER_ERROR_KIND_UNSPECIFIED,
@@ -267,10 +270,11 @@ class AnswerErrorKind extends $pb.ProtobufEnum {
     ANSWER_ERROR_KIND_REGISTER,
     ANSWER_ERROR_KIND_PRONUNCIATION,
     ANSWER_ERROR_KIND_CONCEPT_GAP,
+    ANSWER_ERROR_KIND_EXTRA_WORDS,
   ];
 
   static final $core.List<AnswerErrorKind?> _byValue =
-      $pb.ProtobufEnum.$_initByValueList(values, 10);
+      $pb.ProtobufEnum.$_initByValueList(values, 11);
   static AnswerErrorKind? valueOf($core.int value) =>
       value < 0 || value >= _byValue.length ? null : _byValue[value];
 

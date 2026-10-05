@@ -369,6 +369,7 @@ const (
 	AnswerErrorKind_ANSWER_ERROR_KIND_REGISTER                 AnswerErrorKind = 8 // formal / informal
 	AnswerErrorKind_ANSWER_ERROR_KIND_PRONUNCIATION            AnswerErrorKind = 9
 	AnswerErrorKind_ANSWER_ERROR_KIND_CONCEPT_GAP              AnswerErrorKind = 10 // not known yet
+	AnswerErrorKind_ANSWER_ERROR_KIND_EXTRA_WORDS              AnswerErrorKind = 11 // the right answer, with words around it (grader g4)
 )
 
 // Enum value maps for AnswerErrorKind.
@@ -385,6 +386,7 @@ var (
 		8:  "ANSWER_ERROR_KIND_REGISTER",
 		9:  "ANSWER_ERROR_KIND_PRONUNCIATION",
 		10: "ANSWER_ERROR_KIND_CONCEPT_GAP",
+		11: "ANSWER_ERROR_KIND_EXTRA_WORDS",
 	}
 	AnswerErrorKind_value = map[string]int32{
 		"ANSWER_ERROR_KIND_UNSPECIFIED":              0,
@@ -398,6 +400,7 @@ var (
 		"ANSWER_ERROR_KIND_REGISTER":                 8,
 		"ANSWER_ERROR_KIND_PRONUNCIATION":            9,
 		"ANSWER_ERROR_KIND_CONCEPT_GAP":              10,
+		"ANSWER_ERROR_KIND_EXTRA_WORDS":              11,
 	}
 )
 
@@ -11141,7 +11144,7 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x15ANSWER_MODALITY_TYPED\x10\x02\x12\x1a\n" +
 	"\x16ANSWER_MODALITY_SPOKEN\x10\x03\x12\x1f\n" +
 	"\x1bANSWER_MODALITY_HANDWRITTEN\x10\x04\x12\x19\n" +
-	"\x15ANSWER_MODALITY_TILES\x10\x05*\x91\x03\n" +
+	"\x15ANSWER_MODALITY_TILES\x10\x05*\xb4\x03\n" +
 	"\x0fAnswerErrorKind\x12!\n" +
 	"\x1dANSWER_ERROR_KIND_UNSPECIFIED\x10\x00\x12\x1a\n" +
 	"\x16ANSWER_ERROR_KIND_SLIP\x10\x01\x12\x1e\n" +
@@ -11154,7 +11157,8 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x1aANSWER_ERROR_KIND_REGISTER\x10\b\x12#\n" +
 	"\x1fANSWER_ERROR_KIND_PRONUNCIATION\x10\t\x12!\n" +
 	"\x1dANSWER_ERROR_KIND_CONCEPT_GAP\x10\n" +
-	"*}\n" +
+	"\x12!\n" +
+	"\x1dANSWER_ERROR_KIND_EXTRA_WORDS\x10\v*}\n" +
 	"\fAnswerDiffOp\x12\x1e\n" +
 	"\x1aANSWER_DIFF_OP_UNSPECIFIED\x10\x00\x12\x17\n" +
 	"\x13ANSWER_DIFF_OP_SAME\x10\x01\x12\x1a\n" +

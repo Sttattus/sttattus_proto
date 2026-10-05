@@ -436,6 +436,13 @@ export enum AnswerErrorKind {
    * @generated from enum value: ANSWER_ERROR_KIND_CONCEPT_GAP = 10;
    */
   CONCEPT_GAP = 10,
+
+  /**
+   * the right answer, with words around it (grader g4)
+   *
+   * @generated from enum value: ANSWER_ERROR_KIND_EXTRA_WORDS = 11;
+   */
+  EXTRA_WORDS = 11,
 }
 // Retrieve enum metadata with: proto3.getEnumType(AnswerErrorKind)
 proto3.util.setEnumType(AnswerErrorKind, "sttattus.languages.v1.AnswerErrorKind", [
@@ -450,6 +457,7 @@ proto3.util.setEnumType(AnswerErrorKind, "sttattus.languages.v1.AnswerErrorKind"
   { no: 8, name: "ANSWER_ERROR_KIND_REGISTER" },
   { no: 9, name: "ANSWER_ERROR_KIND_PRONUNCIATION" },
   { no: 10, name: "ANSWER_ERROR_KIND_CONCEPT_GAP" },
+  { no: 11, name: "ANSWER_ERROR_KIND_EXTRA_WORDS" },
 ]);
 
 /**
