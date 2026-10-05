@@ -944,6 +944,7 @@ class DatePlan extends $pb.GeneratedMessage {
     $core.bool? otherLeft,
     $core.bool? iHavePreferences,
     $core.bool? theyHavePreferences,
+    PlanProposal? agreed,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -963,6 +964,7 @@ class DatePlan extends $pb.GeneratedMessage {
     if (iHavePreferences != null) result.iHavePreferences = iHavePreferences;
     if (theyHavePreferences != null)
       result.theyHavePreferences = theyHavePreferences;
+    if (agreed != null) result.agreed = agreed;
     return result;
   }
 
@@ -1000,6 +1002,8 @@ class DatePlan extends $pb.GeneratedMessage {
     ..aOB(14, _omitFieldNames ? '' : 'otherLeft')
     ..aOB(15, _omitFieldNames ? '' : 'iHavePreferences')
     ..aOB(16, _omitFieldNames ? '' : 'theyHavePreferences')
+    ..aOM<PlanProposal>(17, _omitFieldNames ? '' : 'agreed',
+        subBuilder: PlanProposal.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1163,6 +1167,19 @@ class DatePlan extends $pb.GeneratedMessage {
   $core.bool hasTheyHavePreferences() => $_has(15);
   @$pb.TagNumber(16)
   void clearTheyHavePreferences() => $_clearField(16);
+
+  /// What both last agreed to, while a change to it is still waiting for an
+  /// answer (the agreement stands until the change is accepted).
+  @$pb.TagNumber(17)
+  PlanProposal get agreed => $_getN(16);
+  @$pb.TagNumber(17)
+  set agreed(PlanProposal value) => $_setField(17, value);
+  @$pb.TagNumber(17)
+  $core.bool hasAgreed() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearAgreed() => $_clearField(17);
+  @$pb.TagNumber(17)
+  PlanProposal ensureAgreed() => $_ensure(16);
 }
 
 /// A place that fits both members, and why.

@@ -136,6 +136,9 @@ message DatePlan {
   // (never what they are).
   bool i_have_preferences = 15;
   bool they_have_preferences = 16;
+  // What both last agreed to, while a change to it is still waiting for an
+  // answer (the agreement stands until the change is accepted).
+  PlanProposal agreed = 17;
 }
 
 // A place that fits both members, and why.

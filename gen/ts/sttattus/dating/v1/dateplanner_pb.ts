@@ -673,6 +673,14 @@ export class DatePlan extends Message<DatePlan> {
    */
   theyHavePreferences = false;
 
+  /**
+   * What both last agreed to, while a change to it is still waiting for an
+   * answer (the agreement stands until the change is accepted).
+   *
+   * @generated from field: sttattus.dating.v1.PlanProposal agreed = 17;
+   */
+  agreed?: PlanProposal;
+
   constructor(data?: PartialMessage<DatePlan>) {
     super();
     proto3.util.initPartial(data, this);
@@ -697,6 +705,7 @@ export class DatePlan extends Message<DatePlan> {
     { no: 14, name: "other_left", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 15, name: "i_have_preferences", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 16, name: "they_have_preferences", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 17, name: "agreed", kind: "message", T: PlanProposal },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DatePlan {

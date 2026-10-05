@@ -727,8 +727,11 @@ type DatePlan struct {
 	// (never what they are).
 	IHavePreferences    bool `protobuf:"varint,15,opt,name=i_have_preferences,json=iHavePreferences,proto3" json:"i_have_preferences,omitempty"`
 	TheyHavePreferences bool `protobuf:"varint,16,opt,name=they_have_preferences,json=theyHavePreferences,proto3" json:"they_have_preferences,omitempty"`
-	unknownFields       protoimpl.UnknownFields
-	sizeCache           protoimpl.SizeCache
+	// What both last agreed to, while a change to it is still waiting for an
+	// answer (the agreement stands until the change is accepted).
+	Agreed        *PlanProposal `protobuf:"bytes,17,opt,name=agreed,proto3" json:"agreed,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *DatePlan) Reset() {
@@ -871,6 +874,13 @@ func (x *DatePlan) GetTheyHavePreferences() bool {
 		return x.TheyHavePreferences
 	}
 	return false
+}
+
+func (x *DatePlan) GetAgreed() *PlanProposal {
+	if x != nil {
+		return x.Agreed
+	}
+	return nil
 }
 
 // A place that fits both members, and why.
@@ -2040,7 +2050,7 @@ const file_sttattus_dating_v1_dateplanner_proto_rawDesc = "" +
 	"\x02at\x18\x02 \x01(\x03R\x02at\x12\x13\n" +
 	"\x05by_me\x18\x03 \x01(\bR\x04byMe\x12\x17\n" +
 	"\aby_name\x18\x04 \x01(\tR\x06byName\x12\x16\n" +
-	"\x06detail\x18\x05 \x01(\tR\x06detail\"\x85\x05\n" +
+	"\x06detail\x18\x05 \x01(\tR\x06detail\"\xbf\x05\n" +
 	"\bDatePlan\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
 	"\bmatch_id\x18\x02 \x01(\tR\amatchId\x12\x1d\n" +
@@ -2063,7 +2073,8 @@ const file_sttattus_dating_v1_dateplanner_proto_rawDesc = "" +
 	"\n" +
 	"other_left\x18\x0e \x01(\bR\totherLeft\x12,\n" +
 	"\x12i_have_preferences\x18\x0f \x01(\bR\x10iHavePreferences\x122\n" +
-	"\x15they_have_preferences\x18\x10 \x01(\bR\x13theyHavePreferences\"b\n" +
+	"\x15they_have_preferences\x18\x10 \x01(\bR\x13theyHavePreferences\x128\n" +
+	"\x06agreed\x18\x11 \x01(\v2 .sttattus.dating.v1.PlanProposalR\x06agreed\"b\n" +
 	"\x0ePlanSuggestion\x126\n" +
 	"\x05place\x18\x01 \x01(\v2 .sttattus.dating.v1.PlannerPlaceR\x05place\x12\x18\n" +
 	"\areasons\x18\x02 \x03(\tR\areasons\"0\n" +
@@ -2187,48 +2198,49 @@ var file_sttattus_dating_v1_dateplanner_proto_depIdxs = []int32{
 	5,  // 4: sttattus.dating.v1.DatePlan.booking:type_name -> sttattus.dating.v1.PlanBooking
 	1,  // 5: sttattus.dating.v1.DatePlan.both_free:type_name -> sttattus.dating.v1.PlanWindow
 	6,  // 6: sttattus.dating.v1.DatePlan.events:type_name -> sttattus.dating.v1.PlanEvent
-	0,  // 7: sttattus.dating.v1.PlanSuggestion.place:type_name -> sttattus.dating.v1.PlannerPlace
-	7,  // 8: sttattus.dating.v1.OpenDatePlanResponse.plan:type_name -> sttattus.dating.v1.DatePlan
-	7,  // 9: sttattus.dating.v1.GetDatePlanResponse.plan:type_name -> sttattus.dating.v1.DatePlan
-	7,  // 10: sttattus.dating.v1.ListMyDatePlansResponse.plans:type_name -> sttattus.dating.v1.DatePlan
-	2,  // 11: sttattus.dating.v1.GetPlanPreferencesResponse.preferences:type_name -> sttattus.dating.v1.PlanPreferences
-	2,  // 12: sttattus.dating.v1.SavePlanPreferencesRequest.preferences:type_name -> sttattus.dating.v1.PlanPreferences
-	2,  // 13: sttattus.dating.v1.SavePlanPreferencesResponse.preferences:type_name -> sttattus.dating.v1.PlanPreferences
-	7,  // 14: sttattus.dating.v1.SavePlanPreferencesResponse.plan:type_name -> sttattus.dating.v1.DatePlan
-	8,  // 15: sttattus.dating.v1.ListPlanSuggestionsResponse.suggestions:type_name -> sttattus.dating.v1.PlanSuggestion
-	3,  // 16: sttattus.dating.v1.ProposePlanRequest.option:type_name -> sttattus.dating.v1.PlanOption
-	7,  // 17: sttattus.dating.v1.ProposePlanResponse.plan:type_name -> sttattus.dating.v1.DatePlan
-	7,  // 18: sttattus.dating.v1.RespondToPlanResponse.plan:type_name -> sttattus.dating.v1.DatePlan
-	7,  // 19: sttattus.dating.v1.CancelDatePlanResponse.plan:type_name -> sttattus.dating.v1.DatePlan
-	7,  // 20: sttattus.dating.v1.MarkPlanSelfBookedResponse.plan:type_name -> sttattus.dating.v1.DatePlan
-	0,  // 21: sttattus.dating.v1.ListPlannerPlacesResponse.places:type_name -> sttattus.dating.v1.PlannerPlace
-	9,  // 22: sttattus.dating.v1.AtlasDatePlannerService.OpenDatePlan:input_type -> sttattus.dating.v1.OpenDatePlanRequest
-	11, // 23: sttattus.dating.v1.AtlasDatePlannerService.GetDatePlan:input_type -> sttattus.dating.v1.GetDatePlanRequest
-	13, // 24: sttattus.dating.v1.AtlasDatePlannerService.ListMyDatePlans:input_type -> sttattus.dating.v1.ListMyDatePlansRequest
-	15, // 25: sttattus.dating.v1.AtlasDatePlannerService.GetPlanPreferences:input_type -> sttattus.dating.v1.GetPlanPreferencesRequest
-	17, // 26: sttattus.dating.v1.AtlasDatePlannerService.SavePlanPreferences:input_type -> sttattus.dating.v1.SavePlanPreferencesRequest
-	19, // 27: sttattus.dating.v1.AtlasDatePlannerService.ListPlanSuggestions:input_type -> sttattus.dating.v1.ListPlanSuggestionsRequest
-	21, // 28: sttattus.dating.v1.AtlasDatePlannerService.ProposePlan:input_type -> sttattus.dating.v1.ProposePlanRequest
-	23, // 29: sttattus.dating.v1.AtlasDatePlannerService.RespondToPlan:input_type -> sttattus.dating.v1.RespondToPlanRequest
-	25, // 30: sttattus.dating.v1.AtlasDatePlannerService.CancelDatePlan:input_type -> sttattus.dating.v1.CancelDatePlanRequest
-	27, // 31: sttattus.dating.v1.AtlasDatePlannerService.MarkPlanSelfBooked:input_type -> sttattus.dating.v1.MarkPlanSelfBookedRequest
-	29, // 32: sttattus.dating.v1.AtlasDatePlannerService.ListPlannerPlaces:input_type -> sttattus.dating.v1.ListPlannerPlacesRequest
-	10, // 33: sttattus.dating.v1.AtlasDatePlannerService.OpenDatePlan:output_type -> sttattus.dating.v1.OpenDatePlanResponse
-	12, // 34: sttattus.dating.v1.AtlasDatePlannerService.GetDatePlan:output_type -> sttattus.dating.v1.GetDatePlanResponse
-	14, // 35: sttattus.dating.v1.AtlasDatePlannerService.ListMyDatePlans:output_type -> sttattus.dating.v1.ListMyDatePlansResponse
-	16, // 36: sttattus.dating.v1.AtlasDatePlannerService.GetPlanPreferences:output_type -> sttattus.dating.v1.GetPlanPreferencesResponse
-	18, // 37: sttattus.dating.v1.AtlasDatePlannerService.SavePlanPreferences:output_type -> sttattus.dating.v1.SavePlanPreferencesResponse
-	20, // 38: sttattus.dating.v1.AtlasDatePlannerService.ListPlanSuggestions:output_type -> sttattus.dating.v1.ListPlanSuggestionsResponse
-	22, // 39: sttattus.dating.v1.AtlasDatePlannerService.ProposePlan:output_type -> sttattus.dating.v1.ProposePlanResponse
-	24, // 40: sttattus.dating.v1.AtlasDatePlannerService.RespondToPlan:output_type -> sttattus.dating.v1.RespondToPlanResponse
-	26, // 41: sttattus.dating.v1.AtlasDatePlannerService.CancelDatePlan:output_type -> sttattus.dating.v1.CancelDatePlanResponse
-	28, // 42: sttattus.dating.v1.AtlasDatePlannerService.MarkPlanSelfBooked:output_type -> sttattus.dating.v1.MarkPlanSelfBookedResponse
-	30, // 43: sttattus.dating.v1.AtlasDatePlannerService.ListPlannerPlaces:output_type -> sttattus.dating.v1.ListPlannerPlacesResponse
-	33, // [33:44] is the sub-list for method output_type
-	22, // [22:33] is the sub-list for method input_type
-	22, // [22:22] is the sub-list for extension type_name
-	22, // [22:22] is the sub-list for extension extendee
-	0,  // [0:22] is the sub-list for field type_name
+	4,  // 7: sttattus.dating.v1.DatePlan.agreed:type_name -> sttattus.dating.v1.PlanProposal
+	0,  // 8: sttattus.dating.v1.PlanSuggestion.place:type_name -> sttattus.dating.v1.PlannerPlace
+	7,  // 9: sttattus.dating.v1.OpenDatePlanResponse.plan:type_name -> sttattus.dating.v1.DatePlan
+	7,  // 10: sttattus.dating.v1.GetDatePlanResponse.plan:type_name -> sttattus.dating.v1.DatePlan
+	7,  // 11: sttattus.dating.v1.ListMyDatePlansResponse.plans:type_name -> sttattus.dating.v1.DatePlan
+	2,  // 12: sttattus.dating.v1.GetPlanPreferencesResponse.preferences:type_name -> sttattus.dating.v1.PlanPreferences
+	2,  // 13: sttattus.dating.v1.SavePlanPreferencesRequest.preferences:type_name -> sttattus.dating.v1.PlanPreferences
+	2,  // 14: sttattus.dating.v1.SavePlanPreferencesResponse.preferences:type_name -> sttattus.dating.v1.PlanPreferences
+	7,  // 15: sttattus.dating.v1.SavePlanPreferencesResponse.plan:type_name -> sttattus.dating.v1.DatePlan
+	8,  // 16: sttattus.dating.v1.ListPlanSuggestionsResponse.suggestions:type_name -> sttattus.dating.v1.PlanSuggestion
+	3,  // 17: sttattus.dating.v1.ProposePlanRequest.option:type_name -> sttattus.dating.v1.PlanOption
+	7,  // 18: sttattus.dating.v1.ProposePlanResponse.plan:type_name -> sttattus.dating.v1.DatePlan
+	7,  // 19: sttattus.dating.v1.RespondToPlanResponse.plan:type_name -> sttattus.dating.v1.DatePlan
+	7,  // 20: sttattus.dating.v1.CancelDatePlanResponse.plan:type_name -> sttattus.dating.v1.DatePlan
+	7,  // 21: sttattus.dating.v1.MarkPlanSelfBookedResponse.plan:type_name -> sttattus.dating.v1.DatePlan
+	0,  // 22: sttattus.dating.v1.ListPlannerPlacesResponse.places:type_name -> sttattus.dating.v1.PlannerPlace
+	9,  // 23: sttattus.dating.v1.AtlasDatePlannerService.OpenDatePlan:input_type -> sttattus.dating.v1.OpenDatePlanRequest
+	11, // 24: sttattus.dating.v1.AtlasDatePlannerService.GetDatePlan:input_type -> sttattus.dating.v1.GetDatePlanRequest
+	13, // 25: sttattus.dating.v1.AtlasDatePlannerService.ListMyDatePlans:input_type -> sttattus.dating.v1.ListMyDatePlansRequest
+	15, // 26: sttattus.dating.v1.AtlasDatePlannerService.GetPlanPreferences:input_type -> sttattus.dating.v1.GetPlanPreferencesRequest
+	17, // 27: sttattus.dating.v1.AtlasDatePlannerService.SavePlanPreferences:input_type -> sttattus.dating.v1.SavePlanPreferencesRequest
+	19, // 28: sttattus.dating.v1.AtlasDatePlannerService.ListPlanSuggestions:input_type -> sttattus.dating.v1.ListPlanSuggestionsRequest
+	21, // 29: sttattus.dating.v1.AtlasDatePlannerService.ProposePlan:input_type -> sttattus.dating.v1.ProposePlanRequest
+	23, // 30: sttattus.dating.v1.AtlasDatePlannerService.RespondToPlan:input_type -> sttattus.dating.v1.RespondToPlanRequest
+	25, // 31: sttattus.dating.v1.AtlasDatePlannerService.CancelDatePlan:input_type -> sttattus.dating.v1.CancelDatePlanRequest
+	27, // 32: sttattus.dating.v1.AtlasDatePlannerService.MarkPlanSelfBooked:input_type -> sttattus.dating.v1.MarkPlanSelfBookedRequest
+	29, // 33: sttattus.dating.v1.AtlasDatePlannerService.ListPlannerPlaces:input_type -> sttattus.dating.v1.ListPlannerPlacesRequest
+	10, // 34: sttattus.dating.v1.AtlasDatePlannerService.OpenDatePlan:output_type -> sttattus.dating.v1.OpenDatePlanResponse
+	12, // 35: sttattus.dating.v1.AtlasDatePlannerService.GetDatePlan:output_type -> sttattus.dating.v1.GetDatePlanResponse
+	14, // 36: sttattus.dating.v1.AtlasDatePlannerService.ListMyDatePlans:output_type -> sttattus.dating.v1.ListMyDatePlansResponse
+	16, // 37: sttattus.dating.v1.AtlasDatePlannerService.GetPlanPreferences:output_type -> sttattus.dating.v1.GetPlanPreferencesResponse
+	18, // 38: sttattus.dating.v1.AtlasDatePlannerService.SavePlanPreferences:output_type -> sttattus.dating.v1.SavePlanPreferencesResponse
+	20, // 39: sttattus.dating.v1.AtlasDatePlannerService.ListPlanSuggestions:output_type -> sttattus.dating.v1.ListPlanSuggestionsResponse
+	22, // 40: sttattus.dating.v1.AtlasDatePlannerService.ProposePlan:output_type -> sttattus.dating.v1.ProposePlanResponse
+	24, // 41: sttattus.dating.v1.AtlasDatePlannerService.RespondToPlan:output_type -> sttattus.dating.v1.RespondToPlanResponse
+	26, // 42: sttattus.dating.v1.AtlasDatePlannerService.CancelDatePlan:output_type -> sttattus.dating.v1.CancelDatePlanResponse
+	28, // 43: sttattus.dating.v1.AtlasDatePlannerService.MarkPlanSelfBooked:output_type -> sttattus.dating.v1.MarkPlanSelfBookedResponse
+	30, // 44: sttattus.dating.v1.AtlasDatePlannerService.ListPlannerPlaces:output_type -> sttattus.dating.v1.ListPlannerPlacesResponse
+	34, // [34:45] is the sub-list for method output_type
+	23, // [23:34] is the sub-list for method input_type
+	23, // [23:23] is the sub-list for extension type_name
+	23, // [23:23] is the sub-list for extension extendee
+	0,  // [0:23] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_dating_v1_dateplanner_proto_init() }

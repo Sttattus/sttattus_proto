@@ -253,6 +253,14 @@ const DatePlan$json = {
       '5': 8,
       '10': 'theyHavePreferences'
     },
+    {
+      '1': 'agreed',
+      '3': 17,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.PlanProposal',
+      '10': 'agreed'
+    },
   ],
 };
 
@@ -269,7 +277,8 @@ final $typed_data.Uint8List datePlanDescriptor = $convert.base64Decode(
     'KAsyHS5zdHRhdHR1cy5kYXRpbmcudjEuUGxhbkV2ZW50UgZldmVudHMSHQoKdXBkYXRlZF9hdB'
     'gNIAEoA1IJdXBkYXRlZEF0Eh0KCm90aGVyX2xlZnQYDiABKAhSCW90aGVyTGVmdBIsChJpX2hh'
     'dmVfcHJlZmVyZW5jZXMYDyABKAhSEGlIYXZlUHJlZmVyZW5jZXMSMgoVdGhleV9oYXZlX3ByZW'
-    'ZlcmVuY2VzGBAgASgIUhN0aGV5SGF2ZVByZWZlcmVuY2Vz');
+    'ZlcmVuY2VzGBAgASgIUhN0aGV5SGF2ZVByZWZlcmVuY2VzEjgKBmFncmVlZBgRIAEoCzIgLnN0'
+    'dGF0dHVzLmRhdGluZy52MS5QbGFuUHJvcG9zYWxSBmFncmVlZA==');
 
 @$core.Deprecated('Use planSuggestionDescriptor instead')
 const PlanSuggestion$json = {
