@@ -69883,6 +69883,9 @@ class DraftDocument extends $pb.GeneratedMessage {
     $core.Iterable<DraftNotification>? notifications,
     $core.Iterable<DraftPresence>? presence,
     $core.int? unreadNotificationCount,
+    $core.Iterable<DraftOperationStatus>? operationStatuses,
+    $core.int? openOperationCount,
+    $core.int? overdueOperationCount,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -69928,6 +69931,12 @@ class DraftDocument extends $pb.GeneratedMessage {
     if (presence != null) result.presence.addAll(presence);
     if (unreadNotificationCount != null)
       result.unreadNotificationCount = unreadNotificationCount;
+    if (operationStatuses != null)
+      result.operationStatuses.addAll(operationStatuses);
+    if (openOperationCount != null)
+      result.openOperationCount = openOperationCount;
+    if (overdueOperationCount != null)
+      result.overdueOperationCount = overdueOperationCount;
     return result;
   }
 
@@ -69998,6 +70007,10 @@ class DraftDocument extends $pb.GeneratedMessage {
     ..pPM<DraftPresence>(38, _omitFieldNames ? '' : 'presence',
         subBuilder: DraftPresence.create)
     ..aI(39, _omitFieldNames ? '' : 'unreadNotificationCount')
+    ..pPM<DraftOperationStatus>(40, _omitFieldNames ? '' : 'operationStatuses',
+        subBuilder: DraftOperationStatus.create)
+    ..aI(41, _omitFieldNames ? '' : 'openOperationCount')
+    ..aI(42, _omitFieldNames ? '' : 'overdueOperationCount')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -70301,6 +70314,27 @@ class DraftDocument extends $pb.GeneratedMessage {
   $core.bool hasUnreadNotificationCount() => $_has(38);
   @$pb.TagNumber(39)
   void clearUnreadNotificationCount() => $_clearField(39);
+
+  @$pb.TagNumber(40)
+  $pb.PbList<DraftOperationStatus> get operationStatuses => $_getList(39);
+
+  @$pb.TagNumber(41)
+  $core.int get openOperationCount => $_getIZ(40);
+  @$pb.TagNumber(41)
+  set openOperationCount($core.int value) => $_setSignedInt32(40, value);
+  @$pb.TagNumber(41)
+  $core.bool hasOpenOperationCount() => $_has(40);
+  @$pb.TagNumber(41)
+  void clearOpenOperationCount() => $_clearField(41);
+
+  @$pb.TagNumber(42)
+  $core.int get overdueOperationCount => $_getIZ(41);
+  @$pb.TagNumber(42)
+  set overdueOperationCount($core.int value) => $_setSignedInt32(41, value);
+  @$pb.TagNumber(42)
+  $core.bool hasOverdueOperationCount() => $_has(41);
+  @$pb.TagNumber(42)
+  void clearOverdueOperationCount() => $_clearField(42);
 }
 
 class DraftingDashboard extends $pb.GeneratedMessage {
@@ -70319,6 +70353,9 @@ class DraftingDashboard extends $pb.GeneratedMessage {
     $core.int? staleCitationCount,
     $core.int? openConflictCount,
     $core.int? pendingSuggestionCount,
+    $core.bool? automationEnabled,
+    $core.int? openOperationCount,
+    $core.int? overdueOperationCount,
   }) {
     final result = create();
     if (runtimeStatus != null) result.runtimeStatus = runtimeStatus;
@@ -70338,6 +70375,11 @@ class DraftingDashboard extends $pb.GeneratedMessage {
     if (openConflictCount != null) result.openConflictCount = openConflictCount;
     if (pendingSuggestionCount != null)
       result.pendingSuggestionCount = pendingSuggestionCount;
+    if (automationEnabled != null) result.automationEnabled = automationEnabled;
+    if (openOperationCount != null)
+      result.openOperationCount = openOperationCount;
+    if (overdueOperationCount != null)
+      result.overdueOperationCount = overdueOperationCount;
     return result;
   }
 
@@ -70372,6 +70414,9 @@ class DraftingDashboard extends $pb.GeneratedMessage {
     ..aI(12, _omitFieldNames ? '' : 'staleCitationCount')
     ..aI(13, _omitFieldNames ? '' : 'openConflictCount')
     ..aI(14, _omitFieldNames ? '' : 'pendingSuggestionCount')
+    ..aOB(15, _omitFieldNames ? '' : 'automationEnabled')
+    ..aI(16, _omitFieldNames ? '' : 'openOperationCount')
+    ..aI(17, _omitFieldNames ? '' : 'overdueOperationCount')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -70500,6 +70545,33 @@ class DraftingDashboard extends $pb.GeneratedMessage {
   $core.bool hasPendingSuggestionCount() => $_has(13);
   @$pb.TagNumber(14)
   void clearPendingSuggestionCount() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.bool get automationEnabled => $_getBF(14);
+  @$pb.TagNumber(15)
+  set automationEnabled($core.bool value) => $_setBool(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasAutomationEnabled() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearAutomationEnabled() => $_clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.int get openOperationCount => $_getIZ(15);
+  @$pb.TagNumber(16)
+  set openOperationCount($core.int value) => $_setSignedInt32(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasOpenOperationCount() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearOpenOperationCount() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.int get overdueOperationCount => $_getIZ(16);
+  @$pb.TagNumber(17)
+  set overdueOperationCount($core.int value) => $_setSignedInt32(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasOverdueOperationCount() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearOverdueOperationCount() => $_clearField(17);
 }
 
 class GetDraftingDashboardRequest extends $pb.GeneratedMessage {
@@ -78217,6 +78289,379 @@ class SetDraftPresenceResponse extends $pb.GeneratedMessage {
   void clearPresence() => $_clearField(1);
   @$pb.TagNumber(1)
   DraftPresence ensurePresence() => $_ensure(0);
+}
+
+/// Choice 23 — member-visible, metadata-only operations automation. These
+/// records explain operational actions without exposing draft prose, comment
+/// bodies, assignment notes, citation quotations, or recovery reasons.
+class DraftOperationStatus extends $pb.GeneratedMessage {
+  factory DraftOperationStatus({
+    $core.String? id,
+    $core.String? draftId,
+    $core.String? ruleCode,
+    $core.String? sourceType,
+    $core.String? status,
+    $core.String? severity,
+    $core.String? actionCode,
+    $core.String? explanation,
+    $core.bool? escalated,
+    $1.Timestamp? slaDueAt,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
+    $core.Iterable<$core.MapEntry<$core.String, $core.String>>?
+        explanationLocalizations,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (draftId != null) result.draftId = draftId;
+    if (ruleCode != null) result.ruleCode = ruleCode;
+    if (sourceType != null) result.sourceType = sourceType;
+    if (status != null) result.status = status;
+    if (severity != null) result.severity = severity;
+    if (actionCode != null) result.actionCode = actionCode;
+    if (explanation != null) result.explanation = explanation;
+    if (escalated != null) result.escalated = escalated;
+    if (slaDueAt != null) result.slaDueAt = slaDueAt;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    if (explanationLocalizations != null)
+      result.explanationLocalizations.addEntries(explanationLocalizations);
+    return result;
+  }
+
+  DraftOperationStatus._();
+
+  factory DraftOperationStatus.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DraftOperationStatus.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DraftOperationStatus',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'draftId')
+    ..aOS(3, _omitFieldNames ? '' : 'ruleCode')
+    ..aOS(4, _omitFieldNames ? '' : 'sourceType')
+    ..aOS(5, _omitFieldNames ? '' : 'status')
+    ..aOS(6, _omitFieldNames ? '' : 'severity')
+    ..aOS(7, _omitFieldNames ? '' : 'actionCode')
+    ..aOS(8, _omitFieldNames ? '' : 'explanation')
+    ..aOB(9, _omitFieldNames ? '' : 'escalated')
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'slaDueAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..m<$core.String, $core.String>(
+        13, _omitFieldNames ? '' : 'explanationLocalizations',
+        entryClassName: 'DraftOperationStatus.ExplanationLocalizationsEntry',
+        keyFieldType: $pb.PbFieldType.OS,
+        valueFieldType: $pb.PbFieldType.OS,
+        packageName: const $pb.PackageName('sttattus.onyx.v1'))
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftOperationStatus clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftOperationStatus copyWith(void Function(DraftOperationStatus) updates) =>
+      super.copyWith((message) => updates(message as DraftOperationStatus))
+          as DraftOperationStatus;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DraftOperationStatus create() => DraftOperationStatus._();
+  @$core.override
+  DraftOperationStatus createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DraftOperationStatus getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DraftOperationStatus>(create);
+  static DraftOperationStatus? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get draftId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set draftId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDraftId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDraftId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get ruleCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set ruleCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRuleCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRuleCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sourceType => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set sourceType($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSourceType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSourceType() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get status => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set status($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStatus() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStatus() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get severity => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set severity($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSeverity() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSeverity() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get actionCode => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set actionCode($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasActionCode() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearActionCode() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get explanation => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set explanation($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasExplanation() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearExplanation() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get escalated => $_getBF(8);
+  @$pb.TagNumber(9)
+  set escalated($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasEscalated() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearEscalated() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $1.Timestamp get slaDueAt => $_getN(9);
+  @$pb.TagNumber(10)
+  set slaDueAt($1.Timestamp value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasSlaDueAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearSlaDueAt() => $_clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureSlaDueAt() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get createdAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set createdAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCreatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCreatedAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureCreatedAt() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get updatedAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set updatedAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasUpdatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearUpdatedAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $pb.PbMap<$core.String, $core.String> get explanationLocalizations =>
+      $_getMap(12);
+}
+
+class GetDraftOperationStatusRequest extends $pb.GeneratedMessage {
+  factory GetDraftOperationStatusRequest({
+    $core.String? draftId,
+  }) {
+    final result = create();
+    if (draftId != null) result.draftId = draftId;
+    return result;
+  }
+
+  GetDraftOperationStatusRequest._();
+
+  factory GetDraftOperationStatusRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDraftOperationStatusRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDraftOperationStatusRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'draftId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDraftOperationStatusRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDraftOperationStatusRequest copyWith(
+          void Function(GetDraftOperationStatusRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetDraftOperationStatusRequest))
+          as GetDraftOperationStatusRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDraftOperationStatusRequest create() =>
+      GetDraftOperationStatusRequest._();
+  @$core.override
+  GetDraftOperationStatusRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDraftOperationStatusRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetDraftOperationStatusRequest>(create);
+  static GetDraftOperationStatusRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get draftId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set draftId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDraftId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDraftId() => $_clearField(1);
+}
+
+class GetDraftOperationStatusResponse extends $pb.GeneratedMessage {
+  factory GetDraftOperationStatusResponse({
+    $core.Iterable<DraftOperationStatus>? operations,
+    $core.int? openCount,
+    $core.int? overdueCount,
+    $core.bool? automationEnabled,
+    $core.String? publicNotice,
+  }) {
+    final result = create();
+    if (operations != null) result.operations.addAll(operations);
+    if (openCount != null) result.openCount = openCount;
+    if (overdueCount != null) result.overdueCount = overdueCount;
+    if (automationEnabled != null) result.automationEnabled = automationEnabled;
+    if (publicNotice != null) result.publicNotice = publicNotice;
+    return result;
+  }
+
+  GetDraftOperationStatusResponse._();
+
+  factory GetDraftOperationStatusResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDraftOperationStatusResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDraftOperationStatusResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<DraftOperationStatus>(1, _omitFieldNames ? '' : 'operations',
+        subBuilder: DraftOperationStatus.create)
+    ..aI(2, _omitFieldNames ? '' : 'openCount')
+    ..aI(3, _omitFieldNames ? '' : 'overdueCount')
+    ..aOB(4, _omitFieldNames ? '' : 'automationEnabled')
+    ..aOS(5, _omitFieldNames ? '' : 'publicNotice')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDraftOperationStatusResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDraftOperationStatusResponse copyWith(
+          void Function(GetDraftOperationStatusResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetDraftOperationStatusResponse))
+          as GetDraftOperationStatusResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDraftOperationStatusResponse create() =>
+      GetDraftOperationStatusResponse._();
+  @$core.override
+  GetDraftOperationStatusResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDraftOperationStatusResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetDraftOperationStatusResponse>(
+          create);
+  static GetDraftOperationStatusResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<DraftOperationStatus> get operations => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.int get openCount => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set openCount($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOpenCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOpenCount() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get overdueCount => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set overdueCount($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOverdueCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOverdueCount() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get automationEnabled => $_getBF(3);
+  @$pb.TagNumber(4)
+  set automationEnabled($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAutomationEnabled() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAutomationEnabled() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get publicNotice => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set publicNotice($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPublicNotice() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPublicNotice() => $_clearField(5);
 }
 
 const $core.bool _omitFieldNames =

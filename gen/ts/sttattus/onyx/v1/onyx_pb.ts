@@ -41690,6 +41690,21 @@ export class DraftDocument extends Message<DraftDocument> {
    */
   unreadNotificationCount = 0;
 
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.DraftOperationStatus operation_statuses = 40;
+   */
+  operationStatuses: DraftOperationStatus[] = [];
+
+  /**
+   * @generated from field: int32 open_operation_count = 41;
+   */
+  openOperationCount = 0;
+
+  /**
+   * @generated from field: int32 overdue_operation_count = 42;
+   */
+  overdueOperationCount = 0;
+
   constructor(data?: PartialMessage<DraftDocument>) {
     super();
     proto3.util.initPartial(data, this);
@@ -41737,6 +41752,9 @@ export class DraftDocument extends Message<DraftDocument> {
     { no: 37, name: "notifications", kind: "message", T: DraftNotification, repeated: true },
     { no: 38, name: "presence", kind: "message", T: DraftPresence, repeated: true },
     { no: 39, name: "unread_notification_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 40, name: "operation_statuses", kind: "message", T: DraftOperationStatus, repeated: true },
+    { no: 41, name: "open_operation_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 42, name: "overdue_operation_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftDocument {
@@ -41830,6 +41848,21 @@ export class DraftingDashboard extends Message<DraftingDashboard> {
    */
   pendingSuggestionCount = 0;
 
+  /**
+   * @generated from field: bool automation_enabled = 15;
+   */
+  automationEnabled = false;
+
+  /**
+   * @generated from field: int32 open_operation_count = 16;
+   */
+  openOperationCount = 0;
+
+  /**
+   * @generated from field: int32 overdue_operation_count = 17;
+   */
+  overdueOperationCount = 0;
+
   constructor(data?: PartialMessage<DraftingDashboard>) {
     super();
     proto3.util.initPartial(data, this);
@@ -41852,6 +41885,9 @@ export class DraftingDashboard extends Message<DraftingDashboard> {
     { no: 12, name: "stale_citation_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 13, name: "open_conflict_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 14, name: "pending_suggestion_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 15, name: "automation_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 16, name: "open_operation_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 17, name: "overdue_operation_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftingDashboard {
@@ -46379,6 +46415,221 @@ export class SetDraftPresenceResponse extends Message<SetDraftPresenceResponse> 
 
   static equals(a: SetDraftPresenceResponse | PlainMessage<SetDraftPresenceResponse> | undefined, b: SetDraftPresenceResponse | PlainMessage<SetDraftPresenceResponse> | undefined): boolean {
     return proto3.util.equals(SetDraftPresenceResponse, a, b);
+  }
+}
+
+/**
+ * Choice 23 — member-visible, metadata-only operations automation. These
+ * records explain operational actions without exposing draft prose, comment
+ * bodies, assignment notes, citation quotations, or recovery reasons.
+ *
+ * @generated from message sttattus.onyx.v1.DraftOperationStatus
+ */
+export class DraftOperationStatus extends Message<DraftOperationStatus> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string draft_id = 2;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: string rule_code = 3;
+   */
+  ruleCode = "";
+
+  /**
+   * @generated from field: string source_type = 4;
+   */
+  sourceType = "";
+
+  /**
+   * queued | in_progress | blocked | verified | resolved | dismissed | rolled_back
+   *
+   * @generated from field: string status = 5;
+   */
+  status = "";
+
+  /**
+   * low | medium | high | critical
+   *
+   * @generated from field: string severity = 6;
+   */
+  severity = "";
+
+  /**
+   * @generated from field: string action_code = 7;
+   */
+  actionCode = "";
+
+  /**
+   * @generated from field: string explanation = 8;
+   */
+  explanation = "";
+
+  /**
+   * @generated from field: bool escalated = 9;
+   */
+  escalated = false;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp sla_due_at = 10;
+   */
+  slaDueAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 11;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 12;
+   */
+  updatedAt?: Timestamp;
+
+  /**
+   * @generated from field: map<string, string> explanation_localizations = 13;
+   */
+  explanationLocalizations: { [key: string]: string } = {};
+
+  constructor(data?: PartialMessage<DraftOperationStatus>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DraftOperationStatus";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "rule_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "source_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "severity", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "action_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "explanation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "escalated", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "sla_due_at", kind: "message", T: Timestamp },
+    { no: 11, name: "created_at", kind: "message", T: Timestamp },
+    { no: 12, name: "updated_at", kind: "message", T: Timestamp },
+    { no: 13, name: "explanation_localizations", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftOperationStatus {
+    return new DraftOperationStatus().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DraftOperationStatus {
+    return new DraftOperationStatus().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DraftOperationStatus {
+    return new DraftOperationStatus().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DraftOperationStatus | PlainMessage<DraftOperationStatus> | undefined, b: DraftOperationStatus | PlainMessage<DraftOperationStatus> | undefined): boolean {
+    return proto3.util.equals(DraftOperationStatus, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetDraftOperationStatusRequest
+ */
+export class GetDraftOperationStatusRequest extends Message<GetDraftOperationStatusRequest> {
+  /**
+   * @generated from field: string draft_id = 1;
+   */
+  draftId = "";
+
+  constructor(data?: PartialMessage<GetDraftOperationStatusRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetDraftOperationStatusRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDraftOperationStatusRequest {
+    return new GetDraftOperationStatusRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDraftOperationStatusRequest {
+    return new GetDraftOperationStatusRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDraftOperationStatusRequest {
+    return new GetDraftOperationStatusRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetDraftOperationStatusRequest | PlainMessage<GetDraftOperationStatusRequest> | undefined, b: GetDraftOperationStatusRequest | PlainMessage<GetDraftOperationStatusRequest> | undefined): boolean {
+    return proto3.util.equals(GetDraftOperationStatusRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetDraftOperationStatusResponse
+ */
+export class GetDraftOperationStatusResponse extends Message<GetDraftOperationStatusResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.DraftOperationStatus operations = 1;
+   */
+  operations: DraftOperationStatus[] = [];
+
+  /**
+   * @generated from field: int32 open_count = 2;
+   */
+  openCount = 0;
+
+  /**
+   * @generated from field: int32 overdue_count = 3;
+   */
+  overdueCount = 0;
+
+  /**
+   * @generated from field: bool automation_enabled = 4;
+   */
+  automationEnabled = false;
+
+  /**
+   * @generated from field: string public_notice = 5;
+   */
+  publicNotice = "";
+
+  constructor(data?: PartialMessage<GetDraftOperationStatusResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetDraftOperationStatusResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "operations", kind: "message", T: DraftOperationStatus, repeated: true },
+    { no: 2, name: "open_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "overdue_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "automation_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "public_notice", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDraftOperationStatusResponse {
+    return new GetDraftOperationStatusResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDraftOperationStatusResponse {
+    return new GetDraftOperationStatusResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDraftOperationStatusResponse {
+    return new GetDraftOperationStatusResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetDraftOperationStatusResponse | PlainMessage<GetDraftOperationStatusResponse> | undefined, b: GetDraftOperationStatusResponse | PlainMessage<GetDraftOperationStatusResponse> | undefined): boolean {
+    return proto3.util.equals(GetDraftOperationStatusResponse, a, b);
   }
 }
 

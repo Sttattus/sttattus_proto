@@ -5315,6 +5315,9 @@ message DraftDocument {
   repeated DraftNotification notifications = 37;
   repeated DraftPresence presence = 38;
   int32 unread_notification_count = 39;
+  repeated DraftOperationStatus operation_statuses = 40;
+  int32 open_operation_count = 41;
+  int32 overdue_operation_count = 42;
 }
 
 message DraftingDashboard {
@@ -5332,14 +5335,27 @@ message DraftingDashboard {
   int32 stale_citation_count = 12;
   int32 open_conflict_count = 13;
   int32 pending_suggestion_count = 14;
+  bool automation_enabled = 15;
+  int32 open_operation_count = 16;
+  int32 overdue_operation_count = 17;
 }
 
 message GetDraftingDashboardRequest {}
-message GetDraftingDashboardResponse { DraftingDashboard dashboard = 1; }
-message ListDraftsRequest { string status = 1; }
-message ListDraftsResponse { repeated DraftDocument drafts = 1; }
-message GetDraftRequest { string draft_id = 1; }
-message GetDraftResponse { DraftDocument draft = 1; }
+message GetDraftingDashboardResponse {
+  DraftingDashboard dashboard = 1;
+}
+message ListDraftsRequest {
+  string status = 1;
+}
+message ListDraftsResponse {
+  repeated DraftDocument drafts = 1;
+}
+message GetDraftRequest {
+  string draft_id = 1;
+}
+message GetDraftResponse {
+  DraftDocument draft = 1;
+}
 
 message CreateDraftRequest {
   string title = 1;
@@ -5356,7 +5372,9 @@ message CreateDraftRequest {
   string sensitivity = 12;
   string client_mutation_id = 13;
 }
-message CreateDraftResponse { DraftDocument draft = 1; }
+message CreateDraftResponse {
+  DraftDocument draft = 1;
+}
 
 message UpsertDraftBlockRequest {
   string draft_id = 1;
@@ -5389,7 +5407,10 @@ message DeleteDraftBlockRequest {
   int64 replica_sequence = 5;
   string client_mutation_id = 6;
 }
-message DeleteDraftBlockResponse { bool deleted = 1; bool replayed = 2; }
+message DeleteDraftBlockResponse {
+  bool deleted = 1;
+  bool replayed = 2;
+}
 
 message UpsertDraftCitationRequest {
   string draft_id = 1;
@@ -5407,9 +5428,13 @@ message UpsertDraftCitationRequest {
   int32 ordinal = 13;
   string client_mutation_id = 14;
 }
-message UpsertDraftCitationResponse { DraftCitation citation = 1; }
+message UpsertDraftCitationResponse {
+  DraftCitation citation = 1;
+}
 
-message VerifyDraftRequest { string draft_id = 1; }
+message VerifyDraftRequest {
+  string draft_id = 1;
+}
 message VerifyDraftResponse {
   int32 supported_claim_count = 1;
   int32 unsupported_claim_count = 2;
@@ -5477,7 +5502,9 @@ message GetDraftEvidenceReviewRequest {
   string draft_id = 1;
   bool include_passages = 2;
 }
-message GetDraftEvidenceReviewResponse { DraftEvidenceReview review = 1; }
+message GetDraftEvidenceReviewResponse {
+  DraftEvidenceReview review = 1;
+}
 
 message CompareDraftEvidenceRequest {
   string draft_id = 1;
@@ -5493,7 +5520,9 @@ message DraftEvidenceComparison {
   bool same_passage = 6;
   repeated string warnings = 7;
 }
-message CompareDraftEvidenceResponse { DraftEvidenceComparison comparison = 1; }
+message CompareDraftEvidenceResponse {
+  DraftEvidenceComparison comparison = 1;
+}
 
 message CreateDraftRevisionRequest {
   string draft_id = 1;
@@ -5502,7 +5531,9 @@ message CreateDraftRevisionRequest {
   string reason = 4;
   string client_mutation_id = 5;
 }
-message CreateDraftRevisionResponse { DraftRevision revision = 1; }
+message CreateDraftRevisionResponse {
+  DraftRevision revision = 1;
+}
 
 message CreateDraftBranchRequest {
   string draft_id = 1;
@@ -5510,7 +5541,9 @@ message CreateDraftBranchRequest {
   string from_revision_id = 3;
   string client_mutation_id = 4;
 }
-message CreateDraftBranchResponse { DraftBranch branch = 1; }
+message CreateDraftBranchResponse {
+  DraftBranch branch = 1;
+}
 
 message RestoreDraftRevisionRequest {
   string draft_id = 1;
@@ -5518,14 +5551,19 @@ message RestoreDraftRevisionRequest {
   string branch_id = 3;
   string client_mutation_id = 4;
 }
-message RestoreDraftRevisionResponse { DraftRevision revision = 1; DraftDocument draft = 2; }
+message RestoreDraftRevisionResponse {
+  DraftRevision revision = 1;
+  DraftDocument draft = 2;
+}
 
 message CompareDraftRevisionsRequest {
   string draft_id = 1;
   string from_revision_id = 2;
   string to_revision_id = 3;
 }
-message CompareDraftRevisionsResponse { DraftRevisionComparison comparison = 1; }
+message CompareDraftRevisionsResponse {
+  DraftRevisionComparison comparison = 1;
+}
 
 message PreviewDraftRestoreRequest {
   string draft_id = 1;
@@ -5538,7 +5576,9 @@ message DraftRestorePreview {
   bool would_create_revision = 4;
   repeated string warnings = 5;
 }
-message PreviewDraftRestoreResponse { DraftRestorePreview preview = 1; }
+message PreviewDraftRestoreResponse {
+  DraftRestorePreview preview = 1;
+}
 
 message DraftMergeConflict {
   string block_id = 1;
@@ -5564,7 +5604,9 @@ message PreviewDraftMergeRequest {
   string source_branch_id = 2;
   string target_branch_id = 3;
 }
-message PreviewDraftMergeResponse { DraftMergePreview preview = 1; }
+message PreviewDraftMergeResponse {
+  DraftMergePreview preview = 1;
+}
 
 message GenerateDraftSuggestionRequest {
   string draft_id = 1;
@@ -5575,7 +5617,9 @@ message GenerateDraftSuggestionRequest {
   bool strict_grounded = 6;
   string client_mutation_id = 7;
 }
-message GenerateDraftSuggestionResponse { DraftSuggestion suggestion = 1; }
+message GenerateDraftSuggestionResponse {
+  DraftSuggestion suggestion = 1;
+}
 
 message SetDraftSuggestionStateRequest {
   string suggestion_id = 1;
@@ -5583,7 +5627,10 @@ message SetDraftSuggestionStateRequest {
   string disposition_note = 3;
   string client_mutation_id = 4;
 }
-message SetDraftSuggestionStateResponse { DraftSuggestion suggestion = 1; DraftBlock block = 2; }
+message SetDraftSuggestionStateResponse {
+  DraftSuggestion suggestion = 1;
+  DraftBlock block = 2;
+}
 
 message ResolveDraftConflictRequest {
   string conflict_id = 1;
@@ -5591,7 +5638,10 @@ message ResolveDraftConflictRequest {
   string merged_body = 3;
   string client_mutation_id = 4;
 }
-message ResolveDraftConflictResponse { DraftConflict conflict = 1; DraftBlock block = 2; }
+message ResolveDraftConflictResponse {
+  DraftConflict conflict = 1;
+  DraftBlock block = 2;
+}
 
 message RequestDraftExportRequest {
   string draft_id = 1;
@@ -5602,9 +5652,15 @@ message RequestDraftExportRequest {
   string style_code = 6;
   int32 style_version = 7;
 }
-message RequestDraftExportResponse { DraftExport export = 1; }
-message GetDraftExportRequest { string export_id = 1; }
-message GetDraftExportResponse { DraftExport export = 1; }
+message RequestDraftExportResponse {
+  DraftExport export = 1;
+}
+message GetDraftExportRequest {
+  string export_id = 1;
+}
+message GetDraftExportResponse {
+  DraftExport export = 1;
+}
 
 message CreateDraftHandoffRequest {
   string draft_id = 1;
@@ -5614,7 +5670,9 @@ message CreateDraftHandoffRequest {
   string note = 5;
   string client_mutation_id = 6;
 }
-message CreateDraftHandoffResponse { DraftHandoff handoff = 1; }
+message CreateDraftHandoffResponse {
+  DraftHandoff handoff = 1;
+}
 
 message ReportDraftIncidentRequest {
   string draft_id = 1;
@@ -5622,7 +5680,10 @@ message ReportDraftIncidentRequest {
   string statement = 3;
   string client_mutation_id = 4;
 }
-message ReportDraftIncidentResponse { string incident_id = 1; string status = 2; }
+message ReportDraftIncidentResponse {
+  string incident_id = 1;
+  string status = 2;
+}
 
 // Choice 22 — privacy-preserving draft collaboration. Comment bodies and
 // assignment notes are encrypted at rest and are only returned to active
@@ -5820,7 +5881,39 @@ message SetDraftPresenceRequest {
   string device_id = 3;
   string revision_id = 4;
 }
-message SetDraftPresenceResponse { DraftPresence presence = 1; }
+message SetDraftPresenceResponse {
+  DraftPresence presence = 1;
+}
+
+// Choice 23 — member-visible, metadata-only operations automation. These
+// records explain operational actions without exposing draft prose, comment
+// bodies, assignment notes, citation quotations, or recovery reasons.
+message DraftOperationStatus {
+  string id = 1;
+  string draft_id = 2;
+  string rule_code = 3;
+  string source_type = 4;
+  string status = 5; // queued | in_progress | blocked | verified | resolved | dismissed | rolled_back
+  string severity = 6; // low | medium | high | critical
+  string action_code = 7;
+  string explanation = 8;
+  bool escalated = 9;
+  google.protobuf.Timestamp sla_due_at = 10;
+  google.protobuf.Timestamp created_at = 11;
+  google.protobuf.Timestamp updated_at = 12;
+  map<string, string> explanation_localizations = 13;
+}
+
+message GetDraftOperationStatusRequest {
+  string draft_id = 1;
+}
+message GetDraftOperationStatusResponse {
+  repeated DraftOperationStatus operations = 1;
+  int32 open_count = 2;
+  int32 overdue_count = 3;
+  bool automation_enabled = 4;
+  string public_notice = 5;
+}
 
 service OnyxService {
   // Profile Management
@@ -6172,4 +6265,5 @@ service OnyxService {
   rpc ListDraftNotifications(ListDraftNotificationsRequest) returns (ListDraftNotificationsResponse);
   rpc MarkDraftNotificationRead(MarkDraftNotificationReadRequest) returns (MarkDraftNotificationReadResponse);
   rpc SetDraftPresence(SetDraftPresenceRequest) returns (SetDraftPresenceResponse);
+  rpc GetDraftOperationStatus(GetDraftOperationStatusRequest) returns (GetDraftOperationStatusResponse);
 }

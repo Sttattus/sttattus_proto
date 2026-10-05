@@ -2231,6 +2231,15 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$setDraftPresence, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.GetDraftOperationStatusResponse>
+      getDraftOperationStatus(
+    $0.GetDraftOperationStatusRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getDraftOperationStatus, request,
+        options: options);
+  }
+
   // method descriptors
 
   static final _$createProfile =
@@ -3720,6 +3729,12 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/SetDraftPresence',
       ($0.SetDraftPresenceRequest value) => value.writeToBuffer(),
       $0.SetDraftPresenceResponse.fromBuffer);
+  static final _$getDraftOperationStatus = $grpc.ClientMethod<
+          $0.GetDraftOperationStatusRequest,
+          $0.GetDraftOperationStatusResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetDraftOperationStatus',
+      ($0.GetDraftOperationStatusRequest value) => value.writeToBuffer(),
+      $0.GetDraftOperationStatusResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.onyx.v1.OnyxService')
@@ -6234,6 +6249,15 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.SetDraftPresenceRequest.fromBuffer(value),
         ($0.SetDraftPresenceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetDraftOperationStatusRequest,
+            $0.GetDraftOperationStatusResponse>(
+        'GetDraftOperationStatus',
+        getDraftOperationStatus_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetDraftOperationStatusRequest.fromBuffer(value),
+        ($0.GetDraftOperationStatusResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.CreateProfileResponse> createProfile_Pre(
@@ -8813,4 +8837,13 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.SetDraftPresenceResponse> setDraftPresence(
       $grpc.ServiceCall call, $0.SetDraftPresenceRequest request);
+
+  $async.Future<$0.GetDraftOperationStatusResponse> getDraftOperationStatus_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetDraftOperationStatusRequest> $request) async {
+    return getDraftOperationStatus($call, await $request);
+  }
+
+  $async.Future<$0.GetDraftOperationStatusResponse> getDraftOperationStatus(
+      $grpc.ServiceCall call, $0.GetDraftOperationStatusRequest request);
 }

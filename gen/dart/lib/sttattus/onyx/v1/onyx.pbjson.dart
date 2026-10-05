@@ -20965,6 +20965,28 @@ const DraftDocument$json = {
       '5': 5,
       '10': 'unreadNotificationCount'
     },
+    {
+      '1': 'operation_statuses',
+      '3': 40,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftOperationStatus',
+      '10': 'operationStatuses'
+    },
+    {
+      '1': 'open_operation_count',
+      '3': 41,
+      '4': 1,
+      '5': 5,
+      '10': 'openOperationCount'
+    },
+    {
+      '1': 'overdue_operation_count',
+      '3': 42,
+      '4': 1,
+      '5': 5,
+      '10': 'overdueOperationCount'
+    },
   ],
 };
 
@@ -21002,7 +21024,11 @@ final $typed_data.Uint8List draftDocumentDescriptor = $convert.base64Decode(
     'VudHMSSQoNbm90aWZpY2F0aW9ucxglIAMoCzIjLnN0dGF0dHVzLm9ueXgudjEuRHJhZnROb3Rp'
     'ZmljYXRpb25SDW5vdGlmaWNhdGlvbnMSOwoIcHJlc2VuY2UYJiADKAsyHy5zdHRhdHR1cy5vbn'
     'l4LnYxLkRyYWZ0UHJlc2VuY2VSCHByZXNlbmNlEjoKGXVucmVhZF9ub3RpZmljYXRpb25fY291'
-    'bnQYJyABKAVSF3VucmVhZE5vdGlmaWNhdGlvbkNvdW50');
+    'bnQYJyABKAVSF3VucmVhZE5vdGlmaWNhdGlvbkNvdW50ElUKEm9wZXJhdGlvbl9zdGF0dXNlcx'
+    'goIAMoCzImLnN0dGF0dHVzLm9ueXgudjEuRHJhZnRPcGVyYXRpb25TdGF0dXNSEW9wZXJhdGlv'
+    'blN0YXR1c2VzEjAKFG9wZW5fb3BlcmF0aW9uX2NvdW50GCkgASgFUhJvcGVuT3BlcmF0aW9uQ2'
+    '91bnQSNgoXb3ZlcmR1ZV9vcGVyYXRpb25fY291bnQYKiABKAVSFW92ZXJkdWVPcGVyYXRpb25D'
+    'b3VudA==');
 
 @$core.Deprecated('Use draftingDashboardDescriptor instead')
 const DraftingDashboard$json = {
@@ -21073,6 +21099,27 @@ const DraftingDashboard$json = {
       '5': 5,
       '10': 'pendingSuggestionCount'
     },
+    {
+      '1': 'automation_enabled',
+      '3': 15,
+      '4': 1,
+      '5': 8,
+      '10': 'automationEnabled'
+    },
+    {
+      '1': 'open_operation_count',
+      '3': 16,
+      '4': 1,
+      '5': 5,
+      '10': 'openOperationCount'
+    },
+    {
+      '1': 'overdue_operation_count',
+      '3': 17,
+      '4': 1,
+      '5': 5,
+      '10': 'overdueOperationCount'
+    },
   ],
 };
 
@@ -21090,7 +21137,10 @@ final $typed_data.Uint8List draftingDashboardDescriptor = $convert.base64Decode(
     'VSFXVuc3VwcG9ydGVkQ2xhaW1Db3VudBIwChRzdGFsZV9jaXRhdGlvbl9jb3VudBgMIAEoBVIS'
     'c3RhbGVDaXRhdGlvbkNvdW50Ei4KE29wZW5fY29uZmxpY3RfY291bnQYDSABKAVSEW9wZW5Db2'
     '5mbGljdENvdW50EjgKGHBlbmRpbmdfc3VnZ2VzdGlvbl9jb3VudBgOIAEoBVIWcGVuZGluZ1N1'
-    'Z2dlc3Rpb25Db3VudA==');
+    'Z2dlc3Rpb25Db3VudBItChJhdXRvbWF0aW9uX2VuYWJsZWQYDyABKAhSEWF1dG9tYXRpb25Fbm'
+    'FibGVkEjAKFG9wZW5fb3BlcmF0aW9uX2NvdW50GBAgASgFUhJvcGVuT3BlcmF0aW9uQ291bnQS'
+    'NgoXb3ZlcmR1ZV9vcGVyYXRpb25fY291bnQYESABKAVSFW92ZXJkdWVPcGVyYXRpb25Db3VudA'
+    '==');
 
 @$core.Deprecated('Use getDraftingDashboardRequestDescriptor instead')
 const GetDraftingDashboardRequest$json = {
@@ -23249,3 +23299,125 @@ final $typed_data.Uint8List setDraftPresenceResponseDescriptor =
     $convert.base64Decode(
         'ChhTZXREcmFmdFByZXNlbmNlUmVzcG9uc2USOwoIcHJlc2VuY2UYASABKAsyHy5zdHRhdHR1cy'
         '5vbnl4LnYxLkRyYWZ0UHJlc2VuY2VSCHByZXNlbmNl');
+
+@$core.Deprecated('Use draftOperationStatusDescriptor instead')
+const DraftOperationStatus$json = {
+  '1': 'DraftOperationStatus',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'draft_id', '3': 2, '4': 1, '5': 9, '10': 'draftId'},
+    {'1': 'rule_code', '3': 3, '4': 1, '5': 9, '10': 'ruleCode'},
+    {'1': 'source_type', '3': 4, '4': 1, '5': 9, '10': 'sourceType'},
+    {'1': 'status', '3': 5, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'severity', '3': 6, '4': 1, '5': 9, '10': 'severity'},
+    {'1': 'action_code', '3': 7, '4': 1, '5': 9, '10': 'actionCode'},
+    {'1': 'explanation', '3': 8, '4': 1, '5': 9, '10': 'explanation'},
+    {'1': 'escalated', '3': 9, '4': 1, '5': 8, '10': 'escalated'},
+    {
+      '1': 'sla_due_at',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'slaDueAt'
+    },
+    {
+      '1': 'created_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+    {
+      '1': 'explanation_localizations',
+      '3': 13,
+      '4': 3,
+      '5': 11,
+      '6':
+          '.sttattus.onyx.v1.DraftOperationStatus.ExplanationLocalizationsEntry',
+      '10': 'explanationLocalizations'
+    },
+  ],
+  '3': [DraftOperationStatus_ExplanationLocalizationsEntry$json],
+};
+
+@$core.Deprecated('Use draftOperationStatusDescriptor instead')
+const DraftOperationStatus_ExplanationLocalizationsEntry$json = {
+  '1': 'ExplanationLocalizationsEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+/// Descriptor for `DraftOperationStatus`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List draftOperationStatusDescriptor = $convert.base64Decode(
+    'ChREcmFmdE9wZXJhdGlvblN0YXR1cxIOCgJpZBgBIAEoCVICaWQSGQoIZHJhZnRfaWQYAiABKA'
+    'lSB2RyYWZ0SWQSGwoJcnVsZV9jb2RlGAMgASgJUghydWxlQ29kZRIfCgtzb3VyY2VfdHlwZRgE'
+    'IAEoCVIKc291cmNlVHlwZRIWCgZzdGF0dXMYBSABKAlSBnN0YXR1cxIaCghzZXZlcml0eRgGIA'
+    'EoCVIIc2V2ZXJpdHkSHwoLYWN0aW9uX2NvZGUYByABKAlSCmFjdGlvbkNvZGUSIAoLZXhwbGFu'
+    'YXRpb24YCCABKAlSC2V4cGxhbmF0aW9uEhwKCWVzY2FsYXRlZBgJIAEoCFIJZXNjYWxhdGVkEj'
+    'gKCnNsYV9kdWVfYXQYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUghzbGFEdWVB'
+    'dBI5CgpjcmVhdGVkX2F0GAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYX'
+    'RlZEF0EjkKCnVwZGF0ZWRfYXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1'
+    'cGRhdGVkQXQSgQEKGWV4cGxhbmF0aW9uX2xvY2FsaXphdGlvbnMYDSADKAsyRC5zdHRhdHR1cy'
+    '5vbnl4LnYxLkRyYWZ0T3BlcmF0aW9uU3RhdHVzLkV4cGxhbmF0aW9uTG9jYWxpemF0aW9uc0Vu'
+    'dHJ5UhhleHBsYW5hdGlvbkxvY2FsaXphdGlvbnMaSwodRXhwbGFuYXRpb25Mb2NhbGl6YXRpb2'
+    '5zRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUYAiABKAlSBXZhbHVlOgI4AQ==');
+
+@$core.Deprecated('Use getDraftOperationStatusRequestDescriptor instead')
+const GetDraftOperationStatusRequest$json = {
+  '1': 'GetDraftOperationStatusRequest',
+  '2': [
+    {'1': 'draft_id', '3': 1, '4': 1, '5': 9, '10': 'draftId'},
+  ],
+};
+
+/// Descriptor for `GetDraftOperationStatusRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDraftOperationStatusRequestDescriptor =
+    $convert.base64Decode(
+        'Ch5HZXREcmFmdE9wZXJhdGlvblN0YXR1c1JlcXVlc3QSGQoIZHJhZnRfaWQYASABKAlSB2RyYW'
+        'Z0SWQ=');
+
+@$core.Deprecated('Use getDraftOperationStatusResponseDescriptor instead')
+const GetDraftOperationStatusResponse$json = {
+  '1': 'GetDraftOperationStatusResponse',
+  '2': [
+    {
+      '1': 'operations',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftOperationStatus',
+      '10': 'operations'
+    },
+    {'1': 'open_count', '3': 2, '4': 1, '5': 5, '10': 'openCount'},
+    {'1': 'overdue_count', '3': 3, '4': 1, '5': 5, '10': 'overdueCount'},
+    {
+      '1': 'automation_enabled',
+      '3': 4,
+      '4': 1,
+      '5': 8,
+      '10': 'automationEnabled'
+    },
+    {'1': 'public_notice', '3': 5, '4': 1, '5': 9, '10': 'publicNotice'},
+  ],
+};
+
+/// Descriptor for `GetDraftOperationStatusResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDraftOperationStatusResponseDescriptor = $convert.base64Decode(
+    'Ch9HZXREcmFmdE9wZXJhdGlvblN0YXR1c1Jlc3BvbnNlEkYKCm9wZXJhdGlvbnMYASADKAsyJi'
+    '5zdHRhdHR1cy5vbnl4LnYxLkRyYWZ0T3BlcmF0aW9uU3RhdHVzUgpvcGVyYXRpb25zEh0KCm9w'
+    'ZW5fY291bnQYAiABKAVSCW9wZW5Db3VudBIjCg1vdmVyZHVlX2NvdW50GAMgASgFUgxvdmVyZH'
+    'VlQ291bnQSLQoSYXV0b21hdGlvbl9lbmFibGVkGAQgASgIUhFhdXRvbWF0aW9uRW5hYmxlZBIj'
+    'Cg1wdWJsaWNfbm90aWNlGAUgASgJUgxwdWJsaWNOb3RpY2U=');

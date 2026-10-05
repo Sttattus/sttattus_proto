@@ -293,6 +293,7 @@ const (
 	OnyxService_ListDraftNotifications_FullMethodName               = "/sttattus.onyx.v1.OnyxService/ListDraftNotifications"
 	OnyxService_MarkDraftNotificationRead_FullMethodName            = "/sttattus.onyx.v1.OnyxService/MarkDraftNotificationRead"
 	OnyxService_SetDraftPresence_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/SetDraftPresence"
+	OnyxService_GetDraftOperationStatus_FullMethodName              = "/sttattus.onyx.v1.OnyxService/GetDraftOperationStatus"
 )
 
 // OnyxServiceClient is the client API for OnyxService service.
@@ -618,6 +619,7 @@ type OnyxServiceClient interface {
 	ListDraftNotifications(ctx context.Context, in *ListDraftNotificationsRequest, opts ...grpc.CallOption) (*ListDraftNotificationsResponse, error)
 	MarkDraftNotificationRead(ctx context.Context, in *MarkDraftNotificationReadRequest, opts ...grpc.CallOption) (*MarkDraftNotificationReadResponse, error)
 	SetDraftPresence(ctx context.Context, in *SetDraftPresenceRequest, opts ...grpc.CallOption) (*SetDraftPresenceResponse, error)
+	GetDraftOperationStatus(ctx context.Context, in *GetDraftOperationStatusRequest, opts ...grpc.CallOption) (*GetDraftOperationStatusResponse, error)
 }
 
 type onyxServiceClient struct {
@@ -3368,6 +3370,16 @@ func (c *onyxServiceClient) SetDraftPresence(ctx context.Context, in *SetDraftPr
 	return out, nil
 }
 
+func (c *onyxServiceClient) GetDraftOperationStatus(ctx context.Context, in *GetDraftOperationStatusRequest, opts ...grpc.CallOption) (*GetDraftOperationStatusResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDraftOperationStatusResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetDraftOperationStatus_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OnyxServiceServer is the server API for OnyxService service.
 // All implementations must embed UnimplementedOnyxServiceServer
 // for forward compatibility.
@@ -3691,6 +3703,7 @@ type OnyxServiceServer interface {
 	ListDraftNotifications(context.Context, *ListDraftNotificationsRequest) (*ListDraftNotificationsResponse, error)
 	MarkDraftNotificationRead(context.Context, *MarkDraftNotificationReadRequest) (*MarkDraftNotificationReadResponse, error)
 	SetDraftPresence(context.Context, *SetDraftPresenceRequest) (*SetDraftPresenceResponse, error)
+	GetDraftOperationStatus(context.Context, *GetDraftOperationStatusRequest) (*GetDraftOperationStatusResponse, error)
 	mustEmbedUnimplementedOnyxServiceServer()
 }
 
@@ -4522,6 +4535,9 @@ func (UnimplementedOnyxServiceServer) MarkDraftNotificationRead(context.Context,
 }
 func (UnimplementedOnyxServiceServer) SetDraftPresence(context.Context, *SetDraftPresenceRequest) (*SetDraftPresenceResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method SetDraftPresence not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetDraftOperationStatus(context.Context, *GetDraftOperationStatusRequest) (*GetDraftOperationStatusResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDraftOperationStatus not implemented")
 }
 func (UnimplementedOnyxServiceServer) mustEmbedUnimplementedOnyxServiceServer() {}
 func (UnimplementedOnyxServiceServer) testEmbeddedByValue()                     {}
@@ -9476,6 +9492,24 @@ func _OnyxService_SetDraftPresence_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_GetDraftOperationStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDraftOperationStatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetDraftOperationStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetDraftOperationStatus_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetDraftOperationStatus(ctx, req.(*GetDraftOperationStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OnyxService_ServiceDesc is the grpc.ServiceDesc for OnyxService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -10578,6 +10612,10 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SetDraftPresence",
 			Handler:    _OnyxService_SetDraftPresence_Handler,
+		},
+		{
+			MethodName: "GetDraftOperationStatus",
+			Handler:    _OnyxService_GetDraftOperationStatus_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
