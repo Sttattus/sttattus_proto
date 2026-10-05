@@ -1,0 +1,250 @@
+syntax = "proto3";
+
+package sttattus.dating.v1;
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1";
+
+// Atlas Choice 8 — the mutual date planner. Two matched members plan one
+// date together: each keeps their own preferences (the other sees only what
+// both share), they agree on exactly the same version of a plan, and only
+// then is a table asked for. Partner places are booked by Sttattus staff who
+// phone the venue and record its confirmation; other places are booked by the
+// members themselves. Atlas takes no payment and never claims a booking it
+// does not hold.
+
+// A place members can plan a date at, as staff curated and reviewed it.
+message PlannerPlace {
+  string id = 1;
+  string name = 2;
+  // dining | arts | outdoors | learning | volunteering | fitness | low_cost | virtual
+  string kind = 3;
+  string city = 4;
+  string neighborhood = 5;
+  string address = 6;
+  string phone = 7;
+  string website = 8;
+  // 0 free … 4 very expensive.
+  int32 price = 9;
+  // step_free | accessible_toilet | quiet | lively | alcohol_free | serves_alcohol
+  // | daytime | evening | indoor | outdoor
+  repeated string tags = 10;
+  // staff (Sttattus phones the venue) | self (members book) | none (no booking needed)
+  string booking = 11;
+  // The venue's own cancellation terms, in its words.
+  string cancellation_terms = 12;
+  string time_zone = 13;
+  string cuisine = 14;
+}
+
+// A stretch of time, as instants.
+message PlanWindow {
+  int64 starts_at = 1;
+  int64 ends_at = 2;
+}
+
+// One member's own preferences for a plan; the other member never sees them.
+message PlanPreferences {
+  repeated PlanWindow windows = 1;
+  // How far from the member's city's centre; 0 = any distance.
+  int32 max_km = 2;
+  // The most the member wants to spend, 0 … 4.
+  int32 max_price = 3;
+  // Kinds of place; empty = any.
+  repeated string kinds = 4;
+  // step_free | accessible_toilet
+  repeated string needs = 5;
+  bool quiet = 6;
+  bool alcohol_free = 7;
+  int64 updated_at = 8;
+}
+
+// What a proposal is: a place (or the members' own idea) and a time.
+message PlanOption {
+  string place_id = 1;
+  // Our own idea: a name, and optionally a public address or a link.
+  string own_name = 2;
+  string own_address = 3;
+  string own_link = 4;
+  int64 starts_at = 5;
+  int32 minutes = 6;
+  string note = 7;
+}
+
+message PlanProposal {
+  int32 version = 1;
+  PlanOption option = 2;
+  bool proposed_by_me = 3;
+  int64 proposed_at = 4;
+  // The place, when the option names one.
+  PlannerPlace place = 5;
+  string time_zone = 6;
+}
+
+// A booking Sttattus staff handle by phone, as both members see it.
+message PlanBooking {
+  // requested | calling | confirmed | declined | unreachable | unconfirmed
+  // | change_requested | cancel_requested | cancelled | withdrawn
+  string state = 1;
+  string reference = 2;
+  string under_name = 3;
+  // The first name of the staff member who confirmed it.
+  string confirmed_by = 4;
+  int64 confirmed_at = 5;
+  // Why the venue declined, or why it could not be confirmed.
+  string reason = 6;
+  // When it must be confirmed by; after that it is "unconfirmed".
+  int64 deadline = 7;
+  int64 starts_at = 8;
+}
+
+// A step in the plan, for the receipts both members see.
+message PlanEvent {
+  // opened | proposed | accepted | declined | changed | cancelled | self_booked
+  // | booking_requested | booking_calling | booking_confirmed | booking_declined
+  // | booking_unreachable | booking_unconfirmed | booking_change_requested
+  // | booking_cancel_requested | booking_cancelled | other_left | done | expired
+  string kind = 1;
+  int64 at = 2;
+  bool by_me = 3;
+  // By the other member (their first name) or staff (a first name).
+  string by_name = 4;
+  string detail = 5;
+}
+
+message DatePlan {
+  string id = 1;
+  string match_id = 2;
+  // The other member's first name.
+  string other_name = 3;
+  // open | proposed | agreed | cancelled | done | expired
+  string state = 4;
+  // The latest proposal, pending or agreed.
+  PlanProposal current = 5;
+  bool i_accepted = 6;
+  bool they_accepted = 7;
+  PlanBooking booking = 8;
+  // A member said they booked it themselves (their word, not a confirmation).
+  bool self_booked = 9;
+  bool self_booked_by_me = 10;
+  // When both are free, from both members' windows; nothing else of theirs.
+  repeated PlanWindow both_free = 11;
+  repeated PlanEvent events = 12;
+  int64 updated_at = 13;
+  // The other member erased their account or left the match.
+  bool other_left = 14;
+  // Whether this member has saved preferences, and whether the other has
+  // (never what they are).
+  bool i_have_preferences = 15;
+  bool they_have_preferences = 16;
+}
+
+// A place that fits both members, and why.
+message PlanSuggestion {
+  PlannerPlace place = 1;
+  // both_kind | within_budget | step_free | accessible_toilet | quiet
+  // | alcohol_free | near_both | staff_booked | self_booked | no_booking
+  repeated string reasons = 2;
+}
+
+message OpenDatePlanRequest {
+  string match_id = 1;
+}
+message OpenDatePlanResponse {
+  DatePlan plan = 1;
+}
+
+message GetDatePlanRequest {
+  string plan_id = 1;
+}
+message GetDatePlanResponse {
+  DatePlan plan = 1;
+}
+
+message ListMyDatePlansRequest {}
+message ListMyDatePlansResponse {
+  repeated DatePlan plans = 1;
+}
+
+message GetPlanPreferencesRequest {
+  string plan_id = 1;
+}
+message GetPlanPreferencesResponse {
+  PlanPreferences preferences = 1;
+}
+
+message SavePlanPreferencesRequest {
+  string plan_id = 1;
+  PlanPreferences preferences = 2;
+}
+message SavePlanPreferencesResponse {
+  PlanPreferences preferences = 1;
+  DatePlan plan = 2;
+}
+
+message ListPlanSuggestionsRequest {
+  string plan_id = 1;
+}
+message ListPlanSuggestionsResponse {
+  repeated PlanSuggestion suggestions = 1;
+}
+
+message ProposePlanRequest {
+  string plan_id = 1;
+  PlanOption option = 2;
+  // The same key gives the same result: never a second proposal.
+  string idempotency_key = 3;
+}
+message ProposePlanResponse {
+  DatePlan plan = 1;
+}
+
+message RespondToPlanRequest {
+  string plan_id = 1;
+  // The version the member read; a newer one must be read first.
+  int32 version = 2;
+  // accept | decline
+  string answer = 3;
+  string idempotency_key = 4;
+}
+message RespondToPlanResponse {
+  DatePlan plan = 1;
+}
+
+message CancelDatePlanRequest {
+  string plan_id = 1;
+  string idempotency_key = 2;
+}
+message CancelDatePlanResponse {
+  DatePlan plan = 1;
+}
+
+message MarkPlanSelfBookedRequest {
+  string plan_id = 1;
+  int32 version = 2;
+}
+message MarkPlanSelfBookedResponse {
+  DatePlan plan = 1;
+}
+
+message ListPlannerPlacesRequest {
+  // Empty = the member's own city.
+  string city = 1;
+  string kind = 2;
+}
+message ListPlannerPlacesResponse {
+  repeated PlannerPlace places = 1;
+}
+
+service AtlasDatePlannerService {
+  rpc OpenDatePlan(OpenDatePlanRequest) returns (OpenDatePlanResponse);
+  rpc GetDatePlan(GetDatePlanRequest) returns (GetDatePlanResponse);
+  rpc ListMyDatePlans(ListMyDatePlansRequest) returns (ListMyDatePlansResponse);
+  rpc GetPlanPreferences(GetPlanPreferencesRequest) returns (GetPlanPreferencesResponse);
+  rpc SavePlanPreferences(SavePlanPreferencesRequest) returns (SavePlanPreferencesResponse);
+  rpc ListPlanSuggestions(ListPlanSuggestionsRequest) returns (ListPlanSuggestionsResponse);
+  rpc ProposePlan(ProposePlanRequest) returns (ProposePlanResponse);
+  rpc RespondToPlan(RespondToPlanRequest) returns (RespondToPlanResponse);
+  rpc CancelDatePlan(CancelDatePlanRequest) returns (CancelDatePlanResponse);
+  rpc MarkPlanSelfBooked(MarkPlanSelfBookedRequest) returns (MarkPlanSelfBookedResponse);
+  rpc ListPlannerPlaces(ListPlannerPlacesRequest) returns (ListPlannerPlacesResponse);
+}
