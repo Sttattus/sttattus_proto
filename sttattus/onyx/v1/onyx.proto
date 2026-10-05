@@ -5253,6 +5253,13 @@ message DraftExport {
   string dlp_status = 15;
   google.protobuf.Timestamp created_at = 16;
   google.protobuf.Timestamp expires_at = 17;
+  string schema_version = 18;
+  string citation_style = 19;
+  string note_style = 20;
+  string style_code = 21;
+  int32 style_version = 22;
+  string validation_status = 23;
+  string manifest_checksum = 24;
 }
 
 message DraftHandoff {
@@ -5586,6 +5593,8 @@ message RequestDraftExportRequest {
   string format = 3;
   bool include_origin_disclosure = 4;
   string client_mutation_id = 5;
+  string style_code = 6;
+  int32 style_version = 7;
 }
 message RequestDraftExportResponse { DraftExport export = 1; }
 message GetDraftExportRequest { string export_id = 1; }

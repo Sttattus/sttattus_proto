@@ -69361,6 +69361,13 @@ class DraftExport extends $pb.GeneratedMessage {
     $core.String? dlpStatus,
     $1.Timestamp? createdAt,
     $1.Timestamp? expiresAt,
+    $core.String? schemaVersion,
+    $core.String? citationStyle,
+    $core.String? noteStyle,
+    $core.String? styleCode,
+    $core.int? styleVersion,
+    $core.String? validationStatus,
+    $core.String? manifestChecksum,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -69380,6 +69387,13 @@ class DraftExport extends $pb.GeneratedMessage {
     if (dlpStatus != null) result.dlpStatus = dlpStatus;
     if (createdAt != null) result.createdAt = createdAt;
     if (expiresAt != null) result.expiresAt = expiresAt;
+    if (schemaVersion != null) result.schemaVersion = schemaVersion;
+    if (citationStyle != null) result.citationStyle = citationStyle;
+    if (noteStyle != null) result.noteStyle = noteStyle;
+    if (styleCode != null) result.styleCode = styleCode;
+    if (styleVersion != null) result.styleVersion = styleVersion;
+    if (validationStatus != null) result.validationStatus = validationStatus;
+    if (manifestChecksum != null) result.manifestChecksum = manifestChecksum;
     return result;
   }
 
@@ -69416,6 +69430,13 @@ class DraftExport extends $pb.GeneratedMessage {
         subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(17, _omitFieldNames ? '' : 'expiresAt',
         subBuilder: $1.Timestamp.create)
+    ..aOS(18, _omitFieldNames ? '' : 'schemaVersion')
+    ..aOS(19, _omitFieldNames ? '' : 'citationStyle')
+    ..aOS(20, _omitFieldNames ? '' : 'noteStyle')
+    ..aOS(21, _omitFieldNames ? '' : 'styleCode')
+    ..aI(22, _omitFieldNames ? '' : 'styleVersion')
+    ..aOS(23, _omitFieldNames ? '' : 'validationStatus')
+    ..aOS(24, _omitFieldNames ? '' : 'manifestChecksum')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -69587,6 +69608,69 @@ class DraftExport extends $pb.GeneratedMessage {
   void clearExpiresAt() => $_clearField(17);
   @$pb.TagNumber(17)
   $1.Timestamp ensureExpiresAt() => $_ensure(16);
+
+  @$pb.TagNumber(18)
+  $core.String get schemaVersion => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set schemaVersion($core.String value) => $_setString(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasSchemaVersion() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearSchemaVersion() => $_clearField(18);
+
+  @$pb.TagNumber(19)
+  $core.String get citationStyle => $_getSZ(18);
+  @$pb.TagNumber(19)
+  set citationStyle($core.String value) => $_setString(18, value);
+  @$pb.TagNumber(19)
+  $core.bool hasCitationStyle() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearCitationStyle() => $_clearField(19);
+
+  @$pb.TagNumber(20)
+  $core.String get noteStyle => $_getSZ(19);
+  @$pb.TagNumber(20)
+  set noteStyle($core.String value) => $_setString(19, value);
+  @$pb.TagNumber(20)
+  $core.bool hasNoteStyle() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearNoteStyle() => $_clearField(20);
+
+  @$pb.TagNumber(21)
+  $core.String get styleCode => $_getSZ(20);
+  @$pb.TagNumber(21)
+  set styleCode($core.String value) => $_setString(20, value);
+  @$pb.TagNumber(21)
+  $core.bool hasStyleCode() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearStyleCode() => $_clearField(21);
+
+  @$pb.TagNumber(22)
+  $core.int get styleVersion => $_getIZ(21);
+  @$pb.TagNumber(22)
+  set styleVersion($core.int value) => $_setSignedInt32(21, value);
+  @$pb.TagNumber(22)
+  $core.bool hasStyleVersion() => $_has(21);
+  @$pb.TagNumber(22)
+  void clearStyleVersion() => $_clearField(22);
+
+  @$pb.TagNumber(23)
+  $core.String get validationStatus => $_getSZ(22);
+  @$pb.TagNumber(23)
+  set validationStatus($core.String value) => $_setString(22, value);
+  @$pb.TagNumber(23)
+  $core.bool hasValidationStatus() => $_has(22);
+  @$pb.TagNumber(23)
+  void clearValidationStatus() => $_clearField(23);
+
+  @$pb.TagNumber(24)
+  $core.String get manifestChecksum => $_getSZ(23);
+  @$pb.TagNumber(24)
+  set manifestChecksum($core.String value) => $_setString(23, value);
+  @$pb.TagNumber(24)
+  $core.bool hasManifestChecksum() => $_has(23);
+  @$pb.TagNumber(24)
+  void clearManifestChecksum() => $_clearField(24);
 }
 
 class DraftHandoff extends $pb.GeneratedMessage {
@@ -74710,6 +74794,8 @@ class RequestDraftExportRequest extends $pb.GeneratedMessage {
     $core.String? format,
     $core.bool? includeOriginDisclosure,
     $core.String? clientMutationId,
+    $core.String? styleCode,
+    $core.int? styleVersion,
   }) {
     final result = create();
     if (draftId != null) result.draftId = draftId;
@@ -74718,6 +74804,8 @@ class RequestDraftExportRequest extends $pb.GeneratedMessage {
     if (includeOriginDisclosure != null)
       result.includeOriginDisclosure = includeOriginDisclosure;
     if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    if (styleCode != null) result.styleCode = styleCode;
+    if (styleVersion != null) result.styleVersion = styleVersion;
     return result;
   }
 
@@ -74740,6 +74828,8 @@ class RequestDraftExportRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'format')
     ..aOB(4, _omitFieldNames ? '' : 'includeOriginDisclosure')
     ..aOS(5, _omitFieldNames ? '' : 'clientMutationId')
+    ..aOS(6, _omitFieldNames ? '' : 'styleCode')
+    ..aI(7, _omitFieldNames ? '' : 'styleVersion')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -74806,6 +74896,24 @@ class RequestDraftExportRequest extends $pb.GeneratedMessage {
   $core.bool hasClientMutationId() => $_has(4);
   @$pb.TagNumber(5)
   void clearClientMutationId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get styleCode => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set styleCode($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStyleCode() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStyleCode() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get styleVersion => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set styleVersion($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasStyleVersion() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearStyleVersion() => $_clearField(7);
 }
 
 class RequestDraftExportResponse extends $pb.GeneratedMessage {

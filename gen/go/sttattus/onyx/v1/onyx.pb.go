@@ -50845,6 +50845,13 @@ type DraftExport struct {
 	DlpStatus         string                 `protobuf:"bytes,15,opt,name=dlp_status,json=dlpStatus,proto3" json:"dlp_status,omitempty"`
 	CreatedAt         *timestamppb.Timestamp `protobuf:"bytes,16,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	ExpiresAt         *timestamppb.Timestamp `protobuf:"bytes,17,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+	SchemaVersion     string                 `protobuf:"bytes,18,opt,name=schema_version,json=schemaVersion,proto3" json:"schema_version,omitempty"`
+	CitationStyle     string                 `protobuf:"bytes,19,opt,name=citation_style,json=citationStyle,proto3" json:"citation_style,omitempty"`
+	NoteStyle         string                 `protobuf:"bytes,20,opt,name=note_style,json=noteStyle,proto3" json:"note_style,omitempty"`
+	StyleCode         string                 `protobuf:"bytes,21,opt,name=style_code,json=styleCode,proto3" json:"style_code,omitempty"`
+	StyleVersion      int32                  `protobuf:"varint,22,opt,name=style_version,json=styleVersion,proto3" json:"style_version,omitempty"`
+	ValidationStatus  string                 `protobuf:"bytes,23,opt,name=validation_status,json=validationStatus,proto3" json:"validation_status,omitempty"`
+	ManifestChecksum  string                 `protobuf:"bytes,24,opt,name=manifest_checksum,json=manifestChecksum,proto3" json:"manifest_checksum,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -50996,6 +51003,55 @@ func (x *DraftExport) GetExpiresAt() *timestamppb.Timestamp {
 		return x.ExpiresAt
 	}
 	return nil
+}
+
+func (x *DraftExport) GetSchemaVersion() string {
+	if x != nil {
+		return x.SchemaVersion
+	}
+	return ""
+}
+
+func (x *DraftExport) GetCitationStyle() string {
+	if x != nil {
+		return x.CitationStyle
+	}
+	return ""
+}
+
+func (x *DraftExport) GetNoteStyle() string {
+	if x != nil {
+		return x.NoteStyle
+	}
+	return ""
+}
+
+func (x *DraftExport) GetStyleCode() string {
+	if x != nil {
+		return x.StyleCode
+	}
+	return ""
+}
+
+func (x *DraftExport) GetStyleVersion() int32 {
+	if x != nil {
+		return x.StyleVersion
+	}
+	return 0
+}
+
+func (x *DraftExport) GetValidationStatus() string {
+	if x != nil {
+		return x.ValidationStatus
+	}
+	return ""
+}
+
+func (x *DraftExport) GetManifestChecksum() string {
+	if x != nil {
+		return x.ManifestChecksum
+	}
+	return ""
 }
 
 type DraftHandoff struct {
@@ -54713,6 +54769,8 @@ type RequestDraftExportRequest struct {
 	Format                  string                 `protobuf:"bytes,3,opt,name=format,proto3" json:"format,omitempty"`
 	IncludeOriginDisclosure bool                   `protobuf:"varint,4,opt,name=include_origin_disclosure,json=includeOriginDisclosure,proto3" json:"include_origin_disclosure,omitempty"`
 	ClientMutationId        string                 `protobuf:"bytes,5,opt,name=client_mutation_id,json=clientMutationId,proto3" json:"client_mutation_id,omitempty"`
+	StyleCode               string                 `protobuf:"bytes,6,opt,name=style_code,json=styleCode,proto3" json:"style_code,omitempty"`
+	StyleVersion            int32                  `protobuf:"varint,7,opt,name=style_version,json=styleVersion,proto3" json:"style_version,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
 }
@@ -54780,6 +54838,20 @@ func (x *RequestDraftExportRequest) GetClientMutationId() string {
 		return x.ClientMutationId
 	}
 	return ""
+}
+
+func (x *RequestDraftExportRequest) GetStyleCode() string {
+	if x != nil {
+		return x.StyleCode
+	}
+	return ""
+}
+
+func (x *RequestDraftExportRequest) GetStyleVersion() int32 {
+	if x != nil {
+		return x.StyleVersion
+	}
+	return 0
 }
 
 type RequestDraftExportResponse struct {
@@ -59897,7 +59969,7 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\n" +
 	"created_at\x18\v \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12;\n" +
 	"\vresolved_at\x18\f \x01(\v2\x1a.google.protobuf.TimestampR\n" +
-	"resolvedAt\"\xca\x04\n" +
+	"resolvedAt\"\xd5\x06\n" +
 	"\vDraftExport\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
 	"\bdraft_id\x18\x02 \x01(\tR\adraftId\x12\x1f\n" +
@@ -59920,7 +59992,16 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\n" +
 	"created_at\x18\x10 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
 	"\n" +
-	"expires_at\x18\x11 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\"\xfb\x02\n" +
+	"expires_at\x18\x11 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\x12%\n" +
+	"\x0eschema_version\x18\x12 \x01(\tR\rschemaVersion\x12%\n" +
+	"\x0ecitation_style\x18\x13 \x01(\tR\rcitationStyle\x12\x1d\n" +
+	"\n" +
+	"note_style\x18\x14 \x01(\tR\tnoteStyle\x12\x1d\n" +
+	"\n" +
+	"style_code\x18\x15 \x01(\tR\tstyleCode\x12#\n" +
+	"\rstyle_version\x18\x16 \x01(\x05R\fstyleVersion\x12+\n" +
+	"\x11validation_status\x18\x17 \x01(\tR\x10validationStatus\x12+\n" +
+	"\x11manifest_checksum\x18\x18 \x01(\tR\x10manifestChecksum\"\xfb\x02\n" +
 	"\fDraftHandoff\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
 	"\bdraft_id\x18\x02 \x01(\tR\adraftId\x12\x1f\n" +
@@ -60268,14 +60349,17 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\x12client_mutation_id\x18\x04 \x01(\tR\x10clientMutationId\"\x8f\x01\n" +
 	"\x1cResolveDraftConflictResponse\x12;\n" +
 	"\bconflict\x18\x01 \x01(\v2\x1f.sttattus.onyx.v1.DraftConflictR\bconflict\x122\n" +
-	"\x05block\x18\x02 \x01(\v2\x1c.sttattus.onyx.v1.DraftBlockR\x05block\"\xd9\x01\n" +
+	"\x05block\x18\x02 \x01(\v2\x1c.sttattus.onyx.v1.DraftBlockR\x05block\"\x9d\x02\n" +
 	"\x19RequestDraftExportRequest\x12\x19\n" +
 	"\bdraft_id\x18\x01 \x01(\tR\adraftId\x12\x1f\n" +
 	"\vrevision_id\x18\x02 \x01(\tR\n" +
 	"revisionId\x12\x16\n" +
 	"\x06format\x18\x03 \x01(\tR\x06format\x12:\n" +
 	"\x19include_origin_disclosure\x18\x04 \x01(\bR\x17includeOriginDisclosure\x12,\n" +
-	"\x12client_mutation_id\x18\x05 \x01(\tR\x10clientMutationId\"S\n" +
+	"\x12client_mutation_id\x18\x05 \x01(\tR\x10clientMutationId\x12\x1d\n" +
+	"\n" +
+	"style_code\x18\x06 \x01(\tR\tstyleCode\x12#\n" +
+	"\rstyle_version\x18\a \x01(\x05R\fstyleVersion\"S\n" +
 	"\x1aRequestDraftExportResponse\x125\n" +
 	"\x06export\x18\x01 \x01(\v2\x1d.sttattus.onyx.v1.DraftExportR\x06export\"4\n" +
 	"\x15GetDraftExportRequest\x12\x1b\n" +

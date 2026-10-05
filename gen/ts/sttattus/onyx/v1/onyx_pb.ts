@@ -41314,6 +41314,41 @@ export class DraftExport extends Message<DraftExport> {
    */
   expiresAt?: Timestamp;
 
+  /**
+   * @generated from field: string schema_version = 18;
+   */
+  schemaVersion = "";
+
+  /**
+   * @generated from field: string citation_style = 19;
+   */
+  citationStyle = "";
+
+  /**
+   * @generated from field: string note_style = 20;
+   */
+  noteStyle = "";
+
+  /**
+   * @generated from field: string style_code = 21;
+   */
+  styleCode = "";
+
+  /**
+   * @generated from field: int32 style_version = 22;
+   */
+  styleVersion = 0;
+
+  /**
+   * @generated from field: string validation_status = 23;
+   */
+  validationStatus = "";
+
+  /**
+   * @generated from field: string manifest_checksum = 24;
+   */
+  manifestChecksum = "";
+
   constructor(data?: PartialMessage<DraftExport>) {
     super();
     proto3.util.initPartial(data, this);
@@ -41339,6 +41374,13 @@ export class DraftExport extends Message<DraftExport> {
     { no: 15, name: "dlp_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 16, name: "created_at", kind: "message", T: Timestamp },
     { no: 17, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 18, name: "schema_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 19, name: "citation_style", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 20, name: "note_style", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 21, name: "style_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 22, name: "style_version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 23, name: "validation_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 24, name: "manifest_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftExport {
@@ -44364,6 +44406,16 @@ export class RequestDraftExportRequest extends Message<RequestDraftExportRequest
    */
   clientMutationId = "";
 
+  /**
+   * @generated from field: string style_code = 6;
+   */
+  styleCode = "";
+
+  /**
+   * @generated from field: int32 style_version = 7;
+   */
+  styleVersion = 0;
+
   constructor(data?: PartialMessage<RequestDraftExportRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -44377,6 +44429,8 @@ export class RequestDraftExportRequest extends Message<RequestDraftExportRequest
     { no: 3, name: "format", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "include_origin_disclosure", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 5, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "style_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "style_version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RequestDraftExportRequest {
