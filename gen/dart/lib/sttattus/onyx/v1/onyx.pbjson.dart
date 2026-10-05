@@ -20706,6 +20706,25 @@ const DraftExport$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'expiresAt'
     },
+    {'1': 'schema_version', '3': 18, '4': 1, '5': 9, '10': 'schemaVersion'},
+    {'1': 'citation_style', '3': 19, '4': 1, '5': 9, '10': 'citationStyle'},
+    {'1': 'note_style', '3': 20, '4': 1, '5': 9, '10': 'noteStyle'},
+    {'1': 'style_code', '3': 21, '4': 1, '5': 9, '10': 'styleCode'},
+    {'1': 'style_version', '3': 22, '4': 1, '5': 5, '10': 'styleVersion'},
+    {
+      '1': 'validation_status',
+      '3': 23,
+      '4': 1,
+      '5': 9,
+      '10': 'validationStatus'
+    },
+    {
+      '1': 'manifest_checksum',
+      '3': 24,
+      '4': 1,
+      '5': 9,
+      '10': 'manifestChecksum'
+    },
   ],
 };
 
@@ -20721,7 +20740,12 @@ final $typed_data.Uint8List draftExportDescriptor = $convert.base64Decode(
     'gJUgh3YXJuaW5ncxIjCg1yaWdodHNfc3RhdHVzGA4gASgJUgxyaWdodHNTdGF0dXMSHQoKZGxw'
     'X3N0YXR1cxgPIAEoCVIJZGxwU3RhdHVzEjkKCmNyZWF0ZWRfYXQYECABKAsyGi5nb29nbGUucH'
     'JvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKZXhwaXJlc19hdBgRIAEoCzIaLmdvb2ds'
-    'ZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWV4cGlyZXNBdA==');
+    'ZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWV4cGlyZXNBdBIlCg5zY2hlbWFfdmVyc2lvbhgSIAEoCV'
+    'INc2NoZW1hVmVyc2lvbhIlCg5jaXRhdGlvbl9zdHlsZRgTIAEoCVINY2l0YXRpb25TdHlsZRId'
+    'Cgpub3RlX3N0eWxlGBQgASgJUglub3RlU3R5bGUSHQoKc3R5bGVfY29kZRgVIAEoCVIJc3R5bG'
+    'VDb2RlEiMKDXN0eWxlX3ZlcnNpb24YFiABKAVSDHN0eWxlVmVyc2lvbhIrChF2YWxpZGF0aW9u'
+    'X3N0YXR1cxgXIAEoCVIQdmFsaWRhdGlvblN0YXR1cxIrChFtYW5pZmVzdF9jaGVja3N1bRgYIA'
+    'EoCVIQbWFuaWZlc3RDaGVja3N1bQ==');
 
 @$core.Deprecated('Use draftHandoffDescriptor instead')
 const DraftHandoff$json = {
@@ -22273,6 +22297,8 @@ const RequestDraftExportRequest$json = {
       '5': 9,
       '10': 'clientMutationId'
     },
+    {'1': 'style_code', '3': 6, '4': 1, '5': 9, '10': 'styleCode'},
+    {'1': 'style_version', '3': 7, '4': 1, '5': 5, '10': 'styleVersion'},
   ],
 };
 
@@ -22281,7 +22307,9 @@ final $typed_data.Uint8List requestDraftExportRequestDescriptor = $convert.base6
     'ChlSZXF1ZXN0RHJhZnRFeHBvcnRSZXF1ZXN0EhkKCGRyYWZ0X2lkGAEgASgJUgdkcmFmdElkEh'
     '8KC3JldmlzaW9uX2lkGAIgASgJUgpyZXZpc2lvbklkEhYKBmZvcm1hdBgDIAEoCVIGZm9ybWF0'
     'EjoKGWluY2x1ZGVfb3JpZ2luX2Rpc2Nsb3N1cmUYBCABKAhSF2luY2x1ZGVPcmlnaW5EaXNjbG'
-    '9zdXJlEiwKEmNsaWVudF9tdXRhdGlvbl9pZBgFIAEoCVIQY2xpZW50TXV0YXRpb25JZA==');
+    '9zdXJlEiwKEmNsaWVudF9tdXRhdGlvbl9pZBgFIAEoCVIQY2xpZW50TXV0YXRpb25JZBIdCgpz'
+    'dHlsZV9jb2RlGAYgASgJUglzdHlsZUNvZGUSIwoNc3R5bGVfdmVyc2lvbhgHIAEoBVIMc3R5bG'
+    'VWZXJzaW9u');
 
 @$core.Deprecated('Use requestDraftExportResponseDescriptor instead')
 const RequestDraftExportResponse$json = {
