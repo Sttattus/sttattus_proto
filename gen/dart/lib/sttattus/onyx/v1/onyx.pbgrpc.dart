@@ -2151,6 +2151,86 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$reportDraftIncident, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.GetDraftCollaborationResponse> getDraftCollaboration(
+    $0.GetDraftCollaborationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getDraftCollaboration, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.InviteDraftCollaboratorResponse>
+      inviteDraftCollaborator(
+    $0.InviteDraftCollaboratorRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$inviteDraftCollaborator, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RemoveDraftCollaboratorResponse>
+      removeDraftCollaborator(
+    $0.RemoveDraftCollaboratorRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$removeDraftCollaborator, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateDraftCommentResponse> createDraftComment(
+    $0.CreateDraftCommentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createDraftComment, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetDraftCommentStateResponse> setDraftCommentState(
+    $0.SetDraftCommentStateRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$setDraftCommentState, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateDraftAssignmentResponse> createDraftAssignment(
+    $0.CreateDraftAssignmentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createDraftAssignment, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetDraftAssignmentStateResponse>
+      setDraftAssignmentState(
+    $0.SetDraftAssignmentStateRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$setDraftAssignmentState, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListDraftNotificationsResponse>
+      listDraftNotifications(
+    $0.ListDraftNotificationsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listDraftNotifications, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MarkDraftNotificationReadResponse>
+      markDraftNotificationRead(
+    $0.MarkDraftNotificationReadRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$markDraftNotificationRead, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetDraftPresenceResponse> setDraftPresence(
+    $0.SetDraftPresenceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$setDraftPresence, request, options: options);
+  }
+
   // method descriptors
 
   static final _$createProfile =
@@ -3586,6 +3666,60 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/ReportDraftIncident',
       ($0.ReportDraftIncidentRequest value) => value.writeToBuffer(),
       $0.ReportDraftIncidentResponse.fromBuffer);
+  static final _$getDraftCollaboration = $grpc.ClientMethod<
+          $0.GetDraftCollaborationRequest, $0.GetDraftCollaborationResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetDraftCollaboration',
+      ($0.GetDraftCollaborationRequest value) => value.writeToBuffer(),
+      $0.GetDraftCollaborationResponse.fromBuffer);
+  static final _$inviteDraftCollaborator = $grpc.ClientMethod<
+          $0.InviteDraftCollaboratorRequest,
+          $0.InviteDraftCollaboratorResponse>(
+      '/sttattus.onyx.v1.OnyxService/InviteDraftCollaborator',
+      ($0.InviteDraftCollaboratorRequest value) => value.writeToBuffer(),
+      $0.InviteDraftCollaboratorResponse.fromBuffer);
+  static final _$removeDraftCollaborator = $grpc.ClientMethod<
+          $0.RemoveDraftCollaboratorRequest,
+          $0.RemoveDraftCollaboratorResponse>(
+      '/sttattus.onyx.v1.OnyxService/RemoveDraftCollaborator',
+      ($0.RemoveDraftCollaboratorRequest value) => value.writeToBuffer(),
+      $0.RemoveDraftCollaboratorResponse.fromBuffer);
+  static final _$createDraftComment = $grpc.ClientMethod<
+          $0.CreateDraftCommentRequest, $0.CreateDraftCommentResponse>(
+      '/sttattus.onyx.v1.OnyxService/CreateDraftComment',
+      ($0.CreateDraftCommentRequest value) => value.writeToBuffer(),
+      $0.CreateDraftCommentResponse.fromBuffer);
+  static final _$setDraftCommentState = $grpc.ClientMethod<
+          $0.SetDraftCommentStateRequest, $0.SetDraftCommentStateResponse>(
+      '/sttattus.onyx.v1.OnyxService/SetDraftCommentState',
+      ($0.SetDraftCommentStateRequest value) => value.writeToBuffer(),
+      $0.SetDraftCommentStateResponse.fromBuffer);
+  static final _$createDraftAssignment = $grpc.ClientMethod<
+          $0.CreateDraftAssignmentRequest, $0.CreateDraftAssignmentResponse>(
+      '/sttattus.onyx.v1.OnyxService/CreateDraftAssignment',
+      ($0.CreateDraftAssignmentRequest value) => value.writeToBuffer(),
+      $0.CreateDraftAssignmentResponse.fromBuffer);
+  static final _$setDraftAssignmentState = $grpc.ClientMethod<
+          $0.SetDraftAssignmentStateRequest,
+          $0.SetDraftAssignmentStateResponse>(
+      '/sttattus.onyx.v1.OnyxService/SetDraftAssignmentState',
+      ($0.SetDraftAssignmentStateRequest value) => value.writeToBuffer(),
+      $0.SetDraftAssignmentStateResponse.fromBuffer);
+  static final _$listDraftNotifications = $grpc.ClientMethod<
+          $0.ListDraftNotificationsRequest, $0.ListDraftNotificationsResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListDraftNotifications',
+      ($0.ListDraftNotificationsRequest value) => value.writeToBuffer(),
+      $0.ListDraftNotificationsResponse.fromBuffer);
+  static final _$markDraftNotificationRead = $grpc.ClientMethod<
+          $0.MarkDraftNotificationReadRequest,
+          $0.MarkDraftNotificationReadResponse>(
+      '/sttattus.onyx.v1.OnyxService/MarkDraftNotificationRead',
+      ($0.MarkDraftNotificationReadRequest value) => value.writeToBuffer(),
+      $0.MarkDraftNotificationReadResponse.fromBuffer);
+  static final _$setDraftPresence = $grpc.ClientMethod<
+          $0.SetDraftPresenceRequest, $0.SetDraftPresenceResponse>(
+      '/sttattus.onyx.v1.OnyxService/SetDraftPresence',
+      ($0.SetDraftPresenceRequest value) => value.writeToBuffer(),
+      $0.SetDraftPresenceResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.onyx.v1.OnyxService')
@@ -6010,6 +6144,96 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.ReportDraftIncidentRequest.fromBuffer(value),
         ($0.ReportDraftIncidentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetDraftCollaborationRequest,
+            $0.GetDraftCollaborationResponse>(
+        'GetDraftCollaboration',
+        getDraftCollaboration_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetDraftCollaborationRequest.fromBuffer(value),
+        ($0.GetDraftCollaborationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.InviteDraftCollaboratorRequest,
+            $0.InviteDraftCollaboratorResponse>(
+        'InviteDraftCollaborator',
+        inviteDraftCollaborator_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.InviteDraftCollaboratorRequest.fromBuffer(value),
+        ($0.InviteDraftCollaboratorResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RemoveDraftCollaboratorRequest,
+            $0.RemoveDraftCollaboratorResponse>(
+        'RemoveDraftCollaborator',
+        removeDraftCollaborator_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RemoveDraftCollaboratorRequest.fromBuffer(value),
+        ($0.RemoveDraftCollaboratorResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateDraftCommentRequest,
+            $0.CreateDraftCommentResponse>(
+        'CreateDraftComment',
+        createDraftComment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateDraftCommentRequest.fromBuffer(value),
+        ($0.CreateDraftCommentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetDraftCommentStateRequest,
+            $0.SetDraftCommentStateResponse>(
+        'SetDraftCommentState',
+        setDraftCommentState_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SetDraftCommentStateRequest.fromBuffer(value),
+        ($0.SetDraftCommentStateResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateDraftAssignmentRequest,
+            $0.CreateDraftAssignmentResponse>(
+        'CreateDraftAssignment',
+        createDraftAssignment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateDraftAssignmentRequest.fromBuffer(value),
+        ($0.CreateDraftAssignmentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetDraftAssignmentStateRequest,
+            $0.SetDraftAssignmentStateResponse>(
+        'SetDraftAssignmentState',
+        setDraftAssignmentState_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SetDraftAssignmentStateRequest.fromBuffer(value),
+        ($0.SetDraftAssignmentStateResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListDraftNotificationsRequest,
+            $0.ListDraftNotificationsResponse>(
+        'ListDraftNotifications',
+        listDraftNotifications_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListDraftNotificationsRequest.fromBuffer(value),
+        ($0.ListDraftNotificationsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MarkDraftNotificationReadRequest,
+            $0.MarkDraftNotificationReadResponse>(
+        'MarkDraftNotificationRead',
+        markDraftNotificationRead_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MarkDraftNotificationReadRequest.fromBuffer(value),
+        ($0.MarkDraftNotificationReadResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetDraftPresenceRequest,
+            $0.SetDraftPresenceResponse>(
+        'SetDraftPresence',
+        setDraftPresence_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SetDraftPresenceRequest.fromBuffer(value),
+        ($0.SetDraftPresenceResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.CreateProfileResponse> createProfile_Pre(
@@ -8499,4 +8723,94 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.ReportDraftIncidentResponse> reportDraftIncident(
       $grpc.ServiceCall call, $0.ReportDraftIncidentRequest request);
+
+  $async.Future<$0.GetDraftCollaborationResponse> getDraftCollaboration_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetDraftCollaborationRequest> $request) async {
+    return getDraftCollaboration($call, await $request);
+  }
+
+  $async.Future<$0.GetDraftCollaborationResponse> getDraftCollaboration(
+      $grpc.ServiceCall call, $0.GetDraftCollaborationRequest request);
+
+  $async.Future<$0.InviteDraftCollaboratorResponse> inviteDraftCollaborator_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.InviteDraftCollaboratorRequest> $request) async {
+    return inviteDraftCollaborator($call, await $request);
+  }
+
+  $async.Future<$0.InviteDraftCollaboratorResponse> inviteDraftCollaborator(
+      $grpc.ServiceCall call, $0.InviteDraftCollaboratorRequest request);
+
+  $async.Future<$0.RemoveDraftCollaboratorResponse> removeDraftCollaborator_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RemoveDraftCollaboratorRequest> $request) async {
+    return removeDraftCollaborator($call, await $request);
+  }
+
+  $async.Future<$0.RemoveDraftCollaboratorResponse> removeDraftCollaborator(
+      $grpc.ServiceCall call, $0.RemoveDraftCollaboratorRequest request);
+
+  $async.Future<$0.CreateDraftCommentResponse> createDraftComment_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.CreateDraftCommentRequest> $request) async {
+    return createDraftComment($call, await $request);
+  }
+
+  $async.Future<$0.CreateDraftCommentResponse> createDraftComment(
+      $grpc.ServiceCall call, $0.CreateDraftCommentRequest request);
+
+  $async.Future<$0.SetDraftCommentStateResponse> setDraftCommentState_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.SetDraftCommentStateRequest> $request) async {
+    return setDraftCommentState($call, await $request);
+  }
+
+  $async.Future<$0.SetDraftCommentStateResponse> setDraftCommentState(
+      $grpc.ServiceCall call, $0.SetDraftCommentStateRequest request);
+
+  $async.Future<$0.CreateDraftAssignmentResponse> createDraftAssignment_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.CreateDraftAssignmentRequest> $request) async {
+    return createDraftAssignment($call, await $request);
+  }
+
+  $async.Future<$0.CreateDraftAssignmentResponse> createDraftAssignment(
+      $grpc.ServiceCall call, $0.CreateDraftAssignmentRequest request);
+
+  $async.Future<$0.SetDraftAssignmentStateResponse> setDraftAssignmentState_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.SetDraftAssignmentStateRequest> $request) async {
+    return setDraftAssignmentState($call, await $request);
+  }
+
+  $async.Future<$0.SetDraftAssignmentStateResponse> setDraftAssignmentState(
+      $grpc.ServiceCall call, $0.SetDraftAssignmentStateRequest request);
+
+  $async.Future<$0.ListDraftNotificationsResponse> listDraftNotifications_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListDraftNotificationsRequest> $request) async {
+    return listDraftNotifications($call, await $request);
+  }
+
+  $async.Future<$0.ListDraftNotificationsResponse> listDraftNotifications(
+      $grpc.ServiceCall call, $0.ListDraftNotificationsRequest request);
+
+  $async.Future<$0.MarkDraftNotificationReadResponse>
+      markDraftNotificationRead_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.MarkDraftNotificationReadRequest> $request) async {
+    return markDraftNotificationRead($call, await $request);
+  }
+
+  $async.Future<$0.MarkDraftNotificationReadResponse> markDraftNotificationRead(
+      $grpc.ServiceCall call, $0.MarkDraftNotificationReadRequest request);
+
+  $async.Future<$0.SetDraftPresenceResponse> setDraftPresence_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.SetDraftPresenceRequest> $request) async {
+    return setDraftPresence($call, await $request);
+  }
+
+  $async.Future<$0.SetDraftPresenceResponse> setDraftPresence(
+      $grpc.ServiceCall call, $0.SetDraftPresenceRequest request);
 }

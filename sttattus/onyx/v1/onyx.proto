@@ -5309,6 +5309,12 @@ message DraftDocument {
   repeated DraftHandoff handoffs = 31;
   google.protobuf.Timestamp created_at = 32;
   google.protobuf.Timestamp updated_at = 33;
+  repeated DraftCollaborator collaborators = 34;
+  repeated DraftComment comments = 35;
+  repeated DraftAssignment assignments = 36;
+  repeated DraftNotification notifications = 37;
+  repeated DraftPresence presence = 38;
+  int32 unread_notification_count = 39;
 }
 
 message DraftingDashboard {
@@ -5617,6 +5623,204 @@ message ReportDraftIncidentRequest {
   string client_mutation_id = 4;
 }
 message ReportDraftIncidentResponse { string incident_id = 1; string status = 2; }
+
+// Choice 22 — privacy-preserving draft collaboration. Comment bodies and
+// assignment notes are encrypted at rest and are only returned to active
+// participants; Admin receives structural metadata only.
+message DraftCollaborator {
+  string id = 1;
+  string draft_id = 2;
+  string user_id = 3;
+  string display_name = 4;
+  string role = 5; // owner | editor | commenter | viewer
+  string status = 6; // active | removed
+  string invited_by = 7;
+  google.protobuf.Timestamp added_at = 8;
+  google.protobuf.Timestamp removed_at = 9;
+  int64 version = 10;
+  bool can_read = 11;
+  bool can_comment = 12;
+  bool can_assign = 13;
+  bool can_edit = 14;
+}
+
+message DraftComment {
+  string id = 1;
+  string draft_id = 2;
+  string block_id = 3;
+  string revision_id = 4;
+  string passage_key = 5;
+  string parent_comment_id = 6;
+  string body = 7;
+  string status = 8; // open | resolved | reopened | deleted
+  string author_user_id = 9;
+  string author_name = 10;
+  repeated string mention_user_ids = 11;
+  int64 version = 12;
+  google.protobuf.Timestamp created_at = 13;
+  google.protobuf.Timestamp updated_at = 14;
+  google.protobuf.Timestamp resolved_at = 15;
+  string resolved_by = 16;
+  string anchor_label = 17;
+}
+
+message DraftAssignment {
+  string id = 1;
+  string draft_id = 2;
+  string block_id = 3;
+  string comment_id = 4;
+  string assignee_user_id = 5;
+  string assignee_name = 6;
+  string assigned_by = 7;
+  string status = 8; // open | in_progress | blocked | done | cancelled
+  string priority = 9; // low | normal | high | urgent
+  string note = 10;
+  google.protobuf.Timestamp due_at = 11;
+  int64 version = 12;
+  google.protobuf.Timestamp created_at = 13;
+  google.protobuf.Timestamp updated_at = 14;
+  google.protobuf.Timestamp completed_at = 15;
+}
+
+message DraftNotification {
+  string id = 1;
+  string draft_id = 2;
+  string recipient_user_id = 3;
+  string actor_user_id = 4;
+  string event_type = 5;
+  string subject_type = 6;
+  string subject_id = 7;
+  string summary = 8;
+  bool read = 9;
+  google.protobuf.Timestamp created_at = 10;
+}
+
+message DraftPresence {
+  string draft_id = 1;
+  string user_id = 2;
+  string display_name = 3;
+  string status = 4; // active | idle | away
+  string device_id = 5;
+  string revision_id = 6;
+  google.protobuf.Timestamp last_seen_at = 7;
+  google.protobuf.Timestamp expires_at = 8;
+}
+
+message GetDraftCollaborationRequest {
+  string draft_id = 1;
+  bool include_resolved = 2;
+}
+message GetDraftCollaborationResponse {
+  repeated DraftCollaborator collaborators = 1;
+  repeated DraftComment comments = 2;
+  repeated DraftAssignment assignments = 3;
+  repeated DraftNotification notifications = 4;
+  repeated DraftPresence presence = 5;
+  int32 unread_notification_count = 6;
+}
+
+message InviteDraftCollaboratorRequest {
+  string draft_id = 1;
+  string user_id = 2;
+  string role = 3;
+  string client_mutation_id = 4;
+  string member_email = 5;
+}
+message InviteDraftCollaboratorResponse {
+  DraftCollaborator collaborator = 1;
+  bool replayed = 2;
+}
+
+message RemoveDraftCollaboratorRequest {
+  string draft_id = 1;
+  string user_id = 2;
+  string client_mutation_id = 3;
+}
+message RemoveDraftCollaboratorResponse {
+  bool removed = 1;
+  bool replayed = 2;
+}
+
+message CreateDraftCommentRequest {
+  string draft_id = 1;
+  string block_id = 2;
+  string revision_id = 3;
+  string passage_key = 4;
+  string parent_comment_id = 5;
+  string body = 6;
+  repeated string mention_user_ids = 7;
+  string replica_id = 8;
+  int64 replica_sequence = 9;
+  string client_mutation_id = 10;
+}
+message CreateDraftCommentResponse {
+  DraftComment comment = 1;
+  bool replayed = 2;
+}
+
+message SetDraftCommentStateRequest {
+  string comment_id = 1;
+  string state = 2;
+  string client_mutation_id = 3;
+}
+message SetDraftCommentStateResponse {
+  DraftComment comment = 1;
+  bool replayed = 2;
+}
+
+message CreateDraftAssignmentRequest {
+  string draft_id = 1;
+  string block_id = 2;
+  string comment_id = 3;
+  string assignee_user_id = 4;
+  string priority = 5;
+  string note = 6;
+  google.protobuf.Timestamp due_at = 7;
+  string replica_id = 8;
+  int64 replica_sequence = 9;
+  string client_mutation_id = 10;
+}
+message CreateDraftAssignmentResponse {
+  DraftAssignment assignment = 1;
+  bool replayed = 2;
+}
+
+message SetDraftAssignmentStateRequest {
+  string assignment_id = 1;
+  string state = 2;
+  string client_mutation_id = 3;
+}
+message SetDraftAssignmentStateResponse {
+  DraftAssignment assignment = 1;
+  bool replayed = 2;
+}
+
+message ListDraftNotificationsRequest {
+  string draft_id = 1;
+  bool unread_only = 2;
+  int32 limit = 3;
+}
+message ListDraftNotificationsResponse {
+  repeated DraftNotification notifications = 1;
+  int32 unread_count = 2;
+}
+
+message MarkDraftNotificationReadRequest {
+  string notification_id = 1;
+  string client_mutation_id = 2;
+}
+message MarkDraftNotificationReadResponse {
+  DraftNotification notification = 1;
+  bool replayed = 2;
+}
+
+message SetDraftPresenceRequest {
+  string draft_id = 1;
+  string status = 2;
+  string device_id = 3;
+  string revision_id = 4;
+}
+message SetDraftPresenceResponse { DraftPresence presence = 1; }
 
 service OnyxService {
   // Profile Management
@@ -5958,4 +6162,14 @@ service OnyxService {
   rpc GetDraftExport(GetDraftExportRequest) returns (GetDraftExportResponse);
   rpc CreateDraftHandoff(CreateDraftHandoffRequest) returns (CreateDraftHandoffResponse);
   rpc ReportDraftIncident(ReportDraftIncidentRequest) returns (ReportDraftIncidentResponse);
+  rpc GetDraftCollaboration(GetDraftCollaborationRequest) returns (GetDraftCollaborationResponse);
+  rpc InviteDraftCollaborator(InviteDraftCollaboratorRequest) returns (InviteDraftCollaboratorResponse);
+  rpc RemoveDraftCollaborator(RemoveDraftCollaboratorRequest) returns (RemoveDraftCollaboratorResponse);
+  rpc CreateDraftComment(CreateDraftCommentRequest) returns (CreateDraftCommentResponse);
+  rpc SetDraftCommentState(SetDraftCommentStateRequest) returns (SetDraftCommentStateResponse);
+  rpc CreateDraftAssignment(CreateDraftAssignmentRequest) returns (CreateDraftAssignmentResponse);
+  rpc SetDraftAssignmentState(SetDraftAssignmentStateRequest) returns (SetDraftAssignmentStateResponse);
+  rpc ListDraftNotifications(ListDraftNotificationsRequest) returns (ListDraftNotificationsResponse);
+  rpc MarkDraftNotificationRead(MarkDraftNotificationReadRequest) returns (MarkDraftNotificationReadResponse);
+  rpc SetDraftPresence(SetDraftPresenceRequest) returns (SetDraftPresenceResponse);
 }

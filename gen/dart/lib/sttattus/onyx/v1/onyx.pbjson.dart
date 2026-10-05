@@ -20918,6 +20918,53 @@ const DraftDocument$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'updatedAt'
     },
+    {
+      '1': 'collaborators',
+      '3': 34,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftCollaborator',
+      '10': 'collaborators'
+    },
+    {
+      '1': 'comments',
+      '3': 35,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftComment',
+      '10': 'comments'
+    },
+    {
+      '1': 'assignments',
+      '3': 36,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftAssignment',
+      '10': 'assignments'
+    },
+    {
+      '1': 'notifications',
+      '3': 37,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftNotification',
+      '10': 'notifications'
+    },
+    {
+      '1': 'presence',
+      '3': 38,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftPresence',
+      '10': 'presence'
+    },
+    {
+      '1': 'unread_notification_count',
+      '3': 39,
+      '4': 1,
+      '5': 5,
+      '10': 'unreadNotificationCount'
+    },
   ],
 };
 
@@ -20948,7 +20995,14 @@ final $typed_data.Uint8List draftDocumentDescriptor = $convert.base64Decode(
     'dFIHZXhwb3J0cxI6CghoYW5kb2ZmcxgfIAMoCzIeLnN0dGF0dHVzLm9ueXgudjEuRHJhZnRIYW'
     '5kb2ZmUghoYW5kb2ZmcxI5CgpjcmVhdGVkX2F0GCAgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp'
     'bWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYISABKAsyGi5nb29nbGUucHJvdG9idW'
-    'YuVGltZXN0YW1wUgl1cGRhdGVkQXQ=');
+    'YuVGltZXN0YW1wUgl1cGRhdGVkQXQSSQoNY29sbGFib3JhdG9ycxgiIAMoCzIjLnN0dGF0dHVz'
+    'Lm9ueXgudjEuRHJhZnRDb2xsYWJvcmF0b3JSDWNvbGxhYm9yYXRvcnMSOgoIY29tbWVudHMYIy'
+    'ADKAsyHi5zdHRhdHR1cy5vbnl4LnYxLkRyYWZ0Q29tbWVudFIIY29tbWVudHMSQwoLYXNzaWdu'
+    'bWVudHMYJCADKAsyIS5zdHRhdHR1cy5vbnl4LnYxLkRyYWZ0QXNzaWdubWVudFILYXNzaWdubW'
+    'VudHMSSQoNbm90aWZpY2F0aW9ucxglIAMoCzIjLnN0dGF0dHVzLm9ueXgudjEuRHJhZnROb3Rp'
+    'ZmljYXRpb25SDW5vdGlmaWNhdGlvbnMSOwoIcHJlc2VuY2UYJiADKAsyHy5zdHRhdHR1cy5vbn'
+    'l4LnYxLkRyYWZ0UHJlc2VuY2VSCHByZXNlbmNlEjoKGXVucmVhZF9ub3RpZmljYXRpb25fY291'
+    'bnQYJyABKAVSF3VucmVhZE5vdGlmaWNhdGlvbkNvdW50');
 
 @$core.Deprecated('Use draftingDashboardDescriptor instead')
 const DraftingDashboard$json = {
@@ -22451,3 +22505,747 @@ final $typed_data.Uint8List reportDraftIncidentResponseDescriptor =
     $convert.base64Decode(
         'ChtSZXBvcnREcmFmdEluY2lkZW50UmVzcG9uc2USHwoLaW5jaWRlbnRfaWQYASABKAlSCmluY2'
         'lkZW50SWQSFgoGc3RhdHVzGAIgASgJUgZzdGF0dXM=');
+
+@$core.Deprecated('Use draftCollaboratorDescriptor instead')
+const DraftCollaborator$json = {
+  '1': 'DraftCollaborator',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'draft_id', '3': 2, '4': 1, '5': 9, '10': 'draftId'},
+    {'1': 'user_id', '3': 3, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'display_name', '3': 4, '4': 1, '5': 9, '10': 'displayName'},
+    {'1': 'role', '3': 5, '4': 1, '5': 9, '10': 'role'},
+    {'1': 'status', '3': 6, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'invited_by', '3': 7, '4': 1, '5': 9, '10': 'invitedBy'},
+    {
+      '1': 'added_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'addedAt'
+    },
+    {
+      '1': 'removed_at',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'removedAt'
+    },
+    {'1': 'version', '3': 10, '4': 1, '5': 3, '10': 'version'},
+    {'1': 'can_read', '3': 11, '4': 1, '5': 8, '10': 'canRead'},
+    {'1': 'can_comment', '3': 12, '4': 1, '5': 8, '10': 'canComment'},
+    {'1': 'can_assign', '3': 13, '4': 1, '5': 8, '10': 'canAssign'},
+    {'1': 'can_edit', '3': 14, '4': 1, '5': 8, '10': 'canEdit'},
+  ],
+};
+
+/// Descriptor for `DraftCollaborator`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List draftCollaboratorDescriptor = $convert.base64Decode(
+    'ChFEcmFmdENvbGxhYm9yYXRvchIOCgJpZBgBIAEoCVICaWQSGQoIZHJhZnRfaWQYAiABKAlSB2'
+    'RyYWZ0SWQSFwoHdXNlcl9pZBgDIAEoCVIGdXNlcklkEiEKDGRpc3BsYXlfbmFtZRgEIAEoCVIL'
+    'ZGlzcGxheU5hbWUSEgoEcm9sZRgFIAEoCVIEcm9sZRIWCgZzdGF0dXMYBiABKAlSBnN0YXR1cx'
+    'IdCgppbnZpdGVkX2J5GAcgASgJUglpbnZpdGVkQnkSNQoIYWRkZWRfYXQYCCABKAsyGi5nb29n'
+    'bGUucHJvdG9idWYuVGltZXN0YW1wUgdhZGRlZEF0EjkKCnJlbW92ZWRfYXQYCSABKAsyGi5nb2'
+    '9nbGUucHJvdG9idWYuVGltZXN0YW1wUglyZW1vdmVkQXQSGAoHdmVyc2lvbhgKIAEoA1IHdmVy'
+    'c2lvbhIZCghjYW5fcmVhZBgLIAEoCFIHY2FuUmVhZBIfCgtjYW5fY29tbWVudBgMIAEoCFIKY2'
+    'FuQ29tbWVudBIdCgpjYW5fYXNzaWduGA0gASgIUgljYW5Bc3NpZ24SGQoIY2FuX2VkaXQYDiAB'
+    'KAhSB2NhbkVkaXQ=');
+
+@$core.Deprecated('Use draftCommentDescriptor instead')
+const DraftComment$json = {
+  '1': 'DraftComment',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'draft_id', '3': 2, '4': 1, '5': 9, '10': 'draftId'},
+    {'1': 'block_id', '3': 3, '4': 1, '5': 9, '10': 'blockId'},
+    {'1': 'revision_id', '3': 4, '4': 1, '5': 9, '10': 'revisionId'},
+    {'1': 'passage_key', '3': 5, '4': 1, '5': 9, '10': 'passageKey'},
+    {'1': 'parent_comment_id', '3': 6, '4': 1, '5': 9, '10': 'parentCommentId'},
+    {'1': 'body', '3': 7, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'status', '3': 8, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'author_user_id', '3': 9, '4': 1, '5': 9, '10': 'authorUserId'},
+    {'1': 'author_name', '3': 10, '4': 1, '5': 9, '10': 'authorName'},
+    {'1': 'mention_user_ids', '3': 11, '4': 3, '5': 9, '10': 'mentionUserIds'},
+    {'1': 'version', '3': 12, '4': 1, '5': 3, '10': 'version'},
+    {
+      '1': 'created_at',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+    {
+      '1': 'resolved_at',
+      '3': 15,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'resolvedAt'
+    },
+    {'1': 'resolved_by', '3': 16, '4': 1, '5': 9, '10': 'resolvedBy'},
+    {'1': 'anchor_label', '3': 17, '4': 1, '5': 9, '10': 'anchorLabel'},
+  ],
+};
+
+/// Descriptor for `DraftComment`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List draftCommentDescriptor = $convert.base64Decode(
+    'CgxEcmFmdENvbW1lbnQSDgoCaWQYASABKAlSAmlkEhkKCGRyYWZ0X2lkGAIgASgJUgdkcmFmdE'
+    'lkEhkKCGJsb2NrX2lkGAMgASgJUgdibG9ja0lkEh8KC3JldmlzaW9uX2lkGAQgASgJUgpyZXZp'
+    'c2lvbklkEh8KC3Bhc3NhZ2Vfa2V5GAUgASgJUgpwYXNzYWdlS2V5EioKEXBhcmVudF9jb21tZW'
+    '50X2lkGAYgASgJUg9wYXJlbnRDb21tZW50SWQSEgoEYm9keRgHIAEoCVIEYm9keRIWCgZzdGF0'
+    'dXMYCCABKAlSBnN0YXR1cxIkCg5hdXRob3JfdXNlcl9pZBgJIAEoCVIMYXV0aG9yVXNlcklkEh'
+    '8KC2F1dGhvcl9uYW1lGAogASgJUgphdXRob3JOYW1lEigKEG1lbnRpb25fdXNlcl9pZHMYCyAD'
+    'KAlSDm1lbnRpb25Vc2VySWRzEhgKB3ZlcnNpb24YDCABKANSB3ZlcnNpb24SOQoKY3JlYXRlZF'
+    '9hdBgNIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI5Cgp1cGRh'
+    'dGVkX2F0GA4gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0EjsKC3'
+    'Jlc29sdmVkX2F0GA8gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIKcmVzb2x2ZWRB'
+    'dBIfCgtyZXNvbHZlZF9ieRgQIAEoCVIKcmVzb2x2ZWRCeRIhCgxhbmNob3JfbGFiZWwYESABKA'
+    'lSC2FuY2hvckxhYmVs');
+
+@$core.Deprecated('Use draftAssignmentDescriptor instead')
+const DraftAssignment$json = {
+  '1': 'DraftAssignment',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'draft_id', '3': 2, '4': 1, '5': 9, '10': 'draftId'},
+    {'1': 'block_id', '3': 3, '4': 1, '5': 9, '10': 'blockId'},
+    {'1': 'comment_id', '3': 4, '4': 1, '5': 9, '10': 'commentId'},
+    {'1': 'assignee_user_id', '3': 5, '4': 1, '5': 9, '10': 'assigneeUserId'},
+    {'1': 'assignee_name', '3': 6, '4': 1, '5': 9, '10': 'assigneeName'},
+    {'1': 'assigned_by', '3': 7, '4': 1, '5': 9, '10': 'assignedBy'},
+    {'1': 'status', '3': 8, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'priority', '3': 9, '4': 1, '5': 9, '10': 'priority'},
+    {'1': 'note', '3': 10, '4': 1, '5': 9, '10': 'note'},
+    {
+      '1': 'due_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'dueAt'
+    },
+    {'1': 'version', '3': 12, '4': 1, '5': 3, '10': 'version'},
+    {
+      '1': 'created_at',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+    {
+      '1': 'completed_at',
+      '3': 15,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'completedAt'
+    },
+  ],
+};
+
+/// Descriptor for `DraftAssignment`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List draftAssignmentDescriptor = $convert.base64Decode(
+    'Cg9EcmFmdEFzc2lnbm1lbnQSDgoCaWQYASABKAlSAmlkEhkKCGRyYWZ0X2lkGAIgASgJUgdkcm'
+    'FmdElkEhkKCGJsb2NrX2lkGAMgASgJUgdibG9ja0lkEh0KCmNvbW1lbnRfaWQYBCABKAlSCWNv'
+    'bW1lbnRJZBIoChBhc3NpZ25lZV91c2VyX2lkGAUgASgJUg5hc3NpZ25lZVVzZXJJZBIjCg1hc3'
+    'NpZ25lZV9uYW1lGAYgASgJUgxhc3NpZ25lZU5hbWUSHwoLYXNzaWduZWRfYnkYByABKAlSCmFz'
+    'c2lnbmVkQnkSFgoGc3RhdHVzGAggASgJUgZzdGF0dXMSGgoIcHJpb3JpdHkYCSABKAlSCHByaW'
+    '9yaXR5EhIKBG5vdGUYCiABKAlSBG5vdGUSMQoGZHVlX2F0GAsgASgLMhouZ29vZ2xlLnByb3Rv'
+    'YnVmLlRpbWVzdGFtcFIFZHVlQXQSGAoHdmVyc2lvbhgMIAEoA1IHdmVyc2lvbhI5CgpjcmVhdG'
+    'VkX2F0GA0gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCnVw'
+    'ZGF0ZWRfYXQYDiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQSPQ'
+    'oMY29tcGxldGVkX2F0GA8gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFILY29tcGxl'
+    'dGVkQXQ=');
+
+@$core.Deprecated('Use draftNotificationDescriptor instead')
+const DraftNotification$json = {
+  '1': 'DraftNotification',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'draft_id', '3': 2, '4': 1, '5': 9, '10': 'draftId'},
+    {'1': 'recipient_user_id', '3': 3, '4': 1, '5': 9, '10': 'recipientUserId'},
+    {'1': 'actor_user_id', '3': 4, '4': 1, '5': 9, '10': 'actorUserId'},
+    {'1': 'event_type', '3': 5, '4': 1, '5': 9, '10': 'eventType'},
+    {'1': 'subject_type', '3': 6, '4': 1, '5': 9, '10': 'subjectType'},
+    {'1': 'subject_id', '3': 7, '4': 1, '5': 9, '10': 'subjectId'},
+    {'1': 'summary', '3': 8, '4': 1, '5': 9, '10': 'summary'},
+    {'1': 'read', '3': 9, '4': 1, '5': 8, '10': 'read'},
+    {
+      '1': 'created_at',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+  ],
+};
+
+/// Descriptor for `DraftNotification`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List draftNotificationDescriptor = $convert.base64Decode(
+    'ChFEcmFmdE5vdGlmaWNhdGlvbhIOCgJpZBgBIAEoCVICaWQSGQoIZHJhZnRfaWQYAiABKAlSB2'
+    'RyYWZ0SWQSKgoRcmVjaXBpZW50X3VzZXJfaWQYAyABKAlSD3JlY2lwaWVudFVzZXJJZBIiCg1h'
+    'Y3Rvcl91c2VyX2lkGAQgASgJUgthY3RvclVzZXJJZBIdCgpldmVudF90eXBlGAUgASgJUglldm'
+    'VudFR5cGUSIQoMc3ViamVjdF90eXBlGAYgASgJUgtzdWJqZWN0VHlwZRIdCgpzdWJqZWN0X2lk'
+    'GAcgASgJUglzdWJqZWN0SWQSGAoHc3VtbWFyeRgIIAEoCVIHc3VtbWFyeRISCgRyZWFkGAkgAS'
+    'gIUgRyZWFkEjkKCmNyZWF0ZWRfYXQYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1w'
+    'UgljcmVhdGVkQXQ=');
+
+@$core.Deprecated('Use draftPresenceDescriptor instead')
+const DraftPresence$json = {
+  '1': 'DraftPresence',
+  '2': [
+    {'1': 'draft_id', '3': 1, '4': 1, '5': 9, '10': 'draftId'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'display_name', '3': 3, '4': 1, '5': 9, '10': 'displayName'},
+    {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'device_id', '3': 5, '4': 1, '5': 9, '10': 'deviceId'},
+    {'1': 'revision_id', '3': 6, '4': 1, '5': 9, '10': 'revisionId'},
+    {
+      '1': 'last_seen_at',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'lastSeenAt'
+    },
+    {
+      '1': 'expires_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+  ],
+};
+
+/// Descriptor for `DraftPresence`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List draftPresenceDescriptor = $convert.base64Decode(
+    'Cg1EcmFmdFByZXNlbmNlEhkKCGRyYWZ0X2lkGAEgASgJUgdkcmFmdElkEhcKB3VzZXJfaWQYAi'
+    'ABKAlSBnVzZXJJZBIhCgxkaXNwbGF5X25hbWUYAyABKAlSC2Rpc3BsYXlOYW1lEhYKBnN0YXR1'
+    'cxgEIAEoCVIGc3RhdHVzEhsKCWRldmljZV9pZBgFIAEoCVIIZGV2aWNlSWQSHwoLcmV2aXNpb2'
+    '5faWQYBiABKAlSCnJldmlzaW9uSWQSPAoMbGFzdF9zZWVuX2F0GAcgASgLMhouZ29vZ2xlLnBy'
+    'b3RvYnVmLlRpbWVzdGFtcFIKbGFzdFNlZW5BdBI5CgpleHBpcmVzX2F0GAggASgLMhouZ29vZ2'
+    'xlLnByb3RvYnVmLlRpbWVzdGFtcFIJZXhwaXJlc0F0');
+
+@$core.Deprecated('Use getDraftCollaborationRequestDescriptor instead')
+const GetDraftCollaborationRequest$json = {
+  '1': 'GetDraftCollaborationRequest',
+  '2': [
+    {'1': 'draft_id', '3': 1, '4': 1, '5': 9, '10': 'draftId'},
+    {'1': 'include_resolved', '3': 2, '4': 1, '5': 8, '10': 'includeResolved'},
+  ],
+};
+
+/// Descriptor for `GetDraftCollaborationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDraftCollaborationRequestDescriptor =
+    $convert.base64Decode(
+        'ChxHZXREcmFmdENvbGxhYm9yYXRpb25SZXF1ZXN0EhkKCGRyYWZ0X2lkGAEgASgJUgdkcmFmdE'
+        'lkEikKEGluY2x1ZGVfcmVzb2x2ZWQYAiABKAhSD2luY2x1ZGVSZXNvbHZlZA==');
+
+@$core.Deprecated('Use getDraftCollaborationResponseDescriptor instead')
+const GetDraftCollaborationResponse$json = {
+  '1': 'GetDraftCollaborationResponse',
+  '2': [
+    {
+      '1': 'collaborators',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftCollaborator',
+      '10': 'collaborators'
+    },
+    {
+      '1': 'comments',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftComment',
+      '10': 'comments'
+    },
+    {
+      '1': 'assignments',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftAssignment',
+      '10': 'assignments'
+    },
+    {
+      '1': 'notifications',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftNotification',
+      '10': 'notifications'
+    },
+    {
+      '1': 'presence',
+      '3': 5,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftPresence',
+      '10': 'presence'
+    },
+    {
+      '1': 'unread_notification_count',
+      '3': 6,
+      '4': 1,
+      '5': 5,
+      '10': 'unreadNotificationCount'
+    },
+  ],
+};
+
+/// Descriptor for `GetDraftCollaborationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDraftCollaborationResponseDescriptor = $convert.base64Decode(
+    'Ch1HZXREcmFmdENvbGxhYm9yYXRpb25SZXNwb25zZRJJCg1jb2xsYWJvcmF0b3JzGAEgAygLMi'
+    'Muc3R0YXR0dXMub255eC52MS5EcmFmdENvbGxhYm9yYXRvclINY29sbGFib3JhdG9ycxI6Cghj'
+    'b21tZW50cxgCIAMoCzIeLnN0dGF0dHVzLm9ueXgudjEuRHJhZnRDb21tZW50Ughjb21tZW50cx'
+    'JDCgthc3NpZ25tZW50cxgDIAMoCzIhLnN0dGF0dHVzLm9ueXgudjEuRHJhZnRBc3NpZ25tZW50'
+    'Ugthc3NpZ25tZW50cxJJCg1ub3RpZmljYXRpb25zGAQgAygLMiMuc3R0YXR0dXMub255eC52MS'
+    '5EcmFmdE5vdGlmaWNhdGlvblINbm90aWZpY2F0aW9ucxI7CghwcmVzZW5jZRgFIAMoCzIfLnN0'
+    'dGF0dHVzLm9ueXgudjEuRHJhZnRQcmVzZW5jZVIIcHJlc2VuY2USOgoZdW5yZWFkX25vdGlmaW'
+    'NhdGlvbl9jb3VudBgGIAEoBVIXdW5yZWFkTm90aWZpY2F0aW9uQ291bnQ=');
+
+@$core.Deprecated('Use inviteDraftCollaboratorRequestDescriptor instead')
+const InviteDraftCollaboratorRequest$json = {
+  '1': 'InviteDraftCollaboratorRequest',
+  '2': [
+    {'1': 'draft_id', '3': 1, '4': 1, '5': 9, '10': 'draftId'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'role', '3': 3, '4': 1, '5': 9, '10': 'role'},
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+    {'1': 'member_email', '3': 5, '4': 1, '5': 9, '10': 'memberEmail'},
+  ],
+};
+
+/// Descriptor for `InviteDraftCollaboratorRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List inviteDraftCollaboratorRequestDescriptor =
+    $convert.base64Decode(
+        'Ch5JbnZpdGVEcmFmdENvbGxhYm9yYXRvclJlcXVlc3QSGQoIZHJhZnRfaWQYASABKAlSB2RyYW'
+        'Z0SWQSFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEhIKBHJvbGUYAyABKAlSBHJvbGUSLAoSY2xp'
+        'ZW50X211dGF0aW9uX2lkGAQgASgJUhBjbGllbnRNdXRhdGlvbklkEiEKDG1lbWJlcl9lbWFpbB'
+        'gFIAEoCVILbWVtYmVyRW1haWw=');
+
+@$core.Deprecated('Use inviteDraftCollaboratorResponseDescriptor instead')
+const InviteDraftCollaboratorResponse$json = {
+  '1': 'InviteDraftCollaboratorResponse',
+  '2': [
+    {
+      '1': 'collaborator',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftCollaborator',
+      '10': 'collaborator'
+    },
+    {'1': 'replayed', '3': 2, '4': 1, '5': 8, '10': 'replayed'},
+  ],
+};
+
+/// Descriptor for `InviteDraftCollaboratorResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List inviteDraftCollaboratorResponseDescriptor =
+    $convert.base64Decode(
+        'Ch9JbnZpdGVEcmFmdENvbGxhYm9yYXRvclJlc3BvbnNlEkcKDGNvbGxhYm9yYXRvchgBIAEoCz'
+        'IjLnN0dGF0dHVzLm9ueXgudjEuRHJhZnRDb2xsYWJvcmF0b3JSDGNvbGxhYm9yYXRvchIaCghy'
+        'ZXBsYXllZBgCIAEoCFIIcmVwbGF5ZWQ=');
+
+@$core.Deprecated('Use removeDraftCollaboratorRequestDescriptor instead')
+const RemoveDraftCollaboratorRequest$json = {
+  '1': 'RemoveDraftCollaboratorRequest',
+  '2': [
+    {'1': 'draft_id', '3': 1, '4': 1, '5': 9, '10': 'draftId'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {
+      '1': 'client_mutation_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `RemoveDraftCollaboratorRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeDraftCollaboratorRequestDescriptor =
+    $convert.base64Decode(
+        'Ch5SZW1vdmVEcmFmdENvbGxhYm9yYXRvclJlcXVlc3QSGQoIZHJhZnRfaWQYASABKAlSB2RyYW'
+        'Z0SWQSFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEiwKEmNsaWVudF9tdXRhdGlvbl9pZBgDIAEo'
+        'CVIQY2xpZW50TXV0YXRpb25JZA==');
+
+@$core.Deprecated('Use removeDraftCollaboratorResponseDescriptor instead')
+const RemoveDraftCollaboratorResponse$json = {
+  '1': 'RemoveDraftCollaboratorResponse',
+  '2': [
+    {'1': 'removed', '3': 1, '4': 1, '5': 8, '10': 'removed'},
+    {'1': 'replayed', '3': 2, '4': 1, '5': 8, '10': 'replayed'},
+  ],
+};
+
+/// Descriptor for `RemoveDraftCollaboratorResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeDraftCollaboratorResponseDescriptor =
+    $convert.base64Decode(
+        'Ch9SZW1vdmVEcmFmdENvbGxhYm9yYXRvclJlc3BvbnNlEhgKB3JlbW92ZWQYASABKAhSB3JlbW'
+        '92ZWQSGgoIcmVwbGF5ZWQYAiABKAhSCHJlcGxheWVk');
+
+@$core.Deprecated('Use createDraftCommentRequestDescriptor instead')
+const CreateDraftCommentRequest$json = {
+  '1': 'CreateDraftCommentRequest',
+  '2': [
+    {'1': 'draft_id', '3': 1, '4': 1, '5': 9, '10': 'draftId'},
+    {'1': 'block_id', '3': 2, '4': 1, '5': 9, '10': 'blockId'},
+    {'1': 'revision_id', '3': 3, '4': 1, '5': 9, '10': 'revisionId'},
+    {'1': 'passage_key', '3': 4, '4': 1, '5': 9, '10': 'passageKey'},
+    {'1': 'parent_comment_id', '3': 5, '4': 1, '5': 9, '10': 'parentCommentId'},
+    {'1': 'body', '3': 6, '4': 1, '5': 9, '10': 'body'},
+    {'1': 'mention_user_ids', '3': 7, '4': 3, '5': 9, '10': 'mentionUserIds'},
+    {'1': 'replica_id', '3': 8, '4': 1, '5': 9, '10': 'replicaId'},
+    {'1': 'replica_sequence', '3': 9, '4': 1, '5': 3, '10': 'replicaSequence'},
+    {
+      '1': 'client_mutation_id',
+      '3': 10,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `CreateDraftCommentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createDraftCommentRequestDescriptor = $convert.base64Decode(
+    'ChlDcmVhdGVEcmFmdENvbW1lbnRSZXF1ZXN0EhkKCGRyYWZ0X2lkGAEgASgJUgdkcmFmdElkEh'
+    'kKCGJsb2NrX2lkGAIgASgJUgdibG9ja0lkEh8KC3JldmlzaW9uX2lkGAMgASgJUgpyZXZpc2lv'
+    'bklkEh8KC3Bhc3NhZ2Vfa2V5GAQgASgJUgpwYXNzYWdlS2V5EioKEXBhcmVudF9jb21tZW50X2'
+    'lkGAUgASgJUg9wYXJlbnRDb21tZW50SWQSEgoEYm9keRgGIAEoCVIEYm9keRIoChBtZW50aW9u'
+    'X3VzZXJfaWRzGAcgAygJUg5tZW50aW9uVXNlcklkcxIdCgpyZXBsaWNhX2lkGAggASgJUglyZX'
+    'BsaWNhSWQSKQoQcmVwbGljYV9zZXF1ZW5jZRgJIAEoA1IPcmVwbGljYVNlcXVlbmNlEiwKEmNs'
+    'aWVudF9tdXRhdGlvbl9pZBgKIAEoCVIQY2xpZW50TXV0YXRpb25JZA==');
+
+@$core.Deprecated('Use createDraftCommentResponseDescriptor instead')
+const CreateDraftCommentResponse$json = {
+  '1': 'CreateDraftCommentResponse',
+  '2': [
+    {
+      '1': 'comment',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftComment',
+      '10': 'comment'
+    },
+    {'1': 'replayed', '3': 2, '4': 1, '5': 8, '10': 'replayed'},
+  ],
+};
+
+/// Descriptor for `CreateDraftCommentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createDraftCommentResponseDescriptor =
+    $convert.base64Decode(
+        'ChpDcmVhdGVEcmFmdENvbW1lbnRSZXNwb25zZRI4Cgdjb21tZW50GAEgASgLMh4uc3R0YXR0dX'
+        'Mub255eC52MS5EcmFmdENvbW1lbnRSB2NvbW1lbnQSGgoIcmVwbGF5ZWQYAiABKAhSCHJlcGxh'
+        'eWVk');
+
+@$core.Deprecated('Use setDraftCommentStateRequestDescriptor instead')
+const SetDraftCommentStateRequest$json = {
+  '1': 'SetDraftCommentStateRequest',
+  '2': [
+    {'1': 'comment_id', '3': 1, '4': 1, '5': 9, '10': 'commentId'},
+    {'1': 'state', '3': 2, '4': 1, '5': 9, '10': 'state'},
+    {
+      '1': 'client_mutation_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `SetDraftCommentStateRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setDraftCommentStateRequestDescriptor =
+    $convert.base64Decode(
+        'ChtTZXREcmFmdENvbW1lbnRTdGF0ZVJlcXVlc3QSHQoKY29tbWVudF9pZBgBIAEoCVIJY29tbW'
+        'VudElkEhQKBXN0YXRlGAIgASgJUgVzdGF0ZRIsChJjbGllbnRfbXV0YXRpb25faWQYAyABKAlS'
+        'EGNsaWVudE11dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use setDraftCommentStateResponseDescriptor instead')
+const SetDraftCommentStateResponse$json = {
+  '1': 'SetDraftCommentStateResponse',
+  '2': [
+    {
+      '1': 'comment',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftComment',
+      '10': 'comment'
+    },
+    {'1': 'replayed', '3': 2, '4': 1, '5': 8, '10': 'replayed'},
+  ],
+};
+
+/// Descriptor for `SetDraftCommentStateResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setDraftCommentStateResponseDescriptor =
+    $convert.base64Decode(
+        'ChxTZXREcmFmdENvbW1lbnRTdGF0ZVJlc3BvbnNlEjgKB2NvbW1lbnQYASABKAsyHi5zdHRhdH'
+        'R1cy5vbnl4LnYxLkRyYWZ0Q29tbWVudFIHY29tbWVudBIaCghyZXBsYXllZBgCIAEoCFIIcmVw'
+        'bGF5ZWQ=');
+
+@$core.Deprecated('Use createDraftAssignmentRequestDescriptor instead')
+const CreateDraftAssignmentRequest$json = {
+  '1': 'CreateDraftAssignmentRequest',
+  '2': [
+    {'1': 'draft_id', '3': 1, '4': 1, '5': 9, '10': 'draftId'},
+    {'1': 'block_id', '3': 2, '4': 1, '5': 9, '10': 'blockId'},
+    {'1': 'comment_id', '3': 3, '4': 1, '5': 9, '10': 'commentId'},
+    {'1': 'assignee_user_id', '3': 4, '4': 1, '5': 9, '10': 'assigneeUserId'},
+    {'1': 'priority', '3': 5, '4': 1, '5': 9, '10': 'priority'},
+    {'1': 'note', '3': 6, '4': 1, '5': 9, '10': 'note'},
+    {
+      '1': 'due_at',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'dueAt'
+    },
+    {'1': 'replica_id', '3': 8, '4': 1, '5': 9, '10': 'replicaId'},
+    {'1': 'replica_sequence', '3': 9, '4': 1, '5': 3, '10': 'replicaSequence'},
+    {
+      '1': 'client_mutation_id',
+      '3': 10,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `CreateDraftAssignmentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createDraftAssignmentRequestDescriptor = $convert.base64Decode(
+    'ChxDcmVhdGVEcmFmdEFzc2lnbm1lbnRSZXF1ZXN0EhkKCGRyYWZ0X2lkGAEgASgJUgdkcmFmdE'
+    'lkEhkKCGJsb2NrX2lkGAIgASgJUgdibG9ja0lkEh0KCmNvbW1lbnRfaWQYAyABKAlSCWNvbW1l'
+    'bnRJZBIoChBhc3NpZ25lZV91c2VyX2lkGAQgASgJUg5hc3NpZ25lZVVzZXJJZBIaCghwcmlvcm'
+    'l0eRgFIAEoCVIIcHJpb3JpdHkSEgoEbm90ZRgGIAEoCVIEbm90ZRIxCgZkdWVfYXQYByABKAsy'
+    'Gi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgVkdWVBdBIdCgpyZXBsaWNhX2lkGAggASgJUg'
+    'lyZXBsaWNhSWQSKQoQcmVwbGljYV9zZXF1ZW5jZRgJIAEoA1IPcmVwbGljYVNlcXVlbmNlEiwK'
+    'EmNsaWVudF9tdXRhdGlvbl9pZBgKIAEoCVIQY2xpZW50TXV0YXRpb25JZA==');
+
+@$core.Deprecated('Use createDraftAssignmentResponseDescriptor instead')
+const CreateDraftAssignmentResponse$json = {
+  '1': 'CreateDraftAssignmentResponse',
+  '2': [
+    {
+      '1': 'assignment',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftAssignment',
+      '10': 'assignment'
+    },
+    {'1': 'replayed', '3': 2, '4': 1, '5': 8, '10': 'replayed'},
+  ],
+};
+
+/// Descriptor for `CreateDraftAssignmentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createDraftAssignmentResponseDescriptor =
+    $convert.base64Decode(
+        'Ch1DcmVhdGVEcmFmdEFzc2lnbm1lbnRSZXNwb25zZRJBCgphc3NpZ25tZW50GAEgASgLMiEuc3'
+        'R0YXR0dXMub255eC52MS5EcmFmdEFzc2lnbm1lbnRSCmFzc2lnbm1lbnQSGgoIcmVwbGF5ZWQY'
+        'AiABKAhSCHJlcGxheWVk');
+
+@$core.Deprecated('Use setDraftAssignmentStateRequestDescriptor instead')
+const SetDraftAssignmentStateRequest$json = {
+  '1': 'SetDraftAssignmentStateRequest',
+  '2': [
+    {'1': 'assignment_id', '3': 1, '4': 1, '5': 9, '10': 'assignmentId'},
+    {'1': 'state', '3': 2, '4': 1, '5': 9, '10': 'state'},
+    {
+      '1': 'client_mutation_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `SetDraftAssignmentStateRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setDraftAssignmentStateRequestDescriptor =
+    $convert.base64Decode(
+        'Ch5TZXREcmFmdEFzc2lnbm1lbnRTdGF0ZVJlcXVlc3QSIwoNYXNzaWdubWVudF9pZBgBIAEoCV'
+        'IMYXNzaWdubWVudElkEhQKBXN0YXRlGAIgASgJUgVzdGF0ZRIsChJjbGllbnRfbXV0YXRpb25f'
+        'aWQYAyABKAlSEGNsaWVudE11dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use setDraftAssignmentStateResponseDescriptor instead')
+const SetDraftAssignmentStateResponse$json = {
+  '1': 'SetDraftAssignmentStateResponse',
+  '2': [
+    {
+      '1': 'assignment',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftAssignment',
+      '10': 'assignment'
+    },
+    {'1': 'replayed', '3': 2, '4': 1, '5': 8, '10': 'replayed'},
+  ],
+};
+
+/// Descriptor for `SetDraftAssignmentStateResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setDraftAssignmentStateResponseDescriptor =
+    $convert.base64Decode(
+        'Ch9TZXREcmFmdEFzc2lnbm1lbnRTdGF0ZVJlc3BvbnNlEkEKCmFzc2lnbm1lbnQYASABKAsyIS'
+        '5zdHRhdHR1cy5vbnl4LnYxLkRyYWZ0QXNzaWdubWVudFIKYXNzaWdubWVudBIaCghyZXBsYXll'
+        'ZBgCIAEoCFIIcmVwbGF5ZWQ=');
+
+@$core.Deprecated('Use listDraftNotificationsRequestDescriptor instead')
+const ListDraftNotificationsRequest$json = {
+  '1': 'ListDraftNotificationsRequest',
+  '2': [
+    {'1': 'draft_id', '3': 1, '4': 1, '5': 9, '10': 'draftId'},
+    {'1': 'unread_only', '3': 2, '4': 1, '5': 8, '10': 'unreadOnly'},
+    {'1': 'limit', '3': 3, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `ListDraftNotificationsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listDraftNotificationsRequestDescriptor =
+    $convert.base64Decode(
+        'Ch1MaXN0RHJhZnROb3RpZmljYXRpb25zUmVxdWVzdBIZCghkcmFmdF9pZBgBIAEoCVIHZHJhZn'
+        'RJZBIfCgt1bnJlYWRfb25seRgCIAEoCFIKdW5yZWFkT25seRIUCgVsaW1pdBgDIAEoBVIFbGlt'
+        'aXQ=');
+
+@$core.Deprecated('Use listDraftNotificationsResponseDescriptor instead')
+const ListDraftNotificationsResponse$json = {
+  '1': 'ListDraftNotificationsResponse',
+  '2': [
+    {
+      '1': 'notifications',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftNotification',
+      '10': 'notifications'
+    },
+    {'1': 'unread_count', '3': 2, '4': 1, '5': 5, '10': 'unreadCount'},
+  ],
+};
+
+/// Descriptor for `ListDraftNotificationsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listDraftNotificationsResponseDescriptor =
+    $convert.base64Decode(
+        'Ch5MaXN0RHJhZnROb3RpZmljYXRpb25zUmVzcG9uc2USSQoNbm90aWZpY2F0aW9ucxgBIAMoCz'
+        'IjLnN0dGF0dHVzLm9ueXgudjEuRHJhZnROb3RpZmljYXRpb25SDW5vdGlmaWNhdGlvbnMSIQoM'
+        'dW5yZWFkX2NvdW50GAIgASgFUgt1bnJlYWRDb3VudA==');
+
+@$core.Deprecated('Use markDraftNotificationReadRequestDescriptor instead')
+const MarkDraftNotificationReadRequest$json = {
+  '1': 'MarkDraftNotificationReadRequest',
+  '2': [
+    {'1': 'notification_id', '3': 1, '4': 1, '5': 9, '10': 'notificationId'},
+    {
+      '1': 'client_mutation_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `MarkDraftNotificationReadRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List markDraftNotificationReadRequestDescriptor =
+    $convert.base64Decode(
+        'CiBNYXJrRHJhZnROb3RpZmljYXRpb25SZWFkUmVxdWVzdBInCg9ub3RpZmljYXRpb25faWQYAS'
+        'ABKAlSDm5vdGlmaWNhdGlvbklkEiwKEmNsaWVudF9tdXRhdGlvbl9pZBgCIAEoCVIQY2xpZW50'
+        'TXV0YXRpb25JZA==');
+
+@$core.Deprecated('Use markDraftNotificationReadResponseDescriptor instead')
+const MarkDraftNotificationReadResponse$json = {
+  '1': 'MarkDraftNotificationReadResponse',
+  '2': [
+    {
+      '1': 'notification',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftNotification',
+      '10': 'notification'
+    },
+    {'1': 'replayed', '3': 2, '4': 1, '5': 8, '10': 'replayed'},
+  ],
+};
+
+/// Descriptor for `MarkDraftNotificationReadResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List markDraftNotificationReadResponseDescriptor =
+    $convert.base64Decode(
+        'CiFNYXJrRHJhZnROb3RpZmljYXRpb25SZWFkUmVzcG9uc2USRwoMbm90aWZpY2F0aW9uGAEgAS'
+        'gLMiMuc3R0YXR0dXMub255eC52MS5EcmFmdE5vdGlmaWNhdGlvblIMbm90aWZpY2F0aW9uEhoK'
+        'CHJlcGxheWVkGAIgASgIUghyZXBsYXllZA==');
+
+@$core.Deprecated('Use setDraftPresenceRequestDescriptor instead')
+const SetDraftPresenceRequest$json = {
+  '1': 'SetDraftPresenceRequest',
+  '2': [
+    {'1': 'draft_id', '3': 1, '4': 1, '5': 9, '10': 'draftId'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'device_id', '3': 3, '4': 1, '5': 9, '10': 'deviceId'},
+    {'1': 'revision_id', '3': 4, '4': 1, '5': 9, '10': 'revisionId'},
+  ],
+};
+
+/// Descriptor for `SetDraftPresenceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setDraftPresenceRequestDescriptor = $convert.base64Decode(
+    'ChdTZXREcmFmdFByZXNlbmNlUmVxdWVzdBIZCghkcmFmdF9pZBgBIAEoCVIHZHJhZnRJZBIWCg'
+    'ZzdGF0dXMYAiABKAlSBnN0YXR1cxIbCglkZXZpY2VfaWQYAyABKAlSCGRldmljZUlkEh8KC3Jl'
+    'dmlzaW9uX2lkGAQgASgJUgpyZXZpc2lvbklk');
+
+@$core.Deprecated('Use setDraftPresenceResponseDescriptor instead')
+const SetDraftPresenceResponse$json = {
+  '1': 'SetDraftPresenceResponse',
+  '2': [
+    {
+      '1': 'presence',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftPresence',
+      '10': 'presence'
+    },
+  ],
+};
+
+/// Descriptor for `SetDraftPresenceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setDraftPresenceResponseDescriptor =
+    $convert.base64Decode(
+        'ChhTZXREcmFmdFByZXNlbmNlUmVzcG9uc2USOwoIcHJlc2VuY2UYASABKAsyHy5zdHRhdHR1cy'
+        '5vbnl4LnYxLkRyYWZ0UHJlc2VuY2VSCHByZXNlbmNl');

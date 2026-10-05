@@ -69877,6 +69877,12 @@ class DraftDocument extends $pb.GeneratedMessage {
     $core.Iterable<DraftHandoff>? handoffs,
     $1.Timestamp? createdAt,
     $1.Timestamp? updatedAt,
+    $core.Iterable<DraftCollaborator>? collaborators,
+    $core.Iterable<DraftComment>? comments,
+    $core.Iterable<DraftAssignment>? assignments,
+    $core.Iterable<DraftNotification>? notifications,
+    $core.Iterable<DraftPresence>? presence,
+    $core.int? unreadNotificationCount,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -69915,6 +69921,13 @@ class DraftDocument extends $pb.GeneratedMessage {
     if (handoffs != null) result.handoffs.addAll(handoffs);
     if (createdAt != null) result.createdAt = createdAt;
     if (updatedAt != null) result.updatedAt = updatedAt;
+    if (collaborators != null) result.collaborators.addAll(collaborators);
+    if (comments != null) result.comments.addAll(comments);
+    if (assignments != null) result.assignments.addAll(assignments);
+    if (notifications != null) result.notifications.addAll(notifications);
+    if (presence != null) result.presence.addAll(presence);
+    if (unreadNotificationCount != null)
+      result.unreadNotificationCount = unreadNotificationCount;
     return result;
   }
 
@@ -69974,6 +69987,17 @@ class DraftDocument extends $pb.GeneratedMessage {
         subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(33, _omitFieldNames ? '' : 'updatedAt',
         subBuilder: $1.Timestamp.create)
+    ..pPM<DraftCollaborator>(34, _omitFieldNames ? '' : 'collaborators',
+        subBuilder: DraftCollaborator.create)
+    ..pPM<DraftComment>(35, _omitFieldNames ? '' : 'comments',
+        subBuilder: DraftComment.create)
+    ..pPM<DraftAssignment>(36, _omitFieldNames ? '' : 'assignments',
+        subBuilder: DraftAssignment.create)
+    ..pPM<DraftNotification>(37, _omitFieldNames ? '' : 'notifications',
+        subBuilder: DraftNotification.create)
+    ..pPM<DraftPresence>(38, _omitFieldNames ? '' : 'presence',
+        subBuilder: DraftPresence.create)
+    ..aI(39, _omitFieldNames ? '' : 'unreadNotificationCount')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -70253,6 +70277,30 @@ class DraftDocument extends $pb.GeneratedMessage {
   void clearUpdatedAt() => $_clearField(33);
   @$pb.TagNumber(33)
   $1.Timestamp ensureUpdatedAt() => $_ensure(32);
+
+  @$pb.TagNumber(34)
+  $pb.PbList<DraftCollaborator> get collaborators => $_getList(33);
+
+  @$pb.TagNumber(35)
+  $pb.PbList<DraftComment> get comments => $_getList(34);
+
+  @$pb.TagNumber(36)
+  $pb.PbList<DraftAssignment> get assignments => $_getList(35);
+
+  @$pb.TagNumber(37)
+  $pb.PbList<DraftNotification> get notifications => $_getList(36);
+
+  @$pb.TagNumber(38)
+  $pb.PbList<DraftPresence> get presence => $_getList(37);
+
+  @$pb.TagNumber(39)
+  $core.int get unreadNotificationCount => $_getIZ(38);
+  @$pb.TagNumber(39)
+  set unreadNotificationCount($core.int value) => $_setSignedInt32(38, value);
+  @$pb.TagNumber(39)
+  $core.bool hasUnreadNotificationCount() => $_has(38);
+  @$pb.TagNumber(39)
+  void clearUnreadNotificationCount() => $_clearField(39);
 }
 
 class DraftingDashboard extends $pb.GeneratedMessage {
@@ -75428,6 +75476,2747 @@ class ReportDraftIncidentResponse extends $pb.GeneratedMessage {
   $core.bool hasStatus() => $_has(1);
   @$pb.TagNumber(2)
   void clearStatus() => $_clearField(2);
+}
+
+/// Choice 22 — privacy-preserving draft collaboration. Comment bodies and
+/// assignment notes are encrypted at rest and are only returned to active
+/// participants; Admin receives structural metadata only.
+class DraftCollaborator extends $pb.GeneratedMessage {
+  factory DraftCollaborator({
+    $core.String? id,
+    $core.String? draftId,
+    $core.String? userId,
+    $core.String? displayName,
+    $core.String? role,
+    $core.String? status,
+    $core.String? invitedBy,
+    $1.Timestamp? addedAt,
+    $1.Timestamp? removedAt,
+    $fixnum.Int64? version,
+    $core.bool? canRead,
+    $core.bool? canComment,
+    $core.bool? canAssign,
+    $core.bool? canEdit,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (draftId != null) result.draftId = draftId;
+    if (userId != null) result.userId = userId;
+    if (displayName != null) result.displayName = displayName;
+    if (role != null) result.role = role;
+    if (status != null) result.status = status;
+    if (invitedBy != null) result.invitedBy = invitedBy;
+    if (addedAt != null) result.addedAt = addedAt;
+    if (removedAt != null) result.removedAt = removedAt;
+    if (version != null) result.version = version;
+    if (canRead != null) result.canRead = canRead;
+    if (canComment != null) result.canComment = canComment;
+    if (canAssign != null) result.canAssign = canAssign;
+    if (canEdit != null) result.canEdit = canEdit;
+    return result;
+  }
+
+  DraftCollaborator._();
+
+  factory DraftCollaborator.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DraftCollaborator.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DraftCollaborator',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'draftId')
+    ..aOS(3, _omitFieldNames ? '' : 'userId')
+    ..aOS(4, _omitFieldNames ? '' : 'displayName')
+    ..aOS(5, _omitFieldNames ? '' : 'role')
+    ..aOS(6, _omitFieldNames ? '' : 'status')
+    ..aOS(7, _omitFieldNames ? '' : 'invitedBy')
+    ..aOM<$1.Timestamp>(8, _omitFieldNames ? '' : 'addedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'removedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aInt64(10, _omitFieldNames ? '' : 'version')
+    ..aOB(11, _omitFieldNames ? '' : 'canRead')
+    ..aOB(12, _omitFieldNames ? '' : 'canComment')
+    ..aOB(13, _omitFieldNames ? '' : 'canAssign')
+    ..aOB(14, _omitFieldNames ? '' : 'canEdit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftCollaborator clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftCollaborator copyWith(void Function(DraftCollaborator) updates) =>
+      super.copyWith((message) => updates(message as DraftCollaborator))
+          as DraftCollaborator;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DraftCollaborator create() => DraftCollaborator._();
+  @$core.override
+  DraftCollaborator createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DraftCollaborator getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DraftCollaborator>(create);
+  static DraftCollaborator? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get draftId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set draftId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDraftId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDraftId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get userId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set userId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasUserId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUserId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get displayName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set displayName($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDisplayName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDisplayName() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get role => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set role($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRole() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRole() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get status => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set status($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get invitedBy => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set invitedBy($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasInvitedBy() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearInvitedBy() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $1.Timestamp get addedAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set addedAt($1.Timestamp value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasAddedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAddedAt() => $_clearField(8);
+  @$pb.TagNumber(8)
+  $1.Timestamp ensureAddedAt() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  $1.Timestamp get removedAt => $_getN(8);
+  @$pb.TagNumber(9)
+  set removedAt($1.Timestamp value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasRemovedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearRemovedAt() => $_clearField(9);
+  @$pb.TagNumber(9)
+  $1.Timestamp ensureRemovedAt() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get version => $_getI64(9);
+  @$pb.TagNumber(10)
+  set version($fixnum.Int64 value) => $_setInt64(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasVersion() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearVersion() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get canRead => $_getBF(10);
+  @$pb.TagNumber(11)
+  set canRead($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCanRead() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCanRead() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.bool get canComment => $_getBF(11);
+  @$pb.TagNumber(12)
+  set canComment($core.bool value) => $_setBool(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasCanComment() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearCanComment() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.bool get canAssign => $_getBF(12);
+  @$pb.TagNumber(13)
+  set canAssign($core.bool value) => $_setBool(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasCanAssign() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearCanAssign() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.bool get canEdit => $_getBF(13);
+  @$pb.TagNumber(14)
+  set canEdit($core.bool value) => $_setBool(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasCanEdit() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearCanEdit() => $_clearField(14);
+}
+
+class DraftComment extends $pb.GeneratedMessage {
+  factory DraftComment({
+    $core.String? id,
+    $core.String? draftId,
+    $core.String? blockId,
+    $core.String? revisionId,
+    $core.String? passageKey,
+    $core.String? parentCommentId,
+    $core.String? body,
+    $core.String? status,
+    $core.String? authorUserId,
+    $core.String? authorName,
+    $core.Iterable<$core.String>? mentionUserIds,
+    $fixnum.Int64? version,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
+    $1.Timestamp? resolvedAt,
+    $core.String? resolvedBy,
+    $core.String? anchorLabel,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (draftId != null) result.draftId = draftId;
+    if (blockId != null) result.blockId = blockId;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (parentCommentId != null) result.parentCommentId = parentCommentId;
+    if (body != null) result.body = body;
+    if (status != null) result.status = status;
+    if (authorUserId != null) result.authorUserId = authorUserId;
+    if (authorName != null) result.authorName = authorName;
+    if (mentionUserIds != null) result.mentionUserIds.addAll(mentionUserIds);
+    if (version != null) result.version = version;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    if (resolvedAt != null) result.resolvedAt = resolvedAt;
+    if (resolvedBy != null) result.resolvedBy = resolvedBy;
+    if (anchorLabel != null) result.anchorLabel = anchorLabel;
+    return result;
+  }
+
+  DraftComment._();
+
+  factory DraftComment.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DraftComment.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DraftComment',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'draftId')
+    ..aOS(3, _omitFieldNames ? '' : 'blockId')
+    ..aOS(4, _omitFieldNames ? '' : 'revisionId')
+    ..aOS(5, _omitFieldNames ? '' : 'passageKey')
+    ..aOS(6, _omitFieldNames ? '' : 'parentCommentId')
+    ..aOS(7, _omitFieldNames ? '' : 'body')
+    ..aOS(8, _omitFieldNames ? '' : 'status')
+    ..aOS(9, _omitFieldNames ? '' : 'authorUserId')
+    ..aOS(10, _omitFieldNames ? '' : 'authorName')
+    ..pPS(11, _omitFieldNames ? '' : 'mentionUserIds')
+    ..aInt64(12, _omitFieldNames ? '' : 'version')
+    ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(15, _omitFieldNames ? '' : 'resolvedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(16, _omitFieldNames ? '' : 'resolvedBy')
+    ..aOS(17, _omitFieldNames ? '' : 'anchorLabel')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftComment clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftComment copyWith(void Function(DraftComment) updates) =>
+      super.copyWith((message) => updates(message as DraftComment))
+          as DraftComment;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DraftComment create() => DraftComment._();
+  @$core.override
+  DraftComment createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DraftComment getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DraftComment>(create);
+  static DraftComment? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get draftId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set draftId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDraftId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDraftId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get blockId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set blockId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBlockId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBlockId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get revisionId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set revisionId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRevisionId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRevisionId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get passageKey => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set passageKey($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPassageKey() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPassageKey() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get parentCommentId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set parentCommentId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasParentCommentId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearParentCommentId() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get body => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set body($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasBody() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearBody() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get status => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set status($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearStatus() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get authorUserId => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set authorUserId($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasAuthorUserId() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearAuthorUserId() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get authorName => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set authorName($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasAuthorName() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearAuthorName() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $pb.PbList<$core.String> get mentionUserIds => $_getList(10);
+
+  @$pb.TagNumber(12)
+  $fixnum.Int64 get version => $_getI64(11);
+  @$pb.TagNumber(12)
+  set version($fixnum.Int64 value) => $_setInt64(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasVersion() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearVersion() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $1.Timestamp get createdAt => $_getN(12);
+  @$pb.TagNumber(13)
+  set createdAt($1.Timestamp value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasCreatedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearCreatedAt() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $1.Timestamp ensureCreatedAt() => $_ensure(12);
+
+  @$pb.TagNumber(14)
+  $1.Timestamp get updatedAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set updatedAt($1.Timestamp value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasUpdatedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearUpdatedAt() => $_clearField(14);
+  @$pb.TagNumber(14)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  $1.Timestamp get resolvedAt => $_getN(14);
+  @$pb.TagNumber(15)
+  set resolvedAt($1.Timestamp value) => $_setField(15, value);
+  @$pb.TagNumber(15)
+  $core.bool hasResolvedAt() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearResolvedAt() => $_clearField(15);
+  @$pb.TagNumber(15)
+  $1.Timestamp ensureResolvedAt() => $_ensure(14);
+
+  @$pb.TagNumber(16)
+  $core.String get resolvedBy => $_getSZ(15);
+  @$pb.TagNumber(16)
+  set resolvedBy($core.String value) => $_setString(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasResolvedBy() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearResolvedBy() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.String get anchorLabel => $_getSZ(16);
+  @$pb.TagNumber(17)
+  set anchorLabel($core.String value) => $_setString(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasAnchorLabel() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearAnchorLabel() => $_clearField(17);
+}
+
+class DraftAssignment extends $pb.GeneratedMessage {
+  factory DraftAssignment({
+    $core.String? id,
+    $core.String? draftId,
+    $core.String? blockId,
+    $core.String? commentId,
+    $core.String? assigneeUserId,
+    $core.String? assigneeName,
+    $core.String? assignedBy,
+    $core.String? status,
+    $core.String? priority,
+    $core.String? note,
+    $1.Timestamp? dueAt,
+    $fixnum.Int64? version,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
+    $1.Timestamp? completedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (draftId != null) result.draftId = draftId;
+    if (blockId != null) result.blockId = blockId;
+    if (commentId != null) result.commentId = commentId;
+    if (assigneeUserId != null) result.assigneeUserId = assigneeUserId;
+    if (assigneeName != null) result.assigneeName = assigneeName;
+    if (assignedBy != null) result.assignedBy = assignedBy;
+    if (status != null) result.status = status;
+    if (priority != null) result.priority = priority;
+    if (note != null) result.note = note;
+    if (dueAt != null) result.dueAt = dueAt;
+    if (version != null) result.version = version;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    if (completedAt != null) result.completedAt = completedAt;
+    return result;
+  }
+
+  DraftAssignment._();
+
+  factory DraftAssignment.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DraftAssignment.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DraftAssignment',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'draftId')
+    ..aOS(3, _omitFieldNames ? '' : 'blockId')
+    ..aOS(4, _omitFieldNames ? '' : 'commentId')
+    ..aOS(5, _omitFieldNames ? '' : 'assigneeUserId')
+    ..aOS(6, _omitFieldNames ? '' : 'assigneeName')
+    ..aOS(7, _omitFieldNames ? '' : 'assignedBy')
+    ..aOS(8, _omitFieldNames ? '' : 'status')
+    ..aOS(9, _omitFieldNames ? '' : 'priority')
+    ..aOS(10, _omitFieldNames ? '' : 'note')
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'dueAt',
+        subBuilder: $1.Timestamp.create)
+    ..aInt64(12, _omitFieldNames ? '' : 'version')
+    ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(15, _omitFieldNames ? '' : 'completedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftAssignment clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftAssignment copyWith(void Function(DraftAssignment) updates) =>
+      super.copyWith((message) => updates(message as DraftAssignment))
+          as DraftAssignment;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DraftAssignment create() => DraftAssignment._();
+  @$core.override
+  DraftAssignment createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DraftAssignment getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DraftAssignment>(create);
+  static DraftAssignment? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get draftId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set draftId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDraftId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDraftId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get blockId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set blockId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBlockId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBlockId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get commentId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set commentId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCommentId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCommentId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get assigneeUserId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set assigneeUserId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAssigneeUserId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAssigneeUserId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get assigneeName => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set assigneeName($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAssigneeName() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAssigneeName() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get assignedBy => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set assignedBy($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAssignedBy() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAssignedBy() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get status => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set status($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearStatus() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get priority => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set priority($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasPriority() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPriority() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get note => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set note($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasNote() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearNote() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get dueAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set dueAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasDueAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearDueAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureDueAt() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $fixnum.Int64 get version => $_getI64(11);
+  @$pb.TagNumber(12)
+  set version($fixnum.Int64 value) => $_setInt64(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasVersion() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearVersion() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $1.Timestamp get createdAt => $_getN(12);
+  @$pb.TagNumber(13)
+  set createdAt($1.Timestamp value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasCreatedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearCreatedAt() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $1.Timestamp ensureCreatedAt() => $_ensure(12);
+
+  @$pb.TagNumber(14)
+  $1.Timestamp get updatedAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set updatedAt($1.Timestamp value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasUpdatedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearUpdatedAt() => $_clearField(14);
+  @$pb.TagNumber(14)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  $1.Timestamp get completedAt => $_getN(14);
+  @$pb.TagNumber(15)
+  set completedAt($1.Timestamp value) => $_setField(15, value);
+  @$pb.TagNumber(15)
+  $core.bool hasCompletedAt() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearCompletedAt() => $_clearField(15);
+  @$pb.TagNumber(15)
+  $1.Timestamp ensureCompletedAt() => $_ensure(14);
+}
+
+class DraftNotification extends $pb.GeneratedMessage {
+  factory DraftNotification({
+    $core.String? id,
+    $core.String? draftId,
+    $core.String? recipientUserId,
+    $core.String? actorUserId,
+    $core.String? eventType,
+    $core.String? subjectType,
+    $core.String? subjectId,
+    $core.String? summary,
+    $core.bool? read,
+    $1.Timestamp? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (draftId != null) result.draftId = draftId;
+    if (recipientUserId != null) result.recipientUserId = recipientUserId;
+    if (actorUserId != null) result.actorUserId = actorUserId;
+    if (eventType != null) result.eventType = eventType;
+    if (subjectType != null) result.subjectType = subjectType;
+    if (subjectId != null) result.subjectId = subjectId;
+    if (summary != null) result.summary = summary;
+    if (read != null) result.read = read;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  DraftNotification._();
+
+  factory DraftNotification.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DraftNotification.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DraftNotification',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'draftId')
+    ..aOS(3, _omitFieldNames ? '' : 'recipientUserId')
+    ..aOS(4, _omitFieldNames ? '' : 'actorUserId')
+    ..aOS(5, _omitFieldNames ? '' : 'eventType')
+    ..aOS(6, _omitFieldNames ? '' : 'subjectType')
+    ..aOS(7, _omitFieldNames ? '' : 'subjectId')
+    ..aOS(8, _omitFieldNames ? '' : 'summary')
+    ..aOB(9, _omitFieldNames ? '' : 'read')
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftNotification clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftNotification copyWith(void Function(DraftNotification) updates) =>
+      super.copyWith((message) => updates(message as DraftNotification))
+          as DraftNotification;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DraftNotification create() => DraftNotification._();
+  @$core.override
+  DraftNotification createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DraftNotification getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DraftNotification>(create);
+  static DraftNotification? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get draftId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set draftId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDraftId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDraftId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get recipientUserId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set recipientUserId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRecipientUserId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRecipientUserId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get actorUserId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set actorUserId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasActorUserId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearActorUserId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get eventType => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set eventType($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasEventType() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEventType() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get subjectType => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set subjectType($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSubjectType() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSubjectType() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get subjectId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set subjectId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSubjectId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSubjectId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get summary => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set summary($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSummary() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSummary() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get read => $_getBF(8);
+  @$pb.TagNumber(9)
+  set read($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasRead() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearRead() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $1.Timestamp get createdAt => $_getN(9);
+  @$pb.TagNumber(10)
+  set createdAt($1.Timestamp value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasCreatedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCreatedAt() => $_clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureCreatedAt() => $_ensure(9);
+}
+
+class DraftPresence extends $pb.GeneratedMessage {
+  factory DraftPresence({
+    $core.String? draftId,
+    $core.String? userId,
+    $core.String? displayName,
+    $core.String? status,
+    $core.String? deviceId,
+    $core.String? revisionId,
+    $1.Timestamp? lastSeenAt,
+    $1.Timestamp? expiresAt,
+  }) {
+    final result = create();
+    if (draftId != null) result.draftId = draftId;
+    if (userId != null) result.userId = userId;
+    if (displayName != null) result.displayName = displayName;
+    if (status != null) result.status = status;
+    if (deviceId != null) result.deviceId = deviceId;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (lastSeenAt != null) result.lastSeenAt = lastSeenAt;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    return result;
+  }
+
+  DraftPresence._();
+
+  factory DraftPresence.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DraftPresence.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DraftPresence',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'draftId')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'displayName')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'deviceId')
+    ..aOS(6, _omitFieldNames ? '' : 'revisionId')
+    ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'lastSeenAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(8, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftPresence clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftPresence copyWith(void Function(DraftPresence) updates) =>
+      super.copyWith((message) => updates(message as DraftPresence))
+          as DraftPresence;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DraftPresence create() => DraftPresence._();
+  @$core.override
+  DraftPresence createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DraftPresence getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DraftPresence>(create);
+  static DraftPresence? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get draftId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set draftId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDraftId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDraftId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get displayName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set displayName($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDisplayName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDisplayName() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get deviceId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set deviceId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDeviceId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDeviceId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get revisionId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set revisionId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasRevisionId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRevisionId() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $1.Timestamp get lastSeenAt => $_getN(6);
+  @$pb.TagNumber(7)
+  set lastSeenAt($1.Timestamp value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasLastSeenAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLastSeenAt() => $_clearField(7);
+  @$pb.TagNumber(7)
+  $1.Timestamp ensureLastSeenAt() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  $1.Timestamp get expiresAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set expiresAt($1.Timestamp value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasExpiresAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearExpiresAt() => $_clearField(8);
+  @$pb.TagNumber(8)
+  $1.Timestamp ensureExpiresAt() => $_ensure(7);
+}
+
+class GetDraftCollaborationRequest extends $pb.GeneratedMessage {
+  factory GetDraftCollaborationRequest({
+    $core.String? draftId,
+    $core.bool? includeResolved,
+  }) {
+    final result = create();
+    if (draftId != null) result.draftId = draftId;
+    if (includeResolved != null) result.includeResolved = includeResolved;
+    return result;
+  }
+
+  GetDraftCollaborationRequest._();
+
+  factory GetDraftCollaborationRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDraftCollaborationRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDraftCollaborationRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'draftId')
+    ..aOB(2, _omitFieldNames ? '' : 'includeResolved')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDraftCollaborationRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDraftCollaborationRequest copyWith(
+          void Function(GetDraftCollaborationRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetDraftCollaborationRequest))
+          as GetDraftCollaborationRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDraftCollaborationRequest create() =>
+      GetDraftCollaborationRequest._();
+  @$core.override
+  GetDraftCollaborationRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDraftCollaborationRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetDraftCollaborationRequest>(create);
+  static GetDraftCollaborationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get draftId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set draftId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDraftId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDraftId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get includeResolved => $_getBF(1);
+  @$pb.TagNumber(2)
+  set includeResolved($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasIncludeResolved() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIncludeResolved() => $_clearField(2);
+}
+
+class GetDraftCollaborationResponse extends $pb.GeneratedMessage {
+  factory GetDraftCollaborationResponse({
+    $core.Iterable<DraftCollaborator>? collaborators,
+    $core.Iterable<DraftComment>? comments,
+    $core.Iterable<DraftAssignment>? assignments,
+    $core.Iterable<DraftNotification>? notifications,
+    $core.Iterable<DraftPresence>? presence,
+    $core.int? unreadNotificationCount,
+  }) {
+    final result = create();
+    if (collaborators != null) result.collaborators.addAll(collaborators);
+    if (comments != null) result.comments.addAll(comments);
+    if (assignments != null) result.assignments.addAll(assignments);
+    if (notifications != null) result.notifications.addAll(notifications);
+    if (presence != null) result.presence.addAll(presence);
+    if (unreadNotificationCount != null)
+      result.unreadNotificationCount = unreadNotificationCount;
+    return result;
+  }
+
+  GetDraftCollaborationResponse._();
+
+  factory GetDraftCollaborationResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDraftCollaborationResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDraftCollaborationResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<DraftCollaborator>(1, _omitFieldNames ? '' : 'collaborators',
+        subBuilder: DraftCollaborator.create)
+    ..pPM<DraftComment>(2, _omitFieldNames ? '' : 'comments',
+        subBuilder: DraftComment.create)
+    ..pPM<DraftAssignment>(3, _omitFieldNames ? '' : 'assignments',
+        subBuilder: DraftAssignment.create)
+    ..pPM<DraftNotification>(4, _omitFieldNames ? '' : 'notifications',
+        subBuilder: DraftNotification.create)
+    ..pPM<DraftPresence>(5, _omitFieldNames ? '' : 'presence',
+        subBuilder: DraftPresence.create)
+    ..aI(6, _omitFieldNames ? '' : 'unreadNotificationCount')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDraftCollaborationResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDraftCollaborationResponse copyWith(
+          void Function(GetDraftCollaborationResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetDraftCollaborationResponse))
+          as GetDraftCollaborationResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDraftCollaborationResponse create() =>
+      GetDraftCollaborationResponse._();
+  @$core.override
+  GetDraftCollaborationResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDraftCollaborationResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetDraftCollaborationResponse>(create);
+  static GetDraftCollaborationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<DraftCollaborator> get collaborators => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<DraftComment> get comments => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<DraftAssignment> get assignments => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<DraftNotification> get notifications => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<DraftPresence> get presence => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.int get unreadNotificationCount => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set unreadNotificationCount($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasUnreadNotificationCount() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearUnreadNotificationCount() => $_clearField(6);
+}
+
+class InviteDraftCollaboratorRequest extends $pb.GeneratedMessage {
+  factory InviteDraftCollaboratorRequest({
+    $core.String? draftId,
+    $core.String? userId,
+    $core.String? role,
+    $core.String? clientMutationId,
+    $core.String? memberEmail,
+  }) {
+    final result = create();
+    if (draftId != null) result.draftId = draftId;
+    if (userId != null) result.userId = userId;
+    if (role != null) result.role = role;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    if (memberEmail != null) result.memberEmail = memberEmail;
+    return result;
+  }
+
+  InviteDraftCollaboratorRequest._();
+
+  factory InviteDraftCollaboratorRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory InviteDraftCollaboratorRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'InviteDraftCollaboratorRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'draftId')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'role')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..aOS(5, _omitFieldNames ? '' : 'memberEmail')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  InviteDraftCollaboratorRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  InviteDraftCollaboratorRequest copyWith(
+          void Function(InviteDraftCollaboratorRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as InviteDraftCollaboratorRequest))
+          as InviteDraftCollaboratorRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static InviteDraftCollaboratorRequest create() =>
+      InviteDraftCollaboratorRequest._();
+  @$core.override
+  InviteDraftCollaboratorRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static InviteDraftCollaboratorRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<InviteDraftCollaboratorRequest>(create);
+  static InviteDraftCollaboratorRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get draftId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set draftId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDraftId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDraftId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get role => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set role($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRole() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRole() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get memberEmail => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set memberEmail($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasMemberEmail() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMemberEmail() => $_clearField(5);
+}
+
+class InviteDraftCollaboratorResponse extends $pb.GeneratedMessage {
+  factory InviteDraftCollaboratorResponse({
+    DraftCollaborator? collaborator,
+    $core.bool? replayed,
+  }) {
+    final result = create();
+    if (collaborator != null) result.collaborator = collaborator;
+    if (replayed != null) result.replayed = replayed;
+    return result;
+  }
+
+  InviteDraftCollaboratorResponse._();
+
+  factory InviteDraftCollaboratorResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory InviteDraftCollaboratorResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'InviteDraftCollaboratorResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<DraftCollaborator>(1, _omitFieldNames ? '' : 'collaborator',
+        subBuilder: DraftCollaborator.create)
+    ..aOB(2, _omitFieldNames ? '' : 'replayed')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  InviteDraftCollaboratorResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  InviteDraftCollaboratorResponse copyWith(
+          void Function(InviteDraftCollaboratorResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as InviteDraftCollaboratorResponse))
+          as InviteDraftCollaboratorResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static InviteDraftCollaboratorResponse create() =>
+      InviteDraftCollaboratorResponse._();
+  @$core.override
+  InviteDraftCollaboratorResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static InviteDraftCollaboratorResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<InviteDraftCollaboratorResponse>(
+          create);
+  static InviteDraftCollaboratorResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DraftCollaborator get collaborator => $_getN(0);
+  @$pb.TagNumber(1)
+  set collaborator(DraftCollaborator value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCollaborator() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCollaborator() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DraftCollaborator ensureCollaborator() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get replayed => $_getBF(1);
+  @$pb.TagNumber(2)
+  set replayed($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReplayed() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReplayed() => $_clearField(2);
+}
+
+class RemoveDraftCollaboratorRequest extends $pb.GeneratedMessage {
+  factory RemoveDraftCollaboratorRequest({
+    $core.String? draftId,
+    $core.String? userId,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (draftId != null) result.draftId = draftId;
+    if (userId != null) result.userId = userId;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  RemoveDraftCollaboratorRequest._();
+
+  factory RemoveDraftCollaboratorRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RemoveDraftCollaboratorRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RemoveDraftCollaboratorRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'draftId')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RemoveDraftCollaboratorRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RemoveDraftCollaboratorRequest copyWith(
+          void Function(RemoveDraftCollaboratorRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as RemoveDraftCollaboratorRequest))
+          as RemoveDraftCollaboratorRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RemoveDraftCollaboratorRequest create() =>
+      RemoveDraftCollaboratorRequest._();
+  @$core.override
+  RemoveDraftCollaboratorRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RemoveDraftCollaboratorRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RemoveDraftCollaboratorRequest>(create);
+  static RemoveDraftCollaboratorRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get draftId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set draftId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDraftId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDraftId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get clientMutationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set clientMutationId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClientMutationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClientMutationId() => $_clearField(3);
+}
+
+class RemoveDraftCollaboratorResponse extends $pb.GeneratedMessage {
+  factory RemoveDraftCollaboratorResponse({
+    $core.bool? removed,
+    $core.bool? replayed,
+  }) {
+    final result = create();
+    if (removed != null) result.removed = removed;
+    if (replayed != null) result.replayed = replayed;
+    return result;
+  }
+
+  RemoveDraftCollaboratorResponse._();
+
+  factory RemoveDraftCollaboratorResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RemoveDraftCollaboratorResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RemoveDraftCollaboratorResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'removed')
+    ..aOB(2, _omitFieldNames ? '' : 'replayed')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RemoveDraftCollaboratorResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RemoveDraftCollaboratorResponse copyWith(
+          void Function(RemoveDraftCollaboratorResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RemoveDraftCollaboratorResponse))
+          as RemoveDraftCollaboratorResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RemoveDraftCollaboratorResponse create() =>
+      RemoveDraftCollaboratorResponse._();
+  @$core.override
+  RemoveDraftCollaboratorResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RemoveDraftCollaboratorResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RemoveDraftCollaboratorResponse>(
+          create);
+  static RemoveDraftCollaboratorResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get removed => $_getBF(0);
+  @$pb.TagNumber(1)
+  set removed($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRemoved() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRemoved() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get replayed => $_getBF(1);
+  @$pb.TagNumber(2)
+  set replayed($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReplayed() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReplayed() => $_clearField(2);
+}
+
+class CreateDraftCommentRequest extends $pb.GeneratedMessage {
+  factory CreateDraftCommentRequest({
+    $core.String? draftId,
+    $core.String? blockId,
+    $core.String? revisionId,
+    $core.String? passageKey,
+    $core.String? parentCommentId,
+    $core.String? body,
+    $core.Iterable<$core.String>? mentionUserIds,
+    $core.String? replicaId,
+    $fixnum.Int64? replicaSequence,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (draftId != null) result.draftId = draftId;
+    if (blockId != null) result.blockId = blockId;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (parentCommentId != null) result.parentCommentId = parentCommentId;
+    if (body != null) result.body = body;
+    if (mentionUserIds != null) result.mentionUserIds.addAll(mentionUserIds);
+    if (replicaId != null) result.replicaId = replicaId;
+    if (replicaSequence != null) result.replicaSequence = replicaSequence;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  CreateDraftCommentRequest._();
+
+  factory CreateDraftCommentRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateDraftCommentRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateDraftCommentRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'draftId')
+    ..aOS(2, _omitFieldNames ? '' : 'blockId')
+    ..aOS(3, _omitFieldNames ? '' : 'revisionId')
+    ..aOS(4, _omitFieldNames ? '' : 'passageKey')
+    ..aOS(5, _omitFieldNames ? '' : 'parentCommentId')
+    ..aOS(6, _omitFieldNames ? '' : 'body')
+    ..pPS(7, _omitFieldNames ? '' : 'mentionUserIds')
+    ..aOS(8, _omitFieldNames ? '' : 'replicaId')
+    ..aInt64(9, _omitFieldNames ? '' : 'replicaSequence')
+    ..aOS(10, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateDraftCommentRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateDraftCommentRequest copyWith(
+          void Function(CreateDraftCommentRequest) updates) =>
+      super.copyWith((message) => updates(message as CreateDraftCommentRequest))
+          as CreateDraftCommentRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateDraftCommentRequest create() => CreateDraftCommentRequest._();
+  @$core.override
+  CreateDraftCommentRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateDraftCommentRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateDraftCommentRequest>(create);
+  static CreateDraftCommentRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get draftId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set draftId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDraftId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDraftId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get blockId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set blockId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasBlockId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBlockId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get revisionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set revisionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRevisionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRevisionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get passageKey => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set passageKey($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPassageKey() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPassageKey() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get parentCommentId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set parentCommentId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasParentCommentId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearParentCommentId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get body => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set body($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasBody() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearBody() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<$core.String> get mentionUserIds => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.String get replicaId => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set replicaId($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasReplicaId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearReplicaId() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get replicaSequence => $_getI64(8);
+  @$pb.TagNumber(9)
+  set replicaSequence($fixnum.Int64 value) => $_setInt64(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasReplicaSequence() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearReplicaSequence() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get clientMutationId => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set clientMutationId($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasClientMutationId() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearClientMutationId() => $_clearField(10);
+}
+
+class CreateDraftCommentResponse extends $pb.GeneratedMessage {
+  factory CreateDraftCommentResponse({
+    DraftComment? comment,
+    $core.bool? replayed,
+  }) {
+    final result = create();
+    if (comment != null) result.comment = comment;
+    if (replayed != null) result.replayed = replayed;
+    return result;
+  }
+
+  CreateDraftCommentResponse._();
+
+  factory CreateDraftCommentResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateDraftCommentResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateDraftCommentResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<DraftComment>(1, _omitFieldNames ? '' : 'comment',
+        subBuilder: DraftComment.create)
+    ..aOB(2, _omitFieldNames ? '' : 'replayed')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateDraftCommentResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateDraftCommentResponse copyWith(
+          void Function(CreateDraftCommentResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as CreateDraftCommentResponse))
+          as CreateDraftCommentResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateDraftCommentResponse create() => CreateDraftCommentResponse._();
+  @$core.override
+  CreateDraftCommentResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateDraftCommentResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateDraftCommentResponse>(create);
+  static CreateDraftCommentResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DraftComment get comment => $_getN(0);
+  @$pb.TagNumber(1)
+  set comment(DraftComment value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasComment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearComment() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DraftComment ensureComment() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get replayed => $_getBF(1);
+  @$pb.TagNumber(2)
+  set replayed($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReplayed() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReplayed() => $_clearField(2);
+}
+
+class SetDraftCommentStateRequest extends $pb.GeneratedMessage {
+  factory SetDraftCommentStateRequest({
+    $core.String? commentId,
+    $core.String? state,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (commentId != null) result.commentId = commentId;
+    if (state != null) result.state = state;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  SetDraftCommentStateRequest._();
+
+  factory SetDraftCommentStateRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetDraftCommentStateRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetDraftCommentStateRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'commentId')
+    ..aOS(2, _omitFieldNames ? '' : 'state')
+    ..aOS(3, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetDraftCommentStateRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetDraftCommentStateRequest copyWith(
+          void Function(SetDraftCommentStateRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as SetDraftCommentStateRequest))
+          as SetDraftCommentStateRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetDraftCommentStateRequest create() =>
+      SetDraftCommentStateRequest._();
+  @$core.override
+  SetDraftCommentStateRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetDraftCommentStateRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetDraftCommentStateRequest>(create);
+  static SetDraftCommentStateRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get commentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set commentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCommentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCommentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get state => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set state($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearState() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get clientMutationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set clientMutationId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClientMutationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClientMutationId() => $_clearField(3);
+}
+
+class SetDraftCommentStateResponse extends $pb.GeneratedMessage {
+  factory SetDraftCommentStateResponse({
+    DraftComment? comment,
+    $core.bool? replayed,
+  }) {
+    final result = create();
+    if (comment != null) result.comment = comment;
+    if (replayed != null) result.replayed = replayed;
+    return result;
+  }
+
+  SetDraftCommentStateResponse._();
+
+  factory SetDraftCommentStateResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetDraftCommentStateResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetDraftCommentStateResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<DraftComment>(1, _omitFieldNames ? '' : 'comment',
+        subBuilder: DraftComment.create)
+    ..aOB(2, _omitFieldNames ? '' : 'replayed')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetDraftCommentStateResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetDraftCommentStateResponse copyWith(
+          void Function(SetDraftCommentStateResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as SetDraftCommentStateResponse))
+          as SetDraftCommentStateResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetDraftCommentStateResponse create() =>
+      SetDraftCommentStateResponse._();
+  @$core.override
+  SetDraftCommentStateResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetDraftCommentStateResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetDraftCommentStateResponse>(create);
+  static SetDraftCommentStateResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DraftComment get comment => $_getN(0);
+  @$pb.TagNumber(1)
+  set comment(DraftComment value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasComment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearComment() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DraftComment ensureComment() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get replayed => $_getBF(1);
+  @$pb.TagNumber(2)
+  set replayed($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReplayed() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReplayed() => $_clearField(2);
+}
+
+class CreateDraftAssignmentRequest extends $pb.GeneratedMessage {
+  factory CreateDraftAssignmentRequest({
+    $core.String? draftId,
+    $core.String? blockId,
+    $core.String? commentId,
+    $core.String? assigneeUserId,
+    $core.String? priority,
+    $core.String? note,
+    $1.Timestamp? dueAt,
+    $core.String? replicaId,
+    $fixnum.Int64? replicaSequence,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (draftId != null) result.draftId = draftId;
+    if (blockId != null) result.blockId = blockId;
+    if (commentId != null) result.commentId = commentId;
+    if (assigneeUserId != null) result.assigneeUserId = assigneeUserId;
+    if (priority != null) result.priority = priority;
+    if (note != null) result.note = note;
+    if (dueAt != null) result.dueAt = dueAt;
+    if (replicaId != null) result.replicaId = replicaId;
+    if (replicaSequence != null) result.replicaSequence = replicaSequence;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  CreateDraftAssignmentRequest._();
+
+  factory CreateDraftAssignmentRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateDraftAssignmentRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateDraftAssignmentRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'draftId')
+    ..aOS(2, _omitFieldNames ? '' : 'blockId')
+    ..aOS(3, _omitFieldNames ? '' : 'commentId')
+    ..aOS(4, _omitFieldNames ? '' : 'assigneeUserId')
+    ..aOS(5, _omitFieldNames ? '' : 'priority')
+    ..aOS(6, _omitFieldNames ? '' : 'note')
+    ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'dueAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(8, _omitFieldNames ? '' : 'replicaId')
+    ..aInt64(9, _omitFieldNames ? '' : 'replicaSequence')
+    ..aOS(10, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateDraftAssignmentRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateDraftAssignmentRequest copyWith(
+          void Function(CreateDraftAssignmentRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as CreateDraftAssignmentRequest))
+          as CreateDraftAssignmentRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateDraftAssignmentRequest create() =>
+      CreateDraftAssignmentRequest._();
+  @$core.override
+  CreateDraftAssignmentRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateDraftAssignmentRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateDraftAssignmentRequest>(create);
+  static CreateDraftAssignmentRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get draftId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set draftId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDraftId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDraftId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get blockId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set blockId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasBlockId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBlockId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get commentId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set commentId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCommentId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCommentId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get assigneeUserId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set assigneeUserId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAssigneeUserId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAssigneeUserId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get priority => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set priority($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPriority() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPriority() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get note => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set note($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasNote() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearNote() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $1.Timestamp get dueAt => $_getN(6);
+  @$pb.TagNumber(7)
+  set dueAt($1.Timestamp value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasDueAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDueAt() => $_clearField(7);
+  @$pb.TagNumber(7)
+  $1.Timestamp ensureDueAt() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  $core.String get replicaId => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set replicaId($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasReplicaId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearReplicaId() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get replicaSequence => $_getI64(8);
+  @$pb.TagNumber(9)
+  set replicaSequence($fixnum.Int64 value) => $_setInt64(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasReplicaSequence() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearReplicaSequence() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get clientMutationId => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set clientMutationId($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasClientMutationId() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearClientMutationId() => $_clearField(10);
+}
+
+class CreateDraftAssignmentResponse extends $pb.GeneratedMessage {
+  factory CreateDraftAssignmentResponse({
+    DraftAssignment? assignment,
+    $core.bool? replayed,
+  }) {
+    final result = create();
+    if (assignment != null) result.assignment = assignment;
+    if (replayed != null) result.replayed = replayed;
+    return result;
+  }
+
+  CreateDraftAssignmentResponse._();
+
+  factory CreateDraftAssignmentResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateDraftAssignmentResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateDraftAssignmentResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<DraftAssignment>(1, _omitFieldNames ? '' : 'assignment',
+        subBuilder: DraftAssignment.create)
+    ..aOB(2, _omitFieldNames ? '' : 'replayed')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateDraftAssignmentResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateDraftAssignmentResponse copyWith(
+          void Function(CreateDraftAssignmentResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as CreateDraftAssignmentResponse))
+          as CreateDraftAssignmentResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateDraftAssignmentResponse create() =>
+      CreateDraftAssignmentResponse._();
+  @$core.override
+  CreateDraftAssignmentResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateDraftAssignmentResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CreateDraftAssignmentResponse>(create);
+  static CreateDraftAssignmentResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DraftAssignment get assignment => $_getN(0);
+  @$pb.TagNumber(1)
+  set assignment(DraftAssignment value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAssignment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAssignment() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DraftAssignment ensureAssignment() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get replayed => $_getBF(1);
+  @$pb.TagNumber(2)
+  set replayed($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReplayed() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReplayed() => $_clearField(2);
+}
+
+class SetDraftAssignmentStateRequest extends $pb.GeneratedMessage {
+  factory SetDraftAssignmentStateRequest({
+    $core.String? assignmentId,
+    $core.String? state,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (assignmentId != null) result.assignmentId = assignmentId;
+    if (state != null) result.state = state;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  SetDraftAssignmentStateRequest._();
+
+  factory SetDraftAssignmentStateRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetDraftAssignmentStateRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetDraftAssignmentStateRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'assignmentId')
+    ..aOS(2, _omitFieldNames ? '' : 'state')
+    ..aOS(3, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetDraftAssignmentStateRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetDraftAssignmentStateRequest copyWith(
+          void Function(SetDraftAssignmentStateRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as SetDraftAssignmentStateRequest))
+          as SetDraftAssignmentStateRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetDraftAssignmentStateRequest create() =>
+      SetDraftAssignmentStateRequest._();
+  @$core.override
+  SetDraftAssignmentStateRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetDraftAssignmentStateRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetDraftAssignmentStateRequest>(create);
+  static SetDraftAssignmentStateRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get assignmentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set assignmentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAssignmentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAssignmentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get state => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set state($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearState() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get clientMutationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set clientMutationId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClientMutationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClientMutationId() => $_clearField(3);
+}
+
+class SetDraftAssignmentStateResponse extends $pb.GeneratedMessage {
+  factory SetDraftAssignmentStateResponse({
+    DraftAssignment? assignment,
+    $core.bool? replayed,
+  }) {
+    final result = create();
+    if (assignment != null) result.assignment = assignment;
+    if (replayed != null) result.replayed = replayed;
+    return result;
+  }
+
+  SetDraftAssignmentStateResponse._();
+
+  factory SetDraftAssignmentStateResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetDraftAssignmentStateResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetDraftAssignmentStateResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<DraftAssignment>(1, _omitFieldNames ? '' : 'assignment',
+        subBuilder: DraftAssignment.create)
+    ..aOB(2, _omitFieldNames ? '' : 'replayed')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetDraftAssignmentStateResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetDraftAssignmentStateResponse copyWith(
+          void Function(SetDraftAssignmentStateResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as SetDraftAssignmentStateResponse))
+          as SetDraftAssignmentStateResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetDraftAssignmentStateResponse create() =>
+      SetDraftAssignmentStateResponse._();
+  @$core.override
+  SetDraftAssignmentStateResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetDraftAssignmentStateResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetDraftAssignmentStateResponse>(
+          create);
+  static SetDraftAssignmentStateResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DraftAssignment get assignment => $_getN(0);
+  @$pb.TagNumber(1)
+  set assignment(DraftAssignment value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAssignment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAssignment() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DraftAssignment ensureAssignment() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get replayed => $_getBF(1);
+  @$pb.TagNumber(2)
+  set replayed($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReplayed() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReplayed() => $_clearField(2);
+}
+
+class ListDraftNotificationsRequest extends $pb.GeneratedMessage {
+  factory ListDraftNotificationsRequest({
+    $core.String? draftId,
+    $core.bool? unreadOnly,
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (draftId != null) result.draftId = draftId;
+    if (unreadOnly != null) result.unreadOnly = unreadOnly;
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  ListDraftNotificationsRequest._();
+
+  factory ListDraftNotificationsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListDraftNotificationsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListDraftNotificationsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'draftId')
+    ..aOB(2, _omitFieldNames ? '' : 'unreadOnly')
+    ..aI(3, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListDraftNotificationsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListDraftNotificationsRequest copyWith(
+          void Function(ListDraftNotificationsRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListDraftNotificationsRequest))
+          as ListDraftNotificationsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListDraftNotificationsRequest create() =>
+      ListDraftNotificationsRequest._();
+  @$core.override
+  ListDraftNotificationsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListDraftNotificationsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListDraftNotificationsRequest>(create);
+  static ListDraftNotificationsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get draftId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set draftId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDraftId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDraftId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get unreadOnly => $_getBF(1);
+  @$pb.TagNumber(2)
+  set unreadOnly($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUnreadOnly() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUnreadOnly() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get limit => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set limit($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLimit() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLimit() => $_clearField(3);
+}
+
+class ListDraftNotificationsResponse extends $pb.GeneratedMessage {
+  factory ListDraftNotificationsResponse({
+    $core.Iterable<DraftNotification>? notifications,
+    $core.int? unreadCount,
+  }) {
+    final result = create();
+    if (notifications != null) result.notifications.addAll(notifications);
+    if (unreadCount != null) result.unreadCount = unreadCount;
+    return result;
+  }
+
+  ListDraftNotificationsResponse._();
+
+  factory ListDraftNotificationsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListDraftNotificationsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListDraftNotificationsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<DraftNotification>(1, _omitFieldNames ? '' : 'notifications',
+        subBuilder: DraftNotification.create)
+    ..aI(2, _omitFieldNames ? '' : 'unreadCount')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListDraftNotificationsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListDraftNotificationsResponse copyWith(
+          void Function(ListDraftNotificationsResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListDraftNotificationsResponse))
+          as ListDraftNotificationsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListDraftNotificationsResponse create() =>
+      ListDraftNotificationsResponse._();
+  @$core.override
+  ListDraftNotificationsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListDraftNotificationsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListDraftNotificationsResponse>(create);
+  static ListDraftNotificationsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<DraftNotification> get notifications => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.int get unreadCount => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set unreadCount($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUnreadCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUnreadCount() => $_clearField(2);
+}
+
+class MarkDraftNotificationReadRequest extends $pb.GeneratedMessage {
+  factory MarkDraftNotificationReadRequest({
+    $core.String? notificationId,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (notificationId != null) result.notificationId = notificationId;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  MarkDraftNotificationReadRequest._();
+
+  factory MarkDraftNotificationReadRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory MarkDraftNotificationReadRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MarkDraftNotificationReadRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'notificationId')
+    ..aOS(2, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkDraftNotificationReadRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkDraftNotificationReadRequest copyWith(
+          void Function(MarkDraftNotificationReadRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as MarkDraftNotificationReadRequest))
+          as MarkDraftNotificationReadRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MarkDraftNotificationReadRequest create() =>
+      MarkDraftNotificationReadRequest._();
+  @$core.override
+  MarkDraftNotificationReadRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static MarkDraftNotificationReadRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MarkDraftNotificationReadRequest>(
+          create);
+  static MarkDraftNotificationReadRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get notificationId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set notificationId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasNotificationId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNotificationId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get clientMutationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set clientMutationId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClientMutationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClientMutationId() => $_clearField(2);
+}
+
+class MarkDraftNotificationReadResponse extends $pb.GeneratedMessage {
+  factory MarkDraftNotificationReadResponse({
+    DraftNotification? notification,
+    $core.bool? replayed,
+  }) {
+    final result = create();
+    if (notification != null) result.notification = notification;
+    if (replayed != null) result.replayed = replayed;
+    return result;
+  }
+
+  MarkDraftNotificationReadResponse._();
+
+  factory MarkDraftNotificationReadResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory MarkDraftNotificationReadResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MarkDraftNotificationReadResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<DraftNotification>(1, _omitFieldNames ? '' : 'notification',
+        subBuilder: DraftNotification.create)
+    ..aOB(2, _omitFieldNames ? '' : 'replayed')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkDraftNotificationReadResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MarkDraftNotificationReadResponse copyWith(
+          void Function(MarkDraftNotificationReadResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as MarkDraftNotificationReadResponse))
+          as MarkDraftNotificationReadResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MarkDraftNotificationReadResponse create() =>
+      MarkDraftNotificationReadResponse._();
+  @$core.override
+  MarkDraftNotificationReadResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static MarkDraftNotificationReadResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MarkDraftNotificationReadResponse>(
+          create);
+  static MarkDraftNotificationReadResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DraftNotification get notification => $_getN(0);
+  @$pb.TagNumber(1)
+  set notification(DraftNotification value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasNotification() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNotification() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DraftNotification ensureNotification() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get replayed => $_getBF(1);
+  @$pb.TagNumber(2)
+  set replayed($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReplayed() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReplayed() => $_clearField(2);
+}
+
+class SetDraftPresenceRequest extends $pb.GeneratedMessage {
+  factory SetDraftPresenceRequest({
+    $core.String? draftId,
+    $core.String? status,
+    $core.String? deviceId,
+    $core.String? revisionId,
+  }) {
+    final result = create();
+    if (draftId != null) result.draftId = draftId;
+    if (status != null) result.status = status;
+    if (deviceId != null) result.deviceId = deviceId;
+    if (revisionId != null) result.revisionId = revisionId;
+    return result;
+  }
+
+  SetDraftPresenceRequest._();
+
+  factory SetDraftPresenceRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetDraftPresenceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetDraftPresenceRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'draftId')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..aOS(3, _omitFieldNames ? '' : 'deviceId')
+    ..aOS(4, _omitFieldNames ? '' : 'revisionId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetDraftPresenceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetDraftPresenceRequest copyWith(
+          void Function(SetDraftPresenceRequest) updates) =>
+      super.copyWith((message) => updates(message as SetDraftPresenceRequest))
+          as SetDraftPresenceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetDraftPresenceRequest create() => SetDraftPresenceRequest._();
+  @$core.override
+  SetDraftPresenceRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetDraftPresenceRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetDraftPresenceRequest>(create);
+  static SetDraftPresenceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get draftId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set draftId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDraftId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDraftId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get deviceId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set deviceId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDeviceId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDeviceId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get revisionId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set revisionId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRevisionId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRevisionId() => $_clearField(4);
+}
+
+class SetDraftPresenceResponse extends $pb.GeneratedMessage {
+  factory SetDraftPresenceResponse({
+    DraftPresence? presence,
+  }) {
+    final result = create();
+    if (presence != null) result.presence = presence;
+    return result;
+  }
+
+  SetDraftPresenceResponse._();
+
+  factory SetDraftPresenceResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetDraftPresenceResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetDraftPresenceResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<DraftPresence>(1, _omitFieldNames ? '' : 'presence',
+        subBuilder: DraftPresence.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetDraftPresenceResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetDraftPresenceResponse copyWith(
+          void Function(SetDraftPresenceResponse) updates) =>
+      super.copyWith((message) => updates(message as SetDraftPresenceResponse))
+          as SetDraftPresenceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetDraftPresenceResponse create() => SetDraftPresenceResponse._();
+  @$core.override
+  SetDraftPresenceResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetDraftPresenceResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetDraftPresenceResponse>(create);
+  static SetDraftPresenceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DraftPresence get presence => $_getN(0);
+  @$pb.TagNumber(1)
+  set presence(DraftPresence value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPresence() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPresence() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DraftPresence ensurePresence() => $_ensure(0);
 }
 
 const $core.bool _omitFieldNames =
