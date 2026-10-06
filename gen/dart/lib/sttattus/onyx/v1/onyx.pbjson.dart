@@ -22748,7 +22748,26 @@ const DraftNotification$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'createdAt'
     },
+    {
+      '1': 'summary_localizations',
+      '3': 11,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftNotification.SummaryLocalizationsEntry',
+      '10': 'summaryLocalizations'
+    },
   ],
+  '3': [DraftNotification_SummaryLocalizationsEntry$json],
+};
+
+@$core.Deprecated('Use draftNotificationDescriptor instead')
+const DraftNotification_SummaryLocalizationsEntry$json = {
+  '1': 'SummaryLocalizationsEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': {'7': true},
 };
 
 /// Descriptor for `DraftNotification`. Decode as a `google.protobuf.DescriptorProto`.
@@ -22759,7 +22778,10 @@ final $typed_data.Uint8List draftNotificationDescriptor = $convert.base64Decode(
     'VudFR5cGUSIQoMc3ViamVjdF90eXBlGAYgASgJUgtzdWJqZWN0VHlwZRIdCgpzdWJqZWN0X2lk'
     'GAcgASgJUglzdWJqZWN0SWQSGAoHc3VtbWFyeRgIIAEoCVIHc3VtbWFyeRISCgRyZWFkGAkgAS'
     'gIUgRyZWFkEjkKCmNyZWF0ZWRfYXQYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1w'
-    'UgljcmVhdGVkQXQ=');
+    'UgljcmVhdGVkQXQScgoVc3VtbWFyeV9sb2NhbGl6YXRpb25zGAsgAygLMj0uc3R0YXR0dXMub2'
+    '55eC52MS5EcmFmdE5vdGlmaWNhdGlvbi5TdW1tYXJ5TG9jYWxpemF0aW9uc0VudHJ5UhRzdW1t'
+    'YXJ5TG9jYWxpemF0aW9ucxpHChlTdW1tYXJ5TG9jYWxpemF0aW9uc0VudHJ5EhAKA2tleRgBIA'
+    'EoCVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAE=');
 
 @$core.Deprecated('Use draftPresenceDescriptor instead')
 const DraftPresence$json = {

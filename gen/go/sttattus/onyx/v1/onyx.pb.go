@@ -55810,19 +55810,20 @@ func (x *DraftAssignment) GetCompletedAt() *timestamppb.Timestamp {
 }
 
 type DraftNotification struct {
-	state           protoimpl.MessageState `protogen:"open.v1"`
-	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	DraftId         string                 `protobuf:"bytes,2,opt,name=draft_id,json=draftId,proto3" json:"draft_id,omitempty"`
-	RecipientUserId string                 `protobuf:"bytes,3,opt,name=recipient_user_id,json=recipientUserId,proto3" json:"recipient_user_id,omitempty"`
-	ActorUserId     string                 `protobuf:"bytes,4,opt,name=actor_user_id,json=actorUserId,proto3" json:"actor_user_id,omitempty"`
-	EventType       string                 `protobuf:"bytes,5,opt,name=event_type,json=eventType,proto3" json:"event_type,omitempty"`
-	SubjectType     string                 `protobuf:"bytes,6,opt,name=subject_type,json=subjectType,proto3" json:"subject_type,omitempty"`
-	SubjectId       string                 `protobuf:"bytes,7,opt,name=subject_id,json=subjectId,proto3" json:"subject_id,omitempty"`
-	Summary         string                 `protobuf:"bytes,8,opt,name=summary,proto3" json:"summary,omitempty"`
-	Read            bool                   `protobuf:"varint,9,opt,name=read,proto3" json:"read,omitempty"`
-	CreatedAt       *timestamppb.Timestamp `protobuf:"bytes,10,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	Id                   string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	DraftId              string                 `protobuf:"bytes,2,opt,name=draft_id,json=draftId,proto3" json:"draft_id,omitempty"`
+	RecipientUserId      string                 `protobuf:"bytes,3,opt,name=recipient_user_id,json=recipientUserId,proto3" json:"recipient_user_id,omitempty"`
+	ActorUserId          string                 `protobuf:"bytes,4,opt,name=actor_user_id,json=actorUserId,proto3" json:"actor_user_id,omitempty"`
+	EventType            string                 `protobuf:"bytes,5,opt,name=event_type,json=eventType,proto3" json:"event_type,omitempty"`
+	SubjectType          string                 `protobuf:"bytes,6,opt,name=subject_type,json=subjectType,proto3" json:"subject_type,omitempty"`
+	SubjectId            string                 `protobuf:"bytes,7,opt,name=subject_id,json=subjectId,proto3" json:"subject_id,omitempty"`
+	Summary              string                 `protobuf:"bytes,8,opt,name=summary,proto3" json:"summary,omitempty"`
+	Read                 bool                   `protobuf:"varint,9,opt,name=read,proto3" json:"read,omitempty"`
+	CreatedAt            *timestamppb.Timestamp `protobuf:"bytes,10,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	SummaryLocalizations map[string]string      `protobuf:"bytes,11,rep,name=summary_localizations,json=summaryLocalizations,proto3" json:"summary_localizations,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
 }
 
 func (x *DraftNotification) Reset() {
@@ -55921,6 +55922,13 @@ func (x *DraftNotification) GetRead() bool {
 func (x *DraftNotification) GetCreatedAt() *timestamppb.Timestamp {
 	if x != nil {
 		return x.CreatedAt
+	}
+	return nil
+}
+
+func (x *DraftNotification) GetSummaryLocalizations() map[string]string {
+	if x != nil {
+		return x.SummaryLocalizations
 	}
 	return nil
 }
@@ -62781,7 +62789,7 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"created_at\x18\r \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
 	"\n" +
 	"updated_at\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\x12=\n" +
-	"\fcompleted_at\x18\x0f \x01(\v2\x1a.google.protobuf.TimestampR\vcompletedAt\"\xd8\x02\n" +
+	"\fcompleted_at\x18\x0f \x01(\v2\x1a.google.protobuf.TimestampR\vcompletedAt\"\x95\x04\n" +
 	"\x11DraftNotification\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
 	"\bdraft_id\x18\x02 \x01(\tR\adraftId\x12*\n" +
@@ -62796,7 +62804,11 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\x04read\x18\t \x01(\bR\x04read\x129\n" +
 	"\n" +
 	"created_at\x18\n" +
-	" \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\"\xb5\x02\n" +
+	" \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12r\n" +
+	"\x15summary_localizations\x18\v \x03(\v2=.sttattus.onyx.v1.DraftNotification.SummaryLocalizationsEntryR\x14summaryLocalizations\x1aG\n" +
+	"\x19SummaryLocalizationsEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xb5\x02\n" +
 	"\rDraftPresence\x12\x19\n" +
 	"\bdraft_id\x18\x01 \x01(\tR\adraftId\x12\x17\n" +
 	"\auser_id\x18\x02 \x01(\tR\x06userId\x12!\n" +
@@ -63338,7 +63350,7 @@ func file_sttattus_onyx_v1_onyx_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_onyx_v1_onyx_proto_enumTypes = make([]protoimpl.EnumInfo, 15)
-var file_sttattus_onyx_v1_onyx_proto_msgTypes = make([]protoimpl.MessageInfo, 743)
+var file_sttattus_onyx_v1_onyx_proto_msgTypes = make([]protoimpl.MessageInfo, 744)
 var file_sttattus_onyx_v1_onyx_proto_goTypes = []any{
 	(OnyxTranslationClass)(0),                            // 0: sttattus.onyx.v1.OnyxTranslationClass
 	(OnyxVerificationState)(0),                           // 1: sttattus.onyx.v1.OnyxVerificationState
@@ -64097,14 +64109,15 @@ var file_sttattus_onyx_v1_onyx_proto_goTypes = []any{
 	(*DraftOperationStatus)(nil),                         // 754: sttattus.onyx.v1.DraftOperationStatus
 	(*GetDraftOperationStatusRequest)(nil),               // 755: sttattus.onyx.v1.GetDraftOperationStatusRequest
 	(*GetDraftOperationStatusResponse)(nil),              // 756: sttattus.onyx.v1.GetDraftOperationStatusResponse
-	nil,                                                  // 757: sttattus.onyx.v1.DraftOperationStatus.ExplanationLocalizationsEntry
-	(*timestamppb.Timestamp)(nil),                        // 758: google.protobuf.Timestamp
+	nil,                                                  // 757: sttattus.onyx.v1.DraftNotification.SummaryLocalizationsEntry
+	nil,                                                  // 758: sttattus.onyx.v1.DraftOperationStatus.ExplanationLocalizationsEntry
+	(*timestamppb.Timestamp)(nil),                        // 759: google.protobuf.Timestamp
 }
 var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
-	758,  // 0: sttattus.onyx.v1.OnyxProfile.verified_at:type_name -> google.protobuf.Timestamp
+	759,  // 0: sttattus.onyx.v1.OnyxProfile.verified_at:type_name -> google.protobuf.Timestamp
 	15,   // 1: sttattus.onyx.v1.OnyxContent.gating:type_name -> sttattus.onyx.v1.GatingCriteria
-	758,  // 2: sttattus.onyx.v1.OnyxContent.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 3: sttattus.onyx.v1.OnyxContent.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 2: sttattus.onyx.v1.OnyxContent.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 3: sttattus.onyx.v1.OnyxContent.expires_at:type_name -> google.protobuf.Timestamp
 	19,   // 4: sttattus.onyx.v1.OnyxContent.document_blocks:type_name -> sttattus.onyx.v1.DocumentBlock
 	0,    // 5: sttattus.onyx.v1.OnyxContent.translation_class:type_name -> sttattus.onyx.v1.OnyxTranslationClass
 	1,    // 6: sttattus.onyx.v1.OnyxContent.translation_verification_state:type_name -> sttattus.onyx.v1.OnyxVerificationState
@@ -64113,11 +64126,11 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	0,    // 9: sttattus.onyx.v1.OnyxContentEdition.translation_class:type_name -> sttattus.onyx.v1.OnyxTranslationClass
 	1,    // 10: sttattus.onyx.v1.OnyxContentEdition.verification_state:type_name -> sttattus.onyx.v1.OnyxVerificationState
 	2,    // 11: sttattus.onyx.v1.OnyxContentEdition.availability:type_name -> sttattus.onyx.v1.OnyxEditionAvailability
-	758,  // 12: sttattus.onyx.v1.OnyxContentEdition.published_at:type_name -> google.protobuf.Timestamp
-	758,  // 13: sttattus.onyx.v1.OnyxContentEdition.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 14: sttattus.onyx.v1.Subscription.granted_at:type_name -> google.protobuf.Timestamp
-	758,  // 15: sttattus.onyx.v1.Subscription.expires_at:type_name -> google.protobuf.Timestamp
-	758,  // 16: sttattus.onyx.v1.Subscription.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 12: sttattus.onyx.v1.OnyxContentEdition.published_at:type_name -> google.protobuf.Timestamp
+	759,  // 13: sttattus.onyx.v1.OnyxContentEdition.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 14: sttattus.onyx.v1.Subscription.granted_at:type_name -> google.protobuf.Timestamp
+	759,  // 15: sttattus.onyx.v1.Subscription.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 16: sttattus.onyx.v1.Subscription.updated_at:type_name -> google.protobuf.Timestamp
 	16,   // 17: sttattus.onyx.v1.CreateProfileResponse.profile:type_name -> sttattus.onyx.v1.OnyxProfile
 	16,   // 18: sttattus.onyx.v1.GetProfileResponse.profile:type_name -> sttattus.onyx.v1.OnyxProfile
 	17,   // 19: sttattus.onyx.v1.ListContentResponse.content:type_name -> sttattus.onyx.v1.OnyxContent
@@ -64128,50 +64141,50 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	17,   // 24: sttattus.onyx.v1.ListContinueResponse.items:type_name -> sttattus.onyx.v1.OnyxContent
 	17,   // 25: sttattus.onyx.v1.Shelf.items:type_name -> sttattus.onyx.v1.OnyxContent
 	36,   // 26: sttattus.onyx.v1.GetShelvesResponse.shelves:type_name -> sttattus.onyx.v1.Shelf
-	758,  // 27: sttattus.onyx.v1.RecordProgressRequest.observed_at:type_name -> google.protobuf.Timestamp
-	758,  // 28: sttattus.onyx.v1.RecordProgressResponse.observed_at:type_name -> google.protobuf.Timestamp
+	759,  // 27: sttattus.onyx.v1.RecordProgressRequest.observed_at:type_name -> google.protobuf.Timestamp
+	759,  // 28: sttattus.onyx.v1.RecordProgressResponse.observed_at:type_name -> google.protobuf.Timestamp
 	44,   // 29: sttattus.onyx.v1.GetCreatorResponse.creator:type_name -> sttattus.onyx.v1.CreatorProfile
 	17,   // 30: sttattus.onyx.v1.ListCreatorWorksResponse.items:type_name -> sttattus.onyx.v1.OnyxContent
 	17,   // 31: sttattus.onyx.v1.SearchContentResponse.items:type_name -> sttattus.onyx.v1.OnyxContent
-	758,  // 32: sttattus.onyx.v1.Note.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 32: sttattus.onyx.v1.Note.created_at:type_name -> google.protobuf.Timestamp
 	53,   // 33: sttattus.onyx.v1.AddNoteResponse.note:type_name -> sttattus.onyx.v1.Note
 	53,   // 34: sttattus.onyx.v1.ListMyNotesResponse.notes:type_name -> sttattus.onyx.v1.Note
-	758,  // 35: sttattus.onyx.v1.ReaderAnnotation.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 36: sttattus.onyx.v1.ReaderAnnotation.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 35: sttattus.onyx.v1.ReaderAnnotation.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 36: sttattus.onyx.v1.ReaderAnnotation.updated_at:type_name -> google.protobuf.Timestamp
 	60,   // 37: sttattus.onyx.v1.UpsertReaderAnnotationResponse.annotation:type_name -> sttattus.onyx.v1.ReaderAnnotation
 	60,   // 38: sttattus.onyx.v1.ListMyReaderAnnotationsResponse.annotations:type_name -> sttattus.onyx.v1.ReaderAnnotation
 	17,   // 39: sttattus.onyx.v1.ReaderSearchResult.content:type_name -> sttattus.onyx.v1.OnyxContent
 	60,   // 40: sttattus.onyx.v1.ReaderSearchResult.annotation:type_name -> sttattus.onyx.v1.ReaderAnnotation
 	67,   // 41: sttattus.onyx.v1.SearchReaderResponse.results:type_name -> sttattus.onyx.v1.ReaderSearchResult
-	758,  // 42: sttattus.onyx.v1.IntelligenceSearchFilters.published_after:type_name -> google.protobuf.Timestamp
-	758,  // 43: sttattus.onyx.v1.IntelligenceSearchFilters.published_before:type_name -> google.protobuf.Timestamp
+	759,  // 42: sttattus.onyx.v1.IntelligenceSearchFilters.published_after:type_name -> google.protobuf.Timestamp
+	759,  // 43: sttattus.onyx.v1.IntelligenceSearchFilters.published_before:type_name -> google.protobuf.Timestamp
 	70,   // 44: sttattus.onyx.v1.SearchIntelligenceRequest.filters:type_name -> sttattus.onyx.v1.IntelligenceSearchFilters
 	17,   // 45: sttattus.onyx.v1.IntelligenceSearchResult.content:type_name -> sttattus.onyx.v1.OnyxContent
 	60,   // 46: sttattus.onyx.v1.IntelligenceSearchResult.annotation:type_name -> sttattus.onyx.v1.ReaderAnnotation
 	72,   // 47: sttattus.onyx.v1.SearchIntelligenceResponse.results:type_name -> sttattus.onyx.v1.IntelligenceSearchResult
 	70,   // 48: sttattus.onyx.v1.OnyxSavedQuery.filters:type_name -> sttattus.onyx.v1.IntelligenceSearchFilters
-	758,  // 49: sttattus.onyx.v1.OnyxSavedQuery.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 50: sttattus.onyx.v1.OnyxSavedQuery.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 49: sttattus.onyx.v1.OnyxSavedQuery.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 50: sttattus.onyx.v1.OnyxSavedQuery.updated_at:type_name -> google.protobuf.Timestamp
 	76,   // 51: sttattus.onyx.v1.ListSavedQueriesResponse.queries:type_name -> sttattus.onyx.v1.OnyxSavedQuery
 	70,   // 52: sttattus.onyx.v1.UpsertSavedQueryRequest.filters:type_name -> sttattus.onyx.v1.IntelligenceSearchFilters
 	76,   // 53: sttattus.onyx.v1.UpsertSavedQueryResponse.query:type_name -> sttattus.onyx.v1.OnyxSavedQuery
 	83,   // 54: sttattus.onyx.v1.OnyxWatchlist.terms:type_name -> sttattus.onyx.v1.OnyxWatchlistTerm
-	758,  // 55: sttattus.onyx.v1.OnyxWatchlist.last_refreshed_at:type_name -> google.protobuf.Timestamp
-	758,  // 56: sttattus.onyx.v1.OnyxWatchlist.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 57: sttattus.onyx.v1.OnyxWatchlist.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 55: sttattus.onyx.v1.OnyxWatchlist.last_refreshed_at:type_name -> google.protobuf.Timestamp
+	759,  // 56: sttattus.onyx.v1.OnyxWatchlist.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 57: sttattus.onyx.v1.OnyxWatchlist.updated_at:type_name -> google.protobuf.Timestamp
 	84,   // 58: sttattus.onyx.v1.ListWatchlistsResponse.watchlists:type_name -> sttattus.onyx.v1.OnyxWatchlist
 	83,   // 59: sttattus.onyx.v1.UpsertWatchlistRequest.terms:type_name -> sttattus.onyx.v1.OnyxWatchlistTerm
 	84,   // 60: sttattus.onyx.v1.UpsertWatchlistResponse.watchlist:type_name -> sttattus.onyx.v1.OnyxWatchlist
 	84,   // 61: sttattus.onyx.v1.RefreshWatchlistResponse.watchlist:type_name -> sttattus.onyx.v1.OnyxWatchlist
 	17,   // 62: sttattus.onyx.v1.OnyxIntelligenceAlert.content:type_name -> sttattus.onyx.v1.OnyxContent
-	758,  // 63: sttattus.onyx.v1.OnyxIntelligenceAlert.detected_at:type_name -> google.protobuf.Timestamp
+	759,  // 63: sttattus.onyx.v1.OnyxIntelligenceAlert.detected_at:type_name -> google.protobuf.Timestamp
 	93,   // 64: sttattus.onyx.v1.ListIntelligenceAlertsResponse.alerts:type_name -> sttattus.onyx.v1.OnyxIntelligenceAlert
 	93,   // 65: sttattus.onyx.v1.SetIntelligenceAlertStateResponse.alert:type_name -> sttattus.onyx.v1.OnyxIntelligenceAlert
 	17,   // 66: sttattus.onyx.v1.OnyxIntelligenceQueueItem.content:type_name -> sttattus.onyx.v1.OnyxContent
 	98,   // 67: sttattus.onyx.v1.GetIntelligenceQueueResponse.items:type_name -> sttattus.onyx.v1.OnyxIntelligenceQueueItem
 	98,   // 68: sttattus.onyx.v1.RecordIntelligenceFeedbackResponse.item:type_name -> sttattus.onyx.v1.OnyxIntelligenceQueueItem
-	758,  // 69: sttattus.onyx.v1.ExportReaderDataResponse.generated_at:type_name -> google.protobuf.Timestamp
-	758,  // 70: sttattus.onyx.v1.ReaderSyncChange.changed_at:type_name -> google.protobuf.Timestamp
+	759,  // 69: sttattus.onyx.v1.ExportReaderDataResponse.generated_at:type_name -> google.protobuf.Timestamp
+	759,  // 70: sttattus.onyx.v1.ReaderSyncChange.changed_at:type_name -> google.protobuf.Timestamp
 	105,  // 71: sttattus.onyx.v1.ListReaderSyncChangesResponse.changes:type_name -> sttattus.onyx.v1.ReaderSyncChange
 	17,   // 72: sttattus.onyx.v1.ListMyUnlocksResponse.items:type_name -> sttattus.onyx.v1.OnyxContent
 	44,   // 73: sttattus.onyx.v1.ListMySubscriptionsResponse.creators:type_name -> sttattus.onyx.v1.CreatorProfile
@@ -64181,23 +64194,23 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	17,   // 77: sttattus.onyx.v1.Series.parts:type_name -> sttattus.onyx.v1.OnyxContent
 	117,  // 78: sttattus.onyx.v1.ListSeriesResponse.series:type_name -> sttattus.onyx.v1.Series
 	117,  // 79: sttattus.onyx.v1.GetSeriesResponse.series:type_name -> sttattus.onyx.v1.Series
-	758,  // 80: sttattus.onyx.v1.CaptionJob.next_attempt_at:type_name -> google.protobuf.Timestamp
+	759,  // 80: sttattus.onyx.v1.CaptionJob.next_attempt_at:type_name -> google.protobuf.Timestamp
 	122,  // 81: sttattus.onyx.v1.GenerateCaptionsResponse.job:type_name -> sttattus.onyx.v1.CaptionJob
 	122,  // 82: sttattus.onyx.v1.GetCaptionJobResponse.job:type_name -> sttattus.onyx.v1.CaptionJob
-	758,  // 83: sttattus.onyx.v1.ListeningPreferences.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 83: sttattus.onyx.v1.ListeningPreferences.updated_at:type_name -> google.protobuf.Timestamp
 	127,  // 84: sttattus.onyx.v1.GetListeningPreferencesResponse.preferences:type_name -> sttattus.onyx.v1.ListeningPreferences
 	127,  // 85: sttattus.onyx.v1.UpdateListeningPreferencesResponse.preferences:type_name -> sttattus.onyx.v1.ListeningPreferences
-	758,  // 86: sttattus.onyx.v1.ListeningBookmark.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 87: sttattus.onyx.v1.ListeningBookmark.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 86: sttattus.onyx.v1.ListeningBookmark.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 87: sttattus.onyx.v1.ListeningBookmark.updated_at:type_name -> google.protobuf.Timestamp
 	132,  // 88: sttattus.onyx.v1.CreateListeningBookmarkResponse.bookmark:type_name -> sttattus.onyx.v1.ListeningBookmark
 	132,  // 89: sttattus.onyx.v1.ListListeningBookmarksResponse.bookmarks:type_name -> sttattus.onyx.v1.ListeningBookmark
 	17,   // 90: sttattus.onyx.v1.ListeningQueueEntry.content:type_name -> sttattus.onyx.v1.OnyxContent
-	758,  // 91: sttattus.onyx.v1.ListeningQueueEntry.added_at:type_name -> google.protobuf.Timestamp
+	759,  // 91: sttattus.onyx.v1.ListeningQueueEntry.added_at:type_name -> google.protobuf.Timestamp
 	139,  // 92: sttattus.onyx.v1.ListListeningQueueResponse.entries:type_name -> sttattus.onyx.v1.ListeningQueueEntry
 	139,  // 93: sttattus.onyx.v1.SetListeningQueueResponse.entries:type_name -> sttattus.onyx.v1.ListeningQueueEntry
 	144,  // 94: sttattus.onyx.v1.AudioOverviewSegment.citations:type_name -> sttattus.onyx.v1.AudioOverviewCitation
-	758,  // 95: sttattus.onyx.v1.AudioOverview.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 96: sttattus.onyx.v1.AudioOverview.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 95: sttattus.onyx.v1.AudioOverview.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 96: sttattus.onyx.v1.AudioOverview.updated_at:type_name -> google.protobuf.Timestamp
 	145,  // 97: sttattus.onyx.v1.AudioOverview.segments:type_name -> sttattus.onyx.v1.AudioOverviewSegment
 	146,  // 98: sttattus.onyx.v1.CreateAudioOverviewResponse.overview:type_name -> sttattus.onyx.v1.AudioOverview
 	146,  // 99: sttattus.onyx.v1.ListAudioOverviewsResponse.overviews:type_name -> sttattus.onyx.v1.AudioOverview
@@ -64206,31 +64219,31 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	17,   // 102: sttattus.onyx.v1.GetTodaySummaryResponse.todays_drop:type_name -> sttattus.onyx.v1.OnyxContent
 	17,   // 103: sttattus.onyx.v1.CrossPillarUnlock.content:type_name -> sttattus.onyx.v1.OnyxContent
 	160,  // 104: sttattus.onyx.v1.GetCrossPillarUnlocksResponse.unlocks:type_name -> sttattus.onyx.v1.CrossPillarUnlock
-	758,  // 105: sttattus.onyx.v1.ConciergeMessage.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 106: sttattus.onyx.v1.ConciergeThread.sla_due_at:type_name -> google.protobuf.Timestamp
-	758,  // 107: sttattus.onyx.v1.ConciergeThread.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 105: sttattus.onyx.v1.ConciergeMessage.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 106: sttattus.onyx.v1.ConciergeThread.sla_due_at:type_name -> google.protobuf.Timestamp
+	759,  // 107: sttattus.onyx.v1.ConciergeThread.created_at:type_name -> google.protobuf.Timestamp
 	163,  // 108: sttattus.onyx.v1.ConciergeThread.messages:type_name -> sttattus.onyx.v1.ConciergeMessage
 	164,  // 109: sttattus.onyx.v1.StartConciergeThreadResponse.thread:type_name -> sttattus.onyx.v1.ConciergeThread
 	164,  // 110: sttattus.onyx.v1.ListMyConciergeThreadsResponse.threads:type_name -> sttattus.onyx.v1.ConciergeThread
 	164,  // 111: sttattus.onyx.v1.GetConciergeThreadResponse.thread:type_name -> sttattus.onyx.v1.ConciergeThread
 	163,  // 112: sttattus.onyx.v1.PostConciergeMessageResponse.message:type_name -> sttattus.onyx.v1.ConciergeMessage
-	758,  // 113: sttattus.onyx.v1.LiveEvent.starts_at:type_name -> google.protobuf.Timestamp
-	758,  // 114: sttattus.onyx.v1.LiveEvent.ends_at:type_name -> google.protobuf.Timestamp
+	759,  // 113: sttattus.onyx.v1.LiveEvent.starts_at:type_name -> google.protobuf.Timestamp
+	759,  // 114: sttattus.onyx.v1.LiveEvent.ends_at:type_name -> google.protobuf.Timestamp
 	173,  // 115: sttattus.onyx.v1.ListLiveEventsResponse.events:type_name -> sttattus.onyx.v1.LiveEvent
 	173,  // 116: sttattus.onyx.v1.GetLiveEventResponse.event:type_name -> sttattus.onyx.v1.LiveEvent
-	758,  // 117: sttattus.onyx.v1.LiveGuestInvitation.expires_at:type_name -> google.protobuf.Timestamp
-	758,  // 118: sttattus.onyx.v1.LiveReservation.promoted_at:type_name -> google.protobuf.Timestamp
-	758,  // 119: sttattus.onyx.v1.LiveReservation.checked_in_at:type_name -> google.protobuf.Timestamp
+	759,  // 117: sttattus.onyx.v1.LiveGuestInvitation.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 118: sttattus.onyx.v1.LiveReservation.promoted_at:type_name -> google.protobuf.Timestamp
+	759,  // 119: sttattus.onyx.v1.LiveReservation.checked_in_at:type_name -> google.protobuf.Timestamp
 	183,  // 120: sttattus.onyx.v1.LiveReservation.guest_invitations:type_name -> sttattus.onyx.v1.LiveGuestInvitation
-	758,  // 121: sttattus.onyx.v1.LiveMessage.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 122: sttattus.onyx.v1.LiveMessage.answered_at:type_name -> google.protobuf.Timestamp
+	759,  // 121: sttattus.onyx.v1.LiveMessage.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 122: sttattus.onyx.v1.LiveMessage.answered_at:type_name -> google.protobuf.Timestamp
 	186,  // 123: sttattus.onyx.v1.LivePoll.options:type_name -> sttattus.onyx.v1.LivePollOption
-	758,  // 124: sttattus.onyx.v1.LivePoll.opened_at:type_name -> google.protobuf.Timestamp
-	758,  // 125: sttattus.onyx.v1.LivePoll.closed_at:type_name -> google.protobuf.Timestamp
-	758,  // 126: sttattus.onyx.v1.LiveNote.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 127: sttattus.onyx.v1.LiveNote.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 124: sttattus.onyx.v1.LivePoll.opened_at:type_name -> google.protobuf.Timestamp
+	759,  // 125: sttattus.onyx.v1.LivePoll.closed_at:type_name -> google.protobuf.Timestamp
+	759,  // 126: sttattus.onyx.v1.LiveNote.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 127: sttattus.onyx.v1.LiveNote.updated_at:type_name -> google.protobuf.Timestamp
 	189,  // 128: sttattus.onyx.v1.LiveReplay.segments:type_name -> sttattus.onyx.v1.LiveReplaySegment
-	758,  // 129: sttattus.onyx.v1.LiveReplay.published_at:type_name -> google.protobuf.Timestamp
+	759,  // 129: sttattus.onyx.v1.LiveReplay.published_at:type_name -> google.protobuf.Timestamp
 	173,  // 130: sttattus.onyx.v1.LiveSalon.event:type_name -> sttattus.onyx.v1.LiveEvent
 	180,  // 131: sttattus.onyx.v1.LiveSalon.speakers:type_name -> sttattus.onyx.v1.LiveSpeaker
 	181,  // 132: sttattus.onyx.v1.LiveSalon.agenda:type_name -> sttattus.onyx.v1.LiveAgendaItem
@@ -64240,7 +64253,7 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	191,  // 136: sttattus.onyx.v1.GetLiveSalonResponse.salon:type_name -> sttattus.onyx.v1.LiveSalon
 	184,  // 137: sttattus.onyx.v1.UpsertLiveReservationResponse.reservation:type_name -> sttattus.onyx.v1.LiveReservation
 	183,  // 138: sttattus.onyx.v1.InviteLiveGuestResponse.invitation:type_name -> sttattus.onyx.v1.LiveGuestInvitation
-	758,  // 139: sttattus.onyx.v1.JoinLiveEventResponse.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 139: sttattus.onyx.v1.JoinLiveEventResponse.expires_at:type_name -> google.protobuf.Timestamp
 	185,  // 140: sttattus.onyx.v1.ListLiveActivityResponse.messages:type_name -> sttattus.onyx.v1.LiveMessage
 	187,  // 141: sttattus.onyx.v1.ListLiveActivityResponse.polls:type_name -> sttattus.onyx.v1.LivePoll
 	185,  // 142: sttattus.onyx.v1.PostLiveMessageResponse.message:type_name -> sttattus.onyx.v1.LiveMessage
@@ -64249,80 +64262,80 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	188,  // 145: sttattus.onyx.v1.UpsertLiveNoteResponse.note:type_name -> sttattus.onyx.v1.LiveNote
 	188,  // 146: sttattus.onyx.v1.ListLiveNotesResponse.notes:type_name -> sttattus.onyx.v1.LiveNote
 	190,  // 147: sttattus.onyx.v1.GetLiveReplayResponse.replay:type_name -> sttattus.onyx.v1.LiveReplay
-	758,  // 148: sttattus.onyx.v1.PosthumousArchive.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 148: sttattus.onyx.v1.PosthumousArchive.updated_at:type_name -> google.protobuf.Timestamp
 	222,  // 149: sttattus.onyx.v1.SetPosthumousArchiveResponse.archive:type_name -> sttattus.onyx.v1.PosthumousArchive
 	222,  // 150: sttattus.onyx.v1.GetPosthumousArchiveResponse.archive:type_name -> sttattus.onyx.v1.PosthumousArchive
 	17,   // 151: sttattus.onyx.v1.Anthology.pieces:type_name -> sttattus.onyx.v1.OnyxContent
 	227,  // 152: sttattus.onyx.v1.ListAnthologiesResponse.anthologies:type_name -> sttattus.onyx.v1.Anthology
 	227,  // 153: sttattus.onyx.v1.GetAnthologyResponse.anthology:type_name -> sttattus.onyx.v1.Anthology
-	758,  // 154: sttattus.onyx.v1.ShareLink.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 154: sttattus.onyx.v1.ShareLink.expires_at:type_name -> google.protobuf.Timestamp
 	232,  // 155: sttattus.onyx.v1.CreateShareLinkResponse.link:type_name -> sttattus.onyx.v1.ShareLink
 	232,  // 156: sttattus.onyx.v1.ListMyShareLinksResponse.links:type_name -> sttattus.onyx.v1.ShareLink
 	13,   // 157: sttattus.onyx.v1.EncryptedRendition.status:type_name -> sttattus.onyx.v1.EncryptedRendition.RenditionStatus
-	758,  // 158: sttattus.onyx.v1.EncryptedRendition.url_expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 158: sttattus.onyx.v1.EncryptedRendition.url_expires_at:type_name -> google.protobuf.Timestamp
 	14,   // 159: sttattus.onyx.v1.EncryptedRendition.package_type:type_name -> sttattus.onyx.v1.EncryptedRendition.OfflinePackageType
 	526,  // 160: sttattus.onyx.v1.EncryptedRendition.forensic_manifest:type_name -> sttattus.onyx.v1.OnyxForensicManifest
 	17,   // 161: sttattus.onyx.v1.GetOfflineManifestResponse.items:type_name -> sttattus.onyx.v1.OnyxContent
 	239,  // 162: sttattus.onyx.v1.GetOfflineManifestResponse.encrypted_renditions:type_name -> sttattus.onyx.v1.EncryptedRendition
-	758,  // 163: sttattus.onyx.v1.GetOfflineManifestResponse.grant_expires_at:type_name -> google.protobuf.Timestamp
-	758,  // 164: sttattus.onyx.v1.RegisterDeviceResponse.expires_at:type_name -> google.protobuf.Timestamp
-	758,  // 165: sttattus.onyx.v1.DeviceGrantInfo.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 166: sttattus.onyx.v1.DeviceGrantInfo.expires_at:type_name -> google.protobuf.Timestamp
-	758,  // 167: sttattus.onyx.v1.DeviceGrantInfo.last_sync_at:type_name -> google.protobuf.Timestamp
+	759,  // 163: sttattus.onyx.v1.GetOfflineManifestResponse.grant_expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 164: sttattus.onyx.v1.RegisterDeviceResponse.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 165: sttattus.onyx.v1.DeviceGrantInfo.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 166: sttattus.onyx.v1.DeviceGrantInfo.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 167: sttattus.onyx.v1.DeviceGrantInfo.last_sync_at:type_name -> google.protobuf.Timestamp
 	247,  // 168: sttattus.onyx.v1.GetDeviceGrantsResponse.grants:type_name -> sttattus.onyx.v1.DeviceGrantInfo
-	758,  // 169: sttattus.onyx.v1.GetPurgeReceiptResponse.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 170: sttattus.onyx.v1.OfflineManifestItemInfo.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 169: sttattus.onyx.v1.GetPurgeReceiptResponse.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 170: sttattus.onyx.v1.OfflineManifestItemInfo.created_at:type_name -> google.protobuf.Timestamp
 	256,  // 171: sttattus.onyx.v1.ListOfflineManifestItemsResponse.items:type_name -> sttattus.onyx.v1.OfflineManifestItemInfo
-	758,  // 172: sttattus.onyx.v1.RefreshedRendition.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 172: sttattus.onyx.v1.RefreshedRendition.expires_at:type_name -> google.protobuf.Timestamp
 	259,  // 173: sttattus.onyx.v1.RefreshOfflineRenditionsResponse.renditions:type_name -> sttattus.onyx.v1.RefreshedRendition
 	265,  // 174: sttattus.onyx.v1.GetYearInOnyxResponse.latest_archive:type_name -> sttattus.onyx.v1.AnnualArchive
-	758,  // 175: sttattus.onyx.v1.AnnualArchive.generated_at:type_name -> google.protobuf.Timestamp
-	758,  // 176: sttattus.onyx.v1.GenerateAnnualArchiveResponse.generated_at:type_name -> google.protobuf.Timestamp
-	758,  // 177: sttattus.onyx.v1.IngestionItem.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 178: sttattus.onyx.v1.IngestionItem.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 175: sttattus.onyx.v1.AnnualArchive.generated_at:type_name -> google.protobuf.Timestamp
+	759,  // 176: sttattus.onyx.v1.GenerateAnnualArchiveResponse.generated_at:type_name -> google.protobuf.Timestamp
+	759,  // 177: sttattus.onyx.v1.IngestionItem.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 178: sttattus.onyx.v1.IngestionItem.updated_at:type_name -> google.protobuf.Timestamp
 	270,  // 179: sttattus.onyx.v1.CreateIngestionItemResponse.item:type_name -> sttattus.onyx.v1.IngestionItem
 	270,  // 180: sttattus.onyx.v1.ListMyIngestionItemsResponse.items:type_name -> sttattus.onyx.v1.IngestionItem
 	270,  // 181: sttattus.onyx.v1.GetIngestionItemResponse.item:type_name -> sttattus.onyx.v1.IngestionItem
 	270,  // 182: sttattus.onyx.v1.RetryIngestionItemResponse.item:type_name -> sttattus.onyx.v1.IngestionItem
 	270,  // 183: sttattus.onyx.v1.SetIngestionItemStateResponse.item:type_name -> sttattus.onyx.v1.IngestionItem
 	270,  // 184: sttattus.onyx.v1.ResolveIngestionDuplicateResponse.item:type_name -> sttattus.onyx.v1.IngestionItem
-	758,  // 185: sttattus.onyx.v1.EvidenceSource.published_at:type_name -> google.protobuf.Timestamp
-	758,  // 186: sttattus.onyx.v1.EvidenceSource.retrieved_at:type_name -> google.protobuf.Timestamp
-	758,  // 187: sttattus.onyx.v1.EvidenceSource.health_checked_at:type_name -> google.protobuf.Timestamp
-	758,  // 188: sttattus.onyx.v1.EvidenceSource.withdrawal_detected_at:type_name -> google.protobuf.Timestamp
+	759,  // 185: sttattus.onyx.v1.EvidenceSource.published_at:type_name -> google.protobuf.Timestamp
+	759,  // 186: sttattus.onyx.v1.EvidenceSource.retrieved_at:type_name -> google.protobuf.Timestamp
+	759,  // 187: sttattus.onyx.v1.EvidenceSource.health_checked_at:type_name -> google.protobuf.Timestamp
+	759,  // 188: sttattus.onyx.v1.EvidenceSource.withdrawal_detected_at:type_name -> google.protobuf.Timestamp
 	284,  // 189: sttattus.onyx.v1.EvidenceClaim.citations:type_name -> sttattus.onyx.v1.EvidenceCitation
-	758,  // 190: sttattus.onyx.v1.EvidenceCorrection.effective_at:type_name -> google.protobuf.Timestamp
-	758,  // 191: sttattus.onyx.v1.EvidenceCorrection.published_at:type_name -> google.protobuf.Timestamp
+	759,  // 190: sttattus.onyx.v1.EvidenceCorrection.effective_at:type_name -> google.protobuf.Timestamp
+	759,  // 191: sttattus.onyx.v1.EvidenceCorrection.published_at:type_name -> google.protobuf.Timestamp
 	283,  // 192: sttattus.onyx.v1.GetEvidenceWorkspaceResponse.sources:type_name -> sttattus.onyx.v1.EvidenceSource
 	285,  // 193: sttattus.onyx.v1.GetEvidenceWorkspaceResponse.claims:type_name -> sttattus.onyx.v1.EvidenceClaim
 	286,  // 194: sttattus.onyx.v1.GetEvidenceWorkspaceResponse.corrections:type_name -> sttattus.onyx.v1.EvidenceCorrection
-	758,  // 195: sttattus.onyx.v1.EvidenceSourceLifecycleEvent.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 196: sttattus.onyx.v1.EvidenceSourceReplacement.verified_at:type_name -> google.protobuf.Timestamp
-	758,  // 197: sttattus.onyx.v1.EvidenceSourceReplacement.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 195: sttattus.onyx.v1.EvidenceSourceLifecycleEvent.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 196: sttattus.onyx.v1.EvidenceSourceReplacement.verified_at:type_name -> google.protobuf.Timestamp
+	759,  // 197: sttattus.onyx.v1.EvidenceSourceReplacement.created_at:type_name -> google.protobuf.Timestamp
 	290,  // 198: sttattus.onyx.v1.GetEvidenceSourceHistoryResponse.events:type_name -> sttattus.onyx.v1.EvidenceSourceLifecycleEvent
 	291,  // 199: sttattus.onyx.v1.GetEvidenceSourceHistoryResponse.replacements:type_name -> sttattus.onyx.v1.EvidenceSourceReplacement
 	284,  // 200: sttattus.onyx.v1.BriefPoint.citations:type_name -> sttattus.onyx.v1.EvidenceCitation
 	293,  // 201: sttattus.onyx.v1.EvidenceBrief.points:type_name -> sttattus.onyx.v1.BriefPoint
-	758,  // 202: sttattus.onyx.v1.EvidenceBrief.cutoff_at:type_name -> google.protobuf.Timestamp
-	758,  // 203: sttattus.onyx.v1.EvidenceBrief.generated_at:type_name -> google.protobuf.Timestamp
+	759,  // 202: sttattus.onyx.v1.EvidenceBrief.cutoff_at:type_name -> google.protobuf.Timestamp
+	759,  // 203: sttattus.onyx.v1.EvidenceBrief.generated_at:type_name -> google.protobuf.Timestamp
 	286,  // 204: sttattus.onyx.v1.EvidenceBrief.corrections:type_name -> sttattus.onyx.v1.EvidenceCorrection
-	758,  // 205: sttattus.onyx.v1.CreateEvidenceBriefRequest.cutoff_at:type_name -> google.protobuf.Timestamp
+	759,  // 205: sttattus.onyx.v1.CreateEvidenceBriefRequest.cutoff_at:type_name -> google.protobuf.Timestamp
 	294,  // 206: sttattus.onyx.v1.CreateEvidenceBriefResponse.brief:type_name -> sttattus.onyx.v1.EvidenceBrief
 	294,  // 207: sttattus.onyx.v1.ListMyEvidenceBriefsResponse.briefs:type_name -> sttattus.onyx.v1.EvidenceBrief
 	294,  // 208: sttattus.onyx.v1.GetEvidenceBriefResponse.brief:type_name -> sttattus.onyx.v1.EvidenceBrief
-	758,  // 209: sttattus.onyx.v1.CreatorContract.starts_at:type_name -> google.protobuf.Timestamp
-	758,  // 210: sttattus.onyx.v1.CreatorContract.ends_at:type_name -> google.protobuf.Timestamp
-	758,  // 211: sttattus.onyx.v1.CreatorContract.signed_at:type_name -> google.protobuf.Timestamp
-	758,  // 212: sttattus.onyx.v1.EditorialReview.reviewed_at:type_name -> google.protobuf.Timestamp
-	758,  // 213: sttattus.onyx.v1.EditorialComment.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 214: sttattus.onyx.v1.EditorialProject.submitted_at:type_name -> google.protobuf.Timestamp
-	758,  // 215: sttattus.onyx.v1.EditorialProject.publish_at:type_name -> google.protobuf.Timestamp
-	758,  // 216: sttattus.onyx.v1.EditorialProject.rights_expire_at:type_name -> google.protobuf.Timestamp
-	758,  // 217: sttattus.onyx.v1.EditorialProject.published_at:type_name -> google.protobuf.Timestamp
+	759,  // 209: sttattus.onyx.v1.CreatorContract.starts_at:type_name -> google.protobuf.Timestamp
+	759,  // 210: sttattus.onyx.v1.CreatorContract.ends_at:type_name -> google.protobuf.Timestamp
+	759,  // 211: sttattus.onyx.v1.CreatorContract.signed_at:type_name -> google.protobuf.Timestamp
+	759,  // 212: sttattus.onyx.v1.EditorialReview.reviewed_at:type_name -> google.protobuf.Timestamp
+	759,  // 213: sttattus.onyx.v1.EditorialComment.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 214: sttattus.onyx.v1.EditorialProject.submitted_at:type_name -> google.protobuf.Timestamp
+	759,  // 215: sttattus.onyx.v1.EditorialProject.publish_at:type_name -> google.protobuf.Timestamp
+	759,  // 216: sttattus.onyx.v1.EditorialProject.rights_expire_at:type_name -> google.protobuf.Timestamp
+	759,  // 217: sttattus.onyx.v1.EditorialProject.published_at:type_name -> google.protobuf.Timestamp
 	302,  // 218: sttattus.onyx.v1.EditorialProject.reviews:type_name -> sttattus.onyx.v1.EditorialReview
 	303,  // 219: sttattus.onyx.v1.EditorialProject.comments:type_name -> sttattus.onyx.v1.EditorialComment
-	758,  // 220: sttattus.onyx.v1.EditorialProject.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 221: sttattus.onyx.v1.CreatorStatement.paid_at:type_name -> google.protobuf.Timestamp
+	759,  // 220: sttattus.onyx.v1.EditorialProject.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 221: sttattus.onyx.v1.CreatorStatement.paid_at:type_name -> google.protobuf.Timestamp
 	16,   // 222: sttattus.onyx.v1.CreatorStudio.profile:type_name -> sttattus.onyx.v1.OnyxProfile
 	301,  // 223: sttattus.onyx.v1.CreatorStudio.contracts:type_name -> sttattus.onyx.v1.CreatorContract
 	304,  // 224: sttattus.onyx.v1.CreatorStudio.projects:type_name -> sttattus.onyx.v1.EditorialProject
@@ -64335,54 +64348,54 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	301,  // 231: sttattus.onyx.v1.SignCreatorContractResponse.contract:type_name -> sttattus.onyx.v1.CreatorContract
 	20,   // 232: sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedResponse.subscriptions:type_name -> sttattus.onyx.v1.Subscription
 	20,   // 233: sttattus.onyx.v1.CancelCreatorSubscriptionResponse.subscription:type_name -> sttattus.onyx.v1.Subscription
-	758,  // 234: sttattus.onyx.v1.CommerceInvoice.issued_at:type_name -> google.protobuf.Timestamp
-	758,  // 235: sttattus.onyx.v1.CommerceInvoice.paid_at:type_name -> google.protobuf.Timestamp
-	758,  // 236: sttattus.onyx.v1.CommerceCase.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 237: sttattus.onyx.v1.CommerceCase.resolved_at:type_name -> google.protobuf.Timestamp
+	759,  // 234: sttattus.onyx.v1.CommerceInvoice.issued_at:type_name -> google.protobuf.Timestamp
+	759,  // 235: sttattus.onyx.v1.CommerceInvoice.paid_at:type_name -> google.protobuf.Timestamp
+	759,  // 236: sttattus.onyx.v1.CommerceCase.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 237: sttattus.onyx.v1.CommerceCase.resolved_at:type_name -> google.protobuf.Timestamp
 	322,  // 238: sttattus.onyx.v1.GetMyCommerceResponse.invoices:type_name -> sttattus.onyx.v1.CommerceInvoice
 	323,  // 239: sttattus.onyx.v1.GetMyCommerceResponse.cases:type_name -> sttattus.onyx.v1.CommerceCase
 	20,   // 240: sttattus.onyx.v1.GetMyCommerceResponse.creator_subscriptions:type_name -> sttattus.onyx.v1.Subscription
 	323,  // 241: sttattus.onyx.v1.CreateCommerceCaseResponse.commerce_case:type_name -> sttattus.onyx.v1.CommerceCase
-	758,  // 242: sttattus.onyx.v1.ResearchRoomMember.expires_at:type_name -> google.protobuf.Timestamp
-	758,  // 243: sttattus.onyx.v1.ResearchRoomMember.invited_at:type_name -> google.protobuf.Timestamp
-	758,  // 244: sttattus.onyx.v1.ResearchRoomMember.joined_at:type_name -> google.protobuf.Timestamp
-	758,  // 245: sttattus.onyx.v1.ResearchRoomMember.revoked_at:type_name -> google.protobuf.Timestamp
+	759,  // 242: sttattus.onyx.v1.ResearchRoomMember.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 243: sttattus.onyx.v1.ResearchRoomMember.invited_at:type_name -> google.protobuf.Timestamp
+	759,  // 244: sttattus.onyx.v1.ResearchRoomMember.joined_at:type_name -> google.protobuf.Timestamp
+	759,  // 245: sttattus.onyx.v1.ResearchRoomMember.revoked_at:type_name -> google.protobuf.Timestamp
 	328,  // 246: sttattus.onyx.v1.ResearchRoom.policy:type_name -> sttattus.onyx.v1.ResearchRoomPolicy
-	758,  // 247: sttattus.onyx.v1.ResearchRoom.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 248: sttattus.onyx.v1.ResearchRoom.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 249: sttattus.onyx.v1.ResearchRoomItem.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 250: sttattus.onyx.v1.ResearchRoomItem.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 251: sttattus.onyx.v1.ResearchRoomThread.resolved_at:type_name -> google.protobuf.Timestamp
-	758,  // 252: sttattus.onyx.v1.ResearchRoomThread.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 253: sttattus.onyx.v1.ResearchRoomThread.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 254: sttattus.onyx.v1.ResearchRoomComment.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 255: sttattus.onyx.v1.ResearchRoomComment.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 256: sttattus.onyx.v1.ResearchRoomTask.due_at:type_name -> google.protobuf.Timestamp
-	758,  // 257: sttattus.onyx.v1.ResearchRoomTask.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 258: sttattus.onyx.v1.ResearchRoomTask.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 259: sttattus.onyx.v1.ResearchRoomMeeting.starts_at:type_name -> google.protobuf.Timestamp
-	758,  // 260: sttattus.onyx.v1.ResearchRoomMeeting.ends_at:type_name -> google.protobuf.Timestamp
-	758,  // 261: sttattus.onyx.v1.ResearchRoomMeeting.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 262: sttattus.onyx.v1.ResearchRoomMeeting.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 263: sttattus.onyx.v1.ResearchRoomDecision.decided_at:type_name -> google.protobuf.Timestamp
-	758,  // 264: sttattus.onyx.v1.ResearchRoomDecision.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 265: sttattus.onyx.v1.ResearchRoomDecision.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 266: sttattus.onyx.v1.ResearchRoomApproval.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 267: sttattus.onyx.v1.ResearchRoomExport.expires_at:type_name -> google.protobuf.Timestamp
-	758,  // 268: sttattus.onyx.v1.ResearchRoomExport.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 269: sttattus.onyx.v1.ResearchRoomExport.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 270: sttattus.onyx.v1.ResearchRoomAuditEvent.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 271: sttattus.onyx.v1.ResearchRoomGrant.expires_at:type_name -> google.protobuf.Timestamp
-	758,  // 272: sttattus.onyx.v1.ResearchRoomGrant.revoked_at:type_name -> google.protobuf.Timestamp
-	758,  // 273: sttattus.onyx.v1.ResearchRoomGrant.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 274: sttattus.onyx.v1.ResearchRoomShareLink.last_accessed_at:type_name -> google.protobuf.Timestamp
-	758,  // 275: sttattus.onyx.v1.ResearchRoomShareLink.expires_at:type_name -> google.protobuf.Timestamp
-	758,  // 276: sttattus.onyx.v1.ResearchRoomShareLink.revoked_at:type_name -> google.protobuf.Timestamp
-	758,  // 277: sttattus.onyx.v1.ResearchRoomShareLink.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 247: sttattus.onyx.v1.ResearchRoom.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 248: sttattus.onyx.v1.ResearchRoom.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 249: sttattus.onyx.v1.ResearchRoomItem.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 250: sttattus.onyx.v1.ResearchRoomItem.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 251: sttattus.onyx.v1.ResearchRoomThread.resolved_at:type_name -> google.protobuf.Timestamp
+	759,  // 252: sttattus.onyx.v1.ResearchRoomThread.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 253: sttattus.onyx.v1.ResearchRoomThread.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 254: sttattus.onyx.v1.ResearchRoomComment.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 255: sttattus.onyx.v1.ResearchRoomComment.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 256: sttattus.onyx.v1.ResearchRoomTask.due_at:type_name -> google.protobuf.Timestamp
+	759,  // 257: sttattus.onyx.v1.ResearchRoomTask.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 258: sttattus.onyx.v1.ResearchRoomTask.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 259: sttattus.onyx.v1.ResearchRoomMeeting.starts_at:type_name -> google.protobuf.Timestamp
+	759,  // 260: sttattus.onyx.v1.ResearchRoomMeeting.ends_at:type_name -> google.protobuf.Timestamp
+	759,  // 261: sttattus.onyx.v1.ResearchRoomMeeting.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 262: sttattus.onyx.v1.ResearchRoomMeeting.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 263: sttattus.onyx.v1.ResearchRoomDecision.decided_at:type_name -> google.protobuf.Timestamp
+	759,  // 264: sttattus.onyx.v1.ResearchRoomDecision.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 265: sttattus.onyx.v1.ResearchRoomDecision.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 266: sttattus.onyx.v1.ResearchRoomApproval.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 267: sttattus.onyx.v1.ResearchRoomExport.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 268: sttattus.onyx.v1.ResearchRoomExport.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 269: sttattus.onyx.v1.ResearchRoomExport.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 270: sttattus.onyx.v1.ResearchRoomAuditEvent.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 271: sttattus.onyx.v1.ResearchRoomGrant.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 272: sttattus.onyx.v1.ResearchRoomGrant.revoked_at:type_name -> google.protobuf.Timestamp
+	759,  // 273: sttattus.onyx.v1.ResearchRoomGrant.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 274: sttattus.onyx.v1.ResearchRoomShareLink.last_accessed_at:type_name -> google.protobuf.Timestamp
+	759,  // 275: sttattus.onyx.v1.ResearchRoomShareLink.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 276: sttattus.onyx.v1.ResearchRoomShareLink.revoked_at:type_name -> google.protobuf.Timestamp
+	759,  // 277: sttattus.onyx.v1.ResearchRoomShareLink.created_at:type_name -> google.protobuf.Timestamp
 	17,   // 278: sttattus.onyx.v1.ResearchRoomOfflineManifest.items:type_name -> sttattus.onyx.v1.OnyxContent
 	239,  // 279: sttattus.onyx.v1.ResearchRoomOfflineManifest.encrypted_renditions:type_name -> sttattus.onyx.v1.EncryptedRendition
-	758,  // 280: sttattus.onyx.v1.ResearchRoomOfflineManifest.grant_expires_at:type_name -> google.protobuf.Timestamp
-	758,  // 281: sttattus.onyx.v1.ResearchRoomPurgeReceipt.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 280: sttattus.onyx.v1.ResearchRoomOfflineManifest.grant_expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 281: sttattus.onyx.v1.ResearchRoomPurgeReceipt.created_at:type_name -> google.protobuf.Timestamp
 	330,  // 282: sttattus.onyx.v1.ResearchRoomDetail.room:type_name -> sttattus.onyx.v1.ResearchRoom
 	329,  // 283: sttattus.onyx.v1.ResearchRoomDetail.members:type_name -> sttattus.onyx.v1.ResearchRoomMember
 	331,  // 284: sttattus.onyx.v1.ResearchRoomDetail.items:type_name -> sttattus.onyx.v1.ResearchRoomItem
@@ -64401,16 +64414,16 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	330,  // 297: sttattus.onyx.v1.UpdateResearchRoomResponse.room:type_name -> sttattus.onyx.v1.ResearchRoom
 	329,  // 298: sttattus.onyx.v1.InviteResearchRoomMemberResponse.member:type_name -> sttattus.onyx.v1.ResearchRoomMember
 	329,  // 299: sttattus.onyx.v1.RespondResearchRoomInviteResponse.member:type_name -> sttattus.onyx.v1.ResearchRoomMember
-	758,  // 300: sttattus.onyx.v1.ChangeResearchRoomMemberRequest.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 300: sttattus.onyx.v1.ChangeResearchRoomMemberRequest.expires_at:type_name -> google.protobuf.Timestamp
 	329,  // 301: sttattus.onyx.v1.ChangeResearchRoomMemberResponse.member:type_name -> sttattus.onyx.v1.ResearchRoomMember
 	331,  // 302: sttattus.onyx.v1.AddResearchRoomItemResponse.item:type_name -> sttattus.onyx.v1.ResearchRoomItem
 	332,  // 303: sttattus.onyx.v1.PostResearchRoomCommentResponse.thread:type_name -> sttattus.onyx.v1.ResearchRoomThread
 	333,  // 304: sttattus.onyx.v1.PostResearchRoomCommentResponse.comment:type_name -> sttattus.onyx.v1.ResearchRoomComment
 	332,  // 305: sttattus.onyx.v1.SetResearchRoomThreadStatusResponse.thread:type_name -> sttattus.onyx.v1.ResearchRoomThread
-	758,  // 306: sttattus.onyx.v1.UpsertResearchRoomTaskRequest.due_at:type_name -> google.protobuf.Timestamp
+	759,  // 306: sttattus.onyx.v1.UpsertResearchRoomTaskRequest.due_at:type_name -> google.protobuf.Timestamp
 	334,  // 307: sttattus.onyx.v1.UpsertResearchRoomTaskResponse.task:type_name -> sttattus.onyx.v1.ResearchRoomTask
-	758,  // 308: sttattus.onyx.v1.UpsertResearchRoomMeetingRequest.starts_at:type_name -> google.protobuf.Timestamp
-	758,  // 309: sttattus.onyx.v1.UpsertResearchRoomMeetingRequest.ends_at:type_name -> google.protobuf.Timestamp
+	759,  // 308: sttattus.onyx.v1.UpsertResearchRoomMeetingRequest.starts_at:type_name -> google.protobuf.Timestamp
+	759,  // 309: sttattus.onyx.v1.UpsertResearchRoomMeetingRequest.ends_at:type_name -> google.protobuf.Timestamp
 	335,  // 310: sttattus.onyx.v1.UpsertResearchRoomMeetingResponse.meeting:type_name -> sttattus.onyx.v1.ResearchRoomMeeting
 	336,  // 311: sttattus.onyx.v1.UpsertResearchRoomDecisionResponse.decision:type_name -> sttattus.onyx.v1.ResearchRoomDecision
 	337,  // 312: sttattus.onyx.v1.RecordResearchRoomApprovalResponse.approval:type_name -> sttattus.onyx.v1.ResearchRoomApproval
@@ -64418,9 +64431,9 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	338,  // 314: sttattus.onyx.v1.RequestResearchRoomExportResponse.export:type_name -> sttattus.onyx.v1.ResearchRoomExport
 	339,  // 315: sttattus.onyx.v1.ListResearchRoomAuditResponse.events:type_name -> sttattus.onyx.v1.ResearchRoomAuditEvent
 	340,  // 316: sttattus.onyx.v1.ListResearchRoomGrantsResponse.grants:type_name -> sttattus.onyx.v1.ResearchRoomGrant
-	758,  // 317: sttattus.onyx.v1.UpsertResearchRoomGrantRequest.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 317: sttattus.onyx.v1.UpsertResearchRoomGrantRequest.expires_at:type_name -> google.protobuf.Timestamp
 	340,  // 318: sttattus.onyx.v1.UpsertResearchRoomGrantResponse.grant:type_name -> sttattus.onyx.v1.ResearchRoomGrant
-	758,  // 319: sttattus.onyx.v1.CreateResearchRoomShareLinkRequest.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 319: sttattus.onyx.v1.CreateResearchRoomShareLinkRequest.expires_at:type_name -> google.protobuf.Timestamp
 	341,  // 320: sttattus.onyx.v1.CreateResearchRoomShareLinkResponse.share_link:type_name -> sttattus.onyx.v1.ResearchRoomShareLink
 	341,  // 321: sttattus.onyx.v1.ListResearchRoomShareLinksResponse.share_links:type_name -> sttattus.onyx.v1.ResearchRoomShareLink
 	330,  // 322: sttattus.onyx.v1.ResolveResearchRoomShareLinkResponse.room:type_name -> sttattus.onyx.v1.ResearchRoom
@@ -64429,38 +64442,38 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	342,  // 325: sttattus.onyx.v1.GetResearchRoomOfflineManifestResponse.manifest:type_name -> sttattus.onyx.v1.ResearchRoomOfflineManifest
 	343,  // 326: sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeResponse.receipt:type_name -> sttattus.onyx.v1.ResearchRoomPurgeReceipt
 	342,  // 327: sttattus.onyx.v1.ListResearchRoomOfflinePurgesResponse.manifests:type_name -> sttattus.onyx.v1.ResearchRoomOfflineManifest
-	758,  // 328: sttattus.onyx.v1.IntelligenceGraphSourceAnchor.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 329: sttattus.onyx.v1.IntelligenceGraphNode.valid_from:type_name -> google.protobuf.Timestamp
-	758,  // 330: sttattus.onyx.v1.IntelligenceGraphNode.valid_to:type_name -> google.protobuf.Timestamp
+	759,  // 328: sttattus.onyx.v1.IntelligenceGraphSourceAnchor.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 329: sttattus.onyx.v1.IntelligenceGraphNode.valid_from:type_name -> google.protobuf.Timestamp
+	759,  // 330: sttattus.onyx.v1.IntelligenceGraphNode.valid_to:type_name -> google.protobuf.Timestamp
 	408,  // 331: sttattus.onyx.v1.IntelligenceGraphNode.anchors:type_name -> sttattus.onyx.v1.IntelligenceGraphSourceAnchor
-	758,  // 332: sttattus.onyx.v1.IntelligenceGraphNode.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 333: sttattus.onyx.v1.IntelligenceGraphNode.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 332: sttattus.onyx.v1.IntelligenceGraphNode.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 333: sttattus.onyx.v1.IntelligenceGraphNode.updated_at:type_name -> google.protobuf.Timestamp
 	408,  // 334: sttattus.onyx.v1.IntelligenceGraphEdge.anchors:type_name -> sttattus.onyx.v1.IntelligenceGraphSourceAnchor
-	758,  // 335: sttattus.onyx.v1.IntelligenceGraphEdge.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 336: sttattus.onyx.v1.IntelligenceGraphEdge.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 335: sttattus.onyx.v1.IntelligenceGraphEdge.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 336: sttattus.onyx.v1.IntelligenceGraphEdge.updated_at:type_name -> google.protobuf.Timestamp
 	409,  // 337: sttattus.onyx.v1.IntelligenceGraphSuggestion.proposed_node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
 	410,  // 338: sttattus.onyx.v1.IntelligenceGraphSuggestion.proposed_edge:type_name -> sttattus.onyx.v1.IntelligenceGraphEdge
-	758,  // 339: sttattus.onyx.v1.IntelligenceGraphSuggestion.expires_at:type_name -> google.protobuf.Timestamp
-	758,  // 340: sttattus.onyx.v1.IntelligenceGraphSuggestion.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 341: sttattus.onyx.v1.IntelligenceGraphSuggestion.decided_at:type_name -> google.protobuf.Timestamp
-	758,  // 342: sttattus.onyx.v1.IntelligenceGraphTimelineEvent.event_at:type_name -> google.protobuf.Timestamp
-	758,  // 343: sttattus.onyx.v1.IntelligenceGraphTimelineEvent.recorded_at:type_name -> google.protobuf.Timestamp
-	758,  // 344: sttattus.onyx.v1.IntelligenceGraphResurfacingItem.due_at:type_name -> google.protobuf.Timestamp
-	758,  // 345: sttattus.onyx.v1.IntelligenceGraphResurfacingItem.snoozed_until:type_name -> google.protobuf.Timestamp
-	758,  // 346: sttattus.onyx.v1.IntelligenceGraphResurfacingItem.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 347: sttattus.onyx.v1.IntelligenceGraphResurfacingItem.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 339: sttattus.onyx.v1.IntelligenceGraphSuggestion.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 340: sttattus.onyx.v1.IntelligenceGraphSuggestion.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 341: sttattus.onyx.v1.IntelligenceGraphSuggestion.decided_at:type_name -> google.protobuf.Timestamp
+	759,  // 342: sttattus.onyx.v1.IntelligenceGraphTimelineEvent.event_at:type_name -> google.protobuf.Timestamp
+	759,  // 343: sttattus.onyx.v1.IntelligenceGraphTimelineEvent.recorded_at:type_name -> google.protobuf.Timestamp
+	759,  // 344: sttattus.onyx.v1.IntelligenceGraphResurfacingItem.due_at:type_name -> google.protobuf.Timestamp
+	759,  // 345: sttattus.onyx.v1.IntelligenceGraphResurfacingItem.snoozed_until:type_name -> google.protobuf.Timestamp
+	759,  // 346: sttattus.onyx.v1.IntelligenceGraphResurfacingItem.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 347: sttattus.onyx.v1.IntelligenceGraphResurfacingItem.updated_at:type_name -> google.protobuf.Timestamp
 	408,  // 348: sttattus.onyx.v1.IntelligenceGraphMeetingBriefSection.citations:type_name -> sttattus.onyx.v1.IntelligenceGraphSourceAnchor
 	414,  // 349: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.sections:type_name -> sttattus.onyx.v1.IntelligenceGraphMeetingBriefSection
-	758,  // 350: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.window_start:type_name -> google.protobuf.Timestamp
-	758,  // 351: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.window_end:type_name -> google.protobuf.Timestamp
-	758,  // 352: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 353: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 354: sttattus.onyx.v1.IntelligenceGraphOverview.last_changed_at:type_name -> google.protobuf.Timestamp
+	759,  // 350: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.window_start:type_name -> google.protobuf.Timestamp
+	759,  // 351: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.window_end:type_name -> google.protobuf.Timestamp
+	759,  // 352: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 353: sttattus.onyx.v1.IntelligenceGraphMeetingBrief.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 354: sttattus.onyx.v1.IntelligenceGraphOverview.last_changed_at:type_name -> google.protobuf.Timestamp
 	416,  // 355: sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse.overview:type_name -> sttattus.onyx.v1.IntelligenceGraphOverview
 	409,  // 356: sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse.nodes:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
 	410,  // 357: sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse.edges:type_name -> sttattus.onyx.v1.IntelligenceGraphEdge
-	758,  // 358: sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest.valid_from:type_name -> google.protobuf.Timestamp
-	758,  // 359: sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest.valid_to:type_name -> google.protobuf.Timestamp
+	759,  // 358: sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest.valid_from:type_name -> google.protobuf.Timestamp
+	759,  // 359: sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest.valid_to:type_name -> google.protobuf.Timestamp
 	408,  // 360: sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest.anchors:type_name -> sttattus.onyx.v1.IntelligenceGraphSourceAnchor
 	409,  // 361: sttattus.onyx.v1.UpsertIntelligenceGraphNodeResponse.node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
 	409,  // 362: sttattus.onyx.v1.SetIntelligenceGraphNodeStateResponse.node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
@@ -64476,36 +64489,36 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	411,  // 372: sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse.suggestion:type_name -> sttattus.onyx.v1.IntelligenceGraphSuggestion
 	409,  // 373: sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse.accepted_node:type_name -> sttattus.onyx.v1.IntelligenceGraphNode
 	410,  // 374: sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse.accepted_edge:type_name -> sttattus.onyx.v1.IntelligenceGraphEdge
-	758,  // 375: sttattus.onyx.v1.ListIntelligenceGraphTimelineRequest.from:type_name -> google.protobuf.Timestamp
-	758,  // 376: sttattus.onyx.v1.ListIntelligenceGraphTimelineRequest.to:type_name -> google.protobuf.Timestamp
+	759,  // 375: sttattus.onyx.v1.ListIntelligenceGraphTimelineRequest.from:type_name -> google.protobuf.Timestamp
+	759,  // 376: sttattus.onyx.v1.ListIntelligenceGraphTimelineRequest.to:type_name -> google.protobuf.Timestamp
 	412,  // 377: sttattus.onyx.v1.ListIntelligenceGraphTimelineResponse.events:type_name -> sttattus.onyx.v1.IntelligenceGraphTimelineEvent
 	413,  // 378: sttattus.onyx.v1.ListIntelligenceGraphResurfacingResponse.items:type_name -> sttattus.onyx.v1.IntelligenceGraphResurfacingItem
-	758,  // 379: sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateRequest.snoozed_until:type_name -> google.protobuf.Timestamp
+	759,  // 379: sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateRequest.snoozed_until:type_name -> google.protobuf.Timestamp
 	413,  // 380: sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateResponse.item:type_name -> sttattus.onyx.v1.IntelligenceGraphResurfacingItem
-	758,  // 381: sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefRequest.window_start:type_name -> google.protobuf.Timestamp
-	758,  // 382: sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefRequest.window_end:type_name -> google.protobuf.Timestamp
+	759,  // 381: sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefRequest.window_start:type_name -> google.protobuf.Timestamp
+	759,  // 382: sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefRequest.window_end:type_name -> google.protobuf.Timestamp
 	415,  // 383: sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefResponse.brief:type_name -> sttattus.onyx.v1.IntelligenceGraphMeetingBrief
 	415,  // 384: sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefResponse.brief:type_name -> sttattus.onyx.v1.IntelligenceGraphMeetingBrief
 	415,  // 385: sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsResponse.briefs:type_name -> sttattus.onyx.v1.IntelligenceGraphMeetingBrief
-	758,  // 386: sttattus.onyx.v1.ExportPersonalIntelligenceGraphResponse.generated_at:type_name -> google.protobuf.Timestamp
+	759,  // 386: sttattus.onyx.v1.ExportPersonalIntelligenceGraphResponse.generated_at:type_name -> google.protobuf.Timestamp
 	3,    // 387: sttattus.onyx.v1.OnyxLanguageConfig.capabilities:type_name -> sttattus.onyx.v1.OnyxLanguageCapability
-	758,  // 388: sttattus.onyx.v1.OnyxLanguageConfig.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 389: sttattus.onyx.v1.OnyxMachineTranslationProvenance.generated_at:type_name -> google.protobuf.Timestamp
+	759,  // 388: sttattus.onyx.v1.OnyxLanguageConfig.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 389: sttattus.onyx.v1.OnyxMachineTranslationProvenance.generated_at:type_name -> google.protobuf.Timestamp
 	0,    // 390: sttattus.onyx.v1.OnyxEditionLineage.translation_class:type_name -> sttattus.onyx.v1.OnyxTranslationClass
 	1,    // 391: sttattus.onyx.v1.OnyxEditionLineage.verification_state:type_name -> sttattus.onyx.v1.OnyxVerificationState
 	2,    // 392: sttattus.onyx.v1.OnyxEditionLineage.availability:type_name -> sttattus.onyx.v1.OnyxEditionAvailability
 	454,  // 393: sttattus.onyx.v1.OnyxEditionLineage.machine_provenance:type_name -> sttattus.onyx.v1.OnyxMachineTranslationProvenance
-	758,  // 394: sttattus.onyx.v1.OnyxEditionLineage.published_at:type_name -> google.protobuf.Timestamp
-	758,  // 395: sttattus.onyx.v1.OnyxEditionLineage.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 394: sttattus.onyx.v1.OnyxEditionLineage.published_at:type_name -> google.protobuf.Timestamp
+	759,  // 395: sttattus.onyx.v1.OnyxEditionLineage.updated_at:type_name -> google.protobuf.Timestamp
 	0,    // 396: sttattus.onyx.v1.OnyxTranslationAcceptanceProvenance.translation_class:type_name -> sttattus.onyx.v1.OnyxTranslationClass
 	454,  // 397: sttattus.onyx.v1.OnyxTranslationAcceptanceProvenance.machine_provenance:type_name -> sttattus.onyx.v1.OnyxMachineTranslationProvenance
-	758,  // 398: sttattus.onyx.v1.OnyxTranslationAcceptanceProvenance.accepted_at:type_name -> google.protobuf.Timestamp
+	759,  // 398: sttattus.onyx.v1.OnyxTranslationAcceptanceProvenance.accepted_at:type_name -> google.protobuf.Timestamp
 	456,  // 399: sttattus.onyx.v1.OnyxAlignedSegment.acceptance:type_name -> sttattus.onyx.v1.OnyxTranslationAcceptanceProvenance
 	457,  // 400: sttattus.onyx.v1.OnyxAlignedBlock.segments:type_name -> sttattus.onyx.v1.OnyxAlignedSegment
-	758,  // 401: sttattus.onyx.v1.OnyxTermbaseEntry.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 401: sttattus.onyx.v1.OnyxTermbaseEntry.updated_at:type_name -> google.protobuf.Timestamp
 	4,    // 402: sttattus.onyx.v1.OnyxMultilingualPreferences.reader_mode:type_name -> sttattus.onyx.v1.OnyxParallelReaderMode
 	6,    // 403: sttattus.onyx.v1.OnyxMultilingualPreferences.listening_mode:type_name -> sttattus.onyx.v1.OnyxBilingualListeningMode
-	758,  // 404: sttattus.onyx.v1.OnyxMultilingualPreferences.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 404: sttattus.onyx.v1.OnyxMultilingualPreferences.updated_at:type_name -> google.protobuf.Timestamp
 	17,   // 405: sttattus.onyx.v1.OnyxCrossLanguageSearchMatch.content:type_name -> sttattus.onyx.v1.OnyxContent
 	18,   // 406: sttattus.onyx.v1.OnyxCrossLanguageSearchMatch.edition:type_name -> sttattus.onyx.v1.OnyxContentEdition
 	5,    // 407: sttattus.onyx.v1.OnyxCrossLanguageSearchMatch.match_reason:type_name -> sttattus.onyx.v1.OnyxSearchMatchReason
@@ -64518,17 +64531,17 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	8,    // 414: sttattus.onyx.v1.OnyxMultilingualAudioVideo.live_interpretation_state:type_name -> sttattus.onyx.v1.OnyxLiveInterpretationState
 	9,    // 415: sttattus.onyx.v1.OnyxTranslationReport.issue_type:type_name -> sttattus.onyx.v1.OnyxTranslationIssueType
 	10,   // 416: sttattus.onyx.v1.OnyxTranslationReport.status:type_name -> sttattus.onyx.v1.OnyxTranslationReportStatus
-	758,  // 417: sttattus.onyx.v1.OnyxTranslationReport.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 418: sttattus.onyx.v1.OnyxTranslationReport.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 417: sttattus.onyx.v1.OnyxTranslationReport.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 418: sttattus.onyx.v1.OnyxTranslationReport.updated_at:type_name -> google.protobuf.Timestamp
 	2,    // 419: sttattus.onyx.v1.OnyxMultilingualOfflineManifest.availability:type_name -> sttattus.onyx.v1.OnyxEditionAvailability
-	758,  // 420: sttattus.onyx.v1.OnyxMultilingualOfflineManifest.rights_expire_at:type_name -> google.protobuf.Timestamp
-	758,  // 421: sttattus.onyx.v1.OnyxMultilingualOfflineManifest.generated_at:type_name -> google.protobuf.Timestamp
+	759,  // 420: sttattus.onyx.v1.OnyxMultilingualOfflineManifest.rights_expire_at:type_name -> google.protobuf.Timestamp
+	759,  // 421: sttattus.onyx.v1.OnyxMultilingualOfflineManifest.generated_at:type_name -> google.protobuf.Timestamp
 	11,   // 422: sttattus.onyx.v1.OnyxMultilingualExport.format:type_name -> sttattus.onyx.v1.OnyxMultilingualExportFormat
 	12,   // 423: sttattus.onyx.v1.OnyxMultilingualExport.state:type_name -> sttattus.onyx.v1.OnyxMultilingualExportState
 	468,  // 424: sttattus.onyx.v1.OnyxMultilingualExport.manifest:type_name -> sttattus.onyx.v1.OnyxMultilingualExportManifestItem
-	758,  // 425: sttattus.onyx.v1.OnyxMultilingualExport.expires_at:type_name -> google.protobuf.Timestamp
-	758,  // 426: sttattus.onyx.v1.OnyxMultilingualExport.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 427: sttattus.onyx.v1.OnyxMultilingualExport.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 425: sttattus.onyx.v1.OnyxMultilingualExport.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 426: sttattus.onyx.v1.OnyxMultilingualExport.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 427: sttattus.onyx.v1.OnyxMultilingualExport.updated_at:type_name -> google.protobuf.Timestamp
 	453,  // 428: sttattus.onyx.v1.ListLanguageConfigsResponse.languages:type_name -> sttattus.onyx.v1.OnyxLanguageConfig
 	17,   // 429: sttattus.onyx.v1.ListContentEditionsResponse.original:type_name -> sttattus.onyx.v1.OnyxContent
 	18,   // 430: sttattus.onyx.v1.ListContentEditionsResponse.editions:type_name -> sttattus.onyx.v1.OnyxContentEdition
@@ -64546,46 +64559,46 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	11,   // 442: sttattus.onyx.v1.RequestMultilingualExportRequest.format:type_name -> sttattus.onyx.v1.OnyxMultilingualExportFormat
 	469,  // 443: sttattus.onyx.v1.RequestMultilingualExportResponse.export:type_name -> sttattus.onyx.v1.OnyxMultilingualExport
 	469,  // 444: sttattus.onyx.v1.GetMultilingualExportResponse.export:type_name -> sttattus.onyx.v1.OnyxMultilingualExport
-	758,  // 445: sttattus.onyx.v1.OnyxLivingArchivePolicy.period_starts_at:type_name -> google.protobuf.Timestamp
-	758,  // 446: sttattus.onyx.v1.OnyxLivingArchivePolicy.period_ends_at:type_name -> google.protobuf.Timestamp
-	758,  // 447: sttattus.onyx.v1.OnyxLivingArchivePolicy.submitted_at:type_name -> google.protobuf.Timestamp
-	758,  // 448: sttattus.onyx.v1.OnyxLivingArchivePolicy.activated_at:type_name -> google.protobuf.Timestamp
-	758,  // 449: sttattus.onyx.v1.OnyxLivingArchivePolicy.review_due_at:type_name -> google.protobuf.Timestamp
-	758,  // 450: sttattus.onyx.v1.OnyxLivingArchivePolicy.revoked_at:type_name -> google.protobuf.Timestamp
-	758,  // 451: sttattus.onyx.v1.OnyxLivingArchivePolicy.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 452: sttattus.onyx.v1.OnyxLivingArchiveContact.verified_at:type_name -> google.protobuf.Timestamp
-	758,  // 453: sttattus.onyx.v1.OnyxLivingArchiveContact.review_due_at:type_name -> google.protobuf.Timestamp
-	758,  // 454: sttattus.onyx.v1.OnyxLivingArchiveContact.revoked_at:type_name -> google.protobuf.Timestamp
-	758,  // 455: sttattus.onyx.v1.OnyxLivingArchiveContact.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 456: sttattus.onyx.v1.OnyxLivingArchiveReadiness.next_legacy_checkin_at:type_name -> google.protobuf.Timestamp
+	759,  // 445: sttattus.onyx.v1.OnyxLivingArchivePolicy.period_starts_at:type_name -> google.protobuf.Timestamp
+	759,  // 446: sttattus.onyx.v1.OnyxLivingArchivePolicy.period_ends_at:type_name -> google.protobuf.Timestamp
+	759,  // 447: sttattus.onyx.v1.OnyxLivingArchivePolicy.submitted_at:type_name -> google.protobuf.Timestamp
+	759,  // 448: sttattus.onyx.v1.OnyxLivingArchivePolicy.activated_at:type_name -> google.protobuf.Timestamp
+	759,  // 449: sttattus.onyx.v1.OnyxLivingArchivePolicy.review_due_at:type_name -> google.protobuf.Timestamp
+	759,  // 450: sttattus.onyx.v1.OnyxLivingArchivePolicy.revoked_at:type_name -> google.protobuf.Timestamp
+	759,  // 451: sttattus.onyx.v1.OnyxLivingArchivePolicy.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 452: sttattus.onyx.v1.OnyxLivingArchiveContact.verified_at:type_name -> google.protobuf.Timestamp
+	759,  // 453: sttattus.onyx.v1.OnyxLivingArchiveContact.review_due_at:type_name -> google.protobuf.Timestamp
+	759,  // 454: sttattus.onyx.v1.OnyxLivingArchiveContact.revoked_at:type_name -> google.protobuf.Timestamp
+	759,  // 455: sttattus.onyx.v1.OnyxLivingArchiveContact.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 456: sttattus.onyx.v1.OnyxLivingArchiveReadiness.next_legacy_checkin_at:type_name -> google.protobuf.Timestamp
 	497,  // 457: sttattus.onyx.v1.OnyxLivingArchivePreview.counts:type_name -> sttattus.onyx.v1.OnyxLivingArchivePreviewCount
-	758,  // 458: sttattus.onyx.v1.OnyxLivingArchivePreview.generated_at:type_name -> google.protobuf.Timestamp
-	758,  // 459: sttattus.onyx.v1.OnyxLivingArchiveEdition.period_starts_at:type_name -> google.protobuf.Timestamp
-	758,  // 460: sttattus.onyx.v1.OnyxLivingArchiveEdition.period_ends_at:type_name -> google.protobuf.Timestamp
-	758,  // 461: sttattus.onyx.v1.OnyxLivingArchiveEdition.generated_at:type_name -> google.protobuf.Timestamp
-	758,  // 462: sttattus.onyx.v1.OnyxLivingArchiveEdition.escrowed_at:type_name -> google.protobuf.Timestamp
-	758,  // 463: sttattus.onyx.v1.OnyxLivingArchiveEdition.released_at:type_name -> google.protobuf.Timestamp
-	758,  // 464: sttattus.onyx.v1.OnyxLivingArchiveEdition.revoked_at:type_name -> google.protobuf.Timestamp
-	758,  // 465: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.opened_at:type_name -> google.protobuf.Timestamp
-	758,  // 466: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.waiting_until:type_name -> google.protobuf.Timestamp
-	758,  // 467: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.contested_at:type_name -> google.protobuf.Timestamp
-	758,  // 468: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.approved_at:type_name -> google.protobuf.Timestamp
-	758,  // 469: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.released_at:type_name -> google.protobuf.Timestamp
-	758,  // 470: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.closed_at:type_name -> google.protobuf.Timestamp
-	758,  // 471: sttattus.onyx.v1.OnyxLivingArchiveReceipt.released_at:type_name -> google.protobuf.Timestamp
-	758,  // 472: sttattus.onyx.v1.OnyxLivingArchiveReceipt.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 458: sttattus.onyx.v1.OnyxLivingArchivePreview.generated_at:type_name -> google.protobuf.Timestamp
+	759,  // 459: sttattus.onyx.v1.OnyxLivingArchiveEdition.period_starts_at:type_name -> google.protobuf.Timestamp
+	759,  // 460: sttattus.onyx.v1.OnyxLivingArchiveEdition.period_ends_at:type_name -> google.protobuf.Timestamp
+	759,  // 461: sttattus.onyx.v1.OnyxLivingArchiveEdition.generated_at:type_name -> google.protobuf.Timestamp
+	759,  // 462: sttattus.onyx.v1.OnyxLivingArchiveEdition.escrowed_at:type_name -> google.protobuf.Timestamp
+	759,  // 463: sttattus.onyx.v1.OnyxLivingArchiveEdition.released_at:type_name -> google.protobuf.Timestamp
+	759,  // 464: sttattus.onyx.v1.OnyxLivingArchiveEdition.revoked_at:type_name -> google.protobuf.Timestamp
+	759,  // 465: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.opened_at:type_name -> google.protobuf.Timestamp
+	759,  // 466: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.waiting_until:type_name -> google.protobuf.Timestamp
+	759,  // 467: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.contested_at:type_name -> google.protobuf.Timestamp
+	759,  // 468: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.approved_at:type_name -> google.protobuf.Timestamp
+	759,  // 469: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.released_at:type_name -> google.protobuf.Timestamp
+	759,  // 470: sttattus.onyx.v1.OnyxLivingArchiveReleaseCase.closed_at:type_name -> google.protobuf.Timestamp
+	759,  // 471: sttattus.onyx.v1.OnyxLivingArchiveReceipt.released_at:type_name -> google.protobuf.Timestamp
+	759,  // 472: sttattus.onyx.v1.OnyxLivingArchiveReceipt.created_at:type_name -> google.protobuf.Timestamp
 	494,  // 473: sttattus.onyx.v1.GetLivingArchiveDashboardResponse.policies:type_name -> sttattus.onyx.v1.OnyxLivingArchivePolicy
 	495,  // 474: sttattus.onyx.v1.GetLivingArchiveDashboardResponse.contacts:type_name -> sttattus.onyx.v1.OnyxLivingArchiveContact
 	499,  // 475: sttattus.onyx.v1.GetLivingArchiveDashboardResponse.editions:type_name -> sttattus.onyx.v1.OnyxLivingArchiveEdition
 	500,  // 476: sttattus.onyx.v1.GetLivingArchiveDashboardResponse.release_cases:type_name -> sttattus.onyx.v1.OnyxLivingArchiveReleaseCase
 	501,  // 477: sttattus.onyx.v1.GetLivingArchiveDashboardResponse.receipts:type_name -> sttattus.onyx.v1.OnyxLivingArchiveReceipt
 	496,  // 478: sttattus.onyx.v1.GetLivingArchiveDashboardResponse.readiness:type_name -> sttattus.onyx.v1.OnyxLivingArchiveReadiness
-	758,  // 479: sttattus.onyx.v1.UpsertLivingArchivePolicyRequest.period_starts_at:type_name -> google.protobuf.Timestamp
-	758,  // 480: sttattus.onyx.v1.UpsertLivingArchivePolicyRequest.period_ends_at:type_name -> google.protobuf.Timestamp
+	759,  // 479: sttattus.onyx.v1.UpsertLivingArchivePolicyRequest.period_starts_at:type_name -> google.protobuf.Timestamp
+	759,  // 480: sttattus.onyx.v1.UpsertLivingArchivePolicyRequest.period_ends_at:type_name -> google.protobuf.Timestamp
 	494,  // 481: sttattus.onyx.v1.UpsertLivingArchivePolicyResponse.policy:type_name -> sttattus.onyx.v1.OnyxLivingArchivePolicy
 	498,  // 482: sttattus.onyx.v1.PreviewLivingArchivePolicyResponse.preview:type_name -> sttattus.onyx.v1.OnyxLivingArchivePreview
-	758,  // 483: sttattus.onyx.v1.GenerateLivingArchiveEditionRequest.period_starts_at:type_name -> google.protobuf.Timestamp
-	758,  // 484: sttattus.onyx.v1.GenerateLivingArchiveEditionRequest.period_ends_at:type_name -> google.protobuf.Timestamp
+	759,  // 483: sttattus.onyx.v1.GenerateLivingArchiveEditionRequest.period_starts_at:type_name -> google.protobuf.Timestamp
+	759,  // 484: sttattus.onyx.v1.GenerateLivingArchiveEditionRequest.period_ends_at:type_name -> google.protobuf.Timestamp
 	499,  // 485: sttattus.onyx.v1.GenerateLivingArchiveEditionResponse.edition:type_name -> sttattus.onyx.v1.OnyxLivingArchiveEdition
 	498,  // 486: sttattus.onyx.v1.GenerateLivingArchiveEditionResponse.preview:type_name -> sttattus.onyx.v1.OnyxLivingArchivePreview
 	499,  // 487: sttattus.onyx.v1.LinkLivingArchiveLegacyEscrowResponse.edition:type_name -> sttattus.onyx.v1.OnyxLivingArchiveEdition
@@ -64598,19 +64611,19 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	494,  // 494: sttattus.onyx.v1.RevokeLivingArchivePolicyResponse.policy:type_name -> sttattus.onyx.v1.OnyxLivingArchivePolicy
 	494,  // 495: sttattus.onyx.v1.ConfirmLivingArchiveReviewResponse.policy:type_name -> sttattus.onyx.v1.OnyxLivingArchivePolicy
 	500,  // 496: sttattus.onyx.v1.ContestLivingArchiveReleaseResponse.release_case:type_name -> sttattus.onyx.v1.OnyxLivingArchiveReleaseCase
-	758,  // 497: sttattus.onyx.v1.OnyxForensicContentProtection.activated_at:type_name -> google.protobuf.Timestamp
-	758,  // 498: sttattus.onyx.v1.OnyxForensicManifest.issued_at:type_name -> google.protobuf.Timestamp
-	758,  // 499: sttattus.onyx.v1.OnyxForensicManifest.expires_at:type_name -> google.protobuf.Timestamp
-	758,  // 500: sttattus.onyx.v1.OnyxForensicManifest.first_used_at:type_name -> google.protobuf.Timestamp
-	758,  // 501: sttattus.onyx.v1.OnyxForensicManifest.revoked_at:type_name -> google.protobuf.Timestamp
-	758,  // 502: sttattus.onyx.v1.OnyxForensicCustodyEvent.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 503: sttattus.onyx.v1.OnyxForensicAppealMessage.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 497: sttattus.onyx.v1.OnyxForensicContentProtection.activated_at:type_name -> google.protobuf.Timestamp
+	759,  // 498: sttattus.onyx.v1.OnyxForensicManifest.issued_at:type_name -> google.protobuf.Timestamp
+	759,  // 499: sttattus.onyx.v1.OnyxForensicManifest.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 500: sttattus.onyx.v1.OnyxForensicManifest.first_used_at:type_name -> google.protobuf.Timestamp
+	759,  // 501: sttattus.onyx.v1.OnyxForensicManifest.revoked_at:type_name -> google.protobuf.Timestamp
+	759,  // 502: sttattus.onyx.v1.OnyxForensicCustodyEvent.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 503: sttattus.onyx.v1.OnyxForensicAppealMessage.created_at:type_name -> google.protobuf.Timestamp
 	528,  // 504: sttattus.onyx.v1.OnyxForensicAppeal.messages:type_name -> sttattus.onyx.v1.OnyxForensicAppealMessage
-	758,  // 505: sttattus.onyx.v1.OnyxForensicAppeal.filed_at:type_name -> google.protobuf.Timestamp
-	758,  // 506: sttattus.onyx.v1.OnyxForensicAppeal.decided_at:type_name -> google.protobuf.Timestamp
-	758,  // 507: sttattus.onyx.v1.OnyxForensicCase.opened_at:type_name -> google.protobuf.Timestamp
-	758,  // 508: sttattus.onyx.v1.OnyxForensicCase.response_due_at:type_name -> google.protobuf.Timestamp
-	758,  // 509: sttattus.onyx.v1.OnyxForensicCase.decided_at:type_name -> google.protobuf.Timestamp
+	759,  // 505: sttattus.onyx.v1.OnyxForensicAppeal.filed_at:type_name -> google.protobuf.Timestamp
+	759,  // 506: sttattus.onyx.v1.OnyxForensicAppeal.decided_at:type_name -> google.protobuf.Timestamp
+	759,  // 507: sttattus.onyx.v1.OnyxForensicCase.opened_at:type_name -> google.protobuf.Timestamp
+	759,  // 508: sttattus.onyx.v1.OnyxForensicCase.response_due_at:type_name -> google.protobuf.Timestamp
+	759,  // 509: sttattus.onyx.v1.OnyxForensicCase.decided_at:type_name -> google.protobuf.Timestamp
 	527,  // 510: sttattus.onyx.v1.OnyxForensicCase.custody:type_name -> sttattus.onyx.v1.OnyxForensicCustodyEvent
 	529,  // 511: sttattus.onyx.v1.OnyxForensicCase.appeal:type_name -> sttattus.onyx.v1.OnyxForensicAppeal
 	524,  // 512: sttattus.onyx.v1.GetForensicProtectionDashboardResponse.runtime:type_name -> sttattus.onyx.v1.OnyxForensicRuntime
@@ -64625,25 +64638,25 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	530,  // 521: sttattus.onyx.v1.FileForensicAppealResponse.forensic_case:type_name -> sttattus.onyx.v1.OnyxForensicCase
 	530,  // 522: sttattus.onyx.v1.PostForensicAppealMessageResponse.forensic_case:type_name -> sttattus.onyx.v1.OnyxForensicCase
 	530,  // 523: sttattus.onyx.v1.WithdrawForensicAppealResponse.forensic_case:type_name -> sttattus.onyx.v1.OnyxForensicCase
-	758,  // 524: sttattus.onyx.v1.OnyxIntegrationClient.reviewed_at:type_name -> google.protobuf.Timestamp
-	758,  // 525: sttattus.onyx.v1.OnyxIntegrationGrant.granted_at:type_name -> google.protobuf.Timestamp
-	758,  // 526: sttattus.onyx.v1.OnyxIntegrationGrant.expires_at:type_name -> google.protobuf.Timestamp
-	758,  // 527: sttattus.onyx.v1.OnyxIntegrationGrant.revoked_at:type_name -> google.protobuf.Timestamp
-	758,  // 528: sttattus.onyx.v1.OnyxIntegrationCall.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 529: sttattus.onyx.v1.OnyxIntegrationConnectorAccount.last_sync_at:type_name -> google.protobuf.Timestamp
-	758,  // 530: sttattus.onyx.v1.OnyxIntegrationConnectorAccount.next_sync_at:type_name -> google.protobuf.Timestamp
-	758,  // 531: sttattus.onyx.v1.OnyxIntegrationConnectorAccount.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 532: sttattus.onyx.v1.OnyxIntegrationConnectorRun.queued_at:type_name -> google.protobuf.Timestamp
-	758,  // 533: sttattus.onyx.v1.OnyxIntegrationConnectorRun.completed_at:type_name -> google.protobuf.Timestamp
-	758,  // 534: sttattus.onyx.v1.OnyxIntegrationArtifact.expires_at:type_name -> google.protobuf.Timestamp
-	758,  // 535: sttattus.onyx.v1.OnyxIntegrationArtifact.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 536: sttattus.onyx.v1.OnyxIntegrationConflict.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 537: sttattus.onyx.v1.OnyxIntegrationConflict.resolved_at:type_name -> google.protobuf.Timestamp
-	758,  // 538: sttattus.onyx.v1.OnyxIntegrationBridgeDispatch.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 539: sttattus.onyx.v1.OnyxIntegrationBridgeDispatch.completed_at:type_name -> google.protobuf.Timestamp
-	758,  // 540: sttattus.onyx.v1.OnyxIntegrationBridgeSource.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 541: sttattus.onyx.v1.OnyxIntegrationOperationsCase.opened_at:type_name -> google.protobuf.Timestamp
-	758,  // 542: sttattus.onyx.v1.OnyxIntegrationOperationsCase.resolved_at:type_name -> google.protobuf.Timestamp
+	759,  // 524: sttattus.onyx.v1.OnyxIntegrationClient.reviewed_at:type_name -> google.protobuf.Timestamp
+	759,  // 525: sttattus.onyx.v1.OnyxIntegrationGrant.granted_at:type_name -> google.protobuf.Timestamp
+	759,  // 526: sttattus.onyx.v1.OnyxIntegrationGrant.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 527: sttattus.onyx.v1.OnyxIntegrationGrant.revoked_at:type_name -> google.protobuf.Timestamp
+	759,  // 528: sttattus.onyx.v1.OnyxIntegrationCall.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 529: sttattus.onyx.v1.OnyxIntegrationConnectorAccount.last_sync_at:type_name -> google.protobuf.Timestamp
+	759,  // 530: sttattus.onyx.v1.OnyxIntegrationConnectorAccount.next_sync_at:type_name -> google.protobuf.Timestamp
+	759,  // 531: sttattus.onyx.v1.OnyxIntegrationConnectorAccount.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 532: sttattus.onyx.v1.OnyxIntegrationConnectorRun.queued_at:type_name -> google.protobuf.Timestamp
+	759,  // 533: sttattus.onyx.v1.OnyxIntegrationConnectorRun.completed_at:type_name -> google.protobuf.Timestamp
+	759,  // 534: sttattus.onyx.v1.OnyxIntegrationArtifact.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 535: sttattus.onyx.v1.OnyxIntegrationArtifact.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 536: sttattus.onyx.v1.OnyxIntegrationConflict.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 537: sttattus.onyx.v1.OnyxIntegrationConflict.resolved_at:type_name -> google.protobuf.Timestamp
+	759,  // 538: sttattus.onyx.v1.OnyxIntegrationBridgeDispatch.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 539: sttattus.onyx.v1.OnyxIntegrationBridgeDispatch.completed_at:type_name -> google.protobuf.Timestamp
+	759,  // 540: sttattus.onyx.v1.OnyxIntegrationBridgeSource.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 541: sttattus.onyx.v1.OnyxIntegrationOperationsCase.opened_at:type_name -> google.protobuf.Timestamp
+	759,  // 542: sttattus.onyx.v1.OnyxIntegrationOperationsCase.resolved_at:type_name -> google.protobuf.Timestamp
 	545,  // 543: sttattus.onyx.v1.GetIntegrationDashboardResponse.runtime:type_name -> sttattus.onyx.v1.OnyxIntegrationRuntime
 	546,  // 544: sttattus.onyx.v1.GetIntegrationDashboardResponse.available_clients:type_name -> sttattus.onyx.v1.OnyxIntegrationClient
 	547,  // 545: sttattus.onyx.v1.GetIntegrationDashboardResponse.grants:type_name -> sttattus.onyx.v1.OnyxIntegrationGrant
@@ -64657,7 +64670,7 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	556,  // 553: sttattus.onyx.v1.GetIntegrationDashboardResponse.operations_cases:type_name -> sttattus.onyx.v1.OnyxIntegrationOperationsCase
 	555,  // 554: sttattus.onyx.v1.GetIntegrationDashboardResponse.bridge_sources:type_name -> sttattus.onyx.v1.OnyxIntegrationBridgeSource
 	547,  // 555: sttattus.onyx.v1.AuthorizeIntegrationResponse.grant:type_name -> sttattus.onyx.v1.OnyxIntegrationGrant
-	758,  // 556: sttattus.onyx.v1.AuthorizeIntegrationResponse.authorization_code_expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 556: sttattus.onyx.v1.AuthorizeIntegrationResponse.authorization_code_expires_at:type_name -> google.protobuf.Timestamp
 	547,  // 557: sttattus.onyx.v1.RevokeIntegrationGrantResponse.grant:type_name -> sttattus.onyx.v1.OnyxIntegrationGrant
 	550,  // 558: sttattus.onyx.v1.UpsertIntegrationConnectorResponse.account:type_name -> sttattus.onyx.v1.OnyxIntegrationConnectorAccount
 	550,  // 559: sttattus.onyx.v1.SetIntegrationConnectorStateResponse.account:type_name -> sttattus.onyx.v1.OnyxIntegrationConnectorAccount
@@ -64668,25 +64681,25 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	553,  // 564: sttattus.onyx.v1.ResolveIntegrationConflictResponse.conflict:type_name -> sttattus.onyx.v1.OnyxIntegrationConflict
 	554,  // 565: sttattus.onyx.v1.DispatchIntegrationBridgeResponse.dispatch:type_name -> sttattus.onyx.v1.OnyxIntegrationBridgeDispatch
 	556,  // 566: sttattus.onyx.v1.SubmitIntegrationOperationsCaseResponse.operations_case:type_name -> sttattus.onyx.v1.OnyxIntegrationOperationsCase
-	758,  // 567: sttattus.onyx.v1.SpatialCanvasTemplate.published_at:type_name -> google.protobuf.Timestamp
-	758,  // 568: sttattus.onyx.v1.SpatialCanvasTemplate.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 569: sttattus.onyx.v1.SpatialCanvasWorkspace.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 570: sttattus.onyx.v1.SpatialCanvasSummary.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 567: sttattus.onyx.v1.SpatialCanvasTemplate.published_at:type_name -> google.protobuf.Timestamp
+	759,  // 568: sttattus.onyx.v1.SpatialCanvasTemplate.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 569: sttattus.onyx.v1.SpatialCanvasWorkspace.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 570: sttattus.onyx.v1.SpatialCanvasSummary.updated_at:type_name -> google.protobuf.Timestamp
 	577,  // 571: sttattus.onyx.v1.SpatialCanvasNode.source_anchor:type_name -> sttattus.onyx.v1.SpatialCanvasSourceAnchor
-	758,  // 572: sttattus.onyx.v1.SpatialCanvasNode.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 572: sttattus.onyx.v1.SpatialCanvasNode.updated_at:type_name -> google.protobuf.Timestamp
 	577,  // 573: sttattus.onyx.v1.SpatialCanvasEdge.source_anchor:type_name -> sttattus.onyx.v1.SpatialCanvasSourceAnchor
-	758,  // 574: sttattus.onyx.v1.SpatialCanvasEdge.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 575: sttattus.onyx.v1.SpatialCanvasLayoutRevision.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 576: sttattus.onyx.v1.SpatialCanvasConflict.detected_at:type_name -> google.protobuf.Timestamp
-	758,  // 577: sttattus.onyx.v1.SpatialCanvasConflict.resolved_at:type_name -> google.protobuf.Timestamp
-	758,  // 578: sttattus.onyx.v1.SpatialCanvasSnapshot.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 579: sttattus.onyx.v1.SpatialCanvasComment.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 580: sttattus.onyx.v1.SpatialCanvasComment.resolved_at:type_name -> google.protobuf.Timestamp
-	758,  // 581: sttattus.onyx.v1.SpatialCanvasProposal.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 582: sttattus.onyx.v1.SpatialCanvasProposal.decided_at:type_name -> google.protobuf.Timestamp
-	758,  // 583: sttattus.onyx.v1.SpatialCanvasExport.expires_at:type_name -> google.protobuf.Timestamp
-	758,  // 584: sttattus.onyx.v1.SpatialCanvasExport.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 585: sttattus.onyx.v1.SpatialCanvasOperation.occurred_at:type_name -> google.protobuf.Timestamp
+	759,  // 574: sttattus.onyx.v1.SpatialCanvasEdge.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 575: sttattus.onyx.v1.SpatialCanvasLayoutRevision.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 576: sttattus.onyx.v1.SpatialCanvasConflict.detected_at:type_name -> google.protobuf.Timestamp
+	759,  // 577: sttattus.onyx.v1.SpatialCanvasConflict.resolved_at:type_name -> google.protobuf.Timestamp
+	759,  // 578: sttattus.onyx.v1.SpatialCanvasSnapshot.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 579: sttattus.onyx.v1.SpatialCanvasComment.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 580: sttattus.onyx.v1.SpatialCanvasComment.resolved_at:type_name -> google.protobuf.Timestamp
+	759,  // 581: sttattus.onyx.v1.SpatialCanvasProposal.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 582: sttattus.onyx.v1.SpatialCanvasProposal.decided_at:type_name -> google.protobuf.Timestamp
+	759,  // 583: sttattus.onyx.v1.SpatialCanvasExport.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 584: sttattus.onyx.v1.SpatialCanvasExport.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 585: sttattus.onyx.v1.SpatialCanvasOperation.occurred_at:type_name -> google.protobuf.Timestamp
 	580,  // 586: sttattus.onyx.v1.SpatialCanvasDetail.canvas:type_name -> sttattus.onyx.v1.SpatialCanvasSummary
 	581,  // 587: sttattus.onyx.v1.SpatialCanvasDetail.nodes:type_name -> sttattus.onyx.v1.SpatialCanvasNode
 	582,  // 588: sttattus.onyx.v1.SpatialCanvasDetail.edges:type_name -> sttattus.onyx.v1.SpatialCanvasEdge
@@ -64714,22 +64727,22 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	590,  // 610: sttattus.onyx.v1.SetSpatialCanvasProposalStateResponse.detail:type_name -> sttattus.onyx.v1.SpatialCanvasDetail
 	588,  // 611: sttattus.onyx.v1.RequestSpatialCanvasExportResponse.export:type_name -> sttattus.onyx.v1.SpatialCanvasExport
 	588,  // 612: sttattus.onyx.v1.GetSpatialCanvasExportResponse.export:type_name -> sttattus.onyx.v1.SpatialCanvasExport
-	758,  // 613: sttattus.onyx.v1.ReportSpatialCanvasAbuseResponse.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 614: sttattus.onyx.v1.RecallDeck.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 615: sttattus.onyx.v1.RecallDeck.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 616: sttattus.onyx.v1.RecallSchedule.due_at:type_name -> google.protobuf.Timestamp
-	758,  // 617: sttattus.onyx.v1.RecallSchedule.last_reviewed_at:type_name -> google.protobuf.Timestamp
+	759,  // 613: sttattus.onyx.v1.ReportSpatialCanvasAbuseResponse.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 614: sttattus.onyx.v1.RecallDeck.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 615: sttattus.onyx.v1.RecallDeck.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 616: sttattus.onyx.v1.RecallSchedule.due_at:type_name -> google.protobuf.Timestamp
+	759,  // 617: sttattus.onyx.v1.RecallSchedule.last_reviewed_at:type_name -> google.protobuf.Timestamp
 	623,  // 618: sttattus.onyx.v1.MemoryItem.source_anchor:type_name -> sttattus.onyx.v1.RecallSourceAnchor
 	625,  // 619: sttattus.onyx.v1.MemoryItem.prompt_variants:type_name -> sttattus.onyx.v1.RecallPromptVariant
 	626,  // 620: sttattus.onyx.v1.MemoryItem.schedule:type_name -> sttattus.onyx.v1.RecallSchedule
-	758,  // 621: sttattus.onyx.v1.MemoryItem.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 622: sttattus.onyx.v1.MemoryItem.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 623: sttattus.onyx.v1.RecallReviewEvent.reviewed_at:type_name -> google.protobuf.Timestamp
-	758,  // 624: sttattus.onyx.v1.RecallReviewEvent.received_at:type_name -> google.protobuf.Timestamp
-	758,  // 625: sttattus.onyx.v1.RecallSourceInvalidation.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 626: sttattus.onyx.v1.RecallSourceInvalidation.resolved_at:type_name -> google.protobuf.Timestamp
-	758,  // 627: sttattus.onyx.v1.RecallRetentionMeasure.measured_at:type_name -> google.protobuf.Timestamp
-	758,  // 628: sttattus.onyx.v1.RecallPreferences.vacation_until:type_name -> google.protobuf.Timestamp
+	759,  // 621: sttattus.onyx.v1.MemoryItem.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 622: sttattus.onyx.v1.MemoryItem.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 623: sttattus.onyx.v1.RecallReviewEvent.reviewed_at:type_name -> google.protobuf.Timestamp
+	759,  // 624: sttattus.onyx.v1.RecallReviewEvent.received_at:type_name -> google.protobuf.Timestamp
+	759,  // 625: sttattus.onyx.v1.RecallSourceInvalidation.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 626: sttattus.onyx.v1.RecallSourceInvalidation.resolved_at:type_name -> google.protobuf.Timestamp
+	759,  // 627: sttattus.onyx.v1.RecallRetentionMeasure.measured_at:type_name -> google.protobuf.Timestamp
+	759,  // 628: sttattus.onyx.v1.RecallPreferences.vacation_until:type_name -> google.protobuf.Timestamp
 	624,  // 629: sttattus.onyx.v1.GetRecallDashboardResponse.decks:type_name -> sttattus.onyx.v1.RecallDeck
 	627,  // 630: sttattus.onyx.v1.GetRecallDashboardResponse.due_items:type_name -> sttattus.onyx.v1.MemoryItem
 	629,  // 631: sttattus.onyx.v1.GetRecallDashboardResponse.invalidations:type_name -> sttattus.onyx.v1.RecallSourceInvalidation
@@ -64744,35 +64757,35 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	627,  // 640: sttattus.onyx.v1.UpsertMemoryItemResponse.item:type_name -> sttattus.onyx.v1.MemoryItem
 	627,  // 641: sttattus.onyx.v1.SetMemoryItemStateResponse.item:type_name -> sttattus.onyx.v1.MemoryItem
 	627,  // 642: sttattus.onyx.v1.GetRecallReviewQueueResponse.items:type_name -> sttattus.onyx.v1.MemoryItem
-	758,  // 643: sttattus.onyx.v1.GetRecallReviewQueueResponse.generated_at:type_name -> google.protobuf.Timestamp
+	759,  // 643: sttattus.onyx.v1.GetRecallReviewQueueResponse.generated_at:type_name -> google.protobuf.Timestamp
 	628,  // 644: sttattus.onyx.v1.RecordRecallReviewBatchRequest.events:type_name -> sttattus.onyx.v1.RecallReviewEvent
 	627,  // 645: sttattus.onyx.v1.RecordRecallReviewBatchResponse.revised_items:type_name -> sttattus.onyx.v1.MemoryItem
-	758,  // 646: sttattus.onyx.v1.RecordRecallReviewBatchResponse.server_time:type_name -> google.protobuf.Timestamp
+	759,  // 646: sttattus.onyx.v1.RecordRecallReviewBatchResponse.server_time:type_name -> google.protobuf.Timestamp
 	629,  // 647: sttattus.onyx.v1.ResolveRecallInvalidationResponse.invalidation:type_name -> sttattus.onyx.v1.RecallSourceInvalidation
 	627,  // 648: sttattus.onyx.v1.ResolveRecallInvalidationResponse.item:type_name -> sttattus.onyx.v1.MemoryItem
 	631,  // 649: sttattus.onyx.v1.UpdateRecallPreferencesRequest.preferences:type_name -> sttattus.onyx.v1.RecallPreferences
 	631,  // 650: sttattus.onyx.v1.UpdateRecallPreferencesResponse.preferences:type_name -> sttattus.onyx.v1.RecallPreferences
-	758,  // 651: sttattus.onyx.v1.ExportRecallDataResponse.expires_at:type_name -> google.protobuf.Timestamp
-	758,  // 652: sttattus.onyx.v1.ReportRecallItemResponse.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 651: sttattus.onyx.v1.ExportRecallDataResponse.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 652: sttattus.onyx.v1.ReportRecallItemResponse.created_at:type_name -> google.protobuf.Timestamp
 	630,  // 653: sttattus.onyx.v1.RecordRecallTransferResponse.measure:type_name -> sttattus.onyx.v1.RecallRetentionMeasure
-	758,  // 654: sttattus.onyx.v1.DraftCitation.verified_at:type_name -> google.protobuf.Timestamp
+	759,  // 654: sttattus.onyx.v1.DraftCitation.verified_at:type_name -> google.protobuf.Timestamp
 	664,  // 655: sttattus.onyx.v1.DraftBlock.citations:type_name -> sttattus.onyx.v1.DraftCitation
-	758,  // 656: sttattus.onyx.v1.DraftBlock.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 657: sttattus.onyx.v1.DraftBlock.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 658: sttattus.onyx.v1.DraftRevision.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 656: sttattus.onyx.v1.DraftBlock.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 657: sttattus.onyx.v1.DraftBlock.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 658: sttattus.onyx.v1.DraftRevision.created_at:type_name -> google.protobuf.Timestamp
 	666,  // 659: sttattus.onyx.v1.DraftRevisionComparison.from_revision:type_name -> sttattus.onyx.v1.DraftRevision
 	666,  // 660: sttattus.onyx.v1.DraftRevisionComparison.to_revision:type_name -> sttattus.onyx.v1.DraftRevision
 	667,  // 661: sttattus.onyx.v1.DraftRevisionComparison.changes:type_name -> sttattus.onyx.v1.DraftBlockChange
-	758,  // 662: sttattus.onyx.v1.DraftBranch.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 663: sttattus.onyx.v1.DraftBranch.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 664: sttattus.onyx.v1.DraftSuggestion.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 665: sttattus.onyx.v1.DraftSuggestion.reviewed_at:type_name -> google.protobuf.Timestamp
-	758,  // 666: sttattus.onyx.v1.DraftConflict.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 667: sttattus.onyx.v1.DraftConflict.resolved_at:type_name -> google.protobuf.Timestamp
-	758,  // 668: sttattus.onyx.v1.DraftExport.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 669: sttattus.onyx.v1.DraftExport.expires_at:type_name -> google.protobuf.Timestamp
-	758,  // 670: sttattus.onyx.v1.DraftHandoff.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 671: sttattus.onyx.v1.DraftHandoff.revoked_at:type_name -> google.protobuf.Timestamp
+	759,  // 662: sttattus.onyx.v1.DraftBranch.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 663: sttattus.onyx.v1.DraftBranch.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 664: sttattus.onyx.v1.DraftSuggestion.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 665: sttattus.onyx.v1.DraftSuggestion.reviewed_at:type_name -> google.protobuf.Timestamp
+	759,  // 666: sttattus.onyx.v1.DraftConflict.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 667: sttattus.onyx.v1.DraftConflict.resolved_at:type_name -> google.protobuf.Timestamp
+	759,  // 668: sttattus.onyx.v1.DraftExport.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 669: sttattus.onyx.v1.DraftExport.expires_at:type_name -> google.protobuf.Timestamp
+	759,  // 670: sttattus.onyx.v1.DraftHandoff.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 671: sttattus.onyx.v1.DraftHandoff.revoked_at:type_name -> google.protobuf.Timestamp
 	665,  // 672: sttattus.onyx.v1.DraftDocument.blocks:type_name -> sttattus.onyx.v1.DraftBlock
 	666,  // 673: sttattus.onyx.v1.DraftDocument.revisions:type_name -> sttattus.onyx.v1.DraftRevision
 	669,  // 674: sttattus.onyx.v1.DraftDocument.branches:type_name -> sttattus.onyx.v1.DraftBranch
@@ -64780,8 +64793,8 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	671,  // 676: sttattus.onyx.v1.DraftDocument.conflicts:type_name -> sttattus.onyx.v1.DraftConflict
 	672,  // 677: sttattus.onyx.v1.DraftDocument.exports:type_name -> sttattus.onyx.v1.DraftExport
 	673,  // 678: sttattus.onyx.v1.DraftDocument.handoffs:type_name -> sttattus.onyx.v1.DraftHandoff
-	758,  // 679: sttattus.onyx.v1.DraftDocument.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 680: sttattus.onyx.v1.DraftDocument.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 679: sttattus.onyx.v1.DraftDocument.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 680: sttattus.onyx.v1.DraftDocument.updated_at:type_name -> google.protobuf.Timestamp
 	729,  // 681: sttattus.onyx.v1.DraftDocument.collaborators:type_name -> sttattus.onyx.v1.DraftCollaborator
 	730,  // 682: sttattus.onyx.v1.DraftDocument.comments:type_name -> sttattus.onyx.v1.DraftComment
 	731,  // 683: sttattus.onyx.v1.DraftDocument.assignments:type_name -> sttattus.onyx.v1.DraftAssignment
@@ -64829,592 +64842,593 @@ var file_sttattus_onyx_v1_onyx_proto_depIdxs = []int32{
 	672,  // 725: sttattus.onyx.v1.RequestDraftExportResponse.export:type_name -> sttattus.onyx.v1.DraftExport
 	672,  // 726: sttattus.onyx.v1.GetDraftExportResponse.export:type_name -> sttattus.onyx.v1.DraftExport
 	673,  // 727: sttattus.onyx.v1.CreateDraftHandoffResponse.handoff:type_name -> sttattus.onyx.v1.DraftHandoff
-	758,  // 728: sttattus.onyx.v1.DraftCollaborator.added_at:type_name -> google.protobuf.Timestamp
-	758,  // 729: sttattus.onyx.v1.DraftCollaborator.removed_at:type_name -> google.protobuf.Timestamp
-	758,  // 730: sttattus.onyx.v1.DraftComment.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 731: sttattus.onyx.v1.DraftComment.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 732: sttattus.onyx.v1.DraftComment.resolved_at:type_name -> google.protobuf.Timestamp
-	758,  // 733: sttattus.onyx.v1.DraftAssignment.due_at:type_name -> google.protobuf.Timestamp
-	758,  // 734: sttattus.onyx.v1.DraftAssignment.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 735: sttattus.onyx.v1.DraftAssignment.updated_at:type_name -> google.protobuf.Timestamp
-	758,  // 736: sttattus.onyx.v1.DraftAssignment.completed_at:type_name -> google.protobuf.Timestamp
-	758,  // 737: sttattus.onyx.v1.DraftNotification.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 738: sttattus.onyx.v1.DraftPresence.last_seen_at:type_name -> google.protobuf.Timestamp
-	758,  // 739: sttattus.onyx.v1.DraftPresence.expires_at:type_name -> google.protobuf.Timestamp
-	729,  // 740: sttattus.onyx.v1.GetDraftCollaborationResponse.collaborators:type_name -> sttattus.onyx.v1.DraftCollaborator
-	730,  // 741: sttattus.onyx.v1.GetDraftCollaborationResponse.comments:type_name -> sttattus.onyx.v1.DraftComment
-	731,  // 742: sttattus.onyx.v1.GetDraftCollaborationResponse.assignments:type_name -> sttattus.onyx.v1.DraftAssignment
-	732,  // 743: sttattus.onyx.v1.GetDraftCollaborationResponse.notifications:type_name -> sttattus.onyx.v1.DraftNotification
-	733,  // 744: sttattus.onyx.v1.GetDraftCollaborationResponse.presence:type_name -> sttattus.onyx.v1.DraftPresence
-	729,  // 745: sttattus.onyx.v1.InviteDraftCollaboratorResponse.collaborator:type_name -> sttattus.onyx.v1.DraftCollaborator
-	730,  // 746: sttattus.onyx.v1.CreateDraftCommentResponse.comment:type_name -> sttattus.onyx.v1.DraftComment
-	730,  // 747: sttattus.onyx.v1.SetDraftCommentStateResponse.comment:type_name -> sttattus.onyx.v1.DraftComment
-	758,  // 748: sttattus.onyx.v1.CreateDraftAssignmentRequest.due_at:type_name -> google.protobuf.Timestamp
-	731,  // 749: sttattus.onyx.v1.CreateDraftAssignmentResponse.assignment:type_name -> sttattus.onyx.v1.DraftAssignment
-	731,  // 750: sttattus.onyx.v1.SetDraftAssignmentStateResponse.assignment:type_name -> sttattus.onyx.v1.DraftAssignment
-	732,  // 751: sttattus.onyx.v1.ListDraftNotificationsResponse.notifications:type_name -> sttattus.onyx.v1.DraftNotification
-	732,  // 752: sttattus.onyx.v1.MarkDraftNotificationReadResponse.notification:type_name -> sttattus.onyx.v1.DraftNotification
-	733,  // 753: sttattus.onyx.v1.SetDraftPresenceResponse.presence:type_name -> sttattus.onyx.v1.DraftPresence
-	758,  // 754: sttattus.onyx.v1.DraftOperationStatus.sla_due_at:type_name -> google.protobuf.Timestamp
-	758,  // 755: sttattus.onyx.v1.DraftOperationStatus.created_at:type_name -> google.protobuf.Timestamp
-	758,  // 756: sttattus.onyx.v1.DraftOperationStatus.updated_at:type_name -> google.protobuf.Timestamp
-	757,  // 757: sttattus.onyx.v1.DraftOperationStatus.explanation_localizations:type_name -> sttattus.onyx.v1.DraftOperationStatus.ExplanationLocalizationsEntry
-	754,  // 758: sttattus.onyx.v1.GetDraftOperationStatusResponse.operations:type_name -> sttattus.onyx.v1.DraftOperationStatus
-	21,   // 759: sttattus.onyx.v1.OnyxService.CreateProfile:input_type -> sttattus.onyx.v1.CreateProfileRequest
-	23,   // 760: sttattus.onyx.v1.OnyxService.GetProfile:input_type -> sttattus.onyx.v1.GetProfileRequest
-	25,   // 761: sttattus.onyx.v1.OnyxService.ListContent:input_type -> sttattus.onyx.v1.ListContentRequest
-	27,   // 762: sttattus.onyx.v1.OnyxService.Subscribe:input_type -> sttattus.onyx.v1.SubscribeRequest
-	29,   // 763: sttattus.onyx.v1.OnyxService.GetContent:input_type -> sttattus.onyx.v1.GetContentRequest
-	31,   // 764: sttattus.onyx.v1.OnyxService.ListShelf:input_type -> sttattus.onyx.v1.ListShelfRequest
-	33,   // 765: sttattus.onyx.v1.OnyxService.ListContinue:input_type -> sttattus.onyx.v1.ListContinueRequest
-	35,   // 766: sttattus.onyx.v1.OnyxService.GetShelves:input_type -> sttattus.onyx.v1.GetShelvesRequest
-	38,   // 767: sttattus.onyx.v1.OnyxService.RecordProgress:input_type -> sttattus.onyx.v1.RecordProgressRequest
-	40,   // 768: sttattus.onyx.v1.OnyxService.RedeemContent:input_type -> sttattus.onyx.v1.RedeemContentRequest
-	42,   // 769: sttattus.onyx.v1.OnyxService.CreateSubscriptionCheckout:input_type -> sttattus.onyx.v1.CreateSubscriptionCheckoutRequest
-	45,   // 770: sttattus.onyx.v1.OnyxService.GetCreator:input_type -> sttattus.onyx.v1.GetCreatorRequest
-	47,   // 771: sttattus.onyx.v1.OnyxService.ListCreatorWorks:input_type -> sttattus.onyx.v1.ListCreatorWorksRequest
-	49,   // 772: sttattus.onyx.v1.OnyxService.FollowCreator:input_type -> sttattus.onyx.v1.FollowCreatorRequest
-	51,   // 773: sttattus.onyx.v1.OnyxService.SearchContent:input_type -> sttattus.onyx.v1.SearchContentRequest
-	54,   // 774: sttattus.onyx.v1.OnyxService.AddNote:input_type -> sttattus.onyx.v1.AddNoteRequest
-	56,   // 775: sttattus.onyx.v1.OnyxService.ListMyNotes:input_type -> sttattus.onyx.v1.ListMyNotesRequest
-	58,   // 776: sttattus.onyx.v1.OnyxService.DeleteNote:input_type -> sttattus.onyx.v1.DeleteNoteRequest
-	61,   // 777: sttattus.onyx.v1.OnyxService.UpsertReaderAnnotation:input_type -> sttattus.onyx.v1.UpsertReaderAnnotationRequest
-	63,   // 778: sttattus.onyx.v1.OnyxService.DeleteReaderAnnotation:input_type -> sttattus.onyx.v1.DeleteReaderAnnotationRequest
-	65,   // 779: sttattus.onyx.v1.OnyxService.ListMyReaderAnnotations:input_type -> sttattus.onyx.v1.ListMyReaderAnnotationsRequest
-	68,   // 780: sttattus.onyx.v1.OnyxService.SearchReader:input_type -> sttattus.onyx.v1.SearchReaderRequest
-	71,   // 781: sttattus.onyx.v1.OnyxService.SearchIntelligence:input_type -> sttattus.onyx.v1.SearchIntelligenceRequest
-	74,   // 782: sttattus.onyx.v1.OnyxService.RecordIntelligenceSearchOutcome:input_type -> sttattus.onyx.v1.RecordIntelligenceSearchOutcomeRequest
-	77,   // 783: sttattus.onyx.v1.OnyxService.ListSavedQueries:input_type -> sttattus.onyx.v1.ListSavedQueriesRequest
-	79,   // 784: sttattus.onyx.v1.OnyxService.UpsertSavedQuery:input_type -> sttattus.onyx.v1.UpsertSavedQueryRequest
-	81,   // 785: sttattus.onyx.v1.OnyxService.DeleteSavedQuery:input_type -> sttattus.onyx.v1.DeleteSavedQueryRequest
-	85,   // 786: sttattus.onyx.v1.OnyxService.ListWatchlists:input_type -> sttattus.onyx.v1.ListWatchlistsRequest
-	87,   // 787: sttattus.onyx.v1.OnyxService.UpsertWatchlist:input_type -> sttattus.onyx.v1.UpsertWatchlistRequest
-	89,   // 788: sttattus.onyx.v1.OnyxService.DeleteWatchlist:input_type -> sttattus.onyx.v1.DeleteWatchlistRequest
-	91,   // 789: sttattus.onyx.v1.OnyxService.RefreshWatchlist:input_type -> sttattus.onyx.v1.RefreshWatchlistRequest
-	94,   // 790: sttattus.onyx.v1.OnyxService.ListIntelligenceAlerts:input_type -> sttattus.onyx.v1.ListIntelligenceAlertsRequest
-	96,   // 791: sttattus.onyx.v1.OnyxService.SetIntelligenceAlertState:input_type -> sttattus.onyx.v1.SetIntelligenceAlertStateRequest
-	99,   // 792: sttattus.onyx.v1.OnyxService.GetIntelligenceQueue:input_type -> sttattus.onyx.v1.GetIntelligenceQueueRequest
-	101,  // 793: sttattus.onyx.v1.OnyxService.RecordIntelligenceFeedback:input_type -> sttattus.onyx.v1.RecordIntelligenceFeedbackRequest
-	103,  // 794: sttattus.onyx.v1.OnyxService.ExportReaderData:input_type -> sttattus.onyx.v1.ExportReaderDataRequest
-	106,  // 795: sttattus.onyx.v1.OnyxService.ListReaderSyncChanges:input_type -> sttattus.onyx.v1.ListReaderSyncChangesRequest
-	108,  // 796: sttattus.onyx.v1.OnyxService.ListMyUnlocks:input_type -> sttattus.onyx.v1.ListMyUnlocksRequest
-	110,  // 797: sttattus.onyx.v1.OnyxService.ListMySubscriptions:input_type -> sttattus.onyx.v1.ListMySubscriptionsRequest
-	112,  // 798: sttattus.onyx.v1.OnyxService.ListMyFollows:input_type -> sttattus.onyx.v1.ListMyFollowsRequest
-	115,  // 799: sttattus.onyx.v1.OnyxService.ListSovereignWindow:input_type -> sttattus.onyx.v1.ListSovereignWindowRequest
-	118,  // 800: sttattus.onyx.v1.OnyxService.ListSeries:input_type -> sttattus.onyx.v1.ListSeriesRequest
-	120,  // 801: sttattus.onyx.v1.OnyxService.GetSeries:input_type -> sttattus.onyx.v1.GetSeriesRequest
-	123,  // 802: sttattus.onyx.v1.OnyxService.GenerateCaptions:input_type -> sttattus.onyx.v1.GenerateCaptionsRequest
-	125,  // 803: sttattus.onyx.v1.OnyxService.GetCaptionJob:input_type -> sttattus.onyx.v1.GetCaptionJobRequest
-	128,  // 804: sttattus.onyx.v1.OnyxService.GetListeningPreferences:input_type -> sttattus.onyx.v1.GetListeningPreferencesRequest
-	130,  // 805: sttattus.onyx.v1.OnyxService.UpdateListeningPreferences:input_type -> sttattus.onyx.v1.UpdateListeningPreferencesRequest
-	133,  // 806: sttattus.onyx.v1.OnyxService.CreateListeningBookmark:input_type -> sttattus.onyx.v1.CreateListeningBookmarkRequest
-	135,  // 807: sttattus.onyx.v1.OnyxService.ListListeningBookmarks:input_type -> sttattus.onyx.v1.ListListeningBookmarksRequest
-	137,  // 808: sttattus.onyx.v1.OnyxService.DeleteListeningBookmark:input_type -> sttattus.onyx.v1.DeleteListeningBookmarkRequest
-	140,  // 809: sttattus.onyx.v1.OnyxService.ListListeningQueue:input_type -> sttattus.onyx.v1.ListListeningQueueRequest
-	142,  // 810: sttattus.onyx.v1.OnyxService.SetListeningQueue:input_type -> sttattus.onyx.v1.SetListeningQueueRequest
-	147,  // 811: sttattus.onyx.v1.OnyxService.CreateAudioOverview:input_type -> sttattus.onyx.v1.CreateAudioOverviewRequest
-	149,  // 812: sttattus.onyx.v1.OnyxService.ListAudioOverviews:input_type -> sttattus.onyx.v1.ListAudioOverviewsRequest
-	151,  // 813: sttattus.onyx.v1.OnyxService.GetAudioOverview:input_type -> sttattus.onyx.v1.GetAudioOverviewRequest
-	153,  // 814: sttattus.onyx.v1.OnyxService.DeleteAudioOverview:input_type -> sttattus.onyx.v1.DeleteAudioOverviewRequest
-	156,  // 815: sttattus.onyx.v1.OnyxService.ListListeningPronunciations:input_type -> sttattus.onyx.v1.ListListeningPronunciationsRequest
-	158,  // 816: sttattus.onyx.v1.OnyxService.GetTodaySummary:input_type -> sttattus.onyx.v1.GetTodaySummaryRequest
-	161,  // 817: sttattus.onyx.v1.OnyxService.GetCrossPillarUnlocks:input_type -> sttattus.onyx.v1.GetCrossPillarUnlocksRequest
-	165,  // 818: sttattus.onyx.v1.OnyxService.StartConciergeThread:input_type -> sttattus.onyx.v1.StartConciergeThreadRequest
-	167,  // 819: sttattus.onyx.v1.OnyxService.ListMyConciergeThreads:input_type -> sttattus.onyx.v1.ListMyConciergeThreadsRequest
-	169,  // 820: sttattus.onyx.v1.OnyxService.GetConciergeThread:input_type -> sttattus.onyx.v1.GetConciergeThreadRequest
-	171,  // 821: sttattus.onyx.v1.OnyxService.PostConciergeMessage:input_type -> sttattus.onyx.v1.PostConciergeMessageRequest
-	174,  // 822: sttattus.onyx.v1.OnyxService.ListLiveEvents:input_type -> sttattus.onyx.v1.ListLiveEventsRequest
-	176,  // 823: sttattus.onyx.v1.OnyxService.GetLiveEvent:input_type -> sttattus.onyx.v1.GetLiveEventRequest
-	178,  // 824: sttattus.onyx.v1.OnyxService.RsvpLiveEvent:input_type -> sttattus.onyx.v1.RsvpLiveEventRequest
-	192,  // 825: sttattus.onyx.v1.OnyxService.GetLiveSalon:input_type -> sttattus.onyx.v1.GetLiveSalonRequest
-	194,  // 826: sttattus.onyx.v1.OnyxService.UpsertLiveReservation:input_type -> sttattus.onyx.v1.UpsertLiveReservationRequest
-	196,  // 827: sttattus.onyx.v1.OnyxService.InviteLiveGuest:input_type -> sttattus.onyx.v1.InviteLiveGuestRequest
-	198,  // 828: sttattus.onyx.v1.OnyxService.GenerateLiveCalendarPass:input_type -> sttattus.onyx.v1.GenerateLiveCalendarPassRequest
-	200,  // 829: sttattus.onyx.v1.OnyxService.JoinLiveEvent:input_type -> sttattus.onyx.v1.JoinLiveEventRequest
-	202,  // 830: sttattus.onyx.v1.OnyxService.ListLiveActivity:input_type -> sttattus.onyx.v1.ListLiveActivityRequest
-	204,  // 831: sttattus.onyx.v1.OnyxService.PostLiveMessage:input_type -> sttattus.onyx.v1.PostLiveMessageRequest
-	206,  // 832: sttattus.onyx.v1.OnyxService.UpvoteLiveQuestion:input_type -> sttattus.onyx.v1.UpvoteLiveQuestionRequest
-	208,  // 833: sttattus.onyx.v1.OnyxService.VoteLivePoll:input_type -> sttattus.onyx.v1.VoteLivePollRequest
-	210,  // 834: sttattus.onyx.v1.OnyxService.SetLiveHandRaise:input_type -> sttattus.onyx.v1.SetLiveHandRaiseRequest
-	212,  // 835: sttattus.onyx.v1.OnyxService.ReactLiveEvent:input_type -> sttattus.onyx.v1.ReactLiveEventRequest
-	214,  // 836: sttattus.onyx.v1.OnyxService.UpsertLiveNote:input_type -> sttattus.onyx.v1.UpsertLiveNoteRequest
-	216,  // 837: sttattus.onyx.v1.OnyxService.ListLiveNotes:input_type -> sttattus.onyx.v1.ListLiveNotesRequest
-	218,  // 838: sttattus.onyx.v1.OnyxService.DeleteLiveNote:input_type -> sttattus.onyx.v1.DeleteLiveNoteRequest
-	220,  // 839: sttattus.onyx.v1.OnyxService.GetLiveReplay:input_type -> sttattus.onyx.v1.GetLiveReplayRequest
-	223,  // 840: sttattus.onyx.v1.OnyxService.SetPosthumousArchive:input_type -> sttattus.onyx.v1.SetPosthumousArchiveRequest
-	225,  // 841: sttattus.onyx.v1.OnyxService.GetPosthumousArchive:input_type -> sttattus.onyx.v1.GetPosthumousArchiveRequest
-	228,  // 842: sttattus.onyx.v1.OnyxService.ListAnthologies:input_type -> sttattus.onyx.v1.ListAnthologiesRequest
-	230,  // 843: sttattus.onyx.v1.OnyxService.GetAnthology:input_type -> sttattus.onyx.v1.GetAnthologyRequest
-	233,  // 844: sttattus.onyx.v1.OnyxService.CreateShareLink:input_type -> sttattus.onyx.v1.CreateShareLinkRequest
-	235,  // 845: sttattus.onyx.v1.OnyxService.ListMyShareLinks:input_type -> sttattus.onyx.v1.ListMyShareLinksRequest
-	237,  // 846: sttattus.onyx.v1.OnyxService.RevokeShareLink:input_type -> sttattus.onyx.v1.RevokeShareLinkRequest
-	240,  // 847: sttattus.onyx.v1.OnyxService.GetOfflineManifest:input_type -> sttattus.onyx.v1.GetOfflineManifestRequest
-	242,  // 848: sttattus.onyx.v1.OnyxService.RegisterDevice:input_type -> sttattus.onyx.v1.RegisterDeviceRequest
-	244,  // 849: sttattus.onyx.v1.OnyxService.AcknowledgePurge:input_type -> sttattus.onyx.v1.AcknowledgePurgeRequest
-	246,  // 850: sttattus.onyx.v1.OnyxService.GetDeviceGrants:input_type -> sttattus.onyx.v1.GetDeviceGrantsRequest
-	249,  // 851: sttattus.onyx.v1.OnyxService.RevokeMyDevice:input_type -> sttattus.onyx.v1.RevokeMyDeviceRequest
-	251,  // 852: sttattus.onyx.v1.OnyxService.MarkMyDeviceLost:input_type -> sttattus.onyx.v1.MarkMyDeviceLostRequest
-	253,  // 853: sttattus.onyx.v1.OnyxService.GetPurgeReceipt:input_type -> sttattus.onyx.v1.GetPurgeReceiptRequest
-	255,  // 854: sttattus.onyx.v1.OnyxService.ListOfflineManifestItems:input_type -> sttattus.onyx.v1.ListOfflineManifestItemsRequest
-	258,  // 855: sttattus.onyx.v1.OnyxService.RefreshOfflineRenditions:input_type -> sttattus.onyx.v1.RefreshOfflineRenditionsRequest
-	261,  // 856: sttattus.onyx.v1.OnyxService.RecordOfflineEvent:input_type -> sttattus.onyx.v1.RecordOfflineEventRequest
-	263,  // 857: sttattus.onyx.v1.OnyxService.GetYearInOnyx:input_type -> sttattus.onyx.v1.GetYearInOnyxRequest
-	266,  // 858: sttattus.onyx.v1.OnyxService.GenerateAnnualArchive:input_type -> sttattus.onyx.v1.GenerateAnnualArchiveRequest
-	268,  // 859: sttattus.onyx.v1.OnyxService.ReactToContent:input_type -> sttattus.onyx.v1.ReactToContentRequest
-	271,  // 860: sttattus.onyx.v1.OnyxService.CreateIngestionItem:input_type -> sttattus.onyx.v1.CreateIngestionItemRequest
-	273,  // 861: sttattus.onyx.v1.OnyxService.ListMyIngestionItems:input_type -> sttattus.onyx.v1.ListMyIngestionItemsRequest
-	275,  // 862: sttattus.onyx.v1.OnyxService.GetIngestionItem:input_type -> sttattus.onyx.v1.GetIngestionItemRequest
-	277,  // 863: sttattus.onyx.v1.OnyxService.RetryIngestionItem:input_type -> sttattus.onyx.v1.RetryIngestionItemRequest
-	279,  // 864: sttattus.onyx.v1.OnyxService.SetIngestionItemState:input_type -> sttattus.onyx.v1.SetIngestionItemStateRequest
-	281,  // 865: sttattus.onyx.v1.OnyxService.ResolveIngestionDuplicate:input_type -> sttattus.onyx.v1.ResolveIngestionDuplicateRequest
-	287,  // 866: sttattus.onyx.v1.OnyxService.GetEvidenceWorkspace:input_type -> sttattus.onyx.v1.GetEvidenceWorkspaceRequest
-	289,  // 867: sttattus.onyx.v1.OnyxService.GetEvidenceSourceHistory:input_type -> sttattus.onyx.v1.GetEvidenceSourceHistoryRequest
-	295,  // 868: sttattus.onyx.v1.OnyxService.CreateEvidenceBrief:input_type -> sttattus.onyx.v1.CreateEvidenceBriefRequest
-	297,  // 869: sttattus.onyx.v1.OnyxService.ListMyEvidenceBriefs:input_type -> sttattus.onyx.v1.ListMyEvidenceBriefsRequest
-	299,  // 870: sttattus.onyx.v1.OnyxService.GetEvidenceBrief:input_type -> sttattus.onyx.v1.GetEvidenceBriefRequest
-	308,  // 871: sttattus.onyx.v1.OnyxService.GetCreatorStudio:input_type -> sttattus.onyx.v1.GetCreatorStudioRequest
-	310,  // 872: sttattus.onyx.v1.OnyxService.SubmitCreatorPitch:input_type -> sttattus.onyx.v1.SubmitCreatorPitchRequest
-	312,  // 873: sttattus.onyx.v1.OnyxService.UpdateCreatorProject:input_type -> sttattus.onyx.v1.UpdateCreatorProjectRequest
-	314,  // 874: sttattus.onyx.v1.OnyxService.SubmitCreatorProject:input_type -> sttattus.onyx.v1.SubmitCreatorProjectRequest
-	316,  // 875: sttattus.onyx.v1.OnyxService.SignCreatorContract:input_type -> sttattus.onyx.v1.SignCreatorContractRequest
-	318,  // 876: sttattus.onyx.v1.OnyxService.ListMyCreatorSubscriptionsDetailed:input_type -> sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedRequest
-	320,  // 877: sttattus.onyx.v1.OnyxService.CancelCreatorSubscription:input_type -> sttattus.onyx.v1.CancelCreatorSubscriptionRequest
-	324,  // 878: sttattus.onyx.v1.OnyxService.GetMyCommerce:input_type -> sttattus.onyx.v1.GetMyCommerceRequest
-	326,  // 879: sttattus.onyx.v1.OnyxService.CreateCommerceCase:input_type -> sttattus.onyx.v1.CreateCommerceCaseRequest
-	345,  // 880: sttattus.onyx.v1.OnyxService.ListResearchRooms:input_type -> sttattus.onyx.v1.ListResearchRoomsRequest
-	347,  // 881: sttattus.onyx.v1.OnyxService.GetResearchRoom:input_type -> sttattus.onyx.v1.GetResearchRoomRequest
-	349,  // 882: sttattus.onyx.v1.OnyxService.CreateResearchRoom:input_type -> sttattus.onyx.v1.CreateResearchRoomRequest
-	351,  // 883: sttattus.onyx.v1.OnyxService.UpdateResearchRoom:input_type -> sttattus.onyx.v1.UpdateResearchRoomRequest
-	353,  // 884: sttattus.onyx.v1.OnyxService.InviteResearchRoomMember:input_type -> sttattus.onyx.v1.InviteResearchRoomMemberRequest
-	355,  // 885: sttattus.onyx.v1.OnyxService.RespondResearchRoomInvite:input_type -> sttattus.onyx.v1.RespondResearchRoomInviteRequest
-	357,  // 886: sttattus.onyx.v1.OnyxService.ChangeResearchRoomMember:input_type -> sttattus.onyx.v1.ChangeResearchRoomMemberRequest
-	359,  // 887: sttattus.onyx.v1.OnyxService.RevokeResearchRoomMember:input_type -> sttattus.onyx.v1.RevokeResearchRoomMemberRequest
-	361,  // 888: sttattus.onyx.v1.OnyxService.AddResearchRoomItem:input_type -> sttattus.onyx.v1.AddResearchRoomItemRequest
-	363,  // 889: sttattus.onyx.v1.OnyxService.RemoveResearchRoomItem:input_type -> sttattus.onyx.v1.RemoveResearchRoomItemRequest
-	365,  // 890: sttattus.onyx.v1.OnyxService.PostResearchRoomComment:input_type -> sttattus.onyx.v1.PostResearchRoomCommentRequest
-	367,  // 891: sttattus.onyx.v1.OnyxService.SetResearchRoomThreadStatus:input_type -> sttattus.onyx.v1.SetResearchRoomThreadStatusRequest
-	369,  // 892: sttattus.onyx.v1.OnyxService.UpsertResearchRoomTask:input_type -> sttattus.onyx.v1.UpsertResearchRoomTaskRequest
-	371,  // 893: sttattus.onyx.v1.OnyxService.UpsertResearchRoomMeeting:input_type -> sttattus.onyx.v1.UpsertResearchRoomMeetingRequest
-	373,  // 894: sttattus.onyx.v1.OnyxService.UpsertResearchRoomDecision:input_type -> sttattus.onyx.v1.UpsertResearchRoomDecisionRequest
-	375,  // 895: sttattus.onyx.v1.OnyxService.RecordResearchRoomApproval:input_type -> sttattus.onyx.v1.RecordResearchRoomApprovalRequest
-	377,  // 896: sttattus.onyx.v1.OnyxService.SearchResearchRoom:input_type -> sttattus.onyx.v1.SearchResearchRoomRequest
-	380,  // 897: sttattus.onyx.v1.OnyxService.RequestResearchRoomExport:input_type -> sttattus.onyx.v1.RequestResearchRoomExportRequest
-	382,  // 898: sttattus.onyx.v1.OnyxService.ReportResearchRoomAbuse:input_type -> sttattus.onyx.v1.ReportResearchRoomAbuseRequest
-	384,  // 899: sttattus.onyx.v1.OnyxService.ListResearchRoomAudit:input_type -> sttattus.onyx.v1.ListResearchRoomAuditRequest
-	386,  // 900: sttattus.onyx.v1.OnyxService.ListResearchRoomGrants:input_type -> sttattus.onyx.v1.ListResearchRoomGrantsRequest
-	388,  // 901: sttattus.onyx.v1.OnyxService.UpsertResearchRoomGrant:input_type -> sttattus.onyx.v1.UpsertResearchRoomGrantRequest
-	390,  // 902: sttattus.onyx.v1.OnyxService.RevokeResearchRoomGrant:input_type -> sttattus.onyx.v1.RevokeResearchRoomGrantRequest
-	392,  // 903: sttattus.onyx.v1.OnyxService.CreateResearchRoomShareLink:input_type -> sttattus.onyx.v1.CreateResearchRoomShareLinkRequest
-	394,  // 904: sttattus.onyx.v1.OnyxService.ListResearchRoomShareLinks:input_type -> sttattus.onyx.v1.ListResearchRoomShareLinksRequest
-	396,  // 905: sttattus.onyx.v1.OnyxService.RevokeResearchRoomShareLink:input_type -> sttattus.onyx.v1.RevokeResearchRoomShareLinkRequest
-	398,  // 906: sttattus.onyx.v1.OnyxService.ResolveResearchRoomShareLink:input_type -> sttattus.onyx.v1.ResolveResearchRoomShareLinkRequest
-	400,  // 907: sttattus.onyx.v1.OnyxService.GetResearchRoomOfflineManifest:input_type -> sttattus.onyx.v1.GetResearchRoomOfflineManifestRequest
-	402,  // 908: sttattus.onyx.v1.OnyxService.AcknowledgeResearchRoomOfflinePurge:input_type -> sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeRequest
-	404,  // 909: sttattus.onyx.v1.OnyxService.ListResearchRoomOfflinePurges:input_type -> sttattus.onyx.v1.ListResearchRoomOfflinePurgesRequest
-	406,  // 910: sttattus.onyx.v1.OnyxService.LeaveResearchRoom:input_type -> sttattus.onyx.v1.LeaveResearchRoomRequest
-	417,  // 911: sttattus.onyx.v1.OnyxService.GetPersonalIntelligenceGraph:input_type -> sttattus.onyx.v1.GetPersonalIntelligenceGraphRequest
-	419,  // 912: sttattus.onyx.v1.OnyxService.UpsertIntelligenceGraphNode:input_type -> sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest
-	421,  // 913: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphNodeState:input_type -> sttattus.onyx.v1.SetIntelligenceGraphNodeStateRequest
-	423,  // 914: sttattus.onyx.v1.OnyxService.MergeIntelligenceGraphNodes:input_type -> sttattus.onyx.v1.MergeIntelligenceGraphNodesRequest
-	425,  // 915: sttattus.onyx.v1.OnyxService.SplitIntelligenceGraphNode:input_type -> sttattus.onyx.v1.SplitIntelligenceGraphNodeRequest
-	427,  // 916: sttattus.onyx.v1.OnyxService.UpsertIntelligenceGraphEdge:input_type -> sttattus.onyx.v1.UpsertIntelligenceGraphEdgeRequest
-	429,  // 917: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphEdgeState:input_type -> sttattus.onyx.v1.SetIntelligenceGraphEdgeStateRequest
-	431,  // 918: sttattus.onyx.v1.OnyxService.GenerateIntelligenceGraphSuggestions:input_type -> sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsRequest
-	433,  // 919: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphSuggestions:input_type -> sttattus.onyx.v1.ListIntelligenceGraphSuggestionsRequest
-	435,  // 920: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphSuggestionState:input_type -> sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateRequest
-	437,  // 921: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphTimeline:input_type -> sttattus.onyx.v1.ListIntelligenceGraphTimelineRequest
-	439,  // 922: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphResurfacing:input_type -> sttattus.onyx.v1.ListIntelligenceGraphResurfacingRequest
-	441,  // 923: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphResurfacingState:input_type -> sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateRequest
-	443,  // 924: sttattus.onyx.v1.OnyxService.CreateIntelligenceGraphMeetingBrief:input_type -> sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefRequest
-	445,  // 925: sttattus.onyx.v1.OnyxService.GetIntelligenceGraphMeetingBrief:input_type -> sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefRequest
-	447,  // 926: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphMeetingBriefs:input_type -> sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsRequest
-	449,  // 927: sttattus.onyx.v1.OnyxService.ExportPersonalIntelligenceGraph:input_type -> sttattus.onyx.v1.ExportPersonalIntelligenceGraphRequest
-	451,  // 928: sttattus.onyx.v1.OnyxService.RebuildPersonalIntelligenceGraph:input_type -> sttattus.onyx.v1.RebuildPersonalIntelligenceGraphRequest
-	470,  // 929: sttattus.onyx.v1.OnyxService.ListLanguageConfigs:input_type -> sttattus.onyx.v1.ListLanguageConfigsRequest
-	472,  // 930: sttattus.onyx.v1.OnyxService.ListContentEditions:input_type -> sttattus.onyx.v1.ListContentEditionsRequest
-	474,  // 931: sttattus.onyx.v1.OnyxService.GetAlignedBlocks:input_type -> sttattus.onyx.v1.GetAlignedBlocksRequest
-	476,  // 932: sttattus.onyx.v1.OnyxService.ListTermbaseEntries:input_type -> sttattus.onyx.v1.ListTermbaseEntriesRequest
-	478,  // 933: sttattus.onyx.v1.OnyxService.CrossLanguageSearch:input_type -> sttattus.onyx.v1.CrossLanguageSearchRequest
-	480,  // 934: sttattus.onyx.v1.OnyxService.GetMultilingualPreferences:input_type -> sttattus.onyx.v1.GetMultilingualPreferencesRequest
-	482,  // 935: sttattus.onyx.v1.OnyxService.UpdateMultilingualPreferences:input_type -> sttattus.onyx.v1.UpdateMultilingualPreferencesRequest
-	484,  // 936: sttattus.onyx.v1.OnyxService.GetMultilingualAudioVideo:input_type -> sttattus.onyx.v1.GetMultilingualAudioVideoRequest
-	486,  // 937: sttattus.onyx.v1.OnyxService.GetMultilingualOfflineManifest:input_type -> sttattus.onyx.v1.GetMultilingualOfflineManifestRequest
-	488,  // 938: sttattus.onyx.v1.OnyxService.ReportTranslationIssue:input_type -> sttattus.onyx.v1.ReportTranslationIssueRequest
-	490,  // 939: sttattus.onyx.v1.OnyxService.RequestMultilingualExport:input_type -> sttattus.onyx.v1.RequestMultilingualExportRequest
-	492,  // 940: sttattus.onyx.v1.OnyxService.GetMultilingualExport:input_type -> sttattus.onyx.v1.GetMultilingualExportRequest
-	502,  // 941: sttattus.onyx.v1.OnyxService.GetLivingArchiveDashboard:input_type -> sttattus.onyx.v1.GetLivingArchiveDashboardRequest
-	504,  // 942: sttattus.onyx.v1.OnyxService.UpsertLivingArchivePolicy:input_type -> sttattus.onyx.v1.UpsertLivingArchivePolicyRequest
-	506,  // 943: sttattus.onyx.v1.OnyxService.PreviewLivingArchivePolicy:input_type -> sttattus.onyx.v1.PreviewLivingArchivePolicyRequest
-	508,  // 944: sttattus.onyx.v1.OnyxService.GenerateLivingArchiveEdition:input_type -> sttattus.onyx.v1.GenerateLivingArchiveEditionRequest
-	510,  // 945: sttattus.onyx.v1.OnyxService.LinkLivingArchiveLegacyEscrow:input_type -> sttattus.onyx.v1.LinkLivingArchiveLegacyEscrowRequest
-	512,  // 946: sttattus.onyx.v1.OnyxService.UpsertLivingArchiveContact:input_type -> sttattus.onyx.v1.UpsertLivingArchiveContactRequest
-	514,  // 947: sttattus.onyx.v1.OnyxService.DeleteLivingArchiveContact:input_type -> sttattus.onyx.v1.DeleteLivingArchiveContactRequest
-	516,  // 948: sttattus.onyx.v1.OnyxService.SubmitLivingArchivePolicy:input_type -> sttattus.onyx.v1.SubmitLivingArchivePolicyRequest
-	518,  // 949: sttattus.onyx.v1.OnyxService.RevokeLivingArchivePolicy:input_type -> sttattus.onyx.v1.RevokeLivingArchivePolicyRequest
-	520,  // 950: sttattus.onyx.v1.OnyxService.ConfirmLivingArchiveReview:input_type -> sttattus.onyx.v1.ConfirmLivingArchiveReviewRequest
-	522,  // 951: sttattus.onyx.v1.OnyxService.ContestLivingArchiveRelease:input_type -> sttattus.onyx.v1.ContestLivingArchiveReleaseRequest
-	531,  // 952: sttattus.onyx.v1.OnyxService.GetForensicProtectionDashboard:input_type -> sttattus.onyx.v1.GetForensicProtectionDashboardRequest
-	533,  // 953: sttattus.onyx.v1.OnyxService.IssueForensicManifest:input_type -> sttattus.onyx.v1.IssueForensicManifestRequest
-	535,  // 954: sttattus.onyx.v1.OnyxService.RevokeForensicManifest:input_type -> sttattus.onyx.v1.RevokeForensicManifestRequest
-	537,  // 955: sttattus.onyx.v1.OnyxService.RespondForensicCase:input_type -> sttattus.onyx.v1.RespondForensicCaseRequest
-	539,  // 956: sttattus.onyx.v1.OnyxService.FileForensicAppeal:input_type -> sttattus.onyx.v1.FileForensicAppealRequest
-	541,  // 957: sttattus.onyx.v1.OnyxService.PostForensicAppealMessage:input_type -> sttattus.onyx.v1.PostForensicAppealMessageRequest
-	543,  // 958: sttattus.onyx.v1.OnyxService.WithdrawForensicAppeal:input_type -> sttattus.onyx.v1.WithdrawForensicAppealRequest
-	557,  // 959: sttattus.onyx.v1.OnyxService.GetIntegrationDashboard:input_type -> sttattus.onyx.v1.GetIntegrationDashboardRequest
-	559,  // 960: sttattus.onyx.v1.OnyxService.AuthorizeIntegration:input_type -> sttattus.onyx.v1.AuthorizeIntegrationRequest
-	561,  // 961: sttattus.onyx.v1.OnyxService.RevokeIntegrationGrant:input_type -> sttattus.onyx.v1.RevokeIntegrationGrantRequest
-	563,  // 962: sttattus.onyx.v1.OnyxService.UpsertIntegrationConnector:input_type -> sttattus.onyx.v1.UpsertIntegrationConnectorRequest
-	565,  // 963: sttattus.onyx.v1.OnyxService.SetIntegrationConnectorState:input_type -> sttattus.onyx.v1.SetIntegrationConnectorStateRequest
-	567,  // 964: sttattus.onyx.v1.OnyxService.RunIntegrationConnector:input_type -> sttattus.onyx.v1.RunIntegrationConnectorRequest
-	569,  // 965: sttattus.onyx.v1.OnyxService.GetIntegrationArtifact:input_type -> sttattus.onyx.v1.GetIntegrationArtifactRequest
-	571,  // 966: sttattus.onyx.v1.OnyxService.ResolveIntegrationConflict:input_type -> sttattus.onyx.v1.ResolveIntegrationConflictRequest
-	573,  // 967: sttattus.onyx.v1.OnyxService.DispatchIntegrationBridge:input_type -> sttattus.onyx.v1.DispatchIntegrationBridgeRequest
-	575,  // 968: sttattus.onyx.v1.OnyxService.SubmitIntegrationOperationsCase:input_type -> sttattus.onyx.v1.SubmitIntegrationOperationsCaseRequest
-	591,  // 969: sttattus.onyx.v1.OnyxService.GetSpatialCanvasDashboard:input_type -> sttattus.onyx.v1.GetSpatialCanvasDashboardRequest
-	593,  // 970: sttattus.onyx.v1.OnyxService.ListSpatialCanvasTemplates:input_type -> sttattus.onyx.v1.ListSpatialCanvasTemplatesRequest
-	595,  // 971: sttattus.onyx.v1.OnyxService.CreateSpatialCanvas:input_type -> sttattus.onyx.v1.CreateSpatialCanvasRequest
-	597,  // 972: sttattus.onyx.v1.OnyxService.GetSpatialCanvas:input_type -> sttattus.onyx.v1.GetSpatialCanvasRequest
-	599,  // 973: sttattus.onyx.v1.OnyxService.ApplySpatialCanvasOperations:input_type -> sttattus.onyx.v1.ApplySpatialCanvasOperationsRequest
-	601,  // 974: sttattus.onyx.v1.OnyxService.ResolveSpatialCanvasConflict:input_type -> sttattus.onyx.v1.ResolveSpatialCanvasConflictRequest
-	603,  // 975: sttattus.onyx.v1.OnyxService.CreateSpatialCanvasSnapshot:input_type -> sttattus.onyx.v1.CreateSpatialCanvasSnapshotRequest
-	605,  // 976: sttattus.onyx.v1.OnyxService.RestoreSpatialCanvasSnapshot:input_type -> sttattus.onyx.v1.RestoreSpatialCanvasSnapshotRequest
-	607,  // 977: sttattus.onyx.v1.OnyxService.UpsertSpatialCanvasComment:input_type -> sttattus.onyx.v1.UpsertSpatialCanvasCommentRequest
-	609,  // 978: sttattus.onyx.v1.OnyxService.SetSpatialCanvasCommentState:input_type -> sttattus.onyx.v1.SetSpatialCanvasCommentStateRequest
-	611,  // 979: sttattus.onyx.v1.OnyxService.GenerateSpatialCanvasProposals:input_type -> sttattus.onyx.v1.GenerateSpatialCanvasProposalsRequest
-	613,  // 980: sttattus.onyx.v1.OnyxService.SetSpatialCanvasProposalState:input_type -> sttattus.onyx.v1.SetSpatialCanvasProposalStateRequest
-	615,  // 981: sttattus.onyx.v1.OnyxService.RequestSpatialCanvasExport:input_type -> sttattus.onyx.v1.RequestSpatialCanvasExportRequest
-	617,  // 982: sttattus.onyx.v1.OnyxService.GetSpatialCanvasExport:input_type -> sttattus.onyx.v1.GetSpatialCanvasExportRequest
-	619,  // 983: sttattus.onyx.v1.OnyxService.UpsertSpatialCanvasCollaborator:input_type -> sttattus.onyx.v1.UpsertSpatialCanvasCollaboratorRequest
-	621,  // 984: sttattus.onyx.v1.OnyxService.ReportSpatialCanvasAbuse:input_type -> sttattus.onyx.v1.ReportSpatialCanvasAbuseRequest
-	632,  // 985: sttattus.onyx.v1.OnyxService.GetRecallDashboard:input_type -> sttattus.onyx.v1.GetRecallDashboardRequest
-	634,  // 986: sttattus.onyx.v1.OnyxService.ListRecallDecks:input_type -> sttattus.onyx.v1.ListRecallDecksRequest
-	636,  // 987: sttattus.onyx.v1.OnyxService.ListMemoryItems:input_type -> sttattus.onyx.v1.ListMemoryItemsRequest
-	638,  // 988: sttattus.onyx.v1.OnyxService.UpsertRecallDeck:input_type -> sttattus.onyx.v1.UpsertRecallDeckRequest
-	640,  // 989: sttattus.onyx.v1.OnyxService.GenerateRecallItems:input_type -> sttattus.onyx.v1.GenerateRecallItemsRequest
-	642,  // 990: sttattus.onyx.v1.OnyxService.UpsertMemoryItem:input_type -> sttattus.onyx.v1.UpsertMemoryItemRequest
-	644,  // 991: sttattus.onyx.v1.OnyxService.SetMemoryItemState:input_type -> sttattus.onyx.v1.SetMemoryItemStateRequest
-	646,  // 992: sttattus.onyx.v1.OnyxService.GetRecallReviewQueue:input_type -> sttattus.onyx.v1.GetRecallReviewQueueRequest
-	648,  // 993: sttattus.onyx.v1.OnyxService.RecordRecallReviewBatch:input_type -> sttattus.onyx.v1.RecordRecallReviewBatchRequest
-	650,  // 994: sttattus.onyx.v1.OnyxService.ResolveRecallInvalidation:input_type -> sttattus.onyx.v1.ResolveRecallInvalidationRequest
-	652,  // 995: sttattus.onyx.v1.OnyxService.UpdateRecallPreferences:input_type -> sttattus.onyx.v1.UpdateRecallPreferencesRequest
-	654,  // 996: sttattus.onyx.v1.OnyxService.ExportRecallData:input_type -> sttattus.onyx.v1.ExportRecallDataRequest
-	656,  // 997: sttattus.onyx.v1.OnyxService.ImportRecallData:input_type -> sttattus.onyx.v1.ImportRecallDataRequest
-	658,  // 998: sttattus.onyx.v1.OnyxService.ReportRecallItem:input_type -> sttattus.onyx.v1.ReportRecallItemRequest
-	660,  // 999: sttattus.onyx.v1.OnyxService.RecordRecallTransfer:input_type -> sttattus.onyx.v1.RecordRecallTransferRequest
-	676,  // 1000: sttattus.onyx.v1.OnyxService.GetDraftingDashboard:input_type -> sttattus.onyx.v1.GetDraftingDashboardRequest
-	678,  // 1001: sttattus.onyx.v1.OnyxService.ListDrafts:input_type -> sttattus.onyx.v1.ListDraftsRequest
-	680,  // 1002: sttattus.onyx.v1.OnyxService.GetDraft:input_type -> sttattus.onyx.v1.GetDraftRequest
-	682,  // 1003: sttattus.onyx.v1.OnyxService.CreateDraft:input_type -> sttattus.onyx.v1.CreateDraftRequest
-	684,  // 1004: sttattus.onyx.v1.OnyxService.UpsertDraftBlock:input_type -> sttattus.onyx.v1.UpsertDraftBlockRequest
-	686,  // 1005: sttattus.onyx.v1.OnyxService.DeleteDraftBlock:input_type -> sttattus.onyx.v1.DeleteDraftBlockRequest
-	688,  // 1006: sttattus.onyx.v1.OnyxService.UpsertDraftCitation:input_type -> sttattus.onyx.v1.UpsertDraftCitationRequest
-	690,  // 1007: sttattus.onyx.v1.OnyxService.VerifyDraft:input_type -> sttattus.onyx.v1.VerifyDraftRequest
-	695,  // 1008: sttattus.onyx.v1.OnyxService.GetDraftEvidenceReview:input_type -> sttattus.onyx.v1.GetDraftEvidenceReviewRequest
-	697,  // 1009: sttattus.onyx.v1.OnyxService.CompareDraftEvidence:input_type -> sttattus.onyx.v1.CompareDraftEvidenceRequest
-	700,  // 1010: sttattus.onyx.v1.OnyxService.CreateDraftRevision:input_type -> sttattus.onyx.v1.CreateDraftRevisionRequest
-	702,  // 1011: sttattus.onyx.v1.OnyxService.CreateDraftBranch:input_type -> sttattus.onyx.v1.CreateDraftBranchRequest
-	704,  // 1012: sttattus.onyx.v1.OnyxService.RestoreDraftRevision:input_type -> sttattus.onyx.v1.RestoreDraftRevisionRequest
-	706,  // 1013: sttattus.onyx.v1.OnyxService.CompareDraftRevisions:input_type -> sttattus.onyx.v1.CompareDraftRevisionsRequest
-	708,  // 1014: sttattus.onyx.v1.OnyxService.PreviewDraftRestore:input_type -> sttattus.onyx.v1.PreviewDraftRestoreRequest
-	713,  // 1015: sttattus.onyx.v1.OnyxService.PreviewDraftMerge:input_type -> sttattus.onyx.v1.PreviewDraftMergeRequest
-	715,  // 1016: sttattus.onyx.v1.OnyxService.GenerateDraftSuggestion:input_type -> sttattus.onyx.v1.GenerateDraftSuggestionRequest
-	717,  // 1017: sttattus.onyx.v1.OnyxService.SetDraftSuggestionState:input_type -> sttattus.onyx.v1.SetDraftSuggestionStateRequest
-	719,  // 1018: sttattus.onyx.v1.OnyxService.ResolveDraftConflict:input_type -> sttattus.onyx.v1.ResolveDraftConflictRequest
-	721,  // 1019: sttattus.onyx.v1.OnyxService.RequestDraftExport:input_type -> sttattus.onyx.v1.RequestDraftExportRequest
-	723,  // 1020: sttattus.onyx.v1.OnyxService.GetDraftExport:input_type -> sttattus.onyx.v1.GetDraftExportRequest
-	725,  // 1021: sttattus.onyx.v1.OnyxService.CreateDraftHandoff:input_type -> sttattus.onyx.v1.CreateDraftHandoffRequest
-	727,  // 1022: sttattus.onyx.v1.OnyxService.ReportDraftIncident:input_type -> sttattus.onyx.v1.ReportDraftIncidentRequest
-	734,  // 1023: sttattus.onyx.v1.OnyxService.GetDraftCollaboration:input_type -> sttattus.onyx.v1.GetDraftCollaborationRequest
-	736,  // 1024: sttattus.onyx.v1.OnyxService.InviteDraftCollaborator:input_type -> sttattus.onyx.v1.InviteDraftCollaboratorRequest
-	738,  // 1025: sttattus.onyx.v1.OnyxService.RemoveDraftCollaborator:input_type -> sttattus.onyx.v1.RemoveDraftCollaboratorRequest
-	740,  // 1026: sttattus.onyx.v1.OnyxService.CreateDraftComment:input_type -> sttattus.onyx.v1.CreateDraftCommentRequest
-	742,  // 1027: sttattus.onyx.v1.OnyxService.SetDraftCommentState:input_type -> sttattus.onyx.v1.SetDraftCommentStateRequest
-	744,  // 1028: sttattus.onyx.v1.OnyxService.CreateDraftAssignment:input_type -> sttattus.onyx.v1.CreateDraftAssignmentRequest
-	746,  // 1029: sttattus.onyx.v1.OnyxService.SetDraftAssignmentState:input_type -> sttattus.onyx.v1.SetDraftAssignmentStateRequest
-	748,  // 1030: sttattus.onyx.v1.OnyxService.ListDraftNotifications:input_type -> sttattus.onyx.v1.ListDraftNotificationsRequest
-	750,  // 1031: sttattus.onyx.v1.OnyxService.MarkDraftNotificationRead:input_type -> sttattus.onyx.v1.MarkDraftNotificationReadRequest
-	752,  // 1032: sttattus.onyx.v1.OnyxService.SetDraftPresence:input_type -> sttattus.onyx.v1.SetDraftPresenceRequest
-	755,  // 1033: sttattus.onyx.v1.OnyxService.GetDraftOperationStatus:input_type -> sttattus.onyx.v1.GetDraftOperationStatusRequest
-	22,   // 1034: sttattus.onyx.v1.OnyxService.CreateProfile:output_type -> sttattus.onyx.v1.CreateProfileResponse
-	24,   // 1035: sttattus.onyx.v1.OnyxService.GetProfile:output_type -> sttattus.onyx.v1.GetProfileResponse
-	26,   // 1036: sttattus.onyx.v1.OnyxService.ListContent:output_type -> sttattus.onyx.v1.ListContentResponse
-	28,   // 1037: sttattus.onyx.v1.OnyxService.Subscribe:output_type -> sttattus.onyx.v1.SubscribeResponse
-	30,   // 1038: sttattus.onyx.v1.OnyxService.GetContent:output_type -> sttattus.onyx.v1.GetContentResponse
-	32,   // 1039: sttattus.onyx.v1.OnyxService.ListShelf:output_type -> sttattus.onyx.v1.ListShelfResponse
-	34,   // 1040: sttattus.onyx.v1.OnyxService.ListContinue:output_type -> sttattus.onyx.v1.ListContinueResponse
-	37,   // 1041: sttattus.onyx.v1.OnyxService.GetShelves:output_type -> sttattus.onyx.v1.GetShelvesResponse
-	39,   // 1042: sttattus.onyx.v1.OnyxService.RecordProgress:output_type -> sttattus.onyx.v1.RecordProgressResponse
-	41,   // 1043: sttattus.onyx.v1.OnyxService.RedeemContent:output_type -> sttattus.onyx.v1.RedeemContentResponse
-	43,   // 1044: sttattus.onyx.v1.OnyxService.CreateSubscriptionCheckout:output_type -> sttattus.onyx.v1.CreateSubscriptionCheckoutResponse
-	46,   // 1045: sttattus.onyx.v1.OnyxService.GetCreator:output_type -> sttattus.onyx.v1.GetCreatorResponse
-	48,   // 1046: sttattus.onyx.v1.OnyxService.ListCreatorWorks:output_type -> sttattus.onyx.v1.ListCreatorWorksResponse
-	50,   // 1047: sttattus.onyx.v1.OnyxService.FollowCreator:output_type -> sttattus.onyx.v1.FollowCreatorResponse
-	52,   // 1048: sttattus.onyx.v1.OnyxService.SearchContent:output_type -> sttattus.onyx.v1.SearchContentResponse
-	55,   // 1049: sttattus.onyx.v1.OnyxService.AddNote:output_type -> sttattus.onyx.v1.AddNoteResponse
-	57,   // 1050: sttattus.onyx.v1.OnyxService.ListMyNotes:output_type -> sttattus.onyx.v1.ListMyNotesResponse
-	59,   // 1051: sttattus.onyx.v1.OnyxService.DeleteNote:output_type -> sttattus.onyx.v1.DeleteNoteResponse
-	62,   // 1052: sttattus.onyx.v1.OnyxService.UpsertReaderAnnotation:output_type -> sttattus.onyx.v1.UpsertReaderAnnotationResponse
-	64,   // 1053: sttattus.onyx.v1.OnyxService.DeleteReaderAnnotation:output_type -> sttattus.onyx.v1.DeleteReaderAnnotationResponse
-	66,   // 1054: sttattus.onyx.v1.OnyxService.ListMyReaderAnnotations:output_type -> sttattus.onyx.v1.ListMyReaderAnnotationsResponse
-	69,   // 1055: sttattus.onyx.v1.OnyxService.SearchReader:output_type -> sttattus.onyx.v1.SearchReaderResponse
-	73,   // 1056: sttattus.onyx.v1.OnyxService.SearchIntelligence:output_type -> sttattus.onyx.v1.SearchIntelligenceResponse
-	75,   // 1057: sttattus.onyx.v1.OnyxService.RecordIntelligenceSearchOutcome:output_type -> sttattus.onyx.v1.RecordIntelligenceSearchOutcomeResponse
-	78,   // 1058: sttattus.onyx.v1.OnyxService.ListSavedQueries:output_type -> sttattus.onyx.v1.ListSavedQueriesResponse
-	80,   // 1059: sttattus.onyx.v1.OnyxService.UpsertSavedQuery:output_type -> sttattus.onyx.v1.UpsertSavedQueryResponse
-	82,   // 1060: sttattus.onyx.v1.OnyxService.DeleteSavedQuery:output_type -> sttattus.onyx.v1.DeleteSavedQueryResponse
-	86,   // 1061: sttattus.onyx.v1.OnyxService.ListWatchlists:output_type -> sttattus.onyx.v1.ListWatchlistsResponse
-	88,   // 1062: sttattus.onyx.v1.OnyxService.UpsertWatchlist:output_type -> sttattus.onyx.v1.UpsertWatchlistResponse
-	90,   // 1063: sttattus.onyx.v1.OnyxService.DeleteWatchlist:output_type -> sttattus.onyx.v1.DeleteWatchlistResponse
-	92,   // 1064: sttattus.onyx.v1.OnyxService.RefreshWatchlist:output_type -> sttattus.onyx.v1.RefreshWatchlistResponse
-	95,   // 1065: sttattus.onyx.v1.OnyxService.ListIntelligenceAlerts:output_type -> sttattus.onyx.v1.ListIntelligenceAlertsResponse
-	97,   // 1066: sttattus.onyx.v1.OnyxService.SetIntelligenceAlertState:output_type -> sttattus.onyx.v1.SetIntelligenceAlertStateResponse
-	100,  // 1067: sttattus.onyx.v1.OnyxService.GetIntelligenceQueue:output_type -> sttattus.onyx.v1.GetIntelligenceQueueResponse
-	102,  // 1068: sttattus.onyx.v1.OnyxService.RecordIntelligenceFeedback:output_type -> sttattus.onyx.v1.RecordIntelligenceFeedbackResponse
-	104,  // 1069: sttattus.onyx.v1.OnyxService.ExportReaderData:output_type -> sttattus.onyx.v1.ExportReaderDataResponse
-	107,  // 1070: sttattus.onyx.v1.OnyxService.ListReaderSyncChanges:output_type -> sttattus.onyx.v1.ListReaderSyncChangesResponse
-	109,  // 1071: sttattus.onyx.v1.OnyxService.ListMyUnlocks:output_type -> sttattus.onyx.v1.ListMyUnlocksResponse
-	111,  // 1072: sttattus.onyx.v1.OnyxService.ListMySubscriptions:output_type -> sttattus.onyx.v1.ListMySubscriptionsResponse
-	113,  // 1073: sttattus.onyx.v1.OnyxService.ListMyFollows:output_type -> sttattus.onyx.v1.ListMyFollowsResponse
-	116,  // 1074: sttattus.onyx.v1.OnyxService.ListSovereignWindow:output_type -> sttattus.onyx.v1.ListSovereignWindowResponse
-	119,  // 1075: sttattus.onyx.v1.OnyxService.ListSeries:output_type -> sttattus.onyx.v1.ListSeriesResponse
-	121,  // 1076: sttattus.onyx.v1.OnyxService.GetSeries:output_type -> sttattus.onyx.v1.GetSeriesResponse
-	124,  // 1077: sttattus.onyx.v1.OnyxService.GenerateCaptions:output_type -> sttattus.onyx.v1.GenerateCaptionsResponse
-	126,  // 1078: sttattus.onyx.v1.OnyxService.GetCaptionJob:output_type -> sttattus.onyx.v1.GetCaptionJobResponse
-	129,  // 1079: sttattus.onyx.v1.OnyxService.GetListeningPreferences:output_type -> sttattus.onyx.v1.GetListeningPreferencesResponse
-	131,  // 1080: sttattus.onyx.v1.OnyxService.UpdateListeningPreferences:output_type -> sttattus.onyx.v1.UpdateListeningPreferencesResponse
-	134,  // 1081: sttattus.onyx.v1.OnyxService.CreateListeningBookmark:output_type -> sttattus.onyx.v1.CreateListeningBookmarkResponse
-	136,  // 1082: sttattus.onyx.v1.OnyxService.ListListeningBookmarks:output_type -> sttattus.onyx.v1.ListListeningBookmarksResponse
-	138,  // 1083: sttattus.onyx.v1.OnyxService.DeleteListeningBookmark:output_type -> sttattus.onyx.v1.DeleteListeningBookmarkResponse
-	141,  // 1084: sttattus.onyx.v1.OnyxService.ListListeningQueue:output_type -> sttattus.onyx.v1.ListListeningQueueResponse
-	143,  // 1085: sttattus.onyx.v1.OnyxService.SetListeningQueue:output_type -> sttattus.onyx.v1.SetListeningQueueResponse
-	148,  // 1086: sttattus.onyx.v1.OnyxService.CreateAudioOverview:output_type -> sttattus.onyx.v1.CreateAudioOverviewResponse
-	150,  // 1087: sttattus.onyx.v1.OnyxService.ListAudioOverviews:output_type -> sttattus.onyx.v1.ListAudioOverviewsResponse
-	152,  // 1088: sttattus.onyx.v1.OnyxService.GetAudioOverview:output_type -> sttattus.onyx.v1.GetAudioOverviewResponse
-	154,  // 1089: sttattus.onyx.v1.OnyxService.DeleteAudioOverview:output_type -> sttattus.onyx.v1.DeleteAudioOverviewResponse
-	157,  // 1090: sttattus.onyx.v1.OnyxService.ListListeningPronunciations:output_type -> sttattus.onyx.v1.ListListeningPronunciationsResponse
-	159,  // 1091: sttattus.onyx.v1.OnyxService.GetTodaySummary:output_type -> sttattus.onyx.v1.GetTodaySummaryResponse
-	162,  // 1092: sttattus.onyx.v1.OnyxService.GetCrossPillarUnlocks:output_type -> sttattus.onyx.v1.GetCrossPillarUnlocksResponse
-	166,  // 1093: sttattus.onyx.v1.OnyxService.StartConciergeThread:output_type -> sttattus.onyx.v1.StartConciergeThreadResponse
-	168,  // 1094: sttattus.onyx.v1.OnyxService.ListMyConciergeThreads:output_type -> sttattus.onyx.v1.ListMyConciergeThreadsResponse
-	170,  // 1095: sttattus.onyx.v1.OnyxService.GetConciergeThread:output_type -> sttattus.onyx.v1.GetConciergeThreadResponse
-	172,  // 1096: sttattus.onyx.v1.OnyxService.PostConciergeMessage:output_type -> sttattus.onyx.v1.PostConciergeMessageResponse
-	175,  // 1097: sttattus.onyx.v1.OnyxService.ListLiveEvents:output_type -> sttattus.onyx.v1.ListLiveEventsResponse
-	177,  // 1098: sttattus.onyx.v1.OnyxService.GetLiveEvent:output_type -> sttattus.onyx.v1.GetLiveEventResponse
-	179,  // 1099: sttattus.onyx.v1.OnyxService.RsvpLiveEvent:output_type -> sttattus.onyx.v1.RsvpLiveEventResponse
-	193,  // 1100: sttattus.onyx.v1.OnyxService.GetLiveSalon:output_type -> sttattus.onyx.v1.GetLiveSalonResponse
-	195,  // 1101: sttattus.onyx.v1.OnyxService.UpsertLiveReservation:output_type -> sttattus.onyx.v1.UpsertLiveReservationResponse
-	197,  // 1102: sttattus.onyx.v1.OnyxService.InviteLiveGuest:output_type -> sttattus.onyx.v1.InviteLiveGuestResponse
-	199,  // 1103: sttattus.onyx.v1.OnyxService.GenerateLiveCalendarPass:output_type -> sttattus.onyx.v1.GenerateLiveCalendarPassResponse
-	201,  // 1104: sttattus.onyx.v1.OnyxService.JoinLiveEvent:output_type -> sttattus.onyx.v1.JoinLiveEventResponse
-	203,  // 1105: sttattus.onyx.v1.OnyxService.ListLiveActivity:output_type -> sttattus.onyx.v1.ListLiveActivityResponse
-	205,  // 1106: sttattus.onyx.v1.OnyxService.PostLiveMessage:output_type -> sttattus.onyx.v1.PostLiveMessageResponse
-	207,  // 1107: sttattus.onyx.v1.OnyxService.UpvoteLiveQuestion:output_type -> sttattus.onyx.v1.UpvoteLiveQuestionResponse
-	209,  // 1108: sttattus.onyx.v1.OnyxService.VoteLivePoll:output_type -> sttattus.onyx.v1.VoteLivePollResponse
-	211,  // 1109: sttattus.onyx.v1.OnyxService.SetLiveHandRaise:output_type -> sttattus.onyx.v1.SetLiveHandRaiseResponse
-	213,  // 1110: sttattus.onyx.v1.OnyxService.ReactLiveEvent:output_type -> sttattus.onyx.v1.ReactLiveEventResponse
-	215,  // 1111: sttattus.onyx.v1.OnyxService.UpsertLiveNote:output_type -> sttattus.onyx.v1.UpsertLiveNoteResponse
-	217,  // 1112: sttattus.onyx.v1.OnyxService.ListLiveNotes:output_type -> sttattus.onyx.v1.ListLiveNotesResponse
-	219,  // 1113: sttattus.onyx.v1.OnyxService.DeleteLiveNote:output_type -> sttattus.onyx.v1.DeleteLiveNoteResponse
-	221,  // 1114: sttattus.onyx.v1.OnyxService.GetLiveReplay:output_type -> sttattus.onyx.v1.GetLiveReplayResponse
-	224,  // 1115: sttattus.onyx.v1.OnyxService.SetPosthumousArchive:output_type -> sttattus.onyx.v1.SetPosthumousArchiveResponse
-	226,  // 1116: sttattus.onyx.v1.OnyxService.GetPosthumousArchive:output_type -> sttattus.onyx.v1.GetPosthumousArchiveResponse
-	229,  // 1117: sttattus.onyx.v1.OnyxService.ListAnthologies:output_type -> sttattus.onyx.v1.ListAnthologiesResponse
-	231,  // 1118: sttattus.onyx.v1.OnyxService.GetAnthology:output_type -> sttattus.onyx.v1.GetAnthologyResponse
-	234,  // 1119: sttattus.onyx.v1.OnyxService.CreateShareLink:output_type -> sttattus.onyx.v1.CreateShareLinkResponse
-	236,  // 1120: sttattus.onyx.v1.OnyxService.ListMyShareLinks:output_type -> sttattus.onyx.v1.ListMyShareLinksResponse
-	238,  // 1121: sttattus.onyx.v1.OnyxService.RevokeShareLink:output_type -> sttattus.onyx.v1.RevokeShareLinkResponse
-	241,  // 1122: sttattus.onyx.v1.OnyxService.GetOfflineManifest:output_type -> sttattus.onyx.v1.GetOfflineManifestResponse
-	243,  // 1123: sttattus.onyx.v1.OnyxService.RegisterDevice:output_type -> sttattus.onyx.v1.RegisterDeviceResponse
-	245,  // 1124: sttattus.onyx.v1.OnyxService.AcknowledgePurge:output_type -> sttattus.onyx.v1.AcknowledgePurgeResponse
-	248,  // 1125: sttattus.onyx.v1.OnyxService.GetDeviceGrants:output_type -> sttattus.onyx.v1.GetDeviceGrantsResponse
-	250,  // 1126: sttattus.onyx.v1.OnyxService.RevokeMyDevice:output_type -> sttattus.onyx.v1.RevokeMyDeviceResponse
-	252,  // 1127: sttattus.onyx.v1.OnyxService.MarkMyDeviceLost:output_type -> sttattus.onyx.v1.MarkMyDeviceLostResponse
-	254,  // 1128: sttattus.onyx.v1.OnyxService.GetPurgeReceipt:output_type -> sttattus.onyx.v1.GetPurgeReceiptResponse
-	257,  // 1129: sttattus.onyx.v1.OnyxService.ListOfflineManifestItems:output_type -> sttattus.onyx.v1.ListOfflineManifestItemsResponse
-	260,  // 1130: sttattus.onyx.v1.OnyxService.RefreshOfflineRenditions:output_type -> sttattus.onyx.v1.RefreshOfflineRenditionsResponse
-	262,  // 1131: sttattus.onyx.v1.OnyxService.RecordOfflineEvent:output_type -> sttattus.onyx.v1.RecordOfflineEventResponse
-	264,  // 1132: sttattus.onyx.v1.OnyxService.GetYearInOnyx:output_type -> sttattus.onyx.v1.GetYearInOnyxResponse
-	267,  // 1133: sttattus.onyx.v1.OnyxService.GenerateAnnualArchive:output_type -> sttattus.onyx.v1.GenerateAnnualArchiveResponse
-	269,  // 1134: sttattus.onyx.v1.OnyxService.ReactToContent:output_type -> sttattus.onyx.v1.ReactToContentResponse
-	272,  // 1135: sttattus.onyx.v1.OnyxService.CreateIngestionItem:output_type -> sttattus.onyx.v1.CreateIngestionItemResponse
-	274,  // 1136: sttattus.onyx.v1.OnyxService.ListMyIngestionItems:output_type -> sttattus.onyx.v1.ListMyIngestionItemsResponse
-	276,  // 1137: sttattus.onyx.v1.OnyxService.GetIngestionItem:output_type -> sttattus.onyx.v1.GetIngestionItemResponse
-	278,  // 1138: sttattus.onyx.v1.OnyxService.RetryIngestionItem:output_type -> sttattus.onyx.v1.RetryIngestionItemResponse
-	280,  // 1139: sttattus.onyx.v1.OnyxService.SetIngestionItemState:output_type -> sttattus.onyx.v1.SetIngestionItemStateResponse
-	282,  // 1140: sttattus.onyx.v1.OnyxService.ResolveIngestionDuplicate:output_type -> sttattus.onyx.v1.ResolveIngestionDuplicateResponse
-	288,  // 1141: sttattus.onyx.v1.OnyxService.GetEvidenceWorkspace:output_type -> sttattus.onyx.v1.GetEvidenceWorkspaceResponse
-	292,  // 1142: sttattus.onyx.v1.OnyxService.GetEvidenceSourceHistory:output_type -> sttattus.onyx.v1.GetEvidenceSourceHistoryResponse
-	296,  // 1143: sttattus.onyx.v1.OnyxService.CreateEvidenceBrief:output_type -> sttattus.onyx.v1.CreateEvidenceBriefResponse
-	298,  // 1144: sttattus.onyx.v1.OnyxService.ListMyEvidenceBriefs:output_type -> sttattus.onyx.v1.ListMyEvidenceBriefsResponse
-	300,  // 1145: sttattus.onyx.v1.OnyxService.GetEvidenceBrief:output_type -> sttattus.onyx.v1.GetEvidenceBriefResponse
-	309,  // 1146: sttattus.onyx.v1.OnyxService.GetCreatorStudio:output_type -> sttattus.onyx.v1.GetCreatorStudioResponse
-	311,  // 1147: sttattus.onyx.v1.OnyxService.SubmitCreatorPitch:output_type -> sttattus.onyx.v1.SubmitCreatorPitchResponse
-	313,  // 1148: sttattus.onyx.v1.OnyxService.UpdateCreatorProject:output_type -> sttattus.onyx.v1.UpdateCreatorProjectResponse
-	315,  // 1149: sttattus.onyx.v1.OnyxService.SubmitCreatorProject:output_type -> sttattus.onyx.v1.SubmitCreatorProjectResponse
-	317,  // 1150: sttattus.onyx.v1.OnyxService.SignCreatorContract:output_type -> sttattus.onyx.v1.SignCreatorContractResponse
-	319,  // 1151: sttattus.onyx.v1.OnyxService.ListMyCreatorSubscriptionsDetailed:output_type -> sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedResponse
-	321,  // 1152: sttattus.onyx.v1.OnyxService.CancelCreatorSubscription:output_type -> sttattus.onyx.v1.CancelCreatorSubscriptionResponse
-	325,  // 1153: sttattus.onyx.v1.OnyxService.GetMyCommerce:output_type -> sttattus.onyx.v1.GetMyCommerceResponse
-	327,  // 1154: sttattus.onyx.v1.OnyxService.CreateCommerceCase:output_type -> sttattus.onyx.v1.CreateCommerceCaseResponse
-	346,  // 1155: sttattus.onyx.v1.OnyxService.ListResearchRooms:output_type -> sttattus.onyx.v1.ListResearchRoomsResponse
-	348,  // 1156: sttattus.onyx.v1.OnyxService.GetResearchRoom:output_type -> sttattus.onyx.v1.GetResearchRoomResponse
-	350,  // 1157: sttattus.onyx.v1.OnyxService.CreateResearchRoom:output_type -> sttattus.onyx.v1.CreateResearchRoomResponse
-	352,  // 1158: sttattus.onyx.v1.OnyxService.UpdateResearchRoom:output_type -> sttattus.onyx.v1.UpdateResearchRoomResponse
-	354,  // 1159: sttattus.onyx.v1.OnyxService.InviteResearchRoomMember:output_type -> sttattus.onyx.v1.InviteResearchRoomMemberResponse
-	356,  // 1160: sttattus.onyx.v1.OnyxService.RespondResearchRoomInvite:output_type -> sttattus.onyx.v1.RespondResearchRoomInviteResponse
-	358,  // 1161: sttattus.onyx.v1.OnyxService.ChangeResearchRoomMember:output_type -> sttattus.onyx.v1.ChangeResearchRoomMemberResponse
-	360,  // 1162: sttattus.onyx.v1.OnyxService.RevokeResearchRoomMember:output_type -> sttattus.onyx.v1.RevokeResearchRoomMemberResponse
-	362,  // 1163: sttattus.onyx.v1.OnyxService.AddResearchRoomItem:output_type -> sttattus.onyx.v1.AddResearchRoomItemResponse
-	364,  // 1164: sttattus.onyx.v1.OnyxService.RemoveResearchRoomItem:output_type -> sttattus.onyx.v1.RemoveResearchRoomItemResponse
-	366,  // 1165: sttattus.onyx.v1.OnyxService.PostResearchRoomComment:output_type -> sttattus.onyx.v1.PostResearchRoomCommentResponse
-	368,  // 1166: sttattus.onyx.v1.OnyxService.SetResearchRoomThreadStatus:output_type -> sttattus.onyx.v1.SetResearchRoomThreadStatusResponse
-	370,  // 1167: sttattus.onyx.v1.OnyxService.UpsertResearchRoomTask:output_type -> sttattus.onyx.v1.UpsertResearchRoomTaskResponse
-	372,  // 1168: sttattus.onyx.v1.OnyxService.UpsertResearchRoomMeeting:output_type -> sttattus.onyx.v1.UpsertResearchRoomMeetingResponse
-	374,  // 1169: sttattus.onyx.v1.OnyxService.UpsertResearchRoomDecision:output_type -> sttattus.onyx.v1.UpsertResearchRoomDecisionResponse
-	376,  // 1170: sttattus.onyx.v1.OnyxService.RecordResearchRoomApproval:output_type -> sttattus.onyx.v1.RecordResearchRoomApprovalResponse
-	379,  // 1171: sttattus.onyx.v1.OnyxService.SearchResearchRoom:output_type -> sttattus.onyx.v1.SearchResearchRoomResponse
-	381,  // 1172: sttattus.onyx.v1.OnyxService.RequestResearchRoomExport:output_type -> sttattus.onyx.v1.RequestResearchRoomExportResponse
-	383,  // 1173: sttattus.onyx.v1.OnyxService.ReportResearchRoomAbuse:output_type -> sttattus.onyx.v1.ReportResearchRoomAbuseResponse
-	385,  // 1174: sttattus.onyx.v1.OnyxService.ListResearchRoomAudit:output_type -> sttattus.onyx.v1.ListResearchRoomAuditResponse
-	387,  // 1175: sttattus.onyx.v1.OnyxService.ListResearchRoomGrants:output_type -> sttattus.onyx.v1.ListResearchRoomGrantsResponse
-	389,  // 1176: sttattus.onyx.v1.OnyxService.UpsertResearchRoomGrant:output_type -> sttattus.onyx.v1.UpsertResearchRoomGrantResponse
-	391,  // 1177: sttattus.onyx.v1.OnyxService.RevokeResearchRoomGrant:output_type -> sttattus.onyx.v1.RevokeResearchRoomGrantResponse
-	393,  // 1178: sttattus.onyx.v1.OnyxService.CreateResearchRoomShareLink:output_type -> sttattus.onyx.v1.CreateResearchRoomShareLinkResponse
-	395,  // 1179: sttattus.onyx.v1.OnyxService.ListResearchRoomShareLinks:output_type -> sttattus.onyx.v1.ListResearchRoomShareLinksResponse
-	397,  // 1180: sttattus.onyx.v1.OnyxService.RevokeResearchRoomShareLink:output_type -> sttattus.onyx.v1.RevokeResearchRoomShareLinkResponse
-	399,  // 1181: sttattus.onyx.v1.OnyxService.ResolveResearchRoomShareLink:output_type -> sttattus.onyx.v1.ResolveResearchRoomShareLinkResponse
-	401,  // 1182: sttattus.onyx.v1.OnyxService.GetResearchRoomOfflineManifest:output_type -> sttattus.onyx.v1.GetResearchRoomOfflineManifestResponse
-	403,  // 1183: sttattus.onyx.v1.OnyxService.AcknowledgeResearchRoomOfflinePurge:output_type -> sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeResponse
-	405,  // 1184: sttattus.onyx.v1.OnyxService.ListResearchRoomOfflinePurges:output_type -> sttattus.onyx.v1.ListResearchRoomOfflinePurgesResponse
-	407,  // 1185: sttattus.onyx.v1.OnyxService.LeaveResearchRoom:output_type -> sttattus.onyx.v1.LeaveResearchRoomResponse
-	418,  // 1186: sttattus.onyx.v1.OnyxService.GetPersonalIntelligenceGraph:output_type -> sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse
-	420,  // 1187: sttattus.onyx.v1.OnyxService.UpsertIntelligenceGraphNode:output_type -> sttattus.onyx.v1.UpsertIntelligenceGraphNodeResponse
-	422,  // 1188: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphNodeState:output_type -> sttattus.onyx.v1.SetIntelligenceGraphNodeStateResponse
-	424,  // 1189: sttattus.onyx.v1.OnyxService.MergeIntelligenceGraphNodes:output_type -> sttattus.onyx.v1.MergeIntelligenceGraphNodesResponse
-	426,  // 1190: sttattus.onyx.v1.OnyxService.SplitIntelligenceGraphNode:output_type -> sttattus.onyx.v1.SplitIntelligenceGraphNodeResponse
-	428,  // 1191: sttattus.onyx.v1.OnyxService.UpsertIntelligenceGraphEdge:output_type -> sttattus.onyx.v1.UpsertIntelligenceGraphEdgeResponse
-	430,  // 1192: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphEdgeState:output_type -> sttattus.onyx.v1.SetIntelligenceGraphEdgeStateResponse
-	432,  // 1193: sttattus.onyx.v1.OnyxService.GenerateIntelligenceGraphSuggestions:output_type -> sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsResponse
-	434,  // 1194: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphSuggestions:output_type -> sttattus.onyx.v1.ListIntelligenceGraphSuggestionsResponse
-	436,  // 1195: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphSuggestionState:output_type -> sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse
-	438,  // 1196: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphTimeline:output_type -> sttattus.onyx.v1.ListIntelligenceGraphTimelineResponse
-	440,  // 1197: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphResurfacing:output_type -> sttattus.onyx.v1.ListIntelligenceGraphResurfacingResponse
-	442,  // 1198: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphResurfacingState:output_type -> sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateResponse
-	444,  // 1199: sttattus.onyx.v1.OnyxService.CreateIntelligenceGraphMeetingBrief:output_type -> sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefResponse
-	446,  // 1200: sttattus.onyx.v1.OnyxService.GetIntelligenceGraphMeetingBrief:output_type -> sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefResponse
-	448,  // 1201: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphMeetingBriefs:output_type -> sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsResponse
-	450,  // 1202: sttattus.onyx.v1.OnyxService.ExportPersonalIntelligenceGraph:output_type -> sttattus.onyx.v1.ExportPersonalIntelligenceGraphResponse
-	452,  // 1203: sttattus.onyx.v1.OnyxService.RebuildPersonalIntelligenceGraph:output_type -> sttattus.onyx.v1.RebuildPersonalIntelligenceGraphResponse
-	471,  // 1204: sttattus.onyx.v1.OnyxService.ListLanguageConfigs:output_type -> sttattus.onyx.v1.ListLanguageConfigsResponse
-	473,  // 1205: sttattus.onyx.v1.OnyxService.ListContentEditions:output_type -> sttattus.onyx.v1.ListContentEditionsResponse
-	475,  // 1206: sttattus.onyx.v1.OnyxService.GetAlignedBlocks:output_type -> sttattus.onyx.v1.GetAlignedBlocksResponse
-	477,  // 1207: sttattus.onyx.v1.OnyxService.ListTermbaseEntries:output_type -> sttattus.onyx.v1.ListTermbaseEntriesResponse
-	479,  // 1208: sttattus.onyx.v1.OnyxService.CrossLanguageSearch:output_type -> sttattus.onyx.v1.CrossLanguageSearchResponse
-	481,  // 1209: sttattus.onyx.v1.OnyxService.GetMultilingualPreferences:output_type -> sttattus.onyx.v1.GetMultilingualPreferencesResponse
-	483,  // 1210: sttattus.onyx.v1.OnyxService.UpdateMultilingualPreferences:output_type -> sttattus.onyx.v1.UpdateMultilingualPreferencesResponse
-	485,  // 1211: sttattus.onyx.v1.OnyxService.GetMultilingualAudioVideo:output_type -> sttattus.onyx.v1.GetMultilingualAudioVideoResponse
-	487,  // 1212: sttattus.onyx.v1.OnyxService.GetMultilingualOfflineManifest:output_type -> sttattus.onyx.v1.GetMultilingualOfflineManifestResponse
-	489,  // 1213: sttattus.onyx.v1.OnyxService.ReportTranslationIssue:output_type -> sttattus.onyx.v1.ReportTranslationIssueResponse
-	491,  // 1214: sttattus.onyx.v1.OnyxService.RequestMultilingualExport:output_type -> sttattus.onyx.v1.RequestMultilingualExportResponse
-	493,  // 1215: sttattus.onyx.v1.OnyxService.GetMultilingualExport:output_type -> sttattus.onyx.v1.GetMultilingualExportResponse
-	503,  // 1216: sttattus.onyx.v1.OnyxService.GetLivingArchiveDashboard:output_type -> sttattus.onyx.v1.GetLivingArchiveDashboardResponse
-	505,  // 1217: sttattus.onyx.v1.OnyxService.UpsertLivingArchivePolicy:output_type -> sttattus.onyx.v1.UpsertLivingArchivePolicyResponse
-	507,  // 1218: sttattus.onyx.v1.OnyxService.PreviewLivingArchivePolicy:output_type -> sttattus.onyx.v1.PreviewLivingArchivePolicyResponse
-	509,  // 1219: sttattus.onyx.v1.OnyxService.GenerateLivingArchiveEdition:output_type -> sttattus.onyx.v1.GenerateLivingArchiveEditionResponse
-	511,  // 1220: sttattus.onyx.v1.OnyxService.LinkLivingArchiveLegacyEscrow:output_type -> sttattus.onyx.v1.LinkLivingArchiveLegacyEscrowResponse
-	513,  // 1221: sttattus.onyx.v1.OnyxService.UpsertLivingArchiveContact:output_type -> sttattus.onyx.v1.UpsertLivingArchiveContactResponse
-	515,  // 1222: sttattus.onyx.v1.OnyxService.DeleteLivingArchiveContact:output_type -> sttattus.onyx.v1.DeleteLivingArchiveContactResponse
-	517,  // 1223: sttattus.onyx.v1.OnyxService.SubmitLivingArchivePolicy:output_type -> sttattus.onyx.v1.SubmitLivingArchivePolicyResponse
-	519,  // 1224: sttattus.onyx.v1.OnyxService.RevokeLivingArchivePolicy:output_type -> sttattus.onyx.v1.RevokeLivingArchivePolicyResponse
-	521,  // 1225: sttattus.onyx.v1.OnyxService.ConfirmLivingArchiveReview:output_type -> sttattus.onyx.v1.ConfirmLivingArchiveReviewResponse
-	523,  // 1226: sttattus.onyx.v1.OnyxService.ContestLivingArchiveRelease:output_type -> sttattus.onyx.v1.ContestLivingArchiveReleaseResponse
-	532,  // 1227: sttattus.onyx.v1.OnyxService.GetForensicProtectionDashboard:output_type -> sttattus.onyx.v1.GetForensicProtectionDashboardResponse
-	534,  // 1228: sttattus.onyx.v1.OnyxService.IssueForensicManifest:output_type -> sttattus.onyx.v1.IssueForensicManifestResponse
-	536,  // 1229: sttattus.onyx.v1.OnyxService.RevokeForensicManifest:output_type -> sttattus.onyx.v1.RevokeForensicManifestResponse
-	538,  // 1230: sttattus.onyx.v1.OnyxService.RespondForensicCase:output_type -> sttattus.onyx.v1.RespondForensicCaseResponse
-	540,  // 1231: sttattus.onyx.v1.OnyxService.FileForensicAppeal:output_type -> sttattus.onyx.v1.FileForensicAppealResponse
-	542,  // 1232: sttattus.onyx.v1.OnyxService.PostForensicAppealMessage:output_type -> sttattus.onyx.v1.PostForensicAppealMessageResponse
-	544,  // 1233: sttattus.onyx.v1.OnyxService.WithdrawForensicAppeal:output_type -> sttattus.onyx.v1.WithdrawForensicAppealResponse
-	558,  // 1234: sttattus.onyx.v1.OnyxService.GetIntegrationDashboard:output_type -> sttattus.onyx.v1.GetIntegrationDashboardResponse
-	560,  // 1235: sttattus.onyx.v1.OnyxService.AuthorizeIntegration:output_type -> sttattus.onyx.v1.AuthorizeIntegrationResponse
-	562,  // 1236: sttattus.onyx.v1.OnyxService.RevokeIntegrationGrant:output_type -> sttattus.onyx.v1.RevokeIntegrationGrantResponse
-	564,  // 1237: sttattus.onyx.v1.OnyxService.UpsertIntegrationConnector:output_type -> sttattus.onyx.v1.UpsertIntegrationConnectorResponse
-	566,  // 1238: sttattus.onyx.v1.OnyxService.SetIntegrationConnectorState:output_type -> sttattus.onyx.v1.SetIntegrationConnectorStateResponse
-	568,  // 1239: sttattus.onyx.v1.OnyxService.RunIntegrationConnector:output_type -> sttattus.onyx.v1.RunIntegrationConnectorResponse
-	570,  // 1240: sttattus.onyx.v1.OnyxService.GetIntegrationArtifact:output_type -> sttattus.onyx.v1.GetIntegrationArtifactResponse
-	572,  // 1241: sttattus.onyx.v1.OnyxService.ResolveIntegrationConflict:output_type -> sttattus.onyx.v1.ResolveIntegrationConflictResponse
-	574,  // 1242: sttattus.onyx.v1.OnyxService.DispatchIntegrationBridge:output_type -> sttattus.onyx.v1.DispatchIntegrationBridgeResponse
-	576,  // 1243: sttattus.onyx.v1.OnyxService.SubmitIntegrationOperationsCase:output_type -> sttattus.onyx.v1.SubmitIntegrationOperationsCaseResponse
-	592,  // 1244: sttattus.onyx.v1.OnyxService.GetSpatialCanvasDashboard:output_type -> sttattus.onyx.v1.GetSpatialCanvasDashboardResponse
-	594,  // 1245: sttattus.onyx.v1.OnyxService.ListSpatialCanvasTemplates:output_type -> sttattus.onyx.v1.ListSpatialCanvasTemplatesResponse
-	596,  // 1246: sttattus.onyx.v1.OnyxService.CreateSpatialCanvas:output_type -> sttattus.onyx.v1.CreateSpatialCanvasResponse
-	598,  // 1247: sttattus.onyx.v1.OnyxService.GetSpatialCanvas:output_type -> sttattus.onyx.v1.GetSpatialCanvasResponse
-	600,  // 1248: sttattus.onyx.v1.OnyxService.ApplySpatialCanvasOperations:output_type -> sttattus.onyx.v1.ApplySpatialCanvasOperationsResponse
-	602,  // 1249: sttattus.onyx.v1.OnyxService.ResolveSpatialCanvasConflict:output_type -> sttattus.onyx.v1.ResolveSpatialCanvasConflictResponse
-	604,  // 1250: sttattus.onyx.v1.OnyxService.CreateSpatialCanvasSnapshot:output_type -> sttattus.onyx.v1.CreateSpatialCanvasSnapshotResponse
-	606,  // 1251: sttattus.onyx.v1.OnyxService.RestoreSpatialCanvasSnapshot:output_type -> sttattus.onyx.v1.RestoreSpatialCanvasSnapshotResponse
-	608,  // 1252: sttattus.onyx.v1.OnyxService.UpsertSpatialCanvasComment:output_type -> sttattus.onyx.v1.UpsertSpatialCanvasCommentResponse
-	610,  // 1253: sttattus.onyx.v1.OnyxService.SetSpatialCanvasCommentState:output_type -> sttattus.onyx.v1.SetSpatialCanvasCommentStateResponse
-	612,  // 1254: sttattus.onyx.v1.OnyxService.GenerateSpatialCanvasProposals:output_type -> sttattus.onyx.v1.GenerateSpatialCanvasProposalsResponse
-	614,  // 1255: sttattus.onyx.v1.OnyxService.SetSpatialCanvasProposalState:output_type -> sttattus.onyx.v1.SetSpatialCanvasProposalStateResponse
-	616,  // 1256: sttattus.onyx.v1.OnyxService.RequestSpatialCanvasExport:output_type -> sttattus.onyx.v1.RequestSpatialCanvasExportResponse
-	618,  // 1257: sttattus.onyx.v1.OnyxService.GetSpatialCanvasExport:output_type -> sttattus.onyx.v1.GetSpatialCanvasExportResponse
-	620,  // 1258: sttattus.onyx.v1.OnyxService.UpsertSpatialCanvasCollaborator:output_type -> sttattus.onyx.v1.UpsertSpatialCanvasCollaboratorResponse
-	622,  // 1259: sttattus.onyx.v1.OnyxService.ReportSpatialCanvasAbuse:output_type -> sttattus.onyx.v1.ReportSpatialCanvasAbuseResponse
-	633,  // 1260: sttattus.onyx.v1.OnyxService.GetRecallDashboard:output_type -> sttattus.onyx.v1.GetRecallDashboardResponse
-	635,  // 1261: sttattus.onyx.v1.OnyxService.ListRecallDecks:output_type -> sttattus.onyx.v1.ListRecallDecksResponse
-	637,  // 1262: sttattus.onyx.v1.OnyxService.ListMemoryItems:output_type -> sttattus.onyx.v1.ListMemoryItemsResponse
-	639,  // 1263: sttattus.onyx.v1.OnyxService.UpsertRecallDeck:output_type -> sttattus.onyx.v1.UpsertRecallDeckResponse
-	641,  // 1264: sttattus.onyx.v1.OnyxService.GenerateRecallItems:output_type -> sttattus.onyx.v1.GenerateRecallItemsResponse
-	643,  // 1265: sttattus.onyx.v1.OnyxService.UpsertMemoryItem:output_type -> sttattus.onyx.v1.UpsertMemoryItemResponse
-	645,  // 1266: sttattus.onyx.v1.OnyxService.SetMemoryItemState:output_type -> sttattus.onyx.v1.SetMemoryItemStateResponse
-	647,  // 1267: sttattus.onyx.v1.OnyxService.GetRecallReviewQueue:output_type -> sttattus.onyx.v1.GetRecallReviewQueueResponse
-	649,  // 1268: sttattus.onyx.v1.OnyxService.RecordRecallReviewBatch:output_type -> sttattus.onyx.v1.RecordRecallReviewBatchResponse
-	651,  // 1269: sttattus.onyx.v1.OnyxService.ResolveRecallInvalidation:output_type -> sttattus.onyx.v1.ResolveRecallInvalidationResponse
-	653,  // 1270: sttattus.onyx.v1.OnyxService.UpdateRecallPreferences:output_type -> sttattus.onyx.v1.UpdateRecallPreferencesResponse
-	655,  // 1271: sttattus.onyx.v1.OnyxService.ExportRecallData:output_type -> sttattus.onyx.v1.ExportRecallDataResponse
-	657,  // 1272: sttattus.onyx.v1.OnyxService.ImportRecallData:output_type -> sttattus.onyx.v1.ImportRecallDataResponse
-	659,  // 1273: sttattus.onyx.v1.OnyxService.ReportRecallItem:output_type -> sttattus.onyx.v1.ReportRecallItemResponse
-	661,  // 1274: sttattus.onyx.v1.OnyxService.RecordRecallTransfer:output_type -> sttattus.onyx.v1.RecordRecallTransferResponse
-	677,  // 1275: sttattus.onyx.v1.OnyxService.GetDraftingDashboard:output_type -> sttattus.onyx.v1.GetDraftingDashboardResponse
-	679,  // 1276: sttattus.onyx.v1.OnyxService.ListDrafts:output_type -> sttattus.onyx.v1.ListDraftsResponse
-	681,  // 1277: sttattus.onyx.v1.OnyxService.GetDraft:output_type -> sttattus.onyx.v1.GetDraftResponse
-	683,  // 1278: sttattus.onyx.v1.OnyxService.CreateDraft:output_type -> sttattus.onyx.v1.CreateDraftResponse
-	685,  // 1279: sttattus.onyx.v1.OnyxService.UpsertDraftBlock:output_type -> sttattus.onyx.v1.UpsertDraftBlockResponse
-	687,  // 1280: sttattus.onyx.v1.OnyxService.DeleteDraftBlock:output_type -> sttattus.onyx.v1.DeleteDraftBlockResponse
-	689,  // 1281: sttattus.onyx.v1.OnyxService.UpsertDraftCitation:output_type -> sttattus.onyx.v1.UpsertDraftCitationResponse
-	691,  // 1282: sttattus.onyx.v1.OnyxService.VerifyDraft:output_type -> sttattus.onyx.v1.VerifyDraftResponse
-	696,  // 1283: sttattus.onyx.v1.OnyxService.GetDraftEvidenceReview:output_type -> sttattus.onyx.v1.GetDraftEvidenceReviewResponse
-	699,  // 1284: sttattus.onyx.v1.OnyxService.CompareDraftEvidence:output_type -> sttattus.onyx.v1.CompareDraftEvidenceResponse
-	701,  // 1285: sttattus.onyx.v1.OnyxService.CreateDraftRevision:output_type -> sttattus.onyx.v1.CreateDraftRevisionResponse
-	703,  // 1286: sttattus.onyx.v1.OnyxService.CreateDraftBranch:output_type -> sttattus.onyx.v1.CreateDraftBranchResponse
-	705,  // 1287: sttattus.onyx.v1.OnyxService.RestoreDraftRevision:output_type -> sttattus.onyx.v1.RestoreDraftRevisionResponse
-	707,  // 1288: sttattus.onyx.v1.OnyxService.CompareDraftRevisions:output_type -> sttattus.onyx.v1.CompareDraftRevisionsResponse
-	710,  // 1289: sttattus.onyx.v1.OnyxService.PreviewDraftRestore:output_type -> sttattus.onyx.v1.PreviewDraftRestoreResponse
-	714,  // 1290: sttattus.onyx.v1.OnyxService.PreviewDraftMerge:output_type -> sttattus.onyx.v1.PreviewDraftMergeResponse
-	716,  // 1291: sttattus.onyx.v1.OnyxService.GenerateDraftSuggestion:output_type -> sttattus.onyx.v1.GenerateDraftSuggestionResponse
-	718,  // 1292: sttattus.onyx.v1.OnyxService.SetDraftSuggestionState:output_type -> sttattus.onyx.v1.SetDraftSuggestionStateResponse
-	720,  // 1293: sttattus.onyx.v1.OnyxService.ResolveDraftConflict:output_type -> sttattus.onyx.v1.ResolveDraftConflictResponse
-	722,  // 1294: sttattus.onyx.v1.OnyxService.RequestDraftExport:output_type -> sttattus.onyx.v1.RequestDraftExportResponse
-	724,  // 1295: sttattus.onyx.v1.OnyxService.GetDraftExport:output_type -> sttattus.onyx.v1.GetDraftExportResponse
-	726,  // 1296: sttattus.onyx.v1.OnyxService.CreateDraftHandoff:output_type -> sttattus.onyx.v1.CreateDraftHandoffResponse
-	728,  // 1297: sttattus.onyx.v1.OnyxService.ReportDraftIncident:output_type -> sttattus.onyx.v1.ReportDraftIncidentResponse
-	735,  // 1298: sttattus.onyx.v1.OnyxService.GetDraftCollaboration:output_type -> sttattus.onyx.v1.GetDraftCollaborationResponse
-	737,  // 1299: sttattus.onyx.v1.OnyxService.InviteDraftCollaborator:output_type -> sttattus.onyx.v1.InviteDraftCollaboratorResponse
-	739,  // 1300: sttattus.onyx.v1.OnyxService.RemoveDraftCollaborator:output_type -> sttattus.onyx.v1.RemoveDraftCollaboratorResponse
-	741,  // 1301: sttattus.onyx.v1.OnyxService.CreateDraftComment:output_type -> sttattus.onyx.v1.CreateDraftCommentResponse
-	743,  // 1302: sttattus.onyx.v1.OnyxService.SetDraftCommentState:output_type -> sttattus.onyx.v1.SetDraftCommentStateResponse
-	745,  // 1303: sttattus.onyx.v1.OnyxService.CreateDraftAssignment:output_type -> sttattus.onyx.v1.CreateDraftAssignmentResponse
-	747,  // 1304: sttattus.onyx.v1.OnyxService.SetDraftAssignmentState:output_type -> sttattus.onyx.v1.SetDraftAssignmentStateResponse
-	749,  // 1305: sttattus.onyx.v1.OnyxService.ListDraftNotifications:output_type -> sttattus.onyx.v1.ListDraftNotificationsResponse
-	751,  // 1306: sttattus.onyx.v1.OnyxService.MarkDraftNotificationRead:output_type -> sttattus.onyx.v1.MarkDraftNotificationReadResponse
-	753,  // 1307: sttattus.onyx.v1.OnyxService.SetDraftPresence:output_type -> sttattus.onyx.v1.SetDraftPresenceResponse
-	756,  // 1308: sttattus.onyx.v1.OnyxService.GetDraftOperationStatus:output_type -> sttattus.onyx.v1.GetDraftOperationStatusResponse
-	1034, // [1034:1309] is the sub-list for method output_type
-	759,  // [759:1034] is the sub-list for method input_type
-	759,  // [759:759] is the sub-list for extension type_name
-	759,  // [759:759] is the sub-list for extension extendee
-	0,    // [0:759] is the sub-list for field type_name
+	759,  // 728: sttattus.onyx.v1.DraftCollaborator.added_at:type_name -> google.protobuf.Timestamp
+	759,  // 729: sttattus.onyx.v1.DraftCollaborator.removed_at:type_name -> google.protobuf.Timestamp
+	759,  // 730: sttattus.onyx.v1.DraftComment.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 731: sttattus.onyx.v1.DraftComment.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 732: sttattus.onyx.v1.DraftComment.resolved_at:type_name -> google.protobuf.Timestamp
+	759,  // 733: sttattus.onyx.v1.DraftAssignment.due_at:type_name -> google.protobuf.Timestamp
+	759,  // 734: sttattus.onyx.v1.DraftAssignment.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 735: sttattus.onyx.v1.DraftAssignment.updated_at:type_name -> google.protobuf.Timestamp
+	759,  // 736: sttattus.onyx.v1.DraftAssignment.completed_at:type_name -> google.protobuf.Timestamp
+	759,  // 737: sttattus.onyx.v1.DraftNotification.created_at:type_name -> google.protobuf.Timestamp
+	757,  // 738: sttattus.onyx.v1.DraftNotification.summary_localizations:type_name -> sttattus.onyx.v1.DraftNotification.SummaryLocalizationsEntry
+	759,  // 739: sttattus.onyx.v1.DraftPresence.last_seen_at:type_name -> google.protobuf.Timestamp
+	759,  // 740: sttattus.onyx.v1.DraftPresence.expires_at:type_name -> google.protobuf.Timestamp
+	729,  // 741: sttattus.onyx.v1.GetDraftCollaborationResponse.collaborators:type_name -> sttattus.onyx.v1.DraftCollaborator
+	730,  // 742: sttattus.onyx.v1.GetDraftCollaborationResponse.comments:type_name -> sttattus.onyx.v1.DraftComment
+	731,  // 743: sttattus.onyx.v1.GetDraftCollaborationResponse.assignments:type_name -> sttattus.onyx.v1.DraftAssignment
+	732,  // 744: sttattus.onyx.v1.GetDraftCollaborationResponse.notifications:type_name -> sttattus.onyx.v1.DraftNotification
+	733,  // 745: sttattus.onyx.v1.GetDraftCollaborationResponse.presence:type_name -> sttattus.onyx.v1.DraftPresence
+	729,  // 746: sttattus.onyx.v1.InviteDraftCollaboratorResponse.collaborator:type_name -> sttattus.onyx.v1.DraftCollaborator
+	730,  // 747: sttattus.onyx.v1.CreateDraftCommentResponse.comment:type_name -> sttattus.onyx.v1.DraftComment
+	730,  // 748: sttattus.onyx.v1.SetDraftCommentStateResponse.comment:type_name -> sttattus.onyx.v1.DraftComment
+	759,  // 749: sttattus.onyx.v1.CreateDraftAssignmentRequest.due_at:type_name -> google.protobuf.Timestamp
+	731,  // 750: sttattus.onyx.v1.CreateDraftAssignmentResponse.assignment:type_name -> sttattus.onyx.v1.DraftAssignment
+	731,  // 751: sttattus.onyx.v1.SetDraftAssignmentStateResponse.assignment:type_name -> sttattus.onyx.v1.DraftAssignment
+	732,  // 752: sttattus.onyx.v1.ListDraftNotificationsResponse.notifications:type_name -> sttattus.onyx.v1.DraftNotification
+	732,  // 753: sttattus.onyx.v1.MarkDraftNotificationReadResponse.notification:type_name -> sttattus.onyx.v1.DraftNotification
+	733,  // 754: sttattus.onyx.v1.SetDraftPresenceResponse.presence:type_name -> sttattus.onyx.v1.DraftPresence
+	759,  // 755: sttattus.onyx.v1.DraftOperationStatus.sla_due_at:type_name -> google.protobuf.Timestamp
+	759,  // 756: sttattus.onyx.v1.DraftOperationStatus.created_at:type_name -> google.protobuf.Timestamp
+	759,  // 757: sttattus.onyx.v1.DraftOperationStatus.updated_at:type_name -> google.protobuf.Timestamp
+	758,  // 758: sttattus.onyx.v1.DraftOperationStatus.explanation_localizations:type_name -> sttattus.onyx.v1.DraftOperationStatus.ExplanationLocalizationsEntry
+	754,  // 759: sttattus.onyx.v1.GetDraftOperationStatusResponse.operations:type_name -> sttattus.onyx.v1.DraftOperationStatus
+	21,   // 760: sttattus.onyx.v1.OnyxService.CreateProfile:input_type -> sttattus.onyx.v1.CreateProfileRequest
+	23,   // 761: sttattus.onyx.v1.OnyxService.GetProfile:input_type -> sttattus.onyx.v1.GetProfileRequest
+	25,   // 762: sttattus.onyx.v1.OnyxService.ListContent:input_type -> sttattus.onyx.v1.ListContentRequest
+	27,   // 763: sttattus.onyx.v1.OnyxService.Subscribe:input_type -> sttattus.onyx.v1.SubscribeRequest
+	29,   // 764: sttattus.onyx.v1.OnyxService.GetContent:input_type -> sttattus.onyx.v1.GetContentRequest
+	31,   // 765: sttattus.onyx.v1.OnyxService.ListShelf:input_type -> sttattus.onyx.v1.ListShelfRequest
+	33,   // 766: sttattus.onyx.v1.OnyxService.ListContinue:input_type -> sttattus.onyx.v1.ListContinueRequest
+	35,   // 767: sttattus.onyx.v1.OnyxService.GetShelves:input_type -> sttattus.onyx.v1.GetShelvesRequest
+	38,   // 768: sttattus.onyx.v1.OnyxService.RecordProgress:input_type -> sttattus.onyx.v1.RecordProgressRequest
+	40,   // 769: sttattus.onyx.v1.OnyxService.RedeemContent:input_type -> sttattus.onyx.v1.RedeemContentRequest
+	42,   // 770: sttattus.onyx.v1.OnyxService.CreateSubscriptionCheckout:input_type -> sttattus.onyx.v1.CreateSubscriptionCheckoutRequest
+	45,   // 771: sttattus.onyx.v1.OnyxService.GetCreator:input_type -> sttattus.onyx.v1.GetCreatorRequest
+	47,   // 772: sttattus.onyx.v1.OnyxService.ListCreatorWorks:input_type -> sttattus.onyx.v1.ListCreatorWorksRequest
+	49,   // 773: sttattus.onyx.v1.OnyxService.FollowCreator:input_type -> sttattus.onyx.v1.FollowCreatorRequest
+	51,   // 774: sttattus.onyx.v1.OnyxService.SearchContent:input_type -> sttattus.onyx.v1.SearchContentRequest
+	54,   // 775: sttattus.onyx.v1.OnyxService.AddNote:input_type -> sttattus.onyx.v1.AddNoteRequest
+	56,   // 776: sttattus.onyx.v1.OnyxService.ListMyNotes:input_type -> sttattus.onyx.v1.ListMyNotesRequest
+	58,   // 777: sttattus.onyx.v1.OnyxService.DeleteNote:input_type -> sttattus.onyx.v1.DeleteNoteRequest
+	61,   // 778: sttattus.onyx.v1.OnyxService.UpsertReaderAnnotation:input_type -> sttattus.onyx.v1.UpsertReaderAnnotationRequest
+	63,   // 779: sttattus.onyx.v1.OnyxService.DeleteReaderAnnotation:input_type -> sttattus.onyx.v1.DeleteReaderAnnotationRequest
+	65,   // 780: sttattus.onyx.v1.OnyxService.ListMyReaderAnnotations:input_type -> sttattus.onyx.v1.ListMyReaderAnnotationsRequest
+	68,   // 781: sttattus.onyx.v1.OnyxService.SearchReader:input_type -> sttattus.onyx.v1.SearchReaderRequest
+	71,   // 782: sttattus.onyx.v1.OnyxService.SearchIntelligence:input_type -> sttattus.onyx.v1.SearchIntelligenceRequest
+	74,   // 783: sttattus.onyx.v1.OnyxService.RecordIntelligenceSearchOutcome:input_type -> sttattus.onyx.v1.RecordIntelligenceSearchOutcomeRequest
+	77,   // 784: sttattus.onyx.v1.OnyxService.ListSavedQueries:input_type -> sttattus.onyx.v1.ListSavedQueriesRequest
+	79,   // 785: sttattus.onyx.v1.OnyxService.UpsertSavedQuery:input_type -> sttattus.onyx.v1.UpsertSavedQueryRequest
+	81,   // 786: sttattus.onyx.v1.OnyxService.DeleteSavedQuery:input_type -> sttattus.onyx.v1.DeleteSavedQueryRequest
+	85,   // 787: sttattus.onyx.v1.OnyxService.ListWatchlists:input_type -> sttattus.onyx.v1.ListWatchlistsRequest
+	87,   // 788: sttattus.onyx.v1.OnyxService.UpsertWatchlist:input_type -> sttattus.onyx.v1.UpsertWatchlistRequest
+	89,   // 789: sttattus.onyx.v1.OnyxService.DeleteWatchlist:input_type -> sttattus.onyx.v1.DeleteWatchlistRequest
+	91,   // 790: sttattus.onyx.v1.OnyxService.RefreshWatchlist:input_type -> sttattus.onyx.v1.RefreshWatchlistRequest
+	94,   // 791: sttattus.onyx.v1.OnyxService.ListIntelligenceAlerts:input_type -> sttattus.onyx.v1.ListIntelligenceAlertsRequest
+	96,   // 792: sttattus.onyx.v1.OnyxService.SetIntelligenceAlertState:input_type -> sttattus.onyx.v1.SetIntelligenceAlertStateRequest
+	99,   // 793: sttattus.onyx.v1.OnyxService.GetIntelligenceQueue:input_type -> sttattus.onyx.v1.GetIntelligenceQueueRequest
+	101,  // 794: sttattus.onyx.v1.OnyxService.RecordIntelligenceFeedback:input_type -> sttattus.onyx.v1.RecordIntelligenceFeedbackRequest
+	103,  // 795: sttattus.onyx.v1.OnyxService.ExportReaderData:input_type -> sttattus.onyx.v1.ExportReaderDataRequest
+	106,  // 796: sttattus.onyx.v1.OnyxService.ListReaderSyncChanges:input_type -> sttattus.onyx.v1.ListReaderSyncChangesRequest
+	108,  // 797: sttattus.onyx.v1.OnyxService.ListMyUnlocks:input_type -> sttattus.onyx.v1.ListMyUnlocksRequest
+	110,  // 798: sttattus.onyx.v1.OnyxService.ListMySubscriptions:input_type -> sttattus.onyx.v1.ListMySubscriptionsRequest
+	112,  // 799: sttattus.onyx.v1.OnyxService.ListMyFollows:input_type -> sttattus.onyx.v1.ListMyFollowsRequest
+	115,  // 800: sttattus.onyx.v1.OnyxService.ListSovereignWindow:input_type -> sttattus.onyx.v1.ListSovereignWindowRequest
+	118,  // 801: sttattus.onyx.v1.OnyxService.ListSeries:input_type -> sttattus.onyx.v1.ListSeriesRequest
+	120,  // 802: sttattus.onyx.v1.OnyxService.GetSeries:input_type -> sttattus.onyx.v1.GetSeriesRequest
+	123,  // 803: sttattus.onyx.v1.OnyxService.GenerateCaptions:input_type -> sttattus.onyx.v1.GenerateCaptionsRequest
+	125,  // 804: sttattus.onyx.v1.OnyxService.GetCaptionJob:input_type -> sttattus.onyx.v1.GetCaptionJobRequest
+	128,  // 805: sttattus.onyx.v1.OnyxService.GetListeningPreferences:input_type -> sttattus.onyx.v1.GetListeningPreferencesRequest
+	130,  // 806: sttattus.onyx.v1.OnyxService.UpdateListeningPreferences:input_type -> sttattus.onyx.v1.UpdateListeningPreferencesRequest
+	133,  // 807: sttattus.onyx.v1.OnyxService.CreateListeningBookmark:input_type -> sttattus.onyx.v1.CreateListeningBookmarkRequest
+	135,  // 808: sttattus.onyx.v1.OnyxService.ListListeningBookmarks:input_type -> sttattus.onyx.v1.ListListeningBookmarksRequest
+	137,  // 809: sttattus.onyx.v1.OnyxService.DeleteListeningBookmark:input_type -> sttattus.onyx.v1.DeleteListeningBookmarkRequest
+	140,  // 810: sttattus.onyx.v1.OnyxService.ListListeningQueue:input_type -> sttattus.onyx.v1.ListListeningQueueRequest
+	142,  // 811: sttattus.onyx.v1.OnyxService.SetListeningQueue:input_type -> sttattus.onyx.v1.SetListeningQueueRequest
+	147,  // 812: sttattus.onyx.v1.OnyxService.CreateAudioOverview:input_type -> sttattus.onyx.v1.CreateAudioOverviewRequest
+	149,  // 813: sttattus.onyx.v1.OnyxService.ListAudioOverviews:input_type -> sttattus.onyx.v1.ListAudioOverviewsRequest
+	151,  // 814: sttattus.onyx.v1.OnyxService.GetAudioOverview:input_type -> sttattus.onyx.v1.GetAudioOverviewRequest
+	153,  // 815: sttattus.onyx.v1.OnyxService.DeleteAudioOverview:input_type -> sttattus.onyx.v1.DeleteAudioOverviewRequest
+	156,  // 816: sttattus.onyx.v1.OnyxService.ListListeningPronunciations:input_type -> sttattus.onyx.v1.ListListeningPronunciationsRequest
+	158,  // 817: sttattus.onyx.v1.OnyxService.GetTodaySummary:input_type -> sttattus.onyx.v1.GetTodaySummaryRequest
+	161,  // 818: sttattus.onyx.v1.OnyxService.GetCrossPillarUnlocks:input_type -> sttattus.onyx.v1.GetCrossPillarUnlocksRequest
+	165,  // 819: sttattus.onyx.v1.OnyxService.StartConciergeThread:input_type -> sttattus.onyx.v1.StartConciergeThreadRequest
+	167,  // 820: sttattus.onyx.v1.OnyxService.ListMyConciergeThreads:input_type -> sttattus.onyx.v1.ListMyConciergeThreadsRequest
+	169,  // 821: sttattus.onyx.v1.OnyxService.GetConciergeThread:input_type -> sttattus.onyx.v1.GetConciergeThreadRequest
+	171,  // 822: sttattus.onyx.v1.OnyxService.PostConciergeMessage:input_type -> sttattus.onyx.v1.PostConciergeMessageRequest
+	174,  // 823: sttattus.onyx.v1.OnyxService.ListLiveEvents:input_type -> sttattus.onyx.v1.ListLiveEventsRequest
+	176,  // 824: sttattus.onyx.v1.OnyxService.GetLiveEvent:input_type -> sttattus.onyx.v1.GetLiveEventRequest
+	178,  // 825: sttattus.onyx.v1.OnyxService.RsvpLiveEvent:input_type -> sttattus.onyx.v1.RsvpLiveEventRequest
+	192,  // 826: sttattus.onyx.v1.OnyxService.GetLiveSalon:input_type -> sttattus.onyx.v1.GetLiveSalonRequest
+	194,  // 827: sttattus.onyx.v1.OnyxService.UpsertLiveReservation:input_type -> sttattus.onyx.v1.UpsertLiveReservationRequest
+	196,  // 828: sttattus.onyx.v1.OnyxService.InviteLiveGuest:input_type -> sttattus.onyx.v1.InviteLiveGuestRequest
+	198,  // 829: sttattus.onyx.v1.OnyxService.GenerateLiveCalendarPass:input_type -> sttattus.onyx.v1.GenerateLiveCalendarPassRequest
+	200,  // 830: sttattus.onyx.v1.OnyxService.JoinLiveEvent:input_type -> sttattus.onyx.v1.JoinLiveEventRequest
+	202,  // 831: sttattus.onyx.v1.OnyxService.ListLiveActivity:input_type -> sttattus.onyx.v1.ListLiveActivityRequest
+	204,  // 832: sttattus.onyx.v1.OnyxService.PostLiveMessage:input_type -> sttattus.onyx.v1.PostLiveMessageRequest
+	206,  // 833: sttattus.onyx.v1.OnyxService.UpvoteLiveQuestion:input_type -> sttattus.onyx.v1.UpvoteLiveQuestionRequest
+	208,  // 834: sttattus.onyx.v1.OnyxService.VoteLivePoll:input_type -> sttattus.onyx.v1.VoteLivePollRequest
+	210,  // 835: sttattus.onyx.v1.OnyxService.SetLiveHandRaise:input_type -> sttattus.onyx.v1.SetLiveHandRaiseRequest
+	212,  // 836: sttattus.onyx.v1.OnyxService.ReactLiveEvent:input_type -> sttattus.onyx.v1.ReactLiveEventRequest
+	214,  // 837: sttattus.onyx.v1.OnyxService.UpsertLiveNote:input_type -> sttattus.onyx.v1.UpsertLiveNoteRequest
+	216,  // 838: sttattus.onyx.v1.OnyxService.ListLiveNotes:input_type -> sttattus.onyx.v1.ListLiveNotesRequest
+	218,  // 839: sttattus.onyx.v1.OnyxService.DeleteLiveNote:input_type -> sttattus.onyx.v1.DeleteLiveNoteRequest
+	220,  // 840: sttattus.onyx.v1.OnyxService.GetLiveReplay:input_type -> sttattus.onyx.v1.GetLiveReplayRequest
+	223,  // 841: sttattus.onyx.v1.OnyxService.SetPosthumousArchive:input_type -> sttattus.onyx.v1.SetPosthumousArchiveRequest
+	225,  // 842: sttattus.onyx.v1.OnyxService.GetPosthumousArchive:input_type -> sttattus.onyx.v1.GetPosthumousArchiveRequest
+	228,  // 843: sttattus.onyx.v1.OnyxService.ListAnthologies:input_type -> sttattus.onyx.v1.ListAnthologiesRequest
+	230,  // 844: sttattus.onyx.v1.OnyxService.GetAnthology:input_type -> sttattus.onyx.v1.GetAnthologyRequest
+	233,  // 845: sttattus.onyx.v1.OnyxService.CreateShareLink:input_type -> sttattus.onyx.v1.CreateShareLinkRequest
+	235,  // 846: sttattus.onyx.v1.OnyxService.ListMyShareLinks:input_type -> sttattus.onyx.v1.ListMyShareLinksRequest
+	237,  // 847: sttattus.onyx.v1.OnyxService.RevokeShareLink:input_type -> sttattus.onyx.v1.RevokeShareLinkRequest
+	240,  // 848: sttattus.onyx.v1.OnyxService.GetOfflineManifest:input_type -> sttattus.onyx.v1.GetOfflineManifestRequest
+	242,  // 849: sttattus.onyx.v1.OnyxService.RegisterDevice:input_type -> sttattus.onyx.v1.RegisterDeviceRequest
+	244,  // 850: sttattus.onyx.v1.OnyxService.AcknowledgePurge:input_type -> sttattus.onyx.v1.AcknowledgePurgeRequest
+	246,  // 851: sttattus.onyx.v1.OnyxService.GetDeviceGrants:input_type -> sttattus.onyx.v1.GetDeviceGrantsRequest
+	249,  // 852: sttattus.onyx.v1.OnyxService.RevokeMyDevice:input_type -> sttattus.onyx.v1.RevokeMyDeviceRequest
+	251,  // 853: sttattus.onyx.v1.OnyxService.MarkMyDeviceLost:input_type -> sttattus.onyx.v1.MarkMyDeviceLostRequest
+	253,  // 854: sttattus.onyx.v1.OnyxService.GetPurgeReceipt:input_type -> sttattus.onyx.v1.GetPurgeReceiptRequest
+	255,  // 855: sttattus.onyx.v1.OnyxService.ListOfflineManifestItems:input_type -> sttattus.onyx.v1.ListOfflineManifestItemsRequest
+	258,  // 856: sttattus.onyx.v1.OnyxService.RefreshOfflineRenditions:input_type -> sttattus.onyx.v1.RefreshOfflineRenditionsRequest
+	261,  // 857: sttattus.onyx.v1.OnyxService.RecordOfflineEvent:input_type -> sttattus.onyx.v1.RecordOfflineEventRequest
+	263,  // 858: sttattus.onyx.v1.OnyxService.GetYearInOnyx:input_type -> sttattus.onyx.v1.GetYearInOnyxRequest
+	266,  // 859: sttattus.onyx.v1.OnyxService.GenerateAnnualArchive:input_type -> sttattus.onyx.v1.GenerateAnnualArchiveRequest
+	268,  // 860: sttattus.onyx.v1.OnyxService.ReactToContent:input_type -> sttattus.onyx.v1.ReactToContentRequest
+	271,  // 861: sttattus.onyx.v1.OnyxService.CreateIngestionItem:input_type -> sttattus.onyx.v1.CreateIngestionItemRequest
+	273,  // 862: sttattus.onyx.v1.OnyxService.ListMyIngestionItems:input_type -> sttattus.onyx.v1.ListMyIngestionItemsRequest
+	275,  // 863: sttattus.onyx.v1.OnyxService.GetIngestionItem:input_type -> sttattus.onyx.v1.GetIngestionItemRequest
+	277,  // 864: sttattus.onyx.v1.OnyxService.RetryIngestionItem:input_type -> sttattus.onyx.v1.RetryIngestionItemRequest
+	279,  // 865: sttattus.onyx.v1.OnyxService.SetIngestionItemState:input_type -> sttattus.onyx.v1.SetIngestionItemStateRequest
+	281,  // 866: sttattus.onyx.v1.OnyxService.ResolveIngestionDuplicate:input_type -> sttattus.onyx.v1.ResolveIngestionDuplicateRequest
+	287,  // 867: sttattus.onyx.v1.OnyxService.GetEvidenceWorkspace:input_type -> sttattus.onyx.v1.GetEvidenceWorkspaceRequest
+	289,  // 868: sttattus.onyx.v1.OnyxService.GetEvidenceSourceHistory:input_type -> sttattus.onyx.v1.GetEvidenceSourceHistoryRequest
+	295,  // 869: sttattus.onyx.v1.OnyxService.CreateEvidenceBrief:input_type -> sttattus.onyx.v1.CreateEvidenceBriefRequest
+	297,  // 870: sttattus.onyx.v1.OnyxService.ListMyEvidenceBriefs:input_type -> sttattus.onyx.v1.ListMyEvidenceBriefsRequest
+	299,  // 871: sttattus.onyx.v1.OnyxService.GetEvidenceBrief:input_type -> sttattus.onyx.v1.GetEvidenceBriefRequest
+	308,  // 872: sttattus.onyx.v1.OnyxService.GetCreatorStudio:input_type -> sttattus.onyx.v1.GetCreatorStudioRequest
+	310,  // 873: sttattus.onyx.v1.OnyxService.SubmitCreatorPitch:input_type -> sttattus.onyx.v1.SubmitCreatorPitchRequest
+	312,  // 874: sttattus.onyx.v1.OnyxService.UpdateCreatorProject:input_type -> sttattus.onyx.v1.UpdateCreatorProjectRequest
+	314,  // 875: sttattus.onyx.v1.OnyxService.SubmitCreatorProject:input_type -> sttattus.onyx.v1.SubmitCreatorProjectRequest
+	316,  // 876: sttattus.onyx.v1.OnyxService.SignCreatorContract:input_type -> sttattus.onyx.v1.SignCreatorContractRequest
+	318,  // 877: sttattus.onyx.v1.OnyxService.ListMyCreatorSubscriptionsDetailed:input_type -> sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedRequest
+	320,  // 878: sttattus.onyx.v1.OnyxService.CancelCreatorSubscription:input_type -> sttattus.onyx.v1.CancelCreatorSubscriptionRequest
+	324,  // 879: sttattus.onyx.v1.OnyxService.GetMyCommerce:input_type -> sttattus.onyx.v1.GetMyCommerceRequest
+	326,  // 880: sttattus.onyx.v1.OnyxService.CreateCommerceCase:input_type -> sttattus.onyx.v1.CreateCommerceCaseRequest
+	345,  // 881: sttattus.onyx.v1.OnyxService.ListResearchRooms:input_type -> sttattus.onyx.v1.ListResearchRoomsRequest
+	347,  // 882: sttattus.onyx.v1.OnyxService.GetResearchRoom:input_type -> sttattus.onyx.v1.GetResearchRoomRequest
+	349,  // 883: sttattus.onyx.v1.OnyxService.CreateResearchRoom:input_type -> sttattus.onyx.v1.CreateResearchRoomRequest
+	351,  // 884: sttattus.onyx.v1.OnyxService.UpdateResearchRoom:input_type -> sttattus.onyx.v1.UpdateResearchRoomRequest
+	353,  // 885: sttattus.onyx.v1.OnyxService.InviteResearchRoomMember:input_type -> sttattus.onyx.v1.InviteResearchRoomMemberRequest
+	355,  // 886: sttattus.onyx.v1.OnyxService.RespondResearchRoomInvite:input_type -> sttattus.onyx.v1.RespondResearchRoomInviteRequest
+	357,  // 887: sttattus.onyx.v1.OnyxService.ChangeResearchRoomMember:input_type -> sttattus.onyx.v1.ChangeResearchRoomMemberRequest
+	359,  // 888: sttattus.onyx.v1.OnyxService.RevokeResearchRoomMember:input_type -> sttattus.onyx.v1.RevokeResearchRoomMemberRequest
+	361,  // 889: sttattus.onyx.v1.OnyxService.AddResearchRoomItem:input_type -> sttattus.onyx.v1.AddResearchRoomItemRequest
+	363,  // 890: sttattus.onyx.v1.OnyxService.RemoveResearchRoomItem:input_type -> sttattus.onyx.v1.RemoveResearchRoomItemRequest
+	365,  // 891: sttattus.onyx.v1.OnyxService.PostResearchRoomComment:input_type -> sttattus.onyx.v1.PostResearchRoomCommentRequest
+	367,  // 892: sttattus.onyx.v1.OnyxService.SetResearchRoomThreadStatus:input_type -> sttattus.onyx.v1.SetResearchRoomThreadStatusRequest
+	369,  // 893: sttattus.onyx.v1.OnyxService.UpsertResearchRoomTask:input_type -> sttattus.onyx.v1.UpsertResearchRoomTaskRequest
+	371,  // 894: sttattus.onyx.v1.OnyxService.UpsertResearchRoomMeeting:input_type -> sttattus.onyx.v1.UpsertResearchRoomMeetingRequest
+	373,  // 895: sttattus.onyx.v1.OnyxService.UpsertResearchRoomDecision:input_type -> sttattus.onyx.v1.UpsertResearchRoomDecisionRequest
+	375,  // 896: sttattus.onyx.v1.OnyxService.RecordResearchRoomApproval:input_type -> sttattus.onyx.v1.RecordResearchRoomApprovalRequest
+	377,  // 897: sttattus.onyx.v1.OnyxService.SearchResearchRoom:input_type -> sttattus.onyx.v1.SearchResearchRoomRequest
+	380,  // 898: sttattus.onyx.v1.OnyxService.RequestResearchRoomExport:input_type -> sttattus.onyx.v1.RequestResearchRoomExportRequest
+	382,  // 899: sttattus.onyx.v1.OnyxService.ReportResearchRoomAbuse:input_type -> sttattus.onyx.v1.ReportResearchRoomAbuseRequest
+	384,  // 900: sttattus.onyx.v1.OnyxService.ListResearchRoomAudit:input_type -> sttattus.onyx.v1.ListResearchRoomAuditRequest
+	386,  // 901: sttattus.onyx.v1.OnyxService.ListResearchRoomGrants:input_type -> sttattus.onyx.v1.ListResearchRoomGrantsRequest
+	388,  // 902: sttattus.onyx.v1.OnyxService.UpsertResearchRoomGrant:input_type -> sttattus.onyx.v1.UpsertResearchRoomGrantRequest
+	390,  // 903: sttattus.onyx.v1.OnyxService.RevokeResearchRoomGrant:input_type -> sttattus.onyx.v1.RevokeResearchRoomGrantRequest
+	392,  // 904: sttattus.onyx.v1.OnyxService.CreateResearchRoomShareLink:input_type -> sttattus.onyx.v1.CreateResearchRoomShareLinkRequest
+	394,  // 905: sttattus.onyx.v1.OnyxService.ListResearchRoomShareLinks:input_type -> sttattus.onyx.v1.ListResearchRoomShareLinksRequest
+	396,  // 906: sttattus.onyx.v1.OnyxService.RevokeResearchRoomShareLink:input_type -> sttattus.onyx.v1.RevokeResearchRoomShareLinkRequest
+	398,  // 907: sttattus.onyx.v1.OnyxService.ResolveResearchRoomShareLink:input_type -> sttattus.onyx.v1.ResolveResearchRoomShareLinkRequest
+	400,  // 908: sttattus.onyx.v1.OnyxService.GetResearchRoomOfflineManifest:input_type -> sttattus.onyx.v1.GetResearchRoomOfflineManifestRequest
+	402,  // 909: sttattus.onyx.v1.OnyxService.AcknowledgeResearchRoomOfflinePurge:input_type -> sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeRequest
+	404,  // 910: sttattus.onyx.v1.OnyxService.ListResearchRoomOfflinePurges:input_type -> sttattus.onyx.v1.ListResearchRoomOfflinePurgesRequest
+	406,  // 911: sttattus.onyx.v1.OnyxService.LeaveResearchRoom:input_type -> sttattus.onyx.v1.LeaveResearchRoomRequest
+	417,  // 912: sttattus.onyx.v1.OnyxService.GetPersonalIntelligenceGraph:input_type -> sttattus.onyx.v1.GetPersonalIntelligenceGraphRequest
+	419,  // 913: sttattus.onyx.v1.OnyxService.UpsertIntelligenceGraphNode:input_type -> sttattus.onyx.v1.UpsertIntelligenceGraphNodeRequest
+	421,  // 914: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphNodeState:input_type -> sttattus.onyx.v1.SetIntelligenceGraphNodeStateRequest
+	423,  // 915: sttattus.onyx.v1.OnyxService.MergeIntelligenceGraphNodes:input_type -> sttattus.onyx.v1.MergeIntelligenceGraphNodesRequest
+	425,  // 916: sttattus.onyx.v1.OnyxService.SplitIntelligenceGraphNode:input_type -> sttattus.onyx.v1.SplitIntelligenceGraphNodeRequest
+	427,  // 917: sttattus.onyx.v1.OnyxService.UpsertIntelligenceGraphEdge:input_type -> sttattus.onyx.v1.UpsertIntelligenceGraphEdgeRequest
+	429,  // 918: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphEdgeState:input_type -> sttattus.onyx.v1.SetIntelligenceGraphEdgeStateRequest
+	431,  // 919: sttattus.onyx.v1.OnyxService.GenerateIntelligenceGraphSuggestions:input_type -> sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsRequest
+	433,  // 920: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphSuggestions:input_type -> sttattus.onyx.v1.ListIntelligenceGraphSuggestionsRequest
+	435,  // 921: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphSuggestionState:input_type -> sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateRequest
+	437,  // 922: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphTimeline:input_type -> sttattus.onyx.v1.ListIntelligenceGraphTimelineRequest
+	439,  // 923: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphResurfacing:input_type -> sttattus.onyx.v1.ListIntelligenceGraphResurfacingRequest
+	441,  // 924: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphResurfacingState:input_type -> sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateRequest
+	443,  // 925: sttattus.onyx.v1.OnyxService.CreateIntelligenceGraphMeetingBrief:input_type -> sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefRequest
+	445,  // 926: sttattus.onyx.v1.OnyxService.GetIntelligenceGraphMeetingBrief:input_type -> sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefRequest
+	447,  // 927: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphMeetingBriefs:input_type -> sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsRequest
+	449,  // 928: sttattus.onyx.v1.OnyxService.ExportPersonalIntelligenceGraph:input_type -> sttattus.onyx.v1.ExportPersonalIntelligenceGraphRequest
+	451,  // 929: sttattus.onyx.v1.OnyxService.RebuildPersonalIntelligenceGraph:input_type -> sttattus.onyx.v1.RebuildPersonalIntelligenceGraphRequest
+	470,  // 930: sttattus.onyx.v1.OnyxService.ListLanguageConfigs:input_type -> sttattus.onyx.v1.ListLanguageConfigsRequest
+	472,  // 931: sttattus.onyx.v1.OnyxService.ListContentEditions:input_type -> sttattus.onyx.v1.ListContentEditionsRequest
+	474,  // 932: sttattus.onyx.v1.OnyxService.GetAlignedBlocks:input_type -> sttattus.onyx.v1.GetAlignedBlocksRequest
+	476,  // 933: sttattus.onyx.v1.OnyxService.ListTermbaseEntries:input_type -> sttattus.onyx.v1.ListTermbaseEntriesRequest
+	478,  // 934: sttattus.onyx.v1.OnyxService.CrossLanguageSearch:input_type -> sttattus.onyx.v1.CrossLanguageSearchRequest
+	480,  // 935: sttattus.onyx.v1.OnyxService.GetMultilingualPreferences:input_type -> sttattus.onyx.v1.GetMultilingualPreferencesRequest
+	482,  // 936: sttattus.onyx.v1.OnyxService.UpdateMultilingualPreferences:input_type -> sttattus.onyx.v1.UpdateMultilingualPreferencesRequest
+	484,  // 937: sttattus.onyx.v1.OnyxService.GetMultilingualAudioVideo:input_type -> sttattus.onyx.v1.GetMultilingualAudioVideoRequest
+	486,  // 938: sttattus.onyx.v1.OnyxService.GetMultilingualOfflineManifest:input_type -> sttattus.onyx.v1.GetMultilingualOfflineManifestRequest
+	488,  // 939: sttattus.onyx.v1.OnyxService.ReportTranslationIssue:input_type -> sttattus.onyx.v1.ReportTranslationIssueRequest
+	490,  // 940: sttattus.onyx.v1.OnyxService.RequestMultilingualExport:input_type -> sttattus.onyx.v1.RequestMultilingualExportRequest
+	492,  // 941: sttattus.onyx.v1.OnyxService.GetMultilingualExport:input_type -> sttattus.onyx.v1.GetMultilingualExportRequest
+	502,  // 942: sttattus.onyx.v1.OnyxService.GetLivingArchiveDashboard:input_type -> sttattus.onyx.v1.GetLivingArchiveDashboardRequest
+	504,  // 943: sttattus.onyx.v1.OnyxService.UpsertLivingArchivePolicy:input_type -> sttattus.onyx.v1.UpsertLivingArchivePolicyRequest
+	506,  // 944: sttattus.onyx.v1.OnyxService.PreviewLivingArchivePolicy:input_type -> sttattus.onyx.v1.PreviewLivingArchivePolicyRequest
+	508,  // 945: sttattus.onyx.v1.OnyxService.GenerateLivingArchiveEdition:input_type -> sttattus.onyx.v1.GenerateLivingArchiveEditionRequest
+	510,  // 946: sttattus.onyx.v1.OnyxService.LinkLivingArchiveLegacyEscrow:input_type -> sttattus.onyx.v1.LinkLivingArchiveLegacyEscrowRequest
+	512,  // 947: sttattus.onyx.v1.OnyxService.UpsertLivingArchiveContact:input_type -> sttattus.onyx.v1.UpsertLivingArchiveContactRequest
+	514,  // 948: sttattus.onyx.v1.OnyxService.DeleteLivingArchiveContact:input_type -> sttattus.onyx.v1.DeleteLivingArchiveContactRequest
+	516,  // 949: sttattus.onyx.v1.OnyxService.SubmitLivingArchivePolicy:input_type -> sttattus.onyx.v1.SubmitLivingArchivePolicyRequest
+	518,  // 950: sttattus.onyx.v1.OnyxService.RevokeLivingArchivePolicy:input_type -> sttattus.onyx.v1.RevokeLivingArchivePolicyRequest
+	520,  // 951: sttattus.onyx.v1.OnyxService.ConfirmLivingArchiveReview:input_type -> sttattus.onyx.v1.ConfirmLivingArchiveReviewRequest
+	522,  // 952: sttattus.onyx.v1.OnyxService.ContestLivingArchiveRelease:input_type -> sttattus.onyx.v1.ContestLivingArchiveReleaseRequest
+	531,  // 953: sttattus.onyx.v1.OnyxService.GetForensicProtectionDashboard:input_type -> sttattus.onyx.v1.GetForensicProtectionDashboardRequest
+	533,  // 954: sttattus.onyx.v1.OnyxService.IssueForensicManifest:input_type -> sttattus.onyx.v1.IssueForensicManifestRequest
+	535,  // 955: sttattus.onyx.v1.OnyxService.RevokeForensicManifest:input_type -> sttattus.onyx.v1.RevokeForensicManifestRequest
+	537,  // 956: sttattus.onyx.v1.OnyxService.RespondForensicCase:input_type -> sttattus.onyx.v1.RespondForensicCaseRequest
+	539,  // 957: sttattus.onyx.v1.OnyxService.FileForensicAppeal:input_type -> sttattus.onyx.v1.FileForensicAppealRequest
+	541,  // 958: sttattus.onyx.v1.OnyxService.PostForensicAppealMessage:input_type -> sttattus.onyx.v1.PostForensicAppealMessageRequest
+	543,  // 959: sttattus.onyx.v1.OnyxService.WithdrawForensicAppeal:input_type -> sttattus.onyx.v1.WithdrawForensicAppealRequest
+	557,  // 960: sttattus.onyx.v1.OnyxService.GetIntegrationDashboard:input_type -> sttattus.onyx.v1.GetIntegrationDashboardRequest
+	559,  // 961: sttattus.onyx.v1.OnyxService.AuthorizeIntegration:input_type -> sttattus.onyx.v1.AuthorizeIntegrationRequest
+	561,  // 962: sttattus.onyx.v1.OnyxService.RevokeIntegrationGrant:input_type -> sttattus.onyx.v1.RevokeIntegrationGrantRequest
+	563,  // 963: sttattus.onyx.v1.OnyxService.UpsertIntegrationConnector:input_type -> sttattus.onyx.v1.UpsertIntegrationConnectorRequest
+	565,  // 964: sttattus.onyx.v1.OnyxService.SetIntegrationConnectorState:input_type -> sttattus.onyx.v1.SetIntegrationConnectorStateRequest
+	567,  // 965: sttattus.onyx.v1.OnyxService.RunIntegrationConnector:input_type -> sttattus.onyx.v1.RunIntegrationConnectorRequest
+	569,  // 966: sttattus.onyx.v1.OnyxService.GetIntegrationArtifact:input_type -> sttattus.onyx.v1.GetIntegrationArtifactRequest
+	571,  // 967: sttattus.onyx.v1.OnyxService.ResolveIntegrationConflict:input_type -> sttattus.onyx.v1.ResolveIntegrationConflictRequest
+	573,  // 968: sttattus.onyx.v1.OnyxService.DispatchIntegrationBridge:input_type -> sttattus.onyx.v1.DispatchIntegrationBridgeRequest
+	575,  // 969: sttattus.onyx.v1.OnyxService.SubmitIntegrationOperationsCase:input_type -> sttattus.onyx.v1.SubmitIntegrationOperationsCaseRequest
+	591,  // 970: sttattus.onyx.v1.OnyxService.GetSpatialCanvasDashboard:input_type -> sttattus.onyx.v1.GetSpatialCanvasDashboardRequest
+	593,  // 971: sttattus.onyx.v1.OnyxService.ListSpatialCanvasTemplates:input_type -> sttattus.onyx.v1.ListSpatialCanvasTemplatesRequest
+	595,  // 972: sttattus.onyx.v1.OnyxService.CreateSpatialCanvas:input_type -> sttattus.onyx.v1.CreateSpatialCanvasRequest
+	597,  // 973: sttattus.onyx.v1.OnyxService.GetSpatialCanvas:input_type -> sttattus.onyx.v1.GetSpatialCanvasRequest
+	599,  // 974: sttattus.onyx.v1.OnyxService.ApplySpatialCanvasOperations:input_type -> sttattus.onyx.v1.ApplySpatialCanvasOperationsRequest
+	601,  // 975: sttattus.onyx.v1.OnyxService.ResolveSpatialCanvasConflict:input_type -> sttattus.onyx.v1.ResolveSpatialCanvasConflictRequest
+	603,  // 976: sttattus.onyx.v1.OnyxService.CreateSpatialCanvasSnapshot:input_type -> sttattus.onyx.v1.CreateSpatialCanvasSnapshotRequest
+	605,  // 977: sttattus.onyx.v1.OnyxService.RestoreSpatialCanvasSnapshot:input_type -> sttattus.onyx.v1.RestoreSpatialCanvasSnapshotRequest
+	607,  // 978: sttattus.onyx.v1.OnyxService.UpsertSpatialCanvasComment:input_type -> sttattus.onyx.v1.UpsertSpatialCanvasCommentRequest
+	609,  // 979: sttattus.onyx.v1.OnyxService.SetSpatialCanvasCommentState:input_type -> sttattus.onyx.v1.SetSpatialCanvasCommentStateRequest
+	611,  // 980: sttattus.onyx.v1.OnyxService.GenerateSpatialCanvasProposals:input_type -> sttattus.onyx.v1.GenerateSpatialCanvasProposalsRequest
+	613,  // 981: sttattus.onyx.v1.OnyxService.SetSpatialCanvasProposalState:input_type -> sttattus.onyx.v1.SetSpatialCanvasProposalStateRequest
+	615,  // 982: sttattus.onyx.v1.OnyxService.RequestSpatialCanvasExport:input_type -> sttattus.onyx.v1.RequestSpatialCanvasExportRequest
+	617,  // 983: sttattus.onyx.v1.OnyxService.GetSpatialCanvasExport:input_type -> sttattus.onyx.v1.GetSpatialCanvasExportRequest
+	619,  // 984: sttattus.onyx.v1.OnyxService.UpsertSpatialCanvasCollaborator:input_type -> sttattus.onyx.v1.UpsertSpatialCanvasCollaboratorRequest
+	621,  // 985: sttattus.onyx.v1.OnyxService.ReportSpatialCanvasAbuse:input_type -> sttattus.onyx.v1.ReportSpatialCanvasAbuseRequest
+	632,  // 986: sttattus.onyx.v1.OnyxService.GetRecallDashboard:input_type -> sttattus.onyx.v1.GetRecallDashboardRequest
+	634,  // 987: sttattus.onyx.v1.OnyxService.ListRecallDecks:input_type -> sttattus.onyx.v1.ListRecallDecksRequest
+	636,  // 988: sttattus.onyx.v1.OnyxService.ListMemoryItems:input_type -> sttattus.onyx.v1.ListMemoryItemsRequest
+	638,  // 989: sttattus.onyx.v1.OnyxService.UpsertRecallDeck:input_type -> sttattus.onyx.v1.UpsertRecallDeckRequest
+	640,  // 990: sttattus.onyx.v1.OnyxService.GenerateRecallItems:input_type -> sttattus.onyx.v1.GenerateRecallItemsRequest
+	642,  // 991: sttattus.onyx.v1.OnyxService.UpsertMemoryItem:input_type -> sttattus.onyx.v1.UpsertMemoryItemRequest
+	644,  // 992: sttattus.onyx.v1.OnyxService.SetMemoryItemState:input_type -> sttattus.onyx.v1.SetMemoryItemStateRequest
+	646,  // 993: sttattus.onyx.v1.OnyxService.GetRecallReviewQueue:input_type -> sttattus.onyx.v1.GetRecallReviewQueueRequest
+	648,  // 994: sttattus.onyx.v1.OnyxService.RecordRecallReviewBatch:input_type -> sttattus.onyx.v1.RecordRecallReviewBatchRequest
+	650,  // 995: sttattus.onyx.v1.OnyxService.ResolveRecallInvalidation:input_type -> sttattus.onyx.v1.ResolveRecallInvalidationRequest
+	652,  // 996: sttattus.onyx.v1.OnyxService.UpdateRecallPreferences:input_type -> sttattus.onyx.v1.UpdateRecallPreferencesRequest
+	654,  // 997: sttattus.onyx.v1.OnyxService.ExportRecallData:input_type -> sttattus.onyx.v1.ExportRecallDataRequest
+	656,  // 998: sttattus.onyx.v1.OnyxService.ImportRecallData:input_type -> sttattus.onyx.v1.ImportRecallDataRequest
+	658,  // 999: sttattus.onyx.v1.OnyxService.ReportRecallItem:input_type -> sttattus.onyx.v1.ReportRecallItemRequest
+	660,  // 1000: sttattus.onyx.v1.OnyxService.RecordRecallTransfer:input_type -> sttattus.onyx.v1.RecordRecallTransferRequest
+	676,  // 1001: sttattus.onyx.v1.OnyxService.GetDraftingDashboard:input_type -> sttattus.onyx.v1.GetDraftingDashboardRequest
+	678,  // 1002: sttattus.onyx.v1.OnyxService.ListDrafts:input_type -> sttattus.onyx.v1.ListDraftsRequest
+	680,  // 1003: sttattus.onyx.v1.OnyxService.GetDraft:input_type -> sttattus.onyx.v1.GetDraftRequest
+	682,  // 1004: sttattus.onyx.v1.OnyxService.CreateDraft:input_type -> sttattus.onyx.v1.CreateDraftRequest
+	684,  // 1005: sttattus.onyx.v1.OnyxService.UpsertDraftBlock:input_type -> sttattus.onyx.v1.UpsertDraftBlockRequest
+	686,  // 1006: sttattus.onyx.v1.OnyxService.DeleteDraftBlock:input_type -> sttattus.onyx.v1.DeleteDraftBlockRequest
+	688,  // 1007: sttattus.onyx.v1.OnyxService.UpsertDraftCitation:input_type -> sttattus.onyx.v1.UpsertDraftCitationRequest
+	690,  // 1008: sttattus.onyx.v1.OnyxService.VerifyDraft:input_type -> sttattus.onyx.v1.VerifyDraftRequest
+	695,  // 1009: sttattus.onyx.v1.OnyxService.GetDraftEvidenceReview:input_type -> sttattus.onyx.v1.GetDraftEvidenceReviewRequest
+	697,  // 1010: sttattus.onyx.v1.OnyxService.CompareDraftEvidence:input_type -> sttattus.onyx.v1.CompareDraftEvidenceRequest
+	700,  // 1011: sttattus.onyx.v1.OnyxService.CreateDraftRevision:input_type -> sttattus.onyx.v1.CreateDraftRevisionRequest
+	702,  // 1012: sttattus.onyx.v1.OnyxService.CreateDraftBranch:input_type -> sttattus.onyx.v1.CreateDraftBranchRequest
+	704,  // 1013: sttattus.onyx.v1.OnyxService.RestoreDraftRevision:input_type -> sttattus.onyx.v1.RestoreDraftRevisionRequest
+	706,  // 1014: sttattus.onyx.v1.OnyxService.CompareDraftRevisions:input_type -> sttattus.onyx.v1.CompareDraftRevisionsRequest
+	708,  // 1015: sttattus.onyx.v1.OnyxService.PreviewDraftRestore:input_type -> sttattus.onyx.v1.PreviewDraftRestoreRequest
+	713,  // 1016: sttattus.onyx.v1.OnyxService.PreviewDraftMerge:input_type -> sttattus.onyx.v1.PreviewDraftMergeRequest
+	715,  // 1017: sttattus.onyx.v1.OnyxService.GenerateDraftSuggestion:input_type -> sttattus.onyx.v1.GenerateDraftSuggestionRequest
+	717,  // 1018: sttattus.onyx.v1.OnyxService.SetDraftSuggestionState:input_type -> sttattus.onyx.v1.SetDraftSuggestionStateRequest
+	719,  // 1019: sttattus.onyx.v1.OnyxService.ResolveDraftConflict:input_type -> sttattus.onyx.v1.ResolveDraftConflictRequest
+	721,  // 1020: sttattus.onyx.v1.OnyxService.RequestDraftExport:input_type -> sttattus.onyx.v1.RequestDraftExportRequest
+	723,  // 1021: sttattus.onyx.v1.OnyxService.GetDraftExport:input_type -> sttattus.onyx.v1.GetDraftExportRequest
+	725,  // 1022: sttattus.onyx.v1.OnyxService.CreateDraftHandoff:input_type -> sttattus.onyx.v1.CreateDraftHandoffRequest
+	727,  // 1023: sttattus.onyx.v1.OnyxService.ReportDraftIncident:input_type -> sttattus.onyx.v1.ReportDraftIncidentRequest
+	734,  // 1024: sttattus.onyx.v1.OnyxService.GetDraftCollaboration:input_type -> sttattus.onyx.v1.GetDraftCollaborationRequest
+	736,  // 1025: sttattus.onyx.v1.OnyxService.InviteDraftCollaborator:input_type -> sttattus.onyx.v1.InviteDraftCollaboratorRequest
+	738,  // 1026: sttattus.onyx.v1.OnyxService.RemoveDraftCollaborator:input_type -> sttattus.onyx.v1.RemoveDraftCollaboratorRequest
+	740,  // 1027: sttattus.onyx.v1.OnyxService.CreateDraftComment:input_type -> sttattus.onyx.v1.CreateDraftCommentRequest
+	742,  // 1028: sttattus.onyx.v1.OnyxService.SetDraftCommentState:input_type -> sttattus.onyx.v1.SetDraftCommentStateRequest
+	744,  // 1029: sttattus.onyx.v1.OnyxService.CreateDraftAssignment:input_type -> sttattus.onyx.v1.CreateDraftAssignmentRequest
+	746,  // 1030: sttattus.onyx.v1.OnyxService.SetDraftAssignmentState:input_type -> sttattus.onyx.v1.SetDraftAssignmentStateRequest
+	748,  // 1031: sttattus.onyx.v1.OnyxService.ListDraftNotifications:input_type -> sttattus.onyx.v1.ListDraftNotificationsRequest
+	750,  // 1032: sttattus.onyx.v1.OnyxService.MarkDraftNotificationRead:input_type -> sttattus.onyx.v1.MarkDraftNotificationReadRequest
+	752,  // 1033: sttattus.onyx.v1.OnyxService.SetDraftPresence:input_type -> sttattus.onyx.v1.SetDraftPresenceRequest
+	755,  // 1034: sttattus.onyx.v1.OnyxService.GetDraftOperationStatus:input_type -> sttattus.onyx.v1.GetDraftOperationStatusRequest
+	22,   // 1035: sttattus.onyx.v1.OnyxService.CreateProfile:output_type -> sttattus.onyx.v1.CreateProfileResponse
+	24,   // 1036: sttattus.onyx.v1.OnyxService.GetProfile:output_type -> sttattus.onyx.v1.GetProfileResponse
+	26,   // 1037: sttattus.onyx.v1.OnyxService.ListContent:output_type -> sttattus.onyx.v1.ListContentResponse
+	28,   // 1038: sttattus.onyx.v1.OnyxService.Subscribe:output_type -> sttattus.onyx.v1.SubscribeResponse
+	30,   // 1039: sttattus.onyx.v1.OnyxService.GetContent:output_type -> sttattus.onyx.v1.GetContentResponse
+	32,   // 1040: sttattus.onyx.v1.OnyxService.ListShelf:output_type -> sttattus.onyx.v1.ListShelfResponse
+	34,   // 1041: sttattus.onyx.v1.OnyxService.ListContinue:output_type -> sttattus.onyx.v1.ListContinueResponse
+	37,   // 1042: sttattus.onyx.v1.OnyxService.GetShelves:output_type -> sttattus.onyx.v1.GetShelvesResponse
+	39,   // 1043: sttattus.onyx.v1.OnyxService.RecordProgress:output_type -> sttattus.onyx.v1.RecordProgressResponse
+	41,   // 1044: sttattus.onyx.v1.OnyxService.RedeemContent:output_type -> sttattus.onyx.v1.RedeemContentResponse
+	43,   // 1045: sttattus.onyx.v1.OnyxService.CreateSubscriptionCheckout:output_type -> sttattus.onyx.v1.CreateSubscriptionCheckoutResponse
+	46,   // 1046: sttattus.onyx.v1.OnyxService.GetCreator:output_type -> sttattus.onyx.v1.GetCreatorResponse
+	48,   // 1047: sttattus.onyx.v1.OnyxService.ListCreatorWorks:output_type -> sttattus.onyx.v1.ListCreatorWorksResponse
+	50,   // 1048: sttattus.onyx.v1.OnyxService.FollowCreator:output_type -> sttattus.onyx.v1.FollowCreatorResponse
+	52,   // 1049: sttattus.onyx.v1.OnyxService.SearchContent:output_type -> sttattus.onyx.v1.SearchContentResponse
+	55,   // 1050: sttattus.onyx.v1.OnyxService.AddNote:output_type -> sttattus.onyx.v1.AddNoteResponse
+	57,   // 1051: sttattus.onyx.v1.OnyxService.ListMyNotes:output_type -> sttattus.onyx.v1.ListMyNotesResponse
+	59,   // 1052: sttattus.onyx.v1.OnyxService.DeleteNote:output_type -> sttattus.onyx.v1.DeleteNoteResponse
+	62,   // 1053: sttattus.onyx.v1.OnyxService.UpsertReaderAnnotation:output_type -> sttattus.onyx.v1.UpsertReaderAnnotationResponse
+	64,   // 1054: sttattus.onyx.v1.OnyxService.DeleteReaderAnnotation:output_type -> sttattus.onyx.v1.DeleteReaderAnnotationResponse
+	66,   // 1055: sttattus.onyx.v1.OnyxService.ListMyReaderAnnotations:output_type -> sttattus.onyx.v1.ListMyReaderAnnotationsResponse
+	69,   // 1056: sttattus.onyx.v1.OnyxService.SearchReader:output_type -> sttattus.onyx.v1.SearchReaderResponse
+	73,   // 1057: sttattus.onyx.v1.OnyxService.SearchIntelligence:output_type -> sttattus.onyx.v1.SearchIntelligenceResponse
+	75,   // 1058: sttattus.onyx.v1.OnyxService.RecordIntelligenceSearchOutcome:output_type -> sttattus.onyx.v1.RecordIntelligenceSearchOutcomeResponse
+	78,   // 1059: sttattus.onyx.v1.OnyxService.ListSavedQueries:output_type -> sttattus.onyx.v1.ListSavedQueriesResponse
+	80,   // 1060: sttattus.onyx.v1.OnyxService.UpsertSavedQuery:output_type -> sttattus.onyx.v1.UpsertSavedQueryResponse
+	82,   // 1061: sttattus.onyx.v1.OnyxService.DeleteSavedQuery:output_type -> sttattus.onyx.v1.DeleteSavedQueryResponse
+	86,   // 1062: sttattus.onyx.v1.OnyxService.ListWatchlists:output_type -> sttattus.onyx.v1.ListWatchlistsResponse
+	88,   // 1063: sttattus.onyx.v1.OnyxService.UpsertWatchlist:output_type -> sttattus.onyx.v1.UpsertWatchlistResponse
+	90,   // 1064: sttattus.onyx.v1.OnyxService.DeleteWatchlist:output_type -> sttattus.onyx.v1.DeleteWatchlistResponse
+	92,   // 1065: sttattus.onyx.v1.OnyxService.RefreshWatchlist:output_type -> sttattus.onyx.v1.RefreshWatchlistResponse
+	95,   // 1066: sttattus.onyx.v1.OnyxService.ListIntelligenceAlerts:output_type -> sttattus.onyx.v1.ListIntelligenceAlertsResponse
+	97,   // 1067: sttattus.onyx.v1.OnyxService.SetIntelligenceAlertState:output_type -> sttattus.onyx.v1.SetIntelligenceAlertStateResponse
+	100,  // 1068: sttattus.onyx.v1.OnyxService.GetIntelligenceQueue:output_type -> sttattus.onyx.v1.GetIntelligenceQueueResponse
+	102,  // 1069: sttattus.onyx.v1.OnyxService.RecordIntelligenceFeedback:output_type -> sttattus.onyx.v1.RecordIntelligenceFeedbackResponse
+	104,  // 1070: sttattus.onyx.v1.OnyxService.ExportReaderData:output_type -> sttattus.onyx.v1.ExportReaderDataResponse
+	107,  // 1071: sttattus.onyx.v1.OnyxService.ListReaderSyncChanges:output_type -> sttattus.onyx.v1.ListReaderSyncChangesResponse
+	109,  // 1072: sttattus.onyx.v1.OnyxService.ListMyUnlocks:output_type -> sttattus.onyx.v1.ListMyUnlocksResponse
+	111,  // 1073: sttattus.onyx.v1.OnyxService.ListMySubscriptions:output_type -> sttattus.onyx.v1.ListMySubscriptionsResponse
+	113,  // 1074: sttattus.onyx.v1.OnyxService.ListMyFollows:output_type -> sttattus.onyx.v1.ListMyFollowsResponse
+	116,  // 1075: sttattus.onyx.v1.OnyxService.ListSovereignWindow:output_type -> sttattus.onyx.v1.ListSovereignWindowResponse
+	119,  // 1076: sttattus.onyx.v1.OnyxService.ListSeries:output_type -> sttattus.onyx.v1.ListSeriesResponse
+	121,  // 1077: sttattus.onyx.v1.OnyxService.GetSeries:output_type -> sttattus.onyx.v1.GetSeriesResponse
+	124,  // 1078: sttattus.onyx.v1.OnyxService.GenerateCaptions:output_type -> sttattus.onyx.v1.GenerateCaptionsResponse
+	126,  // 1079: sttattus.onyx.v1.OnyxService.GetCaptionJob:output_type -> sttattus.onyx.v1.GetCaptionJobResponse
+	129,  // 1080: sttattus.onyx.v1.OnyxService.GetListeningPreferences:output_type -> sttattus.onyx.v1.GetListeningPreferencesResponse
+	131,  // 1081: sttattus.onyx.v1.OnyxService.UpdateListeningPreferences:output_type -> sttattus.onyx.v1.UpdateListeningPreferencesResponse
+	134,  // 1082: sttattus.onyx.v1.OnyxService.CreateListeningBookmark:output_type -> sttattus.onyx.v1.CreateListeningBookmarkResponse
+	136,  // 1083: sttattus.onyx.v1.OnyxService.ListListeningBookmarks:output_type -> sttattus.onyx.v1.ListListeningBookmarksResponse
+	138,  // 1084: sttattus.onyx.v1.OnyxService.DeleteListeningBookmark:output_type -> sttattus.onyx.v1.DeleteListeningBookmarkResponse
+	141,  // 1085: sttattus.onyx.v1.OnyxService.ListListeningQueue:output_type -> sttattus.onyx.v1.ListListeningQueueResponse
+	143,  // 1086: sttattus.onyx.v1.OnyxService.SetListeningQueue:output_type -> sttattus.onyx.v1.SetListeningQueueResponse
+	148,  // 1087: sttattus.onyx.v1.OnyxService.CreateAudioOverview:output_type -> sttattus.onyx.v1.CreateAudioOverviewResponse
+	150,  // 1088: sttattus.onyx.v1.OnyxService.ListAudioOverviews:output_type -> sttattus.onyx.v1.ListAudioOverviewsResponse
+	152,  // 1089: sttattus.onyx.v1.OnyxService.GetAudioOverview:output_type -> sttattus.onyx.v1.GetAudioOverviewResponse
+	154,  // 1090: sttattus.onyx.v1.OnyxService.DeleteAudioOverview:output_type -> sttattus.onyx.v1.DeleteAudioOverviewResponse
+	157,  // 1091: sttattus.onyx.v1.OnyxService.ListListeningPronunciations:output_type -> sttattus.onyx.v1.ListListeningPronunciationsResponse
+	159,  // 1092: sttattus.onyx.v1.OnyxService.GetTodaySummary:output_type -> sttattus.onyx.v1.GetTodaySummaryResponse
+	162,  // 1093: sttattus.onyx.v1.OnyxService.GetCrossPillarUnlocks:output_type -> sttattus.onyx.v1.GetCrossPillarUnlocksResponse
+	166,  // 1094: sttattus.onyx.v1.OnyxService.StartConciergeThread:output_type -> sttattus.onyx.v1.StartConciergeThreadResponse
+	168,  // 1095: sttattus.onyx.v1.OnyxService.ListMyConciergeThreads:output_type -> sttattus.onyx.v1.ListMyConciergeThreadsResponse
+	170,  // 1096: sttattus.onyx.v1.OnyxService.GetConciergeThread:output_type -> sttattus.onyx.v1.GetConciergeThreadResponse
+	172,  // 1097: sttattus.onyx.v1.OnyxService.PostConciergeMessage:output_type -> sttattus.onyx.v1.PostConciergeMessageResponse
+	175,  // 1098: sttattus.onyx.v1.OnyxService.ListLiveEvents:output_type -> sttattus.onyx.v1.ListLiveEventsResponse
+	177,  // 1099: sttattus.onyx.v1.OnyxService.GetLiveEvent:output_type -> sttattus.onyx.v1.GetLiveEventResponse
+	179,  // 1100: sttattus.onyx.v1.OnyxService.RsvpLiveEvent:output_type -> sttattus.onyx.v1.RsvpLiveEventResponse
+	193,  // 1101: sttattus.onyx.v1.OnyxService.GetLiveSalon:output_type -> sttattus.onyx.v1.GetLiveSalonResponse
+	195,  // 1102: sttattus.onyx.v1.OnyxService.UpsertLiveReservation:output_type -> sttattus.onyx.v1.UpsertLiveReservationResponse
+	197,  // 1103: sttattus.onyx.v1.OnyxService.InviteLiveGuest:output_type -> sttattus.onyx.v1.InviteLiveGuestResponse
+	199,  // 1104: sttattus.onyx.v1.OnyxService.GenerateLiveCalendarPass:output_type -> sttattus.onyx.v1.GenerateLiveCalendarPassResponse
+	201,  // 1105: sttattus.onyx.v1.OnyxService.JoinLiveEvent:output_type -> sttattus.onyx.v1.JoinLiveEventResponse
+	203,  // 1106: sttattus.onyx.v1.OnyxService.ListLiveActivity:output_type -> sttattus.onyx.v1.ListLiveActivityResponse
+	205,  // 1107: sttattus.onyx.v1.OnyxService.PostLiveMessage:output_type -> sttattus.onyx.v1.PostLiveMessageResponse
+	207,  // 1108: sttattus.onyx.v1.OnyxService.UpvoteLiveQuestion:output_type -> sttattus.onyx.v1.UpvoteLiveQuestionResponse
+	209,  // 1109: sttattus.onyx.v1.OnyxService.VoteLivePoll:output_type -> sttattus.onyx.v1.VoteLivePollResponse
+	211,  // 1110: sttattus.onyx.v1.OnyxService.SetLiveHandRaise:output_type -> sttattus.onyx.v1.SetLiveHandRaiseResponse
+	213,  // 1111: sttattus.onyx.v1.OnyxService.ReactLiveEvent:output_type -> sttattus.onyx.v1.ReactLiveEventResponse
+	215,  // 1112: sttattus.onyx.v1.OnyxService.UpsertLiveNote:output_type -> sttattus.onyx.v1.UpsertLiveNoteResponse
+	217,  // 1113: sttattus.onyx.v1.OnyxService.ListLiveNotes:output_type -> sttattus.onyx.v1.ListLiveNotesResponse
+	219,  // 1114: sttattus.onyx.v1.OnyxService.DeleteLiveNote:output_type -> sttattus.onyx.v1.DeleteLiveNoteResponse
+	221,  // 1115: sttattus.onyx.v1.OnyxService.GetLiveReplay:output_type -> sttattus.onyx.v1.GetLiveReplayResponse
+	224,  // 1116: sttattus.onyx.v1.OnyxService.SetPosthumousArchive:output_type -> sttattus.onyx.v1.SetPosthumousArchiveResponse
+	226,  // 1117: sttattus.onyx.v1.OnyxService.GetPosthumousArchive:output_type -> sttattus.onyx.v1.GetPosthumousArchiveResponse
+	229,  // 1118: sttattus.onyx.v1.OnyxService.ListAnthologies:output_type -> sttattus.onyx.v1.ListAnthologiesResponse
+	231,  // 1119: sttattus.onyx.v1.OnyxService.GetAnthology:output_type -> sttattus.onyx.v1.GetAnthologyResponse
+	234,  // 1120: sttattus.onyx.v1.OnyxService.CreateShareLink:output_type -> sttattus.onyx.v1.CreateShareLinkResponse
+	236,  // 1121: sttattus.onyx.v1.OnyxService.ListMyShareLinks:output_type -> sttattus.onyx.v1.ListMyShareLinksResponse
+	238,  // 1122: sttattus.onyx.v1.OnyxService.RevokeShareLink:output_type -> sttattus.onyx.v1.RevokeShareLinkResponse
+	241,  // 1123: sttattus.onyx.v1.OnyxService.GetOfflineManifest:output_type -> sttattus.onyx.v1.GetOfflineManifestResponse
+	243,  // 1124: sttattus.onyx.v1.OnyxService.RegisterDevice:output_type -> sttattus.onyx.v1.RegisterDeviceResponse
+	245,  // 1125: sttattus.onyx.v1.OnyxService.AcknowledgePurge:output_type -> sttattus.onyx.v1.AcknowledgePurgeResponse
+	248,  // 1126: sttattus.onyx.v1.OnyxService.GetDeviceGrants:output_type -> sttattus.onyx.v1.GetDeviceGrantsResponse
+	250,  // 1127: sttattus.onyx.v1.OnyxService.RevokeMyDevice:output_type -> sttattus.onyx.v1.RevokeMyDeviceResponse
+	252,  // 1128: sttattus.onyx.v1.OnyxService.MarkMyDeviceLost:output_type -> sttattus.onyx.v1.MarkMyDeviceLostResponse
+	254,  // 1129: sttattus.onyx.v1.OnyxService.GetPurgeReceipt:output_type -> sttattus.onyx.v1.GetPurgeReceiptResponse
+	257,  // 1130: sttattus.onyx.v1.OnyxService.ListOfflineManifestItems:output_type -> sttattus.onyx.v1.ListOfflineManifestItemsResponse
+	260,  // 1131: sttattus.onyx.v1.OnyxService.RefreshOfflineRenditions:output_type -> sttattus.onyx.v1.RefreshOfflineRenditionsResponse
+	262,  // 1132: sttattus.onyx.v1.OnyxService.RecordOfflineEvent:output_type -> sttattus.onyx.v1.RecordOfflineEventResponse
+	264,  // 1133: sttattus.onyx.v1.OnyxService.GetYearInOnyx:output_type -> sttattus.onyx.v1.GetYearInOnyxResponse
+	267,  // 1134: sttattus.onyx.v1.OnyxService.GenerateAnnualArchive:output_type -> sttattus.onyx.v1.GenerateAnnualArchiveResponse
+	269,  // 1135: sttattus.onyx.v1.OnyxService.ReactToContent:output_type -> sttattus.onyx.v1.ReactToContentResponse
+	272,  // 1136: sttattus.onyx.v1.OnyxService.CreateIngestionItem:output_type -> sttattus.onyx.v1.CreateIngestionItemResponse
+	274,  // 1137: sttattus.onyx.v1.OnyxService.ListMyIngestionItems:output_type -> sttattus.onyx.v1.ListMyIngestionItemsResponse
+	276,  // 1138: sttattus.onyx.v1.OnyxService.GetIngestionItem:output_type -> sttattus.onyx.v1.GetIngestionItemResponse
+	278,  // 1139: sttattus.onyx.v1.OnyxService.RetryIngestionItem:output_type -> sttattus.onyx.v1.RetryIngestionItemResponse
+	280,  // 1140: sttattus.onyx.v1.OnyxService.SetIngestionItemState:output_type -> sttattus.onyx.v1.SetIngestionItemStateResponse
+	282,  // 1141: sttattus.onyx.v1.OnyxService.ResolveIngestionDuplicate:output_type -> sttattus.onyx.v1.ResolveIngestionDuplicateResponse
+	288,  // 1142: sttattus.onyx.v1.OnyxService.GetEvidenceWorkspace:output_type -> sttattus.onyx.v1.GetEvidenceWorkspaceResponse
+	292,  // 1143: sttattus.onyx.v1.OnyxService.GetEvidenceSourceHistory:output_type -> sttattus.onyx.v1.GetEvidenceSourceHistoryResponse
+	296,  // 1144: sttattus.onyx.v1.OnyxService.CreateEvidenceBrief:output_type -> sttattus.onyx.v1.CreateEvidenceBriefResponse
+	298,  // 1145: sttattus.onyx.v1.OnyxService.ListMyEvidenceBriefs:output_type -> sttattus.onyx.v1.ListMyEvidenceBriefsResponse
+	300,  // 1146: sttattus.onyx.v1.OnyxService.GetEvidenceBrief:output_type -> sttattus.onyx.v1.GetEvidenceBriefResponse
+	309,  // 1147: sttattus.onyx.v1.OnyxService.GetCreatorStudio:output_type -> sttattus.onyx.v1.GetCreatorStudioResponse
+	311,  // 1148: sttattus.onyx.v1.OnyxService.SubmitCreatorPitch:output_type -> sttattus.onyx.v1.SubmitCreatorPitchResponse
+	313,  // 1149: sttattus.onyx.v1.OnyxService.UpdateCreatorProject:output_type -> sttattus.onyx.v1.UpdateCreatorProjectResponse
+	315,  // 1150: sttattus.onyx.v1.OnyxService.SubmitCreatorProject:output_type -> sttattus.onyx.v1.SubmitCreatorProjectResponse
+	317,  // 1151: sttattus.onyx.v1.OnyxService.SignCreatorContract:output_type -> sttattus.onyx.v1.SignCreatorContractResponse
+	319,  // 1152: sttattus.onyx.v1.OnyxService.ListMyCreatorSubscriptionsDetailed:output_type -> sttattus.onyx.v1.ListMyCreatorSubscriptionsDetailedResponse
+	321,  // 1153: sttattus.onyx.v1.OnyxService.CancelCreatorSubscription:output_type -> sttattus.onyx.v1.CancelCreatorSubscriptionResponse
+	325,  // 1154: sttattus.onyx.v1.OnyxService.GetMyCommerce:output_type -> sttattus.onyx.v1.GetMyCommerceResponse
+	327,  // 1155: sttattus.onyx.v1.OnyxService.CreateCommerceCase:output_type -> sttattus.onyx.v1.CreateCommerceCaseResponse
+	346,  // 1156: sttattus.onyx.v1.OnyxService.ListResearchRooms:output_type -> sttattus.onyx.v1.ListResearchRoomsResponse
+	348,  // 1157: sttattus.onyx.v1.OnyxService.GetResearchRoom:output_type -> sttattus.onyx.v1.GetResearchRoomResponse
+	350,  // 1158: sttattus.onyx.v1.OnyxService.CreateResearchRoom:output_type -> sttattus.onyx.v1.CreateResearchRoomResponse
+	352,  // 1159: sttattus.onyx.v1.OnyxService.UpdateResearchRoom:output_type -> sttattus.onyx.v1.UpdateResearchRoomResponse
+	354,  // 1160: sttattus.onyx.v1.OnyxService.InviteResearchRoomMember:output_type -> sttattus.onyx.v1.InviteResearchRoomMemberResponse
+	356,  // 1161: sttattus.onyx.v1.OnyxService.RespondResearchRoomInvite:output_type -> sttattus.onyx.v1.RespondResearchRoomInviteResponse
+	358,  // 1162: sttattus.onyx.v1.OnyxService.ChangeResearchRoomMember:output_type -> sttattus.onyx.v1.ChangeResearchRoomMemberResponse
+	360,  // 1163: sttattus.onyx.v1.OnyxService.RevokeResearchRoomMember:output_type -> sttattus.onyx.v1.RevokeResearchRoomMemberResponse
+	362,  // 1164: sttattus.onyx.v1.OnyxService.AddResearchRoomItem:output_type -> sttattus.onyx.v1.AddResearchRoomItemResponse
+	364,  // 1165: sttattus.onyx.v1.OnyxService.RemoveResearchRoomItem:output_type -> sttattus.onyx.v1.RemoveResearchRoomItemResponse
+	366,  // 1166: sttattus.onyx.v1.OnyxService.PostResearchRoomComment:output_type -> sttattus.onyx.v1.PostResearchRoomCommentResponse
+	368,  // 1167: sttattus.onyx.v1.OnyxService.SetResearchRoomThreadStatus:output_type -> sttattus.onyx.v1.SetResearchRoomThreadStatusResponse
+	370,  // 1168: sttattus.onyx.v1.OnyxService.UpsertResearchRoomTask:output_type -> sttattus.onyx.v1.UpsertResearchRoomTaskResponse
+	372,  // 1169: sttattus.onyx.v1.OnyxService.UpsertResearchRoomMeeting:output_type -> sttattus.onyx.v1.UpsertResearchRoomMeetingResponse
+	374,  // 1170: sttattus.onyx.v1.OnyxService.UpsertResearchRoomDecision:output_type -> sttattus.onyx.v1.UpsertResearchRoomDecisionResponse
+	376,  // 1171: sttattus.onyx.v1.OnyxService.RecordResearchRoomApproval:output_type -> sttattus.onyx.v1.RecordResearchRoomApprovalResponse
+	379,  // 1172: sttattus.onyx.v1.OnyxService.SearchResearchRoom:output_type -> sttattus.onyx.v1.SearchResearchRoomResponse
+	381,  // 1173: sttattus.onyx.v1.OnyxService.RequestResearchRoomExport:output_type -> sttattus.onyx.v1.RequestResearchRoomExportResponse
+	383,  // 1174: sttattus.onyx.v1.OnyxService.ReportResearchRoomAbuse:output_type -> sttattus.onyx.v1.ReportResearchRoomAbuseResponse
+	385,  // 1175: sttattus.onyx.v1.OnyxService.ListResearchRoomAudit:output_type -> sttattus.onyx.v1.ListResearchRoomAuditResponse
+	387,  // 1176: sttattus.onyx.v1.OnyxService.ListResearchRoomGrants:output_type -> sttattus.onyx.v1.ListResearchRoomGrantsResponse
+	389,  // 1177: sttattus.onyx.v1.OnyxService.UpsertResearchRoomGrant:output_type -> sttattus.onyx.v1.UpsertResearchRoomGrantResponse
+	391,  // 1178: sttattus.onyx.v1.OnyxService.RevokeResearchRoomGrant:output_type -> sttattus.onyx.v1.RevokeResearchRoomGrantResponse
+	393,  // 1179: sttattus.onyx.v1.OnyxService.CreateResearchRoomShareLink:output_type -> sttattus.onyx.v1.CreateResearchRoomShareLinkResponse
+	395,  // 1180: sttattus.onyx.v1.OnyxService.ListResearchRoomShareLinks:output_type -> sttattus.onyx.v1.ListResearchRoomShareLinksResponse
+	397,  // 1181: sttattus.onyx.v1.OnyxService.RevokeResearchRoomShareLink:output_type -> sttattus.onyx.v1.RevokeResearchRoomShareLinkResponse
+	399,  // 1182: sttattus.onyx.v1.OnyxService.ResolveResearchRoomShareLink:output_type -> sttattus.onyx.v1.ResolveResearchRoomShareLinkResponse
+	401,  // 1183: sttattus.onyx.v1.OnyxService.GetResearchRoomOfflineManifest:output_type -> sttattus.onyx.v1.GetResearchRoomOfflineManifestResponse
+	403,  // 1184: sttattus.onyx.v1.OnyxService.AcknowledgeResearchRoomOfflinePurge:output_type -> sttattus.onyx.v1.AcknowledgeResearchRoomOfflinePurgeResponse
+	405,  // 1185: sttattus.onyx.v1.OnyxService.ListResearchRoomOfflinePurges:output_type -> sttattus.onyx.v1.ListResearchRoomOfflinePurgesResponse
+	407,  // 1186: sttattus.onyx.v1.OnyxService.LeaveResearchRoom:output_type -> sttattus.onyx.v1.LeaveResearchRoomResponse
+	418,  // 1187: sttattus.onyx.v1.OnyxService.GetPersonalIntelligenceGraph:output_type -> sttattus.onyx.v1.GetPersonalIntelligenceGraphResponse
+	420,  // 1188: sttattus.onyx.v1.OnyxService.UpsertIntelligenceGraphNode:output_type -> sttattus.onyx.v1.UpsertIntelligenceGraphNodeResponse
+	422,  // 1189: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphNodeState:output_type -> sttattus.onyx.v1.SetIntelligenceGraphNodeStateResponse
+	424,  // 1190: sttattus.onyx.v1.OnyxService.MergeIntelligenceGraphNodes:output_type -> sttattus.onyx.v1.MergeIntelligenceGraphNodesResponse
+	426,  // 1191: sttattus.onyx.v1.OnyxService.SplitIntelligenceGraphNode:output_type -> sttattus.onyx.v1.SplitIntelligenceGraphNodeResponse
+	428,  // 1192: sttattus.onyx.v1.OnyxService.UpsertIntelligenceGraphEdge:output_type -> sttattus.onyx.v1.UpsertIntelligenceGraphEdgeResponse
+	430,  // 1193: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphEdgeState:output_type -> sttattus.onyx.v1.SetIntelligenceGraphEdgeStateResponse
+	432,  // 1194: sttattus.onyx.v1.OnyxService.GenerateIntelligenceGraphSuggestions:output_type -> sttattus.onyx.v1.GenerateIntelligenceGraphSuggestionsResponse
+	434,  // 1195: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphSuggestions:output_type -> sttattus.onyx.v1.ListIntelligenceGraphSuggestionsResponse
+	436,  // 1196: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphSuggestionState:output_type -> sttattus.onyx.v1.SetIntelligenceGraphSuggestionStateResponse
+	438,  // 1197: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphTimeline:output_type -> sttattus.onyx.v1.ListIntelligenceGraphTimelineResponse
+	440,  // 1198: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphResurfacing:output_type -> sttattus.onyx.v1.ListIntelligenceGraphResurfacingResponse
+	442,  // 1199: sttattus.onyx.v1.OnyxService.SetIntelligenceGraphResurfacingState:output_type -> sttattus.onyx.v1.SetIntelligenceGraphResurfacingStateResponse
+	444,  // 1200: sttattus.onyx.v1.OnyxService.CreateIntelligenceGraphMeetingBrief:output_type -> sttattus.onyx.v1.CreateIntelligenceGraphMeetingBriefResponse
+	446,  // 1201: sttattus.onyx.v1.OnyxService.GetIntelligenceGraphMeetingBrief:output_type -> sttattus.onyx.v1.GetIntelligenceGraphMeetingBriefResponse
+	448,  // 1202: sttattus.onyx.v1.OnyxService.ListIntelligenceGraphMeetingBriefs:output_type -> sttattus.onyx.v1.ListIntelligenceGraphMeetingBriefsResponse
+	450,  // 1203: sttattus.onyx.v1.OnyxService.ExportPersonalIntelligenceGraph:output_type -> sttattus.onyx.v1.ExportPersonalIntelligenceGraphResponse
+	452,  // 1204: sttattus.onyx.v1.OnyxService.RebuildPersonalIntelligenceGraph:output_type -> sttattus.onyx.v1.RebuildPersonalIntelligenceGraphResponse
+	471,  // 1205: sttattus.onyx.v1.OnyxService.ListLanguageConfigs:output_type -> sttattus.onyx.v1.ListLanguageConfigsResponse
+	473,  // 1206: sttattus.onyx.v1.OnyxService.ListContentEditions:output_type -> sttattus.onyx.v1.ListContentEditionsResponse
+	475,  // 1207: sttattus.onyx.v1.OnyxService.GetAlignedBlocks:output_type -> sttattus.onyx.v1.GetAlignedBlocksResponse
+	477,  // 1208: sttattus.onyx.v1.OnyxService.ListTermbaseEntries:output_type -> sttattus.onyx.v1.ListTermbaseEntriesResponse
+	479,  // 1209: sttattus.onyx.v1.OnyxService.CrossLanguageSearch:output_type -> sttattus.onyx.v1.CrossLanguageSearchResponse
+	481,  // 1210: sttattus.onyx.v1.OnyxService.GetMultilingualPreferences:output_type -> sttattus.onyx.v1.GetMultilingualPreferencesResponse
+	483,  // 1211: sttattus.onyx.v1.OnyxService.UpdateMultilingualPreferences:output_type -> sttattus.onyx.v1.UpdateMultilingualPreferencesResponse
+	485,  // 1212: sttattus.onyx.v1.OnyxService.GetMultilingualAudioVideo:output_type -> sttattus.onyx.v1.GetMultilingualAudioVideoResponse
+	487,  // 1213: sttattus.onyx.v1.OnyxService.GetMultilingualOfflineManifest:output_type -> sttattus.onyx.v1.GetMultilingualOfflineManifestResponse
+	489,  // 1214: sttattus.onyx.v1.OnyxService.ReportTranslationIssue:output_type -> sttattus.onyx.v1.ReportTranslationIssueResponse
+	491,  // 1215: sttattus.onyx.v1.OnyxService.RequestMultilingualExport:output_type -> sttattus.onyx.v1.RequestMultilingualExportResponse
+	493,  // 1216: sttattus.onyx.v1.OnyxService.GetMultilingualExport:output_type -> sttattus.onyx.v1.GetMultilingualExportResponse
+	503,  // 1217: sttattus.onyx.v1.OnyxService.GetLivingArchiveDashboard:output_type -> sttattus.onyx.v1.GetLivingArchiveDashboardResponse
+	505,  // 1218: sttattus.onyx.v1.OnyxService.UpsertLivingArchivePolicy:output_type -> sttattus.onyx.v1.UpsertLivingArchivePolicyResponse
+	507,  // 1219: sttattus.onyx.v1.OnyxService.PreviewLivingArchivePolicy:output_type -> sttattus.onyx.v1.PreviewLivingArchivePolicyResponse
+	509,  // 1220: sttattus.onyx.v1.OnyxService.GenerateLivingArchiveEdition:output_type -> sttattus.onyx.v1.GenerateLivingArchiveEditionResponse
+	511,  // 1221: sttattus.onyx.v1.OnyxService.LinkLivingArchiveLegacyEscrow:output_type -> sttattus.onyx.v1.LinkLivingArchiveLegacyEscrowResponse
+	513,  // 1222: sttattus.onyx.v1.OnyxService.UpsertLivingArchiveContact:output_type -> sttattus.onyx.v1.UpsertLivingArchiveContactResponse
+	515,  // 1223: sttattus.onyx.v1.OnyxService.DeleteLivingArchiveContact:output_type -> sttattus.onyx.v1.DeleteLivingArchiveContactResponse
+	517,  // 1224: sttattus.onyx.v1.OnyxService.SubmitLivingArchivePolicy:output_type -> sttattus.onyx.v1.SubmitLivingArchivePolicyResponse
+	519,  // 1225: sttattus.onyx.v1.OnyxService.RevokeLivingArchivePolicy:output_type -> sttattus.onyx.v1.RevokeLivingArchivePolicyResponse
+	521,  // 1226: sttattus.onyx.v1.OnyxService.ConfirmLivingArchiveReview:output_type -> sttattus.onyx.v1.ConfirmLivingArchiveReviewResponse
+	523,  // 1227: sttattus.onyx.v1.OnyxService.ContestLivingArchiveRelease:output_type -> sttattus.onyx.v1.ContestLivingArchiveReleaseResponse
+	532,  // 1228: sttattus.onyx.v1.OnyxService.GetForensicProtectionDashboard:output_type -> sttattus.onyx.v1.GetForensicProtectionDashboardResponse
+	534,  // 1229: sttattus.onyx.v1.OnyxService.IssueForensicManifest:output_type -> sttattus.onyx.v1.IssueForensicManifestResponse
+	536,  // 1230: sttattus.onyx.v1.OnyxService.RevokeForensicManifest:output_type -> sttattus.onyx.v1.RevokeForensicManifestResponse
+	538,  // 1231: sttattus.onyx.v1.OnyxService.RespondForensicCase:output_type -> sttattus.onyx.v1.RespondForensicCaseResponse
+	540,  // 1232: sttattus.onyx.v1.OnyxService.FileForensicAppeal:output_type -> sttattus.onyx.v1.FileForensicAppealResponse
+	542,  // 1233: sttattus.onyx.v1.OnyxService.PostForensicAppealMessage:output_type -> sttattus.onyx.v1.PostForensicAppealMessageResponse
+	544,  // 1234: sttattus.onyx.v1.OnyxService.WithdrawForensicAppeal:output_type -> sttattus.onyx.v1.WithdrawForensicAppealResponse
+	558,  // 1235: sttattus.onyx.v1.OnyxService.GetIntegrationDashboard:output_type -> sttattus.onyx.v1.GetIntegrationDashboardResponse
+	560,  // 1236: sttattus.onyx.v1.OnyxService.AuthorizeIntegration:output_type -> sttattus.onyx.v1.AuthorizeIntegrationResponse
+	562,  // 1237: sttattus.onyx.v1.OnyxService.RevokeIntegrationGrant:output_type -> sttattus.onyx.v1.RevokeIntegrationGrantResponse
+	564,  // 1238: sttattus.onyx.v1.OnyxService.UpsertIntegrationConnector:output_type -> sttattus.onyx.v1.UpsertIntegrationConnectorResponse
+	566,  // 1239: sttattus.onyx.v1.OnyxService.SetIntegrationConnectorState:output_type -> sttattus.onyx.v1.SetIntegrationConnectorStateResponse
+	568,  // 1240: sttattus.onyx.v1.OnyxService.RunIntegrationConnector:output_type -> sttattus.onyx.v1.RunIntegrationConnectorResponse
+	570,  // 1241: sttattus.onyx.v1.OnyxService.GetIntegrationArtifact:output_type -> sttattus.onyx.v1.GetIntegrationArtifactResponse
+	572,  // 1242: sttattus.onyx.v1.OnyxService.ResolveIntegrationConflict:output_type -> sttattus.onyx.v1.ResolveIntegrationConflictResponse
+	574,  // 1243: sttattus.onyx.v1.OnyxService.DispatchIntegrationBridge:output_type -> sttattus.onyx.v1.DispatchIntegrationBridgeResponse
+	576,  // 1244: sttattus.onyx.v1.OnyxService.SubmitIntegrationOperationsCase:output_type -> sttattus.onyx.v1.SubmitIntegrationOperationsCaseResponse
+	592,  // 1245: sttattus.onyx.v1.OnyxService.GetSpatialCanvasDashboard:output_type -> sttattus.onyx.v1.GetSpatialCanvasDashboardResponse
+	594,  // 1246: sttattus.onyx.v1.OnyxService.ListSpatialCanvasTemplates:output_type -> sttattus.onyx.v1.ListSpatialCanvasTemplatesResponse
+	596,  // 1247: sttattus.onyx.v1.OnyxService.CreateSpatialCanvas:output_type -> sttattus.onyx.v1.CreateSpatialCanvasResponse
+	598,  // 1248: sttattus.onyx.v1.OnyxService.GetSpatialCanvas:output_type -> sttattus.onyx.v1.GetSpatialCanvasResponse
+	600,  // 1249: sttattus.onyx.v1.OnyxService.ApplySpatialCanvasOperations:output_type -> sttattus.onyx.v1.ApplySpatialCanvasOperationsResponse
+	602,  // 1250: sttattus.onyx.v1.OnyxService.ResolveSpatialCanvasConflict:output_type -> sttattus.onyx.v1.ResolveSpatialCanvasConflictResponse
+	604,  // 1251: sttattus.onyx.v1.OnyxService.CreateSpatialCanvasSnapshot:output_type -> sttattus.onyx.v1.CreateSpatialCanvasSnapshotResponse
+	606,  // 1252: sttattus.onyx.v1.OnyxService.RestoreSpatialCanvasSnapshot:output_type -> sttattus.onyx.v1.RestoreSpatialCanvasSnapshotResponse
+	608,  // 1253: sttattus.onyx.v1.OnyxService.UpsertSpatialCanvasComment:output_type -> sttattus.onyx.v1.UpsertSpatialCanvasCommentResponse
+	610,  // 1254: sttattus.onyx.v1.OnyxService.SetSpatialCanvasCommentState:output_type -> sttattus.onyx.v1.SetSpatialCanvasCommentStateResponse
+	612,  // 1255: sttattus.onyx.v1.OnyxService.GenerateSpatialCanvasProposals:output_type -> sttattus.onyx.v1.GenerateSpatialCanvasProposalsResponse
+	614,  // 1256: sttattus.onyx.v1.OnyxService.SetSpatialCanvasProposalState:output_type -> sttattus.onyx.v1.SetSpatialCanvasProposalStateResponse
+	616,  // 1257: sttattus.onyx.v1.OnyxService.RequestSpatialCanvasExport:output_type -> sttattus.onyx.v1.RequestSpatialCanvasExportResponse
+	618,  // 1258: sttattus.onyx.v1.OnyxService.GetSpatialCanvasExport:output_type -> sttattus.onyx.v1.GetSpatialCanvasExportResponse
+	620,  // 1259: sttattus.onyx.v1.OnyxService.UpsertSpatialCanvasCollaborator:output_type -> sttattus.onyx.v1.UpsertSpatialCanvasCollaboratorResponse
+	622,  // 1260: sttattus.onyx.v1.OnyxService.ReportSpatialCanvasAbuse:output_type -> sttattus.onyx.v1.ReportSpatialCanvasAbuseResponse
+	633,  // 1261: sttattus.onyx.v1.OnyxService.GetRecallDashboard:output_type -> sttattus.onyx.v1.GetRecallDashboardResponse
+	635,  // 1262: sttattus.onyx.v1.OnyxService.ListRecallDecks:output_type -> sttattus.onyx.v1.ListRecallDecksResponse
+	637,  // 1263: sttattus.onyx.v1.OnyxService.ListMemoryItems:output_type -> sttattus.onyx.v1.ListMemoryItemsResponse
+	639,  // 1264: sttattus.onyx.v1.OnyxService.UpsertRecallDeck:output_type -> sttattus.onyx.v1.UpsertRecallDeckResponse
+	641,  // 1265: sttattus.onyx.v1.OnyxService.GenerateRecallItems:output_type -> sttattus.onyx.v1.GenerateRecallItemsResponse
+	643,  // 1266: sttattus.onyx.v1.OnyxService.UpsertMemoryItem:output_type -> sttattus.onyx.v1.UpsertMemoryItemResponse
+	645,  // 1267: sttattus.onyx.v1.OnyxService.SetMemoryItemState:output_type -> sttattus.onyx.v1.SetMemoryItemStateResponse
+	647,  // 1268: sttattus.onyx.v1.OnyxService.GetRecallReviewQueue:output_type -> sttattus.onyx.v1.GetRecallReviewQueueResponse
+	649,  // 1269: sttattus.onyx.v1.OnyxService.RecordRecallReviewBatch:output_type -> sttattus.onyx.v1.RecordRecallReviewBatchResponse
+	651,  // 1270: sttattus.onyx.v1.OnyxService.ResolveRecallInvalidation:output_type -> sttattus.onyx.v1.ResolveRecallInvalidationResponse
+	653,  // 1271: sttattus.onyx.v1.OnyxService.UpdateRecallPreferences:output_type -> sttattus.onyx.v1.UpdateRecallPreferencesResponse
+	655,  // 1272: sttattus.onyx.v1.OnyxService.ExportRecallData:output_type -> sttattus.onyx.v1.ExportRecallDataResponse
+	657,  // 1273: sttattus.onyx.v1.OnyxService.ImportRecallData:output_type -> sttattus.onyx.v1.ImportRecallDataResponse
+	659,  // 1274: sttattus.onyx.v1.OnyxService.ReportRecallItem:output_type -> sttattus.onyx.v1.ReportRecallItemResponse
+	661,  // 1275: sttattus.onyx.v1.OnyxService.RecordRecallTransfer:output_type -> sttattus.onyx.v1.RecordRecallTransferResponse
+	677,  // 1276: sttattus.onyx.v1.OnyxService.GetDraftingDashboard:output_type -> sttattus.onyx.v1.GetDraftingDashboardResponse
+	679,  // 1277: sttattus.onyx.v1.OnyxService.ListDrafts:output_type -> sttattus.onyx.v1.ListDraftsResponse
+	681,  // 1278: sttattus.onyx.v1.OnyxService.GetDraft:output_type -> sttattus.onyx.v1.GetDraftResponse
+	683,  // 1279: sttattus.onyx.v1.OnyxService.CreateDraft:output_type -> sttattus.onyx.v1.CreateDraftResponse
+	685,  // 1280: sttattus.onyx.v1.OnyxService.UpsertDraftBlock:output_type -> sttattus.onyx.v1.UpsertDraftBlockResponse
+	687,  // 1281: sttattus.onyx.v1.OnyxService.DeleteDraftBlock:output_type -> sttattus.onyx.v1.DeleteDraftBlockResponse
+	689,  // 1282: sttattus.onyx.v1.OnyxService.UpsertDraftCitation:output_type -> sttattus.onyx.v1.UpsertDraftCitationResponse
+	691,  // 1283: sttattus.onyx.v1.OnyxService.VerifyDraft:output_type -> sttattus.onyx.v1.VerifyDraftResponse
+	696,  // 1284: sttattus.onyx.v1.OnyxService.GetDraftEvidenceReview:output_type -> sttattus.onyx.v1.GetDraftEvidenceReviewResponse
+	699,  // 1285: sttattus.onyx.v1.OnyxService.CompareDraftEvidence:output_type -> sttattus.onyx.v1.CompareDraftEvidenceResponse
+	701,  // 1286: sttattus.onyx.v1.OnyxService.CreateDraftRevision:output_type -> sttattus.onyx.v1.CreateDraftRevisionResponse
+	703,  // 1287: sttattus.onyx.v1.OnyxService.CreateDraftBranch:output_type -> sttattus.onyx.v1.CreateDraftBranchResponse
+	705,  // 1288: sttattus.onyx.v1.OnyxService.RestoreDraftRevision:output_type -> sttattus.onyx.v1.RestoreDraftRevisionResponse
+	707,  // 1289: sttattus.onyx.v1.OnyxService.CompareDraftRevisions:output_type -> sttattus.onyx.v1.CompareDraftRevisionsResponse
+	710,  // 1290: sttattus.onyx.v1.OnyxService.PreviewDraftRestore:output_type -> sttattus.onyx.v1.PreviewDraftRestoreResponse
+	714,  // 1291: sttattus.onyx.v1.OnyxService.PreviewDraftMerge:output_type -> sttattus.onyx.v1.PreviewDraftMergeResponse
+	716,  // 1292: sttattus.onyx.v1.OnyxService.GenerateDraftSuggestion:output_type -> sttattus.onyx.v1.GenerateDraftSuggestionResponse
+	718,  // 1293: sttattus.onyx.v1.OnyxService.SetDraftSuggestionState:output_type -> sttattus.onyx.v1.SetDraftSuggestionStateResponse
+	720,  // 1294: sttattus.onyx.v1.OnyxService.ResolveDraftConflict:output_type -> sttattus.onyx.v1.ResolveDraftConflictResponse
+	722,  // 1295: sttattus.onyx.v1.OnyxService.RequestDraftExport:output_type -> sttattus.onyx.v1.RequestDraftExportResponse
+	724,  // 1296: sttattus.onyx.v1.OnyxService.GetDraftExport:output_type -> sttattus.onyx.v1.GetDraftExportResponse
+	726,  // 1297: sttattus.onyx.v1.OnyxService.CreateDraftHandoff:output_type -> sttattus.onyx.v1.CreateDraftHandoffResponse
+	728,  // 1298: sttattus.onyx.v1.OnyxService.ReportDraftIncident:output_type -> sttattus.onyx.v1.ReportDraftIncidentResponse
+	735,  // 1299: sttattus.onyx.v1.OnyxService.GetDraftCollaboration:output_type -> sttattus.onyx.v1.GetDraftCollaborationResponse
+	737,  // 1300: sttattus.onyx.v1.OnyxService.InviteDraftCollaborator:output_type -> sttattus.onyx.v1.InviteDraftCollaboratorResponse
+	739,  // 1301: sttattus.onyx.v1.OnyxService.RemoveDraftCollaborator:output_type -> sttattus.onyx.v1.RemoveDraftCollaboratorResponse
+	741,  // 1302: sttattus.onyx.v1.OnyxService.CreateDraftComment:output_type -> sttattus.onyx.v1.CreateDraftCommentResponse
+	743,  // 1303: sttattus.onyx.v1.OnyxService.SetDraftCommentState:output_type -> sttattus.onyx.v1.SetDraftCommentStateResponse
+	745,  // 1304: sttattus.onyx.v1.OnyxService.CreateDraftAssignment:output_type -> sttattus.onyx.v1.CreateDraftAssignmentResponse
+	747,  // 1305: sttattus.onyx.v1.OnyxService.SetDraftAssignmentState:output_type -> sttattus.onyx.v1.SetDraftAssignmentStateResponse
+	749,  // 1306: sttattus.onyx.v1.OnyxService.ListDraftNotifications:output_type -> sttattus.onyx.v1.ListDraftNotificationsResponse
+	751,  // 1307: sttattus.onyx.v1.OnyxService.MarkDraftNotificationRead:output_type -> sttattus.onyx.v1.MarkDraftNotificationReadResponse
+	753,  // 1308: sttattus.onyx.v1.OnyxService.SetDraftPresence:output_type -> sttattus.onyx.v1.SetDraftPresenceResponse
+	756,  // 1309: sttattus.onyx.v1.OnyxService.GetDraftOperationStatus:output_type -> sttattus.onyx.v1.GetDraftOperationStatusResponse
+	1035, // [1035:1310] is the sub-list for method output_type
+	760,  // [760:1035] is the sub-list for method input_type
+	760,  // [760:760] is the sub-list for extension type_name
+	760,  // [760:760] is the sub-list for extension extendee
+	0,    // [0:760] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_onyx_v1_onyx_proto_init() }
@@ -65428,7 +65442,7 @@ func file_sttattus_onyx_v1_onyx_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_onyx_v1_onyx_proto_rawDesc), len(file_sttattus_onyx_v1_onyx_proto_rawDesc)),
 			NumEnums:      15,
-			NumMessages:   743,
+			NumMessages:   744,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

@@ -45272,6 +45272,11 @@ export class DraftNotification extends Message<DraftNotification> {
    */
   createdAt?: Timestamp;
 
+  /**
+   * @generated from field: map<string, string> summary_localizations = 11;
+   */
+  summaryLocalizations: { [key: string]: string } = {};
+
   constructor(data?: PartialMessage<DraftNotification>) {
     super();
     proto3.util.initPartial(data, this);
@@ -45290,6 +45295,7 @@ export class DraftNotification extends Message<DraftNotification> {
     { no: 8, name: "summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 9, name: "read", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 10, name: "created_at", kind: "message", T: Timestamp },
+    { no: 11, name: "summary_localizations", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftNotification {

@@ -5754,6 +5754,7 @@ message DraftNotification {
   string summary = 8;
   bool read = 9;
   google.protobuf.Timestamp created_at = 10;
+  map<string, string> summary_localizations = 11;
 }
 
 message DraftPresence {

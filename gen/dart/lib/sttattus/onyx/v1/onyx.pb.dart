@@ -76267,6 +76267,8 @@ class DraftNotification extends $pb.GeneratedMessage {
     $core.String? summary,
     $core.bool? read,
     $1.Timestamp? createdAt,
+    $core.Iterable<$core.MapEntry<$core.String, $core.String>>?
+        summaryLocalizations,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -76279,6 +76281,8 @@ class DraftNotification extends $pb.GeneratedMessage {
     if (summary != null) result.summary = summary;
     if (read != null) result.read = read;
     if (createdAt != null) result.createdAt = createdAt;
+    if (summaryLocalizations != null)
+      result.summaryLocalizations.addEntries(summaryLocalizations);
     return result;
   }
 
@@ -76307,6 +76311,12 @@ class DraftNotification extends $pb.GeneratedMessage {
     ..aOB(9, _omitFieldNames ? '' : 'read')
     ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'createdAt',
         subBuilder: $1.Timestamp.create)
+    ..m<$core.String, $core.String>(
+        11, _omitFieldNames ? '' : 'summaryLocalizations',
+        entryClassName: 'DraftNotification.SummaryLocalizationsEntry',
+        keyFieldType: $pb.PbFieldType.OS,
+        valueFieldType: $pb.PbFieldType.OS,
+        packageName: const $pb.PackageName('sttattus.onyx.v1'))
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -76419,6 +76429,10 @@ class DraftNotification extends $pb.GeneratedMessage {
   void clearCreatedAt() => $_clearField(10);
   @$pb.TagNumber(10)
   $1.Timestamp ensureCreatedAt() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  $pb.PbMap<$core.String, $core.String> get summaryLocalizations =>
+      $_getMap(10);
 }
 
 class DraftPresence extends $pb.GeneratedMessage {
