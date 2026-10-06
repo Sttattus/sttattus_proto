@@ -46639,3 +46639,215 @@ export class GetDraftOperationStatusResponse extends Message<GetDraftOperationSt
   }
 }
 
+/**
+ * Choice 24 — privacy-aware quality and usage analytics. Values are aggregate
+ * and purpose-limited; no draft prose, titles, ciphertext, quotes, or member
+ * identifiers cross this contract.
+ *
+ * @generated from message sttattus.onyx.v1.DraftingAnalyticsMetric
+ */
+export class DraftingAnalyticsMetric extends Message<DraftingAnalyticsMetric> {
+  /**
+   * @generated from field: string key = 1;
+   */
+  key = "";
+
+  /**
+   * @generated from field: double value = 2;
+   */
+  value = 0;
+
+  /**
+   * @generated from field: int32 numerator = 3;
+   */
+  numerator = 0;
+
+  /**
+   * @generated from field: int32 denominator = 4;
+   */
+  denominator = 0;
+
+  /**
+   * @generated from field: bool suppressed = 5;
+   */
+  suppressed = false;
+
+  constructor(data?: PartialMessage<DraftingAnalyticsMetric>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DraftingAnalyticsMetric";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "value", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "numerator", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "denominator", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "suppressed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftingAnalyticsMetric {
+    return new DraftingAnalyticsMetric().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DraftingAnalyticsMetric {
+    return new DraftingAnalyticsMetric().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DraftingAnalyticsMetric {
+    return new DraftingAnalyticsMetric().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DraftingAnalyticsMetric | PlainMessage<DraftingAnalyticsMetric> | undefined, b: DraftingAnalyticsMetric | PlainMessage<DraftingAnalyticsMetric> | undefined): boolean {
+    return proto3.util.equals(DraftingAnalyticsMetric, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.DraftingAnalytics
+ */
+export class DraftingAnalytics extends Message<DraftingAnalytics> {
+  /**
+   * @generated from field: int32 period_days = 1;
+   */
+  periodDays = 0;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp period_start = 2;
+   */
+  periodStart?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp period_end = 3;
+   */
+  periodEnd?: Timestamp;
+
+  /**
+   * @generated from field: int32 eligible_drafts = 4;
+   */
+  eligibleDrafts = 0;
+
+  /**
+   * @generated from field: int32 privacy_threshold = 5;
+   */
+  privacyThreshold = 0;
+
+  /**
+   * @generated from field: bool privacy_threshold_met = 6;
+   */
+  privacyThresholdMet = false;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.DraftingAnalyticsMetric metrics = 7;
+   */
+  metrics: DraftingAnalyticsMetric[] = [];
+
+  constructor(data?: PartialMessage<DraftingAnalytics>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DraftingAnalytics";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "period_days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "period_start", kind: "message", T: Timestamp },
+    { no: 3, name: "period_end", kind: "message", T: Timestamp },
+    { no: 4, name: "eligible_drafts", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "privacy_threshold", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "privacy_threshold_met", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "metrics", kind: "message", T: DraftingAnalyticsMetric, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftingAnalytics {
+    return new DraftingAnalytics().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DraftingAnalytics {
+    return new DraftingAnalytics().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DraftingAnalytics {
+    return new DraftingAnalytics().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DraftingAnalytics | PlainMessage<DraftingAnalytics> | undefined, b: DraftingAnalytics | PlainMessage<DraftingAnalytics> | undefined): boolean {
+    return proto3.util.equals(DraftingAnalytics, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetDraftingAnalyticsRequest
+ */
+export class GetDraftingAnalyticsRequest extends Message<GetDraftingAnalyticsRequest> {
+  /**
+   * @generated from field: int32 period_days = 1;
+   */
+  periodDays = 0;
+
+  constructor(data?: PartialMessage<GetDraftingAnalyticsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetDraftingAnalyticsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "period_days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDraftingAnalyticsRequest {
+    return new GetDraftingAnalyticsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDraftingAnalyticsRequest {
+    return new GetDraftingAnalyticsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDraftingAnalyticsRequest {
+    return new GetDraftingAnalyticsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetDraftingAnalyticsRequest | PlainMessage<GetDraftingAnalyticsRequest> | undefined, b: GetDraftingAnalyticsRequest | PlainMessage<GetDraftingAnalyticsRequest> | undefined): boolean {
+    return proto3.util.equals(GetDraftingAnalyticsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetDraftingAnalyticsResponse
+ */
+export class GetDraftingAnalyticsResponse extends Message<GetDraftingAnalyticsResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.DraftingAnalytics analytics = 1;
+   */
+  analytics?: DraftingAnalytics;
+
+  constructor(data?: PartialMessage<GetDraftingAnalyticsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetDraftingAnalyticsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "analytics", kind: "message", T: DraftingAnalytics },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDraftingAnalyticsResponse {
+    return new GetDraftingAnalyticsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDraftingAnalyticsResponse {
+    return new GetDraftingAnalyticsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDraftingAnalyticsResponse {
+    return new GetDraftingAnalyticsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetDraftingAnalyticsResponse | PlainMessage<GetDraftingAnalyticsResponse> | undefined, b: GetDraftingAnalyticsResponse | PlainMessage<GetDraftingAnalyticsResponse> | undefined): boolean {
+    return proto3.util.equals(GetDraftingAnalyticsResponse, a, b);
+  }
+}
+

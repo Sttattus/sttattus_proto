@@ -5916,6 +5916,34 @@ message GetDraftOperationStatusResponse {
   string public_notice = 5;
 }
 
+// Choice 24 — privacy-aware quality and usage analytics. Values are aggregate
+// and purpose-limited; no draft prose, titles, ciphertext, quotes, or member
+// identifiers cross this contract.
+message DraftingAnalyticsMetric {
+  string key = 1;
+  double value = 2;
+  int32 numerator = 3;
+  int32 denominator = 4;
+  bool suppressed = 5;
+}
+
+message DraftingAnalytics {
+  int32 period_days = 1;
+  google.protobuf.Timestamp period_start = 2;
+  google.protobuf.Timestamp period_end = 3;
+  int32 eligible_drafts = 4;
+  int32 privacy_threshold = 5;
+  bool privacy_threshold_met = 6;
+  repeated DraftingAnalyticsMetric metrics = 7;
+}
+
+message GetDraftingAnalyticsRequest {
+  int32 period_days = 1;
+}
+message GetDraftingAnalyticsResponse {
+  DraftingAnalytics analytics = 1;
+}
+
 service OnyxService {
   // Profile Management
   rpc CreateProfile(CreateProfileRequest) returns (CreateProfileResponse);
@@ -6267,4 +6295,5 @@ service OnyxService {
   rpc MarkDraftNotificationRead(MarkDraftNotificationReadRequest) returns (MarkDraftNotificationReadResponse);
   rpc SetDraftPresence(SetDraftPresenceRequest) returns (SetDraftPresenceResponse);
   rpc GetDraftOperationStatus(GetDraftOperationStatusRequest) returns (GetDraftOperationStatusResponse);
+  rpc GetDraftingAnalytics(GetDraftingAnalyticsRequest) returns (GetDraftingAnalyticsResponse);
 }

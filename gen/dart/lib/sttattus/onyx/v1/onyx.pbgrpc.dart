@@ -2240,6 +2240,13 @@ class OnyxServiceClient extends $grpc.Client {
         options: options);
   }
 
+  $grpc.ResponseFuture<$0.GetDraftingAnalyticsResponse> getDraftingAnalytics(
+    $0.GetDraftingAnalyticsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getDraftingAnalytics, request, options: options);
+  }
+
   // method descriptors
 
   static final _$createProfile =
@@ -3735,6 +3742,11 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/GetDraftOperationStatus',
       ($0.GetDraftOperationStatusRequest value) => value.writeToBuffer(),
       $0.GetDraftOperationStatusResponse.fromBuffer);
+  static final _$getDraftingAnalytics = $grpc.ClientMethod<
+          $0.GetDraftingAnalyticsRequest, $0.GetDraftingAnalyticsResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetDraftingAnalytics',
+      ($0.GetDraftingAnalyticsRequest value) => value.writeToBuffer(),
+      $0.GetDraftingAnalyticsResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.onyx.v1.OnyxService')
@@ -6258,6 +6270,15 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.GetDraftOperationStatusRequest.fromBuffer(value),
         ($0.GetDraftOperationStatusResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetDraftingAnalyticsRequest,
+            $0.GetDraftingAnalyticsResponse>(
+        'GetDraftingAnalytics',
+        getDraftingAnalytics_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetDraftingAnalyticsRequest.fromBuffer(value),
+        ($0.GetDraftingAnalyticsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.CreateProfileResponse> createProfile_Pre(
@@ -8846,4 +8867,13 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.GetDraftOperationStatusResponse> getDraftOperationStatus(
       $grpc.ServiceCall call, $0.GetDraftOperationStatusRequest request);
+
+  $async.Future<$0.GetDraftingAnalyticsResponse> getDraftingAnalytics_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetDraftingAnalyticsRequest> $request) async {
+    return getDraftingAnalytics($call, await $request);
+  }
+
+  $async.Future<$0.GetDraftingAnalyticsResponse> getDraftingAnalytics(
+      $grpc.ServiceCall call, $0.GetDraftingAnalyticsRequest request);
 }

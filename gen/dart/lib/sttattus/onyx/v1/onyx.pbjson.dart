@@ -23443,3 +23443,113 @@ final $typed_data.Uint8List getDraftOperationStatusResponseDescriptor = $convert
     'ZW5fY291bnQYAiABKAVSCW9wZW5Db3VudBIjCg1vdmVyZHVlX2NvdW50GAMgASgFUgxvdmVyZH'
     'VlQ291bnQSLQoSYXV0b21hdGlvbl9lbmFibGVkGAQgASgIUhFhdXRvbWF0aW9uRW5hYmxlZBIj'
     'Cg1wdWJsaWNfbm90aWNlGAUgASgJUgxwdWJsaWNOb3RpY2U=');
+
+@$core.Deprecated('Use draftingAnalyticsMetricDescriptor instead')
+const DraftingAnalyticsMetric$json = {
+  '1': 'DraftingAnalyticsMetric',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 1, '10': 'value'},
+    {'1': 'numerator', '3': 3, '4': 1, '5': 5, '10': 'numerator'},
+    {'1': 'denominator', '3': 4, '4': 1, '5': 5, '10': 'denominator'},
+    {'1': 'suppressed', '3': 5, '4': 1, '5': 8, '10': 'suppressed'},
+  ],
+};
+
+/// Descriptor for `DraftingAnalyticsMetric`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List draftingAnalyticsMetricDescriptor = $convert.base64Decode(
+    'ChdEcmFmdGluZ0FuYWx5dGljc01ldHJpYxIQCgNrZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIA'
+    'EoAVIFdmFsdWUSHAoJbnVtZXJhdG9yGAMgASgFUgludW1lcmF0b3ISIAoLZGVub21pbmF0b3IY'
+    'BCABKAVSC2Rlbm9taW5hdG9yEh4KCnN1cHByZXNzZWQYBSABKAhSCnN1cHByZXNzZWQ=');
+
+@$core.Deprecated('Use draftingAnalyticsDescriptor instead')
+const DraftingAnalytics$json = {
+  '1': 'DraftingAnalytics',
+  '2': [
+    {'1': 'period_days', '3': 1, '4': 1, '5': 5, '10': 'periodDays'},
+    {
+      '1': 'period_start',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'periodStart'
+    },
+    {
+      '1': 'period_end',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'periodEnd'
+    },
+    {'1': 'eligible_drafts', '3': 4, '4': 1, '5': 5, '10': 'eligibleDrafts'},
+    {
+      '1': 'privacy_threshold',
+      '3': 5,
+      '4': 1,
+      '5': 5,
+      '10': 'privacyThreshold'
+    },
+    {
+      '1': 'privacy_threshold_met',
+      '3': 6,
+      '4': 1,
+      '5': 8,
+      '10': 'privacyThresholdMet'
+    },
+    {
+      '1': 'metrics',
+      '3': 7,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftingAnalyticsMetric',
+      '10': 'metrics'
+    },
+  ],
+};
+
+/// Descriptor for `DraftingAnalytics`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List draftingAnalyticsDescriptor = $convert.base64Decode(
+    'ChFEcmFmdGluZ0FuYWx5dGljcxIfCgtwZXJpb2RfZGF5cxgBIAEoBVIKcGVyaW9kRGF5cxI9Cg'
+    'xwZXJpb2Rfc3RhcnQYAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgtwZXJpb2RT'
+    'dGFydBI5CgpwZXJpb2RfZW5kGAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJcG'
+    'VyaW9kRW5kEicKD2VsaWdpYmxlX2RyYWZ0cxgEIAEoBVIOZWxpZ2libGVEcmFmdHMSKwoRcHJp'
+    'dmFjeV90aHJlc2hvbGQYBSABKAVSEHByaXZhY3lUaHJlc2hvbGQSMgoVcHJpdmFjeV90aHJlc2'
+    'hvbGRfbWV0GAYgASgIUhNwcml2YWN5VGhyZXNob2xkTWV0EkMKB21ldHJpY3MYByADKAsyKS5z'
+    'dHRhdHR1cy5vbnl4LnYxLkRyYWZ0aW5nQW5hbHl0aWNzTWV0cmljUgdtZXRyaWNz');
+
+@$core.Deprecated('Use getDraftingAnalyticsRequestDescriptor instead')
+const GetDraftingAnalyticsRequest$json = {
+  '1': 'GetDraftingAnalyticsRequest',
+  '2': [
+    {'1': 'period_days', '3': 1, '4': 1, '5': 5, '10': 'periodDays'},
+  ],
+};
+
+/// Descriptor for `GetDraftingAnalyticsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDraftingAnalyticsRequestDescriptor =
+    $convert.base64Decode(
+        'ChtHZXREcmFmdGluZ0FuYWx5dGljc1JlcXVlc3QSHwoLcGVyaW9kX2RheXMYASABKAVSCnBlcm'
+        'lvZERheXM=');
+
+@$core.Deprecated('Use getDraftingAnalyticsResponseDescriptor instead')
+const GetDraftingAnalyticsResponse$json = {
+  '1': 'GetDraftingAnalyticsResponse',
+  '2': [
+    {
+      '1': 'analytics',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.DraftingAnalytics',
+      '10': 'analytics'
+    },
+  ],
+};
+
+/// Descriptor for `GetDraftingAnalyticsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDraftingAnalyticsResponseDescriptor =
+    $convert.base64Decode(
+        'ChxHZXREcmFmdGluZ0FuYWx5dGljc1Jlc3BvbnNlEkEKCWFuYWx5dGljcxgBIAEoCzIjLnN0dG'
+        'F0dHVzLm9ueXgudjEuRHJhZnRpbmdBbmFseXRpY3NSCWFuYWx5dGljcw==');

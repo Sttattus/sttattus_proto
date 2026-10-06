@@ -78678,6 +78678,361 @@ class GetDraftOperationStatusResponse extends $pb.GeneratedMessage {
   void clearPublicNotice() => $_clearField(5);
 }
 
+/// Choice 24 — privacy-aware quality and usage analytics. Values are aggregate
+/// and purpose-limited; no draft prose, titles, ciphertext, quotes, or member
+/// identifiers cross this contract.
+class DraftingAnalyticsMetric extends $pb.GeneratedMessage {
+  factory DraftingAnalyticsMetric({
+    $core.String? key,
+    $core.double? value,
+    $core.int? numerator,
+    $core.int? denominator,
+    $core.bool? suppressed,
+  }) {
+    final result = create();
+    if (key != null) result.key = key;
+    if (value != null) result.value = value;
+    if (numerator != null) result.numerator = numerator;
+    if (denominator != null) result.denominator = denominator;
+    if (suppressed != null) result.suppressed = suppressed;
+    return result;
+  }
+
+  DraftingAnalyticsMetric._();
+
+  factory DraftingAnalyticsMetric.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DraftingAnalyticsMetric.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DraftingAnalyticsMetric',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'key')
+    ..aD(2, _omitFieldNames ? '' : 'value')
+    ..aI(3, _omitFieldNames ? '' : 'numerator')
+    ..aI(4, _omitFieldNames ? '' : 'denominator')
+    ..aOB(5, _omitFieldNames ? '' : 'suppressed')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftingAnalyticsMetric clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftingAnalyticsMetric copyWith(
+          void Function(DraftingAnalyticsMetric) updates) =>
+      super.copyWith((message) => updates(message as DraftingAnalyticsMetric))
+          as DraftingAnalyticsMetric;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DraftingAnalyticsMetric create() => DraftingAnalyticsMetric._();
+  @$core.override
+  DraftingAnalyticsMetric createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DraftingAnalyticsMetric getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DraftingAnalyticsMetric>(create);
+  static DraftingAnalyticsMetric? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get key => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set key($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearKey() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get value => $_getN(1);
+  @$pb.TagNumber(2)
+  set value($core.double value) => $_setDouble(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasValue() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearValue() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get numerator => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set numerator($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNumerator() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNumerator() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get denominator => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set denominator($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDenominator() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDenominator() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get suppressed => $_getBF(4);
+  @$pb.TagNumber(5)
+  set suppressed($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSuppressed() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSuppressed() => $_clearField(5);
+}
+
+class DraftingAnalytics extends $pb.GeneratedMessage {
+  factory DraftingAnalytics({
+    $core.int? periodDays,
+    $1.Timestamp? periodStart,
+    $1.Timestamp? periodEnd,
+    $core.int? eligibleDrafts,
+    $core.int? privacyThreshold,
+    $core.bool? privacyThresholdMet,
+    $core.Iterable<DraftingAnalyticsMetric>? metrics,
+  }) {
+    final result = create();
+    if (periodDays != null) result.periodDays = periodDays;
+    if (periodStart != null) result.periodStart = periodStart;
+    if (periodEnd != null) result.periodEnd = periodEnd;
+    if (eligibleDrafts != null) result.eligibleDrafts = eligibleDrafts;
+    if (privacyThreshold != null) result.privacyThreshold = privacyThreshold;
+    if (privacyThresholdMet != null)
+      result.privacyThresholdMet = privacyThresholdMet;
+    if (metrics != null) result.metrics.addAll(metrics);
+    return result;
+  }
+
+  DraftingAnalytics._();
+
+  factory DraftingAnalytics.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DraftingAnalytics.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DraftingAnalytics',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'periodDays')
+    ..aOM<$1.Timestamp>(2, _omitFieldNames ? '' : 'periodStart',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'periodEnd',
+        subBuilder: $1.Timestamp.create)
+    ..aI(4, _omitFieldNames ? '' : 'eligibleDrafts')
+    ..aI(5, _omitFieldNames ? '' : 'privacyThreshold')
+    ..aOB(6, _omitFieldNames ? '' : 'privacyThresholdMet')
+    ..pPM<DraftingAnalyticsMetric>(7, _omitFieldNames ? '' : 'metrics',
+        subBuilder: DraftingAnalyticsMetric.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftingAnalytics clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftingAnalytics copyWith(void Function(DraftingAnalytics) updates) =>
+      super.copyWith((message) => updates(message as DraftingAnalytics))
+          as DraftingAnalytics;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DraftingAnalytics create() => DraftingAnalytics._();
+  @$core.override
+  DraftingAnalytics createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DraftingAnalytics getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DraftingAnalytics>(create);
+  static DraftingAnalytics? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get periodDays => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set periodDays($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPeriodDays() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPeriodDays() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $1.Timestamp get periodStart => $_getN(1);
+  @$pb.TagNumber(2)
+  set periodStart($1.Timestamp value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPeriodStart() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPeriodStart() => $_clearField(2);
+  @$pb.TagNumber(2)
+  $1.Timestamp ensurePeriodStart() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $1.Timestamp get periodEnd => $_getN(2);
+  @$pb.TagNumber(3)
+  set periodEnd($1.Timestamp value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPeriodEnd() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPeriodEnd() => $_clearField(3);
+  @$pb.TagNumber(3)
+  $1.Timestamp ensurePeriodEnd() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $core.int get eligibleDrafts => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set eligibleDrafts($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEligibleDrafts() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEligibleDrafts() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get privacyThreshold => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set privacyThreshold($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPrivacyThreshold() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPrivacyThreshold() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get privacyThresholdMet => $_getBF(5);
+  @$pb.TagNumber(6)
+  set privacyThresholdMet($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPrivacyThresholdMet() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPrivacyThresholdMet() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<DraftingAnalyticsMetric> get metrics => $_getList(6);
+}
+
+class GetDraftingAnalyticsRequest extends $pb.GeneratedMessage {
+  factory GetDraftingAnalyticsRequest({
+    $core.int? periodDays,
+  }) {
+    final result = create();
+    if (periodDays != null) result.periodDays = periodDays;
+    return result;
+  }
+
+  GetDraftingAnalyticsRequest._();
+
+  factory GetDraftingAnalyticsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDraftingAnalyticsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDraftingAnalyticsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'periodDays')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDraftingAnalyticsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDraftingAnalyticsRequest copyWith(
+          void Function(GetDraftingAnalyticsRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetDraftingAnalyticsRequest))
+          as GetDraftingAnalyticsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDraftingAnalyticsRequest create() =>
+      GetDraftingAnalyticsRequest._();
+  @$core.override
+  GetDraftingAnalyticsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDraftingAnalyticsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetDraftingAnalyticsRequest>(create);
+  static GetDraftingAnalyticsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get periodDays => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set periodDays($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPeriodDays() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPeriodDays() => $_clearField(1);
+}
+
+class GetDraftingAnalyticsResponse extends $pb.GeneratedMessage {
+  factory GetDraftingAnalyticsResponse({
+    DraftingAnalytics? analytics,
+  }) {
+    final result = create();
+    if (analytics != null) result.analytics = analytics;
+    return result;
+  }
+
+  GetDraftingAnalyticsResponse._();
+
+  factory GetDraftingAnalyticsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDraftingAnalyticsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDraftingAnalyticsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<DraftingAnalytics>(1, _omitFieldNames ? '' : 'analytics',
+        subBuilder: DraftingAnalytics.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDraftingAnalyticsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDraftingAnalyticsResponse copyWith(
+          void Function(GetDraftingAnalyticsResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetDraftingAnalyticsResponse))
+          as GetDraftingAnalyticsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDraftingAnalyticsResponse create() =>
+      GetDraftingAnalyticsResponse._();
+  @$core.override
+  GetDraftingAnalyticsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDraftingAnalyticsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetDraftingAnalyticsResponse>(create);
+  static GetDraftingAnalyticsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DraftingAnalytics get analytics => $_getN(0);
+  @$pb.TagNumber(1)
+  set analytics(DraftingAnalytics value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAnalytics() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAnalytics() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DraftingAnalytics ensureAnalytics() => $_ensure(0);
+}
+
 const $core.bool _omitFieldNames =
     $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames =
