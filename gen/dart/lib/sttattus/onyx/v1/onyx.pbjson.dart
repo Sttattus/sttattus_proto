@@ -6311,6 +6311,244 @@ final $typed_data.Uint8List recordOfflineEventResponseDescriptor =
         'ChpSZWNvcmRPZmZsaW5lRXZlbnRSZXNwb25zZRIOCgJpZBgBIAEoCVICaWQSGAoHc3VjY2Vzcx'
         'gCIAEoCFIHc3VjY2Vzcw==');
 
+@$core.Deprecated('Use getOfflineSyncStatusRequestDescriptor instead')
+const GetOfflineSyncStatusRequest$json = {
+  '1': 'GetOfflineSyncStatusRequest',
+  '2': [
+    {'1': 'device_id', '3': 1, '4': 1, '5': 9, '10': 'deviceId'},
+    {'1': 'reader_cursor', '3': 2, '4': 1, '5': 3, '10': 'readerCursor'},
+  ],
+};
+
+/// Descriptor for `GetOfflineSyncStatusRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getOfflineSyncStatusRequestDescriptor =
+    $convert.base64Decode(
+        'ChtHZXRPZmZsaW5lU3luY1N0YXR1c1JlcXVlc3QSGwoJZGV2aWNlX2lkGAEgASgJUghkZXZpY2'
+        'VJZBIjCg1yZWFkZXJfY3Vyc29yGAIgASgDUgxyZWFkZXJDdXJzb3I=');
+
+@$core.Deprecated('Use offlineSyncStatusDescriptor instead')
+const OfflineSyncStatus$json = {
+  '1': 'OfflineSyncStatus',
+  '2': [
+    {'1': 'device_id', '3': 1, '4': 1, '5': 9, '10': 'deviceId'},
+    {'1': 'device_status', '3': 2, '4': 1, '5': 9, '10': 'deviceStatus'},
+    {
+      '1': 'server_time',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'serverTime'
+    },
+    {
+      '1': 'device_last_sync_at',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'deviceLastSyncAt'
+    },
+    {
+      '1': 'device_expires_at',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'deviceExpiresAt'
+    },
+    {
+      '1': 'latest_reader_sequence',
+      '3': 6,
+      '4': 1,
+      '5': 3,
+      '10': 'latestReaderSequence'
+    },
+    {
+      '1': 'open_draft_conflicts',
+      '3': 7,
+      '4': 1,
+      '5': 5,
+      '10': 'openDraftConflicts'
+    },
+    {
+      '1': 'open_canvas_conflicts',
+      '3': 8,
+      '4': 1,
+      '5': 5,
+      '10': 'openCanvasConflicts'
+    },
+    {
+      '1': 'latest_offline_event_at',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'latestOfflineEventAt'
+    },
+    {
+      '1': 'latest_receipt_at',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'latestReceiptAt'
+    },
+    {
+      '1': 'latest_receipt_outcome',
+      '3': 11,
+      '4': 1,
+      '5': 9,
+      '10': 'latestReceiptOutcome'
+    },
+    {
+      '1': 'latest_receipt_error_code',
+      '3': 12,
+      '4': 1,
+      '5': 9,
+      '10': 'latestReceiptErrorCode'
+    },
+    {
+      '1': 'failed_receipts_24h',
+      '3': 13,
+      '4': 1,
+      '5': 5,
+      '10': 'failedReceipts24h'
+    },
+    {
+      '1': 'requires_recovery',
+      '3': 14,
+      '4': 1,
+      '5': 8,
+      '10': 'requiresRecovery'
+    },
+    {
+      '1': 'recovery_reason_code',
+      '3': 15,
+      '4': 1,
+      '5': 9,
+      '10': 'recoveryReasonCode'
+    },
+  ],
+};
+
+/// Descriptor for `OfflineSyncStatus`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List offlineSyncStatusDescriptor = $convert.base64Decode(
+    'ChFPZmZsaW5lU3luY1N0YXR1cxIbCglkZXZpY2VfaWQYASABKAlSCGRldmljZUlkEiMKDWRldm'
+    'ljZV9zdGF0dXMYAiABKAlSDGRldmljZVN0YXR1cxI7CgtzZXJ2ZXJfdGltZRgDIAEoCzIaLmdv'
+    'b2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCnNlcnZlclRpbWUSSQoTZGV2aWNlX2xhc3Rfc3luY1'
+    '9hdBgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSEGRldmljZUxhc3RTeW5jQXQS'
+    'RgoRZGV2aWNlX2V4cGlyZXNfYXQYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUg'
+    '9kZXZpY2VFeHBpcmVzQXQSNAoWbGF0ZXN0X3JlYWRlcl9zZXF1ZW5jZRgGIAEoA1IUbGF0ZXN0'
+    'UmVhZGVyU2VxdWVuY2USMAoUb3Blbl9kcmFmdF9jb25mbGljdHMYByABKAVSEm9wZW5EcmFmdE'
+    'NvbmZsaWN0cxIyChVvcGVuX2NhbnZhc19jb25mbGljdHMYCCABKAVSE29wZW5DYW52YXNDb25m'
+    'bGljdHMSUQoXbGF0ZXN0X29mZmxpbmVfZXZlbnRfYXQYCSABKAsyGi5nb29nbGUucHJvdG9idW'
+    'YuVGltZXN0YW1wUhRsYXRlc3RPZmZsaW5lRXZlbnRBdBJGChFsYXRlc3RfcmVjZWlwdF9hdBgK'
+    'IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSD2xhdGVzdFJlY2VpcHRBdBI0ChZsYX'
+    'Rlc3RfcmVjZWlwdF9vdXRjb21lGAsgASgJUhRsYXRlc3RSZWNlaXB0T3V0Y29tZRI5ChlsYXRl'
+    'c3RfcmVjZWlwdF9lcnJvcl9jb2RlGAwgASgJUhZsYXRlc3RSZWNlaXB0RXJyb3JDb2RlEi4KE2'
+    'ZhaWxlZF9yZWNlaXB0c18yNGgYDSABKAVSEWZhaWxlZFJlY2VpcHRzMjRoEisKEXJlcXVpcmVz'
+    'X3JlY292ZXJ5GA4gASgIUhByZXF1aXJlc1JlY292ZXJ5EjAKFHJlY292ZXJ5X3JlYXNvbl9jb2'
+    'RlGA8gASgJUhJyZWNvdmVyeVJlYXNvbkNvZGU=');
+
+@$core.Deprecated('Use getOfflineSyncStatusResponseDescriptor instead')
+const GetOfflineSyncStatusResponse$json = {
+  '1': 'GetOfflineSyncStatusResponse',
+  '2': [
+    {
+      '1': 'status',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OfflineSyncStatus',
+      '10': 'status'
+    },
+  ],
+};
+
+/// Descriptor for `GetOfflineSyncStatusResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getOfflineSyncStatusResponseDescriptor =
+    $convert.base64Decode(
+        'ChxHZXRPZmZsaW5lU3luY1N0YXR1c1Jlc3BvbnNlEjsKBnN0YXR1cxgBIAEoCzIjLnN0dGF0dH'
+        'VzLm9ueXgudjEuT2ZmbGluZVN5bmNTdGF0dXNSBnN0YXR1cw==');
+
+@$core.Deprecated('Use recordOfflineSyncReceiptRequestDescriptor instead')
+const RecordOfflineSyncReceiptRequest$json = {
+  '1': 'RecordOfflineSyncReceiptRequest',
+  '2': [
+    {'1': 'receipt_id', '3': 1, '4': 1, '5': 9, '10': 'receiptId'},
+    {'1': 'device_id', '3': 2, '4': 1, '5': 9, '10': 'deviceId'},
+    {'1': 'outcome', '3': 3, '4': 1, '5': 9, '10': 'outcome'},
+    {'1': 'pending_reader', '3': 4, '4': 1, '5': 5, '10': 'pendingReader'},
+    {'1': 'pending_drafts', '3': 5, '4': 1, '5': 5, '10': 'pendingDrafts'},
+    {'1': 'pending_canvas', '3': 6, '4': 1, '5': 5, '10': 'pendingCanvas'},
+    {'1': 'pending_recall', '3': 7, '4': 1, '5': 5, '10': 'pendingRecall'},
+    {
+      '1': 'pending_telemetry',
+      '3': 8,
+      '4': 1,
+      '5': 5,
+      '10': 'pendingTelemetry'
+    },
+    {'1': 'synced_count', '3': 9, '4': 1, '5': 5, '10': 'syncedCount'},
+    {'1': 'conflict_count', '3': 10, '4': 1, '5': 5, '10': 'conflictCount'},
+    {'1': 'duration_ms', '3': 11, '4': 1, '5': 5, '10': 'durationMs'},
+    {'1': 'error_code', '3': 12, '4': 1, '5': 9, '10': 'errorCode'},
+    {
+      '1': 'local_schema_version',
+      '3': 13,
+      '4': 1,
+      '5': 9,
+      '10': 'localSchemaVersion'
+    },
+    {
+      '1': 'started_at',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'startedAt'
+    },
+    {
+      '1': 'completed_at',
+      '3': 15,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'completedAt'
+    },
+  ],
+};
+
+/// Descriptor for `RecordOfflineSyncReceiptRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordOfflineSyncReceiptRequestDescriptor = $convert.base64Decode(
+    'Ch9SZWNvcmRPZmZsaW5lU3luY1JlY2VpcHRSZXF1ZXN0Eh0KCnJlY2VpcHRfaWQYASABKAlSCX'
+    'JlY2VpcHRJZBIbCglkZXZpY2VfaWQYAiABKAlSCGRldmljZUlkEhgKB291dGNvbWUYAyABKAlS'
+    'B291dGNvbWUSJQoOcGVuZGluZ19yZWFkZXIYBCABKAVSDXBlbmRpbmdSZWFkZXISJQoOcGVuZG'
+    'luZ19kcmFmdHMYBSABKAVSDXBlbmRpbmdEcmFmdHMSJQoOcGVuZGluZ19jYW52YXMYBiABKAVS'
+    'DXBlbmRpbmdDYW52YXMSJQoOcGVuZGluZ19yZWNhbGwYByABKAVSDXBlbmRpbmdSZWNhbGwSKw'
+    'oRcGVuZGluZ190ZWxlbWV0cnkYCCABKAVSEHBlbmRpbmdUZWxlbWV0cnkSIQoMc3luY2VkX2Nv'
+    'dW50GAkgASgFUgtzeW5jZWRDb3VudBIlCg5jb25mbGljdF9jb3VudBgKIAEoBVINY29uZmxpY3'
+    'RDb3VudBIfCgtkdXJhdGlvbl9tcxgLIAEoBVIKZHVyYXRpb25NcxIdCgplcnJvcl9jb2RlGAwg'
+    'ASgJUgllcnJvckNvZGUSMAoUbG9jYWxfc2NoZW1hX3ZlcnNpb24YDSABKAlSEmxvY2FsU2NoZW'
+    '1hVmVyc2lvbhI5CgpzdGFydGVkX2F0GA4gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFt'
+    'cFIJc3RhcnRlZEF0Ej0KDGNvbXBsZXRlZF9hdBgPIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW'
+    '1lc3RhbXBSC2NvbXBsZXRlZEF0');
+
+@$core.Deprecated('Use recordOfflineSyncReceiptResponseDescriptor instead')
+const RecordOfflineSyncReceiptResponse$json = {
+  '1': 'RecordOfflineSyncReceiptResponse',
+  '2': [
+    {'1': 'receipt_id', '3': 1, '4': 1, '5': 9, '10': 'receiptId'},
+    {'1': 'replayed', '3': 2, '4': 1, '5': 8, '10': 'replayed'},
+  ],
+};
+
+/// Descriptor for `RecordOfflineSyncReceiptResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordOfflineSyncReceiptResponseDescriptor =
+    $convert.base64Decode(
+        'CiBSZWNvcmRPZmZsaW5lU3luY1JlY2VpcHRSZXNwb25zZRIdCgpyZWNlaXB0X2lkGAEgASgJUg'
+        'lyZWNlaXB0SWQSGgoIcmVwbGF5ZWQYAiABKAhSCHJlcGxheWVk');
+
 @$core.Deprecated('Use getYearInOnyxRequestDescriptor instead')
 const GetYearInOnyxRequest$json = {
   '1': 'GetYearInOnyxRequest',

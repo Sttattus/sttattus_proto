@@ -1606,6 +1606,60 @@ message RecordOfflineEventResponse {
   bool success = 2;
 }
 
+// Choice 25 — metadata-only, cross-queue offline sync observability. These
+// messages deliberately expose counts, cursors and bounded error codes only;
+// draft bodies, annotations and other private payloads never leave the
+// member device through this surface.
+message GetOfflineSyncStatusRequest {
+  string device_id = 1;
+  int64 reader_cursor = 2;
+}
+
+message OfflineSyncStatus {
+  string device_id = 1;
+  string device_status = 2;
+  google.protobuf.Timestamp server_time = 3;
+  google.protobuf.Timestamp device_last_sync_at = 4;
+  google.protobuf.Timestamp device_expires_at = 5;
+  int64 latest_reader_sequence = 6;
+  int32 open_draft_conflicts = 7;
+  int32 open_canvas_conflicts = 8;
+  google.protobuf.Timestamp latest_offline_event_at = 9;
+  google.protobuf.Timestamp latest_receipt_at = 10;
+  string latest_receipt_outcome = 11;
+  string latest_receipt_error_code = 12;
+  int32 failed_receipts_24h = 13;
+  bool requires_recovery = 14;
+  string recovery_reason_code = 15;
+}
+
+message GetOfflineSyncStatusResponse {
+  OfflineSyncStatus status = 1;
+}
+
+message RecordOfflineSyncReceiptRequest {
+  string receipt_id = 1;
+  string device_id = 2;
+  string outcome = 3; // success | partial | failed | offline
+  int32 pending_reader = 4;
+  int32 pending_drafts = 5;
+  int32 pending_canvas = 6;
+  int32 pending_recall = 7;
+  int32 pending_telemetry = 8;
+  int32 synced_count = 9;
+  int32 conflict_count = 10;
+  int32 duration_ms = 11;
+  string error_code = 12;
+  string local_schema_version = 13;
+  google.protobuf.Timestamp started_at = 14;
+  google.protobuf.Timestamp completed_at = 15;
+}
+
+message RecordOfflineSyncReceiptResponse {
+  string receipt_id = 1;
+  bool replayed = 2;
+}
+
 // === P4 — year-in-onyx recap, annual archive, silent reactions ===
 
 message GetYearInOnyxRequest {
@@ -6080,6 +6134,8 @@ service OnyxService {
   rpc ListOfflineManifestItems(ListOfflineManifestItemsRequest) returns (ListOfflineManifestItemsResponse);
   rpc RefreshOfflineRenditions(RefreshOfflineRenditionsRequest) returns (RefreshOfflineRenditionsResponse);
   rpc RecordOfflineEvent(RecordOfflineEventRequest) returns (RecordOfflineEventResponse);
+  rpc GetOfflineSyncStatus(GetOfflineSyncStatusRequest) returns (GetOfflineSyncStatusResponse);
+  rpc RecordOfflineSyncReceipt(RecordOfflineSyncReceiptRequest) returns (RecordOfflineSyncReceiptResponse);
 
   // P4 — year-in-onyx recap, annual archive PDF, silent reactions.
   rpc GetYearInOnyx(GetYearInOnyxRequest) returns (GetYearInOnyxResponse);

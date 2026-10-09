@@ -13952,6 +13952,378 @@ export class RecordOfflineEventResponse extends Message<RecordOfflineEventRespon
 }
 
 /**
+ * Choice 25 — metadata-only, cross-queue offline sync observability. These
+ * messages deliberately expose counts, cursors and bounded error codes only;
+ * draft bodies, annotations and other private payloads never leave the
+ * member device through this surface.
+ *
+ * @generated from message sttattus.onyx.v1.GetOfflineSyncStatusRequest
+ */
+export class GetOfflineSyncStatusRequest extends Message<GetOfflineSyncStatusRequest> {
+  /**
+   * @generated from field: string device_id = 1;
+   */
+  deviceId = "";
+
+  /**
+   * @generated from field: int64 reader_cursor = 2;
+   */
+  readerCursor = protoInt64.zero;
+
+  constructor(data?: PartialMessage<GetOfflineSyncStatusRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetOfflineSyncStatusRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "reader_cursor", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetOfflineSyncStatusRequest {
+    return new GetOfflineSyncStatusRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetOfflineSyncStatusRequest {
+    return new GetOfflineSyncStatusRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetOfflineSyncStatusRequest {
+    return new GetOfflineSyncStatusRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetOfflineSyncStatusRequest | PlainMessage<GetOfflineSyncStatusRequest> | undefined, b: GetOfflineSyncStatusRequest | PlainMessage<GetOfflineSyncStatusRequest> | undefined): boolean {
+    return proto3.util.equals(GetOfflineSyncStatusRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OfflineSyncStatus
+ */
+export class OfflineSyncStatus extends Message<OfflineSyncStatus> {
+  /**
+   * @generated from field: string device_id = 1;
+   */
+  deviceId = "";
+
+  /**
+   * @generated from field: string device_status = 2;
+   */
+  deviceStatus = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp server_time = 3;
+   */
+  serverTime?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp device_last_sync_at = 4;
+   */
+  deviceLastSyncAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp device_expires_at = 5;
+   */
+  deviceExpiresAt?: Timestamp;
+
+  /**
+   * @generated from field: int64 latest_reader_sequence = 6;
+   */
+  latestReaderSequence = protoInt64.zero;
+
+  /**
+   * @generated from field: int32 open_draft_conflicts = 7;
+   */
+  openDraftConflicts = 0;
+
+  /**
+   * @generated from field: int32 open_canvas_conflicts = 8;
+   */
+  openCanvasConflicts = 0;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp latest_offline_event_at = 9;
+   */
+  latestOfflineEventAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp latest_receipt_at = 10;
+   */
+  latestReceiptAt?: Timestamp;
+
+  /**
+   * @generated from field: string latest_receipt_outcome = 11;
+   */
+  latestReceiptOutcome = "";
+
+  /**
+   * @generated from field: string latest_receipt_error_code = 12;
+   */
+  latestReceiptErrorCode = "";
+
+  /**
+   * @generated from field: int32 failed_receipts_24h = 13;
+   */
+  failedReceipts24h = 0;
+
+  /**
+   * @generated from field: bool requires_recovery = 14;
+   */
+  requiresRecovery = false;
+
+  /**
+   * @generated from field: string recovery_reason_code = 15;
+   */
+  recoveryReasonCode = "";
+
+  constructor(data?: PartialMessage<OfflineSyncStatus>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OfflineSyncStatus";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "device_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "server_time", kind: "message", T: Timestamp },
+    { no: 4, name: "device_last_sync_at", kind: "message", T: Timestamp },
+    { no: 5, name: "device_expires_at", kind: "message", T: Timestamp },
+    { no: 6, name: "latest_reader_sequence", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 7, name: "open_draft_conflicts", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "open_canvas_conflicts", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "latest_offline_event_at", kind: "message", T: Timestamp },
+    { no: 10, name: "latest_receipt_at", kind: "message", T: Timestamp },
+    { no: 11, name: "latest_receipt_outcome", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "latest_receipt_error_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "failed_receipts_24h", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 14, name: "requires_recovery", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 15, name: "recovery_reason_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OfflineSyncStatus {
+    return new OfflineSyncStatus().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OfflineSyncStatus {
+    return new OfflineSyncStatus().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OfflineSyncStatus {
+    return new OfflineSyncStatus().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OfflineSyncStatus | PlainMessage<OfflineSyncStatus> | undefined, b: OfflineSyncStatus | PlainMessage<OfflineSyncStatus> | undefined): boolean {
+    return proto3.util.equals(OfflineSyncStatus, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetOfflineSyncStatusResponse
+ */
+export class GetOfflineSyncStatusResponse extends Message<GetOfflineSyncStatusResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OfflineSyncStatus status = 1;
+   */
+  status?: OfflineSyncStatus;
+
+  constructor(data?: PartialMessage<GetOfflineSyncStatusResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetOfflineSyncStatusResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "status", kind: "message", T: OfflineSyncStatus },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetOfflineSyncStatusResponse {
+    return new GetOfflineSyncStatusResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetOfflineSyncStatusResponse {
+    return new GetOfflineSyncStatusResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetOfflineSyncStatusResponse {
+    return new GetOfflineSyncStatusResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetOfflineSyncStatusResponse | PlainMessage<GetOfflineSyncStatusResponse> | undefined, b: GetOfflineSyncStatusResponse | PlainMessage<GetOfflineSyncStatusResponse> | undefined): boolean {
+    return proto3.util.equals(GetOfflineSyncStatusResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecordOfflineSyncReceiptRequest
+ */
+export class RecordOfflineSyncReceiptRequest extends Message<RecordOfflineSyncReceiptRequest> {
+  /**
+   * @generated from field: string receipt_id = 1;
+   */
+  receiptId = "";
+
+  /**
+   * @generated from field: string device_id = 2;
+   */
+  deviceId = "";
+
+  /**
+   * success | partial | failed | offline
+   *
+   * @generated from field: string outcome = 3;
+   */
+  outcome = "";
+
+  /**
+   * @generated from field: int32 pending_reader = 4;
+   */
+  pendingReader = 0;
+
+  /**
+   * @generated from field: int32 pending_drafts = 5;
+   */
+  pendingDrafts = 0;
+
+  /**
+   * @generated from field: int32 pending_canvas = 6;
+   */
+  pendingCanvas = 0;
+
+  /**
+   * @generated from field: int32 pending_recall = 7;
+   */
+  pendingRecall = 0;
+
+  /**
+   * @generated from field: int32 pending_telemetry = 8;
+   */
+  pendingTelemetry = 0;
+
+  /**
+   * @generated from field: int32 synced_count = 9;
+   */
+  syncedCount = 0;
+
+  /**
+   * @generated from field: int32 conflict_count = 10;
+   */
+  conflictCount = 0;
+
+  /**
+   * @generated from field: int32 duration_ms = 11;
+   */
+  durationMs = 0;
+
+  /**
+   * @generated from field: string error_code = 12;
+   */
+  errorCode = "";
+
+  /**
+   * @generated from field: string local_schema_version = 13;
+   */
+  localSchemaVersion = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp started_at = 14;
+   */
+  startedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp completed_at = 15;
+   */
+  completedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<RecordOfflineSyncReceiptRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecordOfflineSyncReceiptRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "receipt_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "outcome", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "pending_reader", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "pending_drafts", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "pending_canvas", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "pending_recall", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "pending_telemetry", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "synced_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "conflict_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "duration_ms", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 12, name: "error_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "local_schema_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "started_at", kind: "message", T: Timestamp },
+    { no: 15, name: "completed_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordOfflineSyncReceiptRequest {
+    return new RecordOfflineSyncReceiptRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordOfflineSyncReceiptRequest {
+    return new RecordOfflineSyncReceiptRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordOfflineSyncReceiptRequest {
+    return new RecordOfflineSyncReceiptRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordOfflineSyncReceiptRequest | PlainMessage<RecordOfflineSyncReceiptRequest> | undefined, b: RecordOfflineSyncReceiptRequest | PlainMessage<RecordOfflineSyncReceiptRequest> | undefined): boolean {
+    return proto3.util.equals(RecordOfflineSyncReceiptRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecordOfflineSyncReceiptResponse
+ */
+export class RecordOfflineSyncReceiptResponse extends Message<RecordOfflineSyncReceiptResponse> {
+  /**
+   * @generated from field: string receipt_id = 1;
+   */
+  receiptId = "";
+
+  /**
+   * @generated from field: bool replayed = 2;
+   */
+  replayed = false;
+
+  constructor(data?: PartialMessage<RecordOfflineSyncReceiptResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecordOfflineSyncReceiptResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "receipt_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "replayed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordOfflineSyncReceiptResponse {
+    return new RecordOfflineSyncReceiptResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordOfflineSyncReceiptResponse {
+    return new RecordOfflineSyncReceiptResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordOfflineSyncReceiptResponse {
+    return new RecordOfflineSyncReceiptResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordOfflineSyncReceiptResponse | PlainMessage<RecordOfflineSyncReceiptResponse> | undefined, b: RecordOfflineSyncReceiptResponse | PlainMessage<RecordOfflineSyncReceiptResponse> | undefined): boolean {
+    return proto3.util.equals(RecordOfflineSyncReceiptResponse, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.onyx.v1.GetYearInOnyxRequest
  */
 export class GetYearInOnyxRequest extends Message<GetYearInOnyxRequest> {

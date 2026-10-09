@@ -21485,6 +21485,693 @@ class RecordOfflineEventResponse extends $pb.GeneratedMessage {
   void clearSuccess() => $_clearField(2);
 }
 
+/// Choice 25 — metadata-only, cross-queue offline sync observability. These
+/// messages deliberately expose counts, cursors and bounded error codes only;
+/// draft bodies, annotations and other private payloads never leave the
+/// member device through this surface.
+class GetOfflineSyncStatusRequest extends $pb.GeneratedMessage {
+  factory GetOfflineSyncStatusRequest({
+    $core.String? deviceId,
+    $fixnum.Int64? readerCursor,
+  }) {
+    final result = create();
+    if (deviceId != null) result.deviceId = deviceId;
+    if (readerCursor != null) result.readerCursor = readerCursor;
+    return result;
+  }
+
+  GetOfflineSyncStatusRequest._();
+
+  factory GetOfflineSyncStatusRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetOfflineSyncStatusRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetOfflineSyncStatusRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'deviceId')
+    ..aInt64(2, _omitFieldNames ? '' : 'readerCursor')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetOfflineSyncStatusRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetOfflineSyncStatusRequest copyWith(
+          void Function(GetOfflineSyncStatusRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetOfflineSyncStatusRequest))
+          as GetOfflineSyncStatusRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetOfflineSyncStatusRequest create() =>
+      GetOfflineSyncStatusRequest._();
+  @$core.override
+  GetOfflineSyncStatusRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetOfflineSyncStatusRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetOfflineSyncStatusRequest>(create);
+  static GetOfflineSyncStatusRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get deviceId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set deviceId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeviceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeviceId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get readerCursor => $_getI64(1);
+  @$pb.TagNumber(2)
+  set readerCursor($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReaderCursor() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReaderCursor() => $_clearField(2);
+}
+
+class OfflineSyncStatus extends $pb.GeneratedMessage {
+  factory OfflineSyncStatus({
+    $core.String? deviceId,
+    $core.String? deviceStatus,
+    $1.Timestamp? serverTime,
+    $1.Timestamp? deviceLastSyncAt,
+    $1.Timestamp? deviceExpiresAt,
+    $fixnum.Int64? latestReaderSequence,
+    $core.int? openDraftConflicts,
+    $core.int? openCanvasConflicts,
+    $1.Timestamp? latestOfflineEventAt,
+    $1.Timestamp? latestReceiptAt,
+    $core.String? latestReceiptOutcome,
+    $core.String? latestReceiptErrorCode,
+    $core.int? failedReceipts24h,
+    $core.bool? requiresRecovery,
+    $core.String? recoveryReasonCode,
+  }) {
+    final result = create();
+    if (deviceId != null) result.deviceId = deviceId;
+    if (deviceStatus != null) result.deviceStatus = deviceStatus;
+    if (serverTime != null) result.serverTime = serverTime;
+    if (deviceLastSyncAt != null) result.deviceLastSyncAt = deviceLastSyncAt;
+    if (deviceExpiresAt != null) result.deviceExpiresAt = deviceExpiresAt;
+    if (latestReaderSequence != null)
+      result.latestReaderSequence = latestReaderSequence;
+    if (openDraftConflicts != null)
+      result.openDraftConflicts = openDraftConflicts;
+    if (openCanvasConflicts != null)
+      result.openCanvasConflicts = openCanvasConflicts;
+    if (latestOfflineEventAt != null)
+      result.latestOfflineEventAt = latestOfflineEventAt;
+    if (latestReceiptAt != null) result.latestReceiptAt = latestReceiptAt;
+    if (latestReceiptOutcome != null)
+      result.latestReceiptOutcome = latestReceiptOutcome;
+    if (latestReceiptErrorCode != null)
+      result.latestReceiptErrorCode = latestReceiptErrorCode;
+    if (failedReceipts24h != null) result.failedReceipts24h = failedReceipts24h;
+    if (requiresRecovery != null) result.requiresRecovery = requiresRecovery;
+    if (recoveryReasonCode != null)
+      result.recoveryReasonCode = recoveryReasonCode;
+    return result;
+  }
+
+  OfflineSyncStatus._();
+
+  factory OfflineSyncStatus.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OfflineSyncStatus.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OfflineSyncStatus',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'deviceId')
+    ..aOS(2, _omitFieldNames ? '' : 'deviceStatus')
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'serverTime',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(4, _omitFieldNames ? '' : 'deviceLastSyncAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'deviceExpiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aInt64(6, _omitFieldNames ? '' : 'latestReaderSequence')
+    ..aI(7, _omitFieldNames ? '' : 'openDraftConflicts')
+    ..aI(8, _omitFieldNames ? '' : 'openCanvasConflicts')
+    ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'latestOfflineEventAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'latestReceiptAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(11, _omitFieldNames ? '' : 'latestReceiptOutcome')
+    ..aOS(12, _omitFieldNames ? '' : 'latestReceiptErrorCode')
+    ..aI(13, _omitFieldNames ? '' : 'failedReceipts24h',
+        protoName: 'failed_receipts_24h')
+    ..aOB(14, _omitFieldNames ? '' : 'requiresRecovery')
+    ..aOS(15, _omitFieldNames ? '' : 'recoveryReasonCode')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OfflineSyncStatus clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OfflineSyncStatus copyWith(void Function(OfflineSyncStatus) updates) =>
+      super.copyWith((message) => updates(message as OfflineSyncStatus))
+          as OfflineSyncStatus;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OfflineSyncStatus create() => OfflineSyncStatus._();
+  @$core.override
+  OfflineSyncStatus createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OfflineSyncStatus getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OfflineSyncStatus>(create);
+  static OfflineSyncStatus? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get deviceId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set deviceId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeviceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeviceId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get deviceStatus => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deviceStatus($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDeviceStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeviceStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $1.Timestamp get serverTime => $_getN(2);
+  @$pb.TagNumber(3)
+  set serverTime($1.Timestamp value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasServerTime() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearServerTime() => $_clearField(3);
+  @$pb.TagNumber(3)
+  $1.Timestamp ensureServerTime() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $1.Timestamp get deviceLastSyncAt => $_getN(3);
+  @$pb.TagNumber(4)
+  set deviceLastSyncAt($1.Timestamp value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDeviceLastSyncAt() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDeviceLastSyncAt() => $_clearField(4);
+  @$pb.TagNumber(4)
+  $1.Timestamp ensureDeviceLastSyncAt() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $1.Timestamp get deviceExpiresAt => $_getN(4);
+  @$pb.TagNumber(5)
+  set deviceExpiresAt($1.Timestamp value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDeviceExpiresAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDeviceExpiresAt() => $_clearField(5);
+  @$pb.TagNumber(5)
+  $1.Timestamp ensureDeviceExpiresAt() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get latestReaderSequence => $_getI64(5);
+  @$pb.TagNumber(6)
+  set latestReaderSequence($fixnum.Int64 value) => $_setInt64(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLatestReaderSequence() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLatestReaderSequence() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get openDraftConflicts => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set openDraftConflicts($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasOpenDraftConflicts() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearOpenDraftConflicts() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get openCanvasConflicts => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set openCanvasConflicts($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasOpenCanvasConflicts() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearOpenCanvasConflicts() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $1.Timestamp get latestOfflineEventAt => $_getN(8);
+  @$pb.TagNumber(9)
+  set latestOfflineEventAt($1.Timestamp value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasLatestOfflineEventAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearLatestOfflineEventAt() => $_clearField(9);
+  @$pb.TagNumber(9)
+  $1.Timestamp ensureLatestOfflineEventAt() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  $1.Timestamp get latestReceiptAt => $_getN(9);
+  @$pb.TagNumber(10)
+  set latestReceiptAt($1.Timestamp value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasLatestReceiptAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearLatestReceiptAt() => $_clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureLatestReceiptAt() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  $core.String get latestReceiptOutcome => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set latestReceiptOutcome($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasLatestReceiptOutcome() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearLatestReceiptOutcome() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get latestReceiptErrorCode => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set latestReceiptErrorCode($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasLatestReceiptErrorCode() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearLatestReceiptErrorCode() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.int get failedReceipts24h => $_getIZ(12);
+  @$pb.TagNumber(13)
+  set failedReceipts24h($core.int value) => $_setSignedInt32(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasFailedReceipts24h() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearFailedReceipts24h() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.bool get requiresRecovery => $_getBF(13);
+  @$pb.TagNumber(14)
+  set requiresRecovery($core.bool value) => $_setBool(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasRequiresRecovery() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearRequiresRecovery() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get recoveryReasonCode => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set recoveryReasonCode($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasRecoveryReasonCode() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearRecoveryReasonCode() => $_clearField(15);
+}
+
+class GetOfflineSyncStatusResponse extends $pb.GeneratedMessage {
+  factory GetOfflineSyncStatusResponse({
+    OfflineSyncStatus? status,
+  }) {
+    final result = create();
+    if (status != null) result.status = status;
+    return result;
+  }
+
+  GetOfflineSyncStatusResponse._();
+
+  factory GetOfflineSyncStatusResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetOfflineSyncStatusResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetOfflineSyncStatusResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OfflineSyncStatus>(1, _omitFieldNames ? '' : 'status',
+        subBuilder: OfflineSyncStatus.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetOfflineSyncStatusResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetOfflineSyncStatusResponse copyWith(
+          void Function(GetOfflineSyncStatusResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetOfflineSyncStatusResponse))
+          as GetOfflineSyncStatusResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetOfflineSyncStatusResponse create() =>
+      GetOfflineSyncStatusResponse._();
+  @$core.override
+  GetOfflineSyncStatusResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetOfflineSyncStatusResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetOfflineSyncStatusResponse>(create);
+  static GetOfflineSyncStatusResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OfflineSyncStatus get status => $_getN(0);
+  @$pb.TagNumber(1)
+  set status(OfflineSyncStatus value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStatus() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OfflineSyncStatus ensureStatus() => $_ensure(0);
+}
+
+class RecordOfflineSyncReceiptRequest extends $pb.GeneratedMessage {
+  factory RecordOfflineSyncReceiptRequest({
+    $core.String? receiptId,
+    $core.String? deviceId,
+    $core.String? outcome,
+    $core.int? pendingReader,
+    $core.int? pendingDrafts,
+    $core.int? pendingCanvas,
+    $core.int? pendingRecall,
+    $core.int? pendingTelemetry,
+    $core.int? syncedCount,
+    $core.int? conflictCount,
+    $core.int? durationMs,
+    $core.String? errorCode,
+    $core.String? localSchemaVersion,
+    $1.Timestamp? startedAt,
+    $1.Timestamp? completedAt,
+  }) {
+    final result = create();
+    if (receiptId != null) result.receiptId = receiptId;
+    if (deviceId != null) result.deviceId = deviceId;
+    if (outcome != null) result.outcome = outcome;
+    if (pendingReader != null) result.pendingReader = pendingReader;
+    if (pendingDrafts != null) result.pendingDrafts = pendingDrafts;
+    if (pendingCanvas != null) result.pendingCanvas = pendingCanvas;
+    if (pendingRecall != null) result.pendingRecall = pendingRecall;
+    if (pendingTelemetry != null) result.pendingTelemetry = pendingTelemetry;
+    if (syncedCount != null) result.syncedCount = syncedCount;
+    if (conflictCount != null) result.conflictCount = conflictCount;
+    if (durationMs != null) result.durationMs = durationMs;
+    if (errorCode != null) result.errorCode = errorCode;
+    if (localSchemaVersion != null)
+      result.localSchemaVersion = localSchemaVersion;
+    if (startedAt != null) result.startedAt = startedAt;
+    if (completedAt != null) result.completedAt = completedAt;
+    return result;
+  }
+
+  RecordOfflineSyncReceiptRequest._();
+
+  factory RecordOfflineSyncReceiptRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordOfflineSyncReceiptRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordOfflineSyncReceiptRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'receiptId')
+    ..aOS(2, _omitFieldNames ? '' : 'deviceId')
+    ..aOS(3, _omitFieldNames ? '' : 'outcome')
+    ..aI(4, _omitFieldNames ? '' : 'pendingReader')
+    ..aI(5, _omitFieldNames ? '' : 'pendingDrafts')
+    ..aI(6, _omitFieldNames ? '' : 'pendingCanvas')
+    ..aI(7, _omitFieldNames ? '' : 'pendingRecall')
+    ..aI(8, _omitFieldNames ? '' : 'pendingTelemetry')
+    ..aI(9, _omitFieldNames ? '' : 'syncedCount')
+    ..aI(10, _omitFieldNames ? '' : 'conflictCount')
+    ..aI(11, _omitFieldNames ? '' : 'durationMs')
+    ..aOS(12, _omitFieldNames ? '' : 'errorCode')
+    ..aOS(13, _omitFieldNames ? '' : 'localSchemaVersion')
+    ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'startedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(15, _omitFieldNames ? '' : 'completedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordOfflineSyncReceiptRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordOfflineSyncReceiptRequest copyWith(
+          void Function(RecordOfflineSyncReceiptRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as RecordOfflineSyncReceiptRequest))
+          as RecordOfflineSyncReceiptRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordOfflineSyncReceiptRequest create() =>
+      RecordOfflineSyncReceiptRequest._();
+  @$core.override
+  RecordOfflineSyncReceiptRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordOfflineSyncReceiptRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecordOfflineSyncReceiptRequest>(
+          create);
+  static RecordOfflineSyncReceiptRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get receiptId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set receiptId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReceiptId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReceiptId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get deviceId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deviceId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDeviceId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeviceId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get outcome => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set outcome($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOutcome() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOutcome() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get pendingReader => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set pendingReader($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPendingReader() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPendingReader() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get pendingDrafts => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set pendingDrafts($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPendingDrafts() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPendingDrafts() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get pendingCanvas => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set pendingCanvas($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPendingCanvas() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPendingCanvas() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get pendingRecall => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set pendingRecall($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPendingRecall() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPendingRecall() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get pendingTelemetry => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set pendingTelemetry($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPendingTelemetry() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPendingTelemetry() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get syncedCount => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set syncedCount($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSyncedCount() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSyncedCount() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get conflictCount => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set conflictCount($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasConflictCount() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearConflictCount() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.int get durationMs => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set durationMs($core.int value) => $_setSignedInt32(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasDurationMs() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearDurationMs() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get errorCode => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set errorCode($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasErrorCode() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearErrorCode() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get localSchemaVersion => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set localSchemaVersion($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasLocalSchemaVersion() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearLocalSchemaVersion() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $1.Timestamp get startedAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set startedAt($1.Timestamp value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasStartedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearStartedAt() => $_clearField(14);
+  @$pb.TagNumber(14)
+  $1.Timestamp ensureStartedAt() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  $1.Timestamp get completedAt => $_getN(14);
+  @$pb.TagNumber(15)
+  set completedAt($1.Timestamp value) => $_setField(15, value);
+  @$pb.TagNumber(15)
+  $core.bool hasCompletedAt() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearCompletedAt() => $_clearField(15);
+  @$pb.TagNumber(15)
+  $1.Timestamp ensureCompletedAt() => $_ensure(14);
+}
+
+class RecordOfflineSyncReceiptResponse extends $pb.GeneratedMessage {
+  factory RecordOfflineSyncReceiptResponse({
+    $core.String? receiptId,
+    $core.bool? replayed,
+  }) {
+    final result = create();
+    if (receiptId != null) result.receiptId = receiptId;
+    if (replayed != null) result.replayed = replayed;
+    return result;
+  }
+
+  RecordOfflineSyncReceiptResponse._();
+
+  factory RecordOfflineSyncReceiptResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordOfflineSyncReceiptResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordOfflineSyncReceiptResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'receiptId')
+    ..aOB(2, _omitFieldNames ? '' : 'replayed')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordOfflineSyncReceiptResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordOfflineSyncReceiptResponse copyWith(
+          void Function(RecordOfflineSyncReceiptResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RecordOfflineSyncReceiptResponse))
+          as RecordOfflineSyncReceiptResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordOfflineSyncReceiptResponse create() =>
+      RecordOfflineSyncReceiptResponse._();
+  @$core.override
+  RecordOfflineSyncReceiptResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordOfflineSyncReceiptResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecordOfflineSyncReceiptResponse>(
+          create);
+  static RecordOfflineSyncReceiptResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get receiptId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set receiptId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReceiptId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReceiptId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get replayed => $_getBF(1);
+  @$pb.TagNumber(2)
+  set replayed($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReplayed() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReplayed() => $_clearField(2);
+}
+
 class GetYearInOnyxRequest extends $pb.GeneratedMessage {
   factory GetYearInOnyxRequest({
     $core.String? year,

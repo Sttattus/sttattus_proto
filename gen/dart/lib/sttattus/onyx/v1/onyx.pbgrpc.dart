@@ -774,6 +774,22 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$recordOfflineEvent, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.GetOfflineSyncStatusResponse> getOfflineSyncStatus(
+    $0.GetOfflineSyncStatusRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getOfflineSyncStatus, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordOfflineSyncReceiptResponse>
+      recordOfflineSyncReceipt(
+    $0.RecordOfflineSyncReceiptRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordOfflineSyncReceipt, request,
+        options: options);
+  }
+
   /// P4 — year-in-onyx recap, annual archive PDF, silent reactions.
   $grpc.ResponseFuture<$0.GetYearInOnyxResponse> getYearInOnyx(
     $0.GetYearInOnyxRequest request, {
@@ -2753,6 +2769,17 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/RecordOfflineEvent',
       ($0.RecordOfflineEventRequest value) => value.writeToBuffer(),
       $0.RecordOfflineEventResponse.fromBuffer);
+  static final _$getOfflineSyncStatus = $grpc.ClientMethod<
+          $0.GetOfflineSyncStatusRequest, $0.GetOfflineSyncStatusResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetOfflineSyncStatus',
+      ($0.GetOfflineSyncStatusRequest value) => value.writeToBuffer(),
+      $0.GetOfflineSyncStatusResponse.fromBuffer);
+  static final _$recordOfflineSyncReceipt = $grpc.ClientMethod<
+          $0.RecordOfflineSyncReceiptRequest,
+          $0.RecordOfflineSyncReceiptResponse>(
+      '/sttattus.onyx.v1.OnyxService/RecordOfflineSyncReceipt',
+      ($0.RecordOfflineSyncReceiptRequest value) => value.writeToBuffer(),
+      $0.RecordOfflineSyncReceiptResponse.fromBuffer);
   static final _$getYearInOnyx =
       $grpc.ClientMethod<$0.GetYearInOnyxRequest, $0.GetYearInOnyxResponse>(
           '/sttattus.onyx.v1.OnyxService/GetYearInOnyx',
@@ -4621,6 +4648,24 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.RecordOfflineEventRequest.fromBuffer(value),
         ($0.RecordOfflineEventResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetOfflineSyncStatusRequest,
+            $0.GetOfflineSyncStatusResponse>(
+        'GetOfflineSyncStatus',
+        getOfflineSyncStatus_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetOfflineSyncStatusRequest.fromBuffer(value),
+        ($0.GetOfflineSyncStatusResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordOfflineSyncReceiptRequest,
+            $0.RecordOfflineSyncReceiptResponse>(
+        'RecordOfflineSyncReceipt',
+        recordOfflineSyncReceipt_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordOfflineSyncReceiptRequest.fromBuffer(value),
+        ($0.RecordOfflineSyncReceiptResponse value) => value.writeToBuffer()));
     $addMethod(
         $grpc.ServiceMethod<$0.GetYearInOnyxRequest, $0.GetYearInOnyxResponse>(
             'GetYearInOnyx',
@@ -7157,6 +7202,24 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.RecordOfflineEventResponse> recordOfflineEvent(
       $grpc.ServiceCall call, $0.RecordOfflineEventRequest request);
+
+  $async.Future<$0.GetOfflineSyncStatusResponse> getOfflineSyncStatus_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetOfflineSyncStatusRequest> $request) async {
+    return getOfflineSyncStatus($call, await $request);
+  }
+
+  $async.Future<$0.GetOfflineSyncStatusResponse> getOfflineSyncStatus(
+      $grpc.ServiceCall call, $0.GetOfflineSyncStatusRequest request);
+
+  $async.Future<$0.RecordOfflineSyncReceiptResponse>
+      recordOfflineSyncReceipt_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.RecordOfflineSyncReceiptRequest> $request) async {
+    return recordOfflineSyncReceipt($call, await $request);
+  }
+
+  $async.Future<$0.RecordOfflineSyncReceiptResponse> recordOfflineSyncReceipt(
+      $grpc.ServiceCall call, $0.RecordOfflineSyncReceiptRequest request);
 
   $async.Future<$0.GetYearInOnyxResponse> getYearInOnyx_Pre(
       $grpc.ServiceCall $call,

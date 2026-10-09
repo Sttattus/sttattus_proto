@@ -117,6 +117,8 @@ const (
 	OnyxService_ListOfflineManifestItems_FullMethodName             = "/sttattus.onyx.v1.OnyxService/ListOfflineManifestItems"
 	OnyxService_RefreshOfflineRenditions_FullMethodName             = "/sttattus.onyx.v1.OnyxService/RefreshOfflineRenditions"
 	OnyxService_RecordOfflineEvent_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/RecordOfflineEvent"
+	OnyxService_GetOfflineSyncStatus_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/GetOfflineSyncStatus"
+	OnyxService_RecordOfflineSyncReceipt_FullMethodName             = "/sttattus.onyx.v1.OnyxService/RecordOfflineSyncReceipt"
 	OnyxService_GetYearInOnyx_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/GetYearInOnyx"
 	OnyxService_GenerateAnnualArchive_FullMethodName                = "/sttattus.onyx.v1.OnyxService/GenerateAnnualArchive"
 	OnyxService_ReactToContent_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/ReactToContent"
@@ -419,6 +421,8 @@ type OnyxServiceClient interface {
 	ListOfflineManifestItems(ctx context.Context, in *ListOfflineManifestItemsRequest, opts ...grpc.CallOption) (*ListOfflineManifestItemsResponse, error)
 	RefreshOfflineRenditions(ctx context.Context, in *RefreshOfflineRenditionsRequest, opts ...grpc.CallOption) (*RefreshOfflineRenditionsResponse, error)
 	RecordOfflineEvent(ctx context.Context, in *RecordOfflineEventRequest, opts ...grpc.CallOption) (*RecordOfflineEventResponse, error)
+	GetOfflineSyncStatus(ctx context.Context, in *GetOfflineSyncStatusRequest, opts ...grpc.CallOption) (*GetOfflineSyncStatusResponse, error)
+	RecordOfflineSyncReceipt(ctx context.Context, in *RecordOfflineSyncReceiptRequest, opts ...grpc.CallOption) (*RecordOfflineSyncReceiptResponse, error)
 	// P4 — year-in-onyx recap, annual archive PDF, silent reactions.
 	GetYearInOnyx(ctx context.Context, in *GetYearInOnyxRequest, opts ...grpc.CallOption) (*GetYearInOnyxResponse, error)
 	GenerateAnnualArchive(ctx context.Context, in *GenerateAnnualArchiveRequest, opts ...grpc.CallOption) (*GenerateAnnualArchiveResponse, error)
@@ -1606,6 +1610,26 @@ func (c *onyxServiceClient) RecordOfflineEvent(ctx context.Context, in *RecordOf
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(RecordOfflineEventResponse)
 	err := c.cc.Invoke(ctx, OnyxService_RecordOfflineEvent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetOfflineSyncStatus(ctx context.Context, in *GetOfflineSyncStatusRequest, opts ...grpc.CallOption) (*GetOfflineSyncStatusResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetOfflineSyncStatusResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetOfflineSyncStatus_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RecordOfflineSyncReceipt(ctx context.Context, in *RecordOfflineSyncReceiptRequest, opts ...grpc.CallOption) (*RecordOfflineSyncReceiptResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordOfflineSyncReceiptResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RecordOfflineSyncReceipt_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3514,6 +3538,8 @@ type OnyxServiceServer interface {
 	ListOfflineManifestItems(context.Context, *ListOfflineManifestItemsRequest) (*ListOfflineManifestItemsResponse, error)
 	RefreshOfflineRenditions(context.Context, *RefreshOfflineRenditionsRequest) (*RefreshOfflineRenditionsResponse, error)
 	RecordOfflineEvent(context.Context, *RecordOfflineEventRequest) (*RecordOfflineEventResponse, error)
+	GetOfflineSyncStatus(context.Context, *GetOfflineSyncStatusRequest) (*GetOfflineSyncStatusResponse, error)
+	RecordOfflineSyncReceipt(context.Context, *RecordOfflineSyncReceiptRequest) (*RecordOfflineSyncReceiptResponse, error)
 	// P4 — year-in-onyx recap, annual archive PDF, silent reactions.
 	GetYearInOnyx(context.Context, *GetYearInOnyxRequest) (*GetYearInOnyxResponse, error)
 	GenerateAnnualArchive(context.Context, *GenerateAnnualArchiveRequest) (*GenerateAnnualArchiveResponse, error)
@@ -4020,6 +4046,12 @@ func (UnimplementedOnyxServiceServer) RefreshOfflineRenditions(context.Context, 
 }
 func (UnimplementedOnyxServiceServer) RecordOfflineEvent(context.Context, *RecordOfflineEventRequest) (*RecordOfflineEventResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method RecordOfflineEvent not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetOfflineSyncStatus(context.Context, *GetOfflineSyncStatusRequest) (*GetOfflineSyncStatusResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetOfflineSyncStatus not implemented")
+}
+func (UnimplementedOnyxServiceServer) RecordOfflineSyncReceipt(context.Context, *RecordOfflineSyncReceiptRequest) (*RecordOfflineSyncReceiptResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordOfflineSyncReceipt not implemented")
 }
 func (UnimplementedOnyxServiceServer) GetYearInOnyx(context.Context, *GetYearInOnyxRequest) (*GetYearInOnyxResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetYearInOnyx not implemented")
@@ -6336,6 +6368,42 @@ func _OnyxService_RecordOfflineEvent_Handler(srv interface{}, ctx context.Contex
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OnyxServiceServer).RecordOfflineEvent(ctx, req.(*RecordOfflineEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetOfflineSyncStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOfflineSyncStatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetOfflineSyncStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetOfflineSyncStatus_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetOfflineSyncStatus(ctx, req.(*GetOfflineSyncStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RecordOfflineSyncReceipt_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordOfflineSyncReceiptRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RecordOfflineSyncReceipt(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RecordOfflineSyncReceipt_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RecordOfflineSyncReceipt(ctx, req.(*RecordOfflineSyncReceiptRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -9942,6 +10010,14 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RecordOfflineEvent",
 			Handler:    _OnyxService_RecordOfflineEvent_Handler,
+		},
+		{
+			MethodName: "GetOfflineSyncStatus",
+			Handler:    _OnyxService_GetOfflineSyncStatus_Handler,
+		},
+		{
+			MethodName: "RecordOfflineSyncReceipt",
+			Handler:    _OnyxService_RecordOfflineSyncReceipt_Handler,
 		},
 		{
 			MethodName: "GetYearInOnyx",
