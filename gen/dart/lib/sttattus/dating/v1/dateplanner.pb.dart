@@ -684,6 +684,7 @@ class PlanBooking extends $pb.GeneratedMessage {
     $core.String? reason,
     $fixnum.Int64? deadline,
     $fixnum.Int64? startsAt,
+    $core.String? placeName,
   }) {
     final result = create();
     if (state != null) result.state = state;
@@ -694,6 +695,7 @@ class PlanBooking extends $pb.GeneratedMessage {
     if (reason != null) result.reason = reason;
     if (deadline != null) result.deadline = deadline;
     if (startsAt != null) result.startsAt = startsAt;
+    if (placeName != null) result.placeName = placeName;
     return result;
   }
 
@@ -719,6 +721,7 @@ class PlanBooking extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'reason')
     ..aInt64(7, _omitFieldNames ? '' : 'deadline')
     ..aInt64(8, _omitFieldNames ? '' : 'startsAt')
+    ..aOS(9, _omitFieldNames ? '' : 'placeName')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -816,6 +819,17 @@ class PlanBooking extends $pb.GeneratedMessage {
   $core.bool hasStartsAt() => $_has(7);
   @$pb.TagNumber(8)
   void clearStartsAt() => $_clearField(8);
+
+  /// The place the table is at. After the plan moved somewhere else it is the
+  /// old place, which staff are cancelling.
+  @$pb.TagNumber(9)
+  $core.String get placeName => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set placeName($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasPlaceName() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPlaceName() => $_clearField(9);
 }
 
 /// A step in the plan, for the receipts both members see.

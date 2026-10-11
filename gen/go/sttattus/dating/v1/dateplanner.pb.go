@@ -527,8 +527,11 @@ type PlanBooking struct {
 	// Why the venue declined, or why it could not be confirmed.
 	Reason string `protobuf:"bytes,6,opt,name=reason,proto3" json:"reason,omitempty"`
 	// When it must be confirmed by; after that it is "unconfirmed".
-	Deadline      int64 `protobuf:"varint,7,opt,name=deadline,proto3" json:"deadline,omitempty"`
-	StartsAt      int64 `protobuf:"varint,8,opt,name=starts_at,json=startsAt,proto3" json:"starts_at,omitempty"`
+	Deadline int64 `protobuf:"varint,7,opt,name=deadline,proto3" json:"deadline,omitempty"`
+	StartsAt int64 `protobuf:"varint,8,opt,name=starts_at,json=startsAt,proto3" json:"starts_at,omitempty"`
+	// The place the table is at. After the plan moved somewhere else it is the
+	// old place, which staff are cancelling.
+	PlaceName     string `protobuf:"bytes,9,opt,name=place_name,json=placeName,proto3" json:"place_name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -617,6 +620,13 @@ func (x *PlanBooking) GetStartsAt() int64 {
 		return x.StartsAt
 	}
 	return 0
+}
+
+func (x *PlanBooking) GetPlaceName() string {
+	if x != nil {
+		return x.PlaceName
+	}
+	return ""
 }
 
 // A step in the plan, for the receipts both members see.
@@ -2034,7 +2044,7 @@ const file_sttattus_dating_v1_dateplanner_proto_rawDesc = "" +
 	"\vproposed_at\x18\x04 \x01(\x03R\n" +
 	"proposedAt\x126\n" +
 	"\x05place\x18\x05 \x01(\v2 .sttattus.dating.v1.PlannerPlaceR\x05place\x12\x1b\n" +
-	"\ttime_zone\x18\x06 \x01(\tR\btimeZone\"\xf7\x01\n" +
+	"\ttime_zone\x18\x06 \x01(\tR\btimeZone\"\x96\x02\n" +
 	"\vPlanBooking\x12\x14\n" +
 	"\x05state\x18\x01 \x01(\tR\x05state\x12\x1c\n" +
 	"\treference\x18\x02 \x01(\tR\treference\x12\x1d\n" +
@@ -2044,7 +2054,9 @@ const file_sttattus_dating_v1_dateplanner_proto_rawDesc = "" +
 	"\fconfirmed_at\x18\x05 \x01(\x03R\vconfirmedAt\x12\x16\n" +
 	"\x06reason\x18\x06 \x01(\tR\x06reason\x12\x1a\n" +
 	"\bdeadline\x18\a \x01(\x03R\bdeadline\x12\x1b\n" +
-	"\tstarts_at\x18\b \x01(\x03R\bstartsAt\"u\n" +
+	"\tstarts_at\x18\b \x01(\x03R\bstartsAt\x12\x1d\n" +
+	"\n" +
+	"place_name\x18\t \x01(\tR\tplaceName\"u\n" +
 	"\tPlanEvent\x12\x12\n" +
 	"\x04kind\x18\x01 \x01(\tR\x04kind\x12\x0e\n" +
 	"\x02at\x18\x02 \x01(\x03R\x02at\x12\x13\n" +

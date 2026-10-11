@@ -95,6 +95,9 @@ message PlanBooking {
   // When it must be confirmed by; after that it is "unconfirmed".
   int64 deadline = 7;
   int64 starts_at = 8;
+  // The place the table is at. After the plan moved somewhere else it is the
+  // old place, which staff are cancelling.
+  string place_name = 9;
 }
 
 // A step in the plan, for the receipts both members see.

@@ -469,6 +469,14 @@ export class PlanBooking extends Message<PlanBooking> {
    */
   startsAt = protoInt64.zero;
 
+  /**
+   * The place the table is at. After the plan moved somewhere else it is the
+   * old place, which staff are cancelling.
+   *
+   * @generated from field: string place_name = 9;
+   */
+  placeName = "";
+
   constructor(data?: PartialMessage<PlanBooking>) {
     super();
     proto3.util.initPartial(data, this);
@@ -485,6 +493,7 @@ export class PlanBooking extends Message<PlanBooking> {
     { no: 6, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "deadline", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 8, name: "starts_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "place_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PlanBooking {

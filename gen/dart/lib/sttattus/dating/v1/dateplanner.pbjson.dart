@@ -164,6 +164,7 @@ const PlanBooking$json = {
     {'1': 'reason', '3': 6, '4': 1, '5': 9, '10': 'reason'},
     {'1': 'deadline', '3': 7, '4': 1, '5': 3, '10': 'deadline'},
     {'1': 'starts_at', '3': 8, '4': 1, '5': 3, '10': 'startsAt'},
+    {'1': 'place_name', '3': 9, '4': 1, '5': 9, '10': 'placeName'},
   ],
 };
 
@@ -173,7 +174,8 @@ final $typed_data.Uint8List planBookingDescriptor = $convert.base64Decode(
     'lyZWZlcmVuY2USHQoKdW5kZXJfbmFtZRgDIAEoCVIJdW5kZXJOYW1lEiEKDGNvbmZpcm1lZF9i'
     'eRgEIAEoCVILY29uZmlybWVkQnkSIQoMY29uZmlybWVkX2F0GAUgASgDUgtjb25maXJtZWRBdB'
     'IWCgZyZWFzb24YBiABKAlSBnJlYXNvbhIaCghkZWFkbGluZRgHIAEoA1IIZGVhZGxpbmUSGwoJ'
-    'c3RhcnRzX2F0GAggASgDUghzdGFydHNBdA==');
+    'c3RhcnRzX2F0GAggASgDUghzdGFydHNBdBIdCgpwbGFjZV9uYW1lGAkgASgJUglwbGFjZU5hbW'
+    'U=');
 
 @$core.Deprecated('Use planEventDescriptor instead')
 const PlanEvent$json = {
