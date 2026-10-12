@@ -2021,6 +2021,13 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getDraft, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.ListDraftRevisionsResponse> listDraftRevisions(
+    $0.ListDraftRevisionsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listDraftRevisions, request, options: options);
+  }
+
   $grpc.ResponseFuture<$0.CreateDraftResponse> createDraft(
     $0.CreateDraftRequest request, {
     $grpc.CallOptions? options,
@@ -2047,6 +2054,15 @@ class OnyxServiceClient extends $grpc.Client {
     $grpc.CallOptions? options,
   }) {
     return $createUnaryCall(_$upsertDraftCitation, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.BatchUpsertDraftCitationsResponse>
+      batchUpsertDraftCitations(
+    $0.BatchUpsertDraftCitationsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$batchUpsertDraftCitations, request,
+        options: options);
   }
 
   $grpc.ResponseFuture<$0.VerifyDraftResponse> verifyDraft(
@@ -3607,6 +3623,11 @@ class OnyxServiceClient extends $grpc.Client {
           '/sttattus.onyx.v1.OnyxService/GetDraft',
           ($0.GetDraftRequest value) => value.writeToBuffer(),
           $0.GetDraftResponse.fromBuffer);
+  static final _$listDraftRevisions = $grpc.ClientMethod<
+          $0.ListDraftRevisionsRequest, $0.ListDraftRevisionsResponse>(
+      '/sttattus.onyx.v1.OnyxService/ListDraftRevisions',
+      ($0.ListDraftRevisionsRequest value) => value.writeToBuffer(),
+      $0.ListDraftRevisionsResponse.fromBuffer);
   static final _$createDraft =
       $grpc.ClientMethod<$0.CreateDraftRequest, $0.CreateDraftResponse>(
           '/sttattus.onyx.v1.OnyxService/CreateDraft',
@@ -3627,6 +3648,12 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/UpsertDraftCitation',
       ($0.UpsertDraftCitationRequest value) => value.writeToBuffer(),
       $0.UpsertDraftCitationResponse.fromBuffer);
+  static final _$batchUpsertDraftCitations = $grpc.ClientMethod<
+          $0.BatchUpsertDraftCitationsRequest,
+          $0.BatchUpsertDraftCitationsResponse>(
+      '/sttattus.onyx.v1.OnyxService/BatchUpsertDraftCitations',
+      ($0.BatchUpsertDraftCitationsRequest value) => value.writeToBuffer(),
+      $0.BatchUpsertDraftCitationsResponse.fromBuffer);
   static final _$verifyDraft =
       $grpc.ClientMethod<$0.VerifyDraftRequest, $0.VerifyDraftResponse>(
           '/sttattus.onyx.v1.OnyxService/VerifyDraft',
@@ -6036,6 +6063,15 @@ abstract class OnyxServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetDraftRequest.fromBuffer(value),
         ($0.GetDraftResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListDraftRevisionsRequest,
+            $0.ListDraftRevisionsResponse>(
+        'ListDraftRevisions',
+        listDraftRevisions_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListDraftRevisionsRequest.fromBuffer(value),
+        ($0.ListDraftRevisionsResponse value) => value.writeToBuffer()));
     $addMethod(
         $grpc.ServiceMethod<$0.CreateDraftRequest, $0.CreateDraftResponse>(
             'CreateDraft',
@@ -6072,6 +6108,15 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.UpsertDraftCitationRequest.fromBuffer(value),
         ($0.UpsertDraftCitationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.BatchUpsertDraftCitationsRequest,
+            $0.BatchUpsertDraftCitationsResponse>(
+        'BatchUpsertDraftCitations',
+        batchUpsertDraftCitations_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.BatchUpsertDraftCitationsRequest.fromBuffer(value),
+        ($0.BatchUpsertDraftCitationsResponse value) => value.writeToBuffer()));
     $addMethod(
         $grpc.ServiceMethod<$0.VerifyDraftRequest, $0.VerifyDraftResponse>(
             'VerifyDraft',
@@ -8654,6 +8699,15 @@ abstract class OnyxServiceBase extends $grpc.Service {
   $async.Future<$0.GetDraftResponse> getDraft(
       $grpc.ServiceCall call, $0.GetDraftRequest request);
 
+  $async.Future<$0.ListDraftRevisionsResponse> listDraftRevisions_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListDraftRevisionsRequest> $request) async {
+    return listDraftRevisions($call, await $request);
+  }
+
+  $async.Future<$0.ListDraftRevisionsResponse> listDraftRevisions(
+      $grpc.ServiceCall call, $0.ListDraftRevisionsRequest request);
+
   $async.Future<$0.CreateDraftResponse> createDraft_Pre($grpc.ServiceCall $call,
       $async.Future<$0.CreateDraftRequest> $request) async {
     return createDraft($call, await $request);
@@ -8688,6 +8742,15 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.UpsertDraftCitationResponse> upsertDraftCitation(
       $grpc.ServiceCall call, $0.UpsertDraftCitationRequest request);
+
+  $async.Future<$0.BatchUpsertDraftCitationsResponse>
+      batchUpsertDraftCitations_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.BatchUpsertDraftCitationsRequest> $request) async {
+    return batchUpsertDraftCitations($call, await $request);
+  }
+
+  $async.Future<$0.BatchUpsertDraftCitationsResponse> batchUpsertDraftCitations(
+      $grpc.ServiceCall call, $0.BatchUpsertDraftCitationsRequest request);
 
   $async.Future<$0.VerifyDraftResponse> verifyDraft_Pre($grpc.ServiceCall $call,
       $async.Future<$0.VerifyDraftRequest> $request) async {

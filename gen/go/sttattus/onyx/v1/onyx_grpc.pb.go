@@ -265,10 +265,12 @@ const (
 	OnyxService_GetDraftingDashboard_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/GetDraftingDashboard"
 	OnyxService_ListDrafts_FullMethodName                           = "/sttattus.onyx.v1.OnyxService/ListDrafts"
 	OnyxService_GetDraft_FullMethodName                             = "/sttattus.onyx.v1.OnyxService/GetDraft"
+	OnyxService_ListDraftRevisions_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/ListDraftRevisions"
 	OnyxService_CreateDraft_FullMethodName                          = "/sttattus.onyx.v1.OnyxService/CreateDraft"
 	OnyxService_UpsertDraftBlock_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/UpsertDraftBlock"
 	OnyxService_DeleteDraftBlock_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/DeleteDraftBlock"
 	OnyxService_UpsertDraftCitation_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/UpsertDraftCitation"
+	OnyxService_BatchUpsertDraftCitations_FullMethodName            = "/sttattus.onyx.v1.OnyxService/BatchUpsertDraftCitations"
 	OnyxService_VerifyDraft_FullMethodName                          = "/sttattus.onyx.v1.OnyxService/VerifyDraft"
 	OnyxService_GetDraftEvidenceReview_FullMethodName               = "/sttattus.onyx.v1.OnyxService/GetDraftEvidenceReview"
 	OnyxService_CompareDraftEvidence_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/CompareDraftEvidence"
@@ -594,10 +596,12 @@ type OnyxServiceClient interface {
 	GetDraftingDashboard(ctx context.Context, in *GetDraftingDashboardRequest, opts ...grpc.CallOption) (*GetDraftingDashboardResponse, error)
 	ListDrafts(ctx context.Context, in *ListDraftsRequest, opts ...grpc.CallOption) (*ListDraftsResponse, error)
 	GetDraft(ctx context.Context, in *GetDraftRequest, opts ...grpc.CallOption) (*GetDraftResponse, error)
+	ListDraftRevisions(ctx context.Context, in *ListDraftRevisionsRequest, opts ...grpc.CallOption) (*ListDraftRevisionsResponse, error)
 	CreateDraft(ctx context.Context, in *CreateDraftRequest, opts ...grpc.CallOption) (*CreateDraftResponse, error)
 	UpsertDraftBlock(ctx context.Context, in *UpsertDraftBlockRequest, opts ...grpc.CallOption) (*UpsertDraftBlockResponse, error)
 	DeleteDraftBlock(ctx context.Context, in *DeleteDraftBlockRequest, opts ...grpc.CallOption) (*DeleteDraftBlockResponse, error)
 	UpsertDraftCitation(ctx context.Context, in *UpsertDraftCitationRequest, opts ...grpc.CallOption) (*UpsertDraftCitationResponse, error)
+	BatchUpsertDraftCitations(ctx context.Context, in *BatchUpsertDraftCitationsRequest, opts ...grpc.CallOption) (*BatchUpsertDraftCitationsResponse, error)
 	VerifyDraft(ctx context.Context, in *VerifyDraftRequest, opts ...grpc.CallOption) (*VerifyDraftResponse, error)
 	GetDraftEvidenceReview(ctx context.Context, in *GetDraftEvidenceReviewRequest, opts ...grpc.CallOption) (*GetDraftEvidenceReviewResponse, error)
 	CompareDraftEvidence(ctx context.Context, in *CompareDraftEvidenceRequest, opts ...grpc.CallOption) (*CompareDraftEvidenceResponse, error)
@@ -3096,6 +3100,16 @@ func (c *onyxServiceClient) GetDraft(ctx context.Context, in *GetDraftRequest, o
 	return out, nil
 }
 
+func (c *onyxServiceClient) ListDraftRevisions(ctx context.Context, in *ListDraftRevisionsRequest, opts ...grpc.CallOption) (*ListDraftRevisionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListDraftRevisionsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_ListDraftRevisions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *onyxServiceClient) CreateDraft(ctx context.Context, in *CreateDraftRequest, opts ...grpc.CallOption) (*CreateDraftResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(CreateDraftResponse)
@@ -3130,6 +3144,16 @@ func (c *onyxServiceClient) UpsertDraftCitation(ctx context.Context, in *UpsertD
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(UpsertDraftCitationResponse)
 	err := c.cc.Invoke(ctx, OnyxService_UpsertDraftCitation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) BatchUpsertDraftCitations(ctx context.Context, in *BatchUpsertDraftCitationsRequest, opts ...grpc.CallOption) (*BatchUpsertDraftCitationsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(BatchUpsertDraftCitationsResponse)
+	err := c.cc.Invoke(ctx, OnyxService_BatchUpsertDraftCitations_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3711,10 +3735,12 @@ type OnyxServiceServer interface {
 	GetDraftingDashboard(context.Context, *GetDraftingDashboardRequest) (*GetDraftingDashboardResponse, error)
 	ListDrafts(context.Context, *ListDraftsRequest) (*ListDraftsResponse, error)
 	GetDraft(context.Context, *GetDraftRequest) (*GetDraftResponse, error)
+	ListDraftRevisions(context.Context, *ListDraftRevisionsRequest) (*ListDraftRevisionsResponse, error)
 	CreateDraft(context.Context, *CreateDraftRequest) (*CreateDraftResponse, error)
 	UpsertDraftBlock(context.Context, *UpsertDraftBlockRequest) (*UpsertDraftBlockResponse, error)
 	DeleteDraftBlock(context.Context, *DeleteDraftBlockRequest) (*DeleteDraftBlockResponse, error)
 	UpsertDraftCitation(context.Context, *UpsertDraftCitationRequest) (*UpsertDraftCitationResponse, error)
+	BatchUpsertDraftCitations(context.Context, *BatchUpsertDraftCitationsRequest) (*BatchUpsertDraftCitationsResponse, error)
 	VerifyDraft(context.Context, *VerifyDraftRequest) (*VerifyDraftResponse, error)
 	GetDraftEvidenceReview(context.Context, *GetDraftEvidenceReviewRequest) (*GetDraftEvidenceReviewResponse, error)
 	CompareDraftEvidence(context.Context, *CompareDraftEvidenceRequest) (*CompareDraftEvidenceResponse, error)
@@ -4491,6 +4517,9 @@ func (UnimplementedOnyxServiceServer) ListDrafts(context.Context, *ListDraftsReq
 func (UnimplementedOnyxServiceServer) GetDraft(context.Context, *GetDraftRequest) (*GetDraftResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetDraft not implemented")
 }
+func (UnimplementedOnyxServiceServer) ListDraftRevisions(context.Context, *ListDraftRevisionsRequest) (*ListDraftRevisionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListDraftRevisions not implemented")
+}
 func (UnimplementedOnyxServiceServer) CreateDraft(context.Context, *CreateDraftRequest) (*CreateDraftResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method CreateDraft not implemented")
 }
@@ -4502,6 +4531,9 @@ func (UnimplementedOnyxServiceServer) DeleteDraftBlock(context.Context, *DeleteD
 }
 func (UnimplementedOnyxServiceServer) UpsertDraftCitation(context.Context, *UpsertDraftCitationRequest) (*UpsertDraftCitationResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method UpsertDraftCitation not implemented")
+}
+func (UnimplementedOnyxServiceServer) BatchUpsertDraftCitations(context.Context, *BatchUpsertDraftCitationsRequest) (*BatchUpsertDraftCitationsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method BatchUpsertDraftCitations not implemented")
 }
 func (UnimplementedOnyxServiceServer) VerifyDraft(context.Context, *VerifyDraftRequest) (*VerifyDraftResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method VerifyDraft not implemented")
@@ -9036,6 +9068,24 @@ func _OnyxService_GetDraft_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_ListDraftRevisions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListDraftRevisionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).ListDraftRevisions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_ListDraftRevisions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).ListDraftRevisions(ctx, req.(*ListDraftRevisionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _OnyxService_CreateDraft_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateDraftRequest)
 	if err := dec(in); err != nil {
@@ -9104,6 +9154,24 @@ func _OnyxService_UpsertDraftCitation_Handler(srv interface{}, ctx context.Conte
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OnyxServiceServer).UpsertDraftCitation(ctx, req.(*UpsertDraftCitationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_BatchUpsertDraftCitations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BatchUpsertDraftCitationsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).BatchUpsertDraftCitations(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_BatchUpsertDraftCitations_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).BatchUpsertDraftCitations(ctx, req.(*BatchUpsertDraftCitationsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -10604,6 +10672,10 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _OnyxService_GetDraft_Handler,
 		},
 		{
+			MethodName: "ListDraftRevisions",
+			Handler:    _OnyxService_ListDraftRevisions_Handler,
+		},
+		{
 			MethodName: "CreateDraft",
 			Handler:    _OnyxService_CreateDraft_Handler,
 		},
@@ -10618,6 +10690,10 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpsertDraftCitation",
 			Handler:    _OnyxService_UpsertDraftCitation_Handler,
+		},
+		{
+			MethodName: "BatchUpsertDraftCitations",
+			Handler:    _OnyxService_BatchUpsertDraftCitations_Handler,
 		},
 		{
 			MethodName: "VerifyDraft",

@@ -70573,6 +70573,9 @@ class DraftDocument extends $pb.GeneratedMessage {
     $core.Iterable<DraftOperationStatus>? operationStatuses,
     $core.int? openOperationCount,
     $core.int? overdueOperationCount,
+    $core.int? revisionTotalCount,
+    $core.String? revisionNextPageToken,
+    $core.bool? revisionsTruncated,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -70624,6 +70627,12 @@ class DraftDocument extends $pb.GeneratedMessage {
       result.openOperationCount = openOperationCount;
     if (overdueOperationCount != null)
       result.overdueOperationCount = overdueOperationCount;
+    if (revisionTotalCount != null)
+      result.revisionTotalCount = revisionTotalCount;
+    if (revisionNextPageToken != null)
+      result.revisionNextPageToken = revisionNextPageToken;
+    if (revisionsTruncated != null)
+      result.revisionsTruncated = revisionsTruncated;
     return result;
   }
 
@@ -70698,6 +70707,9 @@ class DraftDocument extends $pb.GeneratedMessage {
         subBuilder: DraftOperationStatus.create)
     ..aI(41, _omitFieldNames ? '' : 'openOperationCount')
     ..aI(42, _omitFieldNames ? '' : 'overdueOperationCount')
+    ..aI(43, _omitFieldNames ? '' : 'revisionTotalCount')
+    ..aOS(44, _omitFieldNames ? '' : 'revisionNextPageToken')
+    ..aOB(45, _omitFieldNames ? '' : 'revisionsTruncated')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -71022,6 +71034,33 @@ class DraftDocument extends $pb.GeneratedMessage {
   $core.bool hasOverdueOperationCount() => $_has(41);
   @$pb.TagNumber(42)
   void clearOverdueOperationCount() => $_clearField(42);
+
+  @$pb.TagNumber(43)
+  $core.int get revisionTotalCount => $_getIZ(42);
+  @$pb.TagNumber(43)
+  set revisionTotalCount($core.int value) => $_setSignedInt32(42, value);
+  @$pb.TagNumber(43)
+  $core.bool hasRevisionTotalCount() => $_has(42);
+  @$pb.TagNumber(43)
+  void clearRevisionTotalCount() => $_clearField(43);
+
+  @$pb.TagNumber(44)
+  $core.String get revisionNextPageToken => $_getSZ(43);
+  @$pb.TagNumber(44)
+  set revisionNextPageToken($core.String value) => $_setString(43, value);
+  @$pb.TagNumber(44)
+  $core.bool hasRevisionNextPageToken() => $_has(43);
+  @$pb.TagNumber(44)
+  void clearRevisionNextPageToken() => $_clearField(44);
+
+  @$pb.TagNumber(45)
+  $core.bool get revisionsTruncated => $_getBF(44);
+  @$pb.TagNumber(45)
+  set revisionsTruncated($core.bool value) => $_setBool(44, value);
+  @$pb.TagNumber(45)
+  $core.bool hasRevisionsTruncated() => $_has(44);
+  @$pb.TagNumber(45)
+  void clearRevisionsTruncated() => $_clearField(45);
 }
 
 class DraftingDashboard extends $pb.GeneratedMessage {
@@ -71580,6 +71619,164 @@ class GetDraftResponse extends $pb.GeneratedMessage {
   void clearDraft() => $_clearField(1);
   @$pb.TagNumber(1)
   DraftDocument ensureDraft() => $_ensure(0);
+}
+
+class ListDraftRevisionsRequest extends $pb.GeneratedMessage {
+  factory ListDraftRevisionsRequest({
+    $core.String? draftId,
+    $core.int? pageSize,
+    $core.String? pageToken,
+  }) {
+    final result = create();
+    if (draftId != null) result.draftId = draftId;
+    if (pageSize != null) result.pageSize = pageSize;
+    if (pageToken != null) result.pageToken = pageToken;
+    return result;
+  }
+
+  ListDraftRevisionsRequest._();
+
+  factory ListDraftRevisionsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListDraftRevisionsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListDraftRevisionsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'draftId')
+    ..aI(2, _omitFieldNames ? '' : 'pageSize')
+    ..aOS(3, _omitFieldNames ? '' : 'pageToken')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListDraftRevisionsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListDraftRevisionsRequest copyWith(
+          void Function(ListDraftRevisionsRequest) updates) =>
+      super.copyWith((message) => updates(message as ListDraftRevisionsRequest))
+          as ListDraftRevisionsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListDraftRevisionsRequest create() => ListDraftRevisionsRequest._();
+  @$core.override
+  ListDraftRevisionsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListDraftRevisionsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListDraftRevisionsRequest>(create);
+  static ListDraftRevisionsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get draftId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set draftId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDraftId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDraftId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get pageSize => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set pageSize($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPageSize() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPageSize() => $_clearField(2);
+
+  /// Opaque server-derived cursor: the last revision identifier from the
+  /// previous page. It is re-authorized against draft_id before use.
+  @$pb.TagNumber(3)
+  $core.String get pageToken => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set pageToken($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPageToken() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPageToken() => $_clearField(3);
+}
+
+class ListDraftRevisionsResponse extends $pb.GeneratedMessage {
+  factory ListDraftRevisionsResponse({
+    $core.Iterable<DraftRevision>? revisions,
+    $core.String? nextPageToken,
+    $core.int? totalCount,
+  }) {
+    final result = create();
+    if (revisions != null) result.revisions.addAll(revisions);
+    if (nextPageToken != null) result.nextPageToken = nextPageToken;
+    if (totalCount != null) result.totalCount = totalCount;
+    return result;
+  }
+
+  ListDraftRevisionsResponse._();
+
+  factory ListDraftRevisionsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListDraftRevisionsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListDraftRevisionsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<DraftRevision>(1, _omitFieldNames ? '' : 'revisions',
+        subBuilder: DraftRevision.create)
+    ..aOS(2, _omitFieldNames ? '' : 'nextPageToken')
+    ..aI(3, _omitFieldNames ? '' : 'totalCount')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListDraftRevisionsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListDraftRevisionsResponse copyWith(
+          void Function(ListDraftRevisionsResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListDraftRevisionsResponse))
+          as ListDraftRevisionsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListDraftRevisionsResponse create() => ListDraftRevisionsResponse._();
+  @$core.override
+  ListDraftRevisionsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListDraftRevisionsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListDraftRevisionsResponse>(create);
+  static ListDraftRevisionsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<DraftRevision> get revisions => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get nextPageToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set nextPageToken($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNextPageToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNextPageToken() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get totalCount => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set totalCount($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTotalCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTotalCount() => $_clearField(3);
 }
 
 class CreateDraftRequest extends $pb.GeneratedMessage {
@@ -72605,6 +72802,355 @@ class UpsertDraftCitationResponse extends $pb.GeneratedMessage {
   void clearCitation() => $_clearField(1);
   @$pb.TagNumber(1)
   DraftCitation ensureCitation() => $_ensure(0);
+}
+
+/// Choice 27 — a bounded citation mutation used to avoid one network and
+/// recount round-trip per citation while preserving exact-source verification.
+class DraftCitationMutation extends $pb.GeneratedMessage {
+  factory DraftCitationMutation({
+    $core.String? blockId,
+    $core.String? citationId,
+    $core.String? sourceType,
+    $core.String? sourceId,
+    $core.String? contentId,
+    $core.String? revisionId,
+    $core.String? passageKey,
+    $core.String? sourceChecksum,
+    $core.String? quote,
+    $core.String? locator,
+    $core.String? intent,
+    $core.int? ordinal,
+  }) {
+    final result = create();
+    if (blockId != null) result.blockId = blockId;
+    if (citationId != null) result.citationId = citationId;
+    if (sourceType != null) result.sourceType = sourceType;
+    if (sourceId != null) result.sourceId = sourceId;
+    if (contentId != null) result.contentId = contentId;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (passageKey != null) result.passageKey = passageKey;
+    if (sourceChecksum != null) result.sourceChecksum = sourceChecksum;
+    if (quote != null) result.quote = quote;
+    if (locator != null) result.locator = locator;
+    if (intent != null) result.intent = intent;
+    if (ordinal != null) result.ordinal = ordinal;
+    return result;
+  }
+
+  DraftCitationMutation._();
+
+  factory DraftCitationMutation.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DraftCitationMutation.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DraftCitationMutation',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'blockId')
+    ..aOS(2, _omitFieldNames ? '' : 'citationId')
+    ..aOS(3, _omitFieldNames ? '' : 'sourceType')
+    ..aOS(4, _omitFieldNames ? '' : 'sourceId')
+    ..aOS(5, _omitFieldNames ? '' : 'contentId')
+    ..aOS(6, _omitFieldNames ? '' : 'revisionId')
+    ..aOS(7, _omitFieldNames ? '' : 'passageKey')
+    ..aOS(8, _omitFieldNames ? '' : 'sourceChecksum')
+    ..aOS(9, _omitFieldNames ? '' : 'quote')
+    ..aOS(10, _omitFieldNames ? '' : 'locator')
+    ..aOS(11, _omitFieldNames ? '' : 'intent')
+    ..aI(12, _omitFieldNames ? '' : 'ordinal')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftCitationMutation clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DraftCitationMutation copyWith(
+          void Function(DraftCitationMutation) updates) =>
+      super.copyWith((message) => updates(message as DraftCitationMutation))
+          as DraftCitationMutation;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DraftCitationMutation create() => DraftCitationMutation._();
+  @$core.override
+  DraftCitationMutation createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DraftCitationMutation getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DraftCitationMutation>(create);
+  static DraftCitationMutation? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get blockId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set blockId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBlockId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBlockId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get citationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set citationId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCitationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCitationId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sourceType => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sourceType($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSourceType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSourceType() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sourceId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set sourceId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSourceId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSourceId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get contentId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set contentId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasContentId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearContentId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get revisionId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set revisionId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasRevisionId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRevisionId() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get passageKey => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set passageKey($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPassageKey() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPassageKey() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get sourceChecksum => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set sourceChecksum($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSourceChecksum() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSourceChecksum() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get quote => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set quote($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasQuote() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearQuote() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get locator => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set locator($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasLocator() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearLocator() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get intent => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set intent($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasIntent() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearIntent() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.int get ordinal => $_getIZ(11);
+  @$pb.TagNumber(12)
+  set ordinal($core.int value) => $_setSignedInt32(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasOrdinal() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearOrdinal() => $_clearField(12);
+}
+
+class BatchUpsertDraftCitationsRequest extends $pb.GeneratedMessage {
+  factory BatchUpsertDraftCitationsRequest({
+    $core.String? draftId,
+    $core.Iterable<DraftCitationMutation>? citations,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (draftId != null) result.draftId = draftId;
+    if (citations != null) result.citations.addAll(citations);
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  BatchUpsertDraftCitationsRequest._();
+
+  factory BatchUpsertDraftCitationsRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory BatchUpsertDraftCitationsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'BatchUpsertDraftCitationsRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'draftId')
+    ..pPM<DraftCitationMutation>(2, _omitFieldNames ? '' : 'citations',
+        subBuilder: DraftCitationMutation.create)
+    ..aOS(3, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  BatchUpsertDraftCitationsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  BatchUpsertDraftCitationsRequest copyWith(
+          void Function(BatchUpsertDraftCitationsRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as BatchUpsertDraftCitationsRequest))
+          as BatchUpsertDraftCitationsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static BatchUpsertDraftCitationsRequest create() =>
+      BatchUpsertDraftCitationsRequest._();
+  @$core.override
+  BatchUpsertDraftCitationsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static BatchUpsertDraftCitationsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<BatchUpsertDraftCitationsRequest>(
+          create);
+  static BatchUpsertDraftCitationsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get draftId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set draftId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDraftId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDraftId() => $_clearField(1);
+
+  /// The server accepts 1–100 items and commits all of them or none of them.
+  @$pb.TagNumber(2)
+  $pb.PbList<DraftCitationMutation> get citations => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.String get clientMutationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set clientMutationId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClientMutationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClientMutationId() => $_clearField(3);
+}
+
+class BatchUpsertDraftCitationsResponse extends $pb.GeneratedMessage {
+  factory BatchUpsertDraftCitationsResponse({
+    $core.Iterable<DraftCitation>? citations,
+    $core.bool? replayed,
+    $core.String? batchChecksum,
+  }) {
+    final result = create();
+    if (citations != null) result.citations.addAll(citations);
+    if (replayed != null) result.replayed = replayed;
+    if (batchChecksum != null) result.batchChecksum = batchChecksum;
+    return result;
+  }
+
+  BatchUpsertDraftCitationsResponse._();
+
+  factory BatchUpsertDraftCitationsResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory BatchUpsertDraftCitationsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'BatchUpsertDraftCitationsResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..pPM<DraftCitation>(1, _omitFieldNames ? '' : 'citations',
+        subBuilder: DraftCitation.create)
+    ..aOB(2, _omitFieldNames ? '' : 'replayed')
+    ..aOS(3, _omitFieldNames ? '' : 'batchChecksum')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  BatchUpsertDraftCitationsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  BatchUpsertDraftCitationsResponse copyWith(
+          void Function(BatchUpsertDraftCitationsResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as BatchUpsertDraftCitationsResponse))
+          as BatchUpsertDraftCitationsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static BatchUpsertDraftCitationsResponse create() =>
+      BatchUpsertDraftCitationsResponse._();
+  @$core.override
+  BatchUpsertDraftCitationsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static BatchUpsertDraftCitationsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<BatchUpsertDraftCitationsResponse>(
+          create);
+  static BatchUpsertDraftCitationsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<DraftCitation> get citations => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get replayed => $_getBF(1);
+  @$pb.TagNumber(2)
+  set replayed($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReplayed() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReplayed() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get batchChecksum => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set batchChecksum($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBatchChecksum() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBatchChecksum() => $_clearField(3);
 }
 
 class VerifyDraftRequest extends $pb.GeneratedMessage {

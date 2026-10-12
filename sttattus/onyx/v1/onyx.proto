@@ -5372,6 +5372,9 @@ message DraftDocument {
   repeated DraftOperationStatus operation_statuses = 40;
   int32 open_operation_count = 41;
   int32 overdue_operation_count = 42;
+  int32 revision_total_count = 43;
+  string revision_next_page_token = 44;
+  bool revisions_truncated = 45;
 }
 
 message DraftingDashboard {
@@ -5409,6 +5412,19 @@ message GetDraftRequest {
 }
 message GetDraftResponse {
   DraftDocument draft = 1;
+}
+
+message ListDraftRevisionsRequest {
+  string draft_id = 1;
+  int32 page_size = 2;
+  // Opaque server-derived cursor: the last revision identifier from the
+  // previous page. It is re-authorized against draft_id before use.
+  string page_token = 3;
+}
+message ListDraftRevisionsResponse {
+  repeated DraftRevision revisions = 1;
+  string next_page_token = 2;
+  int32 total_count = 3;
 }
 
 message CreateDraftRequest {
@@ -5484,6 +5500,36 @@ message UpsertDraftCitationRequest {
 }
 message UpsertDraftCitationResponse {
   DraftCitation citation = 1;
+}
+
+// Choice 27 — a bounded citation mutation used to avoid one network and
+// recount round-trip per citation while preserving exact-source verification.
+message DraftCitationMutation {
+  string block_id = 1;
+  string citation_id = 2;
+  string source_type = 3;
+  string source_id = 4;
+  string content_id = 5;
+  string revision_id = 6;
+  string passage_key = 7;
+  string source_checksum = 8;
+  string quote = 9;
+  string locator = 10;
+  string intent = 11;
+  int32 ordinal = 12;
+}
+
+message BatchUpsertDraftCitationsRequest {
+  string draft_id = 1;
+  // The server accepts 1–100 items and commits all of them or none of them.
+  repeated DraftCitationMutation citations = 2;
+  string client_mutation_id = 3;
+}
+
+message BatchUpsertDraftCitationsResponse {
+  repeated DraftCitation citations = 1;
+  bool replayed = 2;
+  string batch_checksum = 3;
 }
 
 message VerifyDraftRequest {
@@ -6320,10 +6366,12 @@ service OnyxService {
   rpc GetDraftingDashboard(GetDraftingDashboardRequest) returns (GetDraftingDashboardResponse);
   rpc ListDrafts(ListDraftsRequest) returns (ListDraftsResponse);
   rpc GetDraft(GetDraftRequest) returns (GetDraftResponse);
+  rpc ListDraftRevisions(ListDraftRevisionsRequest) returns (ListDraftRevisionsResponse);
   rpc CreateDraft(CreateDraftRequest) returns (CreateDraftResponse);
   rpc UpsertDraftBlock(UpsertDraftBlockRequest) returns (UpsertDraftBlockResponse);
   rpc DeleteDraftBlock(DeleteDraftBlockRequest) returns (DeleteDraftBlockResponse);
   rpc UpsertDraftCitation(UpsertDraftCitationRequest) returns (UpsertDraftCitationResponse);
+  rpc BatchUpsertDraftCitations(BatchUpsertDraftCitationsRequest) returns (BatchUpsertDraftCitationsResponse);
   rpc VerifyDraft(VerifyDraftRequest) returns (VerifyDraftResponse);
   rpc GetDraftEvidenceReview(GetDraftEvidenceReviewRequest) returns (GetDraftEvidenceReviewResponse);
   rpc CompareDraftEvidence(CompareDraftEvidenceRequest) returns (CompareDraftEvidenceResponse);

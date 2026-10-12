@@ -42077,6 +42077,21 @@ export class DraftDocument extends Message<DraftDocument> {
    */
   overdueOperationCount = 0;
 
+  /**
+   * @generated from field: int32 revision_total_count = 43;
+   */
+  revisionTotalCount = 0;
+
+  /**
+   * @generated from field: string revision_next_page_token = 44;
+   */
+  revisionNextPageToken = "";
+
+  /**
+   * @generated from field: bool revisions_truncated = 45;
+   */
+  revisionsTruncated = false;
+
   constructor(data?: PartialMessage<DraftDocument>) {
     super();
     proto3.util.initPartial(data, this);
@@ -42127,6 +42142,9 @@ export class DraftDocument extends Message<DraftDocument> {
     { no: 40, name: "operation_statuses", kind: "message", T: DraftOperationStatus, repeated: true },
     { no: 41, name: "open_operation_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 42, name: "overdue_operation_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 43, name: "revision_total_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 44, name: "revision_next_page_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 45, name: "revisions_truncated", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftDocument {
@@ -42492,6 +42510,107 @@ export class GetDraftResponse extends Message<GetDraftResponse> {
 
   static equals(a: GetDraftResponse | PlainMessage<GetDraftResponse> | undefined, b: GetDraftResponse | PlainMessage<GetDraftResponse> | undefined): boolean {
     return proto3.util.equals(GetDraftResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListDraftRevisionsRequest
+ */
+export class ListDraftRevisionsRequest extends Message<ListDraftRevisionsRequest> {
+  /**
+   * @generated from field: string draft_id = 1;
+   */
+  draftId = "";
+
+  /**
+   * @generated from field: int32 page_size = 2;
+   */
+  pageSize = 0;
+
+  /**
+   * Opaque server-derived cursor: the last revision identifier from the
+   * previous page. It is re-authorized against draft_id before use.
+   *
+   * @generated from field: string page_token = 3;
+   */
+  pageToken = "";
+
+  constructor(data?: PartialMessage<ListDraftRevisionsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListDraftRevisionsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "page_size", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "page_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListDraftRevisionsRequest {
+    return new ListDraftRevisionsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListDraftRevisionsRequest {
+    return new ListDraftRevisionsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListDraftRevisionsRequest {
+    return new ListDraftRevisionsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListDraftRevisionsRequest | PlainMessage<ListDraftRevisionsRequest> | undefined, b: ListDraftRevisionsRequest | PlainMessage<ListDraftRevisionsRequest> | undefined): boolean {
+    return proto3.util.equals(ListDraftRevisionsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.ListDraftRevisionsResponse
+ */
+export class ListDraftRevisionsResponse extends Message<ListDraftRevisionsResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.DraftRevision revisions = 1;
+   */
+  revisions: DraftRevision[] = [];
+
+  /**
+   * @generated from field: string next_page_token = 2;
+   */
+  nextPageToken = "";
+
+  /**
+   * @generated from field: int32 total_count = 3;
+   */
+  totalCount = 0;
+
+  constructor(data?: PartialMessage<ListDraftRevisionsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.ListDraftRevisionsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "revisions", kind: "message", T: DraftRevision, repeated: true },
+    { no: 2, name: "next_page_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "total_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListDraftRevisionsResponse {
+    return new ListDraftRevisionsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListDraftRevisionsResponse {
+    return new ListDraftRevisionsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListDraftRevisionsResponse {
+    return new ListDraftRevisionsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ListDraftRevisionsResponse | PlainMessage<ListDraftRevisionsResponse> | undefined, b: ListDraftRevisionsResponse | PlainMessage<ListDraftRevisionsResponse> | undefined): boolean {
+    return proto3.util.equals(ListDraftRevisionsResponse, a, b);
   }
 }
 
@@ -43070,6 +43189,212 @@ export class UpsertDraftCitationResponse extends Message<UpsertDraftCitationResp
 
   static equals(a: UpsertDraftCitationResponse | PlainMessage<UpsertDraftCitationResponse> | undefined, b: UpsertDraftCitationResponse | PlainMessage<UpsertDraftCitationResponse> | undefined): boolean {
     return proto3.util.equals(UpsertDraftCitationResponse, a, b);
+  }
+}
+
+/**
+ * Choice 27 — a bounded citation mutation used to avoid one network and
+ * recount round-trip per citation while preserving exact-source verification.
+ *
+ * @generated from message sttattus.onyx.v1.DraftCitationMutation
+ */
+export class DraftCitationMutation extends Message<DraftCitationMutation> {
+  /**
+   * @generated from field: string block_id = 1;
+   */
+  blockId = "";
+
+  /**
+   * @generated from field: string citation_id = 2;
+   */
+  citationId = "";
+
+  /**
+   * @generated from field: string source_type = 3;
+   */
+  sourceType = "";
+
+  /**
+   * @generated from field: string source_id = 4;
+   */
+  sourceId = "";
+
+  /**
+   * @generated from field: string content_id = 5;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string revision_id = 6;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: string passage_key = 7;
+   */
+  passageKey = "";
+
+  /**
+   * @generated from field: string source_checksum = 8;
+   */
+  sourceChecksum = "";
+
+  /**
+   * @generated from field: string quote = 9;
+   */
+  quote = "";
+
+  /**
+   * @generated from field: string locator = 10;
+   */
+  locator = "";
+
+  /**
+   * @generated from field: string intent = 11;
+   */
+  intent = "";
+
+  /**
+   * @generated from field: int32 ordinal = 12;
+   */
+  ordinal = 0;
+
+  constructor(data?: PartialMessage<DraftCitationMutation>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.DraftCitationMutation";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "block_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "citation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "source_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "source_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "passage_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "source_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "quote", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "locator", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "intent", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "ordinal", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DraftCitationMutation {
+    return new DraftCitationMutation().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DraftCitationMutation {
+    return new DraftCitationMutation().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DraftCitationMutation {
+    return new DraftCitationMutation().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DraftCitationMutation | PlainMessage<DraftCitationMutation> | undefined, b: DraftCitationMutation | PlainMessage<DraftCitationMutation> | undefined): boolean {
+    return proto3.util.equals(DraftCitationMutation, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.BatchUpsertDraftCitationsRequest
+ */
+export class BatchUpsertDraftCitationsRequest extends Message<BatchUpsertDraftCitationsRequest> {
+  /**
+   * @generated from field: string draft_id = 1;
+   */
+  draftId = "";
+
+  /**
+   * The server accepts 1–100 items and commits all of them or none of them.
+   *
+   * @generated from field: repeated sttattus.onyx.v1.DraftCitationMutation citations = 2;
+   */
+  citations: DraftCitationMutation[] = [];
+
+  /**
+   * @generated from field: string client_mutation_id = 3;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<BatchUpsertDraftCitationsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.BatchUpsertDraftCitationsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "draft_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "citations", kind: "message", T: DraftCitationMutation, repeated: true },
+    { no: 3, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BatchUpsertDraftCitationsRequest {
+    return new BatchUpsertDraftCitationsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BatchUpsertDraftCitationsRequest {
+    return new BatchUpsertDraftCitationsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BatchUpsertDraftCitationsRequest {
+    return new BatchUpsertDraftCitationsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: BatchUpsertDraftCitationsRequest | PlainMessage<BatchUpsertDraftCitationsRequest> | undefined, b: BatchUpsertDraftCitationsRequest | PlainMessage<BatchUpsertDraftCitationsRequest> | undefined): boolean {
+    return proto3.util.equals(BatchUpsertDraftCitationsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.BatchUpsertDraftCitationsResponse
+ */
+export class BatchUpsertDraftCitationsResponse extends Message<BatchUpsertDraftCitationsResponse> {
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.DraftCitation citations = 1;
+   */
+  citations: DraftCitation[] = [];
+
+  /**
+   * @generated from field: bool replayed = 2;
+   */
+  replayed = false;
+
+  /**
+   * @generated from field: string batch_checksum = 3;
+   */
+  batchChecksum = "";
+
+  constructor(data?: PartialMessage<BatchUpsertDraftCitationsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.BatchUpsertDraftCitationsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "citations", kind: "message", T: DraftCitation, repeated: true },
+    { no: 2, name: "replayed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "batch_checksum", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BatchUpsertDraftCitationsResponse {
+    return new BatchUpsertDraftCitationsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BatchUpsertDraftCitationsResponse {
+    return new BatchUpsertDraftCitationsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BatchUpsertDraftCitationsResponse {
+    return new BatchUpsertDraftCitationsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: BatchUpsertDraftCitationsResponse | PlainMessage<BatchUpsertDraftCitationsResponse> | undefined, b: BatchUpsertDraftCitationsResponse | PlainMessage<BatchUpsertDraftCitationsResponse> | undefined): boolean {
+    return proto3.util.equals(BatchUpsertDraftCitationsResponse, a, b);
   }
 }
 
