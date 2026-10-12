@@ -454,9 +454,11 @@ message SearchReaderRequest {
   string scope = 2; // all | content | annotations
   string kind = 3; // optional content-kind filter
   int32 limit = 4;
+  string page_token = 5; // opaque, scoped to query/scope/kind
 }
 message SearchReaderResponse {
   repeated ReaderSearchResult results = 1;
+  string next_page_token = 2;
 }
 
 // Choice 7 — private, access-aware search, watchlists and a finite daily

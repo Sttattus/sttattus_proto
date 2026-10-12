@@ -1836,13 +1836,15 @@ const SearchReaderRequest$json = {
     {'1': 'scope', '3': 2, '4': 1, '5': 9, '10': 'scope'},
     {'1': 'kind', '3': 3, '4': 1, '5': 9, '10': 'kind'},
     {'1': 'limit', '3': 4, '4': 1, '5': 5, '10': 'limit'},
+    {'1': 'page_token', '3': 5, '4': 1, '5': 9, '10': 'pageToken'},
   ],
 };
 
 /// Descriptor for `SearchReaderRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List searchReaderRequestDescriptor = $convert.base64Decode(
     'ChNTZWFyY2hSZWFkZXJSZXF1ZXN0EhQKBXF1ZXJ5GAEgASgJUgVxdWVyeRIUCgVzY29wZRgCIA'
-    'EoCVIFc2NvcGUSEgoEa2luZBgDIAEoCVIEa2luZBIUCgVsaW1pdBgEIAEoBVIFbGltaXQ=');
+    'EoCVIFc2NvcGUSEgoEa2luZBgDIAEoCVIEa2luZBIUCgVsaW1pdBgEIAEoBVIFbGltaXQSHQoK'
+    'cGFnZV90b2tlbhgFIAEoCVIJcGFnZVRva2Vu');
 
 @$core.Deprecated('Use searchReaderResponseDescriptor instead')
 const SearchReaderResponse$json = {
@@ -1856,13 +1858,15 @@ const SearchReaderResponse$json = {
       '6': '.sttattus.onyx.v1.ReaderSearchResult',
       '10': 'results'
     },
+    {'1': 'next_page_token', '3': 2, '4': 1, '5': 9, '10': 'nextPageToken'},
   ],
 };
 
 /// Descriptor for `SearchReaderResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List searchReaderResponseDescriptor = $convert.base64Decode(
     'ChRTZWFyY2hSZWFkZXJSZXNwb25zZRI+CgdyZXN1bHRzGAEgAygLMiQuc3R0YXR0dXMub255eC'
-    '52MS5SZWFkZXJTZWFyY2hSZXN1bHRSB3Jlc3VsdHM=');
+    '52MS5SZWFkZXJTZWFyY2hSZXN1bHRSB3Jlc3VsdHMSJgoPbmV4dF9wYWdlX3Rva2VuGAIgASgJ'
+    'Ug1uZXh0UGFnZVRva2Vu');
 
 @$core.Deprecated('Use intelligenceSearchFiltersDescriptor instead')
 const IntelligenceSearchFilters$json = {

@@ -5317,12 +5317,14 @@ class SearchReaderRequest extends $pb.GeneratedMessage {
     $core.String? scope,
     $core.String? kind,
     $core.int? limit,
+    $core.String? pageToken,
   }) {
     final result = create();
     if (query != null) result.query = query;
     if (scope != null) result.scope = scope;
     if (kind != null) result.kind = kind;
     if (limit != null) result.limit = limit;
+    if (pageToken != null) result.pageToken = pageToken;
     return result;
   }
 
@@ -5344,6 +5346,7 @@ class SearchReaderRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'scope')
     ..aOS(3, _omitFieldNames ? '' : 'kind')
     ..aI(4, _omitFieldNames ? '' : 'limit')
+    ..aOS(5, _omitFieldNames ? '' : 'pageToken')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -5400,14 +5403,25 @@ class SearchReaderRequest extends $pb.GeneratedMessage {
   $core.bool hasLimit() => $_has(3);
   @$pb.TagNumber(4)
   void clearLimit() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get pageToken => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set pageToken($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPageToken() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPageToken() => $_clearField(5);
 }
 
 class SearchReaderResponse extends $pb.GeneratedMessage {
   factory SearchReaderResponse({
     $core.Iterable<ReaderSearchResult>? results,
+    $core.String? nextPageToken,
   }) {
     final result = create();
     if (results != null) result.results.addAll(results);
+    if (nextPageToken != null) result.nextPageToken = nextPageToken;
     return result;
   }
 
@@ -5427,6 +5441,7 @@ class SearchReaderResponse extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..pPM<ReaderSearchResult>(1, _omitFieldNames ? '' : 'results',
         subBuilder: ReaderSearchResult.create)
+    ..aOS(2, _omitFieldNames ? '' : 'nextPageToken')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -5450,6 +5465,15 @@ class SearchReaderResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $pb.PbList<ReaderSearchResult> get results => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get nextPageToken => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set nextPageToken($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNextPageToken() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNextPageToken() => $_clearField(2);
 }
 
 /// Choice 7 — private, access-aware search, watchlists and a finite daily

@@ -3851,6 +3851,13 @@ export class SearchReaderRequest extends Message<SearchReaderRequest> {
    */
   limit = 0;
 
+  /**
+   * opaque, scoped to query/scope/kind
+   *
+   * @generated from field: string page_token = 5;
+   */
+  pageToken = "";
+
   constructor(data?: PartialMessage<SearchReaderRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -3863,6 +3870,7 @@ export class SearchReaderRequest extends Message<SearchReaderRequest> {
     { no: 2, name: "scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "page_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchReaderRequest {
@@ -3891,6 +3899,11 @@ export class SearchReaderResponse extends Message<SearchReaderResponse> {
    */
   results: ReaderSearchResult[] = [];
 
+  /**
+   * @generated from field: string next_page_token = 2;
+   */
+  nextPageToken = "";
+
   constructor(data?: PartialMessage<SearchReaderResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -3900,6 +3913,7 @@ export class SearchReaderResponse extends Message<SearchReaderResponse> {
   static readonly typeName = "sttattus.onyx.v1.SearchReaderResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "results", kind: "message", T: ReaderSearchResult, repeated: true },
+    { no: 2, name: "next_page_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchReaderResponse {

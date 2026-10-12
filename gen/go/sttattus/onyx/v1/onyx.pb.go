@@ -4797,6 +4797,7 @@ type SearchReaderRequest struct {
 	Scope         string                 `protobuf:"bytes,2,opt,name=scope,proto3" json:"scope,omitempty"` // all | content | annotations
 	Kind          string                 `protobuf:"bytes,3,opt,name=kind,proto3" json:"kind,omitempty"`   // optional content-kind filter
 	Limit         int32                  `protobuf:"varint,4,opt,name=limit,proto3" json:"limit,omitempty"`
+	PageToken     string                 `protobuf:"bytes,5,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"` // opaque, scoped to query/scope/kind
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4859,9 +4860,17 @@ func (x *SearchReaderRequest) GetLimit() int32 {
 	return 0
 }
 
+func (x *SearchReaderRequest) GetPageToken() string {
+	if x != nil {
+		return x.PageToken
+	}
+	return ""
+}
+
 type SearchReaderResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Results       []*ReaderSearchResult  `protobuf:"bytes,1,rep,name=results,proto3" json:"results,omitempty"`
+	NextPageToken string                 `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -4901,6 +4910,13 @@ func (x *SearchReaderResponse) GetResults() []*ReaderSearchResult {
 		return x.Results
 	}
 	return nil
+}
+
+func (x *SearchReaderResponse) GetNextPageToken() string {
+	if x != nil {
+		return x.NextPageToken
+	}
+	return ""
 }
 
 // Choice 7 — private, access-aware search, watchlists and a finite daily
@@ -59059,14 +59075,17 @@ const file_sttattus_onyx_v1_onyx_proto_rawDesc = "" +
 	"\n" +
 	"annotation\x18\x03 \x01(\v2\".sttattus.onyx.v1.ReaderAnnotationR\n" +
 	"annotation\x12\x18\n" +
-	"\asnippet\x18\x04 \x01(\tR\asnippet\"k\n" +
+	"\asnippet\x18\x04 \x01(\tR\asnippet\"\x8a\x01\n" +
 	"\x13SearchReaderRequest\x12\x14\n" +
 	"\x05query\x18\x01 \x01(\tR\x05query\x12\x14\n" +
 	"\x05scope\x18\x02 \x01(\tR\x05scope\x12\x12\n" +
 	"\x04kind\x18\x03 \x01(\tR\x04kind\x12\x14\n" +
-	"\x05limit\x18\x04 \x01(\x05R\x05limit\"V\n" +
+	"\x05limit\x18\x04 \x01(\x05R\x05limit\x12\x1d\n" +
+	"\n" +
+	"page_token\x18\x05 \x01(\tR\tpageToken\"~\n" +
 	"\x14SearchReaderResponse\x12>\n" +
-	"\aresults\x18\x01 \x03(\v2$.sttattus.onyx.v1.ReaderSearchResultR\aresults\"\x96\x04\n" +
+	"\aresults\x18\x01 \x03(\v2$.sttattus.onyx.v1.ReaderSearchResultR\aresults\x12&\n" +
+	"\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"\x96\x04\n" +
 	"\x19IntelligenceSearchFilters\x12\x14\n" +
 	"\x05scope\x18\x01 \x01(\tR\x05scope\x12\x14\n" +
 	"\x05kinds\x18\x02 \x03(\tR\x05kinds\x12\x1d\n" +
