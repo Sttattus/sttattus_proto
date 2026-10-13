@@ -2737,13 +2737,15 @@ const AnswerDiffSegment$json = {
       '10': 'op'
     },
     {'1': 'text', '3': 2, '4': 1, '5': 9, '10': 'text'},
+    {'1': 'given_text', '3': 3, '4': 1, '5': 9, '10': 'givenText'},
   ],
 };
 
 /// Descriptor for `AnswerDiffSegment`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List answerDiffSegmentDescriptor = $convert.base64Decode(
     'ChFBbnN3ZXJEaWZmU2VnbWVudBIzCgJvcBgBIAEoDjIjLnN0dGF0dHVzLmxhbmd1YWdlcy52MS'
-    '5BbnN3ZXJEaWZmT3BSAm9wEhIKBHRleHQYAiABKAlSBHRleHQ=');
+    '5BbnN3ZXJEaWZmT3BSAm9wEhIKBHRleHQYAiABKAlSBHRleHQSHQoKZ2l2ZW5fdGV4dBgDIAEo'
+    'CVIJZ2l2ZW5UZXh0');
 
 @$core.Deprecated('Use exampleSentenceDescriptor instead')
 const ExampleSentence$json = {

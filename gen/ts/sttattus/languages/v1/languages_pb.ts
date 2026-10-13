@@ -7060,6 +7060,15 @@ export class AnswerDiffSegment extends Message<AnswerDiffSegment> {
    */
   text = "";
 
+  /**
+   * A run both answers share, as the learner wrote it, when that differs from
+   * text (the expected spelling) in case: matching ignores case, display keeps
+   * each side's. Empty when they are written the same. (LEX-XR-052)
+   *
+   * @generated from field: string given_text = 3;
+   */
+  givenText = "";
+
   constructor(data?: PartialMessage<AnswerDiffSegment>) {
     super();
     proto3.util.initPartial(data, this);
@@ -7070,6 +7079,7 @@ export class AnswerDiffSegment extends Message<AnswerDiffSegment> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "op", kind: "enum", T: proto3.getEnumType(AnswerDiffOp) },
     { no: 2, name: "text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "given_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AnswerDiffSegment {

@@ -9817,10 +9817,12 @@ class AnswerDiffSegment extends $pb.GeneratedMessage {
   factory AnswerDiffSegment({
     AnswerDiffOp? op,
     $core.String? text,
+    $core.String? givenText,
   }) {
     final result = create();
     if (op != null) result.op = op;
     if (text != null) result.text = text;
+    if (givenText != null) result.givenText = givenText;
     return result;
   }
 
@@ -9841,6 +9843,7 @@ class AnswerDiffSegment extends $pb.GeneratedMessage {
     ..aE<AnswerDiffOp>(1, _omitFieldNames ? '' : 'op',
         enumValues: AnswerDiffOp.values)
     ..aOS(2, _omitFieldNames ? '' : 'text')
+    ..aOS(3, _omitFieldNames ? '' : 'givenText')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -9879,6 +9882,18 @@ class AnswerDiffSegment extends $pb.GeneratedMessage {
   $core.bool hasText() => $_has(1);
   @$pb.TagNumber(2)
   void clearText() => $_clearField(2);
+
+  /// A run both answers share, as the learner wrote it, when that differs from
+  /// text (the expected spelling) in case: matching ignores case, display keeps
+  /// each side's. Empty when they are written the same. (LEX-XR-052)
+  @$pb.TagNumber(3)
+  $core.String get givenText => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set givenText($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasGivenText() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearGivenText() => $_clearField(3);
 }
 
 class ExampleSentence extends $pb.GeneratedMessage {

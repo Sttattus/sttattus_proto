@@ -8187,9 +8187,13 @@ func (x *SubmitAnswerResponse) GetHeard() string {
 }
 
 type AnswerDiffSegment struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Op            AnswerDiffOp           `protobuf:"varint,1,opt,name=op,proto3,enum=sttattus.languages.v1.AnswerDiffOp" json:"op,omitempty"`
-	Text          string                 `protobuf:"bytes,2,opt,name=text,proto3" json:"text,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	Op    AnswerDiffOp           `protobuf:"varint,1,opt,name=op,proto3,enum=sttattus.languages.v1.AnswerDiffOp" json:"op,omitempty"`
+	Text  string                 `protobuf:"bytes,2,opt,name=text,proto3" json:"text,omitempty"`
+	// A run both answers share, as the learner wrote it, when that differs from
+	// text (the expected spelling) in case: matching ignores case, display keeps
+	// each side's. Empty when they are written the same. (LEX-XR-052)
+	GivenText     string `protobuf:"bytes,3,opt,name=given_text,json=givenText,proto3" json:"given_text,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -8234,6 +8238,13 @@ func (x *AnswerDiffSegment) GetOp() AnswerDiffOp {
 func (x *AnswerDiffSegment) GetText() string {
 	if x != nil {
 		return x.Text
+	}
+	return ""
+}
+
+func (x *AnswerDiffSegment) GetGivenText() string {
+	if x != nil {
+		return x.GivenText
 	}
 	return ""
 }
@@ -10912,10 +10923,12 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x06lesson\x18\r \x01(\v2\".sttattus.languages.v1.MicroLessonR\x06lesson\x12;\n" +
 	"\x06retest\x18\x0e \x01(\v2#.sttattus.languages.v1.PracticeCardR\x06retest\x12%\n" +
 	"\x0egrader_version\x18\x0f \x01(\tR\rgraderVersion\x12\x14\n" +
-	"\x05heard\x18\x10 \x01(\tR\x05heard\"\\\n" +
+	"\x05heard\x18\x10 \x01(\tR\x05heard\"{\n" +
 	"\x11AnswerDiffSegment\x123\n" +
 	"\x02op\x18\x01 \x01(\x0e2#.sttattus.languages.v1.AnswerDiffOpR\x02op\x12\x12\n" +
-	"\x04text\x18\x02 \x01(\tR\x04text\"d\n" +
+	"\x04text\x18\x02 \x01(\tR\x04text\x12\x1d\n" +
+	"\n" +
+	"given_text\x18\x03 \x01(\tR\tgivenText\"d\n" +
 	"\x0fExampleSentence\x12\x12\n" +
 	"\x04text\x18\x01 \x01(\tR\x04text\x12 \n" +
 	"\vtranslation\x18\x02 \x01(\tR\vtranslation\x12\x1b\n" +

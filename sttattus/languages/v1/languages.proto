@@ -1158,6 +1158,10 @@ enum AnswerDiffOp {
 message AnswerDiffSegment {
   AnswerDiffOp op = 1;
   string text = 2;
+  // A run both answers share, as the learner wrote it, when that differs from
+  // text (the expected spelling) in case: matching ignores case, display keeps
+  // each side's. Empty when they are written the same. (LEX-XR-052)
+  string given_text = 3;
 }
 
 message ExampleSentence {
