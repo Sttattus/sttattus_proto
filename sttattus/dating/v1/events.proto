@@ -1,0 +1,230 @@
+syntax = "proto3";
+
+package sttattus.dating.v1;
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1";
+
+// Atlas Choice 9 — events, salons and small tables. Events are run by
+// Sttattus staff or vetted partner hosts and reviewed by a person before
+// members see them. A place is given in order (first come, with a waitlist
+// that moves) or by a fair draw (small tables of four to eight). The host
+// checks a member in at the door from the code their place shows. Atlas takes
+// no money: a venue's own charge is paid at the venue.
+
+// Who runs an event, as members see them.
+message EventHostInfo {
+  string name = 1;
+  // staff | partner
+  string kind = 2;
+  string organisation = 3;
+}
+
+// The member's own place at an event.
+message EventPlace {
+  // "" (none) | applied | offered | going | waitlist | attended | no_show |
+  // cancelled | declined | lapsed | not_eligible | removed
+  string status = 1;
+  int32 waitlist_position = 2;
+  // An offered table seat must be accepted before this.
+  int64 offer_expires_at = 3;
+  // Six characters the host checks at the door. Sent for a place from a day
+  // before the start until the end, so the phone can keep it offline; the
+  // app shows it from door_opens_at.
+  string door_code = 4;
+  int64 checked_in_at = 5;
+  // Why a member was not eligible at a table's draw, or removed by staff.
+  string outcome_reason = 6;
+  // step_free | accessible_toilet | seating | quiet_space | hearing_support | alcohol_free
+  repeated string access_needs = 7;
+  string access_note = 8;
+  // After the event: open to meeting someone again.
+  bool meet_again = 9;
+  string conduct_version = 10;
+}
+
+message EventAnnouncement {
+  string body = 1;
+  int64 at = 2;
+}
+
+// Another member, by first name only.
+message EventPerson {
+  string user_id = 1;
+  string first_name = 2;
+}
+
+message EventConduct {
+  string version = 1;
+  // In the member's language.
+  string body = 2;
+}
+
+message EventInfo {
+  string id = 1;
+  string title = 2;
+  // salon | dinner | mixer | gala | workshop | talk | tasting | table | outdoors | other
+  string kind = 3;
+  string description = 4;
+  string city = 5;
+  string country_code = 6;
+  string venue = 7;
+  // Only once the member holds a place.
+  string address = 8;
+  int64 starts_at = 9;
+  int64 ends_at = 10;
+  // The event's own zone (IANA).
+  string time_zone = 11;
+  // 0 free … 4; paid at the venue, never to Atlas.
+  int32 price = 12;
+  string price_note = 13;
+  // step_free | accessible_toilet | seating | quiet_space | hearing_support | alcohol_free
+  repeated string access = 14;
+  string guest_rules = 15;
+  bool identity_required = 16;
+  bool sovereign_only = 17;
+  // first_come | draw
+  string allocation = 18;
+  // published | cancelled | ended
+  string status = 19;
+  string cancel_reason = 20;
+  int32 capacity = 21;
+  int32 going_count = 22;
+  int32 waitlist_count = 23;
+  // A table's draw: applications close then; after it, how many applied.
+  int64 draw_closes_at = 24;
+  bool drawn = 25;
+  int32 applicants = 26;
+  string purpose = 27;
+  // A table's conversation prompts, for members seated at it.
+  repeated string prompts = 28;
+  EventHostInfo host = 29;
+  string dress_code = 30;
+  EventPlace mine = 31;
+  // Why this member cannot ask for a place, as a code: "" | sovereign |
+  // identity | started | draw_closed | full_table | not_eligible:<age|city|intent>
+  // | restricted
+  string cannot_ask = 32;
+  int64 door_opens_at = 33;
+  // Meet-again is open until then (only for members who were checked in).
+  int64 meet_again_until = 34;
+  // For guests and the waitlist.
+  repeated EventAnnouncement announcements = 35;
+  // A table's other seated guests, for members seated at it.
+  repeated EventPerson table_guests = 36;
+  int32 min_age = 37;
+  int32 max_age = 38;
+  repeated string intents = 39;
+  bool same_city = 40;
+}
+
+message ListAtlasEventsRequest {
+  // upcoming (events) | tables | mine (every place the member holds or held)
+  string scope = 1;
+}
+message ListAtlasEventsResponse {
+  repeated EventInfo events = 1;
+  EventConduct conduct = 2;
+}
+
+message GetAtlasEventRequest {
+  string event_id = 1;
+}
+message GetAtlasEventResponse {
+  EventInfo event = 1;
+  EventConduct conduct = 2;
+}
+
+message AskEventPlaceRequest {
+  string event_id = 1;
+  // The conduct policy the member accepted; it must be the active one.
+  string conduct_version = 2;
+  string idempotency_key = 3;
+}
+message AskEventPlaceResponse {
+  EventInfo event = 1;
+}
+
+message LetEventPlaceGoRequest {
+  string event_id = 1;
+  string idempotency_key = 2;
+}
+message LetEventPlaceGoResponse {
+  EventInfo event = 1;
+}
+
+message AnswerEventOfferRequest {
+  string event_id = 1;
+  bool accept = 2;
+  string idempotency_key = 3;
+}
+message AnswerEventOfferResponse {
+  EventInfo event = 1;
+}
+
+message SaveEventAccessNeedsRequest {
+  string event_id = 1;
+  repeated string needs = 2;
+  string note = 3;
+}
+message SaveEventAccessNeedsResponse {
+  EventInfo event = 1;
+}
+
+message ReportEventIncidentRequest {
+  string event_id = 1;
+  // guest | host | event
+  string about = 2;
+  // When about = guest: someone seated with the member or listed to them.
+  string guest_id = 3;
+  // harassment | unsafe | unwelcome | venue | other
+  string category = 4;
+  string body = 5;
+}
+message ReportEventIncidentResponse {
+  string incident_id = 1;
+}
+
+message SetEventMeetAgainRequest {
+  string event_id = 1;
+  bool open = 2;
+}
+message SetEventMeetAgainResponse {
+  EventInfo event = 1;
+}
+
+message ListEventMeetAgainRequest {
+  string event_id = 1;
+}
+message ListEventMeetAgainResponse {
+  // Other checked-in guests who are also open to meeting again.
+  repeated EventPerson people = 1;
+  // Whom this member picked (never whom others picked).
+  repeated string my_picks = 2;
+  // People this event already matched the member with.
+  repeated string matched = 3;
+  int64 until = 4;
+}
+
+message PickEventMeetAgainRequest {
+  string event_id = 1;
+  string user_id = 2;
+  bool picked = 3;
+}
+message PickEventMeetAgainResponse {
+  // Only a mutual pick says so; a one-sided pick reads the same as none.
+  bool matched = 1;
+  string match_id = 2;
+}
+
+service AtlasEventsService {
+  rpc ListAtlasEvents(ListAtlasEventsRequest) returns (ListAtlasEventsResponse);
+  rpc GetAtlasEvent(GetAtlasEventRequest) returns (GetAtlasEventResponse);
+  rpc AskEventPlace(AskEventPlaceRequest) returns (AskEventPlaceResponse);
+  rpc LetEventPlaceGo(LetEventPlaceGoRequest) returns (LetEventPlaceGoResponse);
+  rpc AnswerEventOffer(AnswerEventOfferRequest) returns (AnswerEventOfferResponse);
+  rpc SaveEventAccessNeeds(SaveEventAccessNeedsRequest) returns (SaveEventAccessNeedsResponse);
+  rpc ReportEventIncident(ReportEventIncidentRequest) returns (ReportEventIncidentResponse);
+  rpc SetEventMeetAgain(SetEventMeetAgainRequest) returns (SetEventMeetAgainResponse);
+  rpc ListEventMeetAgain(ListEventMeetAgainRequest) returns (ListEventMeetAgainResponse);
+  rpc PickEventMeetAgain(PickEventMeetAgainRequest) returns (PickEventMeetAgainResponse);
+}
