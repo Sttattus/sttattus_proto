@@ -768,6 +768,11 @@ message CaptionJob {
   int32 attempt_count = 8;
   int32 max_attempts = 9;
   google.protobuf.Timestamp next_attempt_at = 10;
+  // Processing authority captured when this exact source revision was queued.
+  // A worker re-checks the live consent before every provider and publish step;
+  // these fields are a receipt, never a substitute for that check.
+  string consent_id = 11;
+  int32 consent_policy_version = 12;
 }
 message GenerateCaptionsRequest {
   string content_id = 1;
@@ -783,6 +788,58 @@ message GetCaptionJobRequest {
 }
 message GetCaptionJobResponse {
   CaptionJob job = 1;
+}
+
+// TranscriptionConsent is an explicit, revision-bound processing authority.
+// Voice-cloning consent is a separate contract and must never be reused here.
+message TranscriptionConsent {
+  string id = 1;
+  string content_id = 2;
+  string revision_id = 3;
+  string rights_holder_id = 4;
+  string provider = 5;
+  string status = 6; // active | revoked | expired
+  int32 policy_version = 7;
+  // Integrity receipt only. When the caller supplies an external evidence
+  // digest, the evidence body remains in that caller's governed rights store.
+  // Otherwise Onyx returns a deterministic server receipt bound to the exact
+  // revision, rights holder, processor, policy, attestation, and expiry.
+  string evidence_sha256 = 8;
+  google.protobuf.Timestamp effective_at = 9;
+  google.protobuf.Timestamp expires_at = 10;
+  google.protobuf.Timestamp revoked_at = 11;
+  google.protobuf.Timestamp created_at = 12;
+  google.protobuf.Timestamp updated_at = 13;
+}
+
+message GetTranscriptionConsentRequest {
+  string content_id = 1;
+}
+message GetTranscriptionConsentResponse {
+  TranscriptionConsent consent = 1;
+  bool may_manage = 2;
+  string unavailable_reason_code = 3;
+  int32 current_policy_version = 4;
+  int32 published_retention_days = 5;
+}
+
+message SetTranscriptionConsentRequest {
+  string content_id = 1;
+  string action = 2; // grant | revoke
+  // Required for grant. Confirms the caller controls the recording and may
+  // send it to the named processor for speech-to-text generation.
+  bool attest_rights_to_process = 3;
+  // Optional SHA-256 of an external rights/consent record. Only the digest is
+  // retained here; the evidence body stays in the caller's governed rights
+  // store. If omitted, Onyx creates the canonical server receipt described on
+  // TranscriptionConsent.evidence_sha256.
+  string evidence_sha256 = 4;
+  google.protobuf.Timestamp expires_at = 5;
+  string client_mutation_id = 6;
+}
+message SetTranscriptionConsentResponse {
+  TranscriptionConsent consent = 1;
+  bool replayed = 2;
 }
 
 message ListeningPreferences {
@@ -6119,6 +6176,8 @@ service OnyxService {
   // P2.5 — captions, today summary, cross-pillar unlock bus.
   rpc GenerateCaptions(GenerateCaptionsRequest) returns (GenerateCaptionsResponse);
   rpc GetCaptionJob(GetCaptionJobRequest) returns (GetCaptionJobResponse);
+  rpc GetTranscriptionConsent(GetTranscriptionConsentRequest) returns (GetTranscriptionConsentResponse);
+  rpc SetTranscriptionConsent(SetTranscriptionConsentRequest) returns (SetTranscriptionConsentResponse);
   rpc GetListeningPreferences(GetListeningPreferencesRequest) returns (GetListeningPreferencesResponse);
   rpc UpdateListeningPreferences(UpdateListeningPreferencesRequest) returns (UpdateListeningPreferencesResponse);
   rpc CreateListeningBookmark(CreateListeningBookmarkRequest) returns (CreateListeningBookmarkResponse);

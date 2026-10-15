@@ -9667,6 +9667,8 @@ class CaptionJob extends $pb.GeneratedMessage {
     $core.int? attemptCount,
     $core.int? maxAttempts,
     $1.Timestamp? nextAttemptAt,
+    $core.String? consentId,
+    $core.int? consentPolicyVersion,
   }) {
     final result = create();
     if (contentId != null) result.contentId = contentId;
@@ -9679,6 +9681,9 @@ class CaptionJob extends $pb.GeneratedMessage {
     if (attemptCount != null) result.attemptCount = attemptCount;
     if (maxAttempts != null) result.maxAttempts = maxAttempts;
     if (nextAttemptAt != null) result.nextAttemptAt = nextAttemptAt;
+    if (consentId != null) result.consentId = consentId;
+    if (consentPolicyVersion != null)
+      result.consentPolicyVersion = consentPolicyVersion;
     return result;
   }
 
@@ -9707,6 +9712,8 @@ class CaptionJob extends $pb.GeneratedMessage {
     ..aI(9, _omitFieldNames ? '' : 'maxAttempts')
     ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'nextAttemptAt',
         subBuilder: $1.Timestamp.create)
+    ..aOS(11, _omitFieldNames ? '' : 'consentId')
+    ..aI(12, _omitFieldNames ? '' : 'consentPolicyVersion')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -9823,6 +9830,27 @@ class CaptionJob extends $pb.GeneratedMessage {
   void clearNextAttemptAt() => $_clearField(10);
   @$pb.TagNumber(10)
   $1.Timestamp ensureNextAttemptAt() => $_ensure(9);
+
+  /// Processing authority captured when this exact source revision was queued.
+  /// A worker re-checks the live consent before every provider and publish step;
+  /// these fields are a receipt, never a substitute for that check.
+  @$pb.TagNumber(11)
+  $core.String get consentId => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set consentId($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasConsentId() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearConsentId() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.int get consentPolicyVersion => $_getIZ(11);
+  @$pb.TagNumber(12)
+  set consentPolicyVersion($core.int value) => $_setSignedInt32(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasConsentPolicyVersion() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearConsentPolicyVersion() => $_clearField(12);
 }
 
 class GenerateCaptionsRequest extends $pb.GeneratedMessage {
@@ -10066,6 +10094,599 @@ class GetCaptionJobResponse extends $pb.GeneratedMessage {
   void clearJob() => $_clearField(1);
   @$pb.TagNumber(1)
   CaptionJob ensureJob() => $_ensure(0);
+}
+
+/// TranscriptionConsent is an explicit, revision-bound processing authority.
+/// Voice-cloning consent is a separate contract and must never be reused here.
+class TranscriptionConsent extends $pb.GeneratedMessage {
+  factory TranscriptionConsent({
+    $core.String? id,
+    $core.String? contentId,
+    $core.String? revisionId,
+    $core.String? rightsHolderId,
+    $core.String? provider,
+    $core.String? status,
+    $core.int? policyVersion,
+    $core.String? evidenceSha256,
+    $1.Timestamp? effectiveAt,
+    $1.Timestamp? expiresAt,
+    $1.Timestamp? revokedAt,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (contentId != null) result.contentId = contentId;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (rightsHolderId != null) result.rightsHolderId = rightsHolderId;
+    if (provider != null) result.provider = provider;
+    if (status != null) result.status = status;
+    if (policyVersion != null) result.policyVersion = policyVersion;
+    if (evidenceSha256 != null) result.evidenceSha256 = evidenceSha256;
+    if (effectiveAt != null) result.effectiveAt = effectiveAt;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (revokedAt != null) result.revokedAt = revokedAt;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  TranscriptionConsent._();
+
+  factory TranscriptionConsent.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory TranscriptionConsent.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'TranscriptionConsent',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'contentId')
+    ..aOS(3, _omitFieldNames ? '' : 'revisionId')
+    ..aOS(4, _omitFieldNames ? '' : 'rightsHolderId')
+    ..aOS(5, _omitFieldNames ? '' : 'provider')
+    ..aOS(6, _omitFieldNames ? '' : 'status')
+    ..aI(7, _omitFieldNames ? '' : 'policyVersion')
+    ..aOS(8, _omitFieldNames ? '' : 'evidenceSha256')
+    ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'effectiveAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'revokedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TranscriptionConsent clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TranscriptionConsent copyWith(void Function(TranscriptionConsent) updates) =>
+      super.copyWith((message) => updates(message as TranscriptionConsent))
+          as TranscriptionConsent;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TranscriptionConsent create() => TranscriptionConsent._();
+  @$core.override
+  TranscriptionConsent createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static TranscriptionConsent getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<TranscriptionConsent>(create);
+  static TranscriptionConsent? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contentId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get revisionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set revisionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRevisionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRevisionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get rightsHolderId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set rightsHolderId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRightsHolderId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRightsHolderId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get provider => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set provider($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasProvider() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearProvider() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get status => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set status($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get policyVersion => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set policyVersion($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPolicyVersion() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPolicyVersion() => $_clearField(7);
+
+  /// Integrity receipt only. When the caller supplies an external evidence
+  /// digest, the evidence body remains in that caller's governed rights store.
+  /// Otherwise Onyx returns a deterministic server receipt bound to the exact
+  /// revision, rights holder, processor, policy, attestation, and expiry.
+  @$pb.TagNumber(8)
+  $core.String get evidenceSha256 => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set evidenceSha256($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasEvidenceSha256() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearEvidenceSha256() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $1.Timestamp get effectiveAt => $_getN(8);
+  @$pb.TagNumber(9)
+  set effectiveAt($1.Timestamp value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasEffectiveAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearEffectiveAt() => $_clearField(9);
+  @$pb.TagNumber(9)
+  $1.Timestamp ensureEffectiveAt() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  $1.Timestamp get expiresAt => $_getN(9);
+  @$pb.TagNumber(10)
+  set expiresAt($1.Timestamp value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasExpiresAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearExpiresAt() => $_clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureExpiresAt() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get revokedAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set revokedAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasRevokedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearRevokedAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureRevokedAt() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get createdAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set createdAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasCreatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearCreatedAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureCreatedAt() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $1.Timestamp get updatedAt => $_getN(12);
+  @$pb.TagNumber(13)
+  set updatedAt($1.Timestamp value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasUpdatedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearUpdatedAt() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(12);
+}
+
+class GetTranscriptionConsentRequest extends $pb.GeneratedMessage {
+  factory GetTranscriptionConsentRequest({
+    $core.String? contentId,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    return result;
+  }
+
+  GetTranscriptionConsentRequest._();
+
+  factory GetTranscriptionConsentRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetTranscriptionConsentRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetTranscriptionConsentRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTranscriptionConsentRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTranscriptionConsentRequest copyWith(
+          void Function(GetTranscriptionConsentRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetTranscriptionConsentRequest))
+          as GetTranscriptionConsentRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTranscriptionConsentRequest create() =>
+      GetTranscriptionConsentRequest._();
+  @$core.override
+  GetTranscriptionConsentRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetTranscriptionConsentRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetTranscriptionConsentRequest>(create);
+  static GetTranscriptionConsentRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+}
+
+class GetTranscriptionConsentResponse extends $pb.GeneratedMessage {
+  factory GetTranscriptionConsentResponse({
+    TranscriptionConsent? consent,
+    $core.bool? mayManage,
+    $core.String? unavailableReasonCode,
+    $core.int? currentPolicyVersion,
+    $core.int? publishedRetentionDays,
+  }) {
+    final result = create();
+    if (consent != null) result.consent = consent;
+    if (mayManage != null) result.mayManage = mayManage;
+    if (unavailableReasonCode != null)
+      result.unavailableReasonCode = unavailableReasonCode;
+    if (currentPolicyVersion != null)
+      result.currentPolicyVersion = currentPolicyVersion;
+    if (publishedRetentionDays != null)
+      result.publishedRetentionDays = publishedRetentionDays;
+    return result;
+  }
+
+  GetTranscriptionConsentResponse._();
+
+  factory GetTranscriptionConsentResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetTranscriptionConsentResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetTranscriptionConsentResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<TranscriptionConsent>(1, _omitFieldNames ? '' : 'consent',
+        subBuilder: TranscriptionConsent.create)
+    ..aOB(2, _omitFieldNames ? '' : 'mayManage')
+    ..aOS(3, _omitFieldNames ? '' : 'unavailableReasonCode')
+    ..aI(4, _omitFieldNames ? '' : 'currentPolicyVersion')
+    ..aI(5, _omitFieldNames ? '' : 'publishedRetentionDays')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTranscriptionConsentResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTranscriptionConsentResponse copyWith(
+          void Function(GetTranscriptionConsentResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetTranscriptionConsentResponse))
+          as GetTranscriptionConsentResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTranscriptionConsentResponse create() =>
+      GetTranscriptionConsentResponse._();
+  @$core.override
+  GetTranscriptionConsentResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetTranscriptionConsentResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetTranscriptionConsentResponse>(
+          create);
+  static GetTranscriptionConsentResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  TranscriptionConsent get consent => $_getN(0);
+  @$pb.TagNumber(1)
+  set consent(TranscriptionConsent value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasConsent() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearConsent() => $_clearField(1);
+  @$pb.TagNumber(1)
+  TranscriptionConsent ensureConsent() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get mayManage => $_getBF(1);
+  @$pb.TagNumber(2)
+  set mayManage($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMayManage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMayManage() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get unavailableReasonCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set unavailableReasonCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasUnavailableReasonCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUnavailableReasonCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get currentPolicyVersion => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set currentPolicyVersion($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCurrentPolicyVersion() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCurrentPolicyVersion() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get publishedRetentionDays => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set publishedRetentionDays($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPublishedRetentionDays() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPublishedRetentionDays() => $_clearField(5);
+}
+
+class SetTranscriptionConsentRequest extends $pb.GeneratedMessage {
+  factory SetTranscriptionConsentRequest({
+    $core.String? contentId,
+    $core.String? action,
+    $core.bool? attestRightsToProcess,
+    $core.String? evidenceSha256,
+    $1.Timestamp? expiresAt,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    if (action != null) result.action = action;
+    if (attestRightsToProcess != null)
+      result.attestRightsToProcess = attestRightsToProcess;
+    if (evidenceSha256 != null) result.evidenceSha256 = evidenceSha256;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  SetTranscriptionConsentRequest._();
+
+  factory SetTranscriptionConsentRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetTranscriptionConsentRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetTranscriptionConsentRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOS(2, _omitFieldNames ? '' : 'action')
+    ..aOB(3, _omitFieldNames ? '' : 'attestRightsToProcess')
+    ..aOS(4, _omitFieldNames ? '' : 'evidenceSha256')
+    ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(6, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetTranscriptionConsentRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetTranscriptionConsentRequest copyWith(
+          void Function(SetTranscriptionConsentRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as SetTranscriptionConsentRequest))
+          as SetTranscriptionConsentRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetTranscriptionConsentRequest create() =>
+      SetTranscriptionConsentRequest._();
+  @$core.override
+  SetTranscriptionConsentRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetTranscriptionConsentRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetTranscriptionConsentRequest>(create);
+  static SetTranscriptionConsentRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get action => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set action($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAction() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAction() => $_clearField(2);
+
+  /// Required for grant. Confirms the caller controls the recording and may
+  /// send it to the named processor for speech-to-text generation.
+  @$pb.TagNumber(3)
+  $core.bool get attestRightsToProcess => $_getBF(2);
+  @$pb.TagNumber(3)
+  set attestRightsToProcess($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAttestRightsToProcess() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAttestRightsToProcess() => $_clearField(3);
+
+  /// Optional SHA-256 of an external rights/consent record. Only the digest is
+  /// retained here; the evidence body stays in the caller's governed rights
+  /// store. If omitted, Onyx creates the canonical server receipt described on
+  /// TranscriptionConsent.evidence_sha256.
+  @$pb.TagNumber(4)
+  $core.String get evidenceSha256 => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set evidenceSha256($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEvidenceSha256() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEvidenceSha256() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $1.Timestamp get expiresAt => $_getN(4);
+  @$pb.TagNumber(5)
+  set expiresAt($1.Timestamp value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasExpiresAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearExpiresAt() => $_clearField(5);
+  @$pb.TagNumber(5)
+  $1.Timestamp ensureExpiresAt() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $core.String get clientMutationId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set clientMutationId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasClientMutationId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearClientMutationId() => $_clearField(6);
+}
+
+class SetTranscriptionConsentResponse extends $pb.GeneratedMessage {
+  factory SetTranscriptionConsentResponse({
+    TranscriptionConsent? consent,
+    $core.bool? replayed,
+  }) {
+    final result = create();
+    if (consent != null) result.consent = consent;
+    if (replayed != null) result.replayed = replayed;
+    return result;
+  }
+
+  SetTranscriptionConsentResponse._();
+
+  factory SetTranscriptionConsentResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SetTranscriptionConsentResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetTranscriptionConsentResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<TranscriptionConsent>(1, _omitFieldNames ? '' : 'consent',
+        subBuilder: TranscriptionConsent.create)
+    ..aOB(2, _omitFieldNames ? '' : 'replayed')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetTranscriptionConsentResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetTranscriptionConsentResponse copyWith(
+          void Function(SetTranscriptionConsentResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as SetTranscriptionConsentResponse))
+          as SetTranscriptionConsentResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SetTranscriptionConsentResponse create() =>
+      SetTranscriptionConsentResponse._();
+  @$core.override
+  SetTranscriptionConsentResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SetTranscriptionConsentResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetTranscriptionConsentResponse>(
+          create);
+  static SetTranscriptionConsentResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  TranscriptionConsent get consent => $_getN(0);
+  @$pb.TagNumber(1)
+  set consent(TranscriptionConsent value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasConsent() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearConsent() => $_clearField(1);
+  @$pb.TagNumber(1)
+  TranscriptionConsent ensureConsent() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get replayed => $_getBF(1);
+  @$pb.TagNumber(2)
+  set replayed($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReplayed() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReplayed() => $_clearField(2);
 }
 
 class ListeningPreferences extends $pb.GeneratedMessage {

@@ -6627,6 +6627,20 @@ export class CaptionJob extends Message<CaptionJob> {
    */
   nextAttemptAt?: Timestamp;
 
+  /**
+   * Processing authority captured when this exact source revision was queued.
+   * A worker re-checks the live consent before every provider and publish step;
+   * these fields are a receipt, never a substitute for that check.
+   *
+   * @generated from field: string consent_id = 11;
+   */
+  consentId = "";
+
+  /**
+   * @generated from field: int32 consent_policy_version = 12;
+   */
+  consentPolicyVersion = 0;
+
   constructor(data?: PartialMessage<CaptionJob>) {
     super();
     proto3.util.initPartial(data, this);
@@ -6645,6 +6659,8 @@ export class CaptionJob extends Message<CaptionJob> {
     { no: 8, name: "attempt_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 9, name: "max_attempts", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 10, name: "next_attempt_at", kind: "message", T: Timestamp },
+    { no: 11, name: "consent_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "consent_policy_version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CaptionJob {
@@ -6818,6 +6834,343 @@ export class GetCaptionJobResponse extends Message<GetCaptionJobResponse> {
 
   static equals(a: GetCaptionJobResponse | PlainMessage<GetCaptionJobResponse> | undefined, b: GetCaptionJobResponse | PlainMessage<GetCaptionJobResponse> | undefined): boolean {
     return proto3.util.equals(GetCaptionJobResponse, a, b);
+  }
+}
+
+/**
+ * TranscriptionConsent is an explicit, revision-bound processing authority.
+ * Voice-cloning consent is a separate contract and must never be reused here.
+ *
+ * @generated from message sttattus.onyx.v1.TranscriptionConsent
+ */
+export class TranscriptionConsent extends Message<TranscriptionConsent> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string content_id = 2;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string revision_id = 3;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: string rights_holder_id = 4;
+   */
+  rightsHolderId = "";
+
+  /**
+   * @generated from field: string provider = 5;
+   */
+  provider = "";
+
+  /**
+   * active | revoked | expired
+   *
+   * @generated from field: string status = 6;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int32 policy_version = 7;
+   */
+  policyVersion = 0;
+
+  /**
+   * Integrity receipt only. When the caller supplies an external evidence
+   * digest, the evidence body remains in that caller's governed rights store.
+   * Otherwise Onyx returns a deterministic server receipt bound to the exact
+   * revision, rights holder, processor, policy, attestation, and expiry.
+   *
+   * @generated from field: string evidence_sha256 = 8;
+   */
+  evidenceSha256 = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp effective_at = 9;
+   */
+  effectiveAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 10;
+   */
+  expiresAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp revoked_at = 11;
+   */
+  revokedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 12;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 13;
+   */
+  updatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<TranscriptionConsent>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.TranscriptionConsent";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "rights_holder_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "provider", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "policy_version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "evidence_sha256", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "effective_at", kind: "message", T: Timestamp },
+    { no: 10, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 11, name: "revoked_at", kind: "message", T: Timestamp },
+    { no: 12, name: "created_at", kind: "message", T: Timestamp },
+    { no: 13, name: "updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptionConsent {
+    return new TranscriptionConsent().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptionConsent {
+    return new TranscriptionConsent().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptionConsent {
+    return new TranscriptionConsent().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: TranscriptionConsent | PlainMessage<TranscriptionConsent> | undefined, b: TranscriptionConsent | PlainMessage<TranscriptionConsent> | undefined): boolean {
+    return proto3.util.equals(TranscriptionConsent, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetTranscriptionConsentRequest
+ */
+export class GetTranscriptionConsentRequest extends Message<GetTranscriptionConsentRequest> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  constructor(data?: PartialMessage<GetTranscriptionConsentRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetTranscriptionConsentRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTranscriptionConsentRequest {
+    return new GetTranscriptionConsentRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTranscriptionConsentRequest {
+    return new GetTranscriptionConsentRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTranscriptionConsentRequest {
+    return new GetTranscriptionConsentRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetTranscriptionConsentRequest | PlainMessage<GetTranscriptionConsentRequest> | undefined, b: GetTranscriptionConsentRequest | PlainMessage<GetTranscriptionConsentRequest> | undefined): boolean {
+    return proto3.util.equals(GetTranscriptionConsentRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetTranscriptionConsentResponse
+ */
+export class GetTranscriptionConsentResponse extends Message<GetTranscriptionConsentResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.TranscriptionConsent consent = 1;
+   */
+  consent?: TranscriptionConsent;
+
+  /**
+   * @generated from field: bool may_manage = 2;
+   */
+  mayManage = false;
+
+  /**
+   * @generated from field: string unavailable_reason_code = 3;
+   */
+  unavailableReasonCode = "";
+
+  /**
+   * @generated from field: int32 current_policy_version = 4;
+   */
+  currentPolicyVersion = 0;
+
+  /**
+   * @generated from field: int32 published_retention_days = 5;
+   */
+  publishedRetentionDays = 0;
+
+  constructor(data?: PartialMessage<GetTranscriptionConsentResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetTranscriptionConsentResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "consent", kind: "message", T: TranscriptionConsent },
+    { no: 2, name: "may_manage", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "unavailable_reason_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "current_policy_version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "published_retention_days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTranscriptionConsentResponse {
+    return new GetTranscriptionConsentResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTranscriptionConsentResponse {
+    return new GetTranscriptionConsentResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTranscriptionConsentResponse {
+    return new GetTranscriptionConsentResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetTranscriptionConsentResponse | PlainMessage<GetTranscriptionConsentResponse> | undefined, b: GetTranscriptionConsentResponse | PlainMessage<GetTranscriptionConsentResponse> | undefined): boolean {
+    return proto3.util.equals(GetTranscriptionConsentResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetTranscriptionConsentRequest
+ */
+export class SetTranscriptionConsentRequest extends Message<SetTranscriptionConsentRequest> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  /**
+   * grant | revoke
+   *
+   * @generated from field: string action = 2;
+   */
+  action = "";
+
+  /**
+   * Required for grant. Confirms the caller controls the recording and may
+   * send it to the named processor for speech-to-text generation.
+   *
+   * @generated from field: bool attest_rights_to_process = 3;
+   */
+  attestRightsToProcess = false;
+
+  /**
+   * Optional SHA-256 of an external rights/consent record. Only the digest is
+   * retained here; the evidence body stays in the caller's governed rights
+   * store. If omitted, Onyx creates the canonical server receipt described on
+   * TranscriptionConsent.evidence_sha256.
+   *
+   * @generated from field: string evidence_sha256 = 4;
+   */
+  evidenceSha256 = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 5;
+   */
+  expiresAt?: Timestamp;
+
+  /**
+   * @generated from field: string client_mutation_id = 6;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<SetTranscriptionConsentRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetTranscriptionConsentRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "action", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "attest_rights_to_process", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "evidence_sha256", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 6, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetTranscriptionConsentRequest {
+    return new SetTranscriptionConsentRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetTranscriptionConsentRequest {
+    return new SetTranscriptionConsentRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetTranscriptionConsentRequest {
+    return new SetTranscriptionConsentRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetTranscriptionConsentRequest | PlainMessage<SetTranscriptionConsentRequest> | undefined, b: SetTranscriptionConsentRequest | PlainMessage<SetTranscriptionConsentRequest> | undefined): boolean {
+    return proto3.util.equals(SetTranscriptionConsentRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SetTranscriptionConsentResponse
+ */
+export class SetTranscriptionConsentResponse extends Message<SetTranscriptionConsentResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.TranscriptionConsent consent = 1;
+   */
+  consent?: TranscriptionConsent;
+
+  /**
+   * @generated from field: bool replayed = 2;
+   */
+  replayed = false;
+
+  constructor(data?: PartialMessage<SetTranscriptionConsentResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SetTranscriptionConsentResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "consent", kind: "message", T: TranscriptionConsent },
+    { no: 2, name: "replayed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetTranscriptionConsentResponse {
+    return new SetTranscriptionConsentResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetTranscriptionConsentResponse {
+    return new SetTranscriptionConsentResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetTranscriptionConsentResponse {
+    return new SetTranscriptionConsentResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SetTranscriptionConsentResponse | PlainMessage<SetTranscriptionConsentResponse> | undefined, b: SetTranscriptionConsentResponse | PlainMessage<SetTranscriptionConsentResponse> | undefined): boolean {
+    return proto3.util.equals(SetTranscriptionConsentResponse, a, b);
   }
 }
 

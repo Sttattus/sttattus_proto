@@ -378,6 +378,24 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getCaptionJob, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.GetTranscriptionConsentResponse>
+      getTranscriptionConsent(
+    $0.GetTranscriptionConsentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getTranscriptionConsent, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SetTranscriptionConsentResponse>
+      setTranscriptionConsent(
+    $0.SetTranscriptionConsentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$setTranscriptionConsent, request,
+        options: options);
+  }
+
   $grpc.ResponseFuture<$0.GetListeningPreferencesResponse>
       getListeningPreferences(
     $0.GetListeningPreferencesRequest request, {
@@ -2512,6 +2530,18 @@ class OnyxServiceClient extends $grpc.Client {
           '/sttattus.onyx.v1.OnyxService/GetCaptionJob',
           ($0.GetCaptionJobRequest value) => value.writeToBuffer(),
           $0.GetCaptionJobResponse.fromBuffer);
+  static final _$getTranscriptionConsent = $grpc.ClientMethod<
+          $0.GetTranscriptionConsentRequest,
+          $0.GetTranscriptionConsentResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetTranscriptionConsent',
+      ($0.GetTranscriptionConsentRequest value) => value.writeToBuffer(),
+      $0.GetTranscriptionConsentResponse.fromBuffer);
+  static final _$setTranscriptionConsent = $grpc.ClientMethod<
+          $0.SetTranscriptionConsentRequest,
+          $0.SetTranscriptionConsentResponse>(
+      '/sttattus.onyx.v1.OnyxService/SetTranscriptionConsent',
+      ($0.SetTranscriptionConsentRequest value) => value.writeToBuffer(),
+      $0.SetTranscriptionConsentResponse.fromBuffer);
   static final _$getListeningPreferences = $grpc.ClientMethod<
           $0.GetListeningPreferencesRequest,
           $0.GetListeningPreferencesResponse>(
@@ -4196,6 +4226,24 @@ abstract class OnyxServiceBase extends $grpc.Service {
             ($core.List<$core.int> value) =>
                 $0.GetCaptionJobRequest.fromBuffer(value),
             ($0.GetCaptionJobResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetTranscriptionConsentRequest,
+            $0.GetTranscriptionConsentResponse>(
+        'GetTranscriptionConsent',
+        getTranscriptionConsent_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetTranscriptionConsentRequest.fromBuffer(value),
+        ($0.GetTranscriptionConsentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SetTranscriptionConsentRequest,
+            $0.SetTranscriptionConsentResponse>(
+        'SetTranscriptionConsent',
+        setTranscriptionConsent_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SetTranscriptionConsentRequest.fromBuffer(value),
+        ($0.SetTranscriptionConsentResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.GetListeningPreferencesRequest,
             $0.GetListeningPreferencesResponse>(
         'GetListeningPreferences',
@@ -6768,6 +6816,24 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.GetCaptionJobResponse> getCaptionJob(
       $grpc.ServiceCall call, $0.GetCaptionJobRequest request);
+
+  $async.Future<$0.GetTranscriptionConsentResponse> getTranscriptionConsent_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetTranscriptionConsentRequest> $request) async {
+    return getTranscriptionConsent($call, await $request);
+  }
+
+  $async.Future<$0.GetTranscriptionConsentResponse> getTranscriptionConsent(
+      $grpc.ServiceCall call, $0.GetTranscriptionConsentRequest request);
+
+  $async.Future<$0.SetTranscriptionConsentResponse> setTranscriptionConsent_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.SetTranscriptionConsentRequest> $request) async {
+    return setTranscriptionConsent($call, await $request);
+  }
+
+  $async.Future<$0.SetTranscriptionConsentResponse> setTranscriptionConsent(
+      $grpc.ServiceCall call, $0.SetTranscriptionConsentRequest request);
 
   $async.Future<$0.GetListeningPreferencesResponse> getListeningPreferences_Pre(
       $grpc.ServiceCall $call,

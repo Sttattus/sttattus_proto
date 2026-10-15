@@ -3087,6 +3087,14 @@ const CaptionJob$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'nextAttemptAt'
     },
+    {'1': 'consent_id', '3': 11, '4': 1, '5': 9, '10': 'consentId'},
+    {
+      '1': 'consent_policy_version',
+      '3': 12,
+      '4': 1,
+      '5': 5,
+      '10': 'consentPolicyVersion'
+    },
   ],
 };
 
@@ -3098,7 +3106,8 @@ final $typed_data.Uint8List captionJobDescriptor = $convert.base64Decode(
     'ABKAlSDGxhbmd1YWdlQ29kZRIdCgplcnJvcl9jb2RlGAcgASgJUgllcnJvckNvZGUSIwoNYXR0'
     'ZW1wdF9jb3VudBgIIAEoBVIMYXR0ZW1wdENvdW50EiEKDG1heF9hdHRlbXB0cxgJIAEoBVILbW'
     'F4QXR0ZW1wdHMSQgoPbmV4dF9hdHRlbXB0X2F0GAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp'
-    'bWVzdGFtcFINbmV4dEF0dGVtcHRBdA==');
+    'bWVzdGFtcFINbmV4dEF0dGVtcHRBdBIdCgpjb25zZW50X2lkGAsgASgJUgljb25zZW50SWQSNA'
+    'oWY29uc2VudF9wb2xpY3lfdmVyc2lvbhgMIAEoBVIUY29uc2VudFBvbGljeVZlcnNpb24=');
 
 @$core.Deprecated('Use generateCaptionsRequestDescriptor instead')
 const GenerateCaptionsRequest$json = {
@@ -3168,6 +3177,199 @@ const GetCaptionJobResponse$json = {
 final $typed_data.Uint8List getCaptionJobResponseDescriptor = $convert.base64Decode(
     'ChVHZXRDYXB0aW9uSm9iUmVzcG9uc2USLgoDam9iGAEgASgLMhwuc3R0YXR0dXMub255eC52MS'
     '5DYXB0aW9uSm9iUgNqb2I=');
+
+@$core.Deprecated('Use transcriptionConsentDescriptor instead')
+const TranscriptionConsent$json = {
+  '1': 'TranscriptionConsent',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'revision_id', '3': 3, '4': 1, '5': 9, '10': 'revisionId'},
+    {'1': 'rights_holder_id', '3': 4, '4': 1, '5': 9, '10': 'rightsHolderId'},
+    {'1': 'provider', '3': 5, '4': 1, '5': 9, '10': 'provider'},
+    {'1': 'status', '3': 6, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'policy_version', '3': 7, '4': 1, '5': 5, '10': 'policyVersion'},
+    {'1': 'evidence_sha256', '3': 8, '4': 1, '5': 9, '10': 'evidenceSha256'},
+    {
+      '1': 'effective_at',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'effectiveAt'
+    },
+    {
+      '1': 'expires_at',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+    {
+      '1': 'revoked_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'revokedAt'
+    },
+    {
+      '1': 'created_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `TranscriptionConsent`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List transcriptionConsentDescriptor = $convert.base64Decode(
+    'ChRUcmFuc2NyaXB0aW9uQ29uc2VudBIOCgJpZBgBIAEoCVICaWQSHQoKY29udGVudF9pZBgCIA'
+    'EoCVIJY29udGVudElkEh8KC3JldmlzaW9uX2lkGAMgASgJUgpyZXZpc2lvbklkEigKEHJpZ2h0'
+    'c19ob2xkZXJfaWQYBCABKAlSDnJpZ2h0c0hvbGRlcklkEhoKCHByb3ZpZGVyGAUgASgJUghwcm'
+    '92aWRlchIWCgZzdGF0dXMYBiABKAlSBnN0YXR1cxIlCg5wb2xpY3lfdmVyc2lvbhgHIAEoBVIN'
+    'cG9saWN5VmVyc2lvbhInCg9ldmlkZW5jZV9zaGEyNTYYCCABKAlSDmV2aWRlbmNlU2hhMjU2Ej'
+    '0KDGVmZmVjdGl2ZV9hdBgJIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC2VmZmVj'
+    'dGl2ZUF0EjkKCmV4cGlyZXNfYXQYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUg'
+    'lleHBpcmVzQXQSOQoKcmV2b2tlZF9hdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3Rh'
+    'bXBSCXJldm9rZWRBdBI5CgpjcmVhdGVkX2F0GAwgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbW'
+    'VzdGFtcFIJY3JlYXRlZEF0EjkKCnVwZGF0ZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9idWYu'
+    'VGltZXN0YW1wUgl1cGRhdGVkQXQ=');
+
+@$core.Deprecated('Use getTranscriptionConsentRequestDescriptor instead')
+const GetTranscriptionConsentRequest$json = {
+  '1': 'GetTranscriptionConsentRequest',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+  ],
+};
+
+/// Descriptor for `GetTranscriptionConsentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTranscriptionConsentRequestDescriptor =
+    $convert.base64Decode(
+        'Ch5HZXRUcmFuc2NyaXB0aW9uQ29uc2VudFJlcXVlc3QSHQoKY29udGVudF9pZBgBIAEoCVIJY2'
+        '9udGVudElk');
+
+@$core.Deprecated('Use getTranscriptionConsentResponseDescriptor instead')
+const GetTranscriptionConsentResponse$json = {
+  '1': 'GetTranscriptionConsentResponse',
+  '2': [
+    {
+      '1': 'consent',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.TranscriptionConsent',
+      '10': 'consent'
+    },
+    {'1': 'may_manage', '3': 2, '4': 1, '5': 8, '10': 'mayManage'},
+    {
+      '1': 'unavailable_reason_code',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'unavailableReasonCode'
+    },
+    {
+      '1': 'current_policy_version',
+      '3': 4,
+      '4': 1,
+      '5': 5,
+      '10': 'currentPolicyVersion'
+    },
+    {
+      '1': 'published_retention_days',
+      '3': 5,
+      '4': 1,
+      '5': 5,
+      '10': 'publishedRetentionDays'
+    },
+  ],
+};
+
+/// Descriptor for `GetTranscriptionConsentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTranscriptionConsentResponseDescriptor = $convert.base64Decode(
+    'Ch9HZXRUcmFuc2NyaXB0aW9uQ29uc2VudFJlc3BvbnNlEkAKB2NvbnNlbnQYASABKAsyJi5zdH'
+    'RhdHR1cy5vbnl4LnYxLlRyYW5zY3JpcHRpb25Db25zZW50Ugdjb25zZW50Eh0KCm1heV9tYW5h'
+    'Z2UYAiABKAhSCW1heU1hbmFnZRI2Chd1bmF2YWlsYWJsZV9yZWFzb25fY29kZRgDIAEoCVIVdW'
+    '5hdmFpbGFibGVSZWFzb25Db2RlEjQKFmN1cnJlbnRfcG9saWN5X3ZlcnNpb24YBCABKAVSFGN1'
+    'cnJlbnRQb2xpY3lWZXJzaW9uEjgKGHB1Ymxpc2hlZF9yZXRlbnRpb25fZGF5cxgFIAEoBVIWcH'
+    'VibGlzaGVkUmV0ZW50aW9uRGF5cw==');
+
+@$core.Deprecated('Use setTranscriptionConsentRequestDescriptor instead')
+const SetTranscriptionConsentRequest$json = {
+  '1': 'SetTranscriptionConsentRequest',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'action', '3': 2, '4': 1, '5': 9, '10': 'action'},
+    {
+      '1': 'attest_rights_to_process',
+      '3': 3,
+      '4': 1,
+      '5': 8,
+      '10': 'attestRightsToProcess'
+    },
+    {'1': 'evidence_sha256', '3': 4, '4': 1, '5': 9, '10': 'evidenceSha256'},
+    {
+      '1': 'expires_at',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+    {
+      '1': 'client_mutation_id',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `SetTranscriptionConsentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setTranscriptionConsentRequestDescriptor = $convert.base64Decode(
+    'Ch5TZXRUcmFuc2NyaXB0aW9uQ29uc2VudFJlcXVlc3QSHQoKY29udGVudF9pZBgBIAEoCVIJY2'
+    '9udGVudElkEhYKBmFjdGlvbhgCIAEoCVIGYWN0aW9uEjcKGGF0dGVzdF9yaWdodHNfdG9fcHJv'
+    'Y2VzcxgDIAEoCFIVYXR0ZXN0UmlnaHRzVG9Qcm9jZXNzEicKD2V2aWRlbmNlX3NoYTI1NhgEIA'
+    'EoCVIOZXZpZGVuY2VTaGEyNTYSOQoKZXhwaXJlc19hdBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1'
+    'Zi5UaW1lc3RhbXBSCWV4cGlyZXNBdBIsChJjbGllbnRfbXV0YXRpb25faWQYBiABKAlSEGNsaW'
+    'VudE11dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use setTranscriptionConsentResponseDescriptor instead')
+const SetTranscriptionConsentResponse$json = {
+  '1': 'SetTranscriptionConsentResponse',
+  '2': [
+    {
+      '1': 'consent',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.TranscriptionConsent',
+      '10': 'consent'
+    },
+    {'1': 'replayed', '3': 2, '4': 1, '5': 8, '10': 'replayed'},
+  ],
+};
+
+/// Descriptor for `SetTranscriptionConsentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setTranscriptionConsentResponseDescriptor =
+    $convert.base64Decode(
+        'Ch9TZXRUcmFuc2NyaXB0aW9uQ29uc2VudFJlc3BvbnNlEkAKB2NvbnNlbnQYASABKAsyJi5zdH'
+        'RhdHR1cy5vbnl4LnYxLlRyYW5zY3JpcHRpb25Db25zZW50Ugdjb25zZW50EhoKCHJlcGxheWVk'
+        'GAIgASgIUghyZXBsYXllZA==');
 
 @$core.Deprecated('Use listeningPreferencesDescriptor instead')
 const ListeningPreferences$json = {

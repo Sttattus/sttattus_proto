@@ -64,6 +64,8 @@ const (
 	OnyxService_GetSeries_FullMethodName                            = "/sttattus.onyx.v1.OnyxService/GetSeries"
 	OnyxService_GenerateCaptions_FullMethodName                     = "/sttattus.onyx.v1.OnyxService/GenerateCaptions"
 	OnyxService_GetCaptionJob_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/GetCaptionJob"
+	OnyxService_GetTranscriptionConsent_FullMethodName              = "/sttattus.onyx.v1.OnyxService/GetTranscriptionConsent"
+	OnyxService_SetTranscriptionConsent_FullMethodName              = "/sttattus.onyx.v1.OnyxService/SetTranscriptionConsent"
 	OnyxService_GetListeningPreferences_FullMethodName              = "/sttattus.onyx.v1.OnyxService/GetListeningPreferences"
 	OnyxService_UpdateListeningPreferences_FullMethodName           = "/sttattus.onyx.v1.OnyxService/UpdateListeningPreferences"
 	OnyxService_CreateListeningBookmark_FullMethodName              = "/sttattus.onyx.v1.OnyxService/CreateListeningBookmark"
@@ -365,6 +367,8 @@ type OnyxServiceClient interface {
 	// P2.5 — captions, today summary, cross-pillar unlock bus.
 	GenerateCaptions(ctx context.Context, in *GenerateCaptionsRequest, opts ...grpc.CallOption) (*GenerateCaptionsResponse, error)
 	GetCaptionJob(ctx context.Context, in *GetCaptionJobRequest, opts ...grpc.CallOption) (*GetCaptionJobResponse, error)
+	GetTranscriptionConsent(ctx context.Context, in *GetTranscriptionConsentRequest, opts ...grpc.CallOption) (*GetTranscriptionConsentResponse, error)
+	SetTranscriptionConsent(ctx context.Context, in *SetTranscriptionConsentRequest, opts ...grpc.CallOption) (*SetTranscriptionConsentResponse, error)
 	GetListeningPreferences(ctx context.Context, in *GetListeningPreferencesRequest, opts ...grpc.CallOption) (*GetListeningPreferencesResponse, error)
 	UpdateListeningPreferences(ctx context.Context, in *UpdateListeningPreferencesRequest, opts ...grpc.CallOption) (*UpdateListeningPreferencesResponse, error)
 	CreateListeningBookmark(ctx context.Context, in *CreateListeningBookmarkRequest, opts ...grpc.CallOption) (*CreateListeningBookmarkResponse, error)
@@ -1084,6 +1088,26 @@ func (c *onyxServiceClient) GetCaptionJob(ctx context.Context, in *GetCaptionJob
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetCaptionJobResponse)
 	err := c.cc.Invoke(ctx, OnyxService_GetCaptionJob_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetTranscriptionConsent(ctx context.Context, in *GetTranscriptionConsentRequest, opts ...grpc.CallOption) (*GetTranscriptionConsentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetTranscriptionConsentResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetTranscriptionConsent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SetTranscriptionConsent(ctx context.Context, in *SetTranscriptionConsentRequest, opts ...grpc.CallOption) (*SetTranscriptionConsentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SetTranscriptionConsentResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SetTranscriptionConsent_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3504,6 +3528,8 @@ type OnyxServiceServer interface {
 	// P2.5 — captions, today summary, cross-pillar unlock bus.
 	GenerateCaptions(context.Context, *GenerateCaptionsRequest) (*GenerateCaptionsResponse, error)
 	GetCaptionJob(context.Context, *GetCaptionJobRequest) (*GetCaptionJobResponse, error)
+	GetTranscriptionConsent(context.Context, *GetTranscriptionConsentRequest) (*GetTranscriptionConsentResponse, error)
+	SetTranscriptionConsent(context.Context, *SetTranscriptionConsentRequest) (*SetTranscriptionConsentResponse, error)
 	GetListeningPreferences(context.Context, *GetListeningPreferencesRequest) (*GetListeningPreferencesResponse, error)
 	UpdateListeningPreferences(context.Context, *UpdateListeningPreferencesRequest) (*UpdateListeningPreferencesResponse, error)
 	CreateListeningBookmark(context.Context, *CreateListeningBookmarkRequest) (*CreateListeningBookmarkResponse, error)
@@ -3913,6 +3939,12 @@ func (UnimplementedOnyxServiceServer) GenerateCaptions(context.Context, *Generat
 }
 func (UnimplementedOnyxServiceServer) GetCaptionJob(context.Context, *GetCaptionJobRequest) (*GetCaptionJobResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetCaptionJob not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetTranscriptionConsent(context.Context, *GetTranscriptionConsentRequest) (*GetTranscriptionConsentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTranscriptionConsent not implemented")
+}
+func (UnimplementedOnyxServiceServer) SetTranscriptionConsent(context.Context, *SetTranscriptionConsentRequest) (*SetTranscriptionConsentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SetTranscriptionConsent not implemented")
 }
 func (UnimplementedOnyxServiceServer) GetListeningPreferences(context.Context, *GetListeningPreferencesRequest) (*GetListeningPreferencesResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetListeningPreferences not implemented")
@@ -5446,6 +5478,42 @@ func _OnyxService_GetCaptionJob_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OnyxServiceServer).GetCaptionJob(ctx, req.(*GetCaptionJobRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetTranscriptionConsent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTranscriptionConsentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetTranscriptionConsent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetTranscriptionConsent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetTranscriptionConsent(ctx, req.(*GetTranscriptionConsentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SetTranscriptionConsent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetTranscriptionConsentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SetTranscriptionConsent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SetTranscriptionConsent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SetTranscriptionConsent(ctx, req.(*SetTranscriptionConsentRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -9866,6 +9934,14 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetCaptionJob",
 			Handler:    _OnyxService_GetCaptionJob_Handler,
+		},
+		{
+			MethodName: "GetTranscriptionConsent",
+			Handler:    _OnyxService_GetTranscriptionConsent_Handler,
+		},
+		{
+			MethodName: "SetTranscriptionConsent",
+			Handler:    _OnyxService_SetTranscriptionConsent_Handler,
 		},
 		{
 			MethodName: "GetListeningPreferences",
