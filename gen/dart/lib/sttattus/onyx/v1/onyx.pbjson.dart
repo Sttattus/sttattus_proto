@@ -16669,6 +16669,357 @@ final $typed_data.Uint8List withdrawForensicAppealResponseDescriptor =
         'Ch5XaXRoZHJhd0ZvcmVuc2ljQXBwZWFsUmVzcG9uc2USRwoNZm9yZW5zaWNfY2FzZRgBIAEoCz'
         'IiLnN0dGF0dHVzLm9ueXgudjEuT255eEZvcmVuc2ljQ2FzZVIMZm9yZW5zaWNDYXNl');
 
+@$core.Deprecated('Use onyxProtectedDeliveryStateDescriptor instead')
+const OnyxProtectedDeliveryState$json = {
+  '1': 'OnyxProtectedDeliveryState',
+  '2': [
+    {'1': 'status', '3': 1, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'grants_enabled', '3': 2, '4': 1, '5': 8, '10': 'grantsEnabled'},
+    {
+      '1': 'stream_configured',
+      '3': 3,
+      '4': 1,
+      '5': 8,
+      '10': 'streamConfigured'
+    },
+    {
+      '1': 'offline_video_enabled',
+      '3': 4,
+      '4': 1,
+      '5': 8,
+      '10': 'offlineVideoEnabled'
+    },
+    {
+      '1': 'offline_image_enabled',
+      '3': 5,
+      '4': 1,
+      '5': 8,
+      '10': 'offlineImageEnabled'
+    },
+    {'1': 'grant_ttl_seconds', '3': 6, '4': 1, '5': 5, '10': 'grantTtlSeconds'},
+    {
+      '1': 'default_video_quality',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'defaultVideoQuality'
+    },
+    {'1': 'wifi_only_default', '3': 8, '4': 1, '5': 8, '10': 'wifiOnlyDefault'},
+    {'1': 'public_notice', '3': 9, '4': 1, '5': 9, '10': 'publicNotice'},
+    {'1': 'access_epoch', '3': 10, '4': 1, '5': 3, '10': 'accessEpoch'},
+  ],
+};
+
+/// Descriptor for `OnyxProtectedDeliveryState`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxProtectedDeliveryStateDescriptor = $convert.base64Decode(
+    'ChpPbnl4UHJvdGVjdGVkRGVsaXZlcnlTdGF0ZRIWCgZzdGF0dXMYASABKAlSBnN0YXR1cxIlCg'
+    '5ncmFudHNfZW5hYmxlZBgCIAEoCFINZ3JhbnRzRW5hYmxlZBIrChFzdHJlYW1fY29uZmlndXJl'
+    'ZBgDIAEoCFIQc3RyZWFtQ29uZmlndXJlZBIyChVvZmZsaW5lX3ZpZGVvX2VuYWJsZWQYBCABKA'
+    'hSE29mZmxpbmVWaWRlb0VuYWJsZWQSMgoVb2ZmbGluZV9pbWFnZV9lbmFibGVkGAUgASgIUhNv'
+    'ZmZsaW5lSW1hZ2VFbmFibGVkEioKEWdyYW50X3R0bF9zZWNvbmRzGAYgASgFUg9ncmFudFR0bF'
+    'NlY29uZHMSMgoVZGVmYXVsdF92aWRlb19xdWFsaXR5GAcgASgJUhNkZWZhdWx0VmlkZW9RdWFs'
+    'aXR5EioKEXdpZmlfb25seV9kZWZhdWx0GAggASgIUg93aWZpT25seURlZmF1bHQSIwoNcHVibG'
+    'ljX25vdGljZRgJIAEoCVIMcHVibGljTm90aWNlEiEKDGFjY2Vzc19lcG9jaBgKIAEoA1ILYWNj'
+    'ZXNzRXBvY2g=');
+
+@$core.Deprecated('Use onyxProtectedDeliveryGrantDescriptor instead')
+const OnyxProtectedDeliveryGrant$json = {
+  '1': 'OnyxProtectedDeliveryGrant',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'revision_id', '3': 3, '4': 1, '5': 9, '10': 'revisionId'},
+    {'1': 'device_id', '3': 4, '4': 1, '5': 9, '10': 'deviceId'},
+    {'1': 'action', '3': 5, '4': 1, '5': 9, '10': 'action'},
+    {'1': 'protection_level', '3': 6, '4': 1, '5': 9, '10': 'protectionLevel'},
+    {
+      '1': 'visible_attribution',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'visibleAttribution'
+    },
+    {'1': 'playback_url', '3': 8, '4': 1, '5': 9, '10': 'playbackUrl'},
+    {'1': 'captions_url', '3': 9, '4': 1, '5': 9, '10': 'captionsUrl'},
+    {'1': 'status', '3': 10, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'policy_version', '3': 11, '4': 1, '5': 3, '10': 'policyVersion'},
+    {'1': 'source_version', '3': 12, '4': 1, '5': 3, '10': 'sourceVersion'},
+    {
+      '1': 'issued_at',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'issuedAt'
+    },
+    {
+      '1': 'expires_at',
+      '3': 14,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+    {
+      '1': 'encrypted_renditions',
+      '3': 15,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.EncryptedRendition',
+      '10': 'encryptedRenditions'
+    },
+  ],
+};
+
+/// Descriptor for `OnyxProtectedDeliveryGrant`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxProtectedDeliveryGrantDescriptor = $convert.base64Decode(
+    'ChpPbnl4UHJvdGVjdGVkRGVsaXZlcnlHcmFudBIOCgJpZBgBIAEoCVICaWQSHQoKY29udGVudF'
+    '9pZBgCIAEoCVIJY29udGVudElkEh8KC3JldmlzaW9uX2lkGAMgASgJUgpyZXZpc2lvbklkEhsK'
+    'CWRldmljZV9pZBgEIAEoCVIIZGV2aWNlSWQSFgoGYWN0aW9uGAUgASgJUgZhY3Rpb24SKQoQcH'
+    'JvdGVjdGlvbl9sZXZlbBgGIAEoCVIPcHJvdGVjdGlvbkxldmVsEi8KE3Zpc2libGVfYXR0cmli'
+    'dXRpb24YByABKAlSEnZpc2libGVBdHRyaWJ1dGlvbhIhCgxwbGF5YmFja191cmwYCCABKAlSC3'
+    'BsYXliYWNrVXJsEiEKDGNhcHRpb25zX3VybBgJIAEoCVILY2FwdGlvbnNVcmwSFgoGc3RhdHVz'
+    'GAogASgJUgZzdGF0dXMSJQoOcG9saWN5X3ZlcnNpb24YCyABKANSDXBvbGljeVZlcnNpb24SJQ'
+    'oOc291cmNlX3ZlcnNpb24YDCABKANSDXNvdXJjZVZlcnNpb24SNwoJaXNzdWVkX2F0GA0gASgL'
+    'MhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIIaXNzdWVkQXQSOQoKZXhwaXJlc19hdBgOIA'
+    'EoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWV4cGlyZXNBdBJXChRlbmNyeXB0ZWRf'
+    'cmVuZGl0aW9ucxgPIAMoCzIkLnN0dGF0dHVzLm9ueXgudjEuRW5jcnlwdGVkUmVuZGl0aW9uUh'
+    'NlbmNyeXB0ZWRSZW5kaXRpb25z');
+
+@$core.Deprecated('Use getProtectedDeliveryStateRequestDescriptor instead')
+const GetProtectedDeliveryStateRequest$json = {
+  '1': 'GetProtectedDeliveryStateRequest',
+};
+
+/// Descriptor for `GetProtectedDeliveryStateRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getProtectedDeliveryStateRequestDescriptor =
+    $convert.base64Decode('CiBHZXRQcm90ZWN0ZWREZWxpdmVyeVN0YXRlUmVxdWVzdA==');
+
+@$core.Deprecated('Use getProtectedDeliveryStateResponseDescriptor instead')
+const GetProtectedDeliveryStateResponse$json = {
+  '1': 'GetProtectedDeliveryStateResponse',
+  '2': [
+    {
+      '1': 'state',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxProtectedDeliveryState',
+      '10': 'state'
+    },
+  ],
+};
+
+/// Descriptor for `GetProtectedDeliveryStateResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getProtectedDeliveryStateResponseDescriptor =
+    $convert.base64Decode(
+        'CiFHZXRQcm90ZWN0ZWREZWxpdmVyeVN0YXRlUmVzcG9uc2USQgoFc3RhdGUYASABKAsyLC5zdH'
+        'RhdHR1cy5vbnl4LnYxLk9ueXhQcm90ZWN0ZWREZWxpdmVyeVN0YXRlUgVzdGF0ZQ==');
+
+@$core.Deprecated('Use requestProtectedDeliveryGrantRequestDescriptor instead')
+const RequestProtectedDeliveryGrantRequest$json = {
+  '1': 'RequestProtectedDeliveryGrantRequest',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'device_id', '3': 2, '4': 1, '5': 9, '10': 'deviceId'},
+    {'1': 'action', '3': 3, '4': 1, '5': 9, '10': 'action'},
+    {
+      '1': 'expected_revision_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'expectedRevisionId'
+    },
+    {
+      '1': 'forensic_manifest_id',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'forensicManifestId'
+    },
+    {
+      '1': 'client_mutation_id',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+    {
+      '1': 'requested_quality',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'requestedQuality'
+    },
+    {'1': 'wifi_confirmed', '3': 8, '4': 1, '5': 8, '10': 'wifiConfirmed'},
+  ],
+};
+
+/// Descriptor for `RequestProtectedDeliveryGrantRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List requestProtectedDeliveryGrantRequestDescriptor = $convert.base64Decode(
+    'CiRSZXF1ZXN0UHJvdGVjdGVkRGVsaXZlcnlHcmFudFJlcXVlc3QSHQoKY29udGVudF9pZBgBIA'
+    'EoCVIJY29udGVudElkEhsKCWRldmljZV9pZBgCIAEoCVIIZGV2aWNlSWQSFgoGYWN0aW9uGAMg'
+    'ASgJUgZhY3Rpb24SMAoUZXhwZWN0ZWRfcmV2aXNpb25faWQYBCABKAlSEmV4cGVjdGVkUmV2aX'
+    'Npb25JZBIwChRmb3JlbnNpY19tYW5pZmVzdF9pZBgFIAEoCVISZm9yZW5zaWNNYW5pZmVzdElk'
+    'EiwKEmNsaWVudF9tdXRhdGlvbl9pZBgGIAEoCVIQY2xpZW50TXV0YXRpb25JZBIrChFyZXF1ZX'
+    'N0ZWRfcXVhbGl0eRgHIAEoCVIQcmVxdWVzdGVkUXVhbGl0eRIlCg53aWZpX2NvbmZpcm1lZBgI'
+    'IAEoCFINd2lmaUNvbmZpcm1lZA==');
+
+@$core.Deprecated('Use requestProtectedDeliveryGrantResponseDescriptor instead')
+const RequestProtectedDeliveryGrantResponse$json = {
+  '1': 'RequestProtectedDeliveryGrantResponse',
+  '2': [
+    {
+      '1': 'grant',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxProtectedDeliveryGrant',
+      '10': 'grant'
+    },
+    {
+      '1': 'state',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxProtectedDeliveryState',
+      '10': 'state'
+    },
+  ],
+};
+
+/// Descriptor for `RequestProtectedDeliveryGrantResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List requestProtectedDeliveryGrantResponseDescriptor =
+    $convert.base64Decode(
+        'CiVSZXF1ZXN0UHJvdGVjdGVkRGVsaXZlcnlHcmFudFJlc3BvbnNlEkIKBWdyYW50GAEgASgLMi'
+        'wuc3R0YXR0dXMub255eC52MS5Pbnl4UHJvdGVjdGVkRGVsaXZlcnlHcmFudFIFZ3JhbnQSQgoF'
+        'c3RhdGUYAiABKAsyLC5zdHRhdHR1cy5vbnl4LnYxLk9ueXhQcm90ZWN0ZWREZWxpdmVyeVN0YX'
+        'RlUgVzdGF0ZQ==');
+
+@$core.Deprecated('Use revokeMyProtectedDeliveryGrantRequestDescriptor instead')
+const RevokeMyProtectedDeliveryGrantRequest$json = {
+  '1': 'RevokeMyProtectedDeliveryGrantRequest',
+  '2': [
+    {'1': 'grant_id', '3': 1, '4': 1, '5': 9, '10': 'grantId'},
+    {'1': 'reason', '3': 2, '4': 1, '5': 9, '10': 'reason'},
+    {
+      '1': 'client_mutation_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `RevokeMyProtectedDeliveryGrantRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeMyProtectedDeliveryGrantRequestDescriptor =
+    $convert.base64Decode(
+        'CiVSZXZva2VNeVByb3RlY3RlZERlbGl2ZXJ5R3JhbnRSZXF1ZXN0EhkKCGdyYW50X2lkGAEgAS'
+        'gJUgdncmFudElkEhYKBnJlYXNvbhgCIAEoCVIGcmVhc29uEiwKEmNsaWVudF9tdXRhdGlvbl9p'
+        'ZBgDIAEoCVIQY2xpZW50TXV0YXRpb25JZA==');
+
+@$core
+    .Deprecated('Use revokeMyProtectedDeliveryGrantResponseDescriptor instead')
+const RevokeMyProtectedDeliveryGrantResponse$json = {
+  '1': 'RevokeMyProtectedDeliveryGrantResponse',
+  '2': [
+    {
+      '1': 'grant',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxProtectedDeliveryGrant',
+      '10': 'grant'
+    },
+  ],
+};
+
+/// Descriptor for `RevokeMyProtectedDeliveryGrantResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeMyProtectedDeliveryGrantResponseDescriptor =
+    $convert.base64Decode(
+        'CiZSZXZva2VNeVByb3RlY3RlZERlbGl2ZXJ5R3JhbnRSZXNwb25zZRJCCgVncmFudBgBIAEoCz'
+        'IsLnN0dGF0dHVzLm9ueXgudjEuT255eFByb3RlY3RlZERlbGl2ZXJ5R3JhbnRSBWdyYW50');
+
+@$core.Deprecated('Use recordProtectedDeliveryEventRequestDescriptor instead')
+const RecordProtectedDeliveryEventRequest$json = {
+  '1': 'RecordProtectedDeliveryEventRequest',
+  '2': [
+    {'1': 'event_id', '3': 1, '4': 1, '5': 9, '10': 'eventId'},
+    {'1': 'grant_id', '3': 2, '4': 1, '5': 9, '10': 'grantId'},
+    {'1': 'event_type', '3': 3, '4': 1, '5': 9, '10': 'eventType'},
+    {'1': 'outcome', '3': 4, '4': 1, '5': 9, '10': 'outcome'},
+    {'1': 'error_code', '3': 5, '4': 1, '5': 9, '10': 'errorCode'},
+    {'1': 'bytes', '3': 6, '4': 1, '5': 3, '10': 'bytes'},
+    {'1': 'latency_ms', '3': 7, '4': 1, '5': 5, '10': 'latencyMs'},
+  ],
+};
+
+/// Descriptor for `RecordProtectedDeliveryEventRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordProtectedDeliveryEventRequestDescriptor =
+    $convert.base64Decode(
+        'CiNSZWNvcmRQcm90ZWN0ZWREZWxpdmVyeUV2ZW50UmVxdWVzdBIZCghldmVudF9pZBgBIAEoCV'
+        'IHZXZlbnRJZBIZCghncmFudF9pZBgCIAEoCVIHZ3JhbnRJZBIdCgpldmVudF90eXBlGAMgASgJ'
+        'UglldmVudFR5cGUSGAoHb3V0Y29tZRgEIAEoCVIHb3V0Y29tZRIdCgplcnJvcl9jb2RlGAUgAS'
+        'gJUgllcnJvckNvZGUSFAoFYnl0ZXMYBiABKANSBWJ5dGVzEh0KCmxhdGVuY3lfbXMYByABKAVS'
+        'CWxhdGVuY3lNcw==');
+
+@$core.Deprecated('Use recordProtectedDeliveryEventResponseDescriptor instead')
+const RecordProtectedDeliveryEventResponse$json = {
+  '1': 'RecordProtectedDeliveryEventResponse',
+  '2': [
+    {'1': 'receipt_id', '3': 1, '4': 1, '5': 9, '10': 'receiptId'},
+    {'1': 'replayed', '3': 2, '4': 1, '5': 8, '10': 'replayed'},
+  ],
+};
+
+/// Descriptor for `RecordProtectedDeliveryEventResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordProtectedDeliveryEventResponseDescriptor =
+    $convert.base64Decode(
+        'CiRSZWNvcmRQcm90ZWN0ZWREZWxpdmVyeUV2ZW50UmVzcG9uc2USHQoKcmVjZWlwdF9pZBgBIA'
+        'EoCVIJcmVjZWlwdElkEhoKCHJlcGxheWVkGAIgASgIUghyZXBsYXllZA==');
+
+@$core.Deprecated('Use submitProtectedDeliveryReportRequestDescriptor instead')
+const SubmitProtectedDeliveryReportRequest$json = {
+  '1': 'SubmitProtectedDeliveryReportRequest',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'grant_id', '3': 2, '4': 1, '5': 9, '10': 'grantId'},
+    {'1': 'summary', '3': 3, '4': 1, '5': 9, '10': 'summary'},
+    {'1': 'evidence_digest', '3': 4, '4': 1, '5': 9, '10': 'evidenceDigest'},
+    {
+      '1': 'client_mutation_id',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `SubmitProtectedDeliveryReportRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitProtectedDeliveryReportRequestDescriptor =
+    $convert.base64Decode(
+        'CiRTdWJtaXRQcm90ZWN0ZWREZWxpdmVyeVJlcG9ydFJlcXVlc3QSHQoKY29udGVudF9pZBgBIA'
+        'EoCVIJY29udGVudElkEhkKCGdyYW50X2lkGAIgASgJUgdncmFudElkEhgKB3N1bW1hcnkYAyAB'
+        'KAlSB3N1bW1hcnkSJwoPZXZpZGVuY2VfZGlnZXN0GAQgASgJUg5ldmlkZW5jZURpZ2VzdBIsCh'
+        'JjbGllbnRfbXV0YXRpb25faWQYBSABKAlSEGNsaWVudE11dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use submitProtectedDeliveryReportResponseDescriptor instead')
+const SubmitProtectedDeliveryReportResponse$json = {
+  '1': 'SubmitProtectedDeliveryReportResponse',
+  '2': [
+    {'1': 'incident_id', '3': 1, '4': 1, '5': 9, '10': 'incidentId'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+  ],
+};
+
+/// Descriptor for `SubmitProtectedDeliveryReportResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitProtectedDeliveryReportResponseDescriptor =
+    $convert.base64Decode(
+        'CiVTdWJtaXRQcm90ZWN0ZWREZWxpdmVyeVJlcG9ydFJlc3BvbnNlEh8KC2luY2lkZW50X2lkGA'
+        'EgASgJUgppbmNpZGVudElkEhYKBnN0YXR1cxgCIAEoCVIGc3RhdHVz');
+
 @$core.Deprecated('Use onyxIntegrationRuntimeDescriptor instead')
 const OnyxIntegrationRuntime$json = {
   '1': 'OnyxIntegrationRuntime',

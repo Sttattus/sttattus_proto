@@ -32960,6 +32960,736 @@ export class WithdrawForensicAppealResponse extends Message<WithdrawForensicAppe
 }
 
 /**
+ * Conditional Package B — protected delivery. A playable response contains an
+ * opaque, short-lived URL only; provider asset identifiers, account bearer
+ * tokens, signing keys and private source locators never cross this contract.
+ *
+ * @generated from message sttattus.onyx.v1.OnyxProtectedDeliveryState
+ */
+export class OnyxProtectedDeliveryState extends Message<OnyxProtectedDeliveryState> {
+  /**
+   * active | paused | disabled | unavailable
+   *
+   * @generated from field: string status = 1;
+   */
+  status = "";
+
+  /**
+   * @generated from field: bool grants_enabled = 2;
+   */
+  grantsEnabled = false;
+
+  /**
+   * @generated from field: bool stream_configured = 3;
+   */
+  streamConfigured = false;
+
+  /**
+   * @generated from field: bool offline_video_enabled = 4;
+   */
+  offlineVideoEnabled = false;
+
+  /**
+   * @generated from field: bool offline_image_enabled = 5;
+   */
+  offlineImageEnabled = false;
+
+  /**
+   * @generated from field: int32 grant_ttl_seconds = 6;
+   */
+  grantTtlSeconds = 0;
+
+  /**
+   * @generated from field: string default_video_quality = 7;
+   */
+  defaultVideoQuality = "";
+
+  /**
+   * @generated from field: bool wifi_only_default = 8;
+   */
+  wifiOnlyDefault = false;
+
+  /**
+   * @generated from field: string public_notice = 9;
+   */
+  publicNotice = "";
+
+  /**
+   * @generated from field: int64 access_epoch = 10;
+   */
+  accessEpoch = protoInt64.zero;
+
+  constructor(data?: PartialMessage<OnyxProtectedDeliveryState>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxProtectedDeliveryState";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "grants_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "stream_configured", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "offline_video_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "offline_image_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "grant_ttl_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "default_video_quality", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "wifi_only_default", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "public_notice", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "access_epoch", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxProtectedDeliveryState {
+    return new OnyxProtectedDeliveryState().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxProtectedDeliveryState {
+    return new OnyxProtectedDeliveryState().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxProtectedDeliveryState {
+    return new OnyxProtectedDeliveryState().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxProtectedDeliveryState | PlainMessage<OnyxProtectedDeliveryState> | undefined, b: OnyxProtectedDeliveryState | PlainMessage<OnyxProtectedDeliveryState> | undefined): boolean {
+    return proto3.util.equals(OnyxProtectedDeliveryState, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxProtectedDeliveryGrant
+ */
+export class OnyxProtectedDeliveryGrant extends Message<OnyxProtectedDeliveryGrant> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string content_id = 2;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string revision_id = 3;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: string device_id = 4;
+   */
+  deviceId = "";
+
+  /**
+   * stream | view | download
+   *
+   * @generated from field: string action = 5;
+   */
+  action = "";
+
+  /**
+   * signed_access | visible_attribution | encrypted_offline
+   *
+   * @generated from field: string protection_level = 6;
+   */
+  protectionLevel = "";
+
+  /**
+   * @generated from field: string visible_attribution = 7;
+   */
+  visibleAttribution = "";
+
+  /**
+   * opaque five-minute provider token URL
+   *
+   * @generated from field: string playback_url = 8;
+   */
+  playbackUrl = "";
+
+  /**
+   * short-lived and empty when no governed track exists
+   *
+   * @generated from field: string captions_url = 9;
+   */
+  captionsUrl = "";
+
+  /**
+   * @generated from field: string status = 10;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int64 policy_version = 11;
+   */
+  policyVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 source_version = 12;
+   */
+  sourceVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp issued_at = 13;
+   */
+  issuedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 14;
+   */
+  expiresAt?: Timestamp;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.EncryptedRendition encrypted_renditions = 15;
+   */
+  encryptedRenditions: EncryptedRendition[] = [];
+
+  constructor(data?: PartialMessage<OnyxProtectedDeliveryGrant>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxProtectedDeliveryGrant";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "action", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "protection_level", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "visible_attribution", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "playback_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "captions_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "policy_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 12, name: "source_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 13, name: "issued_at", kind: "message", T: Timestamp },
+    { no: 14, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 15, name: "encrypted_renditions", kind: "message", T: EncryptedRendition, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxProtectedDeliveryGrant {
+    return new OnyxProtectedDeliveryGrant().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxProtectedDeliveryGrant {
+    return new OnyxProtectedDeliveryGrant().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxProtectedDeliveryGrant {
+    return new OnyxProtectedDeliveryGrant().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxProtectedDeliveryGrant | PlainMessage<OnyxProtectedDeliveryGrant> | undefined, b: OnyxProtectedDeliveryGrant | PlainMessage<OnyxProtectedDeliveryGrant> | undefined): boolean {
+    return proto3.util.equals(OnyxProtectedDeliveryGrant, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetProtectedDeliveryStateRequest
+ */
+export class GetProtectedDeliveryStateRequest extends Message<GetProtectedDeliveryStateRequest> {
+  constructor(data?: PartialMessage<GetProtectedDeliveryStateRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetProtectedDeliveryStateRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetProtectedDeliveryStateRequest {
+    return new GetProtectedDeliveryStateRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetProtectedDeliveryStateRequest {
+    return new GetProtectedDeliveryStateRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetProtectedDeliveryStateRequest {
+    return new GetProtectedDeliveryStateRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetProtectedDeliveryStateRequest | PlainMessage<GetProtectedDeliveryStateRequest> | undefined, b: GetProtectedDeliveryStateRequest | PlainMessage<GetProtectedDeliveryStateRequest> | undefined): boolean {
+    return proto3.util.equals(GetProtectedDeliveryStateRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetProtectedDeliveryStateResponse
+ */
+export class GetProtectedDeliveryStateResponse extends Message<GetProtectedDeliveryStateResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxProtectedDeliveryState state = 1;
+   */
+  state?: OnyxProtectedDeliveryState;
+
+  constructor(data?: PartialMessage<GetProtectedDeliveryStateResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetProtectedDeliveryStateResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "state", kind: "message", T: OnyxProtectedDeliveryState },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetProtectedDeliveryStateResponse {
+    return new GetProtectedDeliveryStateResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetProtectedDeliveryStateResponse {
+    return new GetProtectedDeliveryStateResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetProtectedDeliveryStateResponse {
+    return new GetProtectedDeliveryStateResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetProtectedDeliveryStateResponse | PlainMessage<GetProtectedDeliveryStateResponse> | undefined, b: GetProtectedDeliveryStateResponse | PlainMessage<GetProtectedDeliveryStateResponse> | undefined): boolean {
+    return proto3.util.equals(GetProtectedDeliveryStateResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RequestProtectedDeliveryGrantRequest
+ */
+export class RequestProtectedDeliveryGrantRequest extends Message<RequestProtectedDeliveryGrantRequest> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string device_id = 2;
+   */
+  deviceId = "";
+
+  /**
+   * stream | view | download
+   *
+   * @generated from field: string action = 3;
+   */
+  action = "";
+
+  /**
+   * @generated from field: string expected_revision_id = 4;
+   */
+  expectedRevisionId = "";
+
+  /**
+   * @generated from field: string forensic_manifest_id = 5;
+   */
+  forensicManifestId = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 6;
+   */
+  clientMutationId = "";
+
+  /**
+   * 480p | 720p; ignored for view
+   *
+   * @generated from field: string requested_quality = 7;
+   */
+  requestedQuality = "";
+
+  /**
+   * @generated from field: bool wifi_confirmed = 8;
+   */
+  wifiConfirmed = false;
+
+  constructor(data?: PartialMessage<RequestProtectedDeliveryGrantRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RequestProtectedDeliveryGrantRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "action", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "expected_revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "forensic_manifest_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "requested_quality", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "wifi_confirmed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RequestProtectedDeliveryGrantRequest {
+    return new RequestProtectedDeliveryGrantRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RequestProtectedDeliveryGrantRequest {
+    return new RequestProtectedDeliveryGrantRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RequestProtectedDeliveryGrantRequest {
+    return new RequestProtectedDeliveryGrantRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RequestProtectedDeliveryGrantRequest | PlainMessage<RequestProtectedDeliveryGrantRequest> | undefined, b: RequestProtectedDeliveryGrantRequest | PlainMessage<RequestProtectedDeliveryGrantRequest> | undefined): boolean {
+    return proto3.util.equals(RequestProtectedDeliveryGrantRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RequestProtectedDeliveryGrantResponse
+ */
+export class RequestProtectedDeliveryGrantResponse extends Message<RequestProtectedDeliveryGrantResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxProtectedDeliveryGrant grant = 1;
+   */
+  grant?: OnyxProtectedDeliveryGrant;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxProtectedDeliveryState state = 2;
+   */
+  state?: OnyxProtectedDeliveryState;
+
+  constructor(data?: PartialMessage<RequestProtectedDeliveryGrantResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RequestProtectedDeliveryGrantResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "grant", kind: "message", T: OnyxProtectedDeliveryGrant },
+    { no: 2, name: "state", kind: "message", T: OnyxProtectedDeliveryState },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RequestProtectedDeliveryGrantResponse {
+    return new RequestProtectedDeliveryGrantResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RequestProtectedDeliveryGrantResponse {
+    return new RequestProtectedDeliveryGrantResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RequestProtectedDeliveryGrantResponse {
+    return new RequestProtectedDeliveryGrantResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RequestProtectedDeliveryGrantResponse | PlainMessage<RequestProtectedDeliveryGrantResponse> | undefined, b: RequestProtectedDeliveryGrantResponse | PlainMessage<RequestProtectedDeliveryGrantResponse> | undefined): boolean {
+    return proto3.util.equals(RequestProtectedDeliveryGrantResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RevokeMyProtectedDeliveryGrantRequest
+ */
+export class RevokeMyProtectedDeliveryGrantRequest extends Message<RevokeMyProtectedDeliveryGrantRequest> {
+  /**
+   * @generated from field: string grant_id = 1;
+   */
+  grantId = "";
+
+  /**
+   * @generated from field: string reason = 2;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 3;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<RevokeMyProtectedDeliveryGrantRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RevokeMyProtectedDeliveryGrantRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "grant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeMyProtectedDeliveryGrantRequest {
+    return new RevokeMyProtectedDeliveryGrantRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeMyProtectedDeliveryGrantRequest {
+    return new RevokeMyProtectedDeliveryGrantRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeMyProtectedDeliveryGrantRequest {
+    return new RevokeMyProtectedDeliveryGrantRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeMyProtectedDeliveryGrantRequest | PlainMessage<RevokeMyProtectedDeliveryGrantRequest> | undefined, b: RevokeMyProtectedDeliveryGrantRequest | PlainMessage<RevokeMyProtectedDeliveryGrantRequest> | undefined): boolean {
+    return proto3.util.equals(RevokeMyProtectedDeliveryGrantRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RevokeMyProtectedDeliveryGrantResponse
+ */
+export class RevokeMyProtectedDeliveryGrantResponse extends Message<RevokeMyProtectedDeliveryGrantResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxProtectedDeliveryGrant grant = 1;
+   */
+  grant?: OnyxProtectedDeliveryGrant;
+
+  constructor(data?: PartialMessage<RevokeMyProtectedDeliveryGrantResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RevokeMyProtectedDeliveryGrantResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "grant", kind: "message", T: OnyxProtectedDeliveryGrant },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeMyProtectedDeliveryGrantResponse {
+    return new RevokeMyProtectedDeliveryGrantResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeMyProtectedDeliveryGrantResponse {
+    return new RevokeMyProtectedDeliveryGrantResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeMyProtectedDeliveryGrantResponse {
+    return new RevokeMyProtectedDeliveryGrantResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeMyProtectedDeliveryGrantResponse | PlainMessage<RevokeMyProtectedDeliveryGrantResponse> | undefined, b: RevokeMyProtectedDeliveryGrantResponse | PlainMessage<RevokeMyProtectedDeliveryGrantResponse> | undefined): boolean {
+    return proto3.util.equals(RevokeMyProtectedDeliveryGrantResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecordProtectedDeliveryEventRequest
+ */
+export class RecordProtectedDeliveryEventRequest extends Message<RecordProtectedDeliveryEventRequest> {
+  /**
+   * @generated from field: string event_id = 1;
+   */
+  eventId = "";
+
+  /**
+   * @generated from field: string grant_id = 2;
+   */
+  grantId = "";
+
+  /**
+   * playback_started | playback_failed | offline_opened | offline_purged
+   *
+   * @generated from field: string event_type = 3;
+   */
+  eventType = "";
+
+  /**
+   * success | failure | canceled
+   *
+   * @generated from field: string outcome = 4;
+   */
+  outcome = "";
+
+  /**
+   * @generated from field: string error_code = 5;
+   */
+  errorCode = "";
+
+  /**
+   * @generated from field: int64 bytes = 6;
+   */
+  bytes = protoInt64.zero;
+
+  /**
+   * @generated from field: int32 latency_ms = 7;
+   */
+  latencyMs = 0;
+
+  constructor(data?: PartialMessage<RecordProtectedDeliveryEventRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecordProtectedDeliveryEventRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "grant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "event_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "outcome", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "error_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "bytes", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 7, name: "latency_ms", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordProtectedDeliveryEventRequest {
+    return new RecordProtectedDeliveryEventRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordProtectedDeliveryEventRequest {
+    return new RecordProtectedDeliveryEventRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordProtectedDeliveryEventRequest {
+    return new RecordProtectedDeliveryEventRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordProtectedDeliveryEventRequest | PlainMessage<RecordProtectedDeliveryEventRequest> | undefined, b: RecordProtectedDeliveryEventRequest | PlainMessage<RecordProtectedDeliveryEventRequest> | undefined): boolean {
+    return proto3.util.equals(RecordProtectedDeliveryEventRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecordProtectedDeliveryEventResponse
+ */
+export class RecordProtectedDeliveryEventResponse extends Message<RecordProtectedDeliveryEventResponse> {
+  /**
+   * @generated from field: string receipt_id = 1;
+   */
+  receiptId = "";
+
+  /**
+   * @generated from field: bool replayed = 2;
+   */
+  replayed = false;
+
+  constructor(data?: PartialMessage<RecordProtectedDeliveryEventResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecordProtectedDeliveryEventResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "receipt_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "replayed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordProtectedDeliveryEventResponse {
+    return new RecordProtectedDeliveryEventResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordProtectedDeliveryEventResponse {
+    return new RecordProtectedDeliveryEventResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordProtectedDeliveryEventResponse {
+    return new RecordProtectedDeliveryEventResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordProtectedDeliveryEventResponse | PlainMessage<RecordProtectedDeliveryEventResponse> | undefined, b: RecordProtectedDeliveryEventResponse | PlainMessage<RecordProtectedDeliveryEventResponse> | undefined): boolean {
+    return proto3.util.equals(RecordProtectedDeliveryEventResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SubmitProtectedDeliveryReportRequest
+ */
+export class SubmitProtectedDeliveryReportRequest extends Message<SubmitProtectedDeliveryReportRequest> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string grant_id = 2;
+   */
+  grantId = "";
+
+  /**
+   * @generated from field: string summary = 3;
+   */
+  summary = "";
+
+  /**
+   * @generated from field: string evidence_digest = 4;
+   */
+  evidenceDigest = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 5;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<SubmitProtectedDeliveryReportRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SubmitProtectedDeliveryReportRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "grant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "evidence_digest", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitProtectedDeliveryReportRequest {
+    return new SubmitProtectedDeliveryReportRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubmitProtectedDeliveryReportRequest {
+    return new SubmitProtectedDeliveryReportRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubmitProtectedDeliveryReportRequest {
+    return new SubmitProtectedDeliveryReportRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SubmitProtectedDeliveryReportRequest | PlainMessage<SubmitProtectedDeliveryReportRequest> | undefined, b: SubmitProtectedDeliveryReportRequest | PlainMessage<SubmitProtectedDeliveryReportRequest> | undefined): boolean {
+    return proto3.util.equals(SubmitProtectedDeliveryReportRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SubmitProtectedDeliveryReportResponse
+ */
+export class SubmitProtectedDeliveryReportResponse extends Message<SubmitProtectedDeliveryReportResponse> {
+  /**
+   * @generated from field: string incident_id = 1;
+   */
+  incidentId = "";
+
+  /**
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  constructor(data?: PartialMessage<SubmitProtectedDeliveryReportResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SubmitProtectedDeliveryReportResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "incident_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitProtectedDeliveryReportResponse {
+    return new SubmitProtectedDeliveryReportResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubmitProtectedDeliveryReportResponse {
+    return new SubmitProtectedDeliveryReportResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubmitProtectedDeliveryReportResponse {
+    return new SubmitProtectedDeliveryReportResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SubmitProtectedDeliveryReportResponse | PlainMessage<SubmitProtectedDeliveryReportResponse> | undefined, b: SubmitProtectedDeliveryReportResponse | PlainMessage<SubmitProtectedDeliveryReportResponse> | undefined): boolean {
+    return proto3.util.equals(SubmitProtectedDeliveryReportResponse, a, b);
+  }
+}
+
+/**
  * Choice 14 — scoped API, MCP and integrations. Raw client secrets,
  * authorization codes and bearer tokens are deliberately absent from all read
  * models. A newly issued authorization code is returned once by the authorize

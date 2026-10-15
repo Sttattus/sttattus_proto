@@ -1669,6 +1669,53 @@ class OnyxServiceClient extends $grpc.Client {
         options: options);
   }
 
+  /// Conditional Package B — signed protected delivery and device-bound
+  /// encrypted offline video/image packages.
+  $grpc.ResponseFuture<$0.GetProtectedDeliveryStateResponse>
+      getProtectedDeliveryState(
+    $0.GetProtectedDeliveryStateRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getProtectedDeliveryState, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RequestProtectedDeliveryGrantResponse>
+      requestProtectedDeliveryGrant(
+    $0.RequestProtectedDeliveryGrantRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$requestProtectedDeliveryGrant, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevokeMyProtectedDeliveryGrantResponse>
+      revokeMyProtectedDeliveryGrant(
+    $0.RevokeMyProtectedDeliveryGrantRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$revokeMyProtectedDeliveryGrant, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordProtectedDeliveryEventResponse>
+      recordProtectedDeliveryEvent(
+    $0.RecordProtectedDeliveryEventRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordProtectedDeliveryEvent, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SubmitProtectedDeliveryReportResponse>
+      submitProtectedDeliveryReport(
+    $0.SubmitProtectedDeliveryReportRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$submitProtectedDeliveryReport, request,
+        options: options);
+  }
+
   /// Choice 14 — member-owned OAuth-style grants, connectors and explicit
   /// cross-pillar dispatches. External REST/MCP calls use the same grant and
   /// audit records through the HTTP edge.
@@ -3408,6 +3455,36 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/WithdrawForensicAppeal',
       ($0.WithdrawForensicAppealRequest value) => value.writeToBuffer(),
       $0.WithdrawForensicAppealResponse.fromBuffer);
+  static final _$getProtectedDeliveryState = $grpc.ClientMethod<
+          $0.GetProtectedDeliveryStateRequest,
+          $0.GetProtectedDeliveryStateResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetProtectedDeliveryState',
+      ($0.GetProtectedDeliveryStateRequest value) => value.writeToBuffer(),
+      $0.GetProtectedDeliveryStateResponse.fromBuffer);
+  static final _$requestProtectedDeliveryGrant = $grpc.ClientMethod<
+          $0.RequestProtectedDeliveryGrantRequest,
+          $0.RequestProtectedDeliveryGrantResponse>(
+      '/sttattus.onyx.v1.OnyxService/RequestProtectedDeliveryGrant',
+      ($0.RequestProtectedDeliveryGrantRequest value) => value.writeToBuffer(),
+      $0.RequestProtectedDeliveryGrantResponse.fromBuffer);
+  static final _$revokeMyProtectedDeliveryGrant = $grpc.ClientMethod<
+          $0.RevokeMyProtectedDeliveryGrantRequest,
+          $0.RevokeMyProtectedDeliveryGrantResponse>(
+      '/sttattus.onyx.v1.OnyxService/RevokeMyProtectedDeliveryGrant',
+      ($0.RevokeMyProtectedDeliveryGrantRequest value) => value.writeToBuffer(),
+      $0.RevokeMyProtectedDeliveryGrantResponse.fromBuffer);
+  static final _$recordProtectedDeliveryEvent = $grpc.ClientMethod<
+          $0.RecordProtectedDeliveryEventRequest,
+          $0.RecordProtectedDeliveryEventResponse>(
+      '/sttattus.onyx.v1.OnyxService/RecordProtectedDeliveryEvent',
+      ($0.RecordProtectedDeliveryEventRequest value) => value.writeToBuffer(),
+      $0.RecordProtectedDeliveryEventResponse.fromBuffer);
+  static final _$submitProtectedDeliveryReport = $grpc.ClientMethod<
+          $0.SubmitProtectedDeliveryReportRequest,
+          $0.SubmitProtectedDeliveryReportResponse>(
+      '/sttattus.onyx.v1.OnyxService/SubmitProtectedDeliveryReport',
+      ($0.SubmitProtectedDeliveryReportRequest value) => value.writeToBuffer(),
+      $0.SubmitProtectedDeliveryReportResponse.fromBuffer);
   static final _$getIntegrationDashboard = $grpc.ClientMethod<
           $0.GetIntegrationDashboardRequest,
           $0.GetIntegrationDashboardResponse>(
@@ -5704,6 +5781,55 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.WithdrawForensicAppealRequest.fromBuffer(value),
         ($0.WithdrawForensicAppealResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetProtectedDeliveryStateRequest,
+            $0.GetProtectedDeliveryStateResponse>(
+        'GetProtectedDeliveryState',
+        getProtectedDeliveryState_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetProtectedDeliveryStateRequest.fromBuffer(value),
+        ($0.GetProtectedDeliveryStateResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RequestProtectedDeliveryGrantRequest,
+            $0.RequestProtectedDeliveryGrantResponse>(
+        'RequestProtectedDeliveryGrant',
+        requestProtectedDeliveryGrant_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RequestProtectedDeliveryGrantRequest.fromBuffer(value),
+        ($0.RequestProtectedDeliveryGrantResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevokeMyProtectedDeliveryGrantRequest,
+            $0.RevokeMyProtectedDeliveryGrantResponse>(
+        'RevokeMyProtectedDeliveryGrant',
+        revokeMyProtectedDeliveryGrant_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RevokeMyProtectedDeliveryGrantRequest.fromBuffer(value),
+        ($0.RevokeMyProtectedDeliveryGrantResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordProtectedDeliveryEventRequest,
+            $0.RecordProtectedDeliveryEventResponse>(
+        'RecordProtectedDeliveryEvent',
+        recordProtectedDeliveryEvent_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordProtectedDeliveryEventRequest.fromBuffer(value),
+        ($0.RecordProtectedDeliveryEventResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SubmitProtectedDeliveryReportRequest,
+            $0.SubmitProtectedDeliveryReportResponse>(
+        'SubmitProtectedDeliveryReport',
+        submitProtectedDeliveryReport_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SubmitProtectedDeliveryReportRequest.fromBuffer(value),
+        ($0.SubmitProtectedDeliveryReportResponse value) =>
+            value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.GetIntegrationDashboardRequest,
             $0.GetIntegrationDashboardResponse>(
         'GetIntegrationDashboard',
@@ -8337,6 +8463,63 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.WithdrawForensicAppealResponse> withdrawForensicAppeal(
       $grpc.ServiceCall call, $0.WithdrawForensicAppealRequest request);
+
+  $async.Future<$0.GetProtectedDeliveryStateResponse>
+      getProtectedDeliveryState_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.GetProtectedDeliveryStateRequest> $request) async {
+    return getProtectedDeliveryState($call, await $request);
+  }
+
+  $async.Future<$0.GetProtectedDeliveryStateResponse> getProtectedDeliveryState(
+      $grpc.ServiceCall call, $0.GetProtectedDeliveryStateRequest request);
+
+  $async.Future<$0.RequestProtectedDeliveryGrantResponse>
+      requestProtectedDeliveryGrant_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RequestProtectedDeliveryGrantRequest>
+              $request) async {
+    return requestProtectedDeliveryGrant($call, await $request);
+  }
+
+  $async.Future<$0.RequestProtectedDeliveryGrantResponse>
+      requestProtectedDeliveryGrant($grpc.ServiceCall call,
+          $0.RequestProtectedDeliveryGrantRequest request);
+
+  $async.Future<$0.RevokeMyProtectedDeliveryGrantResponse>
+      revokeMyProtectedDeliveryGrant_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RevokeMyProtectedDeliveryGrantRequest>
+              $request) async {
+    return revokeMyProtectedDeliveryGrant($call, await $request);
+  }
+
+  $async.Future<$0.RevokeMyProtectedDeliveryGrantResponse>
+      revokeMyProtectedDeliveryGrant($grpc.ServiceCall call,
+          $0.RevokeMyProtectedDeliveryGrantRequest request);
+
+  $async.Future<$0.RecordProtectedDeliveryEventResponse>
+      recordProtectedDeliveryEvent_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RecordProtectedDeliveryEventRequest>
+              $request) async {
+    return recordProtectedDeliveryEvent($call, await $request);
+  }
+
+  $async.Future<$0.RecordProtectedDeliveryEventResponse>
+      recordProtectedDeliveryEvent($grpc.ServiceCall call,
+          $0.RecordProtectedDeliveryEventRequest request);
+
+  $async.Future<$0.SubmitProtectedDeliveryReportResponse>
+      submitProtectedDeliveryReport_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SubmitProtectedDeliveryReportRequest>
+              $request) async {
+    return submitProtectedDeliveryReport($call, await $request);
+  }
+
+  $async.Future<$0.SubmitProtectedDeliveryReportResponse>
+      submitProtectedDeliveryReport($grpc.ServiceCall call,
+          $0.SubmitProtectedDeliveryReportRequest request);
 
   $async.Future<$0.GetIntegrationDashboardResponse> getIntegrationDashboard_Pre(
       $grpc.ServiceCall $call,

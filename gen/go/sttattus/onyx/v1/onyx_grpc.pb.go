@@ -223,6 +223,11 @@ const (
 	OnyxService_FileForensicAppeal_FullMethodName                   = "/sttattus.onyx.v1.OnyxService/FileForensicAppeal"
 	OnyxService_PostForensicAppealMessage_FullMethodName            = "/sttattus.onyx.v1.OnyxService/PostForensicAppealMessage"
 	OnyxService_WithdrawForensicAppeal_FullMethodName               = "/sttattus.onyx.v1.OnyxService/WithdrawForensicAppeal"
+	OnyxService_GetProtectedDeliveryState_FullMethodName            = "/sttattus.onyx.v1.OnyxService/GetProtectedDeliveryState"
+	OnyxService_RequestProtectedDeliveryGrant_FullMethodName        = "/sttattus.onyx.v1.OnyxService/RequestProtectedDeliveryGrant"
+	OnyxService_RevokeMyProtectedDeliveryGrant_FullMethodName       = "/sttattus.onyx.v1.OnyxService/RevokeMyProtectedDeliveryGrant"
+	OnyxService_RecordProtectedDeliveryEvent_FullMethodName         = "/sttattus.onyx.v1.OnyxService/RecordProtectedDeliveryEvent"
+	OnyxService_SubmitProtectedDeliveryReport_FullMethodName        = "/sttattus.onyx.v1.OnyxService/SubmitProtectedDeliveryReport"
 	OnyxService_GetIntegrationDashboard_FullMethodName              = "/sttattus.onyx.v1.OnyxService/GetIntegrationDashboard"
 	OnyxService_AuthorizeIntegration_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/AuthorizeIntegration"
 	OnyxService_RevokeIntegrationGrant_FullMethodName               = "/sttattus.onyx.v1.OnyxService/RevokeIntegrationGrant"
@@ -546,6 +551,13 @@ type OnyxServiceClient interface {
 	FileForensicAppeal(ctx context.Context, in *FileForensicAppealRequest, opts ...grpc.CallOption) (*FileForensicAppealResponse, error)
 	PostForensicAppealMessage(ctx context.Context, in *PostForensicAppealMessageRequest, opts ...grpc.CallOption) (*PostForensicAppealMessageResponse, error)
 	WithdrawForensicAppeal(ctx context.Context, in *WithdrawForensicAppealRequest, opts ...grpc.CallOption) (*WithdrawForensicAppealResponse, error)
+	// Conditional Package B — signed protected delivery and device-bound
+	// encrypted offline video/image packages.
+	GetProtectedDeliveryState(ctx context.Context, in *GetProtectedDeliveryStateRequest, opts ...grpc.CallOption) (*GetProtectedDeliveryStateResponse, error)
+	RequestProtectedDeliveryGrant(ctx context.Context, in *RequestProtectedDeliveryGrantRequest, opts ...grpc.CallOption) (*RequestProtectedDeliveryGrantResponse, error)
+	RevokeMyProtectedDeliveryGrant(ctx context.Context, in *RevokeMyProtectedDeliveryGrantRequest, opts ...grpc.CallOption) (*RevokeMyProtectedDeliveryGrantResponse, error)
+	RecordProtectedDeliveryEvent(ctx context.Context, in *RecordProtectedDeliveryEventRequest, opts ...grpc.CallOption) (*RecordProtectedDeliveryEventResponse, error)
+	SubmitProtectedDeliveryReport(ctx context.Context, in *SubmitProtectedDeliveryReportRequest, opts ...grpc.CallOption) (*SubmitProtectedDeliveryReportResponse, error)
 	// Choice 14 — member-owned OAuth-style grants, connectors and explicit
 	// cross-pillar dispatches. External REST/MCP calls use the same grant and
 	// audit records through the HTTP edge.
@@ -2684,6 +2696,56 @@ func (c *onyxServiceClient) WithdrawForensicAppeal(ctx context.Context, in *With
 	return out, nil
 }
 
+func (c *onyxServiceClient) GetProtectedDeliveryState(ctx context.Context, in *GetProtectedDeliveryStateRequest, opts ...grpc.CallOption) (*GetProtectedDeliveryStateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetProtectedDeliveryStateResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetProtectedDeliveryState_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RequestProtectedDeliveryGrant(ctx context.Context, in *RequestProtectedDeliveryGrantRequest, opts ...grpc.CallOption) (*RequestProtectedDeliveryGrantResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RequestProtectedDeliveryGrantResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RequestProtectedDeliveryGrant_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RevokeMyProtectedDeliveryGrant(ctx context.Context, in *RevokeMyProtectedDeliveryGrantRequest, opts ...grpc.CallOption) (*RevokeMyProtectedDeliveryGrantResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeMyProtectedDeliveryGrantResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RevokeMyProtectedDeliveryGrant_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RecordProtectedDeliveryEvent(ctx context.Context, in *RecordProtectedDeliveryEventRequest, opts ...grpc.CallOption) (*RecordProtectedDeliveryEventResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordProtectedDeliveryEventResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RecordProtectedDeliveryEvent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SubmitProtectedDeliveryReport(ctx context.Context, in *SubmitProtectedDeliveryReportRequest, opts ...grpc.CallOption) (*SubmitProtectedDeliveryReportResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitProtectedDeliveryReportResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SubmitProtectedDeliveryReport_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *onyxServiceClient) GetIntegrationDashboard(ctx context.Context, in *GetIntegrationDashboardRequest, opts ...grpc.CallOption) (*GetIntegrationDashboardResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetIntegrationDashboardResponse)
@@ -3707,6 +3769,13 @@ type OnyxServiceServer interface {
 	FileForensicAppeal(context.Context, *FileForensicAppealRequest) (*FileForensicAppealResponse, error)
 	PostForensicAppealMessage(context.Context, *PostForensicAppealMessageRequest) (*PostForensicAppealMessageResponse, error)
 	WithdrawForensicAppeal(context.Context, *WithdrawForensicAppealRequest) (*WithdrawForensicAppealResponse, error)
+	// Conditional Package B — signed protected delivery and device-bound
+	// encrypted offline video/image packages.
+	GetProtectedDeliveryState(context.Context, *GetProtectedDeliveryStateRequest) (*GetProtectedDeliveryStateResponse, error)
+	RequestProtectedDeliveryGrant(context.Context, *RequestProtectedDeliveryGrantRequest) (*RequestProtectedDeliveryGrantResponse, error)
+	RevokeMyProtectedDeliveryGrant(context.Context, *RevokeMyProtectedDeliveryGrantRequest) (*RevokeMyProtectedDeliveryGrantResponse, error)
+	RecordProtectedDeliveryEvent(context.Context, *RecordProtectedDeliveryEventRequest) (*RecordProtectedDeliveryEventResponse, error)
+	SubmitProtectedDeliveryReport(context.Context, *SubmitProtectedDeliveryReportRequest) (*SubmitProtectedDeliveryReportResponse, error)
 	// Choice 14 — member-owned OAuth-style grants, connectors and explicit
 	// cross-pillar dispatches. External REST/MCP calls use the same grant and
 	// audit records through the HTTP edge.
@@ -4416,6 +4485,21 @@ func (UnimplementedOnyxServiceServer) PostForensicAppealMessage(context.Context,
 }
 func (UnimplementedOnyxServiceServer) WithdrawForensicAppeal(context.Context, *WithdrawForensicAppealRequest) (*WithdrawForensicAppealResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method WithdrawForensicAppeal not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetProtectedDeliveryState(context.Context, *GetProtectedDeliveryStateRequest) (*GetProtectedDeliveryStateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetProtectedDeliveryState not implemented")
+}
+func (UnimplementedOnyxServiceServer) RequestProtectedDeliveryGrant(context.Context, *RequestProtectedDeliveryGrantRequest) (*RequestProtectedDeliveryGrantResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RequestProtectedDeliveryGrant not implemented")
+}
+func (UnimplementedOnyxServiceServer) RevokeMyProtectedDeliveryGrant(context.Context, *RevokeMyProtectedDeliveryGrantRequest) (*RevokeMyProtectedDeliveryGrantResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeMyProtectedDeliveryGrant not implemented")
+}
+func (UnimplementedOnyxServiceServer) RecordProtectedDeliveryEvent(context.Context, *RecordProtectedDeliveryEventRequest) (*RecordProtectedDeliveryEventResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordProtectedDeliveryEvent not implemented")
+}
+func (UnimplementedOnyxServiceServer) SubmitProtectedDeliveryReport(context.Context, *SubmitProtectedDeliveryReportRequest) (*SubmitProtectedDeliveryReportResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitProtectedDeliveryReport not implemented")
 }
 func (UnimplementedOnyxServiceServer) GetIntegrationDashboard(context.Context, *GetIntegrationDashboardRequest) (*GetIntegrationDashboardResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetIntegrationDashboard not implemented")
@@ -8344,6 +8428,96 @@ func _OnyxService_WithdrawForensicAppeal_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_GetProtectedDeliveryState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetProtectedDeliveryStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetProtectedDeliveryState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetProtectedDeliveryState_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetProtectedDeliveryState(ctx, req.(*GetProtectedDeliveryStateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RequestProtectedDeliveryGrant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RequestProtectedDeliveryGrantRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RequestProtectedDeliveryGrant(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RequestProtectedDeliveryGrant_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RequestProtectedDeliveryGrant(ctx, req.(*RequestProtectedDeliveryGrantRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RevokeMyProtectedDeliveryGrant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeMyProtectedDeliveryGrantRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RevokeMyProtectedDeliveryGrant(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RevokeMyProtectedDeliveryGrant_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RevokeMyProtectedDeliveryGrant(ctx, req.(*RevokeMyProtectedDeliveryGrantRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RecordProtectedDeliveryEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordProtectedDeliveryEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RecordProtectedDeliveryEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RecordProtectedDeliveryEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RecordProtectedDeliveryEvent(ctx, req.(*RecordProtectedDeliveryEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SubmitProtectedDeliveryReport_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitProtectedDeliveryReportRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SubmitProtectedDeliveryReport(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SubmitProtectedDeliveryReport_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SubmitProtectedDeliveryReport(ctx, req.(*SubmitProtectedDeliveryReportRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _OnyxService_GetIntegrationDashboard_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetIntegrationDashboardRequest)
 	if err := dec(in); err != nil {
@@ -10570,6 +10744,26 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "WithdrawForensicAppeal",
 			Handler:    _OnyxService_WithdrawForensicAppeal_Handler,
+		},
+		{
+			MethodName: "GetProtectedDeliveryState",
+			Handler:    _OnyxService_GetProtectedDeliveryState_Handler,
+		},
+		{
+			MethodName: "RequestProtectedDeliveryGrant",
+			Handler:    _OnyxService_RequestProtectedDeliveryGrant_Handler,
+		},
+		{
+			MethodName: "RevokeMyProtectedDeliveryGrant",
+			Handler:    _OnyxService_RevokeMyProtectedDeliveryGrant_Handler,
+		},
+		{
+			MethodName: "RecordProtectedDeliveryEvent",
+			Handler:    _OnyxService_RecordProtectedDeliveryEvent_Handler,
+		},
+		{
+			MethodName: "SubmitProtectedDeliveryReport",
+			Handler:    _OnyxService_SubmitProtectedDeliveryReport_Handler,
 		},
 		{
 			MethodName: "GetIntegrationDashboard",

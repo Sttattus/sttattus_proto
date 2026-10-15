@@ -54783,6 +54783,1267 @@ class WithdrawForensicAppealResponse extends $pb.GeneratedMessage {
   OnyxForensicCase ensureForensicCase() => $_ensure(0);
 }
 
+/// Conditional Package B — protected delivery. A playable response contains an
+/// opaque, short-lived URL only; provider asset identifiers, account bearer
+/// tokens, signing keys and private source locators never cross this contract.
+class OnyxProtectedDeliveryState extends $pb.GeneratedMessage {
+  factory OnyxProtectedDeliveryState({
+    $core.String? status,
+    $core.bool? grantsEnabled,
+    $core.bool? streamConfigured,
+    $core.bool? offlineVideoEnabled,
+    $core.bool? offlineImageEnabled,
+    $core.int? grantTtlSeconds,
+    $core.String? defaultVideoQuality,
+    $core.bool? wifiOnlyDefault,
+    $core.String? publicNotice,
+    $fixnum.Int64? accessEpoch,
+  }) {
+    final result = create();
+    if (status != null) result.status = status;
+    if (grantsEnabled != null) result.grantsEnabled = grantsEnabled;
+    if (streamConfigured != null) result.streamConfigured = streamConfigured;
+    if (offlineVideoEnabled != null)
+      result.offlineVideoEnabled = offlineVideoEnabled;
+    if (offlineImageEnabled != null)
+      result.offlineImageEnabled = offlineImageEnabled;
+    if (grantTtlSeconds != null) result.grantTtlSeconds = grantTtlSeconds;
+    if (defaultVideoQuality != null)
+      result.defaultVideoQuality = defaultVideoQuality;
+    if (wifiOnlyDefault != null) result.wifiOnlyDefault = wifiOnlyDefault;
+    if (publicNotice != null) result.publicNotice = publicNotice;
+    if (accessEpoch != null) result.accessEpoch = accessEpoch;
+    return result;
+  }
+
+  OnyxProtectedDeliveryState._();
+
+  factory OnyxProtectedDeliveryState.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxProtectedDeliveryState.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxProtectedDeliveryState',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'status')
+    ..aOB(2, _omitFieldNames ? '' : 'grantsEnabled')
+    ..aOB(3, _omitFieldNames ? '' : 'streamConfigured')
+    ..aOB(4, _omitFieldNames ? '' : 'offlineVideoEnabled')
+    ..aOB(5, _omitFieldNames ? '' : 'offlineImageEnabled')
+    ..aI(6, _omitFieldNames ? '' : 'grantTtlSeconds')
+    ..aOS(7, _omitFieldNames ? '' : 'defaultVideoQuality')
+    ..aOB(8, _omitFieldNames ? '' : 'wifiOnlyDefault')
+    ..aOS(9, _omitFieldNames ? '' : 'publicNotice')
+    ..aInt64(10, _omitFieldNames ? '' : 'accessEpoch')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxProtectedDeliveryState clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxProtectedDeliveryState copyWith(
+          void Function(OnyxProtectedDeliveryState) updates) =>
+      super.copyWith(
+              (message) => updates(message as OnyxProtectedDeliveryState))
+          as OnyxProtectedDeliveryState;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxProtectedDeliveryState create() => OnyxProtectedDeliveryState._();
+  @$core.override
+  OnyxProtectedDeliveryState createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxProtectedDeliveryState getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxProtectedDeliveryState>(create);
+  static OnyxProtectedDeliveryState? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get status => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set status($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStatus() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get grantsEnabled => $_getBF(1);
+  @$pb.TagNumber(2)
+  set grantsEnabled($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasGrantsEnabled() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGrantsEnabled() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get streamConfigured => $_getBF(2);
+  @$pb.TagNumber(3)
+  set streamConfigured($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStreamConfigured() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStreamConfigured() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get offlineVideoEnabled => $_getBF(3);
+  @$pb.TagNumber(4)
+  set offlineVideoEnabled($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasOfflineVideoEnabled() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOfflineVideoEnabled() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get offlineImageEnabled => $_getBF(4);
+  @$pb.TagNumber(5)
+  set offlineImageEnabled($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasOfflineImageEnabled() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearOfflineImageEnabled() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get grantTtlSeconds => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set grantTtlSeconds($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasGrantTtlSeconds() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearGrantTtlSeconds() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get defaultVideoQuality => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set defaultVideoQuality($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasDefaultVideoQuality() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDefaultVideoQuality() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get wifiOnlyDefault => $_getBF(7);
+  @$pb.TagNumber(8)
+  set wifiOnlyDefault($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasWifiOnlyDefault() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearWifiOnlyDefault() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get publicNotice => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set publicNotice($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasPublicNotice() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPublicNotice() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get accessEpoch => $_getI64(9);
+  @$pb.TagNumber(10)
+  set accessEpoch($fixnum.Int64 value) => $_setInt64(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasAccessEpoch() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearAccessEpoch() => $_clearField(10);
+}
+
+class OnyxProtectedDeliveryGrant extends $pb.GeneratedMessage {
+  factory OnyxProtectedDeliveryGrant({
+    $core.String? id,
+    $core.String? contentId,
+    $core.String? revisionId,
+    $core.String? deviceId,
+    $core.String? action,
+    $core.String? protectionLevel,
+    $core.String? visibleAttribution,
+    $core.String? playbackUrl,
+    $core.String? captionsUrl,
+    $core.String? status,
+    $fixnum.Int64? policyVersion,
+    $fixnum.Int64? sourceVersion,
+    $1.Timestamp? issuedAt,
+    $1.Timestamp? expiresAt,
+    $core.Iterable<EncryptedRendition>? encryptedRenditions,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (contentId != null) result.contentId = contentId;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (deviceId != null) result.deviceId = deviceId;
+    if (action != null) result.action = action;
+    if (protectionLevel != null) result.protectionLevel = protectionLevel;
+    if (visibleAttribution != null)
+      result.visibleAttribution = visibleAttribution;
+    if (playbackUrl != null) result.playbackUrl = playbackUrl;
+    if (captionsUrl != null) result.captionsUrl = captionsUrl;
+    if (status != null) result.status = status;
+    if (policyVersion != null) result.policyVersion = policyVersion;
+    if (sourceVersion != null) result.sourceVersion = sourceVersion;
+    if (issuedAt != null) result.issuedAt = issuedAt;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (encryptedRenditions != null)
+      result.encryptedRenditions.addAll(encryptedRenditions);
+    return result;
+  }
+
+  OnyxProtectedDeliveryGrant._();
+
+  factory OnyxProtectedDeliveryGrant.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxProtectedDeliveryGrant.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxProtectedDeliveryGrant',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'contentId')
+    ..aOS(3, _omitFieldNames ? '' : 'revisionId')
+    ..aOS(4, _omitFieldNames ? '' : 'deviceId')
+    ..aOS(5, _omitFieldNames ? '' : 'action')
+    ..aOS(6, _omitFieldNames ? '' : 'protectionLevel')
+    ..aOS(7, _omitFieldNames ? '' : 'visibleAttribution')
+    ..aOS(8, _omitFieldNames ? '' : 'playbackUrl')
+    ..aOS(9, _omitFieldNames ? '' : 'captionsUrl')
+    ..aOS(10, _omitFieldNames ? '' : 'status')
+    ..aInt64(11, _omitFieldNames ? '' : 'policyVersion')
+    ..aInt64(12, _omitFieldNames ? '' : 'sourceVersion')
+    ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'issuedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..pPM<EncryptedRendition>(15, _omitFieldNames ? '' : 'encryptedRenditions',
+        subBuilder: EncryptedRendition.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxProtectedDeliveryGrant clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxProtectedDeliveryGrant copyWith(
+          void Function(OnyxProtectedDeliveryGrant) updates) =>
+      super.copyWith(
+              (message) => updates(message as OnyxProtectedDeliveryGrant))
+          as OnyxProtectedDeliveryGrant;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxProtectedDeliveryGrant create() => OnyxProtectedDeliveryGrant._();
+  @$core.override
+  OnyxProtectedDeliveryGrant createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxProtectedDeliveryGrant getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxProtectedDeliveryGrant>(create);
+  static OnyxProtectedDeliveryGrant? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contentId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get revisionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set revisionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRevisionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRevisionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get deviceId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set deviceId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDeviceId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDeviceId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get action => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set action($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAction() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAction() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get protectionLevel => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set protectionLevel($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasProtectionLevel() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearProtectionLevel() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get visibleAttribution => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set visibleAttribution($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasVisibleAttribution() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearVisibleAttribution() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get playbackUrl => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set playbackUrl($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPlaybackUrl() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPlaybackUrl() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get captionsUrl => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set captionsUrl($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCaptionsUrl() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCaptionsUrl() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get status => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set status($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasStatus() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearStatus() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $fixnum.Int64 get policyVersion => $_getI64(10);
+  @$pb.TagNumber(11)
+  set policyVersion($fixnum.Int64 value) => $_setInt64(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasPolicyVersion() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearPolicyVersion() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $fixnum.Int64 get sourceVersion => $_getI64(11);
+  @$pb.TagNumber(12)
+  set sourceVersion($fixnum.Int64 value) => $_setInt64(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasSourceVersion() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearSourceVersion() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $1.Timestamp get issuedAt => $_getN(12);
+  @$pb.TagNumber(13)
+  set issuedAt($1.Timestamp value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasIssuedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearIssuedAt() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $1.Timestamp ensureIssuedAt() => $_ensure(12);
+
+  @$pb.TagNumber(14)
+  $1.Timestamp get expiresAt => $_getN(13);
+  @$pb.TagNumber(14)
+  set expiresAt($1.Timestamp value) => $_setField(14, value);
+  @$pb.TagNumber(14)
+  $core.bool hasExpiresAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearExpiresAt() => $_clearField(14);
+  @$pb.TagNumber(14)
+  $1.Timestamp ensureExpiresAt() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  $pb.PbList<EncryptedRendition> get encryptedRenditions => $_getList(14);
+}
+
+class GetProtectedDeliveryStateRequest extends $pb.GeneratedMessage {
+  factory GetProtectedDeliveryStateRequest() => create();
+
+  GetProtectedDeliveryStateRequest._();
+
+  factory GetProtectedDeliveryStateRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetProtectedDeliveryStateRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetProtectedDeliveryStateRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetProtectedDeliveryStateRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetProtectedDeliveryStateRequest copyWith(
+          void Function(GetProtectedDeliveryStateRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetProtectedDeliveryStateRequest))
+          as GetProtectedDeliveryStateRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetProtectedDeliveryStateRequest create() =>
+      GetProtectedDeliveryStateRequest._();
+  @$core.override
+  GetProtectedDeliveryStateRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetProtectedDeliveryStateRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetProtectedDeliveryStateRequest>(
+          create);
+  static GetProtectedDeliveryStateRequest? _defaultInstance;
+}
+
+class GetProtectedDeliveryStateResponse extends $pb.GeneratedMessage {
+  factory GetProtectedDeliveryStateResponse({
+    OnyxProtectedDeliveryState? state,
+  }) {
+    final result = create();
+    if (state != null) result.state = state;
+    return result;
+  }
+
+  GetProtectedDeliveryStateResponse._();
+
+  factory GetProtectedDeliveryStateResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetProtectedDeliveryStateResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetProtectedDeliveryStateResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxProtectedDeliveryState>(1, _omitFieldNames ? '' : 'state',
+        subBuilder: OnyxProtectedDeliveryState.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetProtectedDeliveryStateResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetProtectedDeliveryStateResponse copyWith(
+          void Function(GetProtectedDeliveryStateResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetProtectedDeliveryStateResponse))
+          as GetProtectedDeliveryStateResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetProtectedDeliveryStateResponse create() =>
+      GetProtectedDeliveryStateResponse._();
+  @$core.override
+  GetProtectedDeliveryStateResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetProtectedDeliveryStateResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetProtectedDeliveryStateResponse>(
+          create);
+  static GetProtectedDeliveryStateResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxProtectedDeliveryState get state => $_getN(0);
+  @$pb.TagNumber(1)
+  set state(OnyxProtectedDeliveryState value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasState() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearState() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxProtectedDeliveryState ensureState() => $_ensure(0);
+}
+
+class RequestProtectedDeliveryGrantRequest extends $pb.GeneratedMessage {
+  factory RequestProtectedDeliveryGrantRequest({
+    $core.String? contentId,
+    $core.String? deviceId,
+    $core.String? action,
+    $core.String? expectedRevisionId,
+    $core.String? forensicManifestId,
+    $core.String? clientMutationId,
+    $core.String? requestedQuality,
+    $core.bool? wifiConfirmed,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    if (deviceId != null) result.deviceId = deviceId;
+    if (action != null) result.action = action;
+    if (expectedRevisionId != null)
+      result.expectedRevisionId = expectedRevisionId;
+    if (forensicManifestId != null)
+      result.forensicManifestId = forensicManifestId;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    if (requestedQuality != null) result.requestedQuality = requestedQuality;
+    if (wifiConfirmed != null) result.wifiConfirmed = wifiConfirmed;
+    return result;
+  }
+
+  RequestProtectedDeliveryGrantRequest._();
+
+  factory RequestProtectedDeliveryGrantRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RequestProtectedDeliveryGrantRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RequestProtectedDeliveryGrantRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOS(2, _omitFieldNames ? '' : 'deviceId')
+    ..aOS(3, _omitFieldNames ? '' : 'action')
+    ..aOS(4, _omitFieldNames ? '' : 'expectedRevisionId')
+    ..aOS(5, _omitFieldNames ? '' : 'forensicManifestId')
+    ..aOS(6, _omitFieldNames ? '' : 'clientMutationId')
+    ..aOS(7, _omitFieldNames ? '' : 'requestedQuality')
+    ..aOB(8, _omitFieldNames ? '' : 'wifiConfirmed')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestProtectedDeliveryGrantRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestProtectedDeliveryGrantRequest copyWith(
+          void Function(RequestProtectedDeliveryGrantRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as RequestProtectedDeliveryGrantRequest))
+          as RequestProtectedDeliveryGrantRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RequestProtectedDeliveryGrantRequest create() =>
+      RequestProtectedDeliveryGrantRequest._();
+  @$core.override
+  RequestProtectedDeliveryGrantRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RequestProtectedDeliveryGrantRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RequestProtectedDeliveryGrantRequest>(create);
+  static RequestProtectedDeliveryGrantRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get deviceId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deviceId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDeviceId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeviceId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get action => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set action($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAction() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAction() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get expectedRevisionId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set expectedRevisionId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasExpectedRevisionId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearExpectedRevisionId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get forensicManifestId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set forensicManifestId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasForensicManifestId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearForensicManifestId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get clientMutationId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set clientMutationId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasClientMutationId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearClientMutationId() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get requestedQuality => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set requestedQuality($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRequestedQuality() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRequestedQuality() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get wifiConfirmed => $_getBF(7);
+  @$pb.TagNumber(8)
+  set wifiConfirmed($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasWifiConfirmed() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearWifiConfirmed() => $_clearField(8);
+}
+
+class RequestProtectedDeliveryGrantResponse extends $pb.GeneratedMessage {
+  factory RequestProtectedDeliveryGrantResponse({
+    OnyxProtectedDeliveryGrant? grant,
+    OnyxProtectedDeliveryState? state,
+  }) {
+    final result = create();
+    if (grant != null) result.grant = grant;
+    if (state != null) result.state = state;
+    return result;
+  }
+
+  RequestProtectedDeliveryGrantResponse._();
+
+  factory RequestProtectedDeliveryGrantResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RequestProtectedDeliveryGrantResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RequestProtectedDeliveryGrantResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxProtectedDeliveryGrant>(1, _omitFieldNames ? '' : 'grant',
+        subBuilder: OnyxProtectedDeliveryGrant.create)
+    ..aOM<OnyxProtectedDeliveryState>(2, _omitFieldNames ? '' : 'state',
+        subBuilder: OnyxProtectedDeliveryState.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestProtectedDeliveryGrantResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestProtectedDeliveryGrantResponse copyWith(
+          void Function(RequestProtectedDeliveryGrantResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as RequestProtectedDeliveryGrantResponse))
+          as RequestProtectedDeliveryGrantResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RequestProtectedDeliveryGrantResponse create() =>
+      RequestProtectedDeliveryGrantResponse._();
+  @$core.override
+  RequestProtectedDeliveryGrantResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RequestProtectedDeliveryGrantResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RequestProtectedDeliveryGrantResponse>(create);
+  static RequestProtectedDeliveryGrantResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxProtectedDeliveryGrant get grant => $_getN(0);
+  @$pb.TagNumber(1)
+  set grant(OnyxProtectedDeliveryGrant value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGrant() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGrant() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxProtectedDeliveryGrant ensureGrant() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  OnyxProtectedDeliveryState get state => $_getN(1);
+  @$pb.TagNumber(2)
+  set state(OnyxProtectedDeliveryState value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearState() => $_clearField(2);
+  @$pb.TagNumber(2)
+  OnyxProtectedDeliveryState ensureState() => $_ensure(1);
+}
+
+class RevokeMyProtectedDeliveryGrantRequest extends $pb.GeneratedMessage {
+  factory RevokeMyProtectedDeliveryGrantRequest({
+    $core.String? grantId,
+    $core.String? reason,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (grantId != null) result.grantId = grantId;
+    if (reason != null) result.reason = reason;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  RevokeMyProtectedDeliveryGrantRequest._();
+
+  factory RevokeMyProtectedDeliveryGrantRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RevokeMyProtectedDeliveryGrantRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RevokeMyProtectedDeliveryGrantRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'grantId')
+    ..aOS(2, _omitFieldNames ? '' : 'reason')
+    ..aOS(3, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeMyProtectedDeliveryGrantRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeMyProtectedDeliveryGrantRequest copyWith(
+          void Function(RevokeMyProtectedDeliveryGrantRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as RevokeMyProtectedDeliveryGrantRequest))
+          as RevokeMyProtectedDeliveryGrantRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RevokeMyProtectedDeliveryGrantRequest create() =>
+      RevokeMyProtectedDeliveryGrantRequest._();
+  @$core.override
+  RevokeMyProtectedDeliveryGrantRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RevokeMyProtectedDeliveryGrantRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RevokeMyProtectedDeliveryGrantRequest>(create);
+  static RevokeMyProtectedDeliveryGrantRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get grantId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set grantId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGrantId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGrantId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get reason => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set reason($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReason() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReason() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get clientMutationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set clientMutationId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClientMutationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClientMutationId() => $_clearField(3);
+}
+
+class RevokeMyProtectedDeliveryGrantResponse extends $pb.GeneratedMessage {
+  factory RevokeMyProtectedDeliveryGrantResponse({
+    OnyxProtectedDeliveryGrant? grant,
+  }) {
+    final result = create();
+    if (grant != null) result.grant = grant;
+    return result;
+  }
+
+  RevokeMyProtectedDeliveryGrantResponse._();
+
+  factory RevokeMyProtectedDeliveryGrantResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RevokeMyProtectedDeliveryGrantResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RevokeMyProtectedDeliveryGrantResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxProtectedDeliveryGrant>(1, _omitFieldNames ? '' : 'grant',
+        subBuilder: OnyxProtectedDeliveryGrant.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeMyProtectedDeliveryGrantResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeMyProtectedDeliveryGrantResponse copyWith(
+          void Function(RevokeMyProtectedDeliveryGrantResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as RevokeMyProtectedDeliveryGrantResponse))
+          as RevokeMyProtectedDeliveryGrantResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RevokeMyProtectedDeliveryGrantResponse create() =>
+      RevokeMyProtectedDeliveryGrantResponse._();
+  @$core.override
+  RevokeMyProtectedDeliveryGrantResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RevokeMyProtectedDeliveryGrantResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RevokeMyProtectedDeliveryGrantResponse>(create);
+  static RevokeMyProtectedDeliveryGrantResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxProtectedDeliveryGrant get grant => $_getN(0);
+  @$pb.TagNumber(1)
+  set grant(OnyxProtectedDeliveryGrant value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGrant() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGrant() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxProtectedDeliveryGrant ensureGrant() => $_ensure(0);
+}
+
+class RecordProtectedDeliveryEventRequest extends $pb.GeneratedMessage {
+  factory RecordProtectedDeliveryEventRequest({
+    $core.String? eventId,
+    $core.String? grantId,
+    $core.String? eventType,
+    $core.String? outcome,
+    $core.String? errorCode,
+    $fixnum.Int64? bytes,
+    $core.int? latencyMs,
+  }) {
+    final result = create();
+    if (eventId != null) result.eventId = eventId;
+    if (grantId != null) result.grantId = grantId;
+    if (eventType != null) result.eventType = eventType;
+    if (outcome != null) result.outcome = outcome;
+    if (errorCode != null) result.errorCode = errorCode;
+    if (bytes != null) result.bytes = bytes;
+    if (latencyMs != null) result.latencyMs = latencyMs;
+    return result;
+  }
+
+  RecordProtectedDeliveryEventRequest._();
+
+  factory RecordProtectedDeliveryEventRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordProtectedDeliveryEventRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordProtectedDeliveryEventRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'eventId')
+    ..aOS(2, _omitFieldNames ? '' : 'grantId')
+    ..aOS(3, _omitFieldNames ? '' : 'eventType')
+    ..aOS(4, _omitFieldNames ? '' : 'outcome')
+    ..aOS(5, _omitFieldNames ? '' : 'errorCode')
+    ..aInt64(6, _omitFieldNames ? '' : 'bytes')
+    ..aI(7, _omitFieldNames ? '' : 'latencyMs')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordProtectedDeliveryEventRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordProtectedDeliveryEventRequest copyWith(
+          void Function(RecordProtectedDeliveryEventRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as RecordProtectedDeliveryEventRequest))
+          as RecordProtectedDeliveryEventRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordProtectedDeliveryEventRequest create() =>
+      RecordProtectedDeliveryEventRequest._();
+  @$core.override
+  RecordProtectedDeliveryEventRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordProtectedDeliveryEventRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RecordProtectedDeliveryEventRequest>(create);
+  static RecordProtectedDeliveryEventRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get eventId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set eventId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEventId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEventId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get grantId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set grantId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasGrantId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGrantId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get eventType => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set eventType($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEventType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEventType() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get outcome => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set outcome($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasOutcome() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOutcome() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get errorCode => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set errorCode($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasErrorCode() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearErrorCode() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get bytes => $_getI64(5);
+  @$pb.TagNumber(6)
+  set bytes($fixnum.Int64 value) => $_setInt64(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasBytes() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearBytes() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get latencyMs => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set latencyMs($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasLatencyMs() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLatencyMs() => $_clearField(7);
+}
+
+class RecordProtectedDeliveryEventResponse extends $pb.GeneratedMessage {
+  factory RecordProtectedDeliveryEventResponse({
+    $core.String? receiptId,
+    $core.bool? replayed,
+  }) {
+    final result = create();
+    if (receiptId != null) result.receiptId = receiptId;
+    if (replayed != null) result.replayed = replayed;
+    return result;
+  }
+
+  RecordProtectedDeliveryEventResponse._();
+
+  factory RecordProtectedDeliveryEventResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordProtectedDeliveryEventResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordProtectedDeliveryEventResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'receiptId')
+    ..aOB(2, _omitFieldNames ? '' : 'replayed')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordProtectedDeliveryEventResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordProtectedDeliveryEventResponse copyWith(
+          void Function(RecordProtectedDeliveryEventResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as RecordProtectedDeliveryEventResponse))
+          as RecordProtectedDeliveryEventResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordProtectedDeliveryEventResponse create() =>
+      RecordProtectedDeliveryEventResponse._();
+  @$core.override
+  RecordProtectedDeliveryEventResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordProtectedDeliveryEventResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RecordProtectedDeliveryEventResponse>(create);
+  static RecordProtectedDeliveryEventResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get receiptId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set receiptId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReceiptId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReceiptId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get replayed => $_getBF(1);
+  @$pb.TagNumber(2)
+  set replayed($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReplayed() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReplayed() => $_clearField(2);
+}
+
+class SubmitProtectedDeliveryReportRequest extends $pb.GeneratedMessage {
+  factory SubmitProtectedDeliveryReportRequest({
+    $core.String? contentId,
+    $core.String? grantId,
+    $core.String? summary,
+    $core.String? evidenceDigest,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    if (grantId != null) result.grantId = grantId;
+    if (summary != null) result.summary = summary;
+    if (evidenceDigest != null) result.evidenceDigest = evidenceDigest;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  SubmitProtectedDeliveryReportRequest._();
+
+  factory SubmitProtectedDeliveryReportRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitProtectedDeliveryReportRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitProtectedDeliveryReportRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOS(2, _omitFieldNames ? '' : 'grantId')
+    ..aOS(3, _omitFieldNames ? '' : 'summary')
+    ..aOS(4, _omitFieldNames ? '' : 'evidenceDigest')
+    ..aOS(5, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitProtectedDeliveryReportRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitProtectedDeliveryReportRequest copyWith(
+          void Function(SubmitProtectedDeliveryReportRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SubmitProtectedDeliveryReportRequest))
+          as SubmitProtectedDeliveryReportRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitProtectedDeliveryReportRequest create() =>
+      SubmitProtectedDeliveryReportRequest._();
+  @$core.override
+  SubmitProtectedDeliveryReportRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitProtectedDeliveryReportRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SubmitProtectedDeliveryReportRequest>(create);
+  static SubmitProtectedDeliveryReportRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get grantId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set grantId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasGrantId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGrantId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get summary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set summary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSummary() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get evidenceDigest => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set evidenceDigest($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEvidenceDigest() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEvidenceDigest() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get clientMutationId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set clientMutationId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasClientMutationId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearClientMutationId() => $_clearField(5);
+}
+
+class SubmitProtectedDeliveryReportResponse extends $pb.GeneratedMessage {
+  factory SubmitProtectedDeliveryReportResponse({
+    $core.String? incidentId,
+    $core.String? status,
+  }) {
+    final result = create();
+    if (incidentId != null) result.incidentId = incidentId;
+    if (status != null) result.status = status;
+    return result;
+  }
+
+  SubmitProtectedDeliveryReportResponse._();
+
+  factory SubmitProtectedDeliveryReportResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitProtectedDeliveryReportResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitProtectedDeliveryReportResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'incidentId')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitProtectedDeliveryReportResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitProtectedDeliveryReportResponse copyWith(
+          void Function(SubmitProtectedDeliveryReportResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SubmitProtectedDeliveryReportResponse))
+          as SubmitProtectedDeliveryReportResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitProtectedDeliveryReportResponse create() =>
+      SubmitProtectedDeliveryReportResponse._();
+  @$core.override
+  SubmitProtectedDeliveryReportResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitProtectedDeliveryReportResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SubmitProtectedDeliveryReportResponse>(create);
+  static SubmitProtectedDeliveryReportResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get incidentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set incidentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasIncidentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIncidentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+}
+
 /// Choice 14 — scoped API, MCP and integrations. Raw client secrets,
 /// authorization codes and bearer tokens are deliberately absent from all read
 /// models. A newly issued authorization code is returned once by the authorize

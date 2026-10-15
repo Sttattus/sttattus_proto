@@ -4151,6 +4151,95 @@ message WithdrawForensicAppealResponse {
   OnyxForensicCase forensic_case = 1;
 }
 
+// Conditional Package B — protected delivery. A playable response contains an
+// opaque, short-lived URL only; provider asset identifiers, account bearer
+// tokens, signing keys and private source locators never cross this contract.
+message OnyxProtectedDeliveryState {
+  string status = 1; // active | paused | disabled | unavailable
+  bool grants_enabled = 2;
+  bool stream_configured = 3;
+  bool offline_video_enabled = 4;
+  bool offline_image_enabled = 5;
+  int32 grant_ttl_seconds = 6;
+  string default_video_quality = 7;
+  bool wifi_only_default = 8;
+  string public_notice = 9;
+  int64 access_epoch = 10;
+}
+
+message OnyxProtectedDeliveryGrant {
+  string id = 1;
+  string content_id = 2;
+  string revision_id = 3;
+  string device_id = 4;
+  string action = 5; // stream | view | download
+  string protection_level = 6; // signed_access | visible_attribution | encrypted_offline
+  string visible_attribution = 7;
+  string playback_url = 8; // opaque five-minute provider token URL
+  string captions_url = 9; // short-lived and empty when no governed track exists
+  string status = 10;
+  int64 policy_version = 11;
+  int64 source_version = 12;
+  google.protobuf.Timestamp issued_at = 13;
+  google.protobuf.Timestamp expires_at = 14;
+  repeated EncryptedRendition encrypted_renditions = 15;
+}
+
+message GetProtectedDeliveryStateRequest {}
+message GetProtectedDeliveryStateResponse {
+  OnyxProtectedDeliveryState state = 1;
+}
+
+message RequestProtectedDeliveryGrantRequest {
+  string content_id = 1;
+  string device_id = 2;
+  string action = 3; // stream | view | download
+  string expected_revision_id = 4;
+  string forensic_manifest_id = 5;
+  string client_mutation_id = 6;
+  string requested_quality = 7; // 480p | 720p; ignored for view
+  bool wifi_confirmed = 8;
+}
+message RequestProtectedDeliveryGrantResponse {
+  OnyxProtectedDeliveryGrant grant = 1;
+  OnyxProtectedDeliveryState state = 2;
+}
+
+message RevokeMyProtectedDeliveryGrantRequest {
+  string grant_id = 1;
+  string reason = 2;
+  string client_mutation_id = 3;
+}
+message RevokeMyProtectedDeliveryGrantResponse {
+  OnyxProtectedDeliveryGrant grant = 1;
+}
+
+message RecordProtectedDeliveryEventRequest {
+  string event_id = 1;
+  string grant_id = 2;
+  string event_type = 3; // playback_started | playback_failed | offline_opened | offline_purged
+  string outcome = 4; // success | failure | canceled
+  string error_code = 5;
+  int64 bytes = 6;
+  int32 latency_ms = 7;
+}
+message RecordProtectedDeliveryEventResponse {
+  string receipt_id = 1;
+  bool replayed = 2;
+}
+
+message SubmitProtectedDeliveryReportRequest {
+  string content_id = 1;
+  string grant_id = 2;
+  string summary = 3;
+  string evidence_digest = 4;
+  string client_mutation_id = 5;
+}
+message SubmitProtectedDeliveryReportResponse {
+  string incident_id = 1;
+  string status = 2;
+}
+
 // Choice 14 — scoped API, MCP and integrations. Raw client secrets,
 // authorization codes and bearer tokens are deliberately absent from all read
 // models. A newly issued authorization code is returned once by the authorize
@@ -6369,6 +6458,14 @@ service OnyxService {
   rpc FileForensicAppeal(FileForensicAppealRequest) returns (FileForensicAppealResponse);
   rpc PostForensicAppealMessage(PostForensicAppealMessageRequest) returns (PostForensicAppealMessageResponse);
   rpc WithdrawForensicAppeal(WithdrawForensicAppealRequest) returns (WithdrawForensicAppealResponse);
+
+  // Conditional Package B — signed protected delivery and device-bound
+  // encrypted offline video/image packages.
+  rpc GetProtectedDeliveryState(GetProtectedDeliveryStateRequest) returns (GetProtectedDeliveryStateResponse);
+  rpc RequestProtectedDeliveryGrant(RequestProtectedDeliveryGrantRequest) returns (RequestProtectedDeliveryGrantResponse);
+  rpc RevokeMyProtectedDeliveryGrant(RevokeMyProtectedDeliveryGrantRequest) returns (RevokeMyProtectedDeliveryGrantResponse);
+  rpc RecordProtectedDeliveryEvent(RecordProtectedDeliveryEventRequest) returns (RecordProtectedDeliveryEventResponse);
+  rpc SubmitProtectedDeliveryReport(SubmitProtectedDeliveryReportRequest) returns (SubmitProtectedDeliveryReportResponse);
 
   // Choice 14 — member-owned OAuth-style grants, connectors and explicit
   // cross-pillar dispatches. External REST/MCP calls use the same grant and
