@@ -493,6 +493,8 @@ class PlanReasonCode extends $pb.ProtobufEnum {
       PlanReasonCode._(9, _omitEnumNames ? '' : 'PLAN_REASON_CODE_GOAL');
   static const PlanReasonCode PLAN_REASON_CODE_RETEST =
       PlanReasonCode._(10, _omitEnumNames ? '' : 'PLAN_REASON_CODE_RETEST');
+  static const PlanReasonCode PLAN_REASON_CODE_CONVERSATION = PlanReasonCode._(
+      11, _omitEnumNames ? '' : 'PLAN_REASON_CODE_CONVERSATION');
 
   static const $core.List<PlanReasonCode> values = <PlanReasonCode>[
     PLAN_REASON_CODE_UNSPECIFIED,
@@ -506,10 +508,11 @@ class PlanReasonCode extends $pb.ProtobufEnum {
     PLAN_REASON_CODE_CATCH_UP,
     PLAN_REASON_CODE_GOAL,
     PLAN_REASON_CODE_RETEST,
+    PLAN_REASON_CODE_CONVERSATION,
   ];
 
   static final $core.List<PlanReasonCode?> _byValue =
-      $pb.ProtobufEnum.$_initByValueList(values, 10);
+      $pb.ProtobufEnum.$_initByValueList(values, 11);
   static PlanReasonCode? valueOf($core.int value) =>
       value < 0 || value >= _byValue.length ? null : _byValue[value];
 

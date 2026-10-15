@@ -289,6 +289,7 @@ const PlanReasonCode$json = {
     {'1': 'PLAN_REASON_CODE_CATCH_UP', '2': 8},
     {'1': 'PLAN_REASON_CODE_GOAL', '2': 9},
     {'1': 'PLAN_REASON_CODE_RETEST', '2': 10},
+    {'1': 'PLAN_REASON_CODE_CONVERSATION', '2': 11},
   ],
 };
 
@@ -300,7 +301,8 @@ final $typed_data.Uint8List planReasonCodeDescriptor = $convert.base64Decode(
     'VOQ0UQBBIhCh1QTEFOX1JFQVNPTl9DT0RFX1BSRVJFUVVJU0lURRAFEiIKHlBMQU5fUkVBU09O'
     'X0NPREVfQ0hFQ0tfQUlfRkxBRxAGEhgKFFBMQU5fUkVBU09OX0NPREVfTkVXEAcSHQoZUExBTl'
     '9SRUFTT05fQ09ERV9DQVRDSF9VUBAIEhkKFVBMQU5fUkVBU09OX0NPREVfR09BTBAJEhsKF1BM'
-    'QU5fUkVBU09OX0NPREVfUkVURVNUEAo=');
+    'QU5fUkVBU09OX0NPREVfUkVURVNUEAoSIQodUExBTl9SRUFTT05fQ09ERV9DT05WRVJTQVRJT0'
+    '4QCw==');
 
 @$core.Deprecated('Use culturalNuanceDescriptor instead')
 const CulturalNuance$json = {

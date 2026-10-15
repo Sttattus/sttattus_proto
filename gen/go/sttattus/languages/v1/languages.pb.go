@@ -769,6 +769,7 @@ const (
 	PlanReasonCode_PLAN_REASON_CODE_CATCH_UP      PlanReasonCode = 8  // back after missed days
 	PlanReasonCode_PLAN_REASON_CODE_GOAL          PlanReasonCode = 9  // the goal mode asks for this skill
 	PlanReasonCode_PLAN_REASON_CODE_RETEST        PlanReasonCode = 10 // Choice 3: missed a moment ago, again another way
+	PlanReasonCode_PLAN_REASON_CODE_CONVERSATION  PlanReasonCode = 11 // Choice 4: a correction accepted after a conversation (params: date, count)
 )
 
 // Enum value maps for PlanReasonCode.
@@ -785,6 +786,7 @@ var (
 		8:  "PLAN_REASON_CODE_CATCH_UP",
 		9:  "PLAN_REASON_CODE_GOAL",
 		10: "PLAN_REASON_CODE_RETEST",
+		11: "PLAN_REASON_CODE_CONVERSATION",
 	}
 	PlanReasonCode_value = map[string]int32{
 		"PLAN_REASON_CODE_UNSPECIFIED":   0,
@@ -798,6 +800,7 @@ var (
 		"PLAN_REASON_CODE_CATCH_UP":      8,
 		"PLAN_REASON_CODE_GOAL":          9,
 		"PLAN_REASON_CODE_RETEST":        10,
+		"PLAN_REASON_CODE_CONVERSATION":  11,
 	}
 )
 
@@ -11217,7 +11220,7 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x1bPLAN_ITEM_STATE_UNSPECIFIED\x10\x00\x12\x1b\n" +
 	"\x17PLAN_ITEM_STATE_PENDING\x10\x01\x12\x18\n" +
 	"\x14PLAN_ITEM_STATE_DONE\x10\x02\x12\x1b\n" +
-	"\x17PLAN_ITEM_STATE_SKIPPED\x10\x03*\xe4\x02\n" +
+	"\x17PLAN_ITEM_STATE_SKIPPED\x10\x03*\x87\x03\n" +
 	"\x0ePlanReasonCode\x12 \n" +
 	"\x1cPLAN_REASON_CODE_UNSPECIFIED\x10\x00\x12\x18\n" +
 	"\x14PLAN_REASON_CODE_DUE\x10\x01\x12\x1a\n" +
@@ -11230,7 +11233,8 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x19PLAN_REASON_CODE_CATCH_UP\x10\b\x12\x19\n" +
 	"\x15PLAN_REASON_CODE_GOAL\x10\t\x12\x1b\n" +
 	"\x17PLAN_REASON_CODE_RETEST\x10\n" +
-	"2\x89-\n" +
+	"\x12!\n" +
+	"\x1dPLAN_REASON_CODE_CONVERSATION\x10\v2\x89-\n" +
 	"\x10LanguagesService\x12j\n" +
 	"\rListScenarios\x12+.sttattus.languages.v1.ListScenariosRequest\x1a,.sttattus.languages.v1.ListScenariosResponse\x12|\n" +
 	"\x13CompleteInteraction\x121.sttattus.languages.v1.CompleteInteractionRequest\x1a2.sttattus.languages.v1.CompleteInteractionResponse\x12s\n" +

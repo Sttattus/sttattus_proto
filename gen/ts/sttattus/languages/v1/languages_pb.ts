@@ -866,6 +866,13 @@ export enum PlanReasonCode {
    * @generated from enum value: PLAN_REASON_CODE_RETEST = 10;
    */
   RETEST = 10,
+
+  /**
+   * Choice 4: a correction accepted after a conversation (params: date, count)
+   *
+   * @generated from enum value: PLAN_REASON_CODE_CONVERSATION = 11;
+   */
+  CONVERSATION = 11,
 }
 // Retrieve enum metadata with: proto3.getEnumType(PlanReasonCode)
 proto3.util.setEnumType(PlanReasonCode, "sttattus.languages.v1.PlanReasonCode", [
@@ -880,6 +887,7 @@ proto3.util.setEnumType(PlanReasonCode, "sttattus.languages.v1.PlanReasonCode", 
   { no: 8, name: "PLAN_REASON_CODE_CATCH_UP" },
   { no: 9, name: "PLAN_REASON_CODE_GOAL" },
   { no: 10, name: "PLAN_REASON_CODE_RETEST" },
+  { no: 11, name: "PLAN_REASON_CODE_CONVERSATION" },
 ]);
 
 /**

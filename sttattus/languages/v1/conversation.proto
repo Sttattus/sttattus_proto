@@ -1,0 +1,511 @@
+syntax = "proto3";
+
+package sttattus.languages.v1;
+
+import "google/protobuf/timestamp.proto";
+import "sttattus/languages/v1/languages.proto";
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/languages/v1;languagesv1";
+
+// ============================================================================
+// Lexicon Choice 4 — Real-Time Conversation Coach (member side)
+// ============================================================================
+//
+// A conversation is held live, by voice, through the backend's relay to
+// Gemini Live (`wss://api.sttattus.com/v1/lexicon/conversations/{id}/live`,
+// binary frames: ConversationLiveClientFrame / ConversationLiveServerFrame),
+// or turn by turn over gRPC (SubmitConversationTurn) when the learner types,
+// prefers recording one turn at a time, or the live path is unavailable. The
+// server writes every turn; the transcript is the server's record, never the
+// app's. Staff operate scenarios, personas, routing, QA samples, safety
+// incidents and correction disputes in Admin (SQL), not over this API.
+
+enum ConversationMode {
+  CONVERSATION_MODE_UNSPECIFIED = 0;
+  CONVERSATION_MODE_GUIDED = 1; // beginner: phrase support on screen
+  CONVERSATION_MODE_SEMI_GUIDED = 2; // a scenario with goals
+  CONVERSATION_MODE_OPEN = 3; // unguided conversation (B1 and up)
+}
+
+enum ConversationStatus {
+  CONVERSATION_STATUS_UNSPECIFIED = 0;
+  CONVERSATION_STATUS_ACTIVE = 1;
+  CONVERSATION_STATUS_ENDED = 2; // the learner ended it
+  CONVERSATION_STATUS_ABANDONED = 3; // left idle past the policy's window
+  CONVERSATION_STATUS_STOPPED_SAFETY = 4; // ended by a safety route
+  CONVERSATION_STATUS_STOPPED_BUDGET = 5; // the day's limit was reached
+}
+
+enum ConversationAgeBand {
+  CONVERSATION_AGE_BAND_UNSPECIFIED = 0; // not declared: the minor policy applies
+  CONVERSATION_AGE_BAND_UNDER_18 = 1;
+  CONVERSATION_AGE_BAND_ADULT = 2; // self-declared 18 or over
+}
+
+enum ConversationTurnModality {
+  CONVERSATION_TURN_MODALITY_UNSPECIFIED = 0;
+  CONVERSATION_TURN_MODALITY_VOICE_LIVE = 1; // spoken on a live call
+  CONVERSATION_TURN_MODALITY_VOICE_RECORDED = 2; // one recorded turn (turn-based path)
+  CONVERSATION_TURN_MODALITY_TEXT = 3; // typed
+  CONVERSATION_TURN_MODALITY_OPENING = 4; // the coach's first line
+}
+
+// What transcription made of a spoken turn.
+enum ConversationAsrStatus {
+  CONVERSATION_ASR_STATUS_UNSPECIFIED = 0; // typed: nothing to transcribe
+  CONVERSATION_ASR_STATUS_OK = 1;
+  CONVERSATION_ASR_STATUS_SILENCE = 2; // nothing was said
+  CONVERSATION_ASR_STATUS_UNCLEAR = 3; // sound, but no words could be made out
+  CONVERSATION_ASR_STATUS_FAILED = 4; // transcription could not be reached
+}
+
+// The coach's line against the learner's level (code, not the model's word).
+enum ConversationLevelCheck {
+  CONVERSATION_LEVEL_CHECK_UNSPECIFIED = 0;
+  CONVERSATION_LEVEL_CHECK_WITHIN = 1;
+  CONVERSATION_LEVEL_CHECK_REPAIRED = 2; // regenerated once, then within (turn-based)
+  CONVERSATION_LEVEL_CHECK_EXCEEDED = 3; // over the level; steered for the next line
+  CONVERSATION_LEVEL_CHECK_NOT_CHECKED = 4;
+}
+
+enum ConversationSafetyAction {
+  CONVERSATION_SAFETY_ACTION_UNSPECIFIED = 0; // nothing to do
+  CONVERSATION_SAFETY_ACTION_REDIRECTED = 1; // steered to another topic
+  CONVERSATION_SAFETY_ACTION_REFUSED = 2; // declined, with resources where they help
+  CONVERSATION_SAFETY_ACTION_ENDED = 3; // the call was ended
+}
+
+enum ConversationCorrectionState {
+  CONVERSATION_CORRECTION_STATE_UNSPECIFIED = 0;
+  CONVERSATION_CORRECTION_STATE_VERIFIED = 1; // matched to the curriculum and the grader agrees
+  CONVERSATION_CORRECTION_STATE_UNVERIFIED = 2; // a suggestion: shown, never scheduled
+  CONVERSATION_CORRECTION_STATE_ACCEPTED = 3; // the learner took it: it is in their practice
+  CONVERSATION_CORRECTION_STATE_DISPUTED = 4; // with a native reviewer; counts for nothing meanwhile
+  CONVERSATION_CORRECTION_STATE_UPHELD = 5; // the reviewer agreed with the coach
+  CONVERSATION_CORRECTION_STATE_OVERTURNED = 6; // the reviewer agreed with the learner
+}
+
+enum ConversationFeedbackState {
+  CONVERSATION_FEEDBACK_STATE_UNSPECIFIED = 0;
+  CONVERSATION_FEEDBACK_STATE_PENDING = 1;
+  CONVERSATION_FEEDBACK_STATE_READY = 2;
+  CONVERSATION_FEEDBACK_STATE_FAILED = 3; // the transcript is kept; feedback can be asked again
+}
+
+enum ConversationMemoryKind {
+  CONVERSATION_MEMORY_KIND_UNSPECIFIED = 0;
+  CONVERSATION_MEMORY_KIND_FACT = 1; // something the coach may remember about the learner
+  CONVERSATION_MEMORY_KIND_PRIVATE_TOPIC = 2; // a topic the coach must never raise
+}
+
+enum ConversationMemoryState {
+  CONVERSATION_MEMORY_STATE_UNSPECIFIED = 0;
+  CONVERSATION_MEMORY_STATE_PROPOSED = 1; // suggested after a call; not used until kept
+  CONVERSATION_MEMORY_STATE_KEPT = 2;
+}
+
+message ConversationPrefs {
+  ConversationAgeBand age_band = 1;
+  bool memory_enabled = 2; // the coach may use kept facts
+  bool qa_consent = 3; // staff may sample new conversations for quality review
+  bool qa_consent_asked = 4; // the question has been answered once
+}
+
+message ConversationLimits {
+  int32 turns_left_today = 1;
+  int32 minutes_left_today = 2;
+  int32 max_turn_seconds = 3; // one recorded turn
+  int32 max_turn_chars = 4; // one typed turn
+}
+
+message ConversationScenario {
+  string key = 1;
+  int32 version = 2;
+  string language = 3;
+  ConversationMode mode = 4;
+  string min_level = 5;
+  string max_level = 6;
+  string register = 7; // neutral, formal, informal
+  string domain = 8; // travel, friendship, interview, negotiation, conflict, medicine, school, professional, everyday
+  string title = 9; // in the learner's base language
+  string brief = 10; // the situation, in the learner's base language
+  repeated string goals = 11; // what success looks like, base language
+  repeated string phrase_support = 12; // target-language phrases (guided)
+  string cultural_note = 13; // base language
+  string persona_name = 14;
+  string persona_role = 15; // base language: "a hotel receptionist"
+}
+
+message Conversation {
+  string id = 1;
+  string language = 2;
+  string base_language = 3;
+  string level = 4;
+  string register = 5;
+  ConversationMode mode = 6;
+  ConversationStatus status = 7;
+  ConversationScenario scenario = 8;
+  google.protobuf.Timestamp started_at = 9;
+  google.protobuf.Timestamp ended_at = 10;
+  int32 turn_count = 11;
+  int32 learner_seconds = 12;
+  bool live_available = 13; // the live path can be opened now
+  string live_path = 14; // relative WebSocket path for this conversation
+  ConversationFeedbackState feedback_state = 15;
+  bool qa_consented = 16; // the consent recorded for this conversation
+  int32 level_within_percent = 17; // share of coach lines within level (-1 until measured)
+}
+
+message ConversationTurn {
+  int32 seq = 1;
+  ConversationTurnModality modality = 2;
+  string learner_text = 3; // what the learner said or typed (the transcript)
+  ConversationAsrStatus asr_status = 4;
+  string coach_text = 5; // the coach's line
+  string coach_audio_url = 6; // signed, short-lived; empty while being made or when unavailable
+  bool coach_audio_pending = 7; // synthesis still running (turn-based path)
+  bool coach_interrupted = 8; // the learner spoke over the coach
+  int32 coach_heard_ms = 9; // how much of the previous line was heard before an interruption
+  ConversationLevelCheck level_check = 10;
+  ConversationSafetyAction safety_action = 11;
+  string safety_message = 12; // what the learner is told, in their base language
+  string translation = 13; // of the coach's line, once asked for
+  google.protobuf.Timestamp created_at = 14;
+  int32 reply_latency_ms = 15; // learner end of turn → first coach output
+}
+
+message FeedbackScore {
+  int32 score = 1; // 0–100; meaningful only when available
+  bool available = 2; // false when the call gave too little to judge
+  string basis = 3; // what the score is made from, base language
+}
+
+message ConversationCorrection {
+  string id = 1;
+  int32 turn_seq = 2;
+  string original = 3; // the learner's words
+  string corrected = 4; // the better form
+  string explanation = 5; // base language
+  AnswerErrorKind error_kind = 6;
+  ConversationCorrectionState state = 7;
+  string practice_label = 8; // the word or grammar point it schedules, in plain words; empty when unverified
+  string dispute_reason = 9;
+  string decision_note = 10; // the reviewer's note on a dispute
+}
+
+message ConversationFeedback {
+  ConversationFeedbackState state = 1;
+  string summary = 2; // base language, two or three sentences
+  FeedbackScore communicative_success = 3;
+  FeedbackScore accuracy = 4;
+  FeedbackScore range = 5;
+  FeedbackScore fluency = 6;
+  FeedbackScore pronunciation = 7; // only what transcription can show; says so
+  FeedbackScore repair_strategies = 8;
+  repeated ConversationCorrection corrections = 9; // at most five, highest value first
+  int32 level_within_percent = 10;
+}
+
+message ConversationSummary {
+  string id = 1;
+  string language = 2;
+  ConversationStatus status = 3;
+  string title = 4;
+  google.protobuf.Timestamp started_at = 5;
+  int32 turn_count = 6;
+  ConversationFeedbackState feedback_state = 7;
+  int32 corrections_to_review = 8;
+}
+
+message ConversationMemoryItem {
+  string id = 1;
+  ConversationMemoryKind kind = 2;
+  ConversationMemoryState state = 3;
+  string text = 4;
+  google.protobuf.Timestamp created_at = 5;
+}
+
+// ---------------------------------------------------------------- requests
+
+message GetConversationHomeRequest {
+  string language = 1;
+}
+message GetConversationHomeResponse {
+  bool available = 1; // the coach is offered for this course now
+  string unavailable_reason = 2; // plain words when it is not
+  ConversationPrefs prefs = 3;
+  ConversationLimits limits = 4;
+  string level = 5; // the level calls are held at
+  repeated ConversationScenario scenarios = 6;
+  repeated string open_levels = 11; // levels a call may be held at
+  repeated ConversationSummary recent = 7;
+  Conversation active = 8; // a call still open, to resume
+  int32 memory_items = 9;
+  int32 corrections_to_review = 10;
+}
+
+message SetConversationPrefsRequest {
+  ConversationAgeBand age_band = 1; // UNSPECIFIED leaves it as it is
+  optional bool memory_enabled = 2;
+  optional bool qa_consent = 3;
+}
+message SetConversationPrefsResponse {
+  ConversationPrefs prefs = 1;
+}
+
+message StartConversationRequest {
+  string language = 1;
+  string scenario_key = 2; // empty for an open conversation
+  ConversationMode mode = 3; // OPEN when no scenario
+  string client_request_id = 4; // a replay returns the conversation already started
+  string level = 5; // empty: the level calls are held at; otherwise one of the open levels
+  // true: the coach's first line comes back now (a typed call, or one turn
+  // at a time); false: the live call speaks it once the app connects.
+  bool turn_based = 6;
+}
+message StartConversationResponse {
+  Conversation conversation = 1;
+  ConversationTurn opening = 2; // the coach's first line (turn-based path; the live path speaks it)
+}
+
+message SubmitConversationTurnRequest {
+  string conversation_id = 1;
+  string client_turn_id = 2; // a replay returns the turn already made
+  oneof input {
+    string text = 3; // typed
+    string audio_object_key = 4; // one recorded turn, uploaded under the member's id
+  }
+  int32 coach_heard_ms = 5; // the previous line was cut off after this long (0 = heard whole)
+}
+message SubmitConversationTurnResponse {
+  ConversationTurn turn = 1;
+  Conversation conversation = 2; // status may change (safety, budget)
+}
+
+message GetConversationTurnRequest {
+  string conversation_id = 1;
+  int32 seq = 2;
+}
+message GetConversationTurnResponse {
+  ConversationTurn turn = 1;
+}
+
+message TranslateConversationTurnRequest {
+  string conversation_id = 1;
+  int32 seq = 2;
+}
+message TranslateConversationTurnResponse {
+  string translation = 1; // the coach's line in the learner's base language
+}
+
+// "How do I say …?": the learner asks in their own language.
+message RescueConversationRequest {
+  string conversation_id = 1;
+  string query = 2;
+  string client_request_id = 3;
+}
+message RescueConversationResponse {
+  repeated string phrases = 1; // target language, at the learner's level
+  string note = 2; // base language, when a word needs a word of explanation
+}
+
+// "Say it another way": the coach's line again, more simply.
+message RephraseConversationTurnRequest {
+  string conversation_id = 1;
+  int32 seq = 2;
+}
+message RephraseConversationTurnResponse {
+  string text = 1;
+  string audio_url = 2;
+}
+
+message EndConversationRequest {
+  string conversation_id = 1;
+  string client_request_id = 2;
+}
+message EndConversationResponse {
+  Conversation conversation = 1;
+}
+
+message GetConversationRequest {
+  string conversation_id = 1;
+}
+message GetConversationResponse {
+  Conversation conversation = 1;
+  repeated ConversationTurn turns = 2;
+  ConversationFeedback feedback = 3;
+  repeated ConversationMemoryItem proposed_memory = 4; // facts the coach suggests keeping
+}
+
+message RetryConversationFeedbackRequest {
+  string conversation_id = 1;
+}
+message RetryConversationFeedbackResponse {
+  Conversation conversation = 1;
+}
+
+message ListMyConversationsRequest {
+  string language = 1;
+  int32 page_size = 2;
+  string page_token = 3;
+}
+message ListMyConversationsResponse {
+  repeated ConversationSummary conversations = 1;
+  string next_page_token = 2;
+}
+
+enum ConversationCorrectionDecision {
+  CONVERSATION_CORRECTION_DECISION_UNSPECIFIED = 0;
+  CONVERSATION_CORRECTION_DECISION_ACCEPT = 1;
+  CONVERSATION_CORRECTION_DECISION_DISPUTE = 2;
+}
+message DecideConversationCorrectionRequest {
+  string correction_id = 1;
+  ConversationCorrectionDecision decision = 2;
+  string reason = 3; // required to dispute, 10–500 characters
+}
+message DecideConversationCorrectionResponse {
+  ConversationCorrection correction = 1;
+}
+
+message ListConversationMemoryRequest {
+  string language = 1;
+}
+message ListConversationMemoryResponse {
+  repeated ConversationMemoryItem items = 1;
+  bool memory_enabled = 2;
+}
+
+message AddConversationPrivateTopicRequest {
+  string language = 1;
+  string topic = 2; // 2–120 characters
+}
+message AddConversationPrivateTopicResponse {
+  ConversationMemoryItem item = 1;
+}
+
+enum ConversationMemoryDecision {
+  CONVERSATION_MEMORY_DECISION_UNSPECIFIED = 0;
+  CONVERSATION_MEMORY_DECISION_KEEP = 1;
+  CONVERSATION_MEMORY_DECISION_DELETE = 2;
+}
+message DecideConversationMemoryRequest {
+  string item_id = 1;
+  ConversationMemoryDecision decision = 2;
+}
+message DecideConversationMemoryResponse {
+  int32 items = 1;
+}
+
+message DeleteAllConversationMemoryRequest {
+  string language = 1; // empty: every language
+  string confirm = 2; // must read "delete memory"
+}
+message DeleteAllConversationMemoryResponse {
+  int32 deleted = 1;
+}
+
+message ExportConversationsRequest {
+  string language = 1; // empty: every language
+}
+message ExportConversationsResponse {
+  string filename = 1;
+  bytes json = 2; // every conversation, turn, correction and feedback
+  string text = 3; // the same as readable transcripts
+  int32 conversations = 4;
+}
+
+message DeleteConversationRequest {
+  string conversation_id = 1;
+}
+message DeleteConversationResponse {}
+
+message DeleteAllConversationsRequest {
+  string language = 1; // empty: every language
+  string confirm = 2; // must read "delete conversations"
+}
+message DeleteAllConversationsResponse {
+  int32 deleted = 1;
+}
+
+service LanguageConversationService {
+  rpc GetConversationHome(GetConversationHomeRequest) returns (GetConversationHomeResponse);
+  rpc SetConversationPrefs(SetConversationPrefsRequest) returns (SetConversationPrefsResponse);
+  rpc StartConversation(StartConversationRequest) returns (StartConversationResponse);
+  rpc SubmitConversationTurn(SubmitConversationTurnRequest) returns (SubmitConversationTurnResponse);
+  rpc GetConversationTurn(GetConversationTurnRequest) returns (GetConversationTurnResponse);
+  rpc TranslateConversationTurn(TranslateConversationTurnRequest) returns (TranslateConversationTurnResponse);
+  rpc RescueConversation(RescueConversationRequest) returns (RescueConversationResponse);
+  rpc RephraseConversationTurn(RephraseConversationTurnRequest) returns (RephraseConversationTurnResponse);
+  rpc EndConversation(EndConversationRequest) returns (EndConversationResponse);
+  rpc GetConversation(GetConversationRequest) returns (GetConversationResponse);
+  rpc RetryConversationFeedback(RetryConversationFeedbackRequest) returns (RetryConversationFeedbackResponse);
+  rpc ListMyConversations(ListMyConversationsRequest) returns (ListMyConversationsResponse);
+  rpc DecideConversationCorrection(DecideConversationCorrectionRequest) returns (DecideConversationCorrectionResponse);
+  rpc ListConversationMemory(ListConversationMemoryRequest) returns (ListConversationMemoryResponse);
+  rpc AddConversationPrivateTopic(AddConversationPrivateTopicRequest) returns (AddConversationPrivateTopicResponse);
+  rpc DecideConversationMemory(DecideConversationMemoryRequest) returns (DecideConversationMemoryResponse);
+  rpc DeleteAllConversationMemory(DeleteAllConversationMemoryRequest) returns (DeleteAllConversationMemoryResponse);
+  rpc ExportConversations(ExportConversationsRequest) returns (ExportConversationsResponse);
+  rpc DeleteConversation(DeleteConversationRequest) returns (DeleteConversationResponse);
+  rpc DeleteAllConversations(DeleteAllConversationsRequest) returns (DeleteAllConversationsResponse);
+}
+
+// ============================================================================
+// The live call's WebSocket frames (binary protobuf, one message per frame)
+// ============================================================================
+
+enum ConversationLiveControl {
+  CONVERSATION_LIVE_CONTROL_UNSPECIFIED = 0;
+  CONVERSATION_LIVE_CONTROL_MIC_PAUSED = 1; // the learner stopped the microphone
+  CONVERSATION_LIVE_CONTROL_HANG_UP = 2; // end the call
+  CONVERSATION_LIVE_CONTROL_PING = 3; // keep-alive while nothing else is sent
+}
+
+// App → relay.
+message ConversationLiveClientFrame {
+  oneof frame {
+    bytes audio = 1; // PCM 16-bit little-endian, mono, 16 kHz
+    string text = 2; // a typed line during a live call
+    ConversationLiveControl control = 3;
+  }
+}
+
+enum ConversationLiveEventKind {
+  CONVERSATION_LIVE_EVENT_KIND_UNSPECIFIED = 0;
+  CONVERSATION_LIVE_EVENT_KIND_READY = 1; // the coach is connected; speak when you like
+  CONVERSATION_LIVE_EVENT_KIND_COACH_SPEAKING = 2;
+  CONVERSATION_LIVE_EVENT_KIND_INTERRUPTED = 3; // drop any queued coach audio now
+  CONVERSATION_LIVE_EVENT_KIND_TURN_COMPLETE = 4; // turn_seq names the turn written
+  CONVERSATION_LIVE_EVENT_KIND_RECONNECTING = 5; // the relay is resuming the session
+  CONVERSATION_LIVE_EVENT_KIND_RESUMED = 6;
+  CONVERSATION_LIVE_EVENT_KIND_SILENCE_PROMPT = 7; // the coach is re-engaging after silence
+  CONVERSATION_LIVE_EVENT_KIND_OFFER_TYPING = 8; // still silent: suggest typing
+  CONVERSATION_LIVE_EVENT_KIND_SAFETY = 9; // message holds what to show
+  CONVERSATION_LIVE_EVENT_KIND_BUDGET_WARNING = 10;
+  CONVERSATION_LIVE_EVENT_KIND_FALLBACK = 11; // live is gone: continue turn by turn over gRPC
+  CONVERSATION_LIVE_EVENT_KIND_ENDED = 12; // status says why
+}
+
+message ConversationLiveEvent {
+  ConversationLiveEventKind kind = 1;
+  int32 turn_seq = 2;
+  string message = 3; // base language, what to tell the learner
+  ConversationStatus status = 4; // on ENDED
+  ConversationSafetyAction safety_action = 5;
+}
+
+message ConversationLiveCaption {
+  bool coach = 1; // false: the learner's words
+  string text = 2;
+  bool final = 3; // false: interim, will be replaced
+}
+
+// Relay → app.
+message ConversationLiveServerFrame {
+  oneof frame {
+    bytes audio = 1; // the coach, PCM 16-bit little-endian, mono, 24 kHz
+    ConversationLiveCaption caption = 2;
+    ConversationLiveEvent event = 3;
+  }
+}
