@@ -48793,3 +48793,1042 @@ export class GetDraftingAnalyticsResponse extends Message<GetDraftingAnalyticsRe
   }
 }
 
+/**
+ * @generated from message sttattus.onyx.v1.OnyxPlaybackRuntime
+ */
+export class OnyxPlaybackRuntime extends Message<OnyxPlaybackRuntime> {
+  /**
+   * @generated from field: string status = 1;
+   */
+  status = "";
+
+  /**
+   * @generated from field: bool phone_enabled = 2;
+   */
+  phoneEnabled = false;
+
+  /**
+   * @generated from field: bool android_auto_enabled = 3;
+   */
+  androidAutoEnabled = false;
+
+  /**
+   * @generated from field: bool airplay_enabled = 4;
+   */
+  airplayEnabled = false;
+
+  /**
+   * @generated from field: bool cast_enabled = 5;
+   */
+  castEnabled = false;
+
+  /**
+   * @generated from field: bool carplay_enabled = 6;
+   */
+  carplayEnabled = false;
+
+  /**
+   * @generated from field: int32 receiver_grant_ttl_seconds = 7;
+   */
+  receiverGrantTtlSeconds = 0;
+
+  /**
+   * @generated from field: int64 access_epoch = 8;
+   */
+  accessEpoch = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 version = 9;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: string public_notice = 10;
+   */
+  publicNotice = "";
+
+  constructor(data?: PartialMessage<OnyxPlaybackRuntime>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxPlaybackRuntime";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "phone_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "android_auto_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "airplay_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "cast_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "carplay_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "receiver_grant_ttl_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "access_epoch", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 10, name: "public_notice", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxPlaybackRuntime {
+    return new OnyxPlaybackRuntime().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxPlaybackRuntime {
+    return new OnyxPlaybackRuntime().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxPlaybackRuntime {
+    return new OnyxPlaybackRuntime().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxPlaybackRuntime | PlainMessage<OnyxPlaybackRuntime> | undefined, b: OnyxPlaybackRuntime | PlainMessage<OnyxPlaybackRuntime> | undefined): boolean {
+    return proto3.util.equals(OnyxPlaybackRuntime, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxPlaybackPreferences
+ */
+export class OnyxPlaybackPreferences extends Message<OnyxPlaybackPreferences> {
+  /**
+   * @generated from field: bool cellular_streaming = 1;
+   */
+  cellularStreaming = false;
+
+  /**
+   * @generated from field: bool auto_resume = 2;
+   */
+  autoResume = false;
+
+  /**
+   * @generated from field: bool external_playback = 3;
+   */
+  externalPlayback = false;
+
+  /**
+   * @generated from field: string preferred_surface = 4;
+   */
+  preferredSurface = "";
+
+  /**
+   * @generated from field: int64 version = 5;
+   */
+  version = protoInt64.zero;
+
+  constructor(data?: PartialMessage<OnyxPlaybackPreferences>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxPlaybackPreferences";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "cellular_streaming", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "auto_resume", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "external_playback", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "preferred_surface", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxPlaybackPreferences {
+    return new OnyxPlaybackPreferences().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxPlaybackPreferences {
+    return new OnyxPlaybackPreferences().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxPlaybackPreferences {
+    return new OnyxPlaybackPreferences().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxPlaybackPreferences | PlainMessage<OnyxPlaybackPreferences> | undefined, b: OnyxPlaybackPreferences | PlainMessage<OnyxPlaybackPreferences> | undefined): boolean {
+    return proto3.util.equals(OnyxPlaybackPreferences, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxPlaybackDevice
+ */
+export class OnyxPlaybackDevice extends Message<OnyxPlaybackDevice> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string platform = 3;
+   */
+  platform = "";
+
+  /**
+   * @generated from field: string device_kind = 4;
+   */
+  deviceKind = "";
+
+  /**
+   * @generated from field: string status = 5;
+   */
+  status = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp last_seen_at = 6;
+   */
+  lastSeenAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 7;
+   */
+  expiresAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp revoked_at = 8;
+   */
+  revokedAt?: Timestamp;
+
+  /**
+   * @generated from field: int64 version = 9;
+   */
+  version = protoInt64.zero;
+
+  constructor(data?: PartialMessage<OnyxPlaybackDevice>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxPlaybackDevice";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "platform", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "device_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "last_seen_at", kind: "message", T: Timestamp },
+    { no: 7, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 8, name: "revoked_at", kind: "message", T: Timestamp },
+    { no: 9, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxPlaybackDevice {
+    return new OnyxPlaybackDevice().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxPlaybackDevice {
+    return new OnyxPlaybackDevice().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxPlaybackDevice {
+    return new OnyxPlaybackDevice().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxPlaybackDevice | PlainMessage<OnyxPlaybackDevice> | undefined, b: OnyxPlaybackDevice | PlainMessage<OnyxPlaybackDevice> | undefined): boolean {
+    return proto3.util.equals(OnyxPlaybackDevice, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxPlaybackEligibility
+ */
+export class OnyxPlaybackEligibility extends Message<OnyxPlaybackEligibility> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string revision_id = 2;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: string surface = 3;
+   */
+  surface = "";
+
+  /**
+   * @generated from field: bool eligible = 4;
+   */
+  eligible = false;
+
+  /**
+   * @generated from field: string reason_code = 5;
+   */
+  reasonCode = "";
+
+  /**
+   * @generated from field: string reason = 6;
+   */
+  reason = "";
+
+  /**
+   * @generated from field: int64 policy_version = 7;
+   */
+  policyVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 content_version = 8;
+   */
+  contentVersion = protoInt64.zero;
+
+  constructor(data?: PartialMessage<OnyxPlaybackEligibility>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxPlaybackEligibility";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "surface", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "eligible", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "reason_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "policy_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 8, name: "content_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxPlaybackEligibility {
+    return new OnyxPlaybackEligibility().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxPlaybackEligibility {
+    return new OnyxPlaybackEligibility().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxPlaybackEligibility {
+    return new OnyxPlaybackEligibility().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxPlaybackEligibility | PlainMessage<OnyxPlaybackEligibility> | undefined, b: OnyxPlaybackEligibility | PlainMessage<OnyxPlaybackEligibility> | undefined): boolean {
+    return proto3.util.equals(OnyxPlaybackEligibility, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.OnyxReceiverPlaybackGrant
+ */
+export class OnyxReceiverPlaybackGrant extends Message<OnyxReceiverPlaybackGrant> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string content_id = 2;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string revision_id = 3;
+   */
+  revisionId = "";
+
+  /**
+   * @generated from field: string device_id = 4;
+   */
+  deviceId = "";
+
+  /**
+   * @generated from field: string surface = 5;
+   */
+  surface = "";
+
+  /**
+   * @generated from field: string status = 6;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string receiver_token = 7;
+   */
+  receiverToken = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp issued_at = 8;
+   */
+  issuedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 9;
+   */
+  expiresAt?: Timestamp;
+
+  /**
+   * @generated from field: int64 access_epoch = 10;
+   */
+  accessEpoch = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 policy_version = 11;
+   */
+  policyVersion = protoInt64.zero;
+
+  constructor(data?: PartialMessage<OnyxReceiverPlaybackGrant>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.OnyxReceiverPlaybackGrant";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "revision_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "surface", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "receiver_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "issued_at", kind: "message", T: Timestamp },
+    { no: 9, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 10, name: "access_epoch", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 11, name: "policy_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxReceiverPlaybackGrant {
+    return new OnyxReceiverPlaybackGrant().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OnyxReceiverPlaybackGrant {
+    return new OnyxReceiverPlaybackGrant().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OnyxReceiverPlaybackGrant {
+    return new OnyxReceiverPlaybackGrant().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OnyxReceiverPlaybackGrant | PlainMessage<OnyxReceiverPlaybackGrant> | undefined, b: OnyxReceiverPlaybackGrant | PlainMessage<OnyxReceiverPlaybackGrant> | undefined): boolean {
+    return proto3.util.equals(OnyxReceiverPlaybackGrant, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetPlaybackDashboardRequest
+ */
+export class GetPlaybackDashboardRequest extends Message<GetPlaybackDashboardRequest> {
+  constructor(data?: PartialMessage<GetPlaybackDashboardRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetPlaybackDashboardRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPlaybackDashboardRequest {
+    return new GetPlaybackDashboardRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPlaybackDashboardRequest {
+    return new GetPlaybackDashboardRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPlaybackDashboardRequest {
+    return new GetPlaybackDashboardRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetPlaybackDashboardRequest | PlainMessage<GetPlaybackDashboardRequest> | undefined, b: GetPlaybackDashboardRequest | PlainMessage<GetPlaybackDashboardRequest> | undefined): boolean {
+    return proto3.util.equals(GetPlaybackDashboardRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetPlaybackDashboardResponse
+ */
+export class GetPlaybackDashboardResponse extends Message<GetPlaybackDashboardResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxPlaybackRuntime runtime = 1;
+   */
+  runtime?: OnyxPlaybackRuntime;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxPlaybackPreferences preferences = 2;
+   */
+  preferences?: OnyxPlaybackPreferences;
+
+  /**
+   * @generated from field: repeated sttattus.onyx.v1.OnyxPlaybackDevice devices = 3;
+   */
+  devices: OnyxPlaybackDevice[] = [];
+
+  constructor(data?: PartialMessage<GetPlaybackDashboardResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetPlaybackDashboardResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "runtime", kind: "message", T: OnyxPlaybackRuntime },
+    { no: 2, name: "preferences", kind: "message", T: OnyxPlaybackPreferences },
+    { no: 3, name: "devices", kind: "message", T: OnyxPlaybackDevice, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPlaybackDashboardResponse {
+    return new GetPlaybackDashboardResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPlaybackDashboardResponse {
+    return new GetPlaybackDashboardResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPlaybackDashboardResponse {
+    return new GetPlaybackDashboardResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetPlaybackDashboardResponse | PlainMessage<GetPlaybackDashboardResponse> | undefined, b: GetPlaybackDashboardResponse | PlainMessage<GetPlaybackDashboardResponse> | undefined): boolean {
+    return proto3.util.equals(GetPlaybackDashboardResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpdatePlaybackPreferencesRequest
+ */
+export class UpdatePlaybackPreferencesRequest extends Message<UpdatePlaybackPreferencesRequest> {
+  /**
+   * @generated from field: bool cellular_streaming = 1;
+   */
+  cellularStreaming = false;
+
+  /**
+   * @generated from field: bool auto_resume = 2;
+   */
+  autoResume = false;
+
+  /**
+   * @generated from field: bool external_playback = 3;
+   */
+  externalPlayback = false;
+
+  /**
+   * @generated from field: string preferred_surface = 4;
+   */
+  preferredSurface = "";
+
+  /**
+   * @generated from field: int64 expected_version = 5;
+   */
+  expectedVersion = protoInt64.zero;
+
+  constructor(data?: PartialMessage<UpdatePlaybackPreferencesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpdatePlaybackPreferencesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "cellular_streaming", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "auto_resume", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "external_playback", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "preferred_surface", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdatePlaybackPreferencesRequest {
+    return new UpdatePlaybackPreferencesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdatePlaybackPreferencesRequest {
+    return new UpdatePlaybackPreferencesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdatePlaybackPreferencesRequest {
+    return new UpdatePlaybackPreferencesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdatePlaybackPreferencesRequest | PlainMessage<UpdatePlaybackPreferencesRequest> | undefined, b: UpdatePlaybackPreferencesRequest | PlainMessage<UpdatePlaybackPreferencesRequest> | undefined): boolean {
+    return proto3.util.equals(UpdatePlaybackPreferencesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.UpdatePlaybackPreferencesResponse
+ */
+export class UpdatePlaybackPreferencesResponse extends Message<UpdatePlaybackPreferencesResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxPlaybackPreferences preferences = 1;
+   */
+  preferences?: OnyxPlaybackPreferences;
+
+  constructor(data?: PartialMessage<UpdatePlaybackPreferencesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.UpdatePlaybackPreferencesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "preferences", kind: "message", T: OnyxPlaybackPreferences },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdatePlaybackPreferencesResponse {
+    return new UpdatePlaybackPreferencesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdatePlaybackPreferencesResponse {
+    return new UpdatePlaybackPreferencesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdatePlaybackPreferencesResponse {
+    return new UpdatePlaybackPreferencesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdatePlaybackPreferencesResponse | PlainMessage<UpdatePlaybackPreferencesResponse> | undefined, b: UpdatePlaybackPreferencesResponse | PlainMessage<UpdatePlaybackPreferencesResponse> | undefined): boolean {
+    return proto3.util.equals(UpdatePlaybackPreferencesResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RegisterPlaybackDeviceRequest
+ */
+export class RegisterPlaybackDeviceRequest extends Message<RegisterPlaybackDeviceRequest> {
+  /**
+   * @generated from field: string device_key = 1;
+   */
+  deviceKey = "";
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string platform = 3;
+   */
+  platform = "";
+
+  /**
+   * @generated from field: string device_kind = 4;
+   */
+  deviceKind = "";
+
+  constructor(data?: PartialMessage<RegisterPlaybackDeviceRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RegisterPlaybackDeviceRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "device_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "platform", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "device_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RegisterPlaybackDeviceRequest {
+    return new RegisterPlaybackDeviceRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RegisterPlaybackDeviceRequest {
+    return new RegisterPlaybackDeviceRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RegisterPlaybackDeviceRequest {
+    return new RegisterPlaybackDeviceRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RegisterPlaybackDeviceRequest | PlainMessage<RegisterPlaybackDeviceRequest> | undefined, b: RegisterPlaybackDeviceRequest | PlainMessage<RegisterPlaybackDeviceRequest> | undefined): boolean {
+    return proto3.util.equals(RegisterPlaybackDeviceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RegisterPlaybackDeviceResponse
+ */
+export class RegisterPlaybackDeviceResponse extends Message<RegisterPlaybackDeviceResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxPlaybackDevice device = 1;
+   */
+  device?: OnyxPlaybackDevice;
+
+  constructor(data?: PartialMessage<RegisterPlaybackDeviceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RegisterPlaybackDeviceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "device", kind: "message", T: OnyxPlaybackDevice },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RegisterPlaybackDeviceResponse {
+    return new RegisterPlaybackDeviceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RegisterPlaybackDeviceResponse {
+    return new RegisterPlaybackDeviceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RegisterPlaybackDeviceResponse {
+    return new RegisterPlaybackDeviceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RegisterPlaybackDeviceResponse | PlainMessage<RegisterPlaybackDeviceResponse> | undefined, b: RegisterPlaybackDeviceResponse | PlainMessage<RegisterPlaybackDeviceResponse> | undefined): boolean {
+    return proto3.util.equals(RegisterPlaybackDeviceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RevokePlaybackDeviceRequest
+ */
+export class RevokePlaybackDeviceRequest extends Message<RevokePlaybackDeviceRequest> {
+  /**
+   * @generated from field: string device_id = 1;
+   */
+  deviceId = "";
+
+  /**
+   * @generated from field: int64 expected_version = 2;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string reason = 3;
+   */
+  reason = "";
+
+  constructor(data?: PartialMessage<RevokePlaybackDeviceRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RevokePlaybackDeviceRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokePlaybackDeviceRequest {
+    return new RevokePlaybackDeviceRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokePlaybackDeviceRequest {
+    return new RevokePlaybackDeviceRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokePlaybackDeviceRequest {
+    return new RevokePlaybackDeviceRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokePlaybackDeviceRequest | PlainMessage<RevokePlaybackDeviceRequest> | undefined, b: RevokePlaybackDeviceRequest | PlainMessage<RevokePlaybackDeviceRequest> | undefined): boolean {
+    return proto3.util.equals(RevokePlaybackDeviceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RevokePlaybackDeviceResponse
+ */
+export class RevokePlaybackDeviceResponse extends Message<RevokePlaybackDeviceResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxPlaybackDevice device = 1;
+   */
+  device?: OnyxPlaybackDevice;
+
+  constructor(data?: PartialMessage<RevokePlaybackDeviceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RevokePlaybackDeviceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "device", kind: "message", T: OnyxPlaybackDevice },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokePlaybackDeviceResponse {
+    return new RevokePlaybackDeviceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokePlaybackDeviceResponse {
+    return new RevokePlaybackDeviceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokePlaybackDeviceResponse {
+    return new RevokePlaybackDeviceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokePlaybackDeviceResponse | PlainMessage<RevokePlaybackDeviceResponse> | undefined, b: RevokePlaybackDeviceResponse | PlainMessage<RevokePlaybackDeviceResponse> | undefined): boolean {
+    return proto3.util.equals(RevokePlaybackDeviceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetPlaybackEligibilityRequest
+ */
+export class GetPlaybackEligibilityRequest extends Message<GetPlaybackEligibilityRequest> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string surface = 2;
+   */
+  surface = "";
+
+  constructor(data?: PartialMessage<GetPlaybackEligibilityRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetPlaybackEligibilityRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "surface", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPlaybackEligibilityRequest {
+    return new GetPlaybackEligibilityRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPlaybackEligibilityRequest {
+    return new GetPlaybackEligibilityRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPlaybackEligibilityRequest {
+    return new GetPlaybackEligibilityRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetPlaybackEligibilityRequest | PlainMessage<GetPlaybackEligibilityRequest> | undefined, b: GetPlaybackEligibilityRequest | PlainMessage<GetPlaybackEligibilityRequest> | undefined): boolean {
+    return proto3.util.equals(GetPlaybackEligibilityRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetPlaybackEligibilityResponse
+ */
+export class GetPlaybackEligibilityResponse extends Message<GetPlaybackEligibilityResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxPlaybackEligibility eligibility = 1;
+   */
+  eligibility?: OnyxPlaybackEligibility;
+
+  constructor(data?: PartialMessage<GetPlaybackEligibilityResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetPlaybackEligibilityResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "eligibility", kind: "message", T: OnyxPlaybackEligibility },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPlaybackEligibilityResponse {
+    return new GetPlaybackEligibilityResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPlaybackEligibilityResponse {
+    return new GetPlaybackEligibilityResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPlaybackEligibilityResponse {
+    return new GetPlaybackEligibilityResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetPlaybackEligibilityResponse | PlainMessage<GetPlaybackEligibilityResponse> | undefined, b: GetPlaybackEligibilityResponse | PlainMessage<GetPlaybackEligibilityResponse> | undefined): boolean {
+    return proto3.util.equals(GetPlaybackEligibilityResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RequestReceiverPlaybackGrantRequest
+ */
+export class RequestReceiverPlaybackGrantRequest extends Message<RequestReceiverPlaybackGrantRequest> {
+  /**
+   * @generated from field: string content_id = 1;
+   */
+  contentId = "";
+
+  /**
+   * @generated from field: string device_id = 2;
+   */
+  deviceId = "";
+
+  /**
+   * @generated from field: string surface = 3;
+   */
+  surface = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<RequestReceiverPlaybackGrantRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RequestReceiverPlaybackGrantRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "content_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "surface", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RequestReceiverPlaybackGrantRequest {
+    return new RequestReceiverPlaybackGrantRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RequestReceiverPlaybackGrantRequest {
+    return new RequestReceiverPlaybackGrantRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RequestReceiverPlaybackGrantRequest {
+    return new RequestReceiverPlaybackGrantRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RequestReceiverPlaybackGrantRequest | PlainMessage<RequestReceiverPlaybackGrantRequest> | undefined, b: RequestReceiverPlaybackGrantRequest | PlainMessage<RequestReceiverPlaybackGrantRequest> | undefined): boolean {
+    return proto3.util.equals(RequestReceiverPlaybackGrantRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RequestReceiverPlaybackGrantResponse
+ */
+export class RequestReceiverPlaybackGrantResponse extends Message<RequestReceiverPlaybackGrantResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxReceiverPlaybackGrant grant = 1;
+   */
+  grant?: OnyxReceiverPlaybackGrant;
+
+  constructor(data?: PartialMessage<RequestReceiverPlaybackGrantResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RequestReceiverPlaybackGrantResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "grant", kind: "message", T: OnyxReceiverPlaybackGrant },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RequestReceiverPlaybackGrantResponse {
+    return new RequestReceiverPlaybackGrantResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RequestReceiverPlaybackGrantResponse {
+    return new RequestReceiverPlaybackGrantResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RequestReceiverPlaybackGrantResponse {
+    return new RequestReceiverPlaybackGrantResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RequestReceiverPlaybackGrantResponse | PlainMessage<RequestReceiverPlaybackGrantResponse> | undefined, b: RequestReceiverPlaybackGrantResponse | PlainMessage<RequestReceiverPlaybackGrantResponse> | undefined): boolean {
+    return proto3.util.equals(RequestReceiverPlaybackGrantResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecordPlaybackEventRequest
+ */
+export class RecordPlaybackEventRequest extends Message<RecordPlaybackEventRequest> {
+  /**
+   * @generated from field: string grant_id = 1;
+   */
+  grantId = "";
+
+  /**
+   * @generated from field: string event_type = 2;
+   */
+  eventType = "";
+
+  /**
+   * @generated from field: string outcome = 3;
+   */
+  outcome = "";
+
+  /**
+   * @generated from field: int64 position_ms = 4;
+   */
+  positionMs = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 latency_ms = 5;
+   */
+  latencyMs = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_event_id = 6;
+   */
+  clientEventId = "";
+
+  constructor(data?: PartialMessage<RecordPlaybackEventRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecordPlaybackEventRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "grant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "event_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "outcome", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "position_ms", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "latency_ms", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "client_event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordPlaybackEventRequest {
+    return new RecordPlaybackEventRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordPlaybackEventRequest {
+    return new RecordPlaybackEventRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordPlaybackEventRequest {
+    return new RecordPlaybackEventRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordPlaybackEventRequest | PlainMessage<RecordPlaybackEventRequest> | undefined, b: RecordPlaybackEventRequest | PlainMessage<RecordPlaybackEventRequest> | undefined): boolean {
+    return proto3.util.equals(RecordPlaybackEventRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RecordPlaybackEventResponse
+ */
+export class RecordPlaybackEventResponse extends Message<RecordPlaybackEventResponse> {
+  constructor(data?: PartialMessage<RecordPlaybackEventResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RecordPlaybackEventResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordPlaybackEventResponse {
+    return new RecordPlaybackEventResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordPlaybackEventResponse {
+    return new RecordPlaybackEventResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordPlaybackEventResponse {
+    return new RecordPlaybackEventResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordPlaybackEventResponse | PlainMessage<RecordPlaybackEventResponse> | undefined, b: RecordPlaybackEventResponse | PlainMessage<RecordPlaybackEventResponse> | undefined): boolean {
+    return proto3.util.equals(RecordPlaybackEventResponse, a, b);
+  }
+}
+

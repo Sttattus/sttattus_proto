@@ -24590,3 +24590,490 @@ final $typed_data.Uint8List getDraftingAnalyticsResponseDescriptor =
     $convert.base64Decode(
         'ChxHZXREcmFmdGluZ0FuYWx5dGljc1Jlc3BvbnNlEkEKCWFuYWx5dGljcxgBIAEoCzIjLnN0dG'
         'F0dHVzLm9ueXgudjEuRHJhZnRpbmdBbmFseXRpY3NSCWFuYWx5dGljcw==');
+
+@$core.Deprecated('Use onyxPlaybackRuntimeDescriptor instead')
+const OnyxPlaybackRuntime$json = {
+  '1': 'OnyxPlaybackRuntime',
+  '2': [
+    {'1': 'status', '3': 1, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'phone_enabled', '3': 2, '4': 1, '5': 8, '10': 'phoneEnabled'},
+    {
+      '1': 'android_auto_enabled',
+      '3': 3,
+      '4': 1,
+      '5': 8,
+      '10': 'androidAutoEnabled'
+    },
+    {'1': 'airplay_enabled', '3': 4, '4': 1, '5': 8, '10': 'airplayEnabled'},
+    {'1': 'cast_enabled', '3': 5, '4': 1, '5': 8, '10': 'castEnabled'},
+    {'1': 'carplay_enabled', '3': 6, '4': 1, '5': 8, '10': 'carplayEnabled'},
+    {
+      '1': 'receiver_grant_ttl_seconds',
+      '3': 7,
+      '4': 1,
+      '5': 5,
+      '10': 'receiverGrantTtlSeconds'
+    },
+    {'1': 'access_epoch', '3': 8, '4': 1, '5': 3, '10': 'accessEpoch'},
+    {'1': 'version', '3': 9, '4': 1, '5': 3, '10': 'version'},
+    {'1': 'public_notice', '3': 10, '4': 1, '5': 9, '10': 'publicNotice'},
+  ],
+};
+
+/// Descriptor for `OnyxPlaybackRuntime`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxPlaybackRuntimeDescriptor = $convert.base64Decode(
+    'ChNPbnl4UGxheWJhY2tSdW50aW1lEhYKBnN0YXR1cxgBIAEoCVIGc3RhdHVzEiMKDXBob25lX2'
+    'VuYWJsZWQYAiABKAhSDHBob25lRW5hYmxlZBIwChRhbmRyb2lkX2F1dG9fZW5hYmxlZBgDIAEo'
+    'CFISYW5kcm9pZEF1dG9FbmFibGVkEicKD2FpcnBsYXlfZW5hYmxlZBgEIAEoCFIOYWlycGxheU'
+    'VuYWJsZWQSIQoMY2FzdF9lbmFibGVkGAUgASgIUgtjYXN0RW5hYmxlZBInCg9jYXJwbGF5X2Vu'
+    'YWJsZWQYBiABKAhSDmNhcnBsYXlFbmFibGVkEjsKGnJlY2VpdmVyX2dyYW50X3R0bF9zZWNvbm'
+    'RzGAcgASgFUhdyZWNlaXZlckdyYW50VHRsU2Vjb25kcxIhCgxhY2Nlc3NfZXBvY2gYCCABKANS'
+    'C2FjY2Vzc0Vwb2NoEhgKB3ZlcnNpb24YCSABKANSB3ZlcnNpb24SIwoNcHVibGljX25vdGljZR'
+    'gKIAEoCVIMcHVibGljTm90aWNl');
+
+@$core.Deprecated('Use onyxPlaybackPreferencesDescriptor instead')
+const OnyxPlaybackPreferences$json = {
+  '1': 'OnyxPlaybackPreferences',
+  '2': [
+    {
+      '1': 'cellular_streaming',
+      '3': 1,
+      '4': 1,
+      '5': 8,
+      '10': 'cellularStreaming'
+    },
+    {'1': 'auto_resume', '3': 2, '4': 1, '5': 8, '10': 'autoResume'},
+    {
+      '1': 'external_playback',
+      '3': 3,
+      '4': 1,
+      '5': 8,
+      '10': 'externalPlayback'
+    },
+    {
+      '1': 'preferred_surface',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'preferredSurface'
+    },
+    {'1': 'version', '3': 5, '4': 1, '5': 3, '10': 'version'},
+  ],
+};
+
+/// Descriptor for `OnyxPlaybackPreferences`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxPlaybackPreferencesDescriptor = $convert.base64Decode(
+    'ChdPbnl4UGxheWJhY2tQcmVmZXJlbmNlcxItChJjZWxsdWxhcl9zdHJlYW1pbmcYASABKAhSEW'
+    'NlbGx1bGFyU3RyZWFtaW5nEh8KC2F1dG9fcmVzdW1lGAIgASgIUgphdXRvUmVzdW1lEisKEWV4'
+    'dGVybmFsX3BsYXliYWNrGAMgASgIUhBleHRlcm5hbFBsYXliYWNrEisKEXByZWZlcnJlZF9zdX'
+    'JmYWNlGAQgASgJUhBwcmVmZXJyZWRTdXJmYWNlEhgKB3ZlcnNpb24YBSABKANSB3ZlcnNpb24=');
+
+@$core.Deprecated('Use onyxPlaybackDeviceDescriptor instead')
+const OnyxPlaybackDevice$json = {
+  '1': 'OnyxPlaybackDevice',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'platform', '3': 3, '4': 1, '5': 9, '10': 'platform'},
+    {'1': 'device_kind', '3': 4, '4': 1, '5': 9, '10': 'deviceKind'},
+    {'1': 'status', '3': 5, '4': 1, '5': 9, '10': 'status'},
+    {
+      '1': 'last_seen_at',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'lastSeenAt'
+    },
+    {
+      '1': 'expires_at',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+    {
+      '1': 'revoked_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'revokedAt'
+    },
+    {'1': 'version', '3': 9, '4': 1, '5': 3, '10': 'version'},
+  ],
+};
+
+/// Descriptor for `OnyxPlaybackDevice`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxPlaybackDeviceDescriptor = $convert.base64Decode(
+    'ChJPbnl4UGxheWJhY2tEZXZpY2USDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbW'
+    'USGgoIcGxhdGZvcm0YAyABKAlSCHBsYXRmb3JtEh8KC2RldmljZV9raW5kGAQgASgJUgpkZXZp'
+    'Y2VLaW5kEhYKBnN0YXR1cxgFIAEoCVIGc3RhdHVzEjwKDGxhc3Rfc2Vlbl9hdBgGIAEoCzIaLm'
+    'dvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCmxhc3RTZWVuQXQSOQoKZXhwaXJlc19hdBgHIAEo'
+    'CzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWV4cGlyZXNBdBI5CgpyZXZva2VkX2F0GA'
+    'ggASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJcmV2b2tlZEF0EhgKB3ZlcnNpb24Y'
+    'CSABKANSB3ZlcnNpb24=');
+
+@$core.Deprecated('Use onyxPlaybackEligibilityDescriptor instead')
+const OnyxPlaybackEligibility$json = {
+  '1': 'OnyxPlaybackEligibility',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'revision_id', '3': 2, '4': 1, '5': 9, '10': 'revisionId'},
+    {'1': 'surface', '3': 3, '4': 1, '5': 9, '10': 'surface'},
+    {'1': 'eligible', '3': 4, '4': 1, '5': 8, '10': 'eligible'},
+    {'1': 'reason_code', '3': 5, '4': 1, '5': 9, '10': 'reasonCode'},
+    {'1': 'reason', '3': 6, '4': 1, '5': 9, '10': 'reason'},
+    {'1': 'policy_version', '3': 7, '4': 1, '5': 3, '10': 'policyVersion'},
+    {'1': 'content_version', '3': 8, '4': 1, '5': 3, '10': 'contentVersion'},
+  ],
+};
+
+/// Descriptor for `OnyxPlaybackEligibility`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxPlaybackEligibilityDescriptor = $convert.base64Decode(
+    'ChdPbnl4UGxheWJhY2tFbGlnaWJpbGl0eRIdCgpjb250ZW50X2lkGAEgASgJUgljb250ZW50SW'
+    'QSHwoLcmV2aXNpb25faWQYAiABKAlSCnJldmlzaW9uSWQSGAoHc3VyZmFjZRgDIAEoCVIHc3Vy'
+    'ZmFjZRIaCghlbGlnaWJsZRgEIAEoCFIIZWxpZ2libGUSHwoLcmVhc29uX2NvZGUYBSABKAlSCn'
+    'JlYXNvbkNvZGUSFgoGcmVhc29uGAYgASgJUgZyZWFzb24SJQoOcG9saWN5X3ZlcnNpb24YByAB'
+    'KANSDXBvbGljeVZlcnNpb24SJwoPY29udGVudF92ZXJzaW9uGAggASgDUg5jb250ZW50VmVyc2'
+    'lvbg==');
+
+@$core.Deprecated('Use onyxReceiverPlaybackGrantDescriptor instead')
+const OnyxReceiverPlaybackGrant$json = {
+  '1': 'OnyxReceiverPlaybackGrant',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'content_id', '3': 2, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'revision_id', '3': 3, '4': 1, '5': 9, '10': 'revisionId'},
+    {'1': 'device_id', '3': 4, '4': 1, '5': 9, '10': 'deviceId'},
+    {'1': 'surface', '3': 5, '4': 1, '5': 9, '10': 'surface'},
+    {'1': 'status', '3': 6, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'receiver_token', '3': 7, '4': 1, '5': 9, '10': 'receiverToken'},
+    {
+      '1': 'issued_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'issuedAt'
+    },
+    {
+      '1': 'expires_at',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+    {'1': 'access_epoch', '3': 10, '4': 1, '5': 3, '10': 'accessEpoch'},
+    {'1': 'policy_version', '3': 11, '4': 1, '5': 3, '10': 'policyVersion'},
+  ],
+};
+
+/// Descriptor for `OnyxReceiverPlaybackGrant`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onyxReceiverPlaybackGrantDescriptor = $convert.base64Decode(
+    'ChlPbnl4UmVjZWl2ZXJQbGF5YmFja0dyYW50Eg4KAmlkGAEgASgJUgJpZBIdCgpjb250ZW50X2'
+    'lkGAIgASgJUgljb250ZW50SWQSHwoLcmV2aXNpb25faWQYAyABKAlSCnJldmlzaW9uSWQSGwoJ'
+    'ZGV2aWNlX2lkGAQgASgJUghkZXZpY2VJZBIYCgdzdXJmYWNlGAUgASgJUgdzdXJmYWNlEhYKBn'
+    'N0YXR1cxgGIAEoCVIGc3RhdHVzEiUKDnJlY2VpdmVyX3Rva2VuGAcgASgJUg1yZWNlaXZlclRv'
+    'a2VuEjcKCWlzc3VlZF9hdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCGlzc3'
+    'VlZEF0EjkKCmV4cGlyZXNfYXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgll'
+    'eHBpcmVzQXQSIQoMYWNjZXNzX2Vwb2NoGAogASgDUgthY2Nlc3NFcG9jaBIlCg5wb2xpY3lfdm'
+    'Vyc2lvbhgLIAEoA1INcG9saWN5VmVyc2lvbg==');
+
+@$core.Deprecated('Use getPlaybackDashboardRequestDescriptor instead')
+const GetPlaybackDashboardRequest$json = {
+  '1': 'GetPlaybackDashboardRequest',
+};
+
+/// Descriptor for `GetPlaybackDashboardRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPlaybackDashboardRequestDescriptor =
+    $convert.base64Decode('ChtHZXRQbGF5YmFja0Rhc2hib2FyZFJlcXVlc3Q=');
+
+@$core.Deprecated('Use getPlaybackDashboardResponseDescriptor instead')
+const GetPlaybackDashboardResponse$json = {
+  '1': 'GetPlaybackDashboardResponse',
+  '2': [
+    {
+      '1': 'runtime',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxPlaybackRuntime',
+      '10': 'runtime'
+    },
+    {
+      '1': 'preferences',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxPlaybackPreferences',
+      '10': 'preferences'
+    },
+    {
+      '1': 'devices',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxPlaybackDevice',
+      '10': 'devices'
+    },
+  ],
+};
+
+/// Descriptor for `GetPlaybackDashboardResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPlaybackDashboardResponseDescriptor = $convert.base64Decode(
+    'ChxHZXRQbGF5YmFja0Rhc2hib2FyZFJlc3BvbnNlEj8KB3J1bnRpbWUYASABKAsyJS5zdHRhdH'
+    'R1cy5vbnl4LnYxLk9ueXhQbGF5YmFja1J1bnRpbWVSB3J1bnRpbWUSSwoLcHJlZmVyZW5jZXMY'
+    'AiABKAsyKS5zdHRhdHR1cy5vbnl4LnYxLk9ueXhQbGF5YmFja1ByZWZlcmVuY2VzUgtwcmVmZX'
+    'JlbmNlcxI+CgdkZXZpY2VzGAMgAygLMiQuc3R0YXR0dXMub255eC52MS5Pbnl4UGxheWJhY2tE'
+    'ZXZpY2VSB2RldmljZXM=');
+
+@$core.Deprecated('Use updatePlaybackPreferencesRequestDescriptor instead')
+const UpdatePlaybackPreferencesRequest$json = {
+  '1': 'UpdatePlaybackPreferencesRequest',
+  '2': [
+    {
+      '1': 'cellular_streaming',
+      '3': 1,
+      '4': 1,
+      '5': 8,
+      '10': 'cellularStreaming'
+    },
+    {'1': 'auto_resume', '3': 2, '4': 1, '5': 8, '10': 'autoResume'},
+    {
+      '1': 'external_playback',
+      '3': 3,
+      '4': 1,
+      '5': 8,
+      '10': 'externalPlayback'
+    },
+    {
+      '1': 'preferred_surface',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'preferredSurface'
+    },
+    {'1': 'expected_version', '3': 5, '4': 1, '5': 3, '10': 'expectedVersion'},
+  ],
+};
+
+/// Descriptor for `UpdatePlaybackPreferencesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updatePlaybackPreferencesRequestDescriptor = $convert.base64Decode(
+    'CiBVcGRhdGVQbGF5YmFja1ByZWZlcmVuY2VzUmVxdWVzdBItChJjZWxsdWxhcl9zdHJlYW1pbm'
+    'cYASABKAhSEWNlbGx1bGFyU3RyZWFtaW5nEh8KC2F1dG9fcmVzdW1lGAIgASgIUgphdXRvUmVz'
+    'dW1lEisKEWV4dGVybmFsX3BsYXliYWNrGAMgASgIUhBleHRlcm5hbFBsYXliYWNrEisKEXByZW'
+    'ZlcnJlZF9zdXJmYWNlGAQgASgJUhBwcmVmZXJyZWRTdXJmYWNlEikKEGV4cGVjdGVkX3ZlcnNp'
+    'b24YBSABKANSD2V4cGVjdGVkVmVyc2lvbg==');
+
+@$core.Deprecated('Use updatePlaybackPreferencesResponseDescriptor instead')
+const UpdatePlaybackPreferencesResponse$json = {
+  '1': 'UpdatePlaybackPreferencesResponse',
+  '2': [
+    {
+      '1': 'preferences',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxPlaybackPreferences',
+      '10': 'preferences'
+    },
+  ],
+};
+
+/// Descriptor for `UpdatePlaybackPreferencesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updatePlaybackPreferencesResponseDescriptor =
+    $convert.base64Decode(
+        'CiFVcGRhdGVQbGF5YmFja1ByZWZlcmVuY2VzUmVzcG9uc2USSwoLcHJlZmVyZW5jZXMYASABKA'
+        'syKS5zdHRhdHR1cy5vbnl4LnYxLk9ueXhQbGF5YmFja1ByZWZlcmVuY2VzUgtwcmVmZXJlbmNl'
+        'cw==');
+
+@$core.Deprecated('Use registerPlaybackDeviceRequestDescriptor instead')
+const RegisterPlaybackDeviceRequest$json = {
+  '1': 'RegisterPlaybackDeviceRequest',
+  '2': [
+    {'1': 'device_key', '3': 1, '4': 1, '5': 9, '10': 'deviceKey'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'platform', '3': 3, '4': 1, '5': 9, '10': 'platform'},
+    {'1': 'device_kind', '3': 4, '4': 1, '5': 9, '10': 'deviceKind'},
+  ],
+};
+
+/// Descriptor for `RegisterPlaybackDeviceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List registerPlaybackDeviceRequestDescriptor =
+    $convert.base64Decode(
+        'Ch1SZWdpc3RlclBsYXliYWNrRGV2aWNlUmVxdWVzdBIdCgpkZXZpY2Vfa2V5GAEgASgJUglkZX'
+        'ZpY2VLZXkSEgoEbmFtZRgCIAEoCVIEbmFtZRIaCghwbGF0Zm9ybRgDIAEoCVIIcGxhdGZvcm0S'
+        'HwoLZGV2aWNlX2tpbmQYBCABKAlSCmRldmljZUtpbmQ=');
+
+@$core.Deprecated('Use registerPlaybackDeviceResponseDescriptor instead')
+const RegisterPlaybackDeviceResponse$json = {
+  '1': 'RegisterPlaybackDeviceResponse',
+  '2': [
+    {
+      '1': 'device',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxPlaybackDevice',
+      '10': 'device'
+    },
+  ],
+};
+
+/// Descriptor for `RegisterPlaybackDeviceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List registerPlaybackDeviceResponseDescriptor =
+    $convert.base64Decode(
+        'Ch5SZWdpc3RlclBsYXliYWNrRGV2aWNlUmVzcG9uc2USPAoGZGV2aWNlGAEgASgLMiQuc3R0YX'
+        'R0dXMub255eC52MS5Pbnl4UGxheWJhY2tEZXZpY2VSBmRldmljZQ==');
+
+@$core.Deprecated('Use revokePlaybackDeviceRequestDescriptor instead')
+const RevokePlaybackDeviceRequest$json = {
+  '1': 'RevokePlaybackDeviceRequest',
+  '2': [
+    {'1': 'device_id', '3': 1, '4': 1, '5': 9, '10': 'deviceId'},
+    {'1': 'expected_version', '3': 2, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {'1': 'reason', '3': 3, '4': 1, '5': 9, '10': 'reason'},
+  ],
+};
+
+/// Descriptor for `RevokePlaybackDeviceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokePlaybackDeviceRequestDescriptor =
+    $convert.base64Decode(
+        'ChtSZXZva2VQbGF5YmFja0RldmljZVJlcXVlc3QSGwoJZGV2aWNlX2lkGAEgASgJUghkZXZpY2'
+        'VJZBIpChBleHBlY3RlZF92ZXJzaW9uGAIgASgDUg9leHBlY3RlZFZlcnNpb24SFgoGcmVhc29u'
+        'GAMgASgJUgZyZWFzb24=');
+
+@$core.Deprecated('Use revokePlaybackDeviceResponseDescriptor instead')
+const RevokePlaybackDeviceResponse$json = {
+  '1': 'RevokePlaybackDeviceResponse',
+  '2': [
+    {
+      '1': 'device',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxPlaybackDevice',
+      '10': 'device'
+    },
+  ],
+};
+
+/// Descriptor for `RevokePlaybackDeviceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokePlaybackDeviceResponseDescriptor =
+    $convert.base64Decode(
+        'ChxSZXZva2VQbGF5YmFja0RldmljZVJlc3BvbnNlEjwKBmRldmljZRgBIAEoCzIkLnN0dGF0dH'
+        'VzLm9ueXgudjEuT255eFBsYXliYWNrRGV2aWNlUgZkZXZpY2U=');
+
+@$core.Deprecated('Use getPlaybackEligibilityRequestDescriptor instead')
+const GetPlaybackEligibilityRequest$json = {
+  '1': 'GetPlaybackEligibilityRequest',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'surface', '3': 2, '4': 1, '5': 9, '10': 'surface'},
+  ],
+};
+
+/// Descriptor for `GetPlaybackEligibilityRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPlaybackEligibilityRequestDescriptor =
+    $convert.base64Decode(
+        'Ch1HZXRQbGF5YmFja0VsaWdpYmlsaXR5UmVxdWVzdBIdCgpjb250ZW50X2lkGAEgASgJUgljb2'
+        '50ZW50SWQSGAoHc3VyZmFjZRgCIAEoCVIHc3VyZmFjZQ==');
+
+@$core.Deprecated('Use getPlaybackEligibilityResponseDescriptor instead')
+const GetPlaybackEligibilityResponse$json = {
+  '1': 'GetPlaybackEligibilityResponse',
+  '2': [
+    {
+      '1': 'eligibility',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxPlaybackEligibility',
+      '10': 'eligibility'
+    },
+  ],
+};
+
+/// Descriptor for `GetPlaybackEligibilityResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getPlaybackEligibilityResponseDescriptor =
+    $convert.base64Decode(
+        'Ch5HZXRQbGF5YmFja0VsaWdpYmlsaXR5UmVzcG9uc2USSwoLZWxpZ2liaWxpdHkYASABKAsyKS'
+        '5zdHRhdHR1cy5vbnl4LnYxLk9ueXhQbGF5YmFja0VsaWdpYmlsaXR5UgtlbGlnaWJpbGl0eQ==');
+
+@$core.Deprecated('Use requestReceiverPlaybackGrantRequestDescriptor instead')
+const RequestReceiverPlaybackGrantRequest$json = {
+  '1': 'RequestReceiverPlaybackGrantRequest',
+  '2': [
+    {'1': 'content_id', '3': 1, '4': 1, '5': 9, '10': 'contentId'},
+    {'1': 'device_id', '3': 2, '4': 1, '5': 9, '10': 'deviceId'},
+    {'1': 'surface', '3': 3, '4': 1, '5': 9, '10': 'surface'},
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `RequestReceiverPlaybackGrantRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List requestReceiverPlaybackGrantRequestDescriptor =
+    $convert.base64Decode(
+        'CiNSZXF1ZXN0UmVjZWl2ZXJQbGF5YmFja0dyYW50UmVxdWVzdBIdCgpjb250ZW50X2lkGAEgAS'
+        'gJUgljb250ZW50SWQSGwoJZGV2aWNlX2lkGAIgASgJUghkZXZpY2VJZBIYCgdzdXJmYWNlGAMg'
+        'ASgJUgdzdXJmYWNlEiwKEmNsaWVudF9tdXRhdGlvbl9pZBgEIAEoCVIQY2xpZW50TXV0YXRpb2'
+        '5JZA==');
+
+@$core.Deprecated('Use requestReceiverPlaybackGrantResponseDescriptor instead')
+const RequestReceiverPlaybackGrantResponse$json = {
+  '1': 'RequestReceiverPlaybackGrantResponse',
+  '2': [
+    {
+      '1': 'grant',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxReceiverPlaybackGrant',
+      '10': 'grant'
+    },
+  ],
+};
+
+/// Descriptor for `RequestReceiverPlaybackGrantResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List requestReceiverPlaybackGrantResponseDescriptor =
+    $convert.base64Decode(
+        'CiRSZXF1ZXN0UmVjZWl2ZXJQbGF5YmFja0dyYW50UmVzcG9uc2USQQoFZ3JhbnQYASABKAsyKy'
+        '5zdHRhdHR1cy5vbnl4LnYxLk9ueXhSZWNlaXZlclBsYXliYWNrR3JhbnRSBWdyYW50');
+
+@$core.Deprecated('Use recordPlaybackEventRequestDescriptor instead')
+const RecordPlaybackEventRequest$json = {
+  '1': 'RecordPlaybackEventRequest',
+  '2': [
+    {'1': 'grant_id', '3': 1, '4': 1, '5': 9, '10': 'grantId'},
+    {'1': 'event_type', '3': 2, '4': 1, '5': 9, '10': 'eventType'},
+    {'1': 'outcome', '3': 3, '4': 1, '5': 9, '10': 'outcome'},
+    {'1': 'position_ms', '3': 4, '4': 1, '5': 3, '10': 'positionMs'},
+    {'1': 'latency_ms', '3': 5, '4': 1, '5': 3, '10': 'latencyMs'},
+    {'1': 'client_event_id', '3': 6, '4': 1, '5': 9, '10': 'clientEventId'},
+  ],
+};
+
+/// Descriptor for `RecordPlaybackEventRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordPlaybackEventRequestDescriptor = $convert.base64Decode(
+    'ChpSZWNvcmRQbGF5YmFja0V2ZW50UmVxdWVzdBIZCghncmFudF9pZBgBIAEoCVIHZ3JhbnRJZB'
+    'IdCgpldmVudF90eXBlGAIgASgJUglldmVudFR5cGUSGAoHb3V0Y29tZRgDIAEoCVIHb3V0Y29t'
+    'ZRIfCgtwb3NpdGlvbl9tcxgEIAEoA1IKcG9zaXRpb25NcxIdCgpsYXRlbmN5X21zGAUgASgDUg'
+    'lsYXRlbmN5TXMSJgoPY2xpZW50X2V2ZW50X2lkGAYgASgJUg1jbGllbnRFdmVudElk');
+
+@$core.Deprecated('Use recordPlaybackEventResponseDescriptor instead')
+const RecordPlaybackEventResponse$json = {
+  '1': 'RecordPlaybackEventResponse',
+};
+
+/// Descriptor for `RecordPlaybackEventResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List recordPlaybackEventResponseDescriptor =
+    $convert.base64Decode('ChtSZWNvcmRQbGF5YmFja0V2ZW50UmVzcG9uc2U=');

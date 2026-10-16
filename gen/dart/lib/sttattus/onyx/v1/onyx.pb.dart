@@ -82413,6 +82413,1800 @@ class GetDraftingAnalyticsResponse extends $pb.GeneratedMessage {
   DraftingAnalytics ensureAnalytics() => $_ensure(0);
 }
 
+class OnyxPlaybackRuntime extends $pb.GeneratedMessage {
+  factory OnyxPlaybackRuntime({
+    $core.String? status,
+    $core.bool? phoneEnabled,
+    $core.bool? androidAutoEnabled,
+    $core.bool? airplayEnabled,
+    $core.bool? castEnabled,
+    $core.bool? carplayEnabled,
+    $core.int? receiverGrantTtlSeconds,
+    $fixnum.Int64? accessEpoch,
+    $fixnum.Int64? version,
+    $core.String? publicNotice,
+  }) {
+    final result = create();
+    if (status != null) result.status = status;
+    if (phoneEnabled != null) result.phoneEnabled = phoneEnabled;
+    if (androidAutoEnabled != null)
+      result.androidAutoEnabled = androidAutoEnabled;
+    if (airplayEnabled != null) result.airplayEnabled = airplayEnabled;
+    if (castEnabled != null) result.castEnabled = castEnabled;
+    if (carplayEnabled != null) result.carplayEnabled = carplayEnabled;
+    if (receiverGrantTtlSeconds != null)
+      result.receiverGrantTtlSeconds = receiverGrantTtlSeconds;
+    if (accessEpoch != null) result.accessEpoch = accessEpoch;
+    if (version != null) result.version = version;
+    if (publicNotice != null) result.publicNotice = publicNotice;
+    return result;
+  }
+
+  OnyxPlaybackRuntime._();
+
+  factory OnyxPlaybackRuntime.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxPlaybackRuntime.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxPlaybackRuntime',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'status')
+    ..aOB(2, _omitFieldNames ? '' : 'phoneEnabled')
+    ..aOB(3, _omitFieldNames ? '' : 'androidAutoEnabled')
+    ..aOB(4, _omitFieldNames ? '' : 'airplayEnabled')
+    ..aOB(5, _omitFieldNames ? '' : 'castEnabled')
+    ..aOB(6, _omitFieldNames ? '' : 'carplayEnabled')
+    ..aI(7, _omitFieldNames ? '' : 'receiverGrantTtlSeconds')
+    ..aInt64(8, _omitFieldNames ? '' : 'accessEpoch')
+    ..aInt64(9, _omitFieldNames ? '' : 'version')
+    ..aOS(10, _omitFieldNames ? '' : 'publicNotice')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxPlaybackRuntime clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxPlaybackRuntime copyWith(void Function(OnyxPlaybackRuntime) updates) =>
+      super.copyWith((message) => updates(message as OnyxPlaybackRuntime))
+          as OnyxPlaybackRuntime;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxPlaybackRuntime create() => OnyxPlaybackRuntime._();
+  @$core.override
+  OnyxPlaybackRuntime createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxPlaybackRuntime getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxPlaybackRuntime>(create);
+  static OnyxPlaybackRuntime? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get status => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set status($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearStatus() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get phoneEnabled => $_getBF(1);
+  @$pb.TagNumber(2)
+  set phoneEnabled($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPhoneEnabled() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPhoneEnabled() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get androidAutoEnabled => $_getBF(2);
+  @$pb.TagNumber(3)
+  set androidAutoEnabled($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAndroidAutoEnabled() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAndroidAutoEnabled() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get airplayEnabled => $_getBF(3);
+  @$pb.TagNumber(4)
+  set airplayEnabled($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAirplayEnabled() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAirplayEnabled() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get castEnabled => $_getBF(4);
+  @$pb.TagNumber(5)
+  set castEnabled($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCastEnabled() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCastEnabled() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get carplayEnabled => $_getBF(5);
+  @$pb.TagNumber(6)
+  set carplayEnabled($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCarplayEnabled() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCarplayEnabled() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get receiverGrantTtlSeconds => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set receiverGrantTtlSeconds($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasReceiverGrantTtlSeconds() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearReceiverGrantTtlSeconds() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get accessEpoch => $_getI64(7);
+  @$pb.TagNumber(8)
+  set accessEpoch($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasAccessEpoch() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAccessEpoch() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get version => $_getI64(8);
+  @$pb.TagNumber(9)
+  set version($fixnum.Int64 value) => $_setInt64(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasVersion() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearVersion() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get publicNotice => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set publicNotice($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasPublicNotice() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearPublicNotice() => $_clearField(10);
+}
+
+class OnyxPlaybackPreferences extends $pb.GeneratedMessage {
+  factory OnyxPlaybackPreferences({
+    $core.bool? cellularStreaming,
+    $core.bool? autoResume,
+    $core.bool? externalPlayback,
+    $core.String? preferredSurface,
+    $fixnum.Int64? version,
+  }) {
+    final result = create();
+    if (cellularStreaming != null) result.cellularStreaming = cellularStreaming;
+    if (autoResume != null) result.autoResume = autoResume;
+    if (externalPlayback != null) result.externalPlayback = externalPlayback;
+    if (preferredSurface != null) result.preferredSurface = preferredSurface;
+    if (version != null) result.version = version;
+    return result;
+  }
+
+  OnyxPlaybackPreferences._();
+
+  factory OnyxPlaybackPreferences.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxPlaybackPreferences.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxPlaybackPreferences',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'cellularStreaming')
+    ..aOB(2, _omitFieldNames ? '' : 'autoResume')
+    ..aOB(3, _omitFieldNames ? '' : 'externalPlayback')
+    ..aOS(4, _omitFieldNames ? '' : 'preferredSurface')
+    ..aInt64(5, _omitFieldNames ? '' : 'version')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxPlaybackPreferences clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxPlaybackPreferences copyWith(
+          void Function(OnyxPlaybackPreferences) updates) =>
+      super.copyWith((message) => updates(message as OnyxPlaybackPreferences))
+          as OnyxPlaybackPreferences;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxPlaybackPreferences create() => OnyxPlaybackPreferences._();
+  @$core.override
+  OnyxPlaybackPreferences createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxPlaybackPreferences getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxPlaybackPreferences>(create);
+  static OnyxPlaybackPreferences? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get cellularStreaming => $_getBF(0);
+  @$pb.TagNumber(1)
+  set cellularStreaming($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCellularStreaming() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCellularStreaming() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get autoResume => $_getBF(1);
+  @$pb.TagNumber(2)
+  set autoResume($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAutoResume() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAutoResume() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get externalPlayback => $_getBF(2);
+  @$pb.TagNumber(3)
+  set externalPlayback($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasExternalPlayback() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExternalPlayback() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get preferredSurface => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set preferredSurface($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPreferredSurface() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPreferredSurface() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get version => $_getI64(4);
+  @$pb.TagNumber(5)
+  set version($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasVersion() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearVersion() => $_clearField(5);
+}
+
+class OnyxPlaybackDevice extends $pb.GeneratedMessage {
+  factory OnyxPlaybackDevice({
+    $core.String? id,
+    $core.String? name,
+    $core.String? platform,
+    $core.String? deviceKind,
+    $core.String? status,
+    $1.Timestamp? lastSeenAt,
+    $1.Timestamp? expiresAt,
+    $1.Timestamp? revokedAt,
+    $fixnum.Int64? version,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (name != null) result.name = name;
+    if (platform != null) result.platform = platform;
+    if (deviceKind != null) result.deviceKind = deviceKind;
+    if (status != null) result.status = status;
+    if (lastSeenAt != null) result.lastSeenAt = lastSeenAt;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (revokedAt != null) result.revokedAt = revokedAt;
+    if (version != null) result.version = version;
+    return result;
+  }
+
+  OnyxPlaybackDevice._();
+
+  factory OnyxPlaybackDevice.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxPlaybackDevice.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxPlaybackDevice',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'platform')
+    ..aOS(4, _omitFieldNames ? '' : 'deviceKind')
+    ..aOS(5, _omitFieldNames ? '' : 'status')
+    ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'lastSeenAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(8, _omitFieldNames ? '' : 'revokedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aInt64(9, _omitFieldNames ? '' : 'version')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxPlaybackDevice clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxPlaybackDevice copyWith(void Function(OnyxPlaybackDevice) updates) =>
+      super.copyWith((message) => updates(message as OnyxPlaybackDevice))
+          as OnyxPlaybackDevice;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxPlaybackDevice create() => OnyxPlaybackDevice._();
+  @$core.override
+  OnyxPlaybackDevice createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxPlaybackDevice getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxPlaybackDevice>(create);
+  static OnyxPlaybackDevice? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get platform => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set platform($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPlatform() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPlatform() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get deviceKind => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set deviceKind($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDeviceKind() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDeviceKind() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get status => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set status($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStatus() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStatus() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $1.Timestamp get lastSeenAt => $_getN(5);
+  @$pb.TagNumber(6)
+  set lastSeenAt($1.Timestamp value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLastSeenAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLastSeenAt() => $_clearField(6);
+  @$pb.TagNumber(6)
+  $1.Timestamp ensureLastSeenAt() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $1.Timestamp get expiresAt => $_getN(6);
+  @$pb.TagNumber(7)
+  set expiresAt($1.Timestamp value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasExpiresAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearExpiresAt() => $_clearField(7);
+  @$pb.TagNumber(7)
+  $1.Timestamp ensureExpiresAt() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  $1.Timestamp get revokedAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set revokedAt($1.Timestamp value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasRevokedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearRevokedAt() => $_clearField(8);
+  @$pb.TagNumber(8)
+  $1.Timestamp ensureRevokedAt() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get version => $_getI64(8);
+  @$pb.TagNumber(9)
+  set version($fixnum.Int64 value) => $_setInt64(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasVersion() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearVersion() => $_clearField(9);
+}
+
+class OnyxPlaybackEligibility extends $pb.GeneratedMessage {
+  factory OnyxPlaybackEligibility({
+    $core.String? contentId,
+    $core.String? revisionId,
+    $core.String? surface,
+    $core.bool? eligible,
+    $core.String? reasonCode,
+    $core.String? reason,
+    $fixnum.Int64? policyVersion,
+    $fixnum.Int64? contentVersion,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (surface != null) result.surface = surface;
+    if (eligible != null) result.eligible = eligible;
+    if (reasonCode != null) result.reasonCode = reasonCode;
+    if (reason != null) result.reason = reason;
+    if (policyVersion != null) result.policyVersion = policyVersion;
+    if (contentVersion != null) result.contentVersion = contentVersion;
+    return result;
+  }
+
+  OnyxPlaybackEligibility._();
+
+  factory OnyxPlaybackEligibility.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxPlaybackEligibility.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxPlaybackEligibility',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOS(2, _omitFieldNames ? '' : 'revisionId')
+    ..aOS(3, _omitFieldNames ? '' : 'surface')
+    ..aOB(4, _omitFieldNames ? '' : 'eligible')
+    ..aOS(5, _omitFieldNames ? '' : 'reasonCode')
+    ..aOS(6, _omitFieldNames ? '' : 'reason')
+    ..aInt64(7, _omitFieldNames ? '' : 'policyVersion')
+    ..aInt64(8, _omitFieldNames ? '' : 'contentVersion')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxPlaybackEligibility clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxPlaybackEligibility copyWith(
+          void Function(OnyxPlaybackEligibility) updates) =>
+      super.copyWith((message) => updates(message as OnyxPlaybackEligibility))
+          as OnyxPlaybackEligibility;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxPlaybackEligibility create() => OnyxPlaybackEligibility._();
+  @$core.override
+  OnyxPlaybackEligibility createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxPlaybackEligibility getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxPlaybackEligibility>(create);
+  static OnyxPlaybackEligibility? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get revisionId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set revisionId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRevisionId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRevisionId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get surface => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set surface($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSurface() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSurface() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get eligible => $_getBF(3);
+  @$pb.TagNumber(4)
+  set eligible($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEligible() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEligible() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get reasonCode => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set reasonCode($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasReasonCode() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearReasonCode() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get reason => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set reason($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasReason() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearReason() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get policyVersion => $_getI64(6);
+  @$pb.TagNumber(7)
+  set policyVersion($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPolicyVersion() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPolicyVersion() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get contentVersion => $_getI64(7);
+  @$pb.TagNumber(8)
+  set contentVersion($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasContentVersion() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearContentVersion() => $_clearField(8);
+}
+
+class OnyxReceiverPlaybackGrant extends $pb.GeneratedMessage {
+  factory OnyxReceiverPlaybackGrant({
+    $core.String? id,
+    $core.String? contentId,
+    $core.String? revisionId,
+    $core.String? deviceId,
+    $core.String? surface,
+    $core.String? status,
+    $core.String? receiverToken,
+    $1.Timestamp? issuedAt,
+    $1.Timestamp? expiresAt,
+    $fixnum.Int64? accessEpoch,
+    $fixnum.Int64? policyVersion,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (contentId != null) result.contentId = contentId;
+    if (revisionId != null) result.revisionId = revisionId;
+    if (deviceId != null) result.deviceId = deviceId;
+    if (surface != null) result.surface = surface;
+    if (status != null) result.status = status;
+    if (receiverToken != null) result.receiverToken = receiverToken;
+    if (issuedAt != null) result.issuedAt = issuedAt;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (accessEpoch != null) result.accessEpoch = accessEpoch;
+    if (policyVersion != null) result.policyVersion = policyVersion;
+    return result;
+  }
+
+  OnyxReceiverPlaybackGrant._();
+
+  factory OnyxReceiverPlaybackGrant.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OnyxReceiverPlaybackGrant.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OnyxReceiverPlaybackGrant',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'contentId')
+    ..aOS(3, _omitFieldNames ? '' : 'revisionId')
+    ..aOS(4, _omitFieldNames ? '' : 'deviceId')
+    ..aOS(5, _omitFieldNames ? '' : 'surface')
+    ..aOS(6, _omitFieldNames ? '' : 'status')
+    ..aOS(7, _omitFieldNames ? '' : 'receiverToken')
+    ..aOM<$1.Timestamp>(8, _omitFieldNames ? '' : 'issuedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(9, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aInt64(10, _omitFieldNames ? '' : 'accessEpoch')
+    ..aInt64(11, _omitFieldNames ? '' : 'policyVersion')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxReceiverPlaybackGrant clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OnyxReceiverPlaybackGrant copyWith(
+          void Function(OnyxReceiverPlaybackGrant) updates) =>
+      super.copyWith((message) => updates(message as OnyxReceiverPlaybackGrant))
+          as OnyxReceiverPlaybackGrant;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OnyxReceiverPlaybackGrant create() => OnyxReceiverPlaybackGrant._();
+  @$core.override
+  OnyxReceiverPlaybackGrant createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OnyxReceiverPlaybackGrant getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OnyxReceiverPlaybackGrant>(create);
+  static OnyxReceiverPlaybackGrant? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contentId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contentId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContentId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get revisionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set revisionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRevisionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRevisionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get deviceId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set deviceId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDeviceId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDeviceId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get surface => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set surface($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSurface() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSurface() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get status => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set status($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get receiverToken => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set receiverToken($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasReceiverToken() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearReceiverToken() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $1.Timestamp get issuedAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set issuedAt($1.Timestamp value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasIssuedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearIssuedAt() => $_clearField(8);
+  @$pb.TagNumber(8)
+  $1.Timestamp ensureIssuedAt() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  $1.Timestamp get expiresAt => $_getN(8);
+  @$pb.TagNumber(9)
+  set expiresAt($1.Timestamp value) => $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasExpiresAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearExpiresAt() => $_clearField(9);
+  @$pb.TagNumber(9)
+  $1.Timestamp ensureExpiresAt() => $_ensure(8);
+
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get accessEpoch => $_getI64(9);
+  @$pb.TagNumber(10)
+  set accessEpoch($fixnum.Int64 value) => $_setInt64(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasAccessEpoch() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearAccessEpoch() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $fixnum.Int64 get policyVersion => $_getI64(10);
+  @$pb.TagNumber(11)
+  set policyVersion($fixnum.Int64 value) => $_setInt64(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasPolicyVersion() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearPolicyVersion() => $_clearField(11);
+}
+
+class GetPlaybackDashboardRequest extends $pb.GeneratedMessage {
+  factory GetPlaybackDashboardRequest() => create();
+
+  GetPlaybackDashboardRequest._();
+
+  factory GetPlaybackDashboardRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetPlaybackDashboardRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetPlaybackDashboardRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPlaybackDashboardRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPlaybackDashboardRequest copyWith(
+          void Function(GetPlaybackDashboardRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetPlaybackDashboardRequest))
+          as GetPlaybackDashboardRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPlaybackDashboardRequest create() =>
+      GetPlaybackDashboardRequest._();
+  @$core.override
+  GetPlaybackDashboardRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetPlaybackDashboardRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetPlaybackDashboardRequest>(create);
+  static GetPlaybackDashboardRequest? _defaultInstance;
+}
+
+class GetPlaybackDashboardResponse extends $pb.GeneratedMessage {
+  factory GetPlaybackDashboardResponse({
+    OnyxPlaybackRuntime? runtime,
+    OnyxPlaybackPreferences? preferences,
+    $core.Iterable<OnyxPlaybackDevice>? devices,
+  }) {
+    final result = create();
+    if (runtime != null) result.runtime = runtime;
+    if (preferences != null) result.preferences = preferences;
+    if (devices != null) result.devices.addAll(devices);
+    return result;
+  }
+
+  GetPlaybackDashboardResponse._();
+
+  factory GetPlaybackDashboardResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetPlaybackDashboardResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetPlaybackDashboardResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxPlaybackRuntime>(1, _omitFieldNames ? '' : 'runtime',
+        subBuilder: OnyxPlaybackRuntime.create)
+    ..aOM<OnyxPlaybackPreferences>(2, _omitFieldNames ? '' : 'preferences',
+        subBuilder: OnyxPlaybackPreferences.create)
+    ..pPM<OnyxPlaybackDevice>(3, _omitFieldNames ? '' : 'devices',
+        subBuilder: OnyxPlaybackDevice.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPlaybackDashboardResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPlaybackDashboardResponse copyWith(
+          void Function(GetPlaybackDashboardResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetPlaybackDashboardResponse))
+          as GetPlaybackDashboardResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPlaybackDashboardResponse create() =>
+      GetPlaybackDashboardResponse._();
+  @$core.override
+  GetPlaybackDashboardResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetPlaybackDashboardResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetPlaybackDashboardResponse>(create);
+  static GetPlaybackDashboardResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxPlaybackRuntime get runtime => $_getN(0);
+  @$pb.TagNumber(1)
+  set runtime(OnyxPlaybackRuntime value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRuntime() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRuntime() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxPlaybackRuntime ensureRuntime() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  OnyxPlaybackPreferences get preferences => $_getN(1);
+  @$pb.TagNumber(2)
+  set preferences(OnyxPlaybackPreferences value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPreferences() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPreferences() => $_clearField(2);
+  @$pb.TagNumber(2)
+  OnyxPlaybackPreferences ensurePreferences() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<OnyxPlaybackDevice> get devices => $_getList(2);
+}
+
+class UpdatePlaybackPreferencesRequest extends $pb.GeneratedMessage {
+  factory UpdatePlaybackPreferencesRequest({
+    $core.bool? cellularStreaming,
+    $core.bool? autoResume,
+    $core.bool? externalPlayback,
+    $core.String? preferredSurface,
+    $fixnum.Int64? expectedVersion,
+  }) {
+    final result = create();
+    if (cellularStreaming != null) result.cellularStreaming = cellularStreaming;
+    if (autoResume != null) result.autoResume = autoResume;
+    if (externalPlayback != null) result.externalPlayback = externalPlayback;
+    if (preferredSurface != null) result.preferredSurface = preferredSurface;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    return result;
+  }
+
+  UpdatePlaybackPreferencesRequest._();
+
+  factory UpdatePlaybackPreferencesRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdatePlaybackPreferencesRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdatePlaybackPreferencesRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'cellularStreaming')
+    ..aOB(2, _omitFieldNames ? '' : 'autoResume')
+    ..aOB(3, _omitFieldNames ? '' : 'externalPlayback')
+    ..aOS(4, _omitFieldNames ? '' : 'preferredSurface')
+    ..aInt64(5, _omitFieldNames ? '' : 'expectedVersion')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdatePlaybackPreferencesRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdatePlaybackPreferencesRequest copyWith(
+          void Function(UpdatePlaybackPreferencesRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpdatePlaybackPreferencesRequest))
+          as UpdatePlaybackPreferencesRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdatePlaybackPreferencesRequest create() =>
+      UpdatePlaybackPreferencesRequest._();
+  @$core.override
+  UpdatePlaybackPreferencesRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdatePlaybackPreferencesRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdatePlaybackPreferencesRequest>(
+          create);
+  static UpdatePlaybackPreferencesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get cellularStreaming => $_getBF(0);
+  @$pb.TagNumber(1)
+  set cellularStreaming($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCellularStreaming() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCellularStreaming() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get autoResume => $_getBF(1);
+  @$pb.TagNumber(2)
+  set autoResume($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAutoResume() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAutoResume() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get externalPlayback => $_getBF(2);
+  @$pb.TagNumber(3)
+  set externalPlayback($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasExternalPlayback() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExternalPlayback() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get preferredSurface => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set preferredSurface($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPreferredSurface() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPreferredSurface() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get expectedVersion => $_getI64(4);
+  @$pb.TagNumber(5)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasExpectedVersion() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearExpectedVersion() => $_clearField(5);
+}
+
+class UpdatePlaybackPreferencesResponse extends $pb.GeneratedMessage {
+  factory UpdatePlaybackPreferencesResponse({
+    OnyxPlaybackPreferences? preferences,
+  }) {
+    final result = create();
+    if (preferences != null) result.preferences = preferences;
+    return result;
+  }
+
+  UpdatePlaybackPreferencesResponse._();
+
+  factory UpdatePlaybackPreferencesResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdatePlaybackPreferencesResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdatePlaybackPreferencesResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxPlaybackPreferences>(1, _omitFieldNames ? '' : 'preferences',
+        subBuilder: OnyxPlaybackPreferences.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdatePlaybackPreferencesResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdatePlaybackPreferencesResponse copyWith(
+          void Function(UpdatePlaybackPreferencesResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpdatePlaybackPreferencesResponse))
+          as UpdatePlaybackPreferencesResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdatePlaybackPreferencesResponse create() =>
+      UpdatePlaybackPreferencesResponse._();
+  @$core.override
+  UpdatePlaybackPreferencesResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdatePlaybackPreferencesResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdatePlaybackPreferencesResponse>(
+          create);
+  static UpdatePlaybackPreferencesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxPlaybackPreferences get preferences => $_getN(0);
+  @$pb.TagNumber(1)
+  set preferences(OnyxPlaybackPreferences value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPreferences() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPreferences() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxPlaybackPreferences ensurePreferences() => $_ensure(0);
+}
+
+class RegisterPlaybackDeviceRequest extends $pb.GeneratedMessage {
+  factory RegisterPlaybackDeviceRequest({
+    $core.String? deviceKey,
+    $core.String? name,
+    $core.String? platform,
+    $core.String? deviceKind,
+  }) {
+    final result = create();
+    if (deviceKey != null) result.deviceKey = deviceKey;
+    if (name != null) result.name = name;
+    if (platform != null) result.platform = platform;
+    if (deviceKind != null) result.deviceKind = deviceKind;
+    return result;
+  }
+
+  RegisterPlaybackDeviceRequest._();
+
+  factory RegisterPlaybackDeviceRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RegisterPlaybackDeviceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RegisterPlaybackDeviceRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'deviceKey')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'platform')
+    ..aOS(4, _omitFieldNames ? '' : 'deviceKind')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterPlaybackDeviceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterPlaybackDeviceRequest copyWith(
+          void Function(RegisterPlaybackDeviceRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as RegisterPlaybackDeviceRequest))
+          as RegisterPlaybackDeviceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegisterPlaybackDeviceRequest create() =>
+      RegisterPlaybackDeviceRequest._();
+  @$core.override
+  RegisterPlaybackDeviceRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RegisterPlaybackDeviceRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RegisterPlaybackDeviceRequest>(create);
+  static RegisterPlaybackDeviceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get deviceKey => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set deviceKey($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeviceKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeviceKey() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get platform => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set platform($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPlatform() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPlatform() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get deviceKind => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set deviceKind($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDeviceKind() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDeviceKind() => $_clearField(4);
+}
+
+class RegisterPlaybackDeviceResponse extends $pb.GeneratedMessage {
+  factory RegisterPlaybackDeviceResponse({
+    OnyxPlaybackDevice? device,
+  }) {
+    final result = create();
+    if (device != null) result.device = device;
+    return result;
+  }
+
+  RegisterPlaybackDeviceResponse._();
+
+  factory RegisterPlaybackDeviceResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RegisterPlaybackDeviceResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RegisterPlaybackDeviceResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxPlaybackDevice>(1, _omitFieldNames ? '' : 'device',
+        subBuilder: OnyxPlaybackDevice.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterPlaybackDeviceResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterPlaybackDeviceResponse copyWith(
+          void Function(RegisterPlaybackDeviceResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RegisterPlaybackDeviceResponse))
+          as RegisterPlaybackDeviceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegisterPlaybackDeviceResponse create() =>
+      RegisterPlaybackDeviceResponse._();
+  @$core.override
+  RegisterPlaybackDeviceResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RegisterPlaybackDeviceResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RegisterPlaybackDeviceResponse>(create);
+  static RegisterPlaybackDeviceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxPlaybackDevice get device => $_getN(0);
+  @$pb.TagNumber(1)
+  set device(OnyxPlaybackDevice value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDevice() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDevice() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxPlaybackDevice ensureDevice() => $_ensure(0);
+}
+
+class RevokePlaybackDeviceRequest extends $pb.GeneratedMessage {
+  factory RevokePlaybackDeviceRequest({
+    $core.String? deviceId,
+    $fixnum.Int64? expectedVersion,
+    $core.String? reason,
+  }) {
+    final result = create();
+    if (deviceId != null) result.deviceId = deviceId;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (reason != null) result.reason = reason;
+    return result;
+  }
+
+  RevokePlaybackDeviceRequest._();
+
+  factory RevokePlaybackDeviceRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RevokePlaybackDeviceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RevokePlaybackDeviceRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'deviceId')
+    ..aInt64(2, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(3, _omitFieldNames ? '' : 'reason')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokePlaybackDeviceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokePlaybackDeviceRequest copyWith(
+          void Function(RevokePlaybackDeviceRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as RevokePlaybackDeviceRequest))
+          as RevokePlaybackDeviceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RevokePlaybackDeviceRequest create() =>
+      RevokePlaybackDeviceRequest._();
+  @$core.override
+  RevokePlaybackDeviceRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RevokePlaybackDeviceRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RevokePlaybackDeviceRequest>(create);
+  static RevokePlaybackDeviceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get deviceId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set deviceId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeviceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeviceId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get expectedVersion => $_getI64(1);
+  @$pb.TagNumber(2)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExpectedVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpectedVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get reason => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set reason($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReason() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReason() => $_clearField(3);
+}
+
+class RevokePlaybackDeviceResponse extends $pb.GeneratedMessage {
+  factory RevokePlaybackDeviceResponse({
+    OnyxPlaybackDevice? device,
+  }) {
+    final result = create();
+    if (device != null) result.device = device;
+    return result;
+  }
+
+  RevokePlaybackDeviceResponse._();
+
+  factory RevokePlaybackDeviceResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RevokePlaybackDeviceResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RevokePlaybackDeviceResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxPlaybackDevice>(1, _omitFieldNames ? '' : 'device',
+        subBuilder: OnyxPlaybackDevice.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokePlaybackDeviceResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokePlaybackDeviceResponse copyWith(
+          void Function(RevokePlaybackDeviceResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RevokePlaybackDeviceResponse))
+          as RevokePlaybackDeviceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RevokePlaybackDeviceResponse create() =>
+      RevokePlaybackDeviceResponse._();
+  @$core.override
+  RevokePlaybackDeviceResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RevokePlaybackDeviceResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RevokePlaybackDeviceResponse>(create);
+  static RevokePlaybackDeviceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxPlaybackDevice get device => $_getN(0);
+  @$pb.TagNumber(1)
+  set device(OnyxPlaybackDevice value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDevice() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDevice() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxPlaybackDevice ensureDevice() => $_ensure(0);
+}
+
+class GetPlaybackEligibilityRequest extends $pb.GeneratedMessage {
+  factory GetPlaybackEligibilityRequest({
+    $core.String? contentId,
+    $core.String? surface,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    if (surface != null) result.surface = surface;
+    return result;
+  }
+
+  GetPlaybackEligibilityRequest._();
+
+  factory GetPlaybackEligibilityRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetPlaybackEligibilityRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetPlaybackEligibilityRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOS(2, _omitFieldNames ? '' : 'surface')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPlaybackEligibilityRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPlaybackEligibilityRequest copyWith(
+          void Function(GetPlaybackEligibilityRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetPlaybackEligibilityRequest))
+          as GetPlaybackEligibilityRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPlaybackEligibilityRequest create() =>
+      GetPlaybackEligibilityRequest._();
+  @$core.override
+  GetPlaybackEligibilityRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetPlaybackEligibilityRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetPlaybackEligibilityRequest>(create);
+  static GetPlaybackEligibilityRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get surface => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set surface($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSurface() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSurface() => $_clearField(2);
+}
+
+class GetPlaybackEligibilityResponse extends $pb.GeneratedMessage {
+  factory GetPlaybackEligibilityResponse({
+    OnyxPlaybackEligibility? eligibility,
+  }) {
+    final result = create();
+    if (eligibility != null) result.eligibility = eligibility;
+    return result;
+  }
+
+  GetPlaybackEligibilityResponse._();
+
+  factory GetPlaybackEligibilityResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetPlaybackEligibilityResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetPlaybackEligibilityResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxPlaybackEligibility>(1, _omitFieldNames ? '' : 'eligibility',
+        subBuilder: OnyxPlaybackEligibility.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPlaybackEligibilityResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPlaybackEligibilityResponse copyWith(
+          void Function(GetPlaybackEligibilityResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetPlaybackEligibilityResponse))
+          as GetPlaybackEligibilityResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPlaybackEligibilityResponse create() =>
+      GetPlaybackEligibilityResponse._();
+  @$core.override
+  GetPlaybackEligibilityResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetPlaybackEligibilityResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetPlaybackEligibilityResponse>(create);
+  static GetPlaybackEligibilityResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxPlaybackEligibility get eligibility => $_getN(0);
+  @$pb.TagNumber(1)
+  set eligibility(OnyxPlaybackEligibility value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEligibility() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEligibility() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxPlaybackEligibility ensureEligibility() => $_ensure(0);
+}
+
+class RequestReceiverPlaybackGrantRequest extends $pb.GeneratedMessage {
+  factory RequestReceiverPlaybackGrantRequest({
+    $core.String? contentId,
+    $core.String? deviceId,
+    $core.String? surface,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (contentId != null) result.contentId = contentId;
+    if (deviceId != null) result.deviceId = deviceId;
+    if (surface != null) result.surface = surface;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  RequestReceiverPlaybackGrantRequest._();
+
+  factory RequestReceiverPlaybackGrantRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RequestReceiverPlaybackGrantRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RequestReceiverPlaybackGrantRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contentId')
+    ..aOS(2, _omitFieldNames ? '' : 'deviceId')
+    ..aOS(3, _omitFieldNames ? '' : 'surface')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestReceiverPlaybackGrantRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestReceiverPlaybackGrantRequest copyWith(
+          void Function(RequestReceiverPlaybackGrantRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as RequestReceiverPlaybackGrantRequest))
+          as RequestReceiverPlaybackGrantRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RequestReceiverPlaybackGrantRequest create() =>
+      RequestReceiverPlaybackGrantRequest._();
+  @$core.override
+  RequestReceiverPlaybackGrantRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RequestReceiverPlaybackGrantRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RequestReceiverPlaybackGrantRequest>(create);
+  static RequestReceiverPlaybackGrantRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contentId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contentId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContentId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContentId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get deviceId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deviceId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDeviceId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeviceId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get surface => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set surface($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSurface() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSurface() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class RequestReceiverPlaybackGrantResponse extends $pb.GeneratedMessage {
+  factory RequestReceiverPlaybackGrantResponse({
+    OnyxReceiverPlaybackGrant? grant,
+  }) {
+    final result = create();
+    if (grant != null) result.grant = grant;
+    return result;
+  }
+
+  RequestReceiverPlaybackGrantResponse._();
+
+  factory RequestReceiverPlaybackGrantResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RequestReceiverPlaybackGrantResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RequestReceiverPlaybackGrantResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxReceiverPlaybackGrant>(1, _omitFieldNames ? '' : 'grant',
+        subBuilder: OnyxReceiverPlaybackGrant.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestReceiverPlaybackGrantResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestReceiverPlaybackGrantResponse copyWith(
+          void Function(RequestReceiverPlaybackGrantResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as RequestReceiverPlaybackGrantResponse))
+          as RequestReceiverPlaybackGrantResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RequestReceiverPlaybackGrantResponse create() =>
+      RequestReceiverPlaybackGrantResponse._();
+  @$core.override
+  RequestReceiverPlaybackGrantResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RequestReceiverPlaybackGrantResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RequestReceiverPlaybackGrantResponse>(create);
+  static RequestReceiverPlaybackGrantResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxReceiverPlaybackGrant get grant => $_getN(0);
+  @$pb.TagNumber(1)
+  set grant(OnyxReceiverPlaybackGrant value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGrant() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGrant() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxReceiverPlaybackGrant ensureGrant() => $_ensure(0);
+}
+
+class RecordPlaybackEventRequest extends $pb.GeneratedMessage {
+  factory RecordPlaybackEventRequest({
+    $core.String? grantId,
+    $core.String? eventType,
+    $core.String? outcome,
+    $fixnum.Int64? positionMs,
+    $fixnum.Int64? latencyMs,
+    $core.String? clientEventId,
+  }) {
+    final result = create();
+    if (grantId != null) result.grantId = grantId;
+    if (eventType != null) result.eventType = eventType;
+    if (outcome != null) result.outcome = outcome;
+    if (positionMs != null) result.positionMs = positionMs;
+    if (latencyMs != null) result.latencyMs = latencyMs;
+    if (clientEventId != null) result.clientEventId = clientEventId;
+    return result;
+  }
+
+  RecordPlaybackEventRequest._();
+
+  factory RecordPlaybackEventRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordPlaybackEventRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordPlaybackEventRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'grantId')
+    ..aOS(2, _omitFieldNames ? '' : 'eventType')
+    ..aOS(3, _omitFieldNames ? '' : 'outcome')
+    ..aInt64(4, _omitFieldNames ? '' : 'positionMs')
+    ..aInt64(5, _omitFieldNames ? '' : 'latencyMs')
+    ..aOS(6, _omitFieldNames ? '' : 'clientEventId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordPlaybackEventRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordPlaybackEventRequest copyWith(
+          void Function(RecordPlaybackEventRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as RecordPlaybackEventRequest))
+          as RecordPlaybackEventRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordPlaybackEventRequest create() => RecordPlaybackEventRequest._();
+  @$core.override
+  RecordPlaybackEventRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordPlaybackEventRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecordPlaybackEventRequest>(create);
+  static RecordPlaybackEventRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get grantId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set grantId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGrantId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGrantId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get eventType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set eventType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEventType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEventType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get outcome => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set outcome($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOutcome() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOutcome() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get positionMs => $_getI64(3);
+  @$pb.TagNumber(4)
+  set positionMs($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPositionMs() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPositionMs() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get latencyMs => $_getI64(4);
+  @$pb.TagNumber(5)
+  set latencyMs($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLatencyMs() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLatencyMs() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get clientEventId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set clientEventId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasClientEventId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearClientEventId() => $_clearField(6);
+}
+
+class RecordPlaybackEventResponse extends $pb.GeneratedMessage {
+  factory RecordPlaybackEventResponse() => create();
+
+  RecordPlaybackEventResponse._();
+
+  factory RecordPlaybackEventResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordPlaybackEventResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordPlaybackEventResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordPlaybackEventResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordPlaybackEventResponse copyWith(
+          void Function(RecordPlaybackEventResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RecordPlaybackEventResponse))
+          as RecordPlaybackEventResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordPlaybackEventResponse create() =>
+      RecordPlaybackEventResponse._();
+  @$core.override
+  RecordPlaybackEventResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordPlaybackEventResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecordPlaybackEventResponse>(create);
+  static RecordPlaybackEventResponse? _defaultInstance;
+}
+
 const $core.bool _omitFieldNames =
     $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames =

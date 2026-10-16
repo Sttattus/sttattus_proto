@@ -229,6 +229,13 @@ const (
 	OnyxService_RevokeMyProtectedDeliveryGrant_FullMethodName       = "/sttattus.onyx.v1.OnyxService/RevokeMyProtectedDeliveryGrant"
 	OnyxService_RecordProtectedDeliveryEvent_FullMethodName         = "/sttattus.onyx.v1.OnyxService/RecordProtectedDeliveryEvent"
 	OnyxService_SubmitProtectedDeliveryReport_FullMethodName        = "/sttattus.onyx.v1.OnyxService/SubmitProtectedDeliveryReport"
+	OnyxService_GetPlaybackDashboard_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/GetPlaybackDashboard"
+	OnyxService_UpdatePlaybackPreferences_FullMethodName            = "/sttattus.onyx.v1.OnyxService/UpdatePlaybackPreferences"
+	OnyxService_RegisterPlaybackDevice_FullMethodName               = "/sttattus.onyx.v1.OnyxService/RegisterPlaybackDevice"
+	OnyxService_RevokePlaybackDevice_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/RevokePlaybackDevice"
+	OnyxService_GetPlaybackEligibility_FullMethodName               = "/sttattus.onyx.v1.OnyxService/GetPlaybackEligibility"
+	OnyxService_RequestReceiverPlaybackGrant_FullMethodName         = "/sttattus.onyx.v1.OnyxService/RequestReceiverPlaybackGrant"
+	OnyxService_RecordPlaybackEvent_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/RecordPlaybackEvent"
 	OnyxService_GetIntegrationDashboard_FullMethodName              = "/sttattus.onyx.v1.OnyxService/GetIntegrationDashboard"
 	OnyxService_AuthorizeIntegration_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/AuthorizeIntegration"
 	OnyxService_RevokeIntegrationGrant_FullMethodName               = "/sttattus.onyx.v1.OnyxService/RevokeIntegrationGrant"
@@ -560,6 +567,15 @@ type OnyxServiceClient interface {
 	RevokeMyProtectedDeliveryGrant(ctx context.Context, in *RevokeMyProtectedDeliveryGrantRequest, opts ...grpc.CallOption) (*RevokeMyProtectedDeliveryGrantResponse, error)
 	RecordProtectedDeliveryEvent(ctx context.Context, in *RecordProtectedDeliveryEventRequest, opts ...grpc.CallOption) (*RecordProtectedDeliveryEventResponse, error)
 	SubmitProtectedDeliveryReport(ctx context.Context, in *SubmitProtectedDeliveryReportRequest, opts ...grpc.CallOption) (*SubmitProtectedDeliveryReportResponse, error)
+	// Conditional Package C — unified playback policy, linked receiver devices,
+	// short-lived receiver grants and immutable delivery events.
+	GetPlaybackDashboard(ctx context.Context, in *GetPlaybackDashboardRequest, opts ...grpc.CallOption) (*GetPlaybackDashboardResponse, error)
+	UpdatePlaybackPreferences(ctx context.Context, in *UpdatePlaybackPreferencesRequest, opts ...grpc.CallOption) (*UpdatePlaybackPreferencesResponse, error)
+	RegisterPlaybackDevice(ctx context.Context, in *RegisterPlaybackDeviceRequest, opts ...grpc.CallOption) (*RegisterPlaybackDeviceResponse, error)
+	RevokePlaybackDevice(ctx context.Context, in *RevokePlaybackDeviceRequest, opts ...grpc.CallOption) (*RevokePlaybackDeviceResponse, error)
+	GetPlaybackEligibility(ctx context.Context, in *GetPlaybackEligibilityRequest, opts ...grpc.CallOption) (*GetPlaybackEligibilityResponse, error)
+	RequestReceiverPlaybackGrant(ctx context.Context, in *RequestReceiverPlaybackGrantRequest, opts ...grpc.CallOption) (*RequestReceiverPlaybackGrantResponse, error)
+	RecordPlaybackEvent(ctx context.Context, in *RecordPlaybackEventRequest, opts ...grpc.CallOption) (*RecordPlaybackEventResponse, error)
 	// Choice 14 — member-owned OAuth-style grants, connectors and explicit
 	// cross-pillar dispatches. External REST/MCP calls use the same grant and
 	// audit records through the HTTP edge.
@@ -2758,6 +2774,76 @@ func (c *onyxServiceClient) SubmitProtectedDeliveryReport(ctx context.Context, i
 	return out, nil
 }
 
+func (c *onyxServiceClient) GetPlaybackDashboard(ctx context.Context, in *GetPlaybackDashboardRequest, opts ...grpc.CallOption) (*GetPlaybackDashboardResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPlaybackDashboardResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetPlaybackDashboard_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) UpdatePlaybackPreferences(ctx context.Context, in *UpdatePlaybackPreferencesRequest, opts ...grpc.CallOption) (*UpdatePlaybackPreferencesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdatePlaybackPreferencesResponse)
+	err := c.cc.Invoke(ctx, OnyxService_UpdatePlaybackPreferences_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RegisterPlaybackDevice(ctx context.Context, in *RegisterPlaybackDeviceRequest, opts ...grpc.CallOption) (*RegisterPlaybackDeviceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RegisterPlaybackDeviceResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RegisterPlaybackDevice_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RevokePlaybackDevice(ctx context.Context, in *RevokePlaybackDeviceRequest, opts ...grpc.CallOption) (*RevokePlaybackDeviceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokePlaybackDeviceResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RevokePlaybackDevice_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetPlaybackEligibility(ctx context.Context, in *GetPlaybackEligibilityRequest, opts ...grpc.CallOption) (*GetPlaybackEligibilityResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPlaybackEligibilityResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetPlaybackEligibility_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RequestReceiverPlaybackGrant(ctx context.Context, in *RequestReceiverPlaybackGrantRequest, opts ...grpc.CallOption) (*RequestReceiverPlaybackGrantResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RequestReceiverPlaybackGrantResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RequestReceiverPlaybackGrant_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RecordPlaybackEvent(ctx context.Context, in *RecordPlaybackEventRequest, opts ...grpc.CallOption) (*RecordPlaybackEventResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordPlaybackEventResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RecordPlaybackEvent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *onyxServiceClient) GetIntegrationDashboard(ctx context.Context, in *GetIntegrationDashboardRequest, opts ...grpc.CallOption) (*GetIntegrationDashboardResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetIntegrationDashboardResponse)
@@ -3789,6 +3875,15 @@ type OnyxServiceServer interface {
 	RevokeMyProtectedDeliveryGrant(context.Context, *RevokeMyProtectedDeliveryGrantRequest) (*RevokeMyProtectedDeliveryGrantResponse, error)
 	RecordProtectedDeliveryEvent(context.Context, *RecordProtectedDeliveryEventRequest) (*RecordProtectedDeliveryEventResponse, error)
 	SubmitProtectedDeliveryReport(context.Context, *SubmitProtectedDeliveryReportRequest) (*SubmitProtectedDeliveryReportResponse, error)
+	// Conditional Package C — unified playback policy, linked receiver devices,
+	// short-lived receiver grants and immutable delivery events.
+	GetPlaybackDashboard(context.Context, *GetPlaybackDashboardRequest) (*GetPlaybackDashboardResponse, error)
+	UpdatePlaybackPreferences(context.Context, *UpdatePlaybackPreferencesRequest) (*UpdatePlaybackPreferencesResponse, error)
+	RegisterPlaybackDevice(context.Context, *RegisterPlaybackDeviceRequest) (*RegisterPlaybackDeviceResponse, error)
+	RevokePlaybackDevice(context.Context, *RevokePlaybackDeviceRequest) (*RevokePlaybackDeviceResponse, error)
+	GetPlaybackEligibility(context.Context, *GetPlaybackEligibilityRequest) (*GetPlaybackEligibilityResponse, error)
+	RequestReceiverPlaybackGrant(context.Context, *RequestReceiverPlaybackGrantRequest) (*RequestReceiverPlaybackGrantResponse, error)
+	RecordPlaybackEvent(context.Context, *RecordPlaybackEventRequest) (*RecordPlaybackEventResponse, error)
 	// Choice 14 — member-owned OAuth-style grants, connectors and explicit
 	// cross-pillar dispatches. External REST/MCP calls use the same grant and
 	// audit records through the HTTP edge.
@@ -4516,6 +4611,27 @@ func (UnimplementedOnyxServiceServer) RecordProtectedDeliveryEvent(context.Conte
 }
 func (UnimplementedOnyxServiceServer) SubmitProtectedDeliveryReport(context.Context, *SubmitProtectedDeliveryReportRequest) (*SubmitProtectedDeliveryReportResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method SubmitProtectedDeliveryReport not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetPlaybackDashboard(context.Context, *GetPlaybackDashboardRequest) (*GetPlaybackDashboardResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPlaybackDashboard not implemented")
+}
+func (UnimplementedOnyxServiceServer) UpdatePlaybackPreferences(context.Context, *UpdatePlaybackPreferencesRequest) (*UpdatePlaybackPreferencesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdatePlaybackPreferences not implemented")
+}
+func (UnimplementedOnyxServiceServer) RegisterPlaybackDevice(context.Context, *RegisterPlaybackDeviceRequest) (*RegisterPlaybackDeviceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RegisterPlaybackDevice not implemented")
+}
+func (UnimplementedOnyxServiceServer) RevokePlaybackDevice(context.Context, *RevokePlaybackDeviceRequest) (*RevokePlaybackDeviceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokePlaybackDevice not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetPlaybackEligibility(context.Context, *GetPlaybackEligibilityRequest) (*GetPlaybackEligibilityResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPlaybackEligibility not implemented")
+}
+func (UnimplementedOnyxServiceServer) RequestReceiverPlaybackGrant(context.Context, *RequestReceiverPlaybackGrantRequest) (*RequestReceiverPlaybackGrantResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RequestReceiverPlaybackGrant not implemented")
+}
+func (UnimplementedOnyxServiceServer) RecordPlaybackEvent(context.Context, *RecordPlaybackEventRequest) (*RecordPlaybackEventResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordPlaybackEvent not implemented")
 }
 func (UnimplementedOnyxServiceServer) GetIntegrationDashboard(context.Context, *GetIntegrationDashboardRequest) (*GetIntegrationDashboardResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetIntegrationDashboard not implemented")
@@ -8552,6 +8668,132 @@ func _OnyxService_SubmitProtectedDeliveryReport_Handler(srv interface{}, ctx con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_GetPlaybackDashboard_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPlaybackDashboardRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetPlaybackDashboard(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetPlaybackDashboard_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetPlaybackDashboard(ctx, req.(*GetPlaybackDashboardRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_UpdatePlaybackPreferences_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdatePlaybackPreferencesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).UpdatePlaybackPreferences(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_UpdatePlaybackPreferences_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).UpdatePlaybackPreferences(ctx, req.(*UpdatePlaybackPreferencesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RegisterPlaybackDevice_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RegisterPlaybackDeviceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RegisterPlaybackDevice(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RegisterPlaybackDevice_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RegisterPlaybackDevice(ctx, req.(*RegisterPlaybackDeviceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RevokePlaybackDevice_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokePlaybackDeviceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RevokePlaybackDevice(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RevokePlaybackDevice_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RevokePlaybackDevice(ctx, req.(*RevokePlaybackDeviceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetPlaybackEligibility_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPlaybackEligibilityRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetPlaybackEligibility(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetPlaybackEligibility_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetPlaybackEligibility(ctx, req.(*GetPlaybackEligibilityRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RequestReceiverPlaybackGrant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RequestReceiverPlaybackGrantRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RequestReceiverPlaybackGrant(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RequestReceiverPlaybackGrant_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RequestReceiverPlaybackGrant(ctx, req.(*RequestReceiverPlaybackGrantRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RecordPlaybackEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordPlaybackEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RecordPlaybackEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RecordPlaybackEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RecordPlaybackEvent(ctx, req.(*RecordPlaybackEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _OnyxService_GetIntegrationDashboard_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetIntegrationDashboardRequest)
 	if err := dec(in); err != nil {
@@ -10802,6 +11044,34 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SubmitProtectedDeliveryReport",
 			Handler:    _OnyxService_SubmitProtectedDeliveryReport_Handler,
+		},
+		{
+			MethodName: "GetPlaybackDashboard",
+			Handler:    _OnyxService_GetPlaybackDashboard_Handler,
+		},
+		{
+			MethodName: "UpdatePlaybackPreferences",
+			Handler:    _OnyxService_UpdatePlaybackPreferences_Handler,
+		},
+		{
+			MethodName: "RegisterPlaybackDevice",
+			Handler:    _OnyxService_RegisterPlaybackDevice_Handler,
+		},
+		{
+			MethodName: "RevokePlaybackDevice",
+			Handler:    _OnyxService_RevokePlaybackDevice_Handler,
+		},
+		{
+			MethodName: "GetPlaybackEligibility",
+			Handler:    _OnyxService_GetPlaybackEligibility_Handler,
+		},
+		{
+			MethodName: "RequestReceiverPlaybackGrant",
+			Handler:    _OnyxService_RequestReceiverPlaybackGrant_Handler,
+		},
+		{
+			MethodName: "RecordPlaybackEvent",
+			Handler:    _OnyxService_RecordPlaybackEvent_Handler,
 		},
 		{
 			MethodName: "GetIntegrationDashboard",

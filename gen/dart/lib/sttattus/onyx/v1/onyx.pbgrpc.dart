@@ -1725,6 +1725,65 @@ class OnyxServiceClient extends $grpc.Client {
         options: options);
   }
 
+  /// Conditional Package C — unified playback policy, linked receiver devices,
+  /// short-lived receiver grants and immutable delivery events.
+  $grpc.ResponseFuture<$0.GetPlaybackDashboardResponse> getPlaybackDashboard(
+    $0.GetPlaybackDashboardRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getPlaybackDashboard, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdatePlaybackPreferencesResponse>
+      updatePlaybackPreferences(
+    $0.UpdatePlaybackPreferencesRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updatePlaybackPreferences, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RegisterPlaybackDeviceResponse>
+      registerPlaybackDevice(
+    $0.RegisterPlaybackDeviceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$registerPlaybackDevice, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevokePlaybackDeviceResponse> revokePlaybackDevice(
+    $0.RevokePlaybackDeviceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$revokePlaybackDevice, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetPlaybackEligibilityResponse>
+      getPlaybackEligibility(
+    $0.GetPlaybackEligibilityRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getPlaybackEligibility, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RequestReceiverPlaybackGrantResponse>
+      requestReceiverPlaybackGrant(
+    $0.RequestReceiverPlaybackGrantRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$requestReceiverPlaybackGrant, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordPlaybackEventResponse> recordPlaybackEvent(
+    $0.RecordPlaybackEventRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordPlaybackEvent, request, options: options);
+  }
+
   /// Choice 14 — member-owned OAuth-style grants, connectors and explicit
   /// cross-pillar dispatches. External REST/MCP calls use the same grant and
   /// audit records through the HTTP edge.
@@ -3501,6 +3560,43 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/SubmitProtectedDeliveryReport',
       ($0.SubmitProtectedDeliveryReportRequest value) => value.writeToBuffer(),
       $0.SubmitProtectedDeliveryReportResponse.fromBuffer);
+  static final _$getPlaybackDashboard = $grpc.ClientMethod<
+          $0.GetPlaybackDashboardRequest, $0.GetPlaybackDashboardResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetPlaybackDashboard',
+      ($0.GetPlaybackDashboardRequest value) => value.writeToBuffer(),
+      $0.GetPlaybackDashboardResponse.fromBuffer);
+  static final _$updatePlaybackPreferences = $grpc.ClientMethod<
+          $0.UpdatePlaybackPreferencesRequest,
+          $0.UpdatePlaybackPreferencesResponse>(
+      '/sttattus.onyx.v1.OnyxService/UpdatePlaybackPreferences',
+      ($0.UpdatePlaybackPreferencesRequest value) => value.writeToBuffer(),
+      $0.UpdatePlaybackPreferencesResponse.fromBuffer);
+  static final _$registerPlaybackDevice = $grpc.ClientMethod<
+          $0.RegisterPlaybackDeviceRequest, $0.RegisterPlaybackDeviceResponse>(
+      '/sttattus.onyx.v1.OnyxService/RegisterPlaybackDevice',
+      ($0.RegisterPlaybackDeviceRequest value) => value.writeToBuffer(),
+      $0.RegisterPlaybackDeviceResponse.fromBuffer);
+  static final _$revokePlaybackDevice = $grpc.ClientMethod<
+          $0.RevokePlaybackDeviceRequest, $0.RevokePlaybackDeviceResponse>(
+      '/sttattus.onyx.v1.OnyxService/RevokePlaybackDevice',
+      ($0.RevokePlaybackDeviceRequest value) => value.writeToBuffer(),
+      $0.RevokePlaybackDeviceResponse.fromBuffer);
+  static final _$getPlaybackEligibility = $grpc.ClientMethod<
+          $0.GetPlaybackEligibilityRequest, $0.GetPlaybackEligibilityResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetPlaybackEligibility',
+      ($0.GetPlaybackEligibilityRequest value) => value.writeToBuffer(),
+      $0.GetPlaybackEligibilityResponse.fromBuffer);
+  static final _$requestReceiverPlaybackGrant = $grpc.ClientMethod<
+          $0.RequestReceiverPlaybackGrantRequest,
+          $0.RequestReceiverPlaybackGrantResponse>(
+      '/sttattus.onyx.v1.OnyxService/RequestReceiverPlaybackGrant',
+      ($0.RequestReceiverPlaybackGrantRequest value) => value.writeToBuffer(),
+      $0.RequestReceiverPlaybackGrantResponse.fromBuffer);
+  static final _$recordPlaybackEvent = $grpc.ClientMethod<
+          $0.RecordPlaybackEventRequest, $0.RecordPlaybackEventResponse>(
+      '/sttattus.onyx.v1.OnyxService/RecordPlaybackEvent',
+      ($0.RecordPlaybackEventRequest value) => value.writeToBuffer(),
+      $0.RecordPlaybackEventResponse.fromBuffer);
   static final _$getIntegrationDashboard = $grpc.ClientMethod<
           $0.GetIntegrationDashboardRequest,
           $0.GetIntegrationDashboardResponse>(
@@ -5856,6 +5952,70 @@ abstract class OnyxServiceBase extends $grpc.Service {
             $0.SubmitProtectedDeliveryReportRequest.fromBuffer(value),
         ($0.SubmitProtectedDeliveryReportResponse value) =>
             value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetPlaybackDashboardRequest,
+            $0.GetPlaybackDashboardResponse>(
+        'GetPlaybackDashboard',
+        getPlaybackDashboard_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetPlaybackDashboardRequest.fromBuffer(value),
+        ($0.GetPlaybackDashboardResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdatePlaybackPreferencesRequest,
+            $0.UpdatePlaybackPreferencesResponse>(
+        'UpdatePlaybackPreferences',
+        updatePlaybackPreferences_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdatePlaybackPreferencesRequest.fromBuffer(value),
+        ($0.UpdatePlaybackPreferencesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RegisterPlaybackDeviceRequest,
+            $0.RegisterPlaybackDeviceResponse>(
+        'RegisterPlaybackDevice',
+        registerPlaybackDevice_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RegisterPlaybackDeviceRequest.fromBuffer(value),
+        ($0.RegisterPlaybackDeviceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevokePlaybackDeviceRequest,
+            $0.RevokePlaybackDeviceResponse>(
+        'RevokePlaybackDevice',
+        revokePlaybackDevice_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RevokePlaybackDeviceRequest.fromBuffer(value),
+        ($0.RevokePlaybackDeviceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetPlaybackEligibilityRequest,
+            $0.GetPlaybackEligibilityResponse>(
+        'GetPlaybackEligibility',
+        getPlaybackEligibility_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetPlaybackEligibilityRequest.fromBuffer(value),
+        ($0.GetPlaybackEligibilityResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RequestReceiverPlaybackGrantRequest,
+            $0.RequestReceiverPlaybackGrantResponse>(
+        'RequestReceiverPlaybackGrant',
+        requestReceiverPlaybackGrant_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RequestReceiverPlaybackGrantRequest.fromBuffer(value),
+        ($0.RequestReceiverPlaybackGrantResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordPlaybackEventRequest,
+            $0.RecordPlaybackEventResponse>(
+        'RecordPlaybackEvent',
+        recordPlaybackEvent_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordPlaybackEventRequest.fromBuffer(value),
+        ($0.RecordPlaybackEventResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.GetIntegrationDashboardRequest,
             $0.GetIntegrationDashboardResponse>(
         'GetIntegrationDashboard',
@@ -8558,6 +8718,72 @@ abstract class OnyxServiceBase extends $grpc.Service {
   $async.Future<$0.SubmitProtectedDeliveryReportResponse>
       submitProtectedDeliveryReport($grpc.ServiceCall call,
           $0.SubmitProtectedDeliveryReportRequest request);
+
+  $async.Future<$0.GetPlaybackDashboardResponse> getPlaybackDashboard_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetPlaybackDashboardRequest> $request) async {
+    return getPlaybackDashboard($call, await $request);
+  }
+
+  $async.Future<$0.GetPlaybackDashboardResponse> getPlaybackDashboard(
+      $grpc.ServiceCall call, $0.GetPlaybackDashboardRequest request);
+
+  $async.Future<$0.UpdatePlaybackPreferencesResponse>
+      updatePlaybackPreferences_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpdatePlaybackPreferencesRequest> $request) async {
+    return updatePlaybackPreferences($call, await $request);
+  }
+
+  $async.Future<$0.UpdatePlaybackPreferencesResponse> updatePlaybackPreferences(
+      $grpc.ServiceCall call, $0.UpdatePlaybackPreferencesRequest request);
+
+  $async.Future<$0.RegisterPlaybackDeviceResponse> registerPlaybackDevice_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RegisterPlaybackDeviceRequest> $request) async {
+    return registerPlaybackDevice($call, await $request);
+  }
+
+  $async.Future<$0.RegisterPlaybackDeviceResponse> registerPlaybackDevice(
+      $grpc.ServiceCall call, $0.RegisterPlaybackDeviceRequest request);
+
+  $async.Future<$0.RevokePlaybackDeviceResponse> revokePlaybackDevice_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RevokePlaybackDeviceRequest> $request) async {
+    return revokePlaybackDevice($call, await $request);
+  }
+
+  $async.Future<$0.RevokePlaybackDeviceResponse> revokePlaybackDevice(
+      $grpc.ServiceCall call, $0.RevokePlaybackDeviceRequest request);
+
+  $async.Future<$0.GetPlaybackEligibilityResponse> getPlaybackEligibility_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetPlaybackEligibilityRequest> $request) async {
+    return getPlaybackEligibility($call, await $request);
+  }
+
+  $async.Future<$0.GetPlaybackEligibilityResponse> getPlaybackEligibility(
+      $grpc.ServiceCall call, $0.GetPlaybackEligibilityRequest request);
+
+  $async.Future<$0.RequestReceiverPlaybackGrantResponse>
+      requestReceiverPlaybackGrant_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RequestReceiverPlaybackGrantRequest>
+              $request) async {
+    return requestReceiverPlaybackGrant($call, await $request);
+  }
+
+  $async.Future<$0.RequestReceiverPlaybackGrantResponse>
+      requestReceiverPlaybackGrant($grpc.ServiceCall call,
+          $0.RequestReceiverPlaybackGrantRequest request);
+
+  $async.Future<$0.RecordPlaybackEventResponse> recordPlaybackEvent_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RecordPlaybackEventRequest> $request) async {
+    return recordPlaybackEvent($call, await $request);
+  }
+
+  $async.Future<$0.RecordPlaybackEventResponse> recordPlaybackEvent(
+      $grpc.ServiceCall call, $0.RecordPlaybackEventRequest request);
 
   $async.Future<$0.GetIntegrationDashboardResponse> getIntegrationDashboard_Pre(
       $grpc.ServiceCall $call,
