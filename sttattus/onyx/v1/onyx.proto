@@ -96,6 +96,8 @@ message OnyxContent {
   // is never returned unmarked when protection is active.
   bool forensic_protected = 41;
   int64 forensic_policy_version = 42;
+  // Embedded only in a unique grant-bound marked offline document payload.
+  string protected_visible_attribution = 43;
 }
 
 // OnyxContentEdition represents an available language/locale edition summary for a piece of content.
@@ -1503,6 +1505,9 @@ message EncryptedRendition {
     OFFLINE_PACKAGE_TYPE_RAW_AUDIO = 3;
     OFFLINE_PACKAGE_TYPE_CAPTIONS = 4;
     OFFLINE_PACKAGE_TYPE_PDF = 5;
+    OFFLINE_PACKAGE_TYPE_RAW_VIDEO = 6;
+    OFFLINE_PACKAGE_TYPE_MARKED_IMAGE = 7;
+    OFFLINE_PACKAGE_TYPE_MARKED_DOCUMENT = 8;
   }
   string content_id = 1;
   string rendition_id = 2;
@@ -1522,6 +1527,10 @@ message EncryptedRendition {
   string key_wrap_algorithm = 16; // RSA-OAEP-SHA-256-MGF1-SHA-1
   // Present only for explicitly protected, device-bound delivery.
   OnyxForensicManifest forensic_manifest = 17;
+  string delivery_grant_id = 18;
+  string visible_attribution = 19;
+  google.protobuf.Timestamp purge_due_at = 20;
+  int64 access_epoch = 21;
 }
 
 message GetOfflineManifestRequest {
@@ -4165,6 +4174,7 @@ message OnyxProtectedDeliveryState {
   bool wifi_only_default = 8;
   string public_notice = 9;
   int64 access_epoch = 10;
+  int32 offline_grant_ttl_seconds = 11;
 }
 
 message OnyxProtectedDeliveryGrant {
@@ -4183,6 +4193,7 @@ message OnyxProtectedDeliveryGrant {
   google.protobuf.Timestamp issued_at = 13;
   google.protobuf.Timestamp expires_at = 14;
   repeated EncryptedRendition encrypted_renditions = 15;
+  int64 access_epoch = 16;
 }
 
 message GetProtectedDeliveryStateRequest {}
@@ -4205,6 +4216,15 @@ message RequestProtectedDeliveryGrantResponse {
   OnyxProtectedDeliveryState state = 2;
 }
 
+message GetProtectedDeliveryGrantStatusRequest {
+  string grant_id = 1;
+  string device_id = 2;
+}
+message GetProtectedDeliveryGrantStatusResponse {
+  OnyxProtectedDeliveryGrant grant = 1;
+  OnyxProtectedDeliveryState state = 2;
+}
+
 message RevokeMyProtectedDeliveryGrantRequest {
   string grant_id = 1;
   string reason = 2;
@@ -4217,7 +4237,7 @@ message RevokeMyProtectedDeliveryGrantResponse {
 message RecordProtectedDeliveryEventRequest {
   string event_id = 1;
   string grant_id = 2;
-  string event_type = 3; // playback_started | playback_failed | offline_opened | offline_purged
+  string event_type = 3; // playback_started | playback_failed | offline_downloaded | offline_opened | offline_open_failed | offline_purged
   string outcome = 4; // success | failure | canceled
   string error_code = 5;
   int64 bytes = 6;
@@ -6463,6 +6483,7 @@ service OnyxService {
   // encrypted offline video/image packages.
   rpc GetProtectedDeliveryState(GetProtectedDeliveryStateRequest) returns (GetProtectedDeliveryStateResponse);
   rpc RequestProtectedDeliveryGrant(RequestProtectedDeliveryGrantRequest) returns (RequestProtectedDeliveryGrantResponse);
+  rpc GetProtectedDeliveryGrantStatus(GetProtectedDeliveryGrantStatusRequest) returns (GetProtectedDeliveryGrantStatusResponse);
   rpc RevokeMyProtectedDeliveryGrant(RevokeMyProtectedDeliveryGrantRequest) returns (RevokeMyProtectedDeliveryGrantResponse);
   rpc RecordProtectedDeliveryEvent(RecordProtectedDeliveryEventRequest) returns (RecordProtectedDeliveryEventResponse);
   rpc SubmitProtectedDeliveryReport(SubmitProtectedDeliveryReportRequest) returns (SubmitProtectedDeliveryReportResponse);

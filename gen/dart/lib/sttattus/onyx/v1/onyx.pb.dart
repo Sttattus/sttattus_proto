@@ -318,6 +318,7 @@ class OnyxContent extends $pb.GeneratedMessage {
     $core.bool? isStaleTranslation,
     $core.bool? forensicProtected,
     $fixnum.Int64? forensicPolicyVersion,
+    $core.String? protectedVisibleAttribution,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -370,6 +371,8 @@ class OnyxContent extends $pb.GeneratedMessage {
     if (forensicProtected != null) result.forensicProtected = forensicProtected;
     if (forensicPolicyVersion != null)
       result.forensicPolicyVersion = forensicPolicyVersion;
+    if (protectedVisibleAttribution != null)
+      result.protectedVisibleAttribution = protectedVisibleAttribution;
     return result;
   }
 
@@ -439,6 +442,7 @@ class OnyxContent extends $pb.GeneratedMessage {
     ..aOB(40, _omitFieldNames ? '' : 'isStaleTranslation')
     ..aOB(41, _omitFieldNames ? '' : 'forensicProtected')
     ..aInt64(42, _omitFieldNames ? '' : 'forensicPolicyVersion')
+    ..aOS(43, _omitFieldNames ? '' : 'protectedVisibleAttribution')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -850,6 +854,16 @@ class OnyxContent extends $pb.GeneratedMessage {
   $core.bool hasForensicPolicyVersion() => $_has(41);
   @$pb.TagNumber(42)
   void clearForensicPolicyVersion() => $_clearField(42);
+
+  /// Embedded only in a unique grant-bound marked offline document payload.
+  @$pb.TagNumber(43)
+  $core.String get protectedVisibleAttribution => $_getSZ(42);
+  @$pb.TagNumber(43)
+  set protectedVisibleAttribution($core.String value) => $_setString(42, value);
+  @$pb.TagNumber(43)
+  $core.bool hasProtectedVisibleAttribution() => $_has(42);
+  @$pb.TagNumber(43)
+  void clearProtectedVisibleAttribution() => $_clearField(43);
 }
 
 /// OnyxContentEdition represents an available language/locale edition summary for a piece of content.
@@ -20082,6 +20096,10 @@ class EncryptedRendition extends $pb.GeneratedMessage {
     EncryptedRendition_OfflinePackageType? packageType,
     $core.String? keyWrapAlgorithm,
     OnyxForensicManifest? forensicManifest,
+    $core.String? deliveryGrantId,
+    $core.String? visibleAttribution,
+    $1.Timestamp? purgeDueAt,
+    $fixnum.Int64? accessEpoch,
   }) {
     final result = create();
     if (contentId != null) result.contentId = contentId;
@@ -20101,6 +20119,11 @@ class EncryptedRendition extends $pb.GeneratedMessage {
     if (packageType != null) result.packageType = packageType;
     if (keyWrapAlgorithm != null) result.keyWrapAlgorithm = keyWrapAlgorithm;
     if (forensicManifest != null) result.forensicManifest = forensicManifest;
+    if (deliveryGrantId != null) result.deliveryGrantId = deliveryGrantId;
+    if (visibleAttribution != null)
+      result.visibleAttribution = visibleAttribution;
+    if (purgeDueAt != null) result.purgeDueAt = purgeDueAt;
+    if (accessEpoch != null) result.accessEpoch = accessEpoch;
     return result;
   }
 
@@ -20141,6 +20164,11 @@ class EncryptedRendition extends $pb.GeneratedMessage {
     ..aOS(16, _omitFieldNames ? '' : 'keyWrapAlgorithm')
     ..aOM<OnyxForensicManifest>(17, _omitFieldNames ? '' : 'forensicManifest',
         subBuilder: OnyxForensicManifest.create)
+    ..aOS(18, _omitFieldNames ? '' : 'deliveryGrantId')
+    ..aOS(19, _omitFieldNames ? '' : 'visibleAttribution')
+    ..aOM<$1.Timestamp>(20, _omitFieldNames ? '' : 'purgeDueAt',
+        subBuilder: $1.Timestamp.create)
+    ..aInt64(21, _omitFieldNames ? '' : 'accessEpoch')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -20320,6 +20348,44 @@ class EncryptedRendition extends $pb.GeneratedMessage {
   void clearForensicManifest() => $_clearField(17);
   @$pb.TagNumber(17)
   OnyxForensicManifest ensureForensicManifest() => $_ensure(16);
+
+  @$pb.TagNumber(18)
+  $core.String get deliveryGrantId => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set deliveryGrantId($core.String value) => $_setString(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasDeliveryGrantId() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearDeliveryGrantId() => $_clearField(18);
+
+  @$pb.TagNumber(19)
+  $core.String get visibleAttribution => $_getSZ(18);
+  @$pb.TagNumber(19)
+  set visibleAttribution($core.String value) => $_setString(18, value);
+  @$pb.TagNumber(19)
+  $core.bool hasVisibleAttribution() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearVisibleAttribution() => $_clearField(19);
+
+  @$pb.TagNumber(20)
+  $1.Timestamp get purgeDueAt => $_getN(19);
+  @$pb.TagNumber(20)
+  set purgeDueAt($1.Timestamp value) => $_setField(20, value);
+  @$pb.TagNumber(20)
+  $core.bool hasPurgeDueAt() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearPurgeDueAt() => $_clearField(20);
+  @$pb.TagNumber(20)
+  $1.Timestamp ensurePurgeDueAt() => $_ensure(19);
+
+  @$pb.TagNumber(21)
+  $fixnum.Int64 get accessEpoch => $_getI64(20);
+  @$pb.TagNumber(21)
+  set accessEpoch($fixnum.Int64 value) => $_setInt64(20, value);
+  @$pb.TagNumber(21)
+  $core.bool hasAccessEpoch() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearAccessEpoch() => $_clearField(21);
 }
 
 class GetOfflineManifestRequest extends $pb.GeneratedMessage {
@@ -54798,6 +54864,7 @@ class OnyxProtectedDeliveryState extends $pb.GeneratedMessage {
     $core.bool? wifiOnlyDefault,
     $core.String? publicNotice,
     $fixnum.Int64? accessEpoch,
+    $core.int? offlineGrantTtlSeconds,
   }) {
     final result = create();
     if (status != null) result.status = status;
@@ -54813,6 +54880,8 @@ class OnyxProtectedDeliveryState extends $pb.GeneratedMessage {
     if (wifiOnlyDefault != null) result.wifiOnlyDefault = wifiOnlyDefault;
     if (publicNotice != null) result.publicNotice = publicNotice;
     if (accessEpoch != null) result.accessEpoch = accessEpoch;
+    if (offlineGrantTtlSeconds != null)
+      result.offlineGrantTtlSeconds = offlineGrantTtlSeconds;
     return result;
   }
 
@@ -54840,6 +54909,7 @@ class OnyxProtectedDeliveryState extends $pb.GeneratedMessage {
     ..aOB(8, _omitFieldNames ? '' : 'wifiOnlyDefault')
     ..aOS(9, _omitFieldNames ? '' : 'publicNotice')
     ..aInt64(10, _omitFieldNames ? '' : 'accessEpoch')
+    ..aI(11, _omitFieldNames ? '' : 'offlineGrantTtlSeconds')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -54952,6 +55022,15 @@ class OnyxProtectedDeliveryState extends $pb.GeneratedMessage {
   $core.bool hasAccessEpoch() => $_has(9);
   @$pb.TagNumber(10)
   void clearAccessEpoch() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.int get offlineGrantTtlSeconds => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set offlineGrantTtlSeconds($core.int value) => $_setSignedInt32(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasOfflineGrantTtlSeconds() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearOfflineGrantTtlSeconds() => $_clearField(11);
 }
 
 class OnyxProtectedDeliveryGrant extends $pb.GeneratedMessage {
@@ -54971,6 +55050,7 @@ class OnyxProtectedDeliveryGrant extends $pb.GeneratedMessage {
     $1.Timestamp? issuedAt,
     $1.Timestamp? expiresAt,
     $core.Iterable<EncryptedRendition>? encryptedRenditions,
+    $fixnum.Int64? accessEpoch,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -54990,6 +55070,7 @@ class OnyxProtectedDeliveryGrant extends $pb.GeneratedMessage {
     if (expiresAt != null) result.expiresAt = expiresAt;
     if (encryptedRenditions != null)
       result.encryptedRenditions.addAll(encryptedRenditions);
+    if (accessEpoch != null) result.accessEpoch = accessEpoch;
     return result;
   }
 
@@ -55025,6 +55106,7 @@ class OnyxProtectedDeliveryGrant extends $pb.GeneratedMessage {
         subBuilder: $1.Timestamp.create)
     ..pPM<EncryptedRendition>(15, _omitFieldNames ? '' : 'encryptedRenditions',
         subBuilder: EncryptedRendition.create)
+    ..aInt64(16, _omitFieldNames ? '' : 'accessEpoch')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -55180,6 +55262,15 @@ class OnyxProtectedDeliveryGrant extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(15)
   $pb.PbList<EncryptedRendition> get encryptedRenditions => $_getList(14);
+
+  @$pb.TagNumber(16)
+  $fixnum.Int64 get accessEpoch => $_getI64(15);
+  @$pb.TagNumber(16)
+  set accessEpoch($fixnum.Int64 value) => $_setInt64(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasAccessEpoch() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearAccessEpoch() => $_clearField(16);
 }
 
 class GetProtectedDeliveryStateRequest extends $pb.GeneratedMessage {
@@ -55489,6 +55580,156 @@ class RequestProtectedDeliveryGrantResponse extends $pb.GeneratedMessage {
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
           RequestProtectedDeliveryGrantResponse>(create);
   static RequestProtectedDeliveryGrantResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OnyxProtectedDeliveryGrant get grant => $_getN(0);
+  @$pb.TagNumber(1)
+  set grant(OnyxProtectedDeliveryGrant value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGrant() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGrant() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OnyxProtectedDeliveryGrant ensureGrant() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  OnyxProtectedDeliveryState get state => $_getN(1);
+  @$pb.TagNumber(2)
+  set state(OnyxProtectedDeliveryState value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearState() => $_clearField(2);
+  @$pb.TagNumber(2)
+  OnyxProtectedDeliveryState ensureState() => $_ensure(1);
+}
+
+class GetProtectedDeliveryGrantStatusRequest extends $pb.GeneratedMessage {
+  factory GetProtectedDeliveryGrantStatusRequest({
+    $core.String? grantId,
+    $core.String? deviceId,
+  }) {
+    final result = create();
+    if (grantId != null) result.grantId = grantId;
+    if (deviceId != null) result.deviceId = deviceId;
+    return result;
+  }
+
+  GetProtectedDeliveryGrantStatusRequest._();
+
+  factory GetProtectedDeliveryGrantStatusRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetProtectedDeliveryGrantStatusRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetProtectedDeliveryGrantStatusRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'grantId')
+    ..aOS(2, _omitFieldNames ? '' : 'deviceId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetProtectedDeliveryGrantStatusRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetProtectedDeliveryGrantStatusRequest copyWith(
+          void Function(GetProtectedDeliveryGrantStatusRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetProtectedDeliveryGrantStatusRequest))
+          as GetProtectedDeliveryGrantStatusRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetProtectedDeliveryGrantStatusRequest create() =>
+      GetProtectedDeliveryGrantStatusRequest._();
+  @$core.override
+  GetProtectedDeliveryGrantStatusRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetProtectedDeliveryGrantStatusRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetProtectedDeliveryGrantStatusRequest>(create);
+  static GetProtectedDeliveryGrantStatusRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get grantId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set grantId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGrantId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGrantId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get deviceId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deviceId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDeviceId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeviceId() => $_clearField(2);
+}
+
+class GetProtectedDeliveryGrantStatusResponse extends $pb.GeneratedMessage {
+  factory GetProtectedDeliveryGrantStatusResponse({
+    OnyxProtectedDeliveryGrant? grant,
+    OnyxProtectedDeliveryState? state,
+  }) {
+    final result = create();
+    if (grant != null) result.grant = grant;
+    if (state != null) result.state = state;
+    return result;
+  }
+
+  GetProtectedDeliveryGrantStatusResponse._();
+
+  factory GetProtectedDeliveryGrantStatusResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetProtectedDeliveryGrantStatusResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetProtectedDeliveryGrantStatusResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<OnyxProtectedDeliveryGrant>(1, _omitFieldNames ? '' : 'grant',
+        subBuilder: OnyxProtectedDeliveryGrant.create)
+    ..aOM<OnyxProtectedDeliveryState>(2, _omitFieldNames ? '' : 'state',
+        subBuilder: OnyxProtectedDeliveryState.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetProtectedDeliveryGrantStatusResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetProtectedDeliveryGrantStatusResponse copyWith(
+          void Function(GetProtectedDeliveryGrantStatusResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetProtectedDeliveryGrantStatusResponse))
+          as GetProtectedDeliveryGrantStatusResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetProtectedDeliveryGrantStatusResponse create() =>
+      GetProtectedDeliveryGrantStatusResponse._();
+  @$core.override
+  GetProtectedDeliveryGrantStatusResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetProtectedDeliveryGrantStatusResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetProtectedDeliveryGrantStatusResponse>(create);
+  static GetProtectedDeliveryGrantStatusResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   OnyxProtectedDeliveryGrant get grant => $_getN(0);

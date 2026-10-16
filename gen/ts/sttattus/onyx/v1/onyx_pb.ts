@@ -1009,6 +1009,13 @@ export class OnyxContent extends Message<OnyxContent> {
    */
   forensicPolicyVersion = protoInt64.zero;
 
+  /**
+   * Embedded only in a unique grant-bound marked offline document payload.
+   *
+   * @generated from field: string protected_visible_attribution = 43;
+   */
+  protectedVisibleAttribution = "";
+
   constructor(data?: PartialMessage<OnyxContent>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1059,6 +1066,7 @@ export class OnyxContent extends Message<OnyxContent> {
     { no: 40, name: "is_stale_translation", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 41, name: "forensic_protected", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 42, name: "forensic_policy_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 43, name: "protected_visible_attribution", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxContent {
@@ -13065,6 +13073,26 @@ export class EncryptedRendition extends Message<EncryptedRendition> {
    */
   forensicManifest?: OnyxForensicManifest;
 
+  /**
+   * @generated from field: string delivery_grant_id = 18;
+   */
+  deliveryGrantId = "";
+
+  /**
+   * @generated from field: string visible_attribution = 19;
+   */
+  visibleAttribution = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp purge_due_at = 20;
+   */
+  purgeDueAt?: Timestamp;
+
+  /**
+   * @generated from field: int64 access_epoch = 21;
+   */
+  accessEpoch = protoInt64.zero;
+
   constructor(data?: PartialMessage<EncryptedRendition>) {
     super();
     proto3.util.initPartial(data, this);
@@ -13090,6 +13118,10 @@ export class EncryptedRendition extends Message<EncryptedRendition> {
     { no: 15, name: "package_type", kind: "enum", T: proto3.getEnumType(EncryptedRendition_OfflinePackageType) },
     { no: 16, name: "key_wrap_algorithm", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 17, name: "forensic_manifest", kind: "message", T: OnyxForensicManifest },
+    { no: 18, name: "delivery_grant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 19, name: "visible_attribution", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 20, name: "purge_due_at", kind: "message", T: Timestamp },
+    { no: 21, name: "access_epoch", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EncryptedRendition {
@@ -13174,6 +13206,21 @@ export enum EncryptedRendition_OfflinePackageType {
    * @generated from enum value: OFFLINE_PACKAGE_TYPE_PDF = 5;
    */
   PDF = 5,
+
+  /**
+   * @generated from enum value: OFFLINE_PACKAGE_TYPE_RAW_VIDEO = 6;
+   */
+  RAW_VIDEO = 6,
+
+  /**
+   * @generated from enum value: OFFLINE_PACKAGE_TYPE_MARKED_IMAGE = 7;
+   */
+  MARKED_IMAGE = 7,
+
+  /**
+   * @generated from enum value: OFFLINE_PACKAGE_TYPE_MARKED_DOCUMENT = 8;
+   */
+  MARKED_DOCUMENT = 8,
 }
 // Retrieve enum metadata with: proto3.getEnumType(EncryptedRendition_OfflinePackageType)
 proto3.util.setEnumType(EncryptedRendition_OfflinePackageType, "sttattus.onyx.v1.EncryptedRendition.OfflinePackageType", [
@@ -13183,6 +13230,9 @@ proto3.util.setEnumType(EncryptedRendition_OfflinePackageType, "sttattus.onyx.v1
   { no: 3, name: "OFFLINE_PACKAGE_TYPE_RAW_AUDIO" },
   { no: 4, name: "OFFLINE_PACKAGE_TYPE_CAPTIONS" },
   { no: 5, name: "OFFLINE_PACKAGE_TYPE_PDF" },
+  { no: 6, name: "OFFLINE_PACKAGE_TYPE_RAW_VIDEO" },
+  { no: 7, name: "OFFLINE_PACKAGE_TYPE_MARKED_IMAGE" },
+  { no: 8, name: "OFFLINE_PACKAGE_TYPE_MARKED_DOCUMENT" },
 ]);
 
 /**
@@ -33019,6 +33069,11 @@ export class OnyxProtectedDeliveryState extends Message<OnyxProtectedDeliverySta
    */
   accessEpoch = protoInt64.zero;
 
+  /**
+   * @generated from field: int32 offline_grant_ttl_seconds = 11;
+   */
+  offlineGrantTtlSeconds = 0;
+
   constructor(data?: PartialMessage<OnyxProtectedDeliveryState>) {
     super();
     proto3.util.initPartial(data, this);
@@ -33037,6 +33092,7 @@ export class OnyxProtectedDeliveryState extends Message<OnyxProtectedDeliverySta
     { no: 8, name: "wifi_only_default", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 9, name: "public_notice", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 10, name: "access_epoch", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 11, name: "offline_grant_ttl_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxProtectedDeliveryState {
@@ -33143,6 +33199,11 @@ export class OnyxProtectedDeliveryGrant extends Message<OnyxProtectedDeliveryGra
    */
   encryptedRenditions: EncryptedRendition[] = [];
 
+  /**
+   * @generated from field: int64 access_epoch = 16;
+   */
+  accessEpoch = protoInt64.zero;
+
   constructor(data?: PartialMessage<OnyxProtectedDeliveryGrant>) {
     super();
     proto3.util.initPartial(data, this);
@@ -33166,6 +33227,7 @@ export class OnyxProtectedDeliveryGrant extends Message<OnyxProtectedDeliveryGra
     { no: 13, name: "issued_at", kind: "message", T: Timestamp },
     { no: 14, name: "expires_at", kind: "message", T: Timestamp },
     { no: 15, name: "encrypted_renditions", kind: "message", T: EncryptedRendition, repeated: true },
+    { no: 16, name: "access_epoch", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OnyxProtectedDeliveryGrant {
@@ -33380,6 +33442,92 @@ export class RequestProtectedDeliveryGrantResponse extends Message<RequestProtec
 }
 
 /**
+ * @generated from message sttattus.onyx.v1.GetProtectedDeliveryGrantStatusRequest
+ */
+export class GetProtectedDeliveryGrantStatusRequest extends Message<GetProtectedDeliveryGrantStatusRequest> {
+  /**
+   * @generated from field: string grant_id = 1;
+   */
+  grantId = "";
+
+  /**
+   * @generated from field: string device_id = 2;
+   */
+  deviceId = "";
+
+  constructor(data?: PartialMessage<GetProtectedDeliveryGrantStatusRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetProtectedDeliveryGrantStatusRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "grant_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "device_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetProtectedDeliveryGrantStatusRequest {
+    return new GetProtectedDeliveryGrantStatusRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetProtectedDeliveryGrantStatusRequest {
+    return new GetProtectedDeliveryGrantStatusRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetProtectedDeliveryGrantStatusRequest {
+    return new GetProtectedDeliveryGrantStatusRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetProtectedDeliveryGrantStatusRequest | PlainMessage<GetProtectedDeliveryGrantStatusRequest> | undefined, b: GetProtectedDeliveryGrantStatusRequest | PlainMessage<GetProtectedDeliveryGrantStatusRequest> | undefined): boolean {
+    return proto3.util.equals(GetProtectedDeliveryGrantStatusRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetProtectedDeliveryGrantStatusResponse
+ */
+export class GetProtectedDeliveryGrantStatusResponse extends Message<GetProtectedDeliveryGrantStatusResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxProtectedDeliveryGrant grant = 1;
+   */
+  grant?: OnyxProtectedDeliveryGrant;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.OnyxProtectedDeliveryState state = 2;
+   */
+  state?: OnyxProtectedDeliveryState;
+
+  constructor(data?: PartialMessage<GetProtectedDeliveryGrantStatusResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetProtectedDeliveryGrantStatusResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "grant", kind: "message", T: OnyxProtectedDeliveryGrant },
+    { no: 2, name: "state", kind: "message", T: OnyxProtectedDeliveryState },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetProtectedDeliveryGrantStatusResponse {
+    return new GetProtectedDeliveryGrantStatusResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetProtectedDeliveryGrantStatusResponse {
+    return new GetProtectedDeliveryGrantStatusResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetProtectedDeliveryGrantStatusResponse {
+    return new GetProtectedDeliveryGrantStatusResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetProtectedDeliveryGrantStatusResponse | PlainMessage<GetProtectedDeliveryGrantStatusResponse> | undefined, b: GetProtectedDeliveryGrantStatusResponse | PlainMessage<GetProtectedDeliveryGrantStatusResponse> | undefined): boolean {
+    return proto3.util.equals(GetProtectedDeliveryGrantStatusResponse, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.onyx.v1.RevokeMyProtectedDeliveryGrantRequest
  */
 export class RevokeMyProtectedDeliveryGrantRequest extends Message<RevokeMyProtectedDeliveryGrantRequest> {
@@ -33480,7 +33628,7 @@ export class RecordProtectedDeliveryEventRequest extends Message<RecordProtected
   grantId = "";
 
   /**
-   * playback_started | playback_failed | offline_opened | offline_purged
+   * playback_started | playback_failed | offline_downloaded | offline_opened | offline_open_failed | offline_purged
    *
    * @generated from field: string event_type = 3;
    */

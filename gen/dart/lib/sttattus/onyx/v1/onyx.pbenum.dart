@@ -605,6 +605,17 @@ class EncryptedRendition_OfflinePackageType extends $pb.ProtobufEnum {
   static const EncryptedRendition_OfflinePackageType OFFLINE_PACKAGE_TYPE_PDF =
       EncryptedRendition_OfflinePackageType._(
           5, _omitEnumNames ? '' : 'OFFLINE_PACKAGE_TYPE_PDF');
+  static const EncryptedRendition_OfflinePackageType
+      OFFLINE_PACKAGE_TYPE_RAW_VIDEO = EncryptedRendition_OfflinePackageType._(
+          6, _omitEnumNames ? '' : 'OFFLINE_PACKAGE_TYPE_RAW_VIDEO');
+  static const EncryptedRendition_OfflinePackageType
+      OFFLINE_PACKAGE_TYPE_MARKED_IMAGE =
+      EncryptedRendition_OfflinePackageType._(
+          7, _omitEnumNames ? '' : 'OFFLINE_PACKAGE_TYPE_MARKED_IMAGE');
+  static const EncryptedRendition_OfflinePackageType
+      OFFLINE_PACKAGE_TYPE_MARKED_DOCUMENT =
+      EncryptedRendition_OfflinePackageType._(
+          8, _omitEnumNames ? '' : 'OFFLINE_PACKAGE_TYPE_MARKED_DOCUMENT');
 
   static const $core.List<EncryptedRendition_OfflinePackageType> values =
       <EncryptedRendition_OfflinePackageType>[
@@ -614,10 +625,13 @@ class EncryptedRendition_OfflinePackageType extends $pb.ProtobufEnum {
     OFFLINE_PACKAGE_TYPE_RAW_AUDIO,
     OFFLINE_PACKAGE_TYPE_CAPTIONS,
     OFFLINE_PACKAGE_TYPE_PDF,
+    OFFLINE_PACKAGE_TYPE_RAW_VIDEO,
+    OFFLINE_PACKAGE_TYPE_MARKED_IMAGE,
+    OFFLINE_PACKAGE_TYPE_MARKED_DOCUMENT,
   ];
 
   static final $core.List<EncryptedRendition_OfflinePackageType?> _byValue =
-      $pb.ProtobufEnum.$_initByValueList(values, 5);
+      $pb.ProtobufEnum.$_initByValueList(values, 8);
   static EncryptedRendition_OfflinePackageType? valueOf($core.int value) =>
       value < 0 || value >= _byValue.length ? null : _byValue[value];
 

@@ -536,6 +536,13 @@ const OnyxContent$json = {
       '5': 3,
       '10': 'forensicPolicyVersion'
     },
+    {
+      '1': 'protected_visible_attribution',
+      '3': 43,
+      '4': 1,
+      '5': 9,
+      '10': 'protectedVisibleAttribution'
+    },
   ],
 };
 
@@ -575,7 +582,8 @@ final $typed_data.Uint8List onyxContentDescriptor = $convert.base64Decode(
     'EuT255eENvbnRlbnRFZGl0aW9uUhFhdmFpbGFibGVFZGl0aW9ucxIwChRpc19zdGFsZV90cmFu'
     'c2xhdGlvbhgoIAEoCFISaXNTdGFsZVRyYW5zbGF0aW9uEi0KEmZvcmVuc2ljX3Byb3RlY3RlZB'
     'gpIAEoCFIRZm9yZW5zaWNQcm90ZWN0ZWQSNgoXZm9yZW5zaWNfcG9saWN5X3ZlcnNpb24YKiAB'
-    'KANSFWZvcmVuc2ljUG9saWN5VmVyc2lvbg==');
+    'KANSFWZvcmVuc2ljUG9saWN5VmVyc2lvbhJCCh1wcm90ZWN0ZWRfdmlzaWJsZV9hdHRyaWJ1dG'
+    'lvbhgrIAEoCVIbcHJvdGVjdGVkVmlzaWJsZUF0dHJpYnV0aW9u');
 
 @$core.Deprecated('Use onyxContentEditionDescriptor instead')
 const OnyxContentEdition$json = {
@@ -5949,6 +5957,29 @@ const EncryptedRendition$json = {
       '6': '.sttattus.onyx.v1.OnyxForensicManifest',
       '10': 'forensicManifest'
     },
+    {
+      '1': 'delivery_grant_id',
+      '3': 18,
+      '4': 1,
+      '5': 9,
+      '10': 'deliveryGrantId'
+    },
+    {
+      '1': 'visible_attribution',
+      '3': 19,
+      '4': 1,
+      '5': 9,
+      '10': 'visibleAttribution'
+    },
+    {
+      '1': 'purge_due_at',
+      '3': 20,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'purgeDueAt'
+    },
+    {'1': 'access_epoch', '3': 21, '4': 1, '5': 3, '10': 'accessEpoch'},
   ],
   '4': [
     EncryptedRendition_RenditionStatus$json,
@@ -5977,6 +6008,9 @@ const EncryptedRendition_OfflinePackageType$json = {
     {'1': 'OFFLINE_PACKAGE_TYPE_RAW_AUDIO', '2': 3},
     {'1': 'OFFLINE_PACKAGE_TYPE_CAPTIONS', '2': 4},
     {'1': 'OFFLINE_PACKAGE_TYPE_PDF', '2': 5},
+    {'1': 'OFFLINE_PACKAGE_TYPE_RAW_VIDEO', '2': 6},
+    {'1': 'OFFLINE_PACKAGE_TYPE_MARKED_IMAGE', '2': 7},
+    {'1': 'OFFLINE_PACKAGE_TYPE_MARKED_DOCUMENT', '2': 8},
   ],
 };
 
@@ -5996,14 +6030,19 @@ final $typed_data.Uint8List encryptedRenditionDescriptor = $convert.base64Decode
     'EuRW5jcnlwdGVkUmVuZGl0aW9uLk9mZmxpbmVQYWNrYWdlVHlwZVILcGFja2FnZVR5cGUSLAoS'
     'a2V5X3dyYXBfYWxnb3JpdGhtGBAgASgJUhBrZXlXcmFwQWxnb3JpdGhtElMKEWZvcmVuc2ljX2'
     '1hbmlmZXN0GBEgASgLMiYuc3R0YXR0dXMub255eC52MS5Pbnl4Rm9yZW5zaWNNYW5pZmVzdFIQ'
-    'Zm9yZW5zaWNNYW5pZmVzdCKMAQoPUmVuZGl0aW9uU3RhdHVzEiAKHFJFTkRJVElPTl9TVEFUVV'
-    'NfVU5TUEVDSUZJRUQQABIeChpSRU5ESVRJT05fU1RBVFVTX1BSRVBBUklORxABEhoKFlJFTkRJ'
-    'VElPTl9TVEFUVVNfUkVBRFkQAhIbChdSRU5ESVRJT05fU1RBVFVTX0ZBSUxFRBADIvMBChJPZm'
-    'ZsaW5lUGFja2FnZVR5cGUSJAogT0ZGTElORV9QQUNLQUdFX1RZUEVfVU5TUEVDSUZJRUQQABIp'
-    'CiVPRkZMSU5FX1BBQ0tBR0VfVFlQRV9QUk9UT0JVRl9BUlRJQ0xFEAESJwojT0ZGTElORV9QQU'
-    'NLQUdFX1RZUEVfRVZJREVOQ0VfQlJJRUYQAhIiCh5PRkZMSU5FX1BBQ0tBR0VfVFlQRV9SQVdf'
-    'QVVESU8QAxIhCh1PRkZMSU5FX1BBQ0tBR0VfVFlQRV9DQVBUSU9OUxAEEhwKGE9GRkxJTkVfUE'
-    'FDS0FHRV9UWVBFX1BERhAF');
+    'Zm9yZW5zaWNNYW5pZmVzdBIqChFkZWxpdmVyeV9ncmFudF9pZBgSIAEoCVIPZGVsaXZlcnlHcm'
+    'FudElkEi8KE3Zpc2libGVfYXR0cmlidXRpb24YEyABKAlSEnZpc2libGVBdHRyaWJ1dGlvbhI8'
+    'CgxwdXJnZV9kdWVfYXQYFCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpwdXJnZU'
+    'R1ZUF0EiEKDGFjY2Vzc19lcG9jaBgVIAEoA1ILYWNjZXNzRXBvY2gijAEKD1JlbmRpdGlvblN0'
+    'YXR1cxIgChxSRU5ESVRJT05fU1RBVFVTX1VOU1BFQ0lGSUVEEAASHgoaUkVORElUSU9OX1NUQV'
+    'RVU19QUkVQQVJJTkcQARIaChZSRU5ESVRJT05fU1RBVFVTX1JFQURZEAISGwoXUkVORElUSU9O'
+    'X1NUQVRVU19GQUlMRUQQAyLoAgoST2ZmbGluZVBhY2thZ2VUeXBlEiQKIE9GRkxJTkVfUEFDS0'
+    'FHRV9UWVBFX1VOU1BFQ0lGSUVEEAASKQolT0ZGTElORV9QQUNLQUdFX1RZUEVfUFJPVE9CVUZf'
+    'QVJUSUNMRRABEicKI09GRkxJTkVfUEFDS0FHRV9UWVBFX0VWSURFTkNFX0JSSUVGEAISIgoeT0'
+    'ZGTElORV9QQUNLQUdFX1RZUEVfUkFXX0FVRElPEAMSIQodT0ZGTElORV9QQUNLQUdFX1RZUEVf'
+    'Q0FQVElPTlMQBBIcChhPRkZMSU5FX1BBQ0tBR0VfVFlQRV9QREYQBRIiCh5PRkZMSU5FX1BBQ0'
+    'tBR0VfVFlQRV9SQVdfVklERU8QBhIlCiFPRkZMSU5FX1BBQ0tBR0VfVFlQRV9NQVJLRURfSU1B'
+    'R0UQBxIoCiRPRkZMSU5FX1BBQ0tBR0VfVFlQRV9NQVJLRURfRE9DVU1FTlQQCA==');
 
 @$core.Deprecated('Use getOfflineManifestRequestDescriptor instead')
 const GetOfflineManifestRequest$json = {
@@ -16707,6 +16746,13 @@ const OnyxProtectedDeliveryState$json = {
     {'1': 'wifi_only_default', '3': 8, '4': 1, '5': 8, '10': 'wifiOnlyDefault'},
     {'1': 'public_notice', '3': 9, '4': 1, '5': 9, '10': 'publicNotice'},
     {'1': 'access_epoch', '3': 10, '4': 1, '5': 3, '10': 'accessEpoch'},
+    {
+      '1': 'offline_grant_ttl_seconds',
+      '3': 11,
+      '4': 1,
+      '5': 5,
+      '10': 'offlineGrantTtlSeconds'
+    },
   ],
 };
 
@@ -16720,7 +16766,8 @@ final $typed_data.Uint8List onyxProtectedDeliveryStateDescriptor = $convert.base
     'NlY29uZHMSMgoVZGVmYXVsdF92aWRlb19xdWFsaXR5GAcgASgJUhNkZWZhdWx0VmlkZW9RdWFs'
     'aXR5EioKEXdpZmlfb25seV9kZWZhdWx0GAggASgIUg93aWZpT25seURlZmF1bHQSIwoNcHVibG'
     'ljX25vdGljZRgJIAEoCVIMcHVibGljTm90aWNlEiEKDGFjY2Vzc19lcG9jaBgKIAEoA1ILYWNj'
-    'ZXNzRXBvY2g=');
+    'ZXNzRXBvY2gSOQoZb2ZmbGluZV9ncmFudF90dGxfc2Vjb25kcxgLIAEoBVIWb2ZmbGluZUdyYW'
+    '50VHRsU2Vjb25kcw==');
 
 @$core.Deprecated('Use onyxProtectedDeliveryGrantDescriptor instead')
 const OnyxProtectedDeliveryGrant$json = {
@@ -16768,6 +16815,7 @@ const OnyxProtectedDeliveryGrant$json = {
       '6': '.sttattus.onyx.v1.EncryptedRendition',
       '10': 'encryptedRenditions'
     },
+    {'1': 'access_epoch', '3': 16, '4': 1, '5': 3, '10': 'accessEpoch'},
   ],
 };
 
@@ -16784,7 +16832,7 @@ final $typed_data.Uint8List onyxProtectedDeliveryGrantDescriptor = $convert.base
     'MhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIIaXNzdWVkQXQSOQoKZXhwaXJlc19hdBgOIA'
     'EoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWV4cGlyZXNBdBJXChRlbmNyeXB0ZWRf'
     'cmVuZGl0aW9ucxgPIAMoCzIkLnN0dGF0dHVzLm9ueXgudjEuRW5jcnlwdGVkUmVuZGl0aW9uUh'
-    'NlbmNyeXB0ZWRSZW5kaXRpb25z');
+    'NlbmNyeXB0ZWRSZW5kaXRpb25zEiEKDGFjY2Vzc19lcG9jaBgQIAEoA1ILYWNjZXNzRXBvY2g=');
 
 @$core.Deprecated('Use getProtectedDeliveryStateRequestDescriptor instead')
 const GetProtectedDeliveryStateRequest$json = {
@@ -16895,6 +16943,54 @@ final $typed_data.Uint8List requestProtectedDeliveryGrantResponseDescriptor =
         'wuc3R0YXR0dXMub255eC52MS5Pbnl4UHJvdGVjdGVkRGVsaXZlcnlHcmFudFIFZ3JhbnQSQgoF'
         'c3RhdGUYAiABKAsyLC5zdHRhdHR1cy5vbnl4LnYxLk9ueXhQcm90ZWN0ZWREZWxpdmVyeVN0YX'
         'RlUgVzdGF0ZQ==');
+
+@$core
+    .Deprecated('Use getProtectedDeliveryGrantStatusRequestDescriptor instead')
+const GetProtectedDeliveryGrantStatusRequest$json = {
+  '1': 'GetProtectedDeliveryGrantStatusRequest',
+  '2': [
+    {'1': 'grant_id', '3': 1, '4': 1, '5': 9, '10': 'grantId'},
+    {'1': 'device_id', '3': 2, '4': 1, '5': 9, '10': 'deviceId'},
+  ],
+};
+
+/// Descriptor for `GetProtectedDeliveryGrantStatusRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getProtectedDeliveryGrantStatusRequestDescriptor =
+    $convert.base64Decode(
+        'CiZHZXRQcm90ZWN0ZWREZWxpdmVyeUdyYW50U3RhdHVzUmVxdWVzdBIZCghncmFudF9pZBgBIA'
+        'EoCVIHZ3JhbnRJZBIbCglkZXZpY2VfaWQYAiABKAlSCGRldmljZUlk');
+
+@$core
+    .Deprecated('Use getProtectedDeliveryGrantStatusResponseDescriptor instead')
+const GetProtectedDeliveryGrantStatusResponse$json = {
+  '1': 'GetProtectedDeliveryGrantStatusResponse',
+  '2': [
+    {
+      '1': 'grant',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxProtectedDeliveryGrant',
+      '10': 'grant'
+    },
+    {
+      '1': 'state',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.OnyxProtectedDeliveryState',
+      '10': 'state'
+    },
+  ],
+};
+
+/// Descriptor for `GetProtectedDeliveryGrantStatusResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getProtectedDeliveryGrantStatusResponseDescriptor =
+    $convert.base64Decode(
+        'CidHZXRQcm90ZWN0ZWREZWxpdmVyeUdyYW50U3RhdHVzUmVzcG9uc2USQgoFZ3JhbnQYASABKA'
+        'syLC5zdHRhdHR1cy5vbnl4LnYxLk9ueXhQcm90ZWN0ZWREZWxpdmVyeUdyYW50UgVncmFudBJC'
+        'CgVzdGF0ZRgCIAEoCzIsLnN0dGF0dHVzLm9ueXgudjEuT255eFByb3RlY3RlZERlbGl2ZXJ5U3'
+        'RhdGVSBXN0YXRl');
 
 @$core.Deprecated('Use revokeMyProtectedDeliveryGrantRequestDescriptor instead')
 const RevokeMyProtectedDeliveryGrantRequest$json = {

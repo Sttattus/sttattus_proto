@@ -1689,6 +1689,15 @@ class OnyxServiceClient extends $grpc.Client {
         options: options);
   }
 
+  $grpc.ResponseFuture<$0.GetProtectedDeliveryGrantStatusResponse>
+      getProtectedDeliveryGrantStatus(
+    $0.GetProtectedDeliveryGrantStatusRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getProtectedDeliveryGrantStatus, request,
+        options: options);
+  }
+
   $grpc.ResponseFuture<$0.RevokeMyProtectedDeliveryGrantResponse>
       revokeMyProtectedDeliveryGrant(
     $0.RevokeMyProtectedDeliveryGrantRequest request, {
@@ -3467,6 +3476,13 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/RequestProtectedDeliveryGrant',
       ($0.RequestProtectedDeliveryGrantRequest value) => value.writeToBuffer(),
       $0.RequestProtectedDeliveryGrantResponse.fromBuffer);
+  static final _$getProtectedDeliveryGrantStatus = $grpc.ClientMethod<
+          $0.GetProtectedDeliveryGrantStatusRequest,
+          $0.GetProtectedDeliveryGrantStatusResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetProtectedDeliveryGrantStatus',
+      ($0.GetProtectedDeliveryGrantStatusRequest value) =>
+          value.writeToBuffer(),
+      $0.GetProtectedDeliveryGrantStatusResponse.fromBuffer);
   static final _$revokeMyProtectedDeliveryGrant = $grpc.ClientMethod<
           $0.RevokeMyProtectedDeliveryGrantRequest,
           $0.RevokeMyProtectedDeliveryGrantResponse>(
@@ -5799,6 +5815,16 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.RequestProtectedDeliveryGrantRequest.fromBuffer(value),
         ($0.RequestProtectedDeliveryGrantResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetProtectedDeliveryGrantStatusRequest,
+            $0.GetProtectedDeliveryGrantStatusResponse>(
+        'GetProtectedDeliveryGrantStatus',
+        getProtectedDeliveryGrantStatus_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetProtectedDeliveryGrantStatusRequest.fromBuffer(value),
+        ($0.GetProtectedDeliveryGrantStatusResponse value) =>
             value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.RevokeMyProtectedDeliveryGrantRequest,
             $0.RevokeMyProtectedDeliveryGrantResponse>(
@@ -8484,6 +8510,18 @@ abstract class OnyxServiceBase extends $grpc.Service {
   $async.Future<$0.RequestProtectedDeliveryGrantResponse>
       requestProtectedDeliveryGrant($grpc.ServiceCall call,
           $0.RequestProtectedDeliveryGrantRequest request);
+
+  $async.Future<$0.GetProtectedDeliveryGrantStatusResponse>
+      getProtectedDeliveryGrantStatus_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetProtectedDeliveryGrantStatusRequest>
+              $request) async {
+    return getProtectedDeliveryGrantStatus($call, await $request);
+  }
+
+  $async.Future<$0.GetProtectedDeliveryGrantStatusResponse>
+      getProtectedDeliveryGrantStatus($grpc.ServiceCall call,
+          $0.GetProtectedDeliveryGrantStatusRequest request);
 
   $async.Future<$0.RevokeMyProtectedDeliveryGrantResponse>
       revokeMyProtectedDeliveryGrant_Pre(

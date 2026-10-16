@@ -225,6 +225,7 @@ const (
 	OnyxService_WithdrawForensicAppeal_FullMethodName               = "/sttattus.onyx.v1.OnyxService/WithdrawForensicAppeal"
 	OnyxService_GetProtectedDeliveryState_FullMethodName            = "/sttattus.onyx.v1.OnyxService/GetProtectedDeliveryState"
 	OnyxService_RequestProtectedDeliveryGrant_FullMethodName        = "/sttattus.onyx.v1.OnyxService/RequestProtectedDeliveryGrant"
+	OnyxService_GetProtectedDeliveryGrantStatus_FullMethodName      = "/sttattus.onyx.v1.OnyxService/GetProtectedDeliveryGrantStatus"
 	OnyxService_RevokeMyProtectedDeliveryGrant_FullMethodName       = "/sttattus.onyx.v1.OnyxService/RevokeMyProtectedDeliveryGrant"
 	OnyxService_RecordProtectedDeliveryEvent_FullMethodName         = "/sttattus.onyx.v1.OnyxService/RecordProtectedDeliveryEvent"
 	OnyxService_SubmitProtectedDeliveryReport_FullMethodName        = "/sttattus.onyx.v1.OnyxService/SubmitProtectedDeliveryReport"
@@ -555,6 +556,7 @@ type OnyxServiceClient interface {
 	// encrypted offline video/image packages.
 	GetProtectedDeliveryState(ctx context.Context, in *GetProtectedDeliveryStateRequest, opts ...grpc.CallOption) (*GetProtectedDeliveryStateResponse, error)
 	RequestProtectedDeliveryGrant(ctx context.Context, in *RequestProtectedDeliveryGrantRequest, opts ...grpc.CallOption) (*RequestProtectedDeliveryGrantResponse, error)
+	GetProtectedDeliveryGrantStatus(ctx context.Context, in *GetProtectedDeliveryGrantStatusRequest, opts ...grpc.CallOption) (*GetProtectedDeliveryGrantStatusResponse, error)
 	RevokeMyProtectedDeliveryGrant(ctx context.Context, in *RevokeMyProtectedDeliveryGrantRequest, opts ...grpc.CallOption) (*RevokeMyProtectedDeliveryGrantResponse, error)
 	RecordProtectedDeliveryEvent(ctx context.Context, in *RecordProtectedDeliveryEventRequest, opts ...grpc.CallOption) (*RecordProtectedDeliveryEventResponse, error)
 	SubmitProtectedDeliveryReport(ctx context.Context, in *SubmitProtectedDeliveryReportRequest, opts ...grpc.CallOption) (*SubmitProtectedDeliveryReportResponse, error)
@@ -2716,6 +2718,16 @@ func (c *onyxServiceClient) RequestProtectedDeliveryGrant(ctx context.Context, i
 	return out, nil
 }
 
+func (c *onyxServiceClient) GetProtectedDeliveryGrantStatus(ctx context.Context, in *GetProtectedDeliveryGrantStatusRequest, opts ...grpc.CallOption) (*GetProtectedDeliveryGrantStatusResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetProtectedDeliveryGrantStatusResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetProtectedDeliveryGrantStatus_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *onyxServiceClient) RevokeMyProtectedDeliveryGrant(ctx context.Context, in *RevokeMyProtectedDeliveryGrantRequest, opts ...grpc.CallOption) (*RevokeMyProtectedDeliveryGrantResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(RevokeMyProtectedDeliveryGrantResponse)
@@ -3773,6 +3785,7 @@ type OnyxServiceServer interface {
 	// encrypted offline video/image packages.
 	GetProtectedDeliveryState(context.Context, *GetProtectedDeliveryStateRequest) (*GetProtectedDeliveryStateResponse, error)
 	RequestProtectedDeliveryGrant(context.Context, *RequestProtectedDeliveryGrantRequest) (*RequestProtectedDeliveryGrantResponse, error)
+	GetProtectedDeliveryGrantStatus(context.Context, *GetProtectedDeliveryGrantStatusRequest) (*GetProtectedDeliveryGrantStatusResponse, error)
 	RevokeMyProtectedDeliveryGrant(context.Context, *RevokeMyProtectedDeliveryGrantRequest) (*RevokeMyProtectedDeliveryGrantResponse, error)
 	RecordProtectedDeliveryEvent(context.Context, *RecordProtectedDeliveryEventRequest) (*RecordProtectedDeliveryEventResponse, error)
 	SubmitProtectedDeliveryReport(context.Context, *SubmitProtectedDeliveryReportRequest) (*SubmitProtectedDeliveryReportResponse, error)
@@ -4491,6 +4504,9 @@ func (UnimplementedOnyxServiceServer) GetProtectedDeliveryState(context.Context,
 }
 func (UnimplementedOnyxServiceServer) RequestProtectedDeliveryGrant(context.Context, *RequestProtectedDeliveryGrantRequest) (*RequestProtectedDeliveryGrantResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method RequestProtectedDeliveryGrant not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetProtectedDeliveryGrantStatus(context.Context, *GetProtectedDeliveryGrantStatusRequest) (*GetProtectedDeliveryGrantStatusResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetProtectedDeliveryGrantStatus not implemented")
 }
 func (UnimplementedOnyxServiceServer) RevokeMyProtectedDeliveryGrant(context.Context, *RevokeMyProtectedDeliveryGrantRequest) (*RevokeMyProtectedDeliveryGrantResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method RevokeMyProtectedDeliveryGrant not implemented")
@@ -8464,6 +8480,24 @@ func _OnyxService_RequestProtectedDeliveryGrant_Handler(srv interface{}, ctx con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OnyxService_GetProtectedDeliveryGrantStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetProtectedDeliveryGrantStatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetProtectedDeliveryGrantStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetProtectedDeliveryGrantStatus_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetProtectedDeliveryGrantStatus(ctx, req.(*GetProtectedDeliveryGrantStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _OnyxService_RevokeMyProtectedDeliveryGrant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(RevokeMyProtectedDeliveryGrantRequest)
 	if err := dec(in); err != nil {
@@ -10752,6 +10786,10 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RequestProtectedDeliveryGrant",
 			Handler:    _OnyxService_RequestProtectedDeliveryGrant_Handler,
+		},
+		{
+			MethodName: "GetProtectedDeliveryGrantStatus",
+			Handler:    _OnyxService_GetProtectedDeliveryGrantStatus_Handler,
 		},
 		{
 			MethodName: "RevokeMyProtectedDeliveryGrant",
