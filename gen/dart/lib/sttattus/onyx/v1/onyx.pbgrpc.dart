@@ -823,6 +823,69 @@ class OnyxServiceClient extends $grpc.Client {
     return $createUnaryCall(_$generateAnnualArchive, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.GetAnnualArchivePrintDashboardResponse>
+      getAnnualArchivePrintDashboard(
+    $0.GetAnnualArchivePrintDashboardRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getAnnualArchivePrintDashboard, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PrepareAnnualArchivePrintEditionResponse>
+      prepareAnnualArchivePrintEdition(
+    $0.PrepareAnnualArchivePrintEditionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$prepareAnnualArchivePrintEdition, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.QuoteAnnualArchivePrintResponse>
+      quoteAnnualArchivePrint(
+    $0.QuoteAnnualArchivePrintRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$quoteAnnualArchivePrint, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SubmitAnnualArchivePrintOrderResponse>
+      submitAnnualArchivePrintOrder(
+    $0.SubmitAnnualArchivePrintOrderRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$submitAnnualArchivePrintOrder, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetAnnualArchivePrintOrderResponse>
+      getAnnualArchivePrintOrder(
+    $0.GetAnnualArchivePrintOrderRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getAnnualArchivePrintOrder, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CancelAnnualArchivePrintOrderResponse>
+      cancelAnnualArchivePrintOrder(
+    $0.CancelAnnualArchivePrintOrderRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$cancelAnnualArchivePrintOrder, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RetryAnnualArchivePrintOrderResponse>
+      retryAnnualArchivePrintOrder(
+    $0.RetryAnnualArchivePrintOrderRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$retryAnnualArchivePrintOrder, request,
+        options: options);
+  }
+
   $grpc.ResponseFuture<$0.ReactToContentResponse> reactToContent(
     $0.ReactToContentRequest request, {
     $grpc.CallOptions? options,
@@ -2951,6 +3014,49 @@ class OnyxServiceClient extends $grpc.Client {
       '/sttattus.onyx.v1.OnyxService/GenerateAnnualArchive',
       ($0.GenerateAnnualArchiveRequest value) => value.writeToBuffer(),
       $0.GenerateAnnualArchiveResponse.fromBuffer);
+  static final _$getAnnualArchivePrintDashboard = $grpc.ClientMethod<
+          $0.GetAnnualArchivePrintDashboardRequest,
+          $0.GetAnnualArchivePrintDashboardResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetAnnualArchivePrintDashboard',
+      ($0.GetAnnualArchivePrintDashboardRequest value) => value.writeToBuffer(),
+      $0.GetAnnualArchivePrintDashboardResponse.fromBuffer);
+  static final _$prepareAnnualArchivePrintEdition = $grpc.ClientMethod<
+          $0.PrepareAnnualArchivePrintEditionRequest,
+          $0.PrepareAnnualArchivePrintEditionResponse>(
+      '/sttattus.onyx.v1.OnyxService/PrepareAnnualArchivePrintEdition',
+      ($0.PrepareAnnualArchivePrintEditionRequest value) =>
+          value.writeToBuffer(),
+      $0.PrepareAnnualArchivePrintEditionResponse.fromBuffer);
+  static final _$quoteAnnualArchivePrint = $grpc.ClientMethod<
+          $0.QuoteAnnualArchivePrintRequest,
+          $0.QuoteAnnualArchivePrintResponse>(
+      '/sttattus.onyx.v1.OnyxService/QuoteAnnualArchivePrint',
+      ($0.QuoteAnnualArchivePrintRequest value) => value.writeToBuffer(),
+      $0.QuoteAnnualArchivePrintResponse.fromBuffer);
+  static final _$submitAnnualArchivePrintOrder = $grpc.ClientMethod<
+          $0.SubmitAnnualArchivePrintOrderRequest,
+          $0.SubmitAnnualArchivePrintOrderResponse>(
+      '/sttattus.onyx.v1.OnyxService/SubmitAnnualArchivePrintOrder',
+      ($0.SubmitAnnualArchivePrintOrderRequest value) => value.writeToBuffer(),
+      $0.SubmitAnnualArchivePrintOrderResponse.fromBuffer);
+  static final _$getAnnualArchivePrintOrder = $grpc.ClientMethod<
+          $0.GetAnnualArchivePrintOrderRequest,
+          $0.GetAnnualArchivePrintOrderResponse>(
+      '/sttattus.onyx.v1.OnyxService/GetAnnualArchivePrintOrder',
+      ($0.GetAnnualArchivePrintOrderRequest value) => value.writeToBuffer(),
+      $0.GetAnnualArchivePrintOrderResponse.fromBuffer);
+  static final _$cancelAnnualArchivePrintOrder = $grpc.ClientMethod<
+          $0.CancelAnnualArchivePrintOrderRequest,
+          $0.CancelAnnualArchivePrintOrderResponse>(
+      '/sttattus.onyx.v1.OnyxService/CancelAnnualArchivePrintOrder',
+      ($0.CancelAnnualArchivePrintOrderRequest value) => value.writeToBuffer(),
+      $0.CancelAnnualArchivePrintOrderResponse.fromBuffer);
+  static final _$retryAnnualArchivePrintOrder = $grpc.ClientMethod<
+          $0.RetryAnnualArchivePrintOrderRequest,
+          $0.RetryAnnualArchivePrintOrderResponse>(
+      '/sttattus.onyx.v1.OnyxService/RetryAnnualArchivePrintOrder',
+      ($0.RetryAnnualArchivePrintOrderRequest value) => value.writeToBuffer(),
+      $0.RetryAnnualArchivePrintOrderResponse.fromBuffer);
   static final _$reactToContent =
       $grpc.ClientMethod<$0.ReactToContentRequest, $0.ReactToContentResponse>(
           '/sttattus.onyx.v1.OnyxService/ReactToContent',
@@ -4948,6 +5054,75 @@ abstract class OnyxServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.GenerateAnnualArchiveRequest.fromBuffer(value),
         ($0.GenerateAnnualArchiveResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetAnnualArchivePrintDashboardRequest,
+            $0.GetAnnualArchivePrintDashboardResponse>(
+        'GetAnnualArchivePrintDashboard',
+        getAnnualArchivePrintDashboard_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetAnnualArchivePrintDashboardRequest.fromBuffer(value),
+        ($0.GetAnnualArchivePrintDashboardResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PrepareAnnualArchivePrintEditionRequest,
+            $0.PrepareAnnualArchivePrintEditionResponse>(
+        'PrepareAnnualArchivePrintEdition',
+        prepareAnnualArchivePrintEdition_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.PrepareAnnualArchivePrintEditionRequest.fromBuffer(value),
+        ($0.PrepareAnnualArchivePrintEditionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.QuoteAnnualArchivePrintRequest,
+            $0.QuoteAnnualArchivePrintResponse>(
+        'QuoteAnnualArchivePrint',
+        quoteAnnualArchivePrint_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.QuoteAnnualArchivePrintRequest.fromBuffer(value),
+        ($0.QuoteAnnualArchivePrintResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SubmitAnnualArchivePrintOrderRequest,
+            $0.SubmitAnnualArchivePrintOrderResponse>(
+        'SubmitAnnualArchivePrintOrder',
+        submitAnnualArchivePrintOrder_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SubmitAnnualArchivePrintOrderRequest.fromBuffer(value),
+        ($0.SubmitAnnualArchivePrintOrderResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetAnnualArchivePrintOrderRequest,
+            $0.GetAnnualArchivePrintOrderResponse>(
+        'GetAnnualArchivePrintOrder',
+        getAnnualArchivePrintOrder_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetAnnualArchivePrintOrderRequest.fromBuffer(value),
+        ($0.GetAnnualArchivePrintOrderResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CancelAnnualArchivePrintOrderRequest,
+            $0.CancelAnnualArchivePrintOrderResponse>(
+        'CancelAnnualArchivePrintOrder',
+        cancelAnnualArchivePrintOrder_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CancelAnnualArchivePrintOrderRequest.fromBuffer(value),
+        ($0.CancelAnnualArchivePrintOrderResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RetryAnnualArchivePrintOrderRequest,
+            $0.RetryAnnualArchivePrintOrderResponse>(
+        'RetryAnnualArchivePrintOrder',
+        retryAnnualArchivePrintOrder_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RetryAnnualArchivePrintOrderRequest.fromBuffer(value),
+        ($0.RetryAnnualArchivePrintOrderResponse value) =>
+            value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ReactToContentRequest,
             $0.ReactToContentResponse>(
         'ReactToContent',
@@ -7661,6 +7836,85 @@ abstract class OnyxServiceBase extends $grpc.Service {
 
   $async.Future<$0.GenerateAnnualArchiveResponse> generateAnnualArchive(
       $grpc.ServiceCall call, $0.GenerateAnnualArchiveRequest request);
+
+  $async.Future<$0.GetAnnualArchivePrintDashboardResponse>
+      getAnnualArchivePrintDashboard_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetAnnualArchivePrintDashboardRequest>
+              $request) async {
+    return getAnnualArchivePrintDashboard($call, await $request);
+  }
+
+  $async.Future<$0.GetAnnualArchivePrintDashboardResponse>
+      getAnnualArchivePrintDashboard($grpc.ServiceCall call,
+          $0.GetAnnualArchivePrintDashboardRequest request);
+
+  $async.Future<$0.PrepareAnnualArchivePrintEditionResponse>
+      prepareAnnualArchivePrintEdition_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.PrepareAnnualArchivePrintEditionRequest>
+              $request) async {
+    return prepareAnnualArchivePrintEdition($call, await $request);
+  }
+
+  $async.Future<$0.PrepareAnnualArchivePrintEditionResponse>
+      prepareAnnualArchivePrintEdition($grpc.ServiceCall call,
+          $0.PrepareAnnualArchivePrintEditionRequest request);
+
+  $async.Future<$0.QuoteAnnualArchivePrintResponse> quoteAnnualArchivePrint_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.QuoteAnnualArchivePrintRequest> $request) async {
+    return quoteAnnualArchivePrint($call, await $request);
+  }
+
+  $async.Future<$0.QuoteAnnualArchivePrintResponse> quoteAnnualArchivePrint(
+      $grpc.ServiceCall call, $0.QuoteAnnualArchivePrintRequest request);
+
+  $async.Future<$0.SubmitAnnualArchivePrintOrderResponse>
+      submitAnnualArchivePrintOrder_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SubmitAnnualArchivePrintOrderRequest>
+              $request) async {
+    return submitAnnualArchivePrintOrder($call, await $request);
+  }
+
+  $async.Future<$0.SubmitAnnualArchivePrintOrderResponse>
+      submitAnnualArchivePrintOrder($grpc.ServiceCall call,
+          $0.SubmitAnnualArchivePrintOrderRequest request);
+
+  $async.Future<$0.GetAnnualArchivePrintOrderResponse>
+      getAnnualArchivePrintOrder_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.GetAnnualArchivePrintOrderRequest> $request) async {
+    return getAnnualArchivePrintOrder($call, await $request);
+  }
+
+  $async.Future<$0.GetAnnualArchivePrintOrderResponse>
+      getAnnualArchivePrintOrder(
+          $grpc.ServiceCall call, $0.GetAnnualArchivePrintOrderRequest request);
+
+  $async.Future<$0.CancelAnnualArchivePrintOrderResponse>
+      cancelAnnualArchivePrintOrder_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.CancelAnnualArchivePrintOrderRequest>
+              $request) async {
+    return cancelAnnualArchivePrintOrder($call, await $request);
+  }
+
+  $async.Future<$0.CancelAnnualArchivePrintOrderResponse>
+      cancelAnnualArchivePrintOrder($grpc.ServiceCall call,
+          $0.CancelAnnualArchivePrintOrderRequest request);
+
+  $async.Future<$0.RetryAnnualArchivePrintOrderResponse>
+      retryAnnualArchivePrintOrder_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RetryAnnualArchivePrintOrderRequest>
+              $request) async {
+    return retryAnnualArchivePrintOrder($call, await $request);
+  }
+
+  $async.Future<$0.RetryAnnualArchivePrintOrderResponse>
+      retryAnnualArchivePrintOrder($grpc.ServiceCall call,
+          $0.RetryAnnualArchivePrintOrderRequest request);
 
   $async.Future<$0.ReactToContentResponse> reactToContent_Pre(
       $grpc.ServiceCall $call,

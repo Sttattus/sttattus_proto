@@ -23336,6 +23336,2131 @@ class GenerateAnnualArchiveResponse extends $pb.GeneratedMessage {
   $1.Timestamp ensureGeneratedAt() => $_ensure(3);
 }
 
+/// Conditional Package D — print-valid Annual Archive fulfillment. Provider
+/// identities, raw file URLs and shipping-address plaintext never appear in
+/// response messages.
+class AnnualArchivePrintRuntime extends $pb.GeneratedMessage {
+  factory AnnualArchivePrintRuntime({
+    $core.bool? available,
+    $core.bool? providerConfigured,
+    $core.bool? sandboxEnabled,
+    $core.bool? productionSubmissionEnabled,
+    $core.String? podPackageId,
+    $core.int? minimumPageCount,
+    $core.String? publicNotice,
+  }) {
+    final result = create();
+    if (available != null) result.available = available;
+    if (providerConfigured != null)
+      result.providerConfigured = providerConfigured;
+    if (sandboxEnabled != null) result.sandboxEnabled = sandboxEnabled;
+    if (productionSubmissionEnabled != null)
+      result.productionSubmissionEnabled = productionSubmissionEnabled;
+    if (podPackageId != null) result.podPackageId = podPackageId;
+    if (minimumPageCount != null) result.minimumPageCount = minimumPageCount;
+    if (publicNotice != null) result.publicNotice = publicNotice;
+    return result;
+  }
+
+  AnnualArchivePrintRuntime._();
+
+  factory AnnualArchivePrintRuntime.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AnnualArchivePrintRuntime.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AnnualArchivePrintRuntime',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'available')
+    ..aOB(2, _omitFieldNames ? '' : 'providerConfigured')
+    ..aOB(3, _omitFieldNames ? '' : 'sandboxEnabled')
+    ..aOB(4, _omitFieldNames ? '' : 'productionSubmissionEnabled')
+    ..aOS(5, _omitFieldNames ? '' : 'podPackageId')
+    ..aI(6, _omitFieldNames ? '' : 'minimumPageCount')
+    ..aOS(7, _omitFieldNames ? '' : 'publicNotice')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AnnualArchivePrintRuntime clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AnnualArchivePrintRuntime copyWith(
+          void Function(AnnualArchivePrintRuntime) updates) =>
+      super.copyWith((message) => updates(message as AnnualArchivePrintRuntime))
+          as AnnualArchivePrintRuntime;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AnnualArchivePrintRuntime create() => AnnualArchivePrintRuntime._();
+  @$core.override
+  AnnualArchivePrintRuntime createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AnnualArchivePrintRuntime getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AnnualArchivePrintRuntime>(create);
+  static AnnualArchivePrintRuntime? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get available => $_getBF(0);
+  @$pb.TagNumber(1)
+  set available($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAvailable() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAvailable() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get providerConfigured => $_getBF(1);
+  @$pb.TagNumber(2)
+  set providerConfigured($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasProviderConfigured() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearProviderConfigured() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get sandboxEnabled => $_getBF(2);
+  @$pb.TagNumber(3)
+  set sandboxEnabled($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSandboxEnabled() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSandboxEnabled() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get productionSubmissionEnabled => $_getBF(3);
+  @$pb.TagNumber(4)
+  set productionSubmissionEnabled($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasProductionSubmissionEnabled() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearProductionSubmissionEnabled() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get podPackageId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set podPackageId($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPodPackageId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPodPackageId() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get minimumPageCount => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set minimumPageCount($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasMinimumPageCount() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMinimumPageCount() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get publicNotice => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set publicNotice($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPublicNotice() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPublicNotice() => $_clearField(7);
+}
+
+class AnnualArchivePrintEdition extends $pb.GeneratedMessage {
+  factory AnnualArchivePrintEdition({
+    $core.String? id,
+    $core.String? year,
+    $core.int? editionNumber,
+    $core.String? status,
+    $core.int? pageCount,
+    $core.String? podPackageId,
+    $core.String? rendererVersion,
+    $core.String? interiorSha256,
+    $core.String? coverSha256,
+    $core.Iterable<$core.String>? preflightErrors,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? normalizedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (year != null) result.year = year;
+    if (editionNumber != null) result.editionNumber = editionNumber;
+    if (status != null) result.status = status;
+    if (pageCount != null) result.pageCount = pageCount;
+    if (podPackageId != null) result.podPackageId = podPackageId;
+    if (rendererVersion != null) result.rendererVersion = rendererVersion;
+    if (interiorSha256 != null) result.interiorSha256 = interiorSha256;
+    if (coverSha256 != null) result.coverSha256 = coverSha256;
+    if (preflightErrors != null) result.preflightErrors.addAll(preflightErrors);
+    if (createdAt != null) result.createdAt = createdAt;
+    if (normalizedAt != null) result.normalizedAt = normalizedAt;
+    return result;
+  }
+
+  AnnualArchivePrintEdition._();
+
+  factory AnnualArchivePrintEdition.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AnnualArchivePrintEdition.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AnnualArchivePrintEdition',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'year')
+    ..aI(3, _omitFieldNames ? '' : 'editionNumber')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aI(5, _omitFieldNames ? '' : 'pageCount')
+    ..aOS(6, _omitFieldNames ? '' : 'podPackageId')
+    ..aOS(7, _omitFieldNames ? '' : 'rendererVersion')
+    ..aOS(8, _omitFieldNames ? '' : 'interiorSha256')
+    ..aOS(9, _omitFieldNames ? '' : 'coverSha256')
+    ..pPS(10, _omitFieldNames ? '' : 'preflightErrors')
+    ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'normalizedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AnnualArchivePrintEdition clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AnnualArchivePrintEdition copyWith(
+          void Function(AnnualArchivePrintEdition) updates) =>
+      super.copyWith((message) => updates(message as AnnualArchivePrintEdition))
+          as AnnualArchivePrintEdition;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AnnualArchivePrintEdition create() => AnnualArchivePrintEdition._();
+  @$core.override
+  AnnualArchivePrintEdition createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AnnualArchivePrintEdition getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AnnualArchivePrintEdition>(create);
+  static AnnualArchivePrintEdition? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get year => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set year($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasYear() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearYear() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get editionNumber => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set editionNumber($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEditionNumber() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEditionNumber() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get pageCount => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set pageCount($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPageCount() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPageCount() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get podPackageId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set podPackageId($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPodPackageId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPodPackageId() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get rendererVersion => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set rendererVersion($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRendererVersion() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRendererVersion() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get interiorSha256 => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set interiorSha256($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasInteriorSha256() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearInteriorSha256() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get coverSha256 => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set coverSha256($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCoverSha256() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCoverSha256() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $pb.PbList<$core.String> get preflightErrors => $_getList(9);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get createdAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set createdAt($1.Timestamp value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCreatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCreatedAt() => $_clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureCreatedAt() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get normalizedAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set normalizedAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasNormalizedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearNormalizedAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureNormalizedAt() => $_ensure(11);
+}
+
+class AnnualArchiveShippingAddress extends $pb.GeneratedMessage {
+  factory AnnualArchiveShippingAddress({
+    $core.String? name,
+    $core.String? organization,
+    $core.String? street1,
+    $core.String? street2,
+    $core.String? city,
+    $core.String? stateCode,
+    $core.String? countryCode,
+    $core.String? postcode,
+    $core.String? phoneNumber,
+    $core.String? email,
+    $core.bool? isBusiness,
+  }) {
+    final result = create();
+    if (name != null) result.name = name;
+    if (organization != null) result.organization = organization;
+    if (street1 != null) result.street1 = street1;
+    if (street2 != null) result.street2 = street2;
+    if (city != null) result.city = city;
+    if (stateCode != null) result.stateCode = stateCode;
+    if (countryCode != null) result.countryCode = countryCode;
+    if (postcode != null) result.postcode = postcode;
+    if (phoneNumber != null) result.phoneNumber = phoneNumber;
+    if (email != null) result.email = email;
+    if (isBusiness != null) result.isBusiness = isBusiness;
+    return result;
+  }
+
+  AnnualArchiveShippingAddress._();
+
+  factory AnnualArchiveShippingAddress.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AnnualArchiveShippingAddress.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AnnualArchiveShippingAddress',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'organization')
+    ..aOS(3, _omitFieldNames ? '' : 'street1')
+    ..aOS(4, _omitFieldNames ? '' : 'street2')
+    ..aOS(5, _omitFieldNames ? '' : 'city')
+    ..aOS(6, _omitFieldNames ? '' : 'stateCode')
+    ..aOS(7, _omitFieldNames ? '' : 'countryCode')
+    ..aOS(8, _omitFieldNames ? '' : 'postcode')
+    ..aOS(9, _omitFieldNames ? '' : 'phoneNumber')
+    ..aOS(10, _omitFieldNames ? '' : 'email')
+    ..aOB(11, _omitFieldNames ? '' : 'isBusiness')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AnnualArchiveShippingAddress clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AnnualArchiveShippingAddress copyWith(
+          void Function(AnnualArchiveShippingAddress) updates) =>
+      super.copyWith(
+              (message) => updates(message as AnnualArchiveShippingAddress))
+          as AnnualArchiveShippingAddress;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AnnualArchiveShippingAddress create() =>
+      AnnualArchiveShippingAddress._();
+  @$core.override
+  AnnualArchiveShippingAddress createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AnnualArchiveShippingAddress getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AnnualArchiveShippingAddress>(create);
+  static AnnualArchiveShippingAddress? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get organization => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set organization($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOrganization() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOrganization() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get street1 => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set street1($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStreet1() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStreet1() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get street2 => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set street2($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStreet2() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStreet2() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get city => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set city($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCity() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCity() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get stateCode => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set stateCode($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStateCode() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStateCode() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get countryCode => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set countryCode($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCountryCode() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCountryCode() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get postcode => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set postcode($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPostcode() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPostcode() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get phoneNumber => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set phoneNumber($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasPhoneNumber() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPhoneNumber() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get email => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set email($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasEmail() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearEmail() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get isBusiness => $_getBF(10);
+  @$pb.TagNumber(11)
+  set isBusiness($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasIsBusiness() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearIsBusiness() => $_clearField(11);
+}
+
+class AnnualArchivePrintQuote extends $pb.GeneratedMessage {
+  factory AnnualArchivePrintQuote({
+    $core.String? id,
+    $core.String? editionId,
+    $core.String? status,
+    $core.String? shippingLevel,
+    $core.String? currency,
+    $core.String? productCost,
+    $core.String? shippingCost,
+    $core.String? fulfillmentCost,
+    $core.String? taxCost,
+    $core.String? totalCost,
+    $core.Iterable<$core.String>? addressWarningCodes,
+    $1.Timestamp? expiresAt,
+    $1.Timestamp? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (editionId != null) result.editionId = editionId;
+    if (status != null) result.status = status;
+    if (shippingLevel != null) result.shippingLevel = shippingLevel;
+    if (currency != null) result.currency = currency;
+    if (productCost != null) result.productCost = productCost;
+    if (shippingCost != null) result.shippingCost = shippingCost;
+    if (fulfillmentCost != null) result.fulfillmentCost = fulfillmentCost;
+    if (taxCost != null) result.taxCost = taxCost;
+    if (totalCost != null) result.totalCost = totalCost;
+    if (addressWarningCodes != null)
+      result.addressWarningCodes.addAll(addressWarningCodes);
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  AnnualArchivePrintQuote._();
+
+  factory AnnualArchivePrintQuote.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AnnualArchivePrintQuote.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AnnualArchivePrintQuote',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'editionId')
+    ..aOS(3, _omitFieldNames ? '' : 'status')
+    ..aOS(4, _omitFieldNames ? '' : 'shippingLevel')
+    ..aOS(5, _omitFieldNames ? '' : 'currency')
+    ..aOS(6, _omitFieldNames ? '' : 'productCost')
+    ..aOS(7, _omitFieldNames ? '' : 'shippingCost')
+    ..aOS(8, _omitFieldNames ? '' : 'fulfillmentCost')
+    ..aOS(9, _omitFieldNames ? '' : 'taxCost')
+    ..aOS(10, _omitFieldNames ? '' : 'totalCost')
+    ..pPS(11, _omitFieldNames ? '' : 'addressWarningCodes')
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AnnualArchivePrintQuote clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AnnualArchivePrintQuote copyWith(
+          void Function(AnnualArchivePrintQuote) updates) =>
+      super.copyWith((message) => updates(message as AnnualArchivePrintQuote))
+          as AnnualArchivePrintQuote;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AnnualArchivePrintQuote create() => AnnualArchivePrintQuote._();
+  @$core.override
+  AnnualArchivePrintQuote createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AnnualArchivePrintQuote getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AnnualArchivePrintQuote>(create);
+  static AnnualArchivePrintQuote? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get editionId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set editionId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEditionId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEditionId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get status => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set status($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStatus() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get shippingLevel => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set shippingLevel($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasShippingLevel() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearShippingLevel() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get currency => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set currency($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCurrency() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCurrency() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get productCost => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set productCost($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasProductCost() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearProductCost() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get shippingCost => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set shippingCost($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasShippingCost() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearShippingCost() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get fulfillmentCost => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set fulfillmentCost($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasFulfillmentCost() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearFulfillmentCost() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get taxCost => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set taxCost($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasTaxCost() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearTaxCost() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get totalCost => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set totalCost($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasTotalCost() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearTotalCost() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $pb.PbList<$core.String> get addressWarningCodes => $_getList(10);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get expiresAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set expiresAt($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasExpiresAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearExpiresAt() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureExpiresAt() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  $1.Timestamp get createdAt => $_getN(12);
+  @$pb.TagNumber(13)
+  set createdAt($1.Timestamp value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasCreatedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearCreatedAt() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $1.Timestamp ensureCreatedAt() => $_ensure(12);
+}
+
+class AnnualArchivePrintOrder extends $pb.GeneratedMessage {
+  factory AnnualArchivePrintOrder({
+    $core.String? id,
+    $core.String? year,
+    $core.String? editionId,
+    $core.String? quoteId,
+    $core.String? environment,
+    $core.String? status,
+    $core.String? shippingLevel,
+    $core.String? currency,
+    $core.String? totalCost,
+    $core.String? carrierName,
+    $core.bool? hasTracking,
+    $core.String? failureCode,
+    $core.String? failureSummary,
+    $fixnum.Int64? version,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
+    $1.Timestamp? shippedAt,
+    $1.Timestamp? deliveredAt,
+    $core.String? trackingUrl,
+    $core.String? refundStatus,
+    $core.String? refundAmount,
+    $core.String? refundCurrency,
+    $1.Timestamp? refundUpdatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (year != null) result.year = year;
+    if (editionId != null) result.editionId = editionId;
+    if (quoteId != null) result.quoteId = quoteId;
+    if (environment != null) result.environment = environment;
+    if (status != null) result.status = status;
+    if (shippingLevel != null) result.shippingLevel = shippingLevel;
+    if (currency != null) result.currency = currency;
+    if (totalCost != null) result.totalCost = totalCost;
+    if (carrierName != null) result.carrierName = carrierName;
+    if (hasTracking != null) result.hasTracking = hasTracking;
+    if (failureCode != null) result.failureCode = failureCode;
+    if (failureSummary != null) result.failureSummary = failureSummary;
+    if (version != null) result.version = version;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    if (shippedAt != null) result.shippedAt = shippedAt;
+    if (deliveredAt != null) result.deliveredAt = deliveredAt;
+    if (trackingUrl != null) result.trackingUrl = trackingUrl;
+    if (refundStatus != null) result.refundStatus = refundStatus;
+    if (refundAmount != null) result.refundAmount = refundAmount;
+    if (refundCurrency != null) result.refundCurrency = refundCurrency;
+    if (refundUpdatedAt != null) result.refundUpdatedAt = refundUpdatedAt;
+    return result;
+  }
+
+  AnnualArchivePrintOrder._();
+
+  factory AnnualArchivePrintOrder.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AnnualArchivePrintOrder.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AnnualArchivePrintOrder',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'year')
+    ..aOS(3, _omitFieldNames ? '' : 'editionId')
+    ..aOS(4, _omitFieldNames ? '' : 'quoteId')
+    ..aOS(5, _omitFieldNames ? '' : 'environment')
+    ..aOS(6, _omitFieldNames ? '' : 'status')
+    ..aOS(7, _omitFieldNames ? '' : 'shippingLevel')
+    ..aOS(8, _omitFieldNames ? '' : 'currency')
+    ..aOS(9, _omitFieldNames ? '' : 'totalCost')
+    ..aOS(10, _omitFieldNames ? '' : 'carrierName')
+    ..aOB(11, _omitFieldNames ? '' : 'hasTracking')
+    ..aOS(12, _omitFieldNames ? '' : 'failureCode')
+    ..aOS(13, _omitFieldNames ? '' : 'failureSummary')
+    ..aInt64(14, _omitFieldNames ? '' : 'version')
+    ..aOM<$1.Timestamp>(15, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(16, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(17, _omitFieldNames ? '' : 'shippedAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(18, _omitFieldNames ? '' : 'deliveredAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(19, _omitFieldNames ? '' : 'trackingUrl')
+    ..aOS(20, _omitFieldNames ? '' : 'refundStatus')
+    ..aOS(21, _omitFieldNames ? '' : 'refundAmount')
+    ..aOS(22, _omitFieldNames ? '' : 'refundCurrency')
+    ..aOM<$1.Timestamp>(23, _omitFieldNames ? '' : 'refundUpdatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AnnualArchivePrintOrder clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AnnualArchivePrintOrder copyWith(
+          void Function(AnnualArchivePrintOrder) updates) =>
+      super.copyWith((message) => updates(message as AnnualArchivePrintOrder))
+          as AnnualArchivePrintOrder;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AnnualArchivePrintOrder create() => AnnualArchivePrintOrder._();
+  @$core.override
+  AnnualArchivePrintOrder createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AnnualArchivePrintOrder getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AnnualArchivePrintOrder>(create);
+  static AnnualArchivePrintOrder? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get year => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set year($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasYear() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearYear() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get editionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set editionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEditionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEditionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get quoteId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set quoteId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasQuoteId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearQuoteId() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get environment => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set environment($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasEnvironment() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEnvironment() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get status => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set status($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get shippingLevel => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set shippingLevel($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasShippingLevel() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearShippingLevel() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get currency => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set currency($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCurrency() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCurrency() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get totalCost => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set totalCost($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasTotalCost() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearTotalCost() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get carrierName => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set carrierName($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasCarrierName() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCarrierName() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get hasTracking => $_getBF(10);
+  @$pb.TagNumber(11)
+  set hasTracking($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasHasTracking() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearHasTracking() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get failureCode => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set failureCode($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasFailureCode() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearFailureCode() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get failureSummary => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set failureSummary($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasFailureSummary() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearFailureSummary() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $fixnum.Int64 get version => $_getI64(13);
+  @$pb.TagNumber(14)
+  set version($fixnum.Int64 value) => $_setInt64(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasVersion() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearVersion() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $1.Timestamp get createdAt => $_getN(14);
+  @$pb.TagNumber(15)
+  set createdAt($1.Timestamp value) => $_setField(15, value);
+  @$pb.TagNumber(15)
+  $core.bool hasCreatedAt() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearCreatedAt() => $_clearField(15);
+  @$pb.TagNumber(15)
+  $1.Timestamp ensureCreatedAt() => $_ensure(14);
+
+  @$pb.TagNumber(16)
+  $1.Timestamp get updatedAt => $_getN(15);
+  @$pb.TagNumber(16)
+  set updatedAt($1.Timestamp value) => $_setField(16, value);
+  @$pb.TagNumber(16)
+  $core.bool hasUpdatedAt() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearUpdatedAt() => $_clearField(16);
+  @$pb.TagNumber(16)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(15);
+
+  @$pb.TagNumber(17)
+  $1.Timestamp get shippedAt => $_getN(16);
+  @$pb.TagNumber(17)
+  set shippedAt($1.Timestamp value) => $_setField(17, value);
+  @$pb.TagNumber(17)
+  $core.bool hasShippedAt() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearShippedAt() => $_clearField(17);
+  @$pb.TagNumber(17)
+  $1.Timestamp ensureShippedAt() => $_ensure(16);
+
+  @$pb.TagNumber(18)
+  $1.Timestamp get deliveredAt => $_getN(17);
+  @$pb.TagNumber(18)
+  set deliveredAt($1.Timestamp value) => $_setField(18, value);
+  @$pb.TagNumber(18)
+  $core.bool hasDeliveredAt() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearDeliveredAt() => $_clearField(18);
+  @$pb.TagNumber(18)
+  $1.Timestamp ensureDeliveredAt() => $_ensure(17);
+
+  /// Decrypted only for the order owner after provider verification. Provider
+  /// job identities and the address remain server-private.
+  @$pb.TagNumber(19)
+  $core.String get trackingUrl => $_getSZ(18);
+  @$pb.TagNumber(19)
+  set trackingUrl($core.String value) => $_setString(18, value);
+  @$pb.TagNumber(19)
+  $core.bool hasTrackingUrl() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearTrackingUrl() => $_clearField(19);
+
+  @$pb.TagNumber(20)
+  $core.String get refundStatus => $_getSZ(19);
+  @$pb.TagNumber(20)
+  set refundStatus($core.String value) => $_setString(19, value);
+  @$pb.TagNumber(20)
+  $core.bool hasRefundStatus() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearRefundStatus() => $_clearField(20);
+
+  @$pb.TagNumber(21)
+  $core.String get refundAmount => $_getSZ(20);
+  @$pb.TagNumber(21)
+  set refundAmount($core.String value) => $_setString(20, value);
+  @$pb.TagNumber(21)
+  $core.bool hasRefundAmount() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearRefundAmount() => $_clearField(21);
+
+  @$pb.TagNumber(22)
+  $core.String get refundCurrency => $_getSZ(21);
+  @$pb.TagNumber(22)
+  set refundCurrency($core.String value) => $_setString(21, value);
+  @$pb.TagNumber(22)
+  $core.bool hasRefundCurrency() => $_has(21);
+  @$pb.TagNumber(22)
+  void clearRefundCurrency() => $_clearField(22);
+
+  @$pb.TagNumber(23)
+  $1.Timestamp get refundUpdatedAt => $_getN(22);
+  @$pb.TagNumber(23)
+  set refundUpdatedAt($1.Timestamp value) => $_setField(23, value);
+  @$pb.TagNumber(23)
+  $core.bool hasRefundUpdatedAt() => $_has(22);
+  @$pb.TagNumber(23)
+  void clearRefundUpdatedAt() => $_clearField(23);
+  @$pb.TagNumber(23)
+  $1.Timestamp ensureRefundUpdatedAt() => $_ensure(22);
+}
+
+class GetAnnualArchivePrintDashboardRequest extends $pb.GeneratedMessage {
+  factory GetAnnualArchivePrintDashboardRequest({
+    $core.String? year,
+  }) {
+    final result = create();
+    if (year != null) result.year = year;
+    return result;
+  }
+
+  GetAnnualArchivePrintDashboardRequest._();
+
+  factory GetAnnualArchivePrintDashboardRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetAnnualArchivePrintDashboardRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetAnnualArchivePrintDashboardRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'year')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAnnualArchivePrintDashboardRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAnnualArchivePrintDashboardRequest copyWith(
+          void Function(GetAnnualArchivePrintDashboardRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetAnnualArchivePrintDashboardRequest))
+          as GetAnnualArchivePrintDashboardRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAnnualArchivePrintDashboardRequest create() =>
+      GetAnnualArchivePrintDashboardRequest._();
+  @$core.override
+  GetAnnualArchivePrintDashboardRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetAnnualArchivePrintDashboardRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetAnnualArchivePrintDashboardRequest>(create);
+  static GetAnnualArchivePrintDashboardRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get year => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set year($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasYear() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearYear() => $_clearField(1);
+}
+
+class GetAnnualArchivePrintDashboardResponse extends $pb.GeneratedMessage {
+  factory GetAnnualArchivePrintDashboardResponse({
+    AnnualArchivePrintRuntime? runtime,
+    AnnualArchivePrintEdition? latestEdition,
+    AnnualArchivePrintQuote? activeQuote,
+    AnnualArchivePrintOrder? annualOrder,
+  }) {
+    final result = create();
+    if (runtime != null) result.runtime = runtime;
+    if (latestEdition != null) result.latestEdition = latestEdition;
+    if (activeQuote != null) result.activeQuote = activeQuote;
+    if (annualOrder != null) result.annualOrder = annualOrder;
+    return result;
+  }
+
+  GetAnnualArchivePrintDashboardResponse._();
+
+  factory GetAnnualArchivePrintDashboardResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetAnnualArchivePrintDashboardResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetAnnualArchivePrintDashboardResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<AnnualArchivePrintRuntime>(1, _omitFieldNames ? '' : 'runtime',
+        subBuilder: AnnualArchivePrintRuntime.create)
+    ..aOM<AnnualArchivePrintEdition>(2, _omitFieldNames ? '' : 'latestEdition',
+        subBuilder: AnnualArchivePrintEdition.create)
+    ..aOM<AnnualArchivePrintQuote>(3, _omitFieldNames ? '' : 'activeQuote',
+        subBuilder: AnnualArchivePrintQuote.create)
+    ..aOM<AnnualArchivePrintOrder>(4, _omitFieldNames ? '' : 'annualOrder',
+        subBuilder: AnnualArchivePrintOrder.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAnnualArchivePrintDashboardResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAnnualArchivePrintDashboardResponse copyWith(
+          void Function(GetAnnualArchivePrintDashboardResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetAnnualArchivePrintDashboardResponse))
+          as GetAnnualArchivePrintDashboardResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAnnualArchivePrintDashboardResponse create() =>
+      GetAnnualArchivePrintDashboardResponse._();
+  @$core.override
+  GetAnnualArchivePrintDashboardResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetAnnualArchivePrintDashboardResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetAnnualArchivePrintDashboardResponse>(create);
+  static GetAnnualArchivePrintDashboardResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AnnualArchivePrintRuntime get runtime => $_getN(0);
+  @$pb.TagNumber(1)
+  set runtime(AnnualArchivePrintRuntime value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRuntime() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRuntime() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AnnualArchivePrintRuntime ensureRuntime() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  AnnualArchivePrintEdition get latestEdition => $_getN(1);
+  @$pb.TagNumber(2)
+  set latestEdition(AnnualArchivePrintEdition value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLatestEdition() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLatestEdition() => $_clearField(2);
+  @$pb.TagNumber(2)
+  AnnualArchivePrintEdition ensureLatestEdition() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  AnnualArchivePrintQuote get activeQuote => $_getN(2);
+  @$pb.TagNumber(3)
+  set activeQuote(AnnualArchivePrintQuote value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasActiveQuote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearActiveQuote() => $_clearField(3);
+  @$pb.TagNumber(3)
+  AnnualArchivePrintQuote ensureActiveQuote() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  AnnualArchivePrintOrder get annualOrder => $_getN(3);
+  @$pb.TagNumber(4)
+  set annualOrder(AnnualArchivePrintOrder value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAnnualOrder() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAnnualOrder() => $_clearField(4);
+  @$pb.TagNumber(4)
+  AnnualArchivePrintOrder ensureAnnualOrder() => $_ensure(3);
+}
+
+class PrepareAnnualArchivePrintEditionRequest extends $pb.GeneratedMessage {
+  factory PrepareAnnualArchivePrintEditionRequest({
+    $core.String? year,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (year != null) result.year = year;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  PrepareAnnualArchivePrintEditionRequest._();
+
+  factory PrepareAnnualArchivePrintEditionRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PrepareAnnualArchivePrintEditionRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PrepareAnnualArchivePrintEditionRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'year')
+    ..aOS(2, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PrepareAnnualArchivePrintEditionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PrepareAnnualArchivePrintEditionRequest copyWith(
+          void Function(PrepareAnnualArchivePrintEditionRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as PrepareAnnualArchivePrintEditionRequest))
+          as PrepareAnnualArchivePrintEditionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PrepareAnnualArchivePrintEditionRequest create() =>
+      PrepareAnnualArchivePrintEditionRequest._();
+  @$core.override
+  PrepareAnnualArchivePrintEditionRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PrepareAnnualArchivePrintEditionRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          PrepareAnnualArchivePrintEditionRequest>(create);
+  static PrepareAnnualArchivePrintEditionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get year => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set year($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasYear() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearYear() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get clientMutationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set clientMutationId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClientMutationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClientMutationId() => $_clearField(2);
+}
+
+class PrepareAnnualArchivePrintEditionResponse extends $pb.GeneratedMessage {
+  factory PrepareAnnualArchivePrintEditionResponse({
+    AnnualArchivePrintEdition? edition,
+    $core.bool? replayed,
+  }) {
+    final result = create();
+    if (edition != null) result.edition = edition;
+    if (replayed != null) result.replayed = replayed;
+    return result;
+  }
+
+  PrepareAnnualArchivePrintEditionResponse._();
+
+  factory PrepareAnnualArchivePrintEditionResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PrepareAnnualArchivePrintEditionResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PrepareAnnualArchivePrintEditionResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<AnnualArchivePrintEdition>(1, _omitFieldNames ? '' : 'edition',
+        subBuilder: AnnualArchivePrintEdition.create)
+    ..aOB(2, _omitFieldNames ? '' : 'replayed')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PrepareAnnualArchivePrintEditionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PrepareAnnualArchivePrintEditionResponse copyWith(
+          void Function(PrepareAnnualArchivePrintEditionResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as PrepareAnnualArchivePrintEditionResponse))
+          as PrepareAnnualArchivePrintEditionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PrepareAnnualArchivePrintEditionResponse create() =>
+      PrepareAnnualArchivePrintEditionResponse._();
+  @$core.override
+  PrepareAnnualArchivePrintEditionResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PrepareAnnualArchivePrintEditionResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          PrepareAnnualArchivePrintEditionResponse>(create);
+  static PrepareAnnualArchivePrintEditionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AnnualArchivePrintEdition get edition => $_getN(0);
+  @$pb.TagNumber(1)
+  set edition(AnnualArchivePrintEdition value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEdition() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEdition() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AnnualArchivePrintEdition ensureEdition() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get replayed => $_getBF(1);
+  @$pb.TagNumber(2)
+  set replayed($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReplayed() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReplayed() => $_clearField(2);
+}
+
+class QuoteAnnualArchivePrintRequest extends $pb.GeneratedMessage {
+  factory QuoteAnnualArchivePrintRequest({
+    $core.String? editionId,
+    AnnualArchiveShippingAddress? shippingAddress,
+    $core.String? shippingLevel,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (editionId != null) result.editionId = editionId;
+    if (shippingAddress != null) result.shippingAddress = shippingAddress;
+    if (shippingLevel != null) result.shippingLevel = shippingLevel;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  QuoteAnnualArchivePrintRequest._();
+
+  factory QuoteAnnualArchivePrintRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory QuoteAnnualArchivePrintRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QuoteAnnualArchivePrintRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'editionId')
+    ..aOM<AnnualArchiveShippingAddress>(
+        2, _omitFieldNames ? '' : 'shippingAddress',
+        subBuilder: AnnualArchiveShippingAddress.create)
+    ..aOS(3, _omitFieldNames ? '' : 'shippingLevel')
+    ..aOS(4, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  QuoteAnnualArchivePrintRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  QuoteAnnualArchivePrintRequest copyWith(
+          void Function(QuoteAnnualArchivePrintRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as QuoteAnnualArchivePrintRequest))
+          as QuoteAnnualArchivePrintRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QuoteAnnualArchivePrintRequest create() =>
+      QuoteAnnualArchivePrintRequest._();
+  @$core.override
+  QuoteAnnualArchivePrintRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static QuoteAnnualArchivePrintRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QuoteAnnualArchivePrintRequest>(create);
+  static QuoteAnnualArchivePrintRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get editionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set editionId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEditionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEditionId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  AnnualArchiveShippingAddress get shippingAddress => $_getN(1);
+  @$pb.TagNumber(2)
+  set shippingAddress(AnnualArchiveShippingAddress value) =>
+      $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasShippingAddress() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearShippingAddress() => $_clearField(2);
+  @$pb.TagNumber(2)
+  AnnualArchiveShippingAddress ensureShippingAddress() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $core.String get shippingLevel => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set shippingLevel($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasShippingLevel() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearShippingLevel() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientMutationId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientMutationId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientMutationId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientMutationId() => $_clearField(4);
+}
+
+class QuoteAnnualArchivePrintResponse extends $pb.GeneratedMessage {
+  factory QuoteAnnualArchivePrintResponse({
+    AnnualArchivePrintQuote? quote,
+    $core.bool? replayed,
+  }) {
+    final result = create();
+    if (quote != null) result.quote = quote;
+    if (replayed != null) result.replayed = replayed;
+    return result;
+  }
+
+  QuoteAnnualArchivePrintResponse._();
+
+  factory QuoteAnnualArchivePrintResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory QuoteAnnualArchivePrintResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QuoteAnnualArchivePrintResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<AnnualArchivePrintQuote>(1, _omitFieldNames ? '' : 'quote',
+        subBuilder: AnnualArchivePrintQuote.create)
+    ..aOB(2, _omitFieldNames ? '' : 'replayed')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  QuoteAnnualArchivePrintResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  QuoteAnnualArchivePrintResponse copyWith(
+          void Function(QuoteAnnualArchivePrintResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as QuoteAnnualArchivePrintResponse))
+          as QuoteAnnualArchivePrintResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QuoteAnnualArchivePrintResponse create() =>
+      QuoteAnnualArchivePrintResponse._();
+  @$core.override
+  QuoteAnnualArchivePrintResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static QuoteAnnualArchivePrintResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QuoteAnnualArchivePrintResponse>(
+          create);
+  static QuoteAnnualArchivePrintResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AnnualArchivePrintQuote get quote => $_getN(0);
+  @$pb.TagNumber(1)
+  set quote(AnnualArchivePrintQuote value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasQuote() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearQuote() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AnnualArchivePrintQuote ensureQuote() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get replayed => $_getBF(1);
+  @$pb.TagNumber(2)
+  set replayed($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReplayed() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReplayed() => $_clearField(2);
+}
+
+class SubmitAnnualArchivePrintOrderRequest extends $pb.GeneratedMessage {
+  factory SubmitAnnualArchivePrintOrderRequest({
+    $core.String? quoteId,
+    $core.String? clientMutationId,
+    $core.bool? confirm,
+  }) {
+    final result = create();
+    if (quoteId != null) result.quoteId = quoteId;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    if (confirm != null) result.confirm = confirm;
+    return result;
+  }
+
+  SubmitAnnualArchivePrintOrderRequest._();
+
+  factory SubmitAnnualArchivePrintOrderRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitAnnualArchivePrintOrderRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitAnnualArchivePrintOrderRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'quoteId')
+    ..aOS(2, _omitFieldNames ? '' : 'clientMutationId')
+    ..aOB(3, _omitFieldNames ? '' : 'confirm')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitAnnualArchivePrintOrderRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitAnnualArchivePrintOrderRequest copyWith(
+          void Function(SubmitAnnualArchivePrintOrderRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SubmitAnnualArchivePrintOrderRequest))
+          as SubmitAnnualArchivePrintOrderRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitAnnualArchivePrintOrderRequest create() =>
+      SubmitAnnualArchivePrintOrderRequest._();
+  @$core.override
+  SubmitAnnualArchivePrintOrderRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitAnnualArchivePrintOrderRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SubmitAnnualArchivePrintOrderRequest>(create);
+  static SubmitAnnualArchivePrintOrderRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get quoteId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set quoteId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasQuoteId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearQuoteId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get clientMutationId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set clientMutationId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasClientMutationId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearClientMutationId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get confirm => $_getBF(2);
+  @$pb.TagNumber(3)
+  set confirm($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasConfirm() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearConfirm() => $_clearField(3);
+}
+
+class SubmitAnnualArchivePrintOrderResponse extends $pb.GeneratedMessage {
+  factory SubmitAnnualArchivePrintOrderResponse({
+    AnnualArchivePrintOrder? order,
+    $core.bool? replayed,
+  }) {
+    final result = create();
+    if (order != null) result.order = order;
+    if (replayed != null) result.replayed = replayed;
+    return result;
+  }
+
+  SubmitAnnualArchivePrintOrderResponse._();
+
+  factory SubmitAnnualArchivePrintOrderResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitAnnualArchivePrintOrderResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitAnnualArchivePrintOrderResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<AnnualArchivePrintOrder>(1, _omitFieldNames ? '' : 'order',
+        subBuilder: AnnualArchivePrintOrder.create)
+    ..aOB(2, _omitFieldNames ? '' : 'replayed')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitAnnualArchivePrintOrderResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitAnnualArchivePrintOrderResponse copyWith(
+          void Function(SubmitAnnualArchivePrintOrderResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SubmitAnnualArchivePrintOrderResponse))
+          as SubmitAnnualArchivePrintOrderResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitAnnualArchivePrintOrderResponse create() =>
+      SubmitAnnualArchivePrintOrderResponse._();
+  @$core.override
+  SubmitAnnualArchivePrintOrderResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitAnnualArchivePrintOrderResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SubmitAnnualArchivePrintOrderResponse>(create);
+  static SubmitAnnualArchivePrintOrderResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AnnualArchivePrintOrder get order => $_getN(0);
+  @$pb.TagNumber(1)
+  set order(AnnualArchivePrintOrder value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOrder() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrder() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AnnualArchivePrintOrder ensureOrder() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get replayed => $_getBF(1);
+  @$pb.TagNumber(2)
+  set replayed($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReplayed() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReplayed() => $_clearField(2);
+}
+
+class GetAnnualArchivePrintOrderRequest extends $pb.GeneratedMessage {
+  factory GetAnnualArchivePrintOrderRequest({
+    $core.String? orderId,
+    $core.String? year,
+    $core.bool? refreshProvider,
+  }) {
+    final result = create();
+    if (orderId != null) result.orderId = orderId;
+    if (year != null) result.year = year;
+    if (refreshProvider != null) result.refreshProvider = refreshProvider;
+    return result;
+  }
+
+  GetAnnualArchivePrintOrderRequest._();
+
+  factory GetAnnualArchivePrintOrderRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetAnnualArchivePrintOrderRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetAnnualArchivePrintOrderRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orderId')
+    ..aOS(2, _omitFieldNames ? '' : 'year')
+    ..aOB(3, _omitFieldNames ? '' : 'refreshProvider')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAnnualArchivePrintOrderRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAnnualArchivePrintOrderRequest copyWith(
+          void Function(GetAnnualArchivePrintOrderRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetAnnualArchivePrintOrderRequest))
+          as GetAnnualArchivePrintOrderRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAnnualArchivePrintOrderRequest create() =>
+      GetAnnualArchivePrintOrderRequest._();
+  @$core.override
+  GetAnnualArchivePrintOrderRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetAnnualArchivePrintOrderRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetAnnualArchivePrintOrderRequest>(
+          create);
+  static GetAnnualArchivePrintOrderRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orderId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orderId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOrderId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrderId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get year => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set year($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasYear() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearYear() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get refreshProvider => $_getBF(2);
+  @$pb.TagNumber(3)
+  set refreshProvider($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRefreshProvider() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRefreshProvider() => $_clearField(3);
+}
+
+class GetAnnualArchivePrintOrderResponse extends $pb.GeneratedMessage {
+  factory GetAnnualArchivePrintOrderResponse({
+    AnnualArchivePrintOrder? order,
+  }) {
+    final result = create();
+    if (order != null) result.order = order;
+    return result;
+  }
+
+  GetAnnualArchivePrintOrderResponse._();
+
+  factory GetAnnualArchivePrintOrderResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetAnnualArchivePrintOrderResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetAnnualArchivePrintOrderResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<AnnualArchivePrintOrder>(1, _omitFieldNames ? '' : 'order',
+        subBuilder: AnnualArchivePrintOrder.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAnnualArchivePrintOrderResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAnnualArchivePrintOrderResponse copyWith(
+          void Function(GetAnnualArchivePrintOrderResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetAnnualArchivePrintOrderResponse))
+          as GetAnnualArchivePrintOrderResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAnnualArchivePrintOrderResponse create() =>
+      GetAnnualArchivePrintOrderResponse._();
+  @$core.override
+  GetAnnualArchivePrintOrderResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetAnnualArchivePrintOrderResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetAnnualArchivePrintOrderResponse>(
+          create);
+  static GetAnnualArchivePrintOrderResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AnnualArchivePrintOrder get order => $_getN(0);
+  @$pb.TagNumber(1)
+  set order(AnnualArchivePrintOrder value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOrder() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrder() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AnnualArchivePrintOrder ensureOrder() => $_ensure(0);
+}
+
+class CancelAnnualArchivePrintOrderRequest extends $pb.GeneratedMessage {
+  factory CancelAnnualArchivePrintOrderRequest({
+    $core.String? orderId,
+    $fixnum.Int64? expectedVersion,
+  }) {
+    final result = create();
+    if (orderId != null) result.orderId = orderId;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    return result;
+  }
+
+  CancelAnnualArchivePrintOrderRequest._();
+
+  factory CancelAnnualArchivePrintOrderRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CancelAnnualArchivePrintOrderRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CancelAnnualArchivePrintOrderRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orderId')
+    ..aInt64(2, _omitFieldNames ? '' : 'expectedVersion')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CancelAnnualArchivePrintOrderRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CancelAnnualArchivePrintOrderRequest copyWith(
+          void Function(CancelAnnualArchivePrintOrderRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as CancelAnnualArchivePrintOrderRequest))
+          as CancelAnnualArchivePrintOrderRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CancelAnnualArchivePrintOrderRequest create() =>
+      CancelAnnualArchivePrintOrderRequest._();
+  @$core.override
+  CancelAnnualArchivePrintOrderRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CancelAnnualArchivePrintOrderRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CancelAnnualArchivePrintOrderRequest>(create);
+  static CancelAnnualArchivePrintOrderRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orderId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orderId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOrderId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrderId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get expectedVersion => $_getI64(1);
+  @$pb.TagNumber(2)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExpectedVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpectedVersion() => $_clearField(2);
+}
+
+class CancelAnnualArchivePrintOrderResponse extends $pb.GeneratedMessage {
+  factory CancelAnnualArchivePrintOrderResponse({
+    AnnualArchivePrintOrder? order,
+  }) {
+    final result = create();
+    if (order != null) result.order = order;
+    return result;
+  }
+
+  CancelAnnualArchivePrintOrderResponse._();
+
+  factory CancelAnnualArchivePrintOrderResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CancelAnnualArchivePrintOrderResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CancelAnnualArchivePrintOrderResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<AnnualArchivePrintOrder>(1, _omitFieldNames ? '' : 'order',
+        subBuilder: AnnualArchivePrintOrder.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CancelAnnualArchivePrintOrderResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CancelAnnualArchivePrintOrderResponse copyWith(
+          void Function(CancelAnnualArchivePrintOrderResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as CancelAnnualArchivePrintOrderResponse))
+          as CancelAnnualArchivePrintOrderResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CancelAnnualArchivePrintOrderResponse create() =>
+      CancelAnnualArchivePrintOrderResponse._();
+  @$core.override
+  CancelAnnualArchivePrintOrderResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CancelAnnualArchivePrintOrderResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CancelAnnualArchivePrintOrderResponse>(create);
+  static CancelAnnualArchivePrintOrderResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AnnualArchivePrintOrder get order => $_getN(0);
+  @$pb.TagNumber(1)
+  set order(AnnualArchivePrintOrder value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOrder() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrder() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AnnualArchivePrintOrder ensureOrder() => $_ensure(0);
+}
+
+class RetryAnnualArchivePrintOrderRequest extends $pb.GeneratedMessage {
+  factory RetryAnnualArchivePrintOrderRequest({
+    $core.String? orderId,
+    $fixnum.Int64? expectedVersion,
+    $core.String? clientMutationId,
+  }) {
+    final result = create();
+    if (orderId != null) result.orderId = orderId;
+    if (expectedVersion != null) result.expectedVersion = expectedVersion;
+    if (clientMutationId != null) result.clientMutationId = clientMutationId;
+    return result;
+  }
+
+  RetryAnnualArchivePrintOrderRequest._();
+
+  factory RetryAnnualArchivePrintOrderRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RetryAnnualArchivePrintOrderRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RetryAnnualArchivePrintOrderRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'orderId')
+    ..aInt64(2, _omitFieldNames ? '' : 'expectedVersion')
+    ..aOS(3, _omitFieldNames ? '' : 'clientMutationId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RetryAnnualArchivePrintOrderRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RetryAnnualArchivePrintOrderRequest copyWith(
+          void Function(RetryAnnualArchivePrintOrderRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as RetryAnnualArchivePrintOrderRequest))
+          as RetryAnnualArchivePrintOrderRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RetryAnnualArchivePrintOrderRequest create() =>
+      RetryAnnualArchivePrintOrderRequest._();
+  @$core.override
+  RetryAnnualArchivePrintOrderRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RetryAnnualArchivePrintOrderRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RetryAnnualArchivePrintOrderRequest>(create);
+  static RetryAnnualArchivePrintOrderRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get orderId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set orderId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOrderId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrderId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get expectedVersion => $_getI64(1);
+  @$pb.TagNumber(2)
+  set expectedVersion($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExpectedVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpectedVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get clientMutationId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set clientMutationId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClientMutationId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClientMutationId() => $_clearField(3);
+}
+
+class RetryAnnualArchivePrintOrderResponse extends $pb.GeneratedMessage {
+  factory RetryAnnualArchivePrintOrderResponse({
+    AnnualArchivePrintOrder? order,
+    $core.bool? replayed,
+  }) {
+    final result = create();
+    if (order != null) result.order = order;
+    if (replayed != null) result.replayed = replayed;
+    return result;
+  }
+
+  RetryAnnualArchivePrintOrderResponse._();
+
+  factory RetryAnnualArchivePrintOrderResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RetryAnnualArchivePrintOrderResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RetryAnnualArchivePrintOrderResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.onyx.v1'),
+      createEmptyInstance: create)
+    ..aOM<AnnualArchivePrintOrder>(1, _omitFieldNames ? '' : 'order',
+        subBuilder: AnnualArchivePrintOrder.create)
+    ..aOB(2, _omitFieldNames ? '' : 'replayed')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RetryAnnualArchivePrintOrderResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RetryAnnualArchivePrintOrderResponse copyWith(
+          void Function(RetryAnnualArchivePrintOrderResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as RetryAnnualArchivePrintOrderResponse))
+          as RetryAnnualArchivePrintOrderResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RetryAnnualArchivePrintOrderResponse create() =>
+      RetryAnnualArchivePrintOrderResponse._();
+  @$core.override
+  RetryAnnualArchivePrintOrderResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RetryAnnualArchivePrintOrderResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RetryAnnualArchivePrintOrderResponse>(create);
+  static RetryAnnualArchivePrintOrderResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AnnualArchivePrintOrder get order => $_getN(0);
+  @$pb.TagNumber(1)
+  set order(AnnualArchivePrintOrder value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOrder() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOrder() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AnnualArchivePrintOrder ensureOrder() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get replayed => $_getBF(1);
+  @$pb.TagNumber(2)
+  set replayed($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReplayed() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReplayed() => $_clearField(2);
+}
+
 class ReactToContentRequest extends $pb.GeneratedMessage {
   factory ReactToContentRequest({
     $core.String? contentId,

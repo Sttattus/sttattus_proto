@@ -6902,6 +6902,590 @@ final $typed_data.Uint8List generateAnnualArchiveResponseDescriptor = $convert.b
     'dW50GAMgASgFUglwYWdlQ291bnQSPQoMZ2VuZXJhdGVkX2F0GAQgASgLMhouZ29vZ2xlLnByb3'
     'RvYnVmLlRpbWVzdGFtcFILZ2VuZXJhdGVkQXQ=');
 
+@$core.Deprecated('Use annualArchivePrintRuntimeDescriptor instead')
+const AnnualArchivePrintRuntime$json = {
+  '1': 'AnnualArchivePrintRuntime',
+  '2': [
+    {'1': 'available', '3': 1, '4': 1, '5': 8, '10': 'available'},
+    {
+      '1': 'provider_configured',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'providerConfigured'
+    },
+    {'1': 'sandbox_enabled', '3': 3, '4': 1, '5': 8, '10': 'sandboxEnabled'},
+    {
+      '1': 'production_submission_enabled',
+      '3': 4,
+      '4': 1,
+      '5': 8,
+      '10': 'productionSubmissionEnabled'
+    },
+    {'1': 'pod_package_id', '3': 5, '4': 1, '5': 9, '10': 'podPackageId'},
+    {
+      '1': 'minimum_page_count',
+      '3': 6,
+      '4': 1,
+      '5': 5,
+      '10': 'minimumPageCount'
+    },
+    {'1': 'public_notice', '3': 7, '4': 1, '5': 9, '10': 'publicNotice'},
+  ],
+};
+
+/// Descriptor for `AnnualArchivePrintRuntime`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List annualArchivePrintRuntimeDescriptor = $convert.base64Decode(
+    'ChlBbm51YWxBcmNoaXZlUHJpbnRSdW50aW1lEhwKCWF2YWlsYWJsZRgBIAEoCFIJYXZhaWxhYm'
+    'xlEi8KE3Byb3ZpZGVyX2NvbmZpZ3VyZWQYAiABKAhSEnByb3ZpZGVyQ29uZmlndXJlZBInCg9z'
+    'YW5kYm94X2VuYWJsZWQYAyABKAhSDnNhbmRib3hFbmFibGVkEkIKHXByb2R1Y3Rpb25fc3VibW'
+    'lzc2lvbl9lbmFibGVkGAQgASgIUhtwcm9kdWN0aW9uU3VibWlzc2lvbkVuYWJsZWQSJAoOcG9k'
+    'X3BhY2thZ2VfaWQYBSABKAlSDHBvZFBhY2thZ2VJZBIsChJtaW5pbXVtX3BhZ2VfY291bnQYBi'
+    'ABKAVSEG1pbmltdW1QYWdlQ291bnQSIwoNcHVibGljX25vdGljZRgHIAEoCVIMcHVibGljTm90'
+    'aWNl');
+
+@$core.Deprecated('Use annualArchivePrintEditionDescriptor instead')
+const AnnualArchivePrintEdition$json = {
+  '1': 'AnnualArchivePrintEdition',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'year', '3': 2, '4': 1, '5': 9, '10': 'year'},
+    {'1': 'edition_number', '3': 3, '4': 1, '5': 5, '10': 'editionNumber'},
+    {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'page_count', '3': 5, '4': 1, '5': 5, '10': 'pageCount'},
+    {'1': 'pod_package_id', '3': 6, '4': 1, '5': 9, '10': 'podPackageId'},
+    {'1': 'renderer_version', '3': 7, '4': 1, '5': 9, '10': 'rendererVersion'},
+    {'1': 'interior_sha256', '3': 8, '4': 1, '5': 9, '10': 'interiorSha256'},
+    {'1': 'cover_sha256', '3': 9, '4': 1, '5': 9, '10': 'coverSha256'},
+    {'1': 'preflight_errors', '3': 10, '4': 3, '5': 9, '10': 'preflightErrors'},
+    {
+      '1': 'created_at',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'normalized_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'normalizedAt'
+    },
+  ],
+};
+
+/// Descriptor for `AnnualArchivePrintEdition`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List annualArchivePrintEditionDescriptor = $convert.base64Decode(
+    'ChlBbm51YWxBcmNoaXZlUHJpbnRFZGl0aW9uEg4KAmlkGAEgASgJUgJpZBISCgR5ZWFyGAIgAS'
+    'gJUgR5ZWFyEiUKDmVkaXRpb25fbnVtYmVyGAMgASgFUg1lZGl0aW9uTnVtYmVyEhYKBnN0YXR1'
+    'cxgEIAEoCVIGc3RhdHVzEh0KCnBhZ2VfY291bnQYBSABKAVSCXBhZ2VDb3VudBIkCg5wb2RfcG'
+    'Fja2FnZV9pZBgGIAEoCVIMcG9kUGFja2FnZUlkEikKEHJlbmRlcmVyX3ZlcnNpb24YByABKAlS'
+    'D3JlbmRlcmVyVmVyc2lvbhInCg9pbnRlcmlvcl9zaGEyNTYYCCABKAlSDmludGVyaW9yU2hhMj'
+    'U2EiEKDGNvdmVyX3NoYTI1NhgJIAEoCVILY292ZXJTaGEyNTYSKQoQcHJlZmxpZ2h0X2Vycm9y'
+    'cxgKIAMoCVIPcHJlZmxpZ2h0RXJyb3JzEjkKCmNyZWF0ZWRfYXQYCyABKAsyGi5nb29nbGUucH'
+    'JvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSPwoNbm9ybWFsaXplZF9hdBgMIAEoCzIaLmdv'
+    'b2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSDG5vcm1hbGl6ZWRBdA==');
+
+@$core.Deprecated('Use annualArchiveShippingAddressDescriptor instead')
+const AnnualArchiveShippingAddress$json = {
+  '1': 'AnnualArchiveShippingAddress',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'organization', '3': 2, '4': 1, '5': 9, '10': 'organization'},
+    {'1': 'street1', '3': 3, '4': 1, '5': 9, '10': 'street1'},
+    {'1': 'street2', '3': 4, '4': 1, '5': 9, '10': 'street2'},
+    {'1': 'city', '3': 5, '4': 1, '5': 9, '10': 'city'},
+    {'1': 'state_code', '3': 6, '4': 1, '5': 9, '10': 'stateCode'},
+    {'1': 'country_code', '3': 7, '4': 1, '5': 9, '10': 'countryCode'},
+    {'1': 'postcode', '3': 8, '4': 1, '5': 9, '10': 'postcode'},
+    {'1': 'phone_number', '3': 9, '4': 1, '5': 9, '10': 'phoneNumber'},
+    {'1': 'email', '3': 10, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'is_business', '3': 11, '4': 1, '5': 8, '10': 'isBusiness'},
+  ],
+};
+
+/// Descriptor for `AnnualArchiveShippingAddress`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List annualArchiveShippingAddressDescriptor = $convert.base64Decode(
+    'ChxBbm51YWxBcmNoaXZlU2hpcHBpbmdBZGRyZXNzEhIKBG5hbWUYASABKAlSBG5hbWUSIgoMb3'
+    'JnYW5pemF0aW9uGAIgASgJUgxvcmdhbml6YXRpb24SGAoHc3RyZWV0MRgDIAEoCVIHc3RyZWV0'
+    'MRIYCgdzdHJlZXQyGAQgASgJUgdzdHJlZXQyEhIKBGNpdHkYBSABKAlSBGNpdHkSHQoKc3RhdG'
+    'VfY29kZRgGIAEoCVIJc3RhdGVDb2RlEiEKDGNvdW50cnlfY29kZRgHIAEoCVILY291bnRyeUNv'
+    'ZGUSGgoIcG9zdGNvZGUYCCABKAlSCHBvc3Rjb2RlEiEKDHBob25lX251bWJlchgJIAEoCVILcG'
+    'hvbmVOdW1iZXISFAoFZW1haWwYCiABKAlSBWVtYWlsEh8KC2lzX2J1c2luZXNzGAsgASgIUgpp'
+    'c0J1c2luZXNz');
+
+@$core.Deprecated('Use annualArchivePrintQuoteDescriptor instead')
+const AnnualArchivePrintQuote$json = {
+  '1': 'AnnualArchivePrintQuote',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'edition_id', '3': 2, '4': 1, '5': 9, '10': 'editionId'},
+    {'1': 'status', '3': 3, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'shipping_level', '3': 4, '4': 1, '5': 9, '10': 'shippingLevel'},
+    {'1': 'currency', '3': 5, '4': 1, '5': 9, '10': 'currency'},
+    {'1': 'product_cost', '3': 6, '4': 1, '5': 9, '10': 'productCost'},
+    {'1': 'shipping_cost', '3': 7, '4': 1, '5': 9, '10': 'shippingCost'},
+    {'1': 'fulfillment_cost', '3': 8, '4': 1, '5': 9, '10': 'fulfillmentCost'},
+    {'1': 'tax_cost', '3': 9, '4': 1, '5': 9, '10': 'taxCost'},
+    {'1': 'total_cost', '3': 10, '4': 1, '5': 9, '10': 'totalCost'},
+    {
+      '1': 'address_warning_codes',
+      '3': 11,
+      '4': 3,
+      '5': 9,
+      '10': 'addressWarningCodes'
+    },
+    {
+      '1': 'expires_at',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+    {
+      '1': 'created_at',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+  ],
+};
+
+/// Descriptor for `AnnualArchivePrintQuote`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List annualArchivePrintQuoteDescriptor = $convert.base64Decode(
+    'ChdBbm51YWxBcmNoaXZlUHJpbnRRdW90ZRIOCgJpZBgBIAEoCVICaWQSHQoKZWRpdGlvbl9pZB'
+    'gCIAEoCVIJZWRpdGlvbklkEhYKBnN0YXR1cxgDIAEoCVIGc3RhdHVzEiUKDnNoaXBwaW5nX2xl'
+    'dmVsGAQgASgJUg1zaGlwcGluZ0xldmVsEhoKCGN1cnJlbmN5GAUgASgJUghjdXJyZW5jeRIhCg'
+    'xwcm9kdWN0X2Nvc3QYBiABKAlSC3Byb2R1Y3RDb3N0EiMKDXNoaXBwaW5nX2Nvc3QYByABKAlS'
+    'DHNoaXBwaW5nQ29zdBIpChBmdWxmaWxsbWVudF9jb3N0GAggASgJUg9mdWxmaWxsbWVudENvc3'
+    'QSGQoIdGF4X2Nvc3QYCSABKAlSB3RheENvc3QSHQoKdG90YWxfY29zdBgKIAEoCVIJdG90YWxD'
+    'b3N0EjIKFWFkZHJlc3Nfd2FybmluZ19jb2RlcxgLIAMoCVITYWRkcmVzc1dhcm5pbmdDb2Rlcx'
+    'I5CgpleHBpcmVzX2F0GAwgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJZXhwaXJl'
+    'c0F0EjkKCmNyZWF0ZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcm'
+    'VhdGVkQXQ=');
+
+@$core.Deprecated('Use annualArchivePrintOrderDescriptor instead')
+const AnnualArchivePrintOrder$json = {
+  '1': 'AnnualArchivePrintOrder',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'year', '3': 2, '4': 1, '5': 9, '10': 'year'},
+    {'1': 'edition_id', '3': 3, '4': 1, '5': 9, '10': 'editionId'},
+    {'1': 'quote_id', '3': 4, '4': 1, '5': 9, '10': 'quoteId'},
+    {'1': 'environment', '3': 5, '4': 1, '5': 9, '10': 'environment'},
+    {'1': 'status', '3': 6, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'shipping_level', '3': 7, '4': 1, '5': 9, '10': 'shippingLevel'},
+    {'1': 'currency', '3': 8, '4': 1, '5': 9, '10': 'currency'},
+    {'1': 'total_cost', '3': 9, '4': 1, '5': 9, '10': 'totalCost'},
+    {'1': 'carrier_name', '3': 10, '4': 1, '5': 9, '10': 'carrierName'},
+    {'1': 'has_tracking', '3': 11, '4': 1, '5': 8, '10': 'hasTracking'},
+    {'1': 'failure_code', '3': 12, '4': 1, '5': 9, '10': 'failureCode'},
+    {'1': 'failure_summary', '3': 13, '4': 1, '5': 9, '10': 'failureSummary'},
+    {'1': 'version', '3': 14, '4': 1, '5': 3, '10': 'version'},
+    {
+      '1': 'created_at',
+      '3': 15,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 16,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+    {
+      '1': 'shipped_at',
+      '3': 17,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'shippedAt'
+    },
+    {
+      '1': 'delivered_at',
+      '3': 18,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'deliveredAt'
+    },
+    {'1': 'tracking_url', '3': 19, '4': 1, '5': 9, '10': 'trackingUrl'},
+    {'1': 'refund_status', '3': 20, '4': 1, '5': 9, '10': 'refundStatus'},
+    {'1': 'refund_amount', '3': 21, '4': 1, '5': 9, '10': 'refundAmount'},
+    {'1': 'refund_currency', '3': 22, '4': 1, '5': 9, '10': 'refundCurrency'},
+    {
+      '1': 'refund_updated_at',
+      '3': 23,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'refundUpdatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `AnnualArchivePrintOrder`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List annualArchivePrintOrderDescriptor = $convert.base64Decode(
+    'ChdBbm51YWxBcmNoaXZlUHJpbnRPcmRlchIOCgJpZBgBIAEoCVICaWQSEgoEeWVhchgCIAEoCV'
+    'IEeWVhchIdCgplZGl0aW9uX2lkGAMgASgJUgllZGl0aW9uSWQSGQoIcXVvdGVfaWQYBCABKAlS'
+    'B3F1b3RlSWQSIAoLZW52aXJvbm1lbnQYBSABKAlSC2Vudmlyb25tZW50EhYKBnN0YXR1cxgGIA'
+    'EoCVIGc3RhdHVzEiUKDnNoaXBwaW5nX2xldmVsGAcgASgJUg1zaGlwcGluZ0xldmVsEhoKCGN1'
+    'cnJlbmN5GAggASgJUghjdXJyZW5jeRIdCgp0b3RhbF9jb3N0GAkgASgJUgl0b3RhbENvc3QSIQ'
+    'oMY2Fycmllcl9uYW1lGAogASgJUgtjYXJyaWVyTmFtZRIhCgxoYXNfdHJhY2tpbmcYCyABKAhS'
+    'C2hhc1RyYWNraW5nEiEKDGZhaWx1cmVfY29kZRgMIAEoCVILZmFpbHVyZUNvZGUSJwoPZmFpbH'
+    'VyZV9zdW1tYXJ5GA0gASgJUg5mYWlsdXJlU3VtbWFyeRIYCgd2ZXJzaW9uGA4gASgDUgd2ZXJz'
+    'aW9uEjkKCmNyZWF0ZWRfYXQYDyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcm'
+    'VhdGVkQXQSOQoKdXBkYXRlZF9hdBgQIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBS'
+    'CXVwZGF0ZWRBdBI5CgpzaGlwcGVkX2F0GBEgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdG'
+    'FtcFIJc2hpcHBlZEF0Ej0KDGRlbGl2ZXJlZF9hdBgSIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5U'
+    'aW1lc3RhbXBSC2RlbGl2ZXJlZEF0EiEKDHRyYWNraW5nX3VybBgTIAEoCVILdHJhY2tpbmdVcm'
+    'wSIwoNcmVmdW5kX3N0YXR1cxgUIAEoCVIMcmVmdW5kU3RhdHVzEiMKDXJlZnVuZF9hbW91bnQY'
+    'FSABKAlSDHJlZnVuZEFtb3VudBInCg9yZWZ1bmRfY3VycmVuY3kYFiABKAlSDnJlZnVuZEN1cn'
+    'JlbmN5EkYKEXJlZnVuZF91cGRhdGVkX2F0GBcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVz'
+    'dGFtcFIPcmVmdW5kVXBkYXRlZEF0');
+
+@$core.Deprecated('Use getAnnualArchivePrintDashboardRequestDescriptor instead')
+const GetAnnualArchivePrintDashboardRequest$json = {
+  '1': 'GetAnnualArchivePrintDashboardRequest',
+  '2': [
+    {'1': 'year', '3': 1, '4': 1, '5': 9, '10': 'year'},
+  ],
+};
+
+/// Descriptor for `GetAnnualArchivePrintDashboardRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAnnualArchivePrintDashboardRequestDescriptor =
+    $convert.base64Decode(
+        'CiVHZXRBbm51YWxBcmNoaXZlUHJpbnREYXNoYm9hcmRSZXF1ZXN0EhIKBHllYXIYASABKAlSBH'
+        'llYXI=');
+
+@$core
+    .Deprecated('Use getAnnualArchivePrintDashboardResponseDescriptor instead')
+const GetAnnualArchivePrintDashboardResponse$json = {
+  '1': 'GetAnnualArchivePrintDashboardResponse',
+  '2': [
+    {
+      '1': 'runtime',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.AnnualArchivePrintRuntime',
+      '10': 'runtime'
+    },
+    {
+      '1': 'latest_edition',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.AnnualArchivePrintEdition',
+      '10': 'latestEdition'
+    },
+    {
+      '1': 'active_quote',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.AnnualArchivePrintQuote',
+      '10': 'activeQuote'
+    },
+    {
+      '1': 'annual_order',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.AnnualArchivePrintOrder',
+      '10': 'annualOrder'
+    },
+  ],
+};
+
+/// Descriptor for `GetAnnualArchivePrintDashboardResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAnnualArchivePrintDashboardResponseDescriptor = $convert.base64Decode(
+    'CiZHZXRBbm51YWxBcmNoaXZlUHJpbnREYXNoYm9hcmRSZXNwb25zZRJFCgdydW50aW1lGAEgAS'
+    'gLMisuc3R0YXR0dXMub255eC52MS5Bbm51YWxBcmNoaXZlUHJpbnRSdW50aW1lUgdydW50aW1l'
+    'ElIKDmxhdGVzdF9lZGl0aW9uGAIgASgLMisuc3R0YXR0dXMub255eC52MS5Bbm51YWxBcmNoaX'
+    'ZlUHJpbnRFZGl0aW9uUg1sYXRlc3RFZGl0aW9uEkwKDGFjdGl2ZV9xdW90ZRgDIAEoCzIpLnN0'
+    'dGF0dHVzLm9ueXgudjEuQW5udWFsQXJjaGl2ZVByaW50UXVvdGVSC2FjdGl2ZVF1b3RlEkwKDG'
+    'FubnVhbF9vcmRlchgEIAEoCzIpLnN0dGF0dHVzLm9ueXgudjEuQW5udWFsQXJjaGl2ZVByaW50'
+    'T3JkZXJSC2FubnVhbE9yZGVy');
+
+@$core
+    .Deprecated('Use prepareAnnualArchivePrintEditionRequestDescriptor instead')
+const PrepareAnnualArchivePrintEditionRequest$json = {
+  '1': 'PrepareAnnualArchivePrintEditionRequest',
+  '2': [
+    {'1': 'year', '3': 1, '4': 1, '5': 9, '10': 'year'},
+    {
+      '1': 'client_mutation_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `PrepareAnnualArchivePrintEditionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List prepareAnnualArchivePrintEditionRequestDescriptor =
+    $convert.base64Decode(
+        'CidQcmVwYXJlQW5udWFsQXJjaGl2ZVByaW50RWRpdGlvblJlcXVlc3QSEgoEeWVhchgBIAEoCV'
+        'IEeWVhchIsChJjbGllbnRfbXV0YXRpb25faWQYAiABKAlSEGNsaWVudE11dGF0aW9uSWQ=');
+
+@$core.Deprecated(
+    'Use prepareAnnualArchivePrintEditionResponseDescriptor instead')
+const PrepareAnnualArchivePrintEditionResponse$json = {
+  '1': 'PrepareAnnualArchivePrintEditionResponse',
+  '2': [
+    {
+      '1': 'edition',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.AnnualArchivePrintEdition',
+      '10': 'edition'
+    },
+    {'1': 'replayed', '3': 2, '4': 1, '5': 8, '10': 'replayed'},
+  ],
+};
+
+/// Descriptor for `PrepareAnnualArchivePrintEditionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List prepareAnnualArchivePrintEditionResponseDescriptor =
+    $convert.base64Decode(
+        'CihQcmVwYXJlQW5udWFsQXJjaGl2ZVByaW50RWRpdGlvblJlc3BvbnNlEkUKB2VkaXRpb24YAS'
+        'ABKAsyKy5zdHRhdHR1cy5vbnl4LnYxLkFubnVhbEFyY2hpdmVQcmludEVkaXRpb25SB2VkaXRp'
+        'b24SGgoIcmVwbGF5ZWQYAiABKAhSCHJlcGxheWVk');
+
+@$core.Deprecated('Use quoteAnnualArchivePrintRequestDescriptor instead')
+const QuoteAnnualArchivePrintRequest$json = {
+  '1': 'QuoteAnnualArchivePrintRequest',
+  '2': [
+    {'1': 'edition_id', '3': 1, '4': 1, '5': 9, '10': 'editionId'},
+    {
+      '1': 'shipping_address',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.AnnualArchiveShippingAddress',
+      '10': 'shippingAddress'
+    },
+    {'1': 'shipping_level', '3': 3, '4': 1, '5': 9, '10': 'shippingLevel'},
+    {
+      '1': 'client_mutation_id',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `QuoteAnnualArchivePrintRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List quoteAnnualArchivePrintRequestDescriptor = $convert.base64Decode(
+    'Ch5RdW90ZUFubnVhbEFyY2hpdmVQcmludFJlcXVlc3QSHQoKZWRpdGlvbl9pZBgBIAEoCVIJZW'
+    'RpdGlvbklkElkKEHNoaXBwaW5nX2FkZHJlc3MYAiABKAsyLi5zdHRhdHR1cy5vbnl4LnYxLkFu'
+    'bnVhbEFyY2hpdmVTaGlwcGluZ0FkZHJlc3NSD3NoaXBwaW5nQWRkcmVzcxIlCg5zaGlwcGluZ1'
+    '9sZXZlbBgDIAEoCVINc2hpcHBpbmdMZXZlbBIsChJjbGllbnRfbXV0YXRpb25faWQYBCABKAlS'
+    'EGNsaWVudE11dGF0aW9uSWQ=');
+
+@$core.Deprecated('Use quoteAnnualArchivePrintResponseDescriptor instead')
+const QuoteAnnualArchivePrintResponse$json = {
+  '1': 'QuoteAnnualArchivePrintResponse',
+  '2': [
+    {
+      '1': 'quote',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.AnnualArchivePrintQuote',
+      '10': 'quote'
+    },
+    {'1': 'replayed', '3': 2, '4': 1, '5': 8, '10': 'replayed'},
+  ],
+};
+
+/// Descriptor for `QuoteAnnualArchivePrintResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List quoteAnnualArchivePrintResponseDescriptor =
+    $convert.base64Decode(
+        'Ch9RdW90ZUFubnVhbEFyY2hpdmVQcmludFJlc3BvbnNlEj8KBXF1b3RlGAEgASgLMikuc3R0YX'
+        'R0dXMub255eC52MS5Bbm51YWxBcmNoaXZlUHJpbnRRdW90ZVIFcXVvdGUSGgoIcmVwbGF5ZWQY'
+        'AiABKAhSCHJlcGxheWVk');
+
+@$core.Deprecated('Use submitAnnualArchivePrintOrderRequestDescriptor instead')
+const SubmitAnnualArchivePrintOrderRequest$json = {
+  '1': 'SubmitAnnualArchivePrintOrderRequest',
+  '2': [
+    {'1': 'quote_id', '3': 1, '4': 1, '5': 9, '10': 'quoteId'},
+    {
+      '1': 'client_mutation_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+    {'1': 'confirm', '3': 3, '4': 1, '5': 8, '10': 'confirm'},
+  ],
+};
+
+/// Descriptor for `SubmitAnnualArchivePrintOrderRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitAnnualArchivePrintOrderRequestDescriptor =
+    $convert.base64Decode(
+        'CiRTdWJtaXRBbm51YWxBcmNoaXZlUHJpbnRPcmRlclJlcXVlc3QSGQoIcXVvdGVfaWQYASABKA'
+        'lSB3F1b3RlSWQSLAoSY2xpZW50X211dGF0aW9uX2lkGAIgASgJUhBjbGllbnRNdXRhdGlvbklk'
+        'EhgKB2NvbmZpcm0YAyABKAhSB2NvbmZpcm0=');
+
+@$core.Deprecated('Use submitAnnualArchivePrintOrderResponseDescriptor instead')
+const SubmitAnnualArchivePrintOrderResponse$json = {
+  '1': 'SubmitAnnualArchivePrintOrderResponse',
+  '2': [
+    {
+      '1': 'order',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.AnnualArchivePrintOrder',
+      '10': 'order'
+    },
+    {'1': 'replayed', '3': 2, '4': 1, '5': 8, '10': 'replayed'},
+  ],
+};
+
+/// Descriptor for `SubmitAnnualArchivePrintOrderResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitAnnualArchivePrintOrderResponseDescriptor =
+    $convert.base64Decode(
+        'CiVTdWJtaXRBbm51YWxBcmNoaXZlUHJpbnRPcmRlclJlc3BvbnNlEj8KBW9yZGVyGAEgASgLMi'
+        'kuc3R0YXR0dXMub255eC52MS5Bbm51YWxBcmNoaXZlUHJpbnRPcmRlclIFb3JkZXISGgoIcmVw'
+        'bGF5ZWQYAiABKAhSCHJlcGxheWVk');
+
+@$core.Deprecated('Use getAnnualArchivePrintOrderRequestDescriptor instead')
+const GetAnnualArchivePrintOrderRequest$json = {
+  '1': 'GetAnnualArchivePrintOrderRequest',
+  '2': [
+    {'1': 'order_id', '3': 1, '4': 1, '5': 9, '10': 'orderId'},
+    {'1': 'year', '3': 2, '4': 1, '5': 9, '10': 'year'},
+    {'1': 'refresh_provider', '3': 3, '4': 1, '5': 8, '10': 'refreshProvider'},
+  ],
+};
+
+/// Descriptor for `GetAnnualArchivePrintOrderRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAnnualArchivePrintOrderRequestDescriptor =
+    $convert.base64Decode(
+        'CiFHZXRBbm51YWxBcmNoaXZlUHJpbnRPcmRlclJlcXVlc3QSGQoIb3JkZXJfaWQYASABKAlSB2'
+        '9yZGVySWQSEgoEeWVhchgCIAEoCVIEeWVhchIpChByZWZyZXNoX3Byb3ZpZGVyGAMgASgIUg9y'
+        'ZWZyZXNoUHJvdmlkZXI=');
+
+@$core.Deprecated('Use getAnnualArchivePrintOrderResponseDescriptor instead')
+const GetAnnualArchivePrintOrderResponse$json = {
+  '1': 'GetAnnualArchivePrintOrderResponse',
+  '2': [
+    {
+      '1': 'order',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.AnnualArchivePrintOrder',
+      '10': 'order'
+    },
+  ],
+};
+
+/// Descriptor for `GetAnnualArchivePrintOrderResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAnnualArchivePrintOrderResponseDescriptor =
+    $convert.base64Decode(
+        'CiJHZXRBbm51YWxBcmNoaXZlUHJpbnRPcmRlclJlc3BvbnNlEj8KBW9yZGVyGAEgASgLMikuc3'
+        'R0YXR0dXMub255eC52MS5Bbm51YWxBcmNoaXZlUHJpbnRPcmRlclIFb3JkZXI=');
+
+@$core.Deprecated('Use cancelAnnualArchivePrintOrderRequestDescriptor instead')
+const CancelAnnualArchivePrintOrderRequest$json = {
+  '1': 'CancelAnnualArchivePrintOrderRequest',
+  '2': [
+    {'1': 'order_id', '3': 1, '4': 1, '5': 9, '10': 'orderId'},
+    {'1': 'expected_version', '3': 2, '4': 1, '5': 3, '10': 'expectedVersion'},
+  ],
+};
+
+/// Descriptor for `CancelAnnualArchivePrintOrderRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List cancelAnnualArchivePrintOrderRequestDescriptor =
+    $convert.base64Decode(
+        'CiRDYW5jZWxBbm51YWxBcmNoaXZlUHJpbnRPcmRlclJlcXVlc3QSGQoIb3JkZXJfaWQYASABKA'
+        'lSB29yZGVySWQSKQoQZXhwZWN0ZWRfdmVyc2lvbhgCIAEoA1IPZXhwZWN0ZWRWZXJzaW9u');
+
+@$core.Deprecated('Use cancelAnnualArchivePrintOrderResponseDescriptor instead')
+const CancelAnnualArchivePrintOrderResponse$json = {
+  '1': 'CancelAnnualArchivePrintOrderResponse',
+  '2': [
+    {
+      '1': 'order',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.AnnualArchivePrintOrder',
+      '10': 'order'
+    },
+  ],
+};
+
+/// Descriptor for `CancelAnnualArchivePrintOrderResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List cancelAnnualArchivePrintOrderResponseDescriptor =
+    $convert.base64Decode(
+        'CiVDYW5jZWxBbm51YWxBcmNoaXZlUHJpbnRPcmRlclJlc3BvbnNlEj8KBW9yZGVyGAEgASgLMi'
+        'kuc3R0YXR0dXMub255eC52MS5Bbm51YWxBcmNoaXZlUHJpbnRPcmRlclIFb3JkZXI=');
+
+@$core.Deprecated('Use retryAnnualArchivePrintOrderRequestDescriptor instead')
+const RetryAnnualArchivePrintOrderRequest$json = {
+  '1': 'RetryAnnualArchivePrintOrderRequest',
+  '2': [
+    {'1': 'order_id', '3': 1, '4': 1, '5': 9, '10': 'orderId'},
+    {'1': 'expected_version', '3': 2, '4': 1, '5': 3, '10': 'expectedVersion'},
+    {
+      '1': 'client_mutation_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'clientMutationId'
+    },
+  ],
+};
+
+/// Descriptor for `RetryAnnualArchivePrintOrderRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List retryAnnualArchivePrintOrderRequestDescriptor =
+    $convert.base64Decode(
+        'CiNSZXRyeUFubnVhbEFyY2hpdmVQcmludE9yZGVyUmVxdWVzdBIZCghvcmRlcl9pZBgBIAEoCV'
+        'IHb3JkZXJJZBIpChBleHBlY3RlZF92ZXJzaW9uGAIgASgDUg9leHBlY3RlZFZlcnNpb24SLAoS'
+        'Y2xpZW50X211dGF0aW9uX2lkGAMgASgJUhBjbGllbnRNdXRhdGlvbklk');
+
+@$core.Deprecated('Use retryAnnualArchivePrintOrderResponseDescriptor instead')
+const RetryAnnualArchivePrintOrderResponse$json = {
+  '1': 'RetryAnnualArchivePrintOrderResponse',
+  '2': [
+    {
+      '1': 'order',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.onyx.v1.AnnualArchivePrintOrder',
+      '10': 'order'
+    },
+    {'1': 'replayed', '3': 2, '4': 1, '5': 8, '10': 'replayed'},
+  ],
+};
+
+/// Descriptor for `RetryAnnualArchivePrintOrderResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List retryAnnualArchivePrintOrderResponseDescriptor =
+    $convert.base64Decode(
+        'CiRSZXRyeUFubnVhbEFyY2hpdmVQcmludE9yZGVyUmVzcG9uc2USPwoFb3JkZXIYASABKAsyKS'
+        '5zdHRhdHR1cy5vbnl4LnYxLkFubnVhbEFyY2hpdmVQcmludE9yZGVyUgVvcmRlchIaCghyZXBs'
+        'YXllZBgCIAEoCFIIcmVwbGF5ZWQ=');
+
 @$core.Deprecated('Use reactToContentRequestDescriptor instead')
 const ReactToContentRequest$json = {
   '1': 'ReactToContentRequest',

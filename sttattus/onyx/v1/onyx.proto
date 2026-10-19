@@ -1768,6 +1768,159 @@ message GenerateAnnualArchiveResponse {
   google.protobuf.Timestamp generated_at = 4;
 }
 
+// Conditional Package D — print-valid Annual Archive fulfillment. Provider
+// identities, raw file URLs and shipping-address plaintext never appear in
+// response messages.
+message AnnualArchivePrintRuntime {
+  bool available = 1;
+  bool provider_configured = 2;
+  bool sandbox_enabled = 3;
+  bool production_submission_enabled = 4;
+  string pod_package_id = 5;
+  int32 minimum_page_count = 6;
+  string public_notice = 7;
+}
+
+message AnnualArchivePrintEdition {
+  string id = 1;
+  string year = 2;
+  int32 edition_number = 3;
+  string status = 4;
+  int32 page_count = 5;
+  string pod_package_id = 6;
+  string renderer_version = 7;
+  string interior_sha256 = 8;
+  string cover_sha256 = 9;
+  repeated string preflight_errors = 10;
+  google.protobuf.Timestamp created_at = 11;
+  google.protobuf.Timestamp normalized_at = 12;
+}
+
+message AnnualArchiveShippingAddress {
+  string name = 1;
+  string organization = 2;
+  string street1 = 3;
+  string street2 = 4;
+  string city = 5;
+  string state_code = 6;
+  string country_code = 7;
+  string postcode = 8;
+  string phone_number = 9;
+  string email = 10;
+  bool is_business = 11;
+}
+
+message AnnualArchivePrintQuote {
+  string id = 1;
+  string edition_id = 2;
+  string status = 3;
+  string shipping_level = 4;
+  string currency = 5;
+  string product_cost = 6;
+  string shipping_cost = 7;
+  string fulfillment_cost = 8;
+  string tax_cost = 9;
+  string total_cost = 10;
+  repeated string address_warning_codes = 11;
+  google.protobuf.Timestamp expires_at = 12;
+  google.protobuf.Timestamp created_at = 13;
+}
+
+message AnnualArchivePrintOrder {
+  string id = 1;
+  string year = 2;
+  string edition_id = 3;
+  string quote_id = 4;
+  string environment = 5;
+  string status = 6;
+  string shipping_level = 7;
+  string currency = 8;
+  string total_cost = 9;
+  string carrier_name = 10;
+  bool has_tracking = 11;
+  string failure_code = 12;
+  string failure_summary = 13;
+  int64 version = 14;
+  google.protobuf.Timestamp created_at = 15;
+  google.protobuf.Timestamp updated_at = 16;
+  google.protobuf.Timestamp shipped_at = 17;
+  google.protobuf.Timestamp delivered_at = 18;
+  // Decrypted only for the order owner after provider verification. Provider
+  // job identities and the address remain server-private.
+  string tracking_url = 19;
+  string refund_status = 20;
+  string refund_amount = 21;
+  string refund_currency = 22;
+  google.protobuf.Timestamp refund_updated_at = 23;
+}
+
+message GetAnnualArchivePrintDashboardRequest {
+  string year = 1;
+}
+message GetAnnualArchivePrintDashboardResponse {
+  AnnualArchivePrintRuntime runtime = 1;
+  AnnualArchivePrintEdition latest_edition = 2;
+  AnnualArchivePrintQuote active_quote = 3;
+  AnnualArchivePrintOrder annual_order = 4;
+}
+
+message PrepareAnnualArchivePrintEditionRequest {
+  string year = 1;
+  string client_mutation_id = 2;
+}
+message PrepareAnnualArchivePrintEditionResponse {
+  AnnualArchivePrintEdition edition = 1;
+  bool replayed = 2;
+}
+
+message QuoteAnnualArchivePrintRequest {
+  string edition_id = 1;
+  AnnualArchiveShippingAddress shipping_address = 2;
+  string shipping_level = 3;
+  string client_mutation_id = 4;
+}
+message QuoteAnnualArchivePrintResponse {
+  AnnualArchivePrintQuote quote = 1;
+  bool replayed = 2;
+}
+
+message SubmitAnnualArchivePrintOrderRequest {
+  string quote_id = 1;
+  string client_mutation_id = 2;
+  bool confirm = 3;
+}
+message SubmitAnnualArchivePrintOrderResponse {
+  AnnualArchivePrintOrder order = 1;
+  bool replayed = 2;
+}
+
+message GetAnnualArchivePrintOrderRequest {
+  string order_id = 1;
+  string year = 2;
+  bool refresh_provider = 3;
+}
+message GetAnnualArchivePrintOrderResponse {
+  AnnualArchivePrintOrder order = 1;
+}
+
+message CancelAnnualArchivePrintOrderRequest {
+  string order_id = 1;
+  int64 expected_version = 2;
+}
+message CancelAnnualArchivePrintOrderResponse {
+  AnnualArchivePrintOrder order = 1;
+}
+
+message RetryAnnualArchivePrintOrderRequest {
+  string order_id = 1;
+  int64 expected_version = 2;
+  string client_mutation_id = 3;
+}
+message RetryAnnualArchivePrintOrderResponse {
+  AnnualArchivePrintOrder order = 1;
+  bool replayed = 2;
+}
+
 message ReactToContentRequest {
   string content_id = 1;
   bool react = 2; // true = react, false = remove
@@ -6481,6 +6634,13 @@ service OnyxService {
   // P4 — year-in-onyx recap, annual archive PDF, silent reactions.
   rpc GetYearInOnyx(GetYearInOnyxRequest) returns (GetYearInOnyxResponse);
   rpc GenerateAnnualArchive(GenerateAnnualArchiveRequest) returns (GenerateAnnualArchiveResponse);
+  rpc GetAnnualArchivePrintDashboard(GetAnnualArchivePrintDashboardRequest) returns (GetAnnualArchivePrintDashboardResponse);
+  rpc PrepareAnnualArchivePrintEdition(PrepareAnnualArchivePrintEditionRequest) returns (PrepareAnnualArchivePrintEditionResponse);
+  rpc QuoteAnnualArchivePrint(QuoteAnnualArchivePrintRequest) returns (QuoteAnnualArchivePrintResponse);
+  rpc SubmitAnnualArchivePrintOrder(SubmitAnnualArchivePrintOrderRequest) returns (SubmitAnnualArchivePrintOrderResponse);
+  rpc GetAnnualArchivePrintOrder(GetAnnualArchivePrintOrderRequest) returns (GetAnnualArchivePrintOrderResponse);
+  rpc CancelAnnualArchivePrintOrder(CancelAnnualArchivePrintOrderRequest) returns (CancelAnnualArchivePrintOrderResponse);
+  rpc RetryAnnualArchivePrintOrder(RetryAnnualArchivePrintOrderRequest) returns (RetryAnnualArchivePrintOrderResponse);
   rpc ReactToContent(ReactToContentRequest) returns (ReactToContentResponse);
 
   // Reader OS capture — private imports with durable processing and explicit

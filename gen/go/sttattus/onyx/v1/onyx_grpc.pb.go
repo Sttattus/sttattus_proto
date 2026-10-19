@@ -123,6 +123,13 @@ const (
 	OnyxService_RecordOfflineSyncReceipt_FullMethodName             = "/sttattus.onyx.v1.OnyxService/RecordOfflineSyncReceipt"
 	OnyxService_GetYearInOnyx_FullMethodName                        = "/sttattus.onyx.v1.OnyxService/GetYearInOnyx"
 	OnyxService_GenerateAnnualArchive_FullMethodName                = "/sttattus.onyx.v1.OnyxService/GenerateAnnualArchive"
+	OnyxService_GetAnnualArchivePrintDashboard_FullMethodName       = "/sttattus.onyx.v1.OnyxService/GetAnnualArchivePrintDashboard"
+	OnyxService_PrepareAnnualArchivePrintEdition_FullMethodName     = "/sttattus.onyx.v1.OnyxService/PrepareAnnualArchivePrintEdition"
+	OnyxService_QuoteAnnualArchivePrint_FullMethodName              = "/sttattus.onyx.v1.OnyxService/QuoteAnnualArchivePrint"
+	OnyxService_SubmitAnnualArchivePrintOrder_FullMethodName        = "/sttattus.onyx.v1.OnyxService/SubmitAnnualArchivePrintOrder"
+	OnyxService_GetAnnualArchivePrintOrder_FullMethodName           = "/sttattus.onyx.v1.OnyxService/GetAnnualArchivePrintOrder"
+	OnyxService_CancelAnnualArchivePrintOrder_FullMethodName        = "/sttattus.onyx.v1.OnyxService/CancelAnnualArchivePrintOrder"
+	OnyxService_RetryAnnualArchivePrintOrder_FullMethodName         = "/sttattus.onyx.v1.OnyxService/RetryAnnualArchivePrintOrder"
 	OnyxService_ReactToContent_FullMethodName                       = "/sttattus.onyx.v1.OnyxService/ReactToContent"
 	OnyxService_CreateIngestionItem_FullMethodName                  = "/sttattus.onyx.v1.OnyxService/CreateIngestionItem"
 	OnyxService_ListMyIngestionItems_FullMethodName                 = "/sttattus.onyx.v1.OnyxService/ListMyIngestionItems"
@@ -445,6 +452,13 @@ type OnyxServiceClient interface {
 	// P4 — year-in-onyx recap, annual archive PDF, silent reactions.
 	GetYearInOnyx(ctx context.Context, in *GetYearInOnyxRequest, opts ...grpc.CallOption) (*GetYearInOnyxResponse, error)
 	GenerateAnnualArchive(ctx context.Context, in *GenerateAnnualArchiveRequest, opts ...grpc.CallOption) (*GenerateAnnualArchiveResponse, error)
+	GetAnnualArchivePrintDashboard(ctx context.Context, in *GetAnnualArchivePrintDashboardRequest, opts ...grpc.CallOption) (*GetAnnualArchivePrintDashboardResponse, error)
+	PrepareAnnualArchivePrintEdition(ctx context.Context, in *PrepareAnnualArchivePrintEditionRequest, opts ...grpc.CallOption) (*PrepareAnnualArchivePrintEditionResponse, error)
+	QuoteAnnualArchivePrint(ctx context.Context, in *QuoteAnnualArchivePrintRequest, opts ...grpc.CallOption) (*QuoteAnnualArchivePrintResponse, error)
+	SubmitAnnualArchivePrintOrder(ctx context.Context, in *SubmitAnnualArchivePrintOrderRequest, opts ...grpc.CallOption) (*SubmitAnnualArchivePrintOrderResponse, error)
+	GetAnnualArchivePrintOrder(ctx context.Context, in *GetAnnualArchivePrintOrderRequest, opts ...grpc.CallOption) (*GetAnnualArchivePrintOrderResponse, error)
+	CancelAnnualArchivePrintOrder(ctx context.Context, in *CancelAnnualArchivePrintOrderRequest, opts ...grpc.CallOption) (*CancelAnnualArchivePrintOrderResponse, error)
+	RetryAnnualArchivePrintOrder(ctx context.Context, in *RetryAnnualArchivePrintOrderRequest, opts ...grpc.CallOption) (*RetryAnnualArchivePrintOrderResponse, error)
 	ReactToContent(ctx context.Context, in *ReactToContentRequest, opts ...grpc.CallOption) (*ReactToContentResponse, error)
 	// Reader OS capture — private imports with durable processing and explicit
 	// duplicate/failure recovery.
@@ -1708,6 +1722,76 @@ func (c *onyxServiceClient) GenerateAnnualArchive(ctx context.Context, in *Gener
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GenerateAnnualArchiveResponse)
 	err := c.cc.Invoke(ctx, OnyxService_GenerateAnnualArchive_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetAnnualArchivePrintDashboard(ctx context.Context, in *GetAnnualArchivePrintDashboardRequest, opts ...grpc.CallOption) (*GetAnnualArchivePrintDashboardResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAnnualArchivePrintDashboardResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetAnnualArchivePrintDashboard_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) PrepareAnnualArchivePrintEdition(ctx context.Context, in *PrepareAnnualArchivePrintEditionRequest, opts ...grpc.CallOption) (*PrepareAnnualArchivePrintEditionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PrepareAnnualArchivePrintEditionResponse)
+	err := c.cc.Invoke(ctx, OnyxService_PrepareAnnualArchivePrintEdition_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) QuoteAnnualArchivePrint(ctx context.Context, in *QuoteAnnualArchivePrintRequest, opts ...grpc.CallOption) (*QuoteAnnualArchivePrintResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(QuoteAnnualArchivePrintResponse)
+	err := c.cc.Invoke(ctx, OnyxService_QuoteAnnualArchivePrint_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) SubmitAnnualArchivePrintOrder(ctx context.Context, in *SubmitAnnualArchivePrintOrderRequest, opts ...grpc.CallOption) (*SubmitAnnualArchivePrintOrderResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitAnnualArchivePrintOrderResponse)
+	err := c.cc.Invoke(ctx, OnyxService_SubmitAnnualArchivePrintOrder_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) GetAnnualArchivePrintOrder(ctx context.Context, in *GetAnnualArchivePrintOrderRequest, opts ...grpc.CallOption) (*GetAnnualArchivePrintOrderResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAnnualArchivePrintOrderResponse)
+	err := c.cc.Invoke(ctx, OnyxService_GetAnnualArchivePrintOrder_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) CancelAnnualArchivePrintOrder(ctx context.Context, in *CancelAnnualArchivePrintOrderRequest, opts ...grpc.CallOption) (*CancelAnnualArchivePrintOrderResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CancelAnnualArchivePrintOrderResponse)
+	err := c.cc.Invoke(ctx, OnyxService_CancelAnnualArchivePrintOrder_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *onyxServiceClient) RetryAnnualArchivePrintOrder(ctx context.Context, in *RetryAnnualArchivePrintOrderRequest, opts ...grpc.CallOption) (*RetryAnnualArchivePrintOrderResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RetryAnnualArchivePrintOrderResponse)
+	err := c.cc.Invoke(ctx, OnyxService_RetryAnnualArchivePrintOrder_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3753,6 +3837,13 @@ type OnyxServiceServer interface {
 	// P4 — year-in-onyx recap, annual archive PDF, silent reactions.
 	GetYearInOnyx(context.Context, *GetYearInOnyxRequest) (*GetYearInOnyxResponse, error)
 	GenerateAnnualArchive(context.Context, *GenerateAnnualArchiveRequest) (*GenerateAnnualArchiveResponse, error)
+	GetAnnualArchivePrintDashboard(context.Context, *GetAnnualArchivePrintDashboardRequest) (*GetAnnualArchivePrintDashboardResponse, error)
+	PrepareAnnualArchivePrintEdition(context.Context, *PrepareAnnualArchivePrintEditionRequest) (*PrepareAnnualArchivePrintEditionResponse, error)
+	QuoteAnnualArchivePrint(context.Context, *QuoteAnnualArchivePrintRequest) (*QuoteAnnualArchivePrintResponse, error)
+	SubmitAnnualArchivePrintOrder(context.Context, *SubmitAnnualArchivePrintOrderRequest) (*SubmitAnnualArchivePrintOrderResponse, error)
+	GetAnnualArchivePrintOrder(context.Context, *GetAnnualArchivePrintOrderRequest) (*GetAnnualArchivePrintOrderResponse, error)
+	CancelAnnualArchivePrintOrder(context.Context, *CancelAnnualArchivePrintOrderRequest) (*CancelAnnualArchivePrintOrderResponse, error)
+	RetryAnnualArchivePrintOrder(context.Context, *RetryAnnualArchivePrintOrderRequest) (*RetryAnnualArchivePrintOrderResponse, error)
 	ReactToContent(context.Context, *ReactToContentRequest) (*ReactToContentResponse, error)
 	// Reader OS capture — private imports with durable processing and explicit
 	// duplicate/failure recovery.
@@ -4293,6 +4384,27 @@ func (UnimplementedOnyxServiceServer) GetYearInOnyx(context.Context, *GetYearInO
 }
 func (UnimplementedOnyxServiceServer) GenerateAnnualArchive(context.Context, *GenerateAnnualArchiveRequest) (*GenerateAnnualArchiveResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GenerateAnnualArchive not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetAnnualArchivePrintDashboard(context.Context, *GetAnnualArchivePrintDashboardRequest) (*GetAnnualArchivePrintDashboardResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAnnualArchivePrintDashboard not implemented")
+}
+func (UnimplementedOnyxServiceServer) PrepareAnnualArchivePrintEdition(context.Context, *PrepareAnnualArchivePrintEditionRequest) (*PrepareAnnualArchivePrintEditionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PrepareAnnualArchivePrintEdition not implemented")
+}
+func (UnimplementedOnyxServiceServer) QuoteAnnualArchivePrint(context.Context, *QuoteAnnualArchivePrintRequest) (*QuoteAnnualArchivePrintResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method QuoteAnnualArchivePrint not implemented")
+}
+func (UnimplementedOnyxServiceServer) SubmitAnnualArchivePrintOrder(context.Context, *SubmitAnnualArchivePrintOrderRequest) (*SubmitAnnualArchivePrintOrderResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitAnnualArchivePrintOrder not implemented")
+}
+func (UnimplementedOnyxServiceServer) GetAnnualArchivePrintOrder(context.Context, *GetAnnualArchivePrintOrderRequest) (*GetAnnualArchivePrintOrderResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAnnualArchivePrintOrder not implemented")
+}
+func (UnimplementedOnyxServiceServer) CancelAnnualArchivePrintOrder(context.Context, *CancelAnnualArchivePrintOrderRequest) (*CancelAnnualArchivePrintOrderResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CancelAnnualArchivePrintOrder not implemented")
+}
+func (UnimplementedOnyxServiceServer) RetryAnnualArchivePrintOrder(context.Context, *RetryAnnualArchivePrintOrderRequest) (*RetryAnnualArchivePrintOrderResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RetryAnnualArchivePrintOrder not implemented")
 }
 func (UnimplementedOnyxServiceServer) ReactToContent(context.Context, *ReactToContentRequest) (*ReactToContentResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ReactToContent not implemented")
@@ -6756,6 +6868,132 @@ func _OnyxService_GenerateAnnualArchive_Handler(srv interface{}, ctx context.Con
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OnyxServiceServer).GenerateAnnualArchive(ctx, req.(*GenerateAnnualArchiveRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetAnnualArchivePrintDashboard_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAnnualArchivePrintDashboardRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetAnnualArchivePrintDashboard(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetAnnualArchivePrintDashboard_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetAnnualArchivePrintDashboard(ctx, req.(*GetAnnualArchivePrintDashboardRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_PrepareAnnualArchivePrintEdition_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrepareAnnualArchivePrintEditionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).PrepareAnnualArchivePrintEdition(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_PrepareAnnualArchivePrintEdition_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).PrepareAnnualArchivePrintEdition(ctx, req.(*PrepareAnnualArchivePrintEditionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_QuoteAnnualArchivePrint_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QuoteAnnualArchivePrintRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).QuoteAnnualArchivePrint(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_QuoteAnnualArchivePrint_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).QuoteAnnualArchivePrint(ctx, req.(*QuoteAnnualArchivePrintRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_SubmitAnnualArchivePrintOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitAnnualArchivePrintOrderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).SubmitAnnualArchivePrintOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_SubmitAnnualArchivePrintOrder_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).SubmitAnnualArchivePrintOrder(ctx, req.(*SubmitAnnualArchivePrintOrderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_GetAnnualArchivePrintOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAnnualArchivePrintOrderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).GetAnnualArchivePrintOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_GetAnnualArchivePrintOrder_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).GetAnnualArchivePrintOrder(ctx, req.(*GetAnnualArchivePrintOrderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_CancelAnnualArchivePrintOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CancelAnnualArchivePrintOrderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).CancelAnnualArchivePrintOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_CancelAnnualArchivePrintOrder_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).CancelAnnualArchivePrintOrder(ctx, req.(*CancelAnnualArchivePrintOrderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OnyxService_RetryAnnualArchivePrintOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RetryAnnualArchivePrintOrderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OnyxServiceServer).RetryAnnualArchivePrintOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OnyxService_RetryAnnualArchivePrintOrder_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OnyxServiceServer).RetryAnnualArchivePrintOrder(ctx, req.(*RetryAnnualArchivePrintOrderRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -10620,6 +10858,34 @@ var OnyxService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GenerateAnnualArchive",
 			Handler:    _OnyxService_GenerateAnnualArchive_Handler,
+		},
+		{
+			MethodName: "GetAnnualArchivePrintDashboard",
+			Handler:    _OnyxService_GetAnnualArchivePrintDashboard_Handler,
+		},
+		{
+			MethodName: "PrepareAnnualArchivePrintEdition",
+			Handler:    _OnyxService_PrepareAnnualArchivePrintEdition_Handler,
+		},
+		{
+			MethodName: "QuoteAnnualArchivePrint",
+			Handler:    _OnyxService_QuoteAnnualArchivePrint_Handler,
+		},
+		{
+			MethodName: "SubmitAnnualArchivePrintOrder",
+			Handler:    _OnyxService_SubmitAnnualArchivePrintOrder_Handler,
+		},
+		{
+			MethodName: "GetAnnualArchivePrintOrder",
+			Handler:    _OnyxService_GetAnnualArchivePrintOrder_Handler,
+		},
+		{
+			MethodName: "CancelAnnualArchivePrintOrder",
+			Handler:    _OnyxService_CancelAnnualArchivePrintOrder_Handler,
+		},
+		{
+			MethodName: "RetryAnnualArchivePrintOrder",
+			Handler:    _OnyxService_RetryAnnualArchivePrintOrder_Handler,
 		},
 		{
 			MethodName: "ReactToContent",

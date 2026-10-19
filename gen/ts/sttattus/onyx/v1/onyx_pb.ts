@@ -15023,6 +15023,1190 @@ export class GenerateAnnualArchiveResponse extends Message<GenerateAnnualArchive
 }
 
 /**
+ * Conditional Package D — print-valid Annual Archive fulfillment. Provider
+ * identities, raw file URLs and shipping-address plaintext never appear in
+ * response messages.
+ *
+ * @generated from message sttattus.onyx.v1.AnnualArchivePrintRuntime
+ */
+export class AnnualArchivePrintRuntime extends Message<AnnualArchivePrintRuntime> {
+  /**
+   * @generated from field: bool available = 1;
+   */
+  available = false;
+
+  /**
+   * @generated from field: bool provider_configured = 2;
+   */
+  providerConfigured = false;
+
+  /**
+   * @generated from field: bool sandbox_enabled = 3;
+   */
+  sandboxEnabled = false;
+
+  /**
+   * @generated from field: bool production_submission_enabled = 4;
+   */
+  productionSubmissionEnabled = false;
+
+  /**
+   * @generated from field: string pod_package_id = 5;
+   */
+  podPackageId = "";
+
+  /**
+   * @generated from field: int32 minimum_page_count = 6;
+   */
+  minimumPageCount = 0;
+
+  /**
+   * @generated from field: string public_notice = 7;
+   */
+  publicNotice = "";
+
+  constructor(data?: PartialMessage<AnnualArchivePrintRuntime>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.AnnualArchivePrintRuntime";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "available", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "provider_configured", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "sandbox_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "production_submission_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "pod_package_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "minimum_page_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "public_notice", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AnnualArchivePrintRuntime {
+    return new AnnualArchivePrintRuntime().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AnnualArchivePrintRuntime {
+    return new AnnualArchivePrintRuntime().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AnnualArchivePrintRuntime {
+    return new AnnualArchivePrintRuntime().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AnnualArchivePrintRuntime | PlainMessage<AnnualArchivePrintRuntime> | undefined, b: AnnualArchivePrintRuntime | PlainMessage<AnnualArchivePrintRuntime> | undefined): boolean {
+    return proto3.util.equals(AnnualArchivePrintRuntime, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.AnnualArchivePrintEdition
+ */
+export class AnnualArchivePrintEdition extends Message<AnnualArchivePrintEdition> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string year = 2;
+   */
+  year = "";
+
+  /**
+   * @generated from field: int32 edition_number = 3;
+   */
+  editionNumber = 0;
+
+  /**
+   * @generated from field: string status = 4;
+   */
+  status = "";
+
+  /**
+   * @generated from field: int32 page_count = 5;
+   */
+  pageCount = 0;
+
+  /**
+   * @generated from field: string pod_package_id = 6;
+   */
+  podPackageId = "";
+
+  /**
+   * @generated from field: string renderer_version = 7;
+   */
+  rendererVersion = "";
+
+  /**
+   * @generated from field: string interior_sha256 = 8;
+   */
+  interiorSha256 = "";
+
+  /**
+   * @generated from field: string cover_sha256 = 9;
+   */
+  coverSha256 = "";
+
+  /**
+   * @generated from field: repeated string preflight_errors = 10;
+   */
+  preflightErrors: string[] = [];
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 11;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp normalized_at = 12;
+   */
+  normalizedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<AnnualArchivePrintEdition>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.AnnualArchivePrintEdition";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "year", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "edition_number", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "page_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "pod_package_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "renderer_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "interior_sha256", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "cover_sha256", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "preflight_errors", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 11, name: "created_at", kind: "message", T: Timestamp },
+    { no: 12, name: "normalized_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AnnualArchivePrintEdition {
+    return new AnnualArchivePrintEdition().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AnnualArchivePrintEdition {
+    return new AnnualArchivePrintEdition().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AnnualArchivePrintEdition {
+    return new AnnualArchivePrintEdition().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AnnualArchivePrintEdition | PlainMessage<AnnualArchivePrintEdition> | undefined, b: AnnualArchivePrintEdition | PlainMessage<AnnualArchivePrintEdition> | undefined): boolean {
+    return proto3.util.equals(AnnualArchivePrintEdition, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.AnnualArchiveShippingAddress
+ */
+export class AnnualArchiveShippingAddress extends Message<AnnualArchiveShippingAddress> {
+  /**
+   * @generated from field: string name = 1;
+   */
+  name = "";
+
+  /**
+   * @generated from field: string organization = 2;
+   */
+  organization = "";
+
+  /**
+   * @generated from field: string street1 = 3;
+   */
+  street1 = "";
+
+  /**
+   * @generated from field: string street2 = 4;
+   */
+  street2 = "";
+
+  /**
+   * @generated from field: string city = 5;
+   */
+  city = "";
+
+  /**
+   * @generated from field: string state_code = 6;
+   */
+  stateCode = "";
+
+  /**
+   * @generated from field: string country_code = 7;
+   */
+  countryCode = "";
+
+  /**
+   * @generated from field: string postcode = 8;
+   */
+  postcode = "";
+
+  /**
+   * @generated from field: string phone_number = 9;
+   */
+  phoneNumber = "";
+
+  /**
+   * @generated from field: string email = 10;
+   */
+  email = "";
+
+  /**
+   * @generated from field: bool is_business = 11;
+   */
+  isBusiness = false;
+
+  constructor(data?: PartialMessage<AnnualArchiveShippingAddress>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.AnnualArchiveShippingAddress";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "organization", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "street1", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "street2", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "city", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "state_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "postcode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "phone_number", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "is_business", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AnnualArchiveShippingAddress {
+    return new AnnualArchiveShippingAddress().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AnnualArchiveShippingAddress {
+    return new AnnualArchiveShippingAddress().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AnnualArchiveShippingAddress {
+    return new AnnualArchiveShippingAddress().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AnnualArchiveShippingAddress | PlainMessage<AnnualArchiveShippingAddress> | undefined, b: AnnualArchiveShippingAddress | PlainMessage<AnnualArchiveShippingAddress> | undefined): boolean {
+    return proto3.util.equals(AnnualArchiveShippingAddress, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.AnnualArchivePrintQuote
+ */
+export class AnnualArchivePrintQuote extends Message<AnnualArchivePrintQuote> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string edition_id = 2;
+   */
+  editionId = "";
+
+  /**
+   * @generated from field: string status = 3;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string shipping_level = 4;
+   */
+  shippingLevel = "";
+
+  /**
+   * @generated from field: string currency = 5;
+   */
+  currency = "";
+
+  /**
+   * @generated from field: string product_cost = 6;
+   */
+  productCost = "";
+
+  /**
+   * @generated from field: string shipping_cost = 7;
+   */
+  shippingCost = "";
+
+  /**
+   * @generated from field: string fulfillment_cost = 8;
+   */
+  fulfillmentCost = "";
+
+  /**
+   * @generated from field: string tax_cost = 9;
+   */
+  taxCost = "";
+
+  /**
+   * @generated from field: string total_cost = 10;
+   */
+  totalCost = "";
+
+  /**
+   * @generated from field: repeated string address_warning_codes = 11;
+   */
+  addressWarningCodes: string[] = [];
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expires_at = 12;
+   */
+  expiresAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 13;
+   */
+  createdAt?: Timestamp;
+
+  constructor(data?: PartialMessage<AnnualArchivePrintQuote>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.AnnualArchivePrintQuote";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "edition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "shipping_level", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "currency", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "product_cost", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "shipping_cost", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "fulfillment_cost", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "tax_cost", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "total_cost", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "address_warning_codes", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 12, name: "expires_at", kind: "message", T: Timestamp },
+    { no: 13, name: "created_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AnnualArchivePrintQuote {
+    return new AnnualArchivePrintQuote().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AnnualArchivePrintQuote {
+    return new AnnualArchivePrintQuote().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AnnualArchivePrintQuote {
+    return new AnnualArchivePrintQuote().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AnnualArchivePrintQuote | PlainMessage<AnnualArchivePrintQuote> | undefined, b: AnnualArchivePrintQuote | PlainMessage<AnnualArchivePrintQuote> | undefined): boolean {
+    return proto3.util.equals(AnnualArchivePrintQuote, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.AnnualArchivePrintOrder
+ */
+export class AnnualArchivePrintOrder extends Message<AnnualArchivePrintOrder> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string year = 2;
+   */
+  year = "";
+
+  /**
+   * @generated from field: string edition_id = 3;
+   */
+  editionId = "";
+
+  /**
+   * @generated from field: string quote_id = 4;
+   */
+  quoteId = "";
+
+  /**
+   * @generated from field: string environment = 5;
+   */
+  environment = "";
+
+  /**
+   * @generated from field: string status = 6;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string shipping_level = 7;
+   */
+  shippingLevel = "";
+
+  /**
+   * @generated from field: string currency = 8;
+   */
+  currency = "";
+
+  /**
+   * @generated from field: string total_cost = 9;
+   */
+  totalCost = "";
+
+  /**
+   * @generated from field: string carrier_name = 10;
+   */
+  carrierName = "";
+
+  /**
+   * @generated from field: bool has_tracking = 11;
+   */
+  hasTracking = false;
+
+  /**
+   * @generated from field: string failure_code = 12;
+   */
+  failureCode = "";
+
+  /**
+   * @generated from field: string failure_summary = 13;
+   */
+  failureSummary = "";
+
+  /**
+   * @generated from field: int64 version = 14;
+   */
+  version = protoInt64.zero;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 15;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 16;
+   */
+  updatedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp shipped_at = 17;
+   */
+  shippedAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp delivered_at = 18;
+   */
+  deliveredAt?: Timestamp;
+
+  /**
+   * Decrypted only for the order owner after provider verification. Provider
+   * job identities and the address remain server-private.
+   *
+   * @generated from field: string tracking_url = 19;
+   */
+  trackingUrl = "";
+
+  /**
+   * @generated from field: string refund_status = 20;
+   */
+  refundStatus = "";
+
+  /**
+   * @generated from field: string refund_amount = 21;
+   */
+  refundAmount = "";
+
+  /**
+   * @generated from field: string refund_currency = 22;
+   */
+  refundCurrency = "";
+
+  /**
+   * @generated from field: google.protobuf.Timestamp refund_updated_at = 23;
+   */
+  refundUpdatedAt?: Timestamp;
+
+  constructor(data?: PartialMessage<AnnualArchivePrintOrder>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.AnnualArchivePrintOrder";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "year", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "edition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "quote_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "environment", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "shipping_level", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "currency", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "total_cost", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "carrier_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "has_tracking", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 12, name: "failure_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "failure_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 15, name: "created_at", kind: "message", T: Timestamp },
+    { no: 16, name: "updated_at", kind: "message", T: Timestamp },
+    { no: 17, name: "shipped_at", kind: "message", T: Timestamp },
+    { no: 18, name: "delivered_at", kind: "message", T: Timestamp },
+    { no: 19, name: "tracking_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 20, name: "refund_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 21, name: "refund_amount", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 22, name: "refund_currency", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 23, name: "refund_updated_at", kind: "message", T: Timestamp },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AnnualArchivePrintOrder {
+    return new AnnualArchivePrintOrder().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AnnualArchivePrintOrder {
+    return new AnnualArchivePrintOrder().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AnnualArchivePrintOrder {
+    return new AnnualArchivePrintOrder().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AnnualArchivePrintOrder | PlainMessage<AnnualArchivePrintOrder> | undefined, b: AnnualArchivePrintOrder | PlainMessage<AnnualArchivePrintOrder> | undefined): boolean {
+    return proto3.util.equals(AnnualArchivePrintOrder, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetAnnualArchivePrintDashboardRequest
+ */
+export class GetAnnualArchivePrintDashboardRequest extends Message<GetAnnualArchivePrintDashboardRequest> {
+  /**
+   * @generated from field: string year = 1;
+   */
+  year = "";
+
+  constructor(data?: PartialMessage<GetAnnualArchivePrintDashboardRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetAnnualArchivePrintDashboardRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "year", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAnnualArchivePrintDashboardRequest {
+    return new GetAnnualArchivePrintDashboardRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAnnualArchivePrintDashboardRequest {
+    return new GetAnnualArchivePrintDashboardRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAnnualArchivePrintDashboardRequest {
+    return new GetAnnualArchivePrintDashboardRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetAnnualArchivePrintDashboardRequest | PlainMessage<GetAnnualArchivePrintDashboardRequest> | undefined, b: GetAnnualArchivePrintDashboardRequest | PlainMessage<GetAnnualArchivePrintDashboardRequest> | undefined): boolean {
+    return proto3.util.equals(GetAnnualArchivePrintDashboardRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetAnnualArchivePrintDashboardResponse
+ */
+export class GetAnnualArchivePrintDashboardResponse extends Message<GetAnnualArchivePrintDashboardResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.AnnualArchivePrintRuntime runtime = 1;
+   */
+  runtime?: AnnualArchivePrintRuntime;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.AnnualArchivePrintEdition latest_edition = 2;
+   */
+  latestEdition?: AnnualArchivePrintEdition;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.AnnualArchivePrintQuote active_quote = 3;
+   */
+  activeQuote?: AnnualArchivePrintQuote;
+
+  /**
+   * @generated from field: sttattus.onyx.v1.AnnualArchivePrintOrder annual_order = 4;
+   */
+  annualOrder?: AnnualArchivePrintOrder;
+
+  constructor(data?: PartialMessage<GetAnnualArchivePrintDashboardResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetAnnualArchivePrintDashboardResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "runtime", kind: "message", T: AnnualArchivePrintRuntime },
+    { no: 2, name: "latest_edition", kind: "message", T: AnnualArchivePrintEdition },
+    { no: 3, name: "active_quote", kind: "message", T: AnnualArchivePrintQuote },
+    { no: 4, name: "annual_order", kind: "message", T: AnnualArchivePrintOrder },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAnnualArchivePrintDashboardResponse {
+    return new GetAnnualArchivePrintDashboardResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAnnualArchivePrintDashboardResponse {
+    return new GetAnnualArchivePrintDashboardResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAnnualArchivePrintDashboardResponse {
+    return new GetAnnualArchivePrintDashboardResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetAnnualArchivePrintDashboardResponse | PlainMessage<GetAnnualArchivePrintDashboardResponse> | undefined, b: GetAnnualArchivePrintDashboardResponse | PlainMessage<GetAnnualArchivePrintDashboardResponse> | undefined): boolean {
+    return proto3.util.equals(GetAnnualArchivePrintDashboardResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.PrepareAnnualArchivePrintEditionRequest
+ */
+export class PrepareAnnualArchivePrintEditionRequest extends Message<PrepareAnnualArchivePrintEditionRequest> {
+  /**
+   * @generated from field: string year = 1;
+   */
+  year = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 2;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<PrepareAnnualArchivePrintEditionRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.PrepareAnnualArchivePrintEditionRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "year", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PrepareAnnualArchivePrintEditionRequest {
+    return new PrepareAnnualArchivePrintEditionRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PrepareAnnualArchivePrintEditionRequest {
+    return new PrepareAnnualArchivePrintEditionRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PrepareAnnualArchivePrintEditionRequest {
+    return new PrepareAnnualArchivePrintEditionRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PrepareAnnualArchivePrintEditionRequest | PlainMessage<PrepareAnnualArchivePrintEditionRequest> | undefined, b: PrepareAnnualArchivePrintEditionRequest | PlainMessage<PrepareAnnualArchivePrintEditionRequest> | undefined): boolean {
+    return proto3.util.equals(PrepareAnnualArchivePrintEditionRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.PrepareAnnualArchivePrintEditionResponse
+ */
+export class PrepareAnnualArchivePrintEditionResponse extends Message<PrepareAnnualArchivePrintEditionResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.AnnualArchivePrintEdition edition = 1;
+   */
+  edition?: AnnualArchivePrintEdition;
+
+  /**
+   * @generated from field: bool replayed = 2;
+   */
+  replayed = false;
+
+  constructor(data?: PartialMessage<PrepareAnnualArchivePrintEditionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.PrepareAnnualArchivePrintEditionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "edition", kind: "message", T: AnnualArchivePrintEdition },
+    { no: 2, name: "replayed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PrepareAnnualArchivePrintEditionResponse {
+    return new PrepareAnnualArchivePrintEditionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PrepareAnnualArchivePrintEditionResponse {
+    return new PrepareAnnualArchivePrintEditionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PrepareAnnualArchivePrintEditionResponse {
+    return new PrepareAnnualArchivePrintEditionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PrepareAnnualArchivePrintEditionResponse | PlainMessage<PrepareAnnualArchivePrintEditionResponse> | undefined, b: PrepareAnnualArchivePrintEditionResponse | PlainMessage<PrepareAnnualArchivePrintEditionResponse> | undefined): boolean {
+    return proto3.util.equals(PrepareAnnualArchivePrintEditionResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.QuoteAnnualArchivePrintRequest
+ */
+export class QuoteAnnualArchivePrintRequest extends Message<QuoteAnnualArchivePrintRequest> {
+  /**
+   * @generated from field: string edition_id = 1;
+   */
+  editionId = "";
+
+  /**
+   * @generated from field: sttattus.onyx.v1.AnnualArchiveShippingAddress shipping_address = 2;
+   */
+  shippingAddress?: AnnualArchiveShippingAddress;
+
+  /**
+   * @generated from field: string shipping_level = 3;
+   */
+  shippingLevel = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 4;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<QuoteAnnualArchivePrintRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.QuoteAnnualArchivePrintRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "edition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "shipping_address", kind: "message", T: AnnualArchiveShippingAddress },
+    { no: 3, name: "shipping_level", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QuoteAnnualArchivePrintRequest {
+    return new QuoteAnnualArchivePrintRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QuoteAnnualArchivePrintRequest {
+    return new QuoteAnnualArchivePrintRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QuoteAnnualArchivePrintRequest {
+    return new QuoteAnnualArchivePrintRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: QuoteAnnualArchivePrintRequest | PlainMessage<QuoteAnnualArchivePrintRequest> | undefined, b: QuoteAnnualArchivePrintRequest | PlainMessage<QuoteAnnualArchivePrintRequest> | undefined): boolean {
+    return proto3.util.equals(QuoteAnnualArchivePrintRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.QuoteAnnualArchivePrintResponse
+ */
+export class QuoteAnnualArchivePrintResponse extends Message<QuoteAnnualArchivePrintResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.AnnualArchivePrintQuote quote = 1;
+   */
+  quote?: AnnualArchivePrintQuote;
+
+  /**
+   * @generated from field: bool replayed = 2;
+   */
+  replayed = false;
+
+  constructor(data?: PartialMessage<QuoteAnnualArchivePrintResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.QuoteAnnualArchivePrintResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "quote", kind: "message", T: AnnualArchivePrintQuote },
+    { no: 2, name: "replayed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QuoteAnnualArchivePrintResponse {
+    return new QuoteAnnualArchivePrintResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QuoteAnnualArchivePrintResponse {
+    return new QuoteAnnualArchivePrintResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QuoteAnnualArchivePrintResponse {
+    return new QuoteAnnualArchivePrintResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: QuoteAnnualArchivePrintResponse | PlainMessage<QuoteAnnualArchivePrintResponse> | undefined, b: QuoteAnnualArchivePrintResponse | PlainMessage<QuoteAnnualArchivePrintResponse> | undefined): boolean {
+    return proto3.util.equals(QuoteAnnualArchivePrintResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SubmitAnnualArchivePrintOrderRequest
+ */
+export class SubmitAnnualArchivePrintOrderRequest extends Message<SubmitAnnualArchivePrintOrderRequest> {
+  /**
+   * @generated from field: string quote_id = 1;
+   */
+  quoteId = "";
+
+  /**
+   * @generated from field: string client_mutation_id = 2;
+   */
+  clientMutationId = "";
+
+  /**
+   * @generated from field: bool confirm = 3;
+   */
+  confirm = false;
+
+  constructor(data?: PartialMessage<SubmitAnnualArchivePrintOrderRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SubmitAnnualArchivePrintOrderRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "quote_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "confirm", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitAnnualArchivePrintOrderRequest {
+    return new SubmitAnnualArchivePrintOrderRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubmitAnnualArchivePrintOrderRequest {
+    return new SubmitAnnualArchivePrintOrderRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubmitAnnualArchivePrintOrderRequest {
+    return new SubmitAnnualArchivePrintOrderRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SubmitAnnualArchivePrintOrderRequest | PlainMessage<SubmitAnnualArchivePrintOrderRequest> | undefined, b: SubmitAnnualArchivePrintOrderRequest | PlainMessage<SubmitAnnualArchivePrintOrderRequest> | undefined): boolean {
+    return proto3.util.equals(SubmitAnnualArchivePrintOrderRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.SubmitAnnualArchivePrintOrderResponse
+ */
+export class SubmitAnnualArchivePrintOrderResponse extends Message<SubmitAnnualArchivePrintOrderResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.AnnualArchivePrintOrder order = 1;
+   */
+  order?: AnnualArchivePrintOrder;
+
+  /**
+   * @generated from field: bool replayed = 2;
+   */
+  replayed = false;
+
+  constructor(data?: PartialMessage<SubmitAnnualArchivePrintOrderResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.SubmitAnnualArchivePrintOrderResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "order", kind: "message", T: AnnualArchivePrintOrder },
+    { no: 2, name: "replayed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitAnnualArchivePrintOrderResponse {
+    return new SubmitAnnualArchivePrintOrderResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubmitAnnualArchivePrintOrderResponse {
+    return new SubmitAnnualArchivePrintOrderResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubmitAnnualArchivePrintOrderResponse {
+    return new SubmitAnnualArchivePrintOrderResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SubmitAnnualArchivePrintOrderResponse | PlainMessage<SubmitAnnualArchivePrintOrderResponse> | undefined, b: SubmitAnnualArchivePrintOrderResponse | PlainMessage<SubmitAnnualArchivePrintOrderResponse> | undefined): boolean {
+    return proto3.util.equals(SubmitAnnualArchivePrintOrderResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetAnnualArchivePrintOrderRequest
+ */
+export class GetAnnualArchivePrintOrderRequest extends Message<GetAnnualArchivePrintOrderRequest> {
+  /**
+   * @generated from field: string order_id = 1;
+   */
+  orderId = "";
+
+  /**
+   * @generated from field: string year = 2;
+   */
+  year = "";
+
+  /**
+   * @generated from field: bool refresh_provider = 3;
+   */
+  refreshProvider = false;
+
+  constructor(data?: PartialMessage<GetAnnualArchivePrintOrderRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetAnnualArchivePrintOrderRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "order_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "year", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "refresh_provider", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAnnualArchivePrintOrderRequest {
+    return new GetAnnualArchivePrintOrderRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAnnualArchivePrintOrderRequest {
+    return new GetAnnualArchivePrintOrderRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAnnualArchivePrintOrderRequest {
+    return new GetAnnualArchivePrintOrderRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetAnnualArchivePrintOrderRequest | PlainMessage<GetAnnualArchivePrintOrderRequest> | undefined, b: GetAnnualArchivePrintOrderRequest | PlainMessage<GetAnnualArchivePrintOrderRequest> | undefined): boolean {
+    return proto3.util.equals(GetAnnualArchivePrintOrderRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.GetAnnualArchivePrintOrderResponse
+ */
+export class GetAnnualArchivePrintOrderResponse extends Message<GetAnnualArchivePrintOrderResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.AnnualArchivePrintOrder order = 1;
+   */
+  order?: AnnualArchivePrintOrder;
+
+  constructor(data?: PartialMessage<GetAnnualArchivePrintOrderResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.GetAnnualArchivePrintOrderResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "order", kind: "message", T: AnnualArchivePrintOrder },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAnnualArchivePrintOrderResponse {
+    return new GetAnnualArchivePrintOrderResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAnnualArchivePrintOrderResponse {
+    return new GetAnnualArchivePrintOrderResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAnnualArchivePrintOrderResponse {
+    return new GetAnnualArchivePrintOrderResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetAnnualArchivePrintOrderResponse | PlainMessage<GetAnnualArchivePrintOrderResponse> | undefined, b: GetAnnualArchivePrintOrderResponse | PlainMessage<GetAnnualArchivePrintOrderResponse> | undefined): boolean {
+    return proto3.util.equals(GetAnnualArchivePrintOrderResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CancelAnnualArchivePrintOrderRequest
+ */
+export class CancelAnnualArchivePrintOrderRequest extends Message<CancelAnnualArchivePrintOrderRequest> {
+  /**
+   * @generated from field: string order_id = 1;
+   */
+  orderId = "";
+
+  /**
+   * @generated from field: int64 expected_version = 2;
+   */
+  expectedVersion = protoInt64.zero;
+
+  constructor(data?: PartialMessage<CancelAnnualArchivePrintOrderRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CancelAnnualArchivePrintOrderRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "order_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CancelAnnualArchivePrintOrderRequest {
+    return new CancelAnnualArchivePrintOrderRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CancelAnnualArchivePrintOrderRequest {
+    return new CancelAnnualArchivePrintOrderRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CancelAnnualArchivePrintOrderRequest {
+    return new CancelAnnualArchivePrintOrderRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CancelAnnualArchivePrintOrderRequest | PlainMessage<CancelAnnualArchivePrintOrderRequest> | undefined, b: CancelAnnualArchivePrintOrderRequest | PlainMessage<CancelAnnualArchivePrintOrderRequest> | undefined): boolean {
+    return proto3.util.equals(CancelAnnualArchivePrintOrderRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.CancelAnnualArchivePrintOrderResponse
+ */
+export class CancelAnnualArchivePrintOrderResponse extends Message<CancelAnnualArchivePrintOrderResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.AnnualArchivePrintOrder order = 1;
+   */
+  order?: AnnualArchivePrintOrder;
+
+  constructor(data?: PartialMessage<CancelAnnualArchivePrintOrderResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.CancelAnnualArchivePrintOrderResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "order", kind: "message", T: AnnualArchivePrintOrder },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CancelAnnualArchivePrintOrderResponse {
+    return new CancelAnnualArchivePrintOrderResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CancelAnnualArchivePrintOrderResponse {
+    return new CancelAnnualArchivePrintOrderResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CancelAnnualArchivePrintOrderResponse {
+    return new CancelAnnualArchivePrintOrderResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CancelAnnualArchivePrintOrderResponse | PlainMessage<CancelAnnualArchivePrintOrderResponse> | undefined, b: CancelAnnualArchivePrintOrderResponse | PlainMessage<CancelAnnualArchivePrintOrderResponse> | undefined): boolean {
+    return proto3.util.equals(CancelAnnualArchivePrintOrderResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RetryAnnualArchivePrintOrderRequest
+ */
+export class RetryAnnualArchivePrintOrderRequest extends Message<RetryAnnualArchivePrintOrderRequest> {
+  /**
+   * @generated from field: string order_id = 1;
+   */
+  orderId = "";
+
+  /**
+   * @generated from field: int64 expected_version = 2;
+   */
+  expectedVersion = protoInt64.zero;
+
+  /**
+   * @generated from field: string client_mutation_id = 3;
+   */
+  clientMutationId = "";
+
+  constructor(data?: PartialMessage<RetryAnnualArchivePrintOrderRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RetryAnnualArchivePrintOrderRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "order_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "expected_version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "client_mutation_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RetryAnnualArchivePrintOrderRequest {
+    return new RetryAnnualArchivePrintOrderRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RetryAnnualArchivePrintOrderRequest {
+    return new RetryAnnualArchivePrintOrderRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RetryAnnualArchivePrintOrderRequest {
+    return new RetryAnnualArchivePrintOrderRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RetryAnnualArchivePrintOrderRequest | PlainMessage<RetryAnnualArchivePrintOrderRequest> | undefined, b: RetryAnnualArchivePrintOrderRequest | PlainMessage<RetryAnnualArchivePrintOrderRequest> | undefined): boolean {
+    return proto3.util.equals(RetryAnnualArchivePrintOrderRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.onyx.v1.RetryAnnualArchivePrintOrderResponse
+ */
+export class RetryAnnualArchivePrintOrderResponse extends Message<RetryAnnualArchivePrintOrderResponse> {
+  /**
+   * @generated from field: sttattus.onyx.v1.AnnualArchivePrintOrder order = 1;
+   */
+  order?: AnnualArchivePrintOrder;
+
+  /**
+   * @generated from field: bool replayed = 2;
+   */
+  replayed = false;
+
+  constructor(data?: PartialMessage<RetryAnnualArchivePrintOrderResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.onyx.v1.RetryAnnualArchivePrintOrderResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "order", kind: "message", T: AnnualArchivePrintOrder },
+    { no: 2, name: "replayed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RetryAnnualArchivePrintOrderResponse {
+    return new RetryAnnualArchivePrintOrderResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RetryAnnualArchivePrintOrderResponse {
+    return new RetryAnnualArchivePrintOrderResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RetryAnnualArchivePrintOrderResponse {
+    return new RetryAnnualArchivePrintOrderResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RetryAnnualArchivePrintOrderResponse | PlainMessage<RetryAnnualArchivePrintOrderResponse> | undefined, b: RetryAnnualArchivePrintOrderResponse | PlainMessage<RetryAnnualArchivePrintOrderResponse> | undefined): boolean {
+    return proto3.util.equals(RetryAnnualArchivePrintOrderResponse, a, b);
+  }
+}
+
+/**
  * @generated from message sttattus.onyx.v1.ReactToContentRequest
  */
 export class ReactToContentRequest extends Message<ReactToContentRequest> {
