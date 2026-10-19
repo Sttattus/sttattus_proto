@@ -637,30 +637,32 @@ type PlanItemKind int32
 
 const (
 	PlanItemKind_PLAN_ITEM_KIND_UNSPECIFIED PlanItemKind = 0
-	PlanItemKind_PLAN_ITEM_KIND_REVIEW      PlanItemKind = 1 // due retrieval
-	PlanItemKind_PLAN_ITEM_KIND_NEW         PlanItemKind = 2 // new material from an open level
-	PlanItemKind_PLAN_ITEM_KIND_REPAIR      PlanItemKind = 3 // a leech, a weak skill or a prerequisite
-	PlanItemKind_PLAN_ITEM_KIND_CONTRAST    PlanItemKind = 4 // two items the member confuses, side by side
-	PlanItemKind_PLAN_ITEM_KIND_CHECK       PlanItemKind = 5 // a short check of an AI-suspected error
-	PlanItemKind_PLAN_ITEM_KIND_LISTENING   PlanItemKind = 6 // listening drill on known words
-	PlanItemKind_PLAN_ITEM_KIND_SPEAKING    PlanItemKind = 7 // a speaking prompt
-	PlanItemKind_PLAN_ITEM_KIND_READING     PlanItemKind = 8 // a graded reading text
-	PlanItemKind_PLAN_ITEM_KIND_WRITING     PlanItemKind = 9 // a writing prompt
+	PlanItemKind_PLAN_ITEM_KIND_REVIEW      PlanItemKind = 1  // due retrieval
+	PlanItemKind_PLAN_ITEM_KIND_NEW         PlanItemKind = 2  // new material from an open level
+	PlanItemKind_PLAN_ITEM_KIND_REPAIR      PlanItemKind = 3  // a leech, a weak skill or a prerequisite
+	PlanItemKind_PLAN_ITEM_KIND_CONTRAST    PlanItemKind = 4  // two items the member confuses, side by side
+	PlanItemKind_PLAN_ITEM_KIND_CHECK       PlanItemKind = 5  // a short check of an AI-suspected error
+	PlanItemKind_PLAN_ITEM_KIND_LISTENING   PlanItemKind = 6  // listening drill on known words
+	PlanItemKind_PLAN_ITEM_KIND_SPEAKING    PlanItemKind = 7  // a speaking prompt
+	PlanItemKind_PLAN_ITEM_KIND_READING     PlanItemKind = 8  // a graded reading text
+	PlanItemKind_PLAN_ITEM_KIND_WRITING     PlanItemKind = 9  // a writing prompt
+	PlanItemKind_PLAN_ITEM_KIND_SOUND       PlanItemKind = 10 // Choice 5: a step of a sound ladder
 )
 
 // Enum value maps for PlanItemKind.
 var (
 	PlanItemKind_name = map[int32]string{
-		0: "PLAN_ITEM_KIND_UNSPECIFIED",
-		1: "PLAN_ITEM_KIND_REVIEW",
-		2: "PLAN_ITEM_KIND_NEW",
-		3: "PLAN_ITEM_KIND_REPAIR",
-		4: "PLAN_ITEM_KIND_CONTRAST",
-		5: "PLAN_ITEM_KIND_CHECK",
-		6: "PLAN_ITEM_KIND_LISTENING",
-		7: "PLAN_ITEM_KIND_SPEAKING",
-		8: "PLAN_ITEM_KIND_READING",
-		9: "PLAN_ITEM_KIND_WRITING",
+		0:  "PLAN_ITEM_KIND_UNSPECIFIED",
+		1:  "PLAN_ITEM_KIND_REVIEW",
+		2:  "PLAN_ITEM_KIND_NEW",
+		3:  "PLAN_ITEM_KIND_REPAIR",
+		4:  "PLAN_ITEM_KIND_CONTRAST",
+		5:  "PLAN_ITEM_KIND_CHECK",
+		6:  "PLAN_ITEM_KIND_LISTENING",
+		7:  "PLAN_ITEM_KIND_SPEAKING",
+		8:  "PLAN_ITEM_KIND_READING",
+		9:  "PLAN_ITEM_KIND_WRITING",
+		10: "PLAN_ITEM_KIND_SOUND",
 	}
 	PlanItemKind_value = map[string]int32{
 		"PLAN_ITEM_KIND_UNSPECIFIED": 0,
@@ -673,6 +675,7 @@ var (
 		"PLAN_ITEM_KIND_SPEAKING":    7,
 		"PLAN_ITEM_KIND_READING":     8,
 		"PLAN_ITEM_KIND_WRITING":     9,
+		"PLAN_ITEM_KIND_SOUND":       10,
 	}
 )
 
@@ -770,6 +773,7 @@ const (
 	PlanReasonCode_PLAN_REASON_CODE_GOAL          PlanReasonCode = 9  // the goal mode asks for this skill
 	PlanReasonCode_PLAN_REASON_CODE_RETEST        PlanReasonCode = 10 // Choice 3: missed a moment ago, again another way
 	PlanReasonCode_PLAN_REASON_CODE_CONVERSATION  PlanReasonCode = 11 // Choice 4: a correction accepted after a conversation (params: date, count)
+	PlanReasonCode_PLAN_REASON_CODE_SOUND         PlanReasonCode = 12 // Choice 5: a sound pattern from the learner's own evidence (params: contrast, pattern, rung)
 )
 
 // Enum value maps for PlanReasonCode.
@@ -787,6 +791,7 @@ var (
 		9:  "PLAN_REASON_CODE_GOAL",
 		10: "PLAN_REASON_CODE_RETEST",
 		11: "PLAN_REASON_CODE_CONVERSATION",
+		12: "PLAN_REASON_CODE_SOUND",
 	}
 	PlanReasonCode_value = map[string]int32{
 		"PLAN_REASON_CODE_UNSPECIFIED":   0,
@@ -801,6 +806,7 @@ var (
 		"PLAN_REASON_CODE_GOAL":          9,
 		"PLAN_REASON_CODE_RETEST":        10,
 		"PLAN_REASON_CODE_CONVERSATION":  11,
+		"PLAN_REASON_CODE_SOUND":         12,
 	}
 )
 
@@ -11204,7 +11210,7 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x0eGOAL_MODE_EXAM\x10\x06\x12\x16\n" +
 	"\x12GOAL_MODE_BUSINESS\x10\a\x12\x1b\n" +
 	"\x17GOAL_MODE_PRONUNCIATION\x10\b\x12\x19\n" +
-	"\x15GOAL_MODE_MAINTENANCE\x10\t*\xa6\x02\n" +
+	"\x15GOAL_MODE_MAINTENANCE\x10\t*\xc0\x02\n" +
 	"\fPlanItemKind\x12\x1e\n" +
 	"\x1aPLAN_ITEM_KIND_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15PLAN_ITEM_KIND_REVIEW\x10\x01\x12\x16\n" +
@@ -11215,12 +11221,14 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x18PLAN_ITEM_KIND_LISTENING\x10\x06\x12\x1b\n" +
 	"\x17PLAN_ITEM_KIND_SPEAKING\x10\a\x12\x1a\n" +
 	"\x16PLAN_ITEM_KIND_READING\x10\b\x12\x1a\n" +
-	"\x16PLAN_ITEM_KIND_WRITING\x10\t*\x84\x01\n" +
+	"\x16PLAN_ITEM_KIND_WRITING\x10\t\x12\x18\n" +
+	"\x14PLAN_ITEM_KIND_SOUND\x10\n" +
+	"*\x84\x01\n" +
 	"\rPlanItemState\x12\x1f\n" +
 	"\x1bPLAN_ITEM_STATE_UNSPECIFIED\x10\x00\x12\x1b\n" +
 	"\x17PLAN_ITEM_STATE_PENDING\x10\x01\x12\x18\n" +
 	"\x14PLAN_ITEM_STATE_DONE\x10\x02\x12\x1b\n" +
-	"\x17PLAN_ITEM_STATE_SKIPPED\x10\x03*\x87\x03\n" +
+	"\x17PLAN_ITEM_STATE_SKIPPED\x10\x03*\xa3\x03\n" +
 	"\x0ePlanReasonCode\x12 \n" +
 	"\x1cPLAN_REASON_CODE_UNSPECIFIED\x10\x00\x12\x18\n" +
 	"\x14PLAN_REASON_CODE_DUE\x10\x01\x12\x1a\n" +
@@ -11234,7 +11242,8 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x15PLAN_REASON_CODE_GOAL\x10\t\x12\x1b\n" +
 	"\x17PLAN_REASON_CODE_RETEST\x10\n" +
 	"\x12!\n" +
-	"\x1dPLAN_REASON_CODE_CONVERSATION\x10\v2\x89-\n" +
+	"\x1dPLAN_REASON_CODE_CONVERSATION\x10\v\x12\x1a\n" +
+	"\x16PLAN_REASON_CODE_SOUND\x10\f2\x89-\n" +
 	"\x10LanguagesService\x12j\n" +
 	"\rListScenarios\x12+.sttattus.languages.v1.ListScenariosRequest\x1a,.sttattus.languages.v1.ListScenariosResponse\x12|\n" +
 	"\x13CompleteInteraction\x121.sttattus.languages.v1.CompleteInteractionRequest\x1a2.sttattus.languages.v1.CompleteInteractionResponse\x12s\n" +

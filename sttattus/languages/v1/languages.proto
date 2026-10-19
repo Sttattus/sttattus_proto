@@ -1291,6 +1291,7 @@ enum PlanItemKind {
   PLAN_ITEM_KIND_SPEAKING = 7; // a speaking prompt
   PLAN_ITEM_KIND_READING = 8; // a graded reading text
   PLAN_ITEM_KIND_WRITING = 9; // a writing prompt
+  PLAN_ITEM_KIND_SOUND = 10; // Choice 5: a step of a sound ladder
 }
 
 enum PlanItemState {
@@ -1313,6 +1314,7 @@ enum PlanReasonCode {
   PLAN_REASON_CODE_GOAL = 9; // the goal mode asks for this skill
   PLAN_REASON_CODE_RETEST = 10; // Choice 3: missed a moment ago, again another way
   PLAN_REASON_CODE_CONVERSATION = 11; // Choice 4: a correction accepted after a conversation (params: date, count)
+  PLAN_REASON_CODE_SOUND = 12; // Choice 5: a sound pattern from the learner's own evidence (params: contrast, pattern, rung)
 }
 
 // Why something is in the plan. `params` carries the numbers behind the

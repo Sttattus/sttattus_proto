@@ -1,0 +1,358 @@
+syntax = "proto3";
+
+package sttattus.languages.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/languages/v1;languagesv1";
+
+// ============================================================================
+// Lexicon Choice 5 — Pronunciation and Accent Laboratory (member side)
+// ============================================================================
+//
+// The learner picks the accent they aim at (a variety: en-GB, en-US, es-ES,
+// es-419, fr-FR, fr-CA); model audio and IPA follow it, and every major
+// variety is correct — another variety's pronunciation is noted, never marked
+// wrong. A recording (16 kHz mono WAV, uploaded under the learner's own id)
+// is judged in three steps: whether it can be judged at all (signal quality,
+// measured), whether it was understood (an independent listener), and which
+// sounds hurt it (a calibrated model judgement, with its confidence). The
+// outcome is intelligibility, not imitation of one accent. Staff operate
+// inventories, transfer patterns, variety notes, minimal-pair sets, model
+// audio, calibration, disputes and retention in Admin (SQL), not over this API.
+
+enum SoundQuality {
+  SOUND_QUALITY_UNSPECIFIED = 0;
+  SOUND_QUALITY_GOOD = 1;
+  SOUND_QUALITY_NOISY = 2; // speech barely above the background
+  SOUND_QUALITY_QUIET = 3; // too far from the microphone
+  SOUND_QUALITY_CLIPPED = 4; // too loud: the peaks were cut off
+  SOUND_QUALITY_SILENT = 5; // nothing was said (not judged)
+  SOUND_QUALITY_TOO_SHORT = 6; // cut off (not judged)
+}
+
+enum SoundIntelligibility {
+  SOUND_INTELLIGIBILITY_UNSPECIFIED = 0;
+  SOUND_INTELLIGIBILITY_UNDERSTOOD = 1; // every word was heard
+  SOUND_INTELLIGIBILITY_PARTLY = 2;
+  SOUND_INTELLIGIBILITY_NOT_UNDERSTOOD = 3;
+  SOUND_INTELLIGIBILITY_NOT_JUDGED = 4; // silent, cut off, or the listener was unavailable
+}
+
+enum SoundConfidence {
+  SOUND_CONFIDENCE_UNSPECIFIED = 0;
+  SOUND_CONFIDENCE_SURE = 1;
+  SOUND_CONFIDENCE_FAIRLY_SURE = 2;
+  SOUND_CONFIDENCE_NOT_SURE = 3; // a noisy recording, or the listener and the judge disagree
+}
+
+enum SoundAttemptMode {
+  SOUND_ATTEMPT_MODE_UNSPECIFIED = 0;
+  SOUND_ATTEMPT_MODE_PRACTICE = 1; // say a word or phrase
+  SOUND_ATTEMPT_MODE_SHADOW = 2; // speak along with the model line
+  SOUND_ATTEMPT_MODE_LADDER = 3; // a ladder's "say it" or "in a sentence" rung
+}
+
+enum SoundIssueKind {
+  SOUND_ISSUE_KIND_UNSPECIFIED = 0;
+  SOUND_ISSUE_KIND_SUBSTITUTION = 1; // another sound in its place
+  SOUND_ISSUE_KIND_OMISSION = 2; // left out
+  SOUND_ISSUE_KIND_INSERTION = 3; // a sound added ("eschool")
+  SOUND_ISSUE_KIND_STRESS = 4; // the stress on another syllable
+  SOUND_ISSUE_KIND_LENGTH = 5; // a long sound said short, or the reverse
+}
+
+// Approximate spellings in the learner's own language ("jelou"): a beginner
+// bridge, always labelled, paired with IPA and audio, and faded out.
+enum SoundApproximation {
+  SOUND_APPROXIMATION_UNSPECIFIED = 0;
+  SOUND_APPROXIMATION_AUTO = 1; // at A1, until the word is said and understood
+  SOUND_APPROXIMATION_NEVER = 2;
+}
+
+enum SoundLadderRung {
+  SOUND_LADDER_RUNG_UNSPECIFIED = 0;
+  SOUND_LADDER_RUNG_HEAR = 1; // hear one word, choose which
+  SOUND_LADDER_RUNG_ODD_ONE_OUT = 2; // three words heard, one is different
+  SOUND_LADDER_RUNG_SAY = 3; // say the word asked; which one did the listener hear?
+  SOUND_LADDER_RUNG_SENTENCE = 4; // say it in a sentence
+  SOUND_LADDER_RUNG_DONE = 5;
+}
+
+message SoundVariety {
+  string code = 1; // en-GB
+  string name = 2; // in the learner's language
+}
+
+// How a sound is made, and where it sits.
+message SoundPhoneme {
+  string id = 1; // variety + IPA, e.g. "en-GB:iː"
+  string ipa = 2;
+  string kind = 3; // vowel, diphthong, consonant
+  // Vowels: height (close, near_close, close_mid, mid, open_mid, near_open,
+  // open), backness (front, central, back), rounded, long, nasal.
+  string height = 4;
+  string backness = 5;
+  bool rounded = 6;
+  bool long = 7;
+  bool nasal = 8;
+  // Consonants: place (bilabial … glottal), manner (plosive, nasal, trill,
+  // tap, fricative, affricate, approximant, lateral), voiced.
+  string place = 9;
+  string manner = 10;
+  bool voiced = 11;
+  string how_to = 12; // how to make it, in the learner's language
+  repeated SoundExample examples = 13;
+  repeated string confusable_with = 14; // IPA of sounds learners mix it up with
+  bool in_your_patterns = 15; // one of the learner's own transfer patterns involves it
+}
+
+message SoundExample {
+  string text = 1;
+  string ipa = 2;
+  string gloss = 3; // meaning, in the learner's language
+  string approximation = 4; // empty unless shown (see SoundApproximation)
+}
+
+// A transfer pattern from the learner's language seen in their evidence.
+message SoundPattern {
+  string key = 1; // es>en:i-ih
+  string title = 2;
+  string explanation = 3; // why speakers of the learner's language do this, and what to do
+  repeated string target_ipa = 4;
+  string contrast_key = 5; // the ladder that works on it
+  int32 evidence_count = 6;
+  google.protobuf.Timestamp last_seen = 7;
+  string trend = 8; // new, improving, steady, worse
+  repeated string examples = 9;
+}
+
+message SoundLadder {
+  string contrast_key = 1; // en:iː/ɪ
+  string title = 2;
+  string ipa_a = 3;
+  string ipa_b = 4;
+  SoundLadderRung rung = 5;
+  int32 rung_correct = 6;
+  int32 rung_answered = 7;
+  int32 rung_needed = 8; // answers needed at 80% before the next rung
+  bool from_pattern = 9; // the learner's own evidence asks for it
+}
+
+// One way the chosen variety differs from another.
+message SoundVarietyNote {
+  string kind = 1; // vocabulary, pronunciation, grammar, register
+  string other_variety = 2;
+  string text = 3; // in the learner's language
+  string example_here = 4;
+  string example_other = 5;
+}
+
+// A recording or a model line, ready to draw.
+message SoundAnalysis {
+  int32 duration_ms = 1;
+  int32 frame_ms = 2; // the step of envelope, pitch and spectrogram columns
+  repeated float envelope = 3; // loudness 0..1 per frame
+  repeated float pitch_hz = 4; // 0 where unvoiced
+  int32 spectrogram_bins = 5; // rows (low to high frequency, up to 8 kHz)
+  bytes spectrogram = 6; // frames × bins, 0..255, frame by frame
+}
+
+message SoundIssue {
+  string expected = 1; // IPA
+  string heard = 2; // IPA, empty for an omission
+  SoundIssueKind kind = 3;
+  bool high_impact = 4; // it changes or hides the word
+  float confidence = 5; // 0..1, the judge's own
+  string tip = 6; // what to change, in the learner's language
+  bool in_your_patterns = 7;
+}
+
+message SoundWord {
+  string word = 1;
+  string heard_as = 2; // what the listener wrote for it
+  bool ok = 3;
+  repeated SoundIssue issues = 4;
+}
+
+message SoundAttempt {
+  string id = 1;
+  SoundAttemptMode mode = 2;
+  string target = 3;
+  string ipa = 4;
+  string variety = 5;
+  SoundQuality quality = 6;
+  string quality_message = 7; // what to do about it, in the learner's language
+  SoundIntelligibility intelligibility = 8;
+  string heard = 9; // what the listener heard
+  repeated SoundWord words = 10;
+  string stress_note = 11;
+  string rhythm_note = 12;
+  string intonation_note = 13;
+  string variety_note = 14; // "that is the Latin American /s/" — never an error
+  SoundConfidence confidence = 15;
+  int32 score = 16; // 0..100, led by intelligibility; -1 when not judged
+  SoundAnalysis analysis = 17;
+  string audio_url = 18; // the learner's recording, while it is kept
+  float timing_ratio = 19; // shadowing: the learner's length / the model's
+  bool disputed = 20;
+  string dispute_state = 21; // open, upheld, overturned
+  google.protobuf.Timestamp created_at = 22;
+  string contrast_key = 23; // ladder attempts
+  bool ladder_correct = 24; // ladder: the listener heard the word asked for
+}
+
+message GetSoundHomeRequest {
+  string language = 1;
+}
+message GetSoundHomeResponse {
+  bool available = 1; // the lab is open to this learner
+  repeated SoundVariety varieties = 2;
+  string variety = 3; // chosen; empty until the learner chooses
+  SoundApproximation approximation = 4;
+  bool keep_recordings = 5; // consent to keep recordings for review
+  repeated SoundPattern patterns = 6;
+  repeated SoundLadder ladders = 7;
+  repeated SoundVarietyNote variety_notes = 8;
+  int32 attempts_left_today = 9;
+  string level = 10;
+  int32 retention_days = 11; // how long a kept recording is kept
+}
+
+message SetSoundPrefsRequest {
+  string language = 1;
+  string variety = 2; // empty: unchanged
+  SoundApproximation approximation = 3; // UNSPECIFIED: unchanged
+  optional bool keep_recordings = 4;
+}
+message SetSoundPrefsResponse {
+  GetSoundHomeResponse home = 1;
+}
+
+message ListSoundPhonemesRequest {
+  string language = 1;
+}
+message ListSoundPhonemesResponse {
+  string variety = 1;
+  repeated SoundPhoneme phonemes = 2;
+}
+
+message GetModelAudioRequest {
+  string language = 1;
+  string text = 2;
+  bool slow = 3;
+}
+message GetModelAudioResponse {
+  bool pending = 1; // being made: ask again shortly
+  string audio_url = 2;
+  SoundAnalysis analysis = 3;
+  string ipa = 4;
+  string approximation = 5; // empty unless shown
+  string variety = 6;
+}
+
+message SubmitSoundAttemptRequest {
+  string language = 1;
+  string target = 2;
+  SoundAttemptMode mode = 3;
+  string audio_object_key = 4; // uploaded under the learner's id
+  string client_attempt_id = 5; // a replay returns the attempt already judged
+  string ladder_item_id = 6; // ladder attempts: the item served
+}
+message SubmitSoundAttemptResponse {
+  SoundAttempt attempt = 1;
+  SoundLadder ladder = 2; // ladder attempts: progress after it
+}
+
+message SoundChoice {
+  string id = 1;
+  string text = 2;
+  string ipa = 3;
+  string gloss = 4;
+}
+
+message SoundLadderItem {
+  string item_id = 1;
+  SoundLadderRung rung = 2;
+  repeated SoundChoice choices = 3; // hear / odd one out
+  repeated string audio_urls = 4; // what to play: one word, or three for odd one out
+  string say_text = 5; // say / sentence
+  string say_ipa = 6;
+}
+
+message GetSoundLadderStepRequest {
+  string language = 1;
+  string contrast_key = 2;
+}
+message GetSoundLadderStepResponse {
+  SoundLadder ladder = 1;
+  SoundLadderItem item = 2;
+  bool pending = 3; // its audio is being made: ask again shortly
+}
+
+message AnswerSoundLadderRequest {
+  string language = 1;
+  string item_id = 2;
+  string choice_id = 3;
+}
+message AnswerSoundLadderResponse {
+  bool correct = 1;
+  string correct_choice_id = 2;
+  string explanation = 3;
+  SoundLadder ladder = 4;
+}
+
+message DisputeSoundAttemptRequest {
+  string attempt_id = 1;
+  string reason = 2; // 10–500 characters
+}
+message DisputeSoundAttemptResponse {
+  SoundAttempt attempt = 1;
+}
+
+message ListSoundAttemptsRequest {
+  string language = 1;
+  int32 page_size = 2;
+  string page_token = 3;
+}
+message ListSoundAttemptsResponse {
+  repeated SoundAttempt attempts = 1;
+  string next_page_token = 2;
+}
+
+message ExportSoundDataRequest {
+  string language = 1; // empty: every language
+}
+message ExportSoundDataResponse {
+  string filename = 1;
+  bytes json = 2;
+  int32 attempts = 3;
+}
+
+message DeleteSoundAttemptRequest {
+  string attempt_id = 1;
+}
+message DeleteSoundAttemptResponse {}
+
+message DeleteAllSoundDataRequest {
+  string language = 1; // empty: every language
+  string confirm = 2; // "delete sounds"
+}
+message DeleteAllSoundDataResponse {
+  int32 deleted = 1;
+}
+
+service LexiconSoundService {
+  rpc GetSoundHome(GetSoundHomeRequest) returns (GetSoundHomeResponse);
+  rpc SetSoundPrefs(SetSoundPrefsRequest) returns (SetSoundPrefsResponse);
+  rpc ListSoundPhonemes(ListSoundPhonemesRequest) returns (ListSoundPhonemesResponse);
+  rpc GetModelAudio(GetModelAudioRequest) returns (GetModelAudioResponse);
+  rpc SubmitSoundAttempt(SubmitSoundAttemptRequest) returns (SubmitSoundAttemptResponse);
+  rpc GetSoundLadderStep(GetSoundLadderStepRequest) returns (GetSoundLadderStepResponse);
+  rpc AnswerSoundLadder(AnswerSoundLadderRequest) returns (AnswerSoundLadderResponse);
+  rpc DisputeSoundAttempt(DisputeSoundAttemptRequest) returns (DisputeSoundAttemptResponse);
+  rpc ListSoundAttempts(ListSoundAttemptsRequest) returns (ListSoundAttemptsResponse);
+  rpc ExportSoundData(ExportSoundDataRequest) returns (ExportSoundDataResponse);
+  rpc DeleteSoundAttempt(DeleteSoundAttemptRequest) returns (DeleteSoundAttemptResponse);
+  rpc DeleteAllSoundData(DeleteAllSoundDataRequest) returns (DeleteAllSoundDataResponse);
+}

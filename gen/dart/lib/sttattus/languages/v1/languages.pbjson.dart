@@ -245,6 +245,7 @@ const PlanItemKind$json = {
     {'1': 'PLAN_ITEM_KIND_SPEAKING', '2': 7},
     {'1': 'PLAN_ITEM_KIND_READING', '2': 8},
     {'1': 'PLAN_ITEM_KIND_WRITING', '2': 9},
+    {'1': 'PLAN_ITEM_KIND_SOUND', '2': 10},
   ],
 };
 
@@ -255,7 +256,7 @@ final $typed_data.Uint8List planItemKindDescriptor = $convert.base64Decode(
     'S0lORF9SRVBBSVIQAxIbChdQTEFOX0lURU1fS0lORF9DT05UUkFTVBAEEhgKFFBMQU5fSVRFTV'
     '9LSU5EX0NIRUNLEAUSHAoYUExBTl9JVEVNX0tJTkRfTElTVEVOSU5HEAYSGwoXUExBTl9JVEVN'
     'X0tJTkRfU1BFQUtJTkcQBxIaChZQTEFOX0lURU1fS0lORF9SRUFESU5HEAgSGgoWUExBTl9JVE'
-    'VNX0tJTkRfV1JJVElORxAJ');
+    'VNX0tJTkRfV1JJVElORxAJEhgKFFBMQU5fSVRFTV9LSU5EX1NPVU5EEAo=');
 
 @$core.Deprecated('Use planItemStateDescriptor instead')
 const PlanItemState$json = {
@@ -290,6 +291,7 @@ const PlanReasonCode$json = {
     {'1': 'PLAN_REASON_CODE_GOAL', '2': 9},
     {'1': 'PLAN_REASON_CODE_RETEST', '2': 10},
     {'1': 'PLAN_REASON_CODE_CONVERSATION', '2': 11},
+    {'1': 'PLAN_REASON_CODE_SOUND', '2': 12},
   ],
 };
 
@@ -302,7 +304,7 @@ final $typed_data.Uint8List planReasonCodeDescriptor = $convert.base64Decode(
     'X0NPREVfQ0hFQ0tfQUlfRkxBRxAGEhgKFFBMQU5fUkVBU09OX0NPREVfTkVXEAcSHQoZUExBTl'
     '9SRUFTT05fQ09ERV9DQVRDSF9VUBAIEhkKFVBMQU5fUkVBU09OX0NPREVfR09BTBAJEhsKF1BM'
     'QU5fUkVBU09OX0NPREVfUkVURVNUEAoSIQodUExBTl9SRUFTT05fQ09ERV9DT05WRVJTQVRJT0'
-    '4QCw==');
+    '4QCxIaChZQTEFOX1JFQVNPTl9DT0RFX1NPVU5EEAw=');
 
 @$core.Deprecated('Use culturalNuanceDescriptor instead')
 const CulturalNuance$json = {

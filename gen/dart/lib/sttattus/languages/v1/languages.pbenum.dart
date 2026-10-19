@@ -423,6 +423,8 @@ class PlanItemKind extends $pb.ProtobufEnum {
       PlanItemKind._(8, _omitEnumNames ? '' : 'PLAN_ITEM_KIND_READING');
   static const PlanItemKind PLAN_ITEM_KIND_WRITING =
       PlanItemKind._(9, _omitEnumNames ? '' : 'PLAN_ITEM_KIND_WRITING');
+  static const PlanItemKind PLAN_ITEM_KIND_SOUND =
+      PlanItemKind._(10, _omitEnumNames ? '' : 'PLAN_ITEM_KIND_SOUND');
 
   static const $core.List<PlanItemKind> values = <PlanItemKind>[
     PLAN_ITEM_KIND_UNSPECIFIED,
@@ -435,10 +437,11 @@ class PlanItemKind extends $pb.ProtobufEnum {
     PLAN_ITEM_KIND_SPEAKING,
     PLAN_ITEM_KIND_READING,
     PLAN_ITEM_KIND_WRITING,
+    PLAN_ITEM_KIND_SOUND,
   ];
 
   static final $core.List<PlanItemKind?> _byValue =
-      $pb.ProtobufEnum.$_initByValueList(values, 9);
+      $pb.ProtobufEnum.$_initByValueList(values, 10);
   static PlanItemKind? valueOf($core.int value) =>
       value < 0 || value >= _byValue.length ? null : _byValue[value];
 
@@ -495,6 +498,8 @@ class PlanReasonCode extends $pb.ProtobufEnum {
       PlanReasonCode._(10, _omitEnumNames ? '' : 'PLAN_REASON_CODE_RETEST');
   static const PlanReasonCode PLAN_REASON_CODE_CONVERSATION = PlanReasonCode._(
       11, _omitEnumNames ? '' : 'PLAN_REASON_CODE_CONVERSATION');
+  static const PlanReasonCode PLAN_REASON_CODE_SOUND =
+      PlanReasonCode._(12, _omitEnumNames ? '' : 'PLAN_REASON_CODE_SOUND');
 
   static const $core.List<PlanReasonCode> values = <PlanReasonCode>[
     PLAN_REASON_CODE_UNSPECIFIED,
@@ -509,10 +514,11 @@ class PlanReasonCode extends $pb.ProtobufEnum {
     PLAN_REASON_CODE_GOAL,
     PLAN_REASON_CODE_RETEST,
     PLAN_REASON_CODE_CONVERSATION,
+    PLAN_REASON_CODE_SOUND,
   ];
 
   static final $core.List<PlanReasonCode?> _byValue =
-      $pb.ProtobufEnum.$_initByValueList(values, 11);
+      $pb.ProtobufEnum.$_initByValueList(values, 12);
   static PlanReasonCode? valueOf($core.int value) =>
       value < 0 || value >= _byValue.length ? null : _byValue[value];
 

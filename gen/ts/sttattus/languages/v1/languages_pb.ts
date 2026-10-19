@@ -737,6 +737,13 @@ export enum PlanItemKind {
    * @generated from enum value: PLAN_ITEM_KIND_WRITING = 9;
    */
   WRITING = 9,
+
+  /**
+   * Choice 5: a step of a sound ladder
+   *
+   * @generated from enum value: PLAN_ITEM_KIND_SOUND = 10;
+   */
+  SOUND = 10,
 }
 // Retrieve enum metadata with: proto3.getEnumType(PlanItemKind)
 proto3.util.setEnumType(PlanItemKind, "sttattus.languages.v1.PlanItemKind", [
@@ -750,6 +757,7 @@ proto3.util.setEnumType(PlanItemKind, "sttattus.languages.v1.PlanItemKind", [
   { no: 7, name: "PLAN_ITEM_KIND_SPEAKING" },
   { no: 8, name: "PLAN_ITEM_KIND_READING" },
   { no: 9, name: "PLAN_ITEM_KIND_WRITING" },
+  { no: 10, name: "PLAN_ITEM_KIND_SOUND" },
 ]);
 
 /**
@@ -873,6 +881,13 @@ export enum PlanReasonCode {
    * @generated from enum value: PLAN_REASON_CODE_CONVERSATION = 11;
    */
   CONVERSATION = 11,
+
+  /**
+   * Choice 5: a sound pattern from the learner's own evidence (params: contrast, pattern, rung)
+   *
+   * @generated from enum value: PLAN_REASON_CODE_SOUND = 12;
+   */
+  SOUND = 12,
 }
 // Retrieve enum metadata with: proto3.getEnumType(PlanReasonCode)
 proto3.util.setEnumType(PlanReasonCode, "sttattus.languages.v1.PlanReasonCode", [
@@ -888,6 +903,7 @@ proto3.util.setEnumType(PlanReasonCode, "sttattus.languages.v1.PlanReasonCode", 
   { no: 9, name: "PLAN_REASON_CODE_GOAL" },
   { no: 10, name: "PLAN_REASON_CODE_RETEST" },
   { no: 11, name: "PLAN_REASON_CODE_CONVERSATION" },
+  { no: 12, name: "PLAN_REASON_CODE_SOUND" },
 ]);
 
 /**
