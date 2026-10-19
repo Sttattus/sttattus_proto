@@ -1,0 +1,184 @@
+syntax = "proto3";
+
+package sttattus.dating.v1;
+
+import "sttattus/dating/v1/events.proto";
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1";
+
+// Atlas Choice 10 — Live Agora rooms. Public rooms are scheduled by Sttattus
+// staff or vetted hosts (Choice 9's host records); a member opens a room only
+// inside an interest group they belong to. Rooms are audio only and never
+// recorded. Everyone joins as a listener with the microphone off; the host
+// invites raised hands to speak. Captions are made on each speaker's phone and
+// sent to the room as data messages; nothing is stored.
+
+// Who runs a room, as members see them.
+message RoomHostInfo {
+  string name = 1;
+  // staff | partner | member
+  string kind = 2;
+  string organisation = 3;
+}
+
+message RoomInfo {
+  string id = 1;
+  // public | group
+  string kind = 2;
+  string title = 3;
+  string description = 4;
+  repeated string agenda = 5;
+  // conversation | ideas | culture | languages | city | other ("" for a group room)
+  string topic = 6;
+  // A language code (es, en, pt, …).
+  string language = 7;
+  // scheduled | live | ended | cancelled
+  string status = 8;
+  int64 starts_at = 9;
+  int32 planned_minutes = 10;
+  int64 started_at = 11;
+  int64 ended_at = 12;
+  // host_ended | empty | no_host | time_limit | closed | staff | host_left_atlas |
+  // group_closed | not_started | before_choice_10
+  string end_reason = 13;
+  int32 capacity = 14;
+  // People in the room at the last count (at most a minute old).
+  int32 in_room = 15;
+  RoomHostInfo host = 16;
+  string group_id = 17;
+  string group_name = 18;
+  // The viewer's role while in the room: "" | host | cohost | speaker | listener
+  string my_role = 19;
+  // The viewer is the room's host account (may start and end it).
+  bool i_host = 20;
+  // Why the viewer cannot join now, "" when they can:
+  // restricted | barred | removed | blocked | full | not_member | not_live | over
+  string cannot_join = 21;
+  // Until when the viewer is barred from rooms (with cannot_join = barred).
+  int64 barred_until = 22;
+  // A cancelled room's reason, or a takedown's, as the host was told.
+  string cancel_reason = 23;
+}
+
+message ListRoomsRequest {
+  // live_and_upcoming (public rooms) | group (one group's rooms) | mine (rooms
+  // the member hosted or was in, for the privacy center)
+  string scope = 1;
+  string group_id = 2;
+}
+message ListRoomsResponse {
+  repeated RoomInfo rooms = 1;
+  EventConduct conduct = 2;
+}
+
+message GetRoomRequest {
+  string room_id = 1;
+}
+message GetRoomResponse {
+  RoomInfo room = 1;
+  EventConduct conduct = 2;
+}
+
+// Asks for a room token. The member accepts exactly the conduct version they
+// read; the token lasts ten minutes (a reconnect asks again).
+message JoinRoomRequest {
+  string room_id = 1;
+  string conduct_version = 2;
+}
+message JoinRoomResponse {
+  RoomInfo room = 1;
+  string token = 2;
+  string ws_url = 3;
+  // The member's opaque id in this room (their LiveKit identity).
+  string participant_id = 4;
+  // host | cohost | speaker | listener
+  string role = 5;
+}
+
+// The host account (or a co-host) starts a scheduled room.
+message StartRoomRequest {
+  string room_id = 1;
+}
+message StartRoomResponse {
+  RoomInfo room = 1;
+}
+
+message OpenGroupRoomRequest {
+  string group_id = 1;
+  string title = 2;
+  int32 capacity = 3;
+  string idempotency_key = 4;
+}
+message OpenGroupRoomResponse {
+  RoomInfo room = 1;
+}
+
+message RaiseHandRequest {
+  string room_id = 1;
+  bool raised = 2;
+}
+message RaiseHandResponse {}
+
+// Host and co-host actions name a person by their participant id.
+message InviteToSpeakRequest {
+  string room_id = 1;
+  string participant_id = 2;
+}
+message InviteToSpeakResponse {}
+
+// Moves a speaker back to listening; an empty participant id is the caller
+// stepping back themselves.
+message MoveToListenersRequest {
+  string room_id = 1;
+  string participant_id = 2;
+}
+message MoveToListenersResponse {}
+
+message SetCohostRequest {
+  string room_id = 1;
+  string participant_id = 2;
+  bool cohost = 3;
+}
+message SetCohostResponse {}
+
+message RemoveFromRoomRequest {
+  string room_id = 1;
+  string participant_id = 2;
+  string reason = 3;
+}
+message RemoveFromRoomResponse {}
+
+message EndRoomRequest {
+  string room_id = 1;
+}
+message EndRoomResponse {
+  RoomInfo room = 1;
+}
+
+message ReportRoomRequest {
+  string room_id = 1;
+  // room | host | person
+  string about = 2;
+  string participant_id = 3;
+  // harassment | unsafe | hate | spam | other
+  string category = 4;
+  string body = 5;
+}
+message ReportRoomResponse {
+  string report_id = 1;
+}
+
+service AtlasAgoraService {
+  rpc ListRooms(ListRoomsRequest) returns (ListRoomsResponse);
+  rpc GetRoom(GetRoomRequest) returns (GetRoomResponse);
+  rpc JoinRoom(JoinRoomRequest) returns (JoinRoomResponse);
+  rpc StartRoom(StartRoomRequest) returns (StartRoomResponse);
+  rpc OpenGroupRoom(OpenGroupRoomRequest) returns (OpenGroupRoomResponse);
+  rpc RaiseHand(RaiseHandRequest) returns (RaiseHandResponse);
+  rpc InviteToSpeak(InviteToSpeakRequest) returns (InviteToSpeakResponse);
+  rpc MoveToListeners(MoveToListenersRequest) returns (MoveToListenersResponse);
+  rpc SetCohost(SetCohostRequest) returns (SetCohostResponse);
+  rpc RemoveFromRoom(RemoveFromRoomRequest) returns (RemoveFromRoomResponse);
+  rpc EndRoom(EndRoomRequest) returns (EndRoomResponse);
+  rpc ReportRoom(ReportRoomRequest) returns (ReportRoomResponse);
+}
