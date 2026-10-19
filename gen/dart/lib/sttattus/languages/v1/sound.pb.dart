@@ -1518,6 +1518,7 @@ class GetSoundHomeResponse extends $pb.GeneratedMessage {
     $core.int? attemptsLeftToday,
     $core.String? level,
     $core.int? retentionDays,
+    $core.String? unavailableReason,
   }) {
     final result = create();
     if (available != null) result.available = available;
@@ -1531,6 +1532,7 @@ class GetSoundHomeResponse extends $pb.GeneratedMessage {
     if (attemptsLeftToday != null) result.attemptsLeftToday = attemptsLeftToday;
     if (level != null) result.level = level;
     if (retentionDays != null) result.retentionDays = retentionDays;
+    if (unavailableReason != null) result.unavailableReason = unavailableReason;
     return result;
   }
 
@@ -1564,6 +1566,7 @@ class GetSoundHomeResponse extends $pb.GeneratedMessage {
     ..aI(9, _omitFieldNames ? '' : 'attemptsLeftToday')
     ..aOS(10, _omitFieldNames ? '' : 'level')
     ..aI(11, _omitFieldNames ? '' : 'retentionDays')
+    ..aOS(12, _omitFieldNames ? '' : 'unavailableReason')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1659,6 +1662,15 @@ class GetSoundHomeResponse extends $pb.GeneratedMessage {
   $core.bool hasRetentionDays() => $_has(10);
   @$pb.TagNumber(11)
   void clearRetentionDays() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get unavailableReason => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set unavailableReason($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasUnavailableReason() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearUnavailableReason() => $_clearField(12);
 }
 
 class SetSoundPrefsRequest extends $pb.GeneratedMessage {

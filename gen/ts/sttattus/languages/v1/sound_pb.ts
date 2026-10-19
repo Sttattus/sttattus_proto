@@ -1331,6 +1331,13 @@ export class GetSoundHomeResponse extends Message<GetSoundHomeResponse> {
    */
   retentionDays = 0;
 
+  /**
+   * why the lab is closed, in plain words
+   *
+   * @generated from field: string unavailable_reason = 12;
+   */
+  unavailableReason = "";
+
   constructor(data?: PartialMessage<GetSoundHomeResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1350,6 +1357,7 @@ export class GetSoundHomeResponse extends Message<GetSoundHomeResponse> {
     { no: 9, name: "attempts_left_today", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 10, name: "level", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 11, name: "retention_days", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 12, name: "unavailable_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetSoundHomeResponse {

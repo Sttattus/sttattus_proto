@@ -1513,7 +1513,8 @@ type GetSoundHomeResponse struct {
 	VarietyNotes      []*SoundVarietyNote    `protobuf:"bytes,8,rep,name=variety_notes,json=varietyNotes,proto3" json:"variety_notes,omitempty"`
 	AttemptsLeftToday int32                  `protobuf:"varint,9,opt,name=attempts_left_today,json=attemptsLeftToday,proto3" json:"attempts_left_today,omitempty"`
 	Level             string                 `protobuf:"bytes,10,opt,name=level,proto3" json:"level,omitempty"`
-	RetentionDays     int32                  `protobuf:"varint,11,opt,name=retention_days,json=retentionDays,proto3" json:"retention_days,omitempty"` // how long a kept recording is kept
+	RetentionDays     int32                  `protobuf:"varint,11,opt,name=retention_days,json=retentionDays,proto3" json:"retention_days,omitempty"`            // how long a kept recording is kept
+	UnavailableReason string                 `protobuf:"bytes,12,opt,name=unavailable_reason,json=unavailableReason,proto3" json:"unavailable_reason,omitempty"` // why the lab is closed, in plain words
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -1623,6 +1624,13 @@ func (x *GetSoundHomeResponse) GetRetentionDays() int32 {
 		return x.RetentionDays
 	}
 	return 0
+}
+
+func (x *GetSoundHomeResponse) GetUnavailableReason() string {
+	if x != nil {
+		return x.UnavailableReason
+	}
+	return ""
 }
 
 type SetSoundPrefsRequest struct {
@@ -3108,7 +3116,7 @@ const file_sttattus_languages_v1_sound_proto_rawDesc = "" +
 	"\fcontrast_key\x18\x17 \x01(\tR\vcontrastKey\x12%\n" +
 	"\x0eladder_correct\x18\x18 \x01(\bR\rladderCorrect\"1\n" +
 	"\x13GetSoundHomeRequest\x12\x1a\n" +
-	"\blanguage\x18\x01 \x01(\tR\blanguage\"\xc5\x04\n" +
+	"\blanguage\x18\x01 \x01(\tR\blanguage\"\xf4\x04\n" +
 	"\x14GetSoundHomeResponse\x12\x1c\n" +
 	"\tavailable\x18\x01 \x01(\bR\tavailable\x12A\n" +
 	"\tvarieties\x18\x02 \x03(\v2#.sttattus.languages.v1.SoundVarietyR\tvarieties\x12\x18\n" +
@@ -3121,7 +3129,8 @@ const file_sttattus_languages_v1_sound_proto_rawDesc = "" +
 	"\x13attempts_left_today\x18\t \x01(\x05R\x11attemptsLeftToday\x12\x14\n" +
 	"\x05level\x18\n" +
 	" \x01(\tR\x05level\x12%\n" +
-	"\x0eretention_days\x18\v \x01(\x05R\rretentionDays\"\xdf\x01\n" +
+	"\x0eretention_days\x18\v \x01(\x05R\rretentionDays\x12-\n" +
+	"\x12unavailable_reason\x18\f \x01(\tR\x11unavailableReason\"\xdf\x01\n" +
 	"\x14SetSoundPrefsRequest\x12\x1a\n" +
 	"\blanguage\x18\x01 \x01(\tR\blanguage\x12\x18\n" +
 	"\avariety\x18\x02 \x01(\tR\avariety\x12O\n" +

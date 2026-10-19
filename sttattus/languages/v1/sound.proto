@@ -217,6 +217,7 @@ message GetSoundHomeResponse {
   int32 attempts_left_today = 9;
   string level = 10;
   int32 retention_days = 11; // how long a kept recording is kept
+  string unavailable_reason = 12; // why the lab is closed, in plain words
 }
 
 message SetSoundPrefsRequest {

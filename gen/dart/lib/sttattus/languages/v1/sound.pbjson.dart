@@ -541,6 +541,13 @@ const GetSoundHomeResponse$json = {
     },
     {'1': 'level', '3': 10, '4': 1, '5': 9, '10': 'level'},
     {'1': 'retention_days', '3': 11, '4': 1, '5': 5, '10': 'retentionDays'},
+    {
+      '1': 'unavailable_reason',
+      '3': 12,
+      '4': 1,
+      '5': 9,
+      '10': 'unavailableReason'
+    },
   ],
 };
 
@@ -556,7 +563,8 @@ final $typed_data.Uint8List getSoundHomeResponseDescriptor = $convert.base64Deco
     'FkZGVycxJMCg12YXJpZXR5X25vdGVzGAggAygLMicuc3R0YXR0dXMubGFuZ3VhZ2VzLnYxLlNv'
     'dW5kVmFyaWV0eU5vdGVSDHZhcmlldHlOb3RlcxIuChNhdHRlbXB0c19sZWZ0X3RvZGF5GAkgAS'
     'gFUhFhdHRlbXB0c0xlZnRUb2RheRIUCgVsZXZlbBgKIAEoCVIFbGV2ZWwSJQoOcmV0ZW50aW9u'
-    'X2RheXMYCyABKAVSDXJldGVudGlvbkRheXM=');
+    'X2RheXMYCyABKAVSDXJldGVudGlvbkRheXMSLQoSdW5hdmFpbGFibGVfcmVhc29uGAwgASgJUh'
+    'F1bmF2YWlsYWJsZVJlYXNvbg==');
 
 @$core.Deprecated('Use setSoundPrefsRequestDescriptor instead')
 const SetSoundPrefsRequest$json = {
