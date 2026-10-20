@@ -1,0 +1,252 @@
+syntax = "proto3";
+
+package sttattus.dating.v1;
+
+import "sttattus/dating/v1/profile.proto";
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1";
+
+// Atlas Choice 11 — the human matchmaker desk. Any member past the Atlas
+// eligibility wall asks for a matchmaker with a mandate; Sttattus staff (real,
+// named people) accept them onto the desk and propose introductions to members
+// who opted in to being introduced. Introductions are double opt-in and blind
+// first: each side sees the matchmaker's reason and what the other shares with
+// matchmakers, answers privately, and only when both say yes do full profiles
+// and a conversation open. Nobody answers for a member. Times are unix seconds.
+
+// The matchmaker a member is assigned to, as they see them.
+message MatchmakerInfo {
+  string name = 1;
+  repeated string languages = 2;
+  // Verified specialisations only: languages | culture | accessibility |
+  // lgbtq | faith | over_50 | single_parents
+  repeated string specialties = 3;
+  string bio = 4;
+}
+
+// What a member asks their matchmaker for.
+message Mandate {
+  // In the member's words (up to 600 characters).
+  string looking_for = 1;
+  int32 age_min = 2;
+  int32 age_max = 3;
+  // city | radius | travel
+  string place = 4;
+  // For "radius".
+  int32 radius_km = 5;
+  // Up to five, in words.
+  repeated string exclusions = 6;
+  // weekly | fortnightly | monthly
+  string cadence = 7;
+  // each (after every introduction) | news (only when there is news)
+  string feedback = 8;
+  // Optional: a specialisation they would like their matchmaker to have.
+  string specialty = 9;
+  int32 version = 10;
+  int64 updated_at = 11;
+}
+
+message MatchmakingCase {
+  string id = 1;
+  // requested | active | paused | declined | closed
+  string status = 2;
+  // Absent until a matchmaker is assigned.
+  MatchmakerInfo matchmaker = 3;
+  Mandate mandate = 4;
+  int64 requested_at = 5;
+  int64 accepted_at = 6;
+  // Why staff declined or closed it, in words the member reads.
+  string reason = 7;
+  // member_asked | inactive | left_atlas | conduct | other
+  string close_code = 8;
+  int64 closed_at = 9;
+  // The member asked for a different matchmaker and it is not decided yet.
+  bool reassignment_pending = 10;
+}
+
+// The other person in an introduction, as the member may see them. Before both
+// said yes: first name, age, city, intent and what they share with
+// matchmakers. After: also their id and the match, to open the full profile
+// and the conversation.
+message IntroducedPerson {
+  string first_name = 1;
+  int32 age = 2;
+  string city = 3;
+  string intent = 4;
+  repeated ProfileAnswer shared_answers = 5;
+  repeated ProfileModule shared_modules = 6;
+  string user_id = 7;
+  string match_id = 8;
+}
+
+message MatchmakerIntroduction {
+  string id = 1;
+  // proposed | introduced | scheduled | completed | not_going_ahead |
+  // expired | withdrawn
+  string status = 2;
+  // asked (the member's own mandate) | candidate (they were put forward)
+  string side = 3;
+  IntroducedPerson other = 4;
+  // The matchmaker's reason, written to this member.
+  string reason = 5;
+  string matchmaker_name = 6;
+  int64 proposed_at = 7;
+  int64 answer_by = 8;
+  // yes | no | "" (not yet)
+  string my_answer = 9;
+  // met_liked | met_not_fit | did_not_meet | felt_unsafe | ""
+  string my_outcome = 10;
+  int64 introduced_at = 11;
+  int64 scheduled_at = 12;
+  int64 completed_at = 13;
+}
+
+message MatchmakingMessage {
+  string id = 1;
+  // member | matchmaker | system
+  string sender_role = 2;
+  // The matchmaker who wrote it; empty for the member and the system.
+  string author_name = 3;
+  string body = 4;
+  int64 created_at = 5;
+}
+
+message MatchmakingComplaint {
+  string id = 1;
+  // slow | not_a_fit | pressure | privacy | conduct | other
+  string category = 2;
+  string body = 3;
+  // open | answered
+  string status = 4;
+  string answer = 5;
+  int64 created_at = 6;
+  int64 answered_at = 7;
+}
+
+message GetMatchmakingDeskRequest {}
+message GetMatchmakingDeskResponse {
+  // Absent when the member has never asked (or only has closed cases older
+  // than the last one shown).
+  MatchmakingCase case = 1;
+  repeated MatchmakerIntroduction introductions = 2;
+  repeated MatchmakingComplaint complaints = 3;
+  bool open_to_introductions = 4;
+  // Why the member cannot ask now: restricted (the Atlas wall) | open (they
+  // already have a case) | "".
+  string cannot_ask = 5;
+  // The policy's usual reply time, in hours.
+  int32 usual_reply_hours = 6;
+  // An earlier concierge conversation exists (read-only history).
+  bool earlier_conversation = 7;
+}
+
+message RequestMatchmakerRequest {
+  Mandate mandate = 1;
+  string idempotency_key = 2;
+}
+message RequestMatchmakerResponse {
+  MatchmakingCase case = 1;
+}
+
+message UpdateMandateRequest {
+  Mandate mandate = 1;
+}
+message UpdateMandateResponse {
+  MatchmakingCase case = 1;
+}
+
+message SetCasePausedRequest {
+  bool paused = 1;
+}
+message SetCasePausedResponse {
+  MatchmakingCase case = 1;
+}
+
+message CloseCaseRequest {
+  string reason = 1;
+}
+message CloseCaseResponse {
+  MatchmakingCase case = 1;
+}
+
+message ListMatchmakingMessagesRequest {}
+message ListMatchmakingMessagesResponse {
+  repeated MatchmakingMessage messages = 1;
+}
+
+message PostMatchmakingMessageRequest {
+  string body = 1;
+  string idempotency_key = 2;
+}
+message PostMatchmakingMessageResponse {
+  MatchmakingMessage message = 1;
+}
+
+message AnswerIntroductionRequest {
+  string introduction_id = 1;
+  bool yes = 2;
+  // Optional, seen only by the member's own matchmaker.
+  string no_reason = 3;
+}
+message AnswerIntroductionResponse {
+  MatchmakerIntroduction introduction = 1;
+}
+
+message SetIntroductionScheduledRequest {
+  string introduction_id = 1;
+}
+message SetIntroductionScheduledResponse {
+  MatchmakerIntroduction introduction = 1;
+}
+
+message ReportIntroductionOutcomeRequest {
+  string introduction_id = 1;
+  // met_liked | met_not_fit | did_not_meet | felt_unsafe
+  string outcome = 2;
+  // Optional, seen only by the member's own matchmaker.
+  string words = 3;
+}
+message ReportIntroductionOutcomeResponse {
+  MatchmakerIntroduction introduction = 1;
+}
+
+message AskReassignmentRequest {
+  // not_a_fit | language | specialty | availability | other
+  string reason = 1;
+  string words = 2;
+}
+message AskReassignmentResponse {
+  MatchmakingCase case = 1;
+}
+
+message FileMatchmakingComplaintRequest {
+  // slow | not_a_fit | pressure | privacy | conduct | other
+  string category = 1;
+  string body = 2;
+}
+message FileMatchmakingComplaintResponse {
+  MatchmakingComplaint complaint = 1;
+}
+
+message SetOpenToIntroductionsRequest {
+  bool open = 1;
+}
+message SetOpenToIntroductionsResponse {
+  bool open = 1;
+}
+
+service AtlasMatchmakingService {
+  rpc GetMatchmakingDesk(GetMatchmakingDeskRequest) returns (GetMatchmakingDeskResponse);
+  rpc RequestMatchmaker(RequestMatchmakerRequest) returns (RequestMatchmakerResponse);
+  rpc UpdateMandate(UpdateMandateRequest) returns (UpdateMandateResponse);
+  rpc SetCasePaused(SetCasePausedRequest) returns (SetCasePausedResponse);
+  rpc CloseCase(CloseCaseRequest) returns (CloseCaseResponse);
+  rpc ListMatchmakingMessages(ListMatchmakingMessagesRequest) returns (ListMatchmakingMessagesResponse);
+  rpc PostMatchmakingMessage(PostMatchmakingMessageRequest) returns (PostMatchmakingMessageResponse);
+  rpc AnswerIntroduction(AnswerIntroductionRequest) returns (AnswerIntroductionResponse);
+  rpc SetIntroductionScheduled(SetIntroductionScheduledRequest) returns (SetIntroductionScheduledResponse);
+  rpc ReportIntroductionOutcome(ReportIntroductionOutcomeRequest) returns (ReportIntroductionOutcomeResponse);
+  rpc AskReassignment(AskReassignmentRequest) returns (AskReassignmentResponse);
+  rpc FileMatchmakingComplaint(FileMatchmakingComplaintRequest) returns (FileMatchmakingComplaintResponse);
+  rpc SetOpenToIntroductions(SetOpenToIntroductionsRequest) returns (SetOpenToIntroductionsResponse);
+}
