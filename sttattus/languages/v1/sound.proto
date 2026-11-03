@@ -200,6 +200,7 @@ message SoundAttempt {
   google.protobuf.Timestamp created_at = 22;
   string contrast_key = 23; // ladder attempts
   bool ladder_correct = 24; // ladder: the listener heard the word asked for
+  string dispute_decision_note = 25; // reviewer explanation for the learner, after a terminal decision
 }
 
 message GetSoundHomeRequest {

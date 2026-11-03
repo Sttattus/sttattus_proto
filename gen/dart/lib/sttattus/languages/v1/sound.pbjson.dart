@@ -448,6 +448,13 @@ const SoundAttempt$json = {
     },
     {'1': 'contrast_key', '3': 23, '4': 1, '5': 9, '10': 'contrastKey'},
     {'1': 'ladder_correct', '3': 24, '4': 1, '5': 8, '10': 'ladderCorrect'},
+    {
+      '1': 'dispute_decision_note',
+      '3': 25,
+      '4': 1,
+      '5': 9,
+      '10': 'disputeDecisionNote'
+    },
   ],
 };
 
@@ -470,7 +477,8 @@ final $typed_data.Uint8List soundAttemptDescriptor = $convert.base64Decode(
     'IAEoAlILdGltaW5nUmF0aW8SGgoIZGlzcHV0ZWQYFCABKAhSCGRpc3B1dGVkEiMKDWRpc3B1dG'
     'Vfc3RhdGUYFSABKAlSDGRpc3B1dGVTdGF0ZRI5CgpjcmVhdGVkX2F0GBYgASgLMhouZ29vZ2xl'
     'LnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EiEKDGNvbnRyYXN0X2tleRgXIAEoCVILY2'
-    '9udHJhc3RLZXkSJQoObGFkZGVyX2NvcnJlY3QYGCABKAhSDWxhZGRlckNvcnJlY3Q=');
+    '9udHJhc3RLZXkSJQoObGFkZGVyX2NvcnJlY3QYGCABKAhSDWxhZGRlckNvcnJlY3QSMgoVZGlz'
+    'cHV0ZV9kZWNpc2lvbl9ub3RlGBkgASgJUhNkaXNwdXRlRGVjaXNpb25Ob3Rl');
 
 @$core.Deprecated('Use getSoundHomeRequestDescriptor instead')
 const GetSoundHomeRequest$json = {

@@ -1139,6 +1139,7 @@ class SoundAttempt extends $pb.GeneratedMessage {
     $1.Timestamp? createdAt,
     $core.String? contrastKey,
     $core.bool? ladderCorrect,
+    $core.String? disputeDecisionNote,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -1165,6 +1166,8 @@ class SoundAttempt extends $pb.GeneratedMessage {
     if (createdAt != null) result.createdAt = createdAt;
     if (contrastKey != null) result.contrastKey = contrastKey;
     if (ladderCorrect != null) result.ladderCorrect = ladderCorrect;
+    if (disputeDecisionNote != null)
+      result.disputeDecisionNote = disputeDecisionNote;
     return result;
   }
 
@@ -1214,6 +1217,7 @@ class SoundAttempt extends $pb.GeneratedMessage {
         subBuilder: $1.Timestamp.create)
     ..aOS(23, _omitFieldNames ? '' : 'contrastKey')
     ..aOB(24, _omitFieldNames ? '' : 'ladderCorrect')
+    ..aOS(25, _omitFieldNames ? '' : 'disputeDecisionNote')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1448,6 +1452,15 @@ class SoundAttempt extends $pb.GeneratedMessage {
   $core.bool hasLadderCorrect() => $_has(23);
   @$pb.TagNumber(24)
   void clearLadderCorrect() => $_clearField(24);
+
+  @$pb.TagNumber(25)
+  $core.String get disputeDecisionNote => $_getSZ(24);
+  @$pb.TagNumber(25)
+  set disputeDecisionNote($core.String value) => $_setString(24, value);
+  @$pb.TagNumber(25)
+  $core.bool hasDisputeDecisionNote() => $_has(24);
+  @$pb.TagNumber(25)
+  void clearDisputeDecisionNote() => $_clearField(25);
 }
 
 class GetSoundHomeRequest extends $pb.GeneratedMessage {

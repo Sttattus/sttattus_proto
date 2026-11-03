@@ -1176,6 +1176,13 @@ export class SoundAttempt extends Message<SoundAttempt> {
    */
   ladderCorrect = false;
 
+  /**
+   * reviewer explanation for the learner, after a terminal decision
+   *
+   * @generated from field: string dispute_decision_note = 25;
+   */
+  disputeDecisionNote = "";
+
   constructor(data?: PartialMessage<SoundAttempt>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1208,6 +1215,7 @@ export class SoundAttempt extends Message<SoundAttempt> {
     { no: 22, name: "created_at", kind: "message", T: Timestamp },
     { no: 23, name: "contrast_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 24, name: "ladder_correct", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 25, name: "dispute_decision_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SoundAttempt {

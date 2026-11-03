@@ -1230,33 +1230,34 @@ func (x *SoundWord) GetIssues() []*SoundIssue {
 }
 
 type SoundAttempt struct {
-	state           protoimpl.MessageState `protogen:"open.v1"`
-	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Mode            SoundAttemptMode       `protobuf:"varint,2,opt,name=mode,proto3,enum=sttattus.languages.v1.SoundAttemptMode" json:"mode,omitempty"`
-	Target          string                 `protobuf:"bytes,3,opt,name=target,proto3" json:"target,omitempty"`
-	Ipa             string                 `protobuf:"bytes,4,opt,name=ipa,proto3" json:"ipa,omitempty"`
-	Variety         string                 `protobuf:"bytes,5,opt,name=variety,proto3" json:"variety,omitempty"`
-	Quality         SoundQuality           `protobuf:"varint,6,opt,name=quality,proto3,enum=sttattus.languages.v1.SoundQuality" json:"quality,omitempty"`
-	QualityMessage  string                 `protobuf:"bytes,7,opt,name=quality_message,json=qualityMessage,proto3" json:"quality_message,omitempty"` // what to do about it, in the learner's language
-	Intelligibility SoundIntelligibility   `protobuf:"varint,8,opt,name=intelligibility,proto3,enum=sttattus.languages.v1.SoundIntelligibility" json:"intelligibility,omitempty"`
-	Heard           string                 `protobuf:"bytes,9,opt,name=heard,proto3" json:"heard,omitempty"` // what the listener heard
-	Words           []*SoundWord           `protobuf:"bytes,10,rep,name=words,proto3" json:"words,omitempty"`
-	StressNote      string                 `protobuf:"bytes,11,opt,name=stress_note,json=stressNote,proto3" json:"stress_note,omitempty"`
-	RhythmNote      string                 `protobuf:"bytes,12,opt,name=rhythm_note,json=rhythmNote,proto3" json:"rhythm_note,omitempty"`
-	IntonationNote  string                 `protobuf:"bytes,13,opt,name=intonation_note,json=intonationNote,proto3" json:"intonation_note,omitempty"`
-	VarietyNote     string                 `protobuf:"bytes,14,opt,name=variety_note,json=varietyNote,proto3" json:"variety_note,omitempty"` // "that is the Latin American /s/" — never an error
-	Confidence      SoundConfidence        `protobuf:"varint,15,opt,name=confidence,proto3,enum=sttattus.languages.v1.SoundConfidence" json:"confidence,omitempty"`
-	Score           int32                  `protobuf:"varint,16,opt,name=score,proto3" json:"score,omitempty"` // 0..100, led by intelligibility; -1 when not judged
-	Analysis        *SoundAnalysis         `protobuf:"bytes,17,opt,name=analysis,proto3" json:"analysis,omitempty"`
-	AudioUrl        string                 `protobuf:"bytes,18,opt,name=audio_url,json=audioUrl,proto3" json:"audio_url,omitempty"`            // the learner's recording, while it is kept
-	TimingRatio     float32                `protobuf:"fixed32,19,opt,name=timing_ratio,json=timingRatio,proto3" json:"timing_ratio,omitempty"` // shadowing: the learner's length / the model's
-	Disputed        bool                   `protobuf:"varint,20,opt,name=disputed,proto3" json:"disputed,omitempty"`
-	DisputeState    string                 `protobuf:"bytes,21,opt,name=dispute_state,json=disputeState,proto3" json:"dispute_state,omitempty"` // open, upheld, overturned
-	CreatedAt       *timestamppb.Timestamp `protobuf:"bytes,22,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	ContrastKey     string                 `protobuf:"bytes,23,opt,name=contrast_key,json=contrastKey,proto3" json:"contrast_key,omitempty"`        // ladder attempts
-	LadderCorrect   bool                   `protobuf:"varint,24,opt,name=ladder_correct,json=ladderCorrect,proto3" json:"ladder_correct,omitempty"` // ladder: the listener heard the word asked for
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	Id                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Mode                SoundAttemptMode       `protobuf:"varint,2,opt,name=mode,proto3,enum=sttattus.languages.v1.SoundAttemptMode" json:"mode,omitempty"`
+	Target              string                 `protobuf:"bytes,3,opt,name=target,proto3" json:"target,omitempty"`
+	Ipa                 string                 `protobuf:"bytes,4,opt,name=ipa,proto3" json:"ipa,omitempty"`
+	Variety             string                 `protobuf:"bytes,5,opt,name=variety,proto3" json:"variety,omitempty"`
+	Quality             SoundQuality           `protobuf:"varint,6,opt,name=quality,proto3,enum=sttattus.languages.v1.SoundQuality" json:"quality,omitempty"`
+	QualityMessage      string                 `protobuf:"bytes,7,opt,name=quality_message,json=qualityMessage,proto3" json:"quality_message,omitempty"` // what to do about it, in the learner's language
+	Intelligibility     SoundIntelligibility   `protobuf:"varint,8,opt,name=intelligibility,proto3,enum=sttattus.languages.v1.SoundIntelligibility" json:"intelligibility,omitempty"`
+	Heard               string                 `protobuf:"bytes,9,opt,name=heard,proto3" json:"heard,omitempty"` // what the listener heard
+	Words               []*SoundWord           `protobuf:"bytes,10,rep,name=words,proto3" json:"words,omitempty"`
+	StressNote          string                 `protobuf:"bytes,11,opt,name=stress_note,json=stressNote,proto3" json:"stress_note,omitempty"`
+	RhythmNote          string                 `protobuf:"bytes,12,opt,name=rhythm_note,json=rhythmNote,proto3" json:"rhythm_note,omitempty"`
+	IntonationNote      string                 `protobuf:"bytes,13,opt,name=intonation_note,json=intonationNote,proto3" json:"intonation_note,omitempty"`
+	VarietyNote         string                 `protobuf:"bytes,14,opt,name=variety_note,json=varietyNote,proto3" json:"variety_note,omitempty"` // "that is the Latin American /s/" — never an error
+	Confidence          SoundConfidence        `protobuf:"varint,15,opt,name=confidence,proto3,enum=sttattus.languages.v1.SoundConfidence" json:"confidence,omitempty"`
+	Score               int32                  `protobuf:"varint,16,opt,name=score,proto3" json:"score,omitempty"` // 0..100, led by intelligibility; -1 when not judged
+	Analysis            *SoundAnalysis         `protobuf:"bytes,17,opt,name=analysis,proto3" json:"analysis,omitempty"`
+	AudioUrl            string                 `protobuf:"bytes,18,opt,name=audio_url,json=audioUrl,proto3" json:"audio_url,omitempty"`            // the learner's recording, while it is kept
+	TimingRatio         float32                `protobuf:"fixed32,19,opt,name=timing_ratio,json=timingRatio,proto3" json:"timing_ratio,omitempty"` // shadowing: the learner's length / the model's
+	Disputed            bool                   `protobuf:"varint,20,opt,name=disputed,proto3" json:"disputed,omitempty"`
+	DisputeState        string                 `protobuf:"bytes,21,opt,name=dispute_state,json=disputeState,proto3" json:"dispute_state,omitempty"` // open, upheld, overturned
+	CreatedAt           *timestamppb.Timestamp `protobuf:"bytes,22,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	ContrastKey         string                 `protobuf:"bytes,23,opt,name=contrast_key,json=contrastKey,proto3" json:"contrast_key,omitempty"`                           // ladder attempts
+	LadderCorrect       bool                   `protobuf:"varint,24,opt,name=ladder_correct,json=ladderCorrect,proto3" json:"ladder_correct,omitempty"`                    // ladder: the listener heard the word asked for
+	DisputeDecisionNote string                 `protobuf:"bytes,25,opt,name=dispute_decision_note,json=disputeDecisionNote,proto3" json:"dispute_decision_note,omitempty"` // reviewer explanation for the learner, after a terminal decision
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
 }
 
 func (x *SoundAttempt) Reset() {
@@ -1455,6 +1456,13 @@ func (x *SoundAttempt) GetLadderCorrect() bool {
 		return x.LadderCorrect
 	}
 	return false
+}
+
+func (x *SoundAttempt) GetDisputeDecisionNote() string {
+	if x != nil {
+		return x.DisputeDecisionNote
+	}
+	return ""
 }
 
 type GetSoundHomeRequest struct {
@@ -3083,7 +3091,7 @@ const file_sttattus_languages_v1_sound_proto_rawDesc = "" +
 	"\x04word\x18\x01 \x01(\tR\x04word\x12\x19\n" +
 	"\bheard_as\x18\x02 \x01(\tR\aheardAs\x12\x0e\n" +
 	"\x02ok\x18\x03 \x01(\bR\x02ok\x129\n" +
-	"\x06issues\x18\x04 \x03(\v2!.sttattus.languages.v1.SoundIssueR\x06issues\"\xe0\a\n" +
+	"\x06issues\x18\x04 \x03(\v2!.sttattus.languages.v1.SoundIssueR\x06issues\"\x94\b\n" +
 	"\fSoundAttempt\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12;\n" +
 	"\x04mode\x18\x02 \x01(\x0e2'.sttattus.languages.v1.SoundAttemptModeR\x04mode\x12\x16\n" +
@@ -3114,7 +3122,8 @@ const file_sttattus_languages_v1_sound_proto_rawDesc = "" +
 	"\n" +
 	"created_at\x18\x16 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12!\n" +
 	"\fcontrast_key\x18\x17 \x01(\tR\vcontrastKey\x12%\n" +
-	"\x0eladder_correct\x18\x18 \x01(\bR\rladderCorrect\"1\n" +
+	"\x0eladder_correct\x18\x18 \x01(\bR\rladderCorrect\x122\n" +
+	"\x15dispute_decision_note\x18\x19 \x01(\tR\x13disputeDecisionNote\"1\n" +
 	"\x13GetSoundHomeRequest\x12\x1a\n" +
 	"\blanguage\x18\x01 \x01(\tR\blanguage\"\xf4\x04\n" +
 	"\x14GetSoundHomeResponse\x12\x1c\n" +
