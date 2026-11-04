@@ -190,6 +190,40 @@ class ImmersionServiceClient extends $grpc.Client {
         options: options);
   }
 
+  $grpc.ResponseFuture<$0.RequestImmersionRecordingUploadResponse>
+      requestImmersionRecordingUpload(
+    $0.RequestImmersionRecordingUploadRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$requestImmersionRecordingUpload, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RemoveImmersionRecordingResponse>
+      removeImmersionRecording(
+    $0.RemoveImmersionRecordingRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$removeImmersionRecording, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevisePersonalImmersionResponse>
+      revisePersonalImmersion(
+    $0.RevisePersonalImmersionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$revisePersonalImmersion, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GenerateImmersionAidsResponse> generateImmersionAids(
+    $0.GenerateImmersionAidsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$generateImmersionAids, request, options: options);
+  }
+
   // method descriptors
 
   static final _$listImmersionLibrary = $grpc.ClientMethod<
@@ -298,6 +332,30 @@ class ImmersionServiceClient extends $grpc.Client {
       '/sttattus.languages.v1.ImmersionService/SaveImmersionRecording',
       ($0.SaveImmersionRecordingRequest value) => value.writeToBuffer(),
       $0.SaveImmersionRecordingResponse.fromBuffer);
+  static final _$requestImmersionRecordingUpload = $grpc.ClientMethod<
+          $0.RequestImmersionRecordingUploadRequest,
+          $0.RequestImmersionRecordingUploadResponse>(
+      '/sttattus.languages.v1.ImmersionService/RequestImmersionRecordingUpload',
+      ($0.RequestImmersionRecordingUploadRequest value) =>
+          value.writeToBuffer(),
+      $0.RequestImmersionRecordingUploadResponse.fromBuffer);
+  static final _$removeImmersionRecording = $grpc.ClientMethod<
+          $0.RemoveImmersionRecordingRequest,
+          $0.RemoveImmersionRecordingResponse>(
+      '/sttattus.languages.v1.ImmersionService/RemoveImmersionRecording',
+      ($0.RemoveImmersionRecordingRequest value) => value.writeToBuffer(),
+      $0.RemoveImmersionRecordingResponse.fromBuffer);
+  static final _$revisePersonalImmersion = $grpc.ClientMethod<
+          $0.RevisePersonalImmersionRequest,
+          $0.RevisePersonalImmersionResponse>(
+      '/sttattus.languages.v1.ImmersionService/RevisePersonalImmersion',
+      ($0.RevisePersonalImmersionRequest value) => value.writeToBuffer(),
+      $0.RevisePersonalImmersionResponse.fromBuffer);
+  static final _$generateImmersionAids = $grpc.ClientMethod<
+          $0.GenerateImmersionAidsRequest, $0.GenerateImmersionAidsResponse>(
+      '/sttattus.languages.v1.ImmersionService/GenerateImmersionAids',
+      ($0.GenerateImmersionAidsRequest value) => value.writeToBuffer(),
+      $0.GenerateImmersionAidsResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.languages.v1.ImmersionService')
@@ -486,6 +544,43 @@ abstract class ImmersionServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.SaveImmersionRecordingRequest.fromBuffer(value),
         ($0.SaveImmersionRecordingResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RequestImmersionRecordingUploadRequest,
+            $0.RequestImmersionRecordingUploadResponse>(
+        'RequestImmersionRecordingUpload',
+        requestImmersionRecordingUpload_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RequestImmersionRecordingUploadRequest.fromBuffer(value),
+        ($0.RequestImmersionRecordingUploadResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RemoveImmersionRecordingRequest,
+            $0.RemoveImmersionRecordingResponse>(
+        'RemoveImmersionRecording',
+        removeImmersionRecording_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RemoveImmersionRecordingRequest.fromBuffer(value),
+        ($0.RemoveImmersionRecordingResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevisePersonalImmersionRequest,
+            $0.RevisePersonalImmersionResponse>(
+        'RevisePersonalImmersion',
+        revisePersonalImmersion_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RevisePersonalImmersionRequest.fromBuffer(value),
+        ($0.RevisePersonalImmersionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GenerateImmersionAidsRequest,
+            $0.GenerateImmersionAidsResponse>(
+        'GenerateImmersionAids',
+        generateImmersionAids_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GenerateImmersionAidsRequest.fromBuffer(value),
+        ($0.GenerateImmersionAidsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ListImmersionLibraryResponse> listImmersionLibrary_Pre(
@@ -670,4 +765,43 @@ abstract class ImmersionServiceBase extends $grpc.Service {
 
   $async.Future<$0.SaveImmersionRecordingResponse> saveImmersionRecording(
       $grpc.ServiceCall call, $0.SaveImmersionRecordingRequest request);
+
+  $async.Future<$0.RequestImmersionRecordingUploadResponse>
+      requestImmersionRecordingUpload_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RequestImmersionRecordingUploadRequest>
+              $request) async {
+    return requestImmersionRecordingUpload($call, await $request);
+  }
+
+  $async.Future<$0.RequestImmersionRecordingUploadResponse>
+      requestImmersionRecordingUpload($grpc.ServiceCall call,
+          $0.RequestImmersionRecordingUploadRequest request);
+
+  $async.Future<$0.RemoveImmersionRecordingResponse>
+      removeImmersionRecording_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.RemoveImmersionRecordingRequest> $request) async {
+    return removeImmersionRecording($call, await $request);
+  }
+
+  $async.Future<$0.RemoveImmersionRecordingResponse> removeImmersionRecording(
+      $grpc.ServiceCall call, $0.RemoveImmersionRecordingRequest request);
+
+  $async.Future<$0.RevisePersonalImmersionResponse> revisePersonalImmersion_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RevisePersonalImmersionRequest> $request) async {
+    return revisePersonalImmersion($call, await $request);
+  }
+
+  $async.Future<$0.RevisePersonalImmersionResponse> revisePersonalImmersion(
+      $grpc.ServiceCall call, $0.RevisePersonalImmersionRequest request);
+
+  $async.Future<$0.GenerateImmersionAidsResponse> generateImmersionAids_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GenerateImmersionAidsRequest> $request) async {
+    return generateImmersionAids($call, await $request);
+  }
+
+  $async.Future<$0.GenerateImmersionAidsResponse> generateImmersionAids(
+      $grpc.ServiceCall call, $0.GenerateImmersionAidsRequest request);
 }

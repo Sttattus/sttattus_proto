@@ -200,6 +200,7 @@ message GetImmersionItemResponse {
   string media_url = 4; // short-lived member-authorized URL; never an export locator
   google.protobuf.Timestamp media_expires_at = 5;
   string copy_language = 6;
+  repeated ImmersionRecording recordings = 7;
 }
 
 message ImportImmersionRequest {
@@ -258,6 +259,7 @@ message CaptureImmersionConceptRequest {
   int32 segment = 3;
   string lexeme_id = 4; // explicit member selection from source-bound matches
   string client_event_id = 5;
+  string text = 6; // exact source span for a private note when no reviewed sense matches
 }
 message CaptureImmersionConceptResponse {
   ImmersionCapture capture = 1;
@@ -387,6 +389,60 @@ message SaveImmersionRecordingRequest {
   bool keep_recording = 5;
   string client_event_id = 6;
 }
+
+message ImmersionRecording {
+  string id = 1;
+  int32 edition = 2;
+  int32 segment = 3;
+  string status = 4;
+  string audio_url = 5; // short-lived, owner-authorized; absent after withdrawal
+  google.protobuf.Timestamp expires_at = 6;
+}
+
+message RequestImmersionRecordingUploadRequest {
+  string item_id = 1;
+  int32 edition = 2;
+  int32 segment = 3;
+  int64 bytes = 4; // bounded mono 16 kHz WAV, at most 30 seconds
+  bool recording_consent = 5;
+  string client_event_id = 6;
+}
+message RequestImmersionRecordingUploadResponse {
+  string upload_url = 1;
+  string audio_url = 2;
+  google.protobuf.Timestamp expires_at = 3;
+}
+message RemoveImmersionRecordingRequest {
+  string recording_id = 1;
+  string client_event_id = 2;
+}
+message RemoveImmersionRecordingResponse {
+  string status = 1;
+}
+
+message RevisePersonalImmersionRequest {
+  string item_id = 1;
+  int32 expected_version = 2;
+  string title = 3;
+  repeated ImmersionSegment corrected_segments = 4;
+  string client_event_id = 5;
+}
+message RevisePersonalImmersionResponse {
+  ImmersionItem item = 1;
+}
+
+message GenerateImmersionAidsRequest {
+  string item_id = 1;
+  int32 edition = 2;
+  int32 first_segment = 3;
+  int32 count = 4; // server caps a batch; reading never requires model success
+  bool model_processing_consent = 5;
+  string client_event_id = 6;
+}
+message GenerateImmersionAidsResponse {
+  string job_id = 1;
+  string status = 2;
+}
 message SaveImmersionRecordingResponse {
   string recording_id = 1;
   string status = 2; // saved / erasure_scheduled, never a pronunciation judgement
@@ -414,4 +470,8 @@ service ImmersionService {
   rpc GetImmersionOfflinePack(GetImmersionOfflinePackRequest) returns (GetImmersionOfflinePackResponse);
   rpc ValidateImmersionOfflinePacks(ValidateImmersionOfflinePacksRequest) returns (ValidateImmersionOfflinePacksResponse);
   rpc SaveImmersionRecording(SaveImmersionRecordingRequest) returns (SaveImmersionRecordingResponse);
+  rpc RequestImmersionRecordingUpload(RequestImmersionRecordingUploadRequest) returns (RequestImmersionRecordingUploadResponse);
+  rpc RemoveImmersionRecording(RemoveImmersionRecordingRequest) returns (RemoveImmersionRecordingResponse);
+  rpc RevisePersonalImmersion(RevisePersonalImmersionRequest) returns (RevisePersonalImmersionResponse);
+  rpc GenerateImmersionAids(GenerateImmersionAidsRequest) returns (GenerateImmersionAidsResponse);
 }

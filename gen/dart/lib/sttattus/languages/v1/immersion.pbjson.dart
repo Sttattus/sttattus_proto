@@ -592,6 +592,14 @@ const GetImmersionItemResponse$json = {
       '10': 'mediaExpiresAt'
     },
     {'1': 'copy_language', '3': 6, '4': 1, '5': 9, '10': 'copyLanguage'},
+    {
+      '1': 'recordings',
+      '3': 7,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.ImmersionRecording',
+      '10': 'recordings'
+    },
   ],
 };
 
@@ -603,7 +611,8 @@ final $typed_data.Uint8List getImmersionItemResponseDescriptor = $convert.base64
     'gDIAMoCzIoLnN0dGF0dHVzLmxhbmd1YWdlcy52MS5JbW1lcnNpb25RdWVzdGlvblIJcXVlc3Rp'
     'b25zEhsKCW1lZGlhX3VybBgEIAEoCVIIbWVkaWFVcmwSRAoQbWVkaWFfZXhwaXJlc19hdBgFIA'
     'EoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSDm1lZGlhRXhwaXJlc0F0EiMKDWNvcHlf'
-    'bGFuZ3VhZ2UYBiABKAlSDGNvcHlMYW5ndWFnZQ==');
+    'bGFuZ3VhZ2UYBiABKAlSDGNvcHlMYW5ndWFnZRJJCgpyZWNvcmRpbmdzGAcgAygLMikuc3R0YX'
+    'R0dXMubGFuZ3VhZ2VzLnYxLkltbWVyc2lvblJlY29yZGluZ1IKcmVjb3JkaW5ncw==');
 
 @$core.Deprecated('Use importImmersionRequestDescriptor instead')
 const ImportImmersionRequest$json = {
@@ -807,6 +816,7 @@ const CaptureImmersionConceptRequest$json = {
     {'1': 'segment', '3': 3, '4': 1, '5': 5, '10': 'segment'},
     {'1': 'lexeme_id', '3': 4, '4': 1, '5': 9, '10': 'lexemeId'},
     {'1': 'client_event_id', '3': 5, '4': 1, '5': 9, '10': 'clientEventId'},
+    {'1': 'text', '3': 6, '4': 1, '5': 9, '10': 'text'},
   ],
 };
 
@@ -816,7 +826,7 @@ final $typed_data.Uint8List captureImmersionConceptRequestDescriptor =
         'Ch5DYXB0dXJlSW1tZXJzaW9uQ29uY2VwdFJlcXVlc3QSFwoHaXRlbV9pZBgBIAEoCVIGaXRlbU'
         'lkEhgKB2VkaXRpb24YAiABKAVSB2VkaXRpb24SGAoHc2VnbWVudBgDIAEoBVIHc2VnbWVudBIb'
         'CglsZXhlbWVfaWQYBCABKAlSCGxleGVtZUlkEiYKD2NsaWVudF9ldmVudF9pZBgFIAEoCVINY2'
-        'xpZW50RXZlbnRJZA==');
+        'xpZW50RXZlbnRJZBISCgR0ZXh0GAYgASgJUgR0ZXh0');
 
 @$core.Deprecated('Use captureImmersionConceptResponseDescriptor instead')
 const CaptureImmersionConceptResponse$json = {
@@ -1309,6 +1319,206 @@ final $typed_data.Uint8List saveImmersionRecordingRequestDescriptor = $convert.b
     'QSGAoHZWRpdGlvbhgCIAEoBVIHZWRpdGlvbhIYCgdzZWdtZW50GAMgASgFUgdzZWdtZW50EhsK'
     'CWF1ZGlvX3VybBgEIAEoCVIIYXVkaW9VcmwSJQoOa2VlcF9yZWNvcmRpbmcYBSABKAhSDWtlZX'
     'BSZWNvcmRpbmcSJgoPY2xpZW50X2V2ZW50X2lkGAYgASgJUg1jbGllbnRFdmVudElk');
+
+@$core.Deprecated('Use immersionRecordingDescriptor instead')
+const ImmersionRecording$json = {
+  '1': 'ImmersionRecording',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'edition', '3': 2, '4': 1, '5': 5, '10': 'edition'},
+    {'1': 'segment', '3': 3, '4': 1, '5': 5, '10': 'segment'},
+    {'1': 'status', '3': 4, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'audio_url', '3': 5, '4': 1, '5': 9, '10': 'audioUrl'},
+    {
+      '1': 'expires_at',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+  ],
+};
+
+/// Descriptor for `ImmersionRecording`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List immersionRecordingDescriptor = $convert.base64Decode(
+    'ChJJbW1lcnNpb25SZWNvcmRpbmcSDgoCaWQYASABKAlSAmlkEhgKB2VkaXRpb24YAiABKAVSB2'
+    'VkaXRpb24SGAoHc2VnbWVudBgDIAEoBVIHc2VnbWVudBIWCgZzdGF0dXMYBCABKAlSBnN0YXR1'
+    'cxIbCglhdWRpb191cmwYBSABKAlSCGF1ZGlvVXJsEjkKCmV4cGlyZXNfYXQYBiABKAsyGi5nb2'
+    '9nbGUucHJvdG9idWYuVGltZXN0YW1wUglleHBpcmVzQXQ=');
+
+@$core
+    .Deprecated('Use requestImmersionRecordingUploadRequestDescriptor instead')
+const RequestImmersionRecordingUploadRequest$json = {
+  '1': 'RequestImmersionRecordingUploadRequest',
+  '2': [
+    {'1': 'item_id', '3': 1, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'edition', '3': 2, '4': 1, '5': 5, '10': 'edition'},
+    {'1': 'segment', '3': 3, '4': 1, '5': 5, '10': 'segment'},
+    {'1': 'bytes', '3': 4, '4': 1, '5': 3, '10': 'bytes'},
+    {
+      '1': 'recording_consent',
+      '3': 5,
+      '4': 1,
+      '5': 8,
+      '10': 'recordingConsent'
+    },
+    {'1': 'client_event_id', '3': 6, '4': 1, '5': 9, '10': 'clientEventId'},
+  ],
+};
+
+/// Descriptor for `RequestImmersionRecordingUploadRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List requestImmersionRecordingUploadRequestDescriptor =
+    $convert.base64Decode(
+        'CiZSZXF1ZXN0SW1tZXJzaW9uUmVjb3JkaW5nVXBsb2FkUmVxdWVzdBIXCgdpdGVtX2lkGAEgAS'
+        'gJUgZpdGVtSWQSGAoHZWRpdGlvbhgCIAEoBVIHZWRpdGlvbhIYCgdzZWdtZW50GAMgASgFUgdz'
+        'ZWdtZW50EhQKBWJ5dGVzGAQgASgDUgVieXRlcxIrChFyZWNvcmRpbmdfY29uc2VudBgFIAEoCF'
+        'IQcmVjb3JkaW5nQ29uc2VudBImCg9jbGllbnRfZXZlbnRfaWQYBiABKAlSDWNsaWVudEV2ZW50'
+        'SWQ=');
+
+@$core
+    .Deprecated('Use requestImmersionRecordingUploadResponseDescriptor instead')
+const RequestImmersionRecordingUploadResponse$json = {
+  '1': 'RequestImmersionRecordingUploadResponse',
+  '2': [
+    {'1': 'upload_url', '3': 1, '4': 1, '5': 9, '10': 'uploadUrl'},
+    {'1': 'audio_url', '3': 2, '4': 1, '5': 9, '10': 'audioUrl'},
+    {
+      '1': 'expires_at',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expiresAt'
+    },
+  ],
+};
+
+/// Descriptor for `RequestImmersionRecordingUploadResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List requestImmersionRecordingUploadResponseDescriptor =
+    $convert.base64Decode(
+        'CidSZXF1ZXN0SW1tZXJzaW9uUmVjb3JkaW5nVXBsb2FkUmVzcG9uc2USHQoKdXBsb2FkX3VybB'
+        'gBIAEoCVIJdXBsb2FkVXJsEhsKCWF1ZGlvX3VybBgCIAEoCVIIYXVkaW9VcmwSOQoKZXhwaXJl'
+        'c19hdBgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWV4cGlyZXNBdA==');
+
+@$core.Deprecated('Use removeImmersionRecordingRequestDescriptor instead')
+const RemoveImmersionRecordingRequest$json = {
+  '1': 'RemoveImmersionRecordingRequest',
+  '2': [
+    {'1': 'recording_id', '3': 1, '4': 1, '5': 9, '10': 'recordingId'},
+    {'1': 'client_event_id', '3': 2, '4': 1, '5': 9, '10': 'clientEventId'},
+  ],
+};
+
+/// Descriptor for `RemoveImmersionRecordingRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeImmersionRecordingRequestDescriptor =
+    $convert.base64Decode(
+        'Ch9SZW1vdmVJbW1lcnNpb25SZWNvcmRpbmdSZXF1ZXN0EiEKDHJlY29yZGluZ19pZBgBIAEoCV'
+        'ILcmVjb3JkaW5nSWQSJgoPY2xpZW50X2V2ZW50X2lkGAIgASgJUg1jbGllbnRFdmVudElk');
+
+@$core.Deprecated('Use removeImmersionRecordingResponseDescriptor instead')
+const RemoveImmersionRecordingResponse$json = {
+  '1': 'RemoveImmersionRecordingResponse',
+  '2': [
+    {'1': 'status', '3': 1, '4': 1, '5': 9, '10': 'status'},
+  ],
+};
+
+/// Descriptor for `RemoveImmersionRecordingResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List removeImmersionRecordingResponseDescriptor =
+    $convert.base64Decode(
+        'CiBSZW1vdmVJbW1lcnNpb25SZWNvcmRpbmdSZXNwb25zZRIWCgZzdGF0dXMYASABKAlSBnN0YX'
+        'R1cw==');
+
+@$core.Deprecated('Use revisePersonalImmersionRequestDescriptor instead')
+const RevisePersonalImmersionRequest$json = {
+  '1': 'RevisePersonalImmersionRequest',
+  '2': [
+    {'1': 'item_id', '3': 1, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'expected_version', '3': 2, '4': 1, '5': 5, '10': 'expectedVersion'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {
+      '1': 'corrected_segments',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.ImmersionSegment',
+      '10': 'correctedSegments'
+    },
+    {'1': 'client_event_id', '3': 5, '4': 1, '5': 9, '10': 'clientEventId'},
+  ],
+};
+
+/// Descriptor for `RevisePersonalImmersionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revisePersonalImmersionRequestDescriptor = $convert.base64Decode(
+    'Ch5SZXZpc2VQZXJzb25hbEltbWVyc2lvblJlcXVlc3QSFwoHaXRlbV9pZBgBIAEoCVIGaXRlbU'
+    'lkEikKEGV4cGVjdGVkX3ZlcnNpb24YAiABKAVSD2V4cGVjdGVkVmVyc2lvbhIUCgV0aXRsZRgD'
+    'IAEoCVIFdGl0bGUSVgoSY29ycmVjdGVkX3NlZ21lbnRzGAQgAygLMicuc3R0YXR0dXMubGFuZ3'
+    'VhZ2VzLnYxLkltbWVyc2lvblNlZ21lbnRSEWNvcnJlY3RlZFNlZ21lbnRzEiYKD2NsaWVudF9l'
+    'dmVudF9pZBgFIAEoCVINY2xpZW50RXZlbnRJZA==');
+
+@$core.Deprecated('Use revisePersonalImmersionResponseDescriptor instead')
+const RevisePersonalImmersionResponse$json = {
+  '1': 'RevisePersonalImmersionResponse',
+  '2': [
+    {
+      '1': 'item',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.languages.v1.ImmersionItem',
+      '10': 'item'
+    },
+  ],
+};
+
+/// Descriptor for `RevisePersonalImmersionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revisePersonalImmersionResponseDescriptor =
+    $convert.base64Decode(
+        'Ch9SZXZpc2VQZXJzb25hbEltbWVyc2lvblJlc3BvbnNlEjgKBGl0ZW0YASABKAsyJC5zdHRhdH'
+        'R1cy5sYW5ndWFnZXMudjEuSW1tZXJzaW9uSXRlbVIEaXRlbQ==');
+
+@$core.Deprecated('Use generateImmersionAidsRequestDescriptor instead')
+const GenerateImmersionAidsRequest$json = {
+  '1': 'GenerateImmersionAidsRequest',
+  '2': [
+    {'1': 'item_id', '3': 1, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'edition', '3': 2, '4': 1, '5': 5, '10': 'edition'},
+    {'1': 'first_segment', '3': 3, '4': 1, '5': 5, '10': 'firstSegment'},
+    {'1': 'count', '3': 4, '4': 1, '5': 5, '10': 'count'},
+    {
+      '1': 'model_processing_consent',
+      '3': 5,
+      '4': 1,
+      '5': 8,
+      '10': 'modelProcessingConsent'
+    },
+    {'1': 'client_event_id', '3': 6, '4': 1, '5': 9, '10': 'clientEventId'},
+  ],
+};
+
+/// Descriptor for `GenerateImmersionAidsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateImmersionAidsRequestDescriptor = $convert.base64Decode(
+    'ChxHZW5lcmF0ZUltbWVyc2lvbkFpZHNSZXF1ZXN0EhcKB2l0ZW1faWQYASABKAlSBml0ZW1JZB'
+    'IYCgdlZGl0aW9uGAIgASgFUgdlZGl0aW9uEiMKDWZpcnN0X3NlZ21lbnQYAyABKAVSDGZpcnN0'
+    'U2VnbWVudBIUCgVjb3VudBgEIAEoBVIFY291bnQSOAoYbW9kZWxfcHJvY2Vzc2luZ19jb25zZW'
+    '50GAUgASgIUhZtb2RlbFByb2Nlc3NpbmdDb25zZW50EiYKD2NsaWVudF9ldmVudF9pZBgGIAEo'
+    'CVINY2xpZW50RXZlbnRJZA==');
+
+@$core.Deprecated('Use generateImmersionAidsResponseDescriptor instead')
+const GenerateImmersionAidsResponse$json = {
+  '1': 'GenerateImmersionAidsResponse',
+  '2': [
+    {'1': 'job_id', '3': 1, '4': 1, '5': 9, '10': 'jobId'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+  ],
+};
+
+/// Descriptor for `GenerateImmersionAidsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateImmersionAidsResponseDescriptor =
+    $convert.base64Decode(
+        'Ch1HZW5lcmF0ZUltbWVyc2lvbkFpZHNSZXNwb25zZRIVCgZqb2JfaWQYASABKAlSBWpvYklkEh'
+        'YKBnN0YXR1cxgCIAEoCVIGc3RhdHVz');
 
 @$core.Deprecated('Use saveImmersionRecordingResponseDescriptor instead')
 const SaveImmersionRecordingResponse$json = {

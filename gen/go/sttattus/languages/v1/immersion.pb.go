@@ -1611,6 +1611,7 @@ type GetImmersionItemResponse struct {
 	MediaUrl       string                 `protobuf:"bytes,4,opt,name=media_url,json=mediaUrl,proto3" json:"media_url,omitempty"` // short-lived member-authorized URL; never an export locator
 	MediaExpiresAt *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=media_expires_at,json=mediaExpiresAt,proto3" json:"media_expires_at,omitempty"`
 	CopyLanguage   string                 `protobuf:"bytes,6,opt,name=copy_language,json=copyLanguage,proto3" json:"copy_language,omitempty"`
+	Recordings     []*ImmersionRecording  `protobuf:"bytes,7,rep,name=recordings,proto3" json:"recordings,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -1685,6 +1686,13 @@ func (x *GetImmersionItemResponse) GetCopyLanguage() string {
 		return x.CopyLanguage
 	}
 	return ""
+}
+
+func (x *GetImmersionItemResponse) GetRecordings() []*ImmersionRecording {
+	if x != nil {
+		return x.Recordings
+	}
+	return nil
 }
 
 type ImportImmersionRequest struct {
@@ -2230,6 +2238,7 @@ type CaptureImmersionConceptRequest struct {
 	Segment       int32                  `protobuf:"varint,3,opt,name=segment,proto3" json:"segment,omitempty"`
 	LexemeId      string                 `protobuf:"bytes,4,opt,name=lexeme_id,json=lexemeId,proto3" json:"lexeme_id,omitempty"` // explicit member selection from source-bound matches
 	ClientEventId string                 `protobuf:"bytes,5,opt,name=client_event_id,json=clientEventId,proto3" json:"client_event_id,omitempty"`
+	Text          string                 `protobuf:"bytes,6,opt,name=text,proto3" json:"text,omitempty"` // exact source span for a private note when no reviewed sense matches
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2295,6 +2304,13 @@ func (x *CaptureImmersionConceptRequest) GetLexemeId() string {
 func (x *CaptureImmersionConceptRequest) GetClientEventId() string {
 	if x != nil {
 		return x.ClientEventId
+	}
+	return ""
+}
+
+func (x *CaptureImmersionConceptRequest) GetText() string {
+	if x != nil {
+		return x.Text
 	}
 	return ""
 }
@@ -3823,6 +3839,586 @@ func (x *SaveImmersionRecordingRequest) GetClientEventId() string {
 	return ""
 }
 
+type ImmersionRecording struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Edition       int32                  `protobuf:"varint,2,opt,name=edition,proto3" json:"edition,omitempty"`
+	Segment       int32                  `protobuf:"varint,3,opt,name=segment,proto3" json:"segment,omitempty"`
+	Status        string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	AudioUrl      string                 `protobuf:"bytes,5,opt,name=audio_url,json=audioUrl,proto3" json:"audio_url,omitempty"` // short-lived, owner-authorized; absent after withdrawal
+	ExpiresAt     *timestamppb.Timestamp `protobuf:"bytes,6,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ImmersionRecording) Reset() {
+	*x = ImmersionRecording{}
+	mi := &file_sttattus_languages_v1_immersion_proto_msgTypes[50]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ImmersionRecording) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ImmersionRecording) ProtoMessage() {}
+
+func (x *ImmersionRecording) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_immersion_proto_msgTypes[50]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ImmersionRecording.ProtoReflect.Descriptor instead.
+func (*ImmersionRecording) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_immersion_proto_rawDescGZIP(), []int{50}
+}
+
+func (x *ImmersionRecording) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ImmersionRecording) GetEdition() int32 {
+	if x != nil {
+		return x.Edition
+	}
+	return 0
+}
+
+func (x *ImmersionRecording) GetSegment() int32 {
+	if x != nil {
+		return x.Segment
+	}
+	return 0
+}
+
+func (x *ImmersionRecording) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ImmersionRecording) GetAudioUrl() string {
+	if x != nil {
+		return x.AudioUrl
+	}
+	return ""
+}
+
+func (x *ImmersionRecording) GetExpiresAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.ExpiresAt
+	}
+	return nil
+}
+
+type RequestImmersionRecordingUploadRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	ItemId           string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	Edition          int32                  `protobuf:"varint,2,opt,name=edition,proto3" json:"edition,omitempty"`
+	Segment          int32                  `protobuf:"varint,3,opt,name=segment,proto3" json:"segment,omitempty"`
+	Bytes            int64                  `protobuf:"varint,4,opt,name=bytes,proto3" json:"bytes,omitempty"` // bounded mono 16 kHz WAV, at most 30 seconds
+	RecordingConsent bool                   `protobuf:"varint,5,opt,name=recording_consent,json=recordingConsent,proto3" json:"recording_consent,omitempty"`
+	ClientEventId    string                 `protobuf:"bytes,6,opt,name=client_event_id,json=clientEventId,proto3" json:"client_event_id,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *RequestImmersionRecordingUploadRequest) Reset() {
+	*x = RequestImmersionRecordingUploadRequest{}
+	mi := &file_sttattus_languages_v1_immersion_proto_msgTypes[51]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RequestImmersionRecordingUploadRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RequestImmersionRecordingUploadRequest) ProtoMessage() {}
+
+func (x *RequestImmersionRecordingUploadRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_immersion_proto_msgTypes[51]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RequestImmersionRecordingUploadRequest.ProtoReflect.Descriptor instead.
+func (*RequestImmersionRecordingUploadRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_immersion_proto_rawDescGZIP(), []int{51}
+}
+
+func (x *RequestImmersionRecordingUploadRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *RequestImmersionRecordingUploadRequest) GetEdition() int32 {
+	if x != nil {
+		return x.Edition
+	}
+	return 0
+}
+
+func (x *RequestImmersionRecordingUploadRequest) GetSegment() int32 {
+	if x != nil {
+		return x.Segment
+	}
+	return 0
+}
+
+func (x *RequestImmersionRecordingUploadRequest) GetBytes() int64 {
+	if x != nil {
+		return x.Bytes
+	}
+	return 0
+}
+
+func (x *RequestImmersionRecordingUploadRequest) GetRecordingConsent() bool {
+	if x != nil {
+		return x.RecordingConsent
+	}
+	return false
+}
+
+func (x *RequestImmersionRecordingUploadRequest) GetClientEventId() string {
+	if x != nil {
+		return x.ClientEventId
+	}
+	return ""
+}
+
+type RequestImmersionRecordingUploadResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UploadUrl     string                 `protobuf:"bytes,1,opt,name=upload_url,json=uploadUrl,proto3" json:"upload_url,omitempty"`
+	AudioUrl      string                 `protobuf:"bytes,2,opt,name=audio_url,json=audioUrl,proto3" json:"audio_url,omitempty"`
+	ExpiresAt     *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RequestImmersionRecordingUploadResponse) Reset() {
+	*x = RequestImmersionRecordingUploadResponse{}
+	mi := &file_sttattus_languages_v1_immersion_proto_msgTypes[52]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RequestImmersionRecordingUploadResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RequestImmersionRecordingUploadResponse) ProtoMessage() {}
+
+func (x *RequestImmersionRecordingUploadResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_immersion_proto_msgTypes[52]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RequestImmersionRecordingUploadResponse.ProtoReflect.Descriptor instead.
+func (*RequestImmersionRecordingUploadResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_immersion_proto_rawDescGZIP(), []int{52}
+}
+
+func (x *RequestImmersionRecordingUploadResponse) GetUploadUrl() string {
+	if x != nil {
+		return x.UploadUrl
+	}
+	return ""
+}
+
+func (x *RequestImmersionRecordingUploadResponse) GetAudioUrl() string {
+	if x != nil {
+		return x.AudioUrl
+	}
+	return ""
+}
+
+func (x *RequestImmersionRecordingUploadResponse) GetExpiresAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.ExpiresAt
+	}
+	return nil
+}
+
+type RemoveImmersionRecordingRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	RecordingId   string                 `protobuf:"bytes,1,opt,name=recording_id,json=recordingId,proto3" json:"recording_id,omitempty"`
+	ClientEventId string                 `protobuf:"bytes,2,opt,name=client_event_id,json=clientEventId,proto3" json:"client_event_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RemoveImmersionRecordingRequest) Reset() {
+	*x = RemoveImmersionRecordingRequest{}
+	mi := &file_sttattus_languages_v1_immersion_proto_msgTypes[53]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RemoveImmersionRecordingRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemoveImmersionRecordingRequest) ProtoMessage() {}
+
+func (x *RemoveImmersionRecordingRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_immersion_proto_msgTypes[53]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemoveImmersionRecordingRequest.ProtoReflect.Descriptor instead.
+func (*RemoveImmersionRecordingRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_immersion_proto_rawDescGZIP(), []int{53}
+}
+
+func (x *RemoveImmersionRecordingRequest) GetRecordingId() string {
+	if x != nil {
+		return x.RecordingId
+	}
+	return ""
+}
+
+func (x *RemoveImmersionRecordingRequest) GetClientEventId() string {
+	if x != nil {
+		return x.ClientEventId
+	}
+	return ""
+}
+
+type RemoveImmersionRecordingResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Status        string                 `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RemoveImmersionRecordingResponse) Reset() {
+	*x = RemoveImmersionRecordingResponse{}
+	mi := &file_sttattus_languages_v1_immersion_proto_msgTypes[54]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RemoveImmersionRecordingResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RemoveImmersionRecordingResponse) ProtoMessage() {}
+
+func (x *RemoveImmersionRecordingResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_immersion_proto_msgTypes[54]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RemoveImmersionRecordingResponse.ProtoReflect.Descriptor instead.
+func (*RemoveImmersionRecordingResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_immersion_proto_rawDescGZIP(), []int{54}
+}
+
+func (x *RemoveImmersionRecordingResponse) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+type RevisePersonalImmersionRequest struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	ItemId            string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ExpectedVersion   int32                  `protobuf:"varint,2,opt,name=expected_version,json=expectedVersion,proto3" json:"expected_version,omitempty"`
+	Title             string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	CorrectedSegments []*ImmersionSegment    `protobuf:"bytes,4,rep,name=corrected_segments,json=correctedSegments,proto3" json:"corrected_segments,omitempty"`
+	ClientEventId     string                 `protobuf:"bytes,5,opt,name=client_event_id,json=clientEventId,proto3" json:"client_event_id,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *RevisePersonalImmersionRequest) Reset() {
+	*x = RevisePersonalImmersionRequest{}
+	mi := &file_sttattus_languages_v1_immersion_proto_msgTypes[55]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevisePersonalImmersionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevisePersonalImmersionRequest) ProtoMessage() {}
+
+func (x *RevisePersonalImmersionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_immersion_proto_msgTypes[55]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevisePersonalImmersionRequest.ProtoReflect.Descriptor instead.
+func (*RevisePersonalImmersionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_immersion_proto_rawDescGZIP(), []int{55}
+}
+
+func (x *RevisePersonalImmersionRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *RevisePersonalImmersionRequest) GetExpectedVersion() int32 {
+	if x != nil {
+		return x.ExpectedVersion
+	}
+	return 0
+}
+
+func (x *RevisePersonalImmersionRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *RevisePersonalImmersionRequest) GetCorrectedSegments() []*ImmersionSegment {
+	if x != nil {
+		return x.CorrectedSegments
+	}
+	return nil
+}
+
+func (x *RevisePersonalImmersionRequest) GetClientEventId() string {
+	if x != nil {
+		return x.ClientEventId
+	}
+	return ""
+}
+
+type RevisePersonalImmersionResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *ImmersionItem         `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RevisePersonalImmersionResponse) Reset() {
+	*x = RevisePersonalImmersionResponse{}
+	mi := &file_sttattus_languages_v1_immersion_proto_msgTypes[56]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevisePersonalImmersionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevisePersonalImmersionResponse) ProtoMessage() {}
+
+func (x *RevisePersonalImmersionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_immersion_proto_msgTypes[56]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevisePersonalImmersionResponse.ProtoReflect.Descriptor instead.
+func (*RevisePersonalImmersionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_immersion_proto_rawDescGZIP(), []int{56}
+}
+
+func (x *RevisePersonalImmersionResponse) GetItem() *ImmersionItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type GenerateImmersionAidsRequest struct {
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	ItemId                 string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	Edition                int32                  `protobuf:"varint,2,opt,name=edition,proto3" json:"edition,omitempty"`
+	FirstSegment           int32                  `protobuf:"varint,3,opt,name=first_segment,json=firstSegment,proto3" json:"first_segment,omitempty"`
+	Count                  int32                  `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"` // server caps a batch; reading never requires model success
+	ModelProcessingConsent bool                   `protobuf:"varint,5,opt,name=model_processing_consent,json=modelProcessingConsent,proto3" json:"model_processing_consent,omitempty"`
+	ClientEventId          string                 `protobuf:"bytes,6,opt,name=client_event_id,json=clientEventId,proto3" json:"client_event_id,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *GenerateImmersionAidsRequest) Reset() {
+	*x = GenerateImmersionAidsRequest{}
+	mi := &file_sttattus_languages_v1_immersion_proto_msgTypes[57]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateImmersionAidsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateImmersionAidsRequest) ProtoMessage() {}
+
+func (x *GenerateImmersionAidsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_immersion_proto_msgTypes[57]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateImmersionAidsRequest.ProtoReflect.Descriptor instead.
+func (*GenerateImmersionAidsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_immersion_proto_rawDescGZIP(), []int{57}
+}
+
+func (x *GenerateImmersionAidsRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *GenerateImmersionAidsRequest) GetEdition() int32 {
+	if x != nil {
+		return x.Edition
+	}
+	return 0
+}
+
+func (x *GenerateImmersionAidsRequest) GetFirstSegment() int32 {
+	if x != nil {
+		return x.FirstSegment
+	}
+	return 0
+}
+
+func (x *GenerateImmersionAidsRequest) GetCount() int32 {
+	if x != nil {
+		return x.Count
+	}
+	return 0
+}
+
+func (x *GenerateImmersionAidsRequest) GetModelProcessingConsent() bool {
+	if x != nil {
+		return x.ModelProcessingConsent
+	}
+	return false
+}
+
+func (x *GenerateImmersionAidsRequest) GetClientEventId() string {
+	if x != nil {
+		return x.ClientEventId
+	}
+	return ""
+}
+
+type GenerateImmersionAidsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	JobId         string                 `protobuf:"bytes,1,opt,name=job_id,json=jobId,proto3" json:"job_id,omitempty"`
+	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GenerateImmersionAidsResponse) Reset() {
+	*x = GenerateImmersionAidsResponse{}
+	mi := &file_sttattus_languages_v1_immersion_proto_msgTypes[58]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateImmersionAidsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateImmersionAidsResponse) ProtoMessage() {}
+
+func (x *GenerateImmersionAidsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_immersion_proto_msgTypes[58]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateImmersionAidsResponse.ProtoReflect.Descriptor instead.
+func (*GenerateImmersionAidsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_immersion_proto_rawDescGZIP(), []int{58}
+}
+
+func (x *GenerateImmersionAidsResponse) GetJobId() string {
+	if x != nil {
+		return x.JobId
+	}
+	return ""
+}
+
+func (x *GenerateImmersionAidsResponse) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
 type SaveImmersionRecordingResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	RecordingId   string                 `protobuf:"bytes,1,opt,name=recording_id,json=recordingId,proto3" json:"recording_id,omitempty"`
@@ -3834,7 +4430,7 @@ type SaveImmersionRecordingResponse struct {
 
 func (x *SaveImmersionRecordingResponse) Reset() {
 	*x = SaveImmersionRecordingResponse{}
-	mi := &file_sttattus_languages_v1_immersion_proto_msgTypes[50]
+	mi := &file_sttattus_languages_v1_immersion_proto_msgTypes[59]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3846,7 +4442,7 @@ func (x *SaveImmersionRecordingResponse) String() string {
 func (*SaveImmersionRecordingResponse) ProtoMessage() {}
 
 func (x *SaveImmersionRecordingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_sttattus_languages_v1_immersion_proto_msgTypes[50]
+	mi := &file_sttattus_languages_v1_immersion_proto_msgTypes[59]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3859,7 +4455,7 @@ func (x *SaveImmersionRecordingResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SaveImmersionRecordingResponse.ProtoReflect.Descriptor instead.
 func (*SaveImmersionRecordingResponse) Descriptor() ([]byte, []int) {
-	return file_sttattus_languages_v1_immersion_proto_rawDescGZIP(), []int{50}
+	return file_sttattus_languages_v1_immersion_proto_rawDescGZIP(), []int{59}
 }
 
 func (x *SaveImmersionRecordingResponse) GetRecordingId() string {
@@ -4035,14 +4631,17 @@ const file_sttattus_languages_v1_immersion_proto_rawDesc = "" +
 	"\x10available_levels\x18\x03 \x03(\tR\x0favailableLevels\x12M\n" +
 	"\x0favailable_kinds\x18\x04 \x03(\x0e2$.sttattus.languages.v1.ImmersionKindR\x0eavailableKinds\"2\n" +
 	"\x17GetImmersionItemRequest\x12\x17\n" +
-	"\aitem_id\x18\x01 \x01(\tR\x06itemId\"\xe9\x02\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\"\xb4\x03\n" +
 	"\x18GetImmersionItemResponse\x128\n" +
 	"\x04item\x18\x01 \x01(\v2$.sttattus.languages.v1.ImmersionItemR\x04item\x12C\n" +
 	"\bsegments\x18\x02 \x03(\v2'.sttattus.languages.v1.ImmersionSegmentR\bsegments\x12F\n" +
 	"\tquestions\x18\x03 \x03(\v2(.sttattus.languages.v1.ImmersionQuestionR\tquestions\x12\x1b\n" +
 	"\tmedia_url\x18\x04 \x01(\tR\bmediaUrl\x12D\n" +
 	"\x10media_expires_at\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\x0emediaExpiresAt\x12#\n" +
-	"\rcopy_language\x18\x06 \x01(\tR\fcopyLanguage\"\xc0\x03\n" +
+	"\rcopy_language\x18\x06 \x01(\tR\fcopyLanguage\x12I\n" +
+	"\n" +
+	"recordings\x18\a \x03(\v2).sttattus.languages.v1.ImmersionRecordingR\n" +
+	"recordings\"\xc0\x03\n" +
 	"\x16ImportImmersionRequest\x12D\n" +
 	"\x06format\x18\x01 \x01(\x0e2,.sttattus.languages.v1.ImmersionImportFormatR\x06format\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12\x1a\n" +
@@ -4083,13 +4682,14 @@ const file_sttattus_languages_v1_immersion_proto_rawDesc = "" +
 	"\x10expected_version\x18\a \x01(\x05R\x0fexpectedVersion\x12&\n" +
 	"\x0fclient_event_id\x18\b \x01(\tR\rclientEventId\"g\n" +
 	"\x1fUpdateImmersionProgressResponse\x12D\n" +
-	"\bprogress\x18\x01 \x01(\v2(.sttattus.languages.v1.ImmersionProgressR\bprogress\"\xb2\x01\n" +
+	"\bprogress\x18\x01 \x01(\v2(.sttattus.languages.v1.ImmersionProgressR\bprogress\"\xc6\x01\n" +
 	"\x1eCaptureImmersionConceptRequest\x12\x17\n" +
 	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x18\n" +
 	"\aedition\x18\x02 \x01(\x05R\aedition\x12\x18\n" +
 	"\asegment\x18\x03 \x01(\x05R\asegment\x12\x1b\n" +
 	"\tlexeme_id\x18\x04 \x01(\tR\blexemeId\x12&\n" +
-	"\x0fclient_event_id\x18\x05 \x01(\tR\rclientEventId\"d\n" +
+	"\x0fclient_event_id\x18\x05 \x01(\tR\rclientEventId\x12\x12\n" +
+	"\x04text\x18\x06 \x01(\tR\x04text\"d\n" +
 	"\x1fCaptureImmersionConceptResponse\x12A\n" +
 	"\acapture\x18\x01 \x01(\v2'.sttattus.languages.v1.ImmersionCaptureR\acapture\"o\n" +
 	"\x1cListImmersionCapturesRequest\x12\x1a\n" +
@@ -4192,7 +4792,51 @@ const file_sttattus_languages_v1_immersion_proto_rawDesc = "" +
 	"\asegment\x18\x03 \x01(\x05R\asegment\x12\x1b\n" +
 	"\taudio_url\x18\x04 \x01(\tR\baudioUrl\x12%\n" +
 	"\x0ekeep_recording\x18\x05 \x01(\bR\rkeepRecording\x12&\n" +
-	"\x0fclient_event_id\x18\x06 \x01(\tR\rclientEventId\"\x96\x01\n" +
+	"\x0fclient_event_id\x18\x06 \x01(\tR\rclientEventId\"\xc8\x01\n" +
+	"\x12ImmersionRecording\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x18\n" +
+	"\aedition\x18\x02 \x01(\x05R\aedition\x12\x18\n" +
+	"\asegment\x18\x03 \x01(\x05R\asegment\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12\x1b\n" +
+	"\taudio_url\x18\x05 \x01(\tR\baudioUrl\x129\n" +
+	"\n" +
+	"expires_at\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\"\xe0\x01\n" +
+	"&RequestImmersionRecordingUploadRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x18\n" +
+	"\aedition\x18\x02 \x01(\x05R\aedition\x12\x18\n" +
+	"\asegment\x18\x03 \x01(\x05R\asegment\x12\x14\n" +
+	"\x05bytes\x18\x04 \x01(\x03R\x05bytes\x12+\n" +
+	"\x11recording_consent\x18\x05 \x01(\bR\x10recordingConsent\x12&\n" +
+	"\x0fclient_event_id\x18\x06 \x01(\tR\rclientEventId\"\xa0\x01\n" +
+	"'RequestImmersionRecordingUploadResponse\x12\x1d\n" +
+	"\n" +
+	"upload_url\x18\x01 \x01(\tR\tuploadUrl\x12\x1b\n" +
+	"\taudio_url\x18\x02 \x01(\tR\baudioUrl\x129\n" +
+	"\n" +
+	"expires_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\"l\n" +
+	"\x1fRemoveImmersionRecordingRequest\x12!\n" +
+	"\frecording_id\x18\x01 \x01(\tR\vrecordingId\x12&\n" +
+	"\x0fclient_event_id\x18\x02 \x01(\tR\rclientEventId\":\n" +
+	" RemoveImmersionRecordingResponse\x12\x16\n" +
+	"\x06status\x18\x01 \x01(\tR\x06status\"\xfa\x01\n" +
+	"\x1eRevisePersonalImmersionRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12)\n" +
+	"\x10expected_version\x18\x02 \x01(\x05R\x0fexpectedVersion\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12V\n" +
+	"\x12corrected_segments\x18\x04 \x03(\v2'.sttattus.languages.v1.ImmersionSegmentR\x11correctedSegments\x12&\n" +
+	"\x0fclient_event_id\x18\x05 \x01(\tR\rclientEventId\"[\n" +
+	"\x1fRevisePersonalImmersionResponse\x128\n" +
+	"\x04item\x18\x01 \x01(\v2$.sttattus.languages.v1.ImmersionItemR\x04item\"\xee\x01\n" +
+	"\x1cGenerateImmersionAidsRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x18\n" +
+	"\aedition\x18\x02 \x01(\x05R\aedition\x12#\n" +
+	"\rfirst_segment\x18\x03 \x01(\x05R\ffirstSegment\x12\x14\n" +
+	"\x05count\x18\x04 \x01(\x05R\x05count\x128\n" +
+	"\x18model_processing_consent\x18\x05 \x01(\bR\x16modelProcessingConsent\x12&\n" +
+	"\x0fclient_event_id\x18\x06 \x01(\tR\rclientEventId\"N\n" +
+	"\x1dGenerateImmersionAidsResponse\x12\x15\n" +
+	"\x06job_id\x18\x01 \x01(\tR\x05jobId\x12\x16\n" +
+	"\x06status\x18\x02 \x01(\tR\x06status\"\x96\x01\n" +
 	"\x1eSaveImmersionRecordingResponse\x12!\n" +
 	"\frecording_id\x18\x01 \x01(\tR\vrecordingId\x12\x16\n" +
 	"\x06status\x18\x02 \x01(\tR\x06status\x129\n" +
@@ -4227,7 +4871,7 @@ const file_sttattus_languages_v1_immersion_proto_rawDesc = "" +
 	"\rImmersionMode\x12\x1e\n" +
 	"\x1aIMMERSION_MODE_UNSPECIFIED\x10\x00\x12\x1c\n" +
 	"\x18IMMERSION_MODE_EXTENSIVE\x10\x01\x12\x1c\n" +
-	"\x18IMMERSION_MODE_INTENSIVE\x10\x022\xdb\x14\n" +
+	"\x18IMMERSION_MODE_INTENSIVE\x10\x022\x9c\x19\n" +
 	"\x10ImmersionService\x12\x7f\n" +
 	"\x14ListImmersionLibrary\x122.sttattus.languages.v1.ListImmersionLibraryRequest\x1a3.sttattus.languages.v1.ListImmersionLibraryResponse\x12s\n" +
 	"\x10GetImmersionItem\x12..sttattus.languages.v1.GetImmersionItemRequest\x1a/.sttattus.languages.v1.GetImmersionItemResponse\x12p\n" +
@@ -4248,7 +4892,11 @@ const file_sttattus_languages_v1_immersion_proto_rawDesc = "" +
 	"\x0fExportImmersion\x12-.sttattus.languages.v1.ExportImmersionRequest\x1a..sttattus.languages.v1.ExportImmersionResponse\x12\x88\x01\n" +
 	"\x17GetImmersionOfflinePack\x125.sttattus.languages.v1.GetImmersionOfflinePackRequest\x1a6.sttattus.languages.v1.GetImmersionOfflinePackResponse\x12\x9a\x01\n" +
 	"\x1dValidateImmersionOfflinePacks\x12;.sttattus.languages.v1.ValidateImmersionOfflinePacksRequest\x1a<.sttattus.languages.v1.ValidateImmersionOfflinePacksResponse\x12\x85\x01\n" +
-	"\x16SaveImmersionRecording\x124.sttattus.languages.v1.SaveImmersionRecordingRequest\x1a5.sttattus.languages.v1.SaveImmersionRecordingResponseBDZBgithub.com/sttattus/proto/gen/go/sttattus/languages/v1;languagesv1b\x06proto3"
+	"\x16SaveImmersionRecording\x124.sttattus.languages.v1.SaveImmersionRecordingRequest\x1a5.sttattus.languages.v1.SaveImmersionRecordingResponse\x12\xa0\x01\n" +
+	"\x1fRequestImmersionRecordingUpload\x12=.sttattus.languages.v1.RequestImmersionRecordingUploadRequest\x1a>.sttattus.languages.v1.RequestImmersionRecordingUploadResponse\x12\x8b\x01\n" +
+	"\x18RemoveImmersionRecording\x126.sttattus.languages.v1.RemoveImmersionRecordingRequest\x1a7.sttattus.languages.v1.RemoveImmersionRecordingResponse\x12\x88\x01\n" +
+	"\x17RevisePersonalImmersion\x125.sttattus.languages.v1.RevisePersonalImmersionRequest\x1a6.sttattus.languages.v1.RevisePersonalImmersionResponse\x12\x82\x01\n" +
+	"\x15GenerateImmersionAids\x123.sttattus.languages.v1.GenerateImmersionAidsRequest\x1a4.sttattus.languages.v1.GenerateImmersionAidsResponseBDZBgithub.com/sttattus/proto/gen/go/sttattus/languages/v1;languagesv1b\x06proto3"
 
 var (
 	file_sttattus_languages_v1_immersion_proto_rawDescOnce sync.Once
@@ -4263,148 +4911,170 @@ func file_sttattus_languages_v1_immersion_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_languages_v1_immersion_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
-var file_sttattus_languages_v1_immersion_proto_msgTypes = make([]protoimpl.MessageInfo, 51)
+var file_sttattus_languages_v1_immersion_proto_msgTypes = make([]protoimpl.MessageInfo, 60)
 var file_sttattus_languages_v1_immersion_proto_goTypes = []any{
-	(ImmersionKind)(0),                            // 0: sttattus.languages.v1.ImmersionKind
-	(ImmersionImportFormat)(0),                    // 1: sttattus.languages.v1.ImmersionImportFormat
-	(ImmersionItemState)(0),                       // 2: sttattus.languages.v1.ImmersionItemState
-	(ImmersionMode)(0),                            // 3: sttattus.languages.v1.ImmersionMode
-	(*ImmersionRights)(nil),                       // 4: sttattus.languages.v1.ImmersionRights
-	(*ImmersionDifficulty)(nil),                   // 5: sttattus.languages.v1.ImmersionDifficulty
-	(*ImmersionProgress)(nil),                     // 6: sttattus.languages.v1.ImmersionProgress
-	(*ImmersionItem)(nil),                         // 7: sttattus.languages.v1.ImmersionItem
-	(*ImmersionConceptMatch)(nil),                 // 8: sttattus.languages.v1.ImmersionConceptMatch
-	(*ImmersionSyntaxToken)(nil),                  // 9: sttattus.languages.v1.ImmersionSyntaxToken
-	(*ImmersionSegment)(nil),                      // 10: sttattus.languages.v1.ImmersionSegment
-	(*ImmersionQuestion)(nil),                     // 11: sttattus.languages.v1.ImmersionQuestion
-	(*ImmersionCapture)(nil),                      // 12: sttattus.languages.v1.ImmersionCapture
-	(*ImmersionReport)(nil),                       // 13: sttattus.languages.v1.ImmersionReport
-	(*ListImmersionLibraryRequest)(nil),           // 14: sttattus.languages.v1.ListImmersionLibraryRequest
-	(*ListImmersionLibraryResponse)(nil),          // 15: sttattus.languages.v1.ListImmersionLibraryResponse
-	(*GetImmersionItemRequest)(nil),               // 16: sttattus.languages.v1.GetImmersionItemRequest
-	(*GetImmersionItemResponse)(nil),              // 17: sttattus.languages.v1.GetImmersionItemResponse
-	(*ImportImmersionRequest)(nil),                // 18: sttattus.languages.v1.ImportImmersionRequest
-	(*ImportImmersionResponse)(nil),               // 19: sttattus.languages.v1.ImportImmersionResponse
-	(*RetryImmersionImportRequest)(nil),           // 20: sttattus.languages.v1.RetryImmersionImportRequest
-	(*RetryImmersionImportResponse)(nil),          // 21: sttattus.languages.v1.RetryImmersionImportResponse
-	(*CancelImmersionImportRequest)(nil),          // 22: sttattus.languages.v1.CancelImmersionImportRequest
-	(*CancelImmersionImportResponse)(nil),         // 23: sttattus.languages.v1.CancelImmersionImportResponse
-	(*UpdateImmersionProgressRequest)(nil),        // 24: sttattus.languages.v1.UpdateImmersionProgressRequest
-	(*UpdateImmersionProgressResponse)(nil),       // 25: sttattus.languages.v1.UpdateImmersionProgressResponse
-	(*CaptureImmersionConceptRequest)(nil),        // 26: sttattus.languages.v1.CaptureImmersionConceptRequest
-	(*CaptureImmersionConceptResponse)(nil),       // 27: sttattus.languages.v1.CaptureImmersionConceptResponse
-	(*ListImmersionCapturesRequest)(nil),          // 28: sttattus.languages.v1.ListImmersionCapturesRequest
-	(*ListImmersionCapturesResponse)(nil),         // 29: sttattus.languages.v1.ListImmersionCapturesResponse
-	(*RemoveImmersionCaptureRequest)(nil),         // 30: sttattus.languages.v1.RemoveImmersionCaptureRequest
-	(*RemoveImmersionCaptureResponse)(nil),        // 31: sttattus.languages.v1.RemoveImmersionCaptureResponse
-	(*AnswerImmersionQuestionRequest)(nil),        // 32: sttattus.languages.v1.AnswerImmersionQuestionRequest
-	(*AnswerImmersionQuestionResponse)(nil),       // 33: sttattus.languages.v1.AnswerImmersionQuestionResponse
-	(*ReportImmersionCaptionRequest)(nil),         // 34: sttattus.languages.v1.ReportImmersionCaptionRequest
-	(*ReportImmersionCaptionResponse)(nil),        // 35: sttattus.languages.v1.ReportImmersionCaptionResponse
-	(*ListImmersionReportsRequest)(nil),           // 36: sttattus.languages.v1.ListImmersionReportsRequest
-	(*ListImmersionReportsResponse)(nil),          // 37: sttattus.languages.v1.ListImmersionReportsResponse
-	(*WithdrawImmersionReportRequest)(nil),        // 38: sttattus.languages.v1.WithdrawImmersionReportRequest
-	(*WithdrawImmersionReportResponse)(nil),       // 39: sttattus.languages.v1.WithdrawImmersionReportResponse
-	(*TrashImmersionItemRequest)(nil),             // 40: sttattus.languages.v1.TrashImmersionItemRequest
-	(*TrashImmersionItemResponse)(nil),            // 41: sttattus.languages.v1.TrashImmersionItemResponse
-	(*RestoreImmersionItemRequest)(nil),           // 42: sttattus.languages.v1.RestoreImmersionItemRequest
-	(*RestoreImmersionItemResponse)(nil),          // 43: sttattus.languages.v1.RestoreImmersionItemResponse
-	(*EraseImmersionItemRequest)(nil),             // 44: sttattus.languages.v1.EraseImmersionItemRequest
-	(*EraseImmersionItemResponse)(nil),            // 45: sttattus.languages.v1.EraseImmersionItemResponse
-	(*ExportImmersionRequest)(nil),                // 46: sttattus.languages.v1.ExportImmersionRequest
-	(*ExportImmersionResponse)(nil),               // 47: sttattus.languages.v1.ExportImmersionResponse
-	(*GetImmersionOfflinePackRequest)(nil),        // 48: sttattus.languages.v1.GetImmersionOfflinePackRequest
-	(*GetImmersionOfflinePackResponse)(nil),       // 49: sttattus.languages.v1.GetImmersionOfflinePackResponse
-	(*ValidateImmersionOfflinePacksRequest)(nil),  // 50: sttattus.languages.v1.ValidateImmersionOfflinePacksRequest
-	(*ImmersionLeaseStatus)(nil),                  // 51: sttattus.languages.v1.ImmersionLeaseStatus
-	(*ValidateImmersionOfflinePacksResponse)(nil), // 52: sttattus.languages.v1.ValidateImmersionOfflinePacksResponse
-	(*SaveImmersionRecordingRequest)(nil),         // 53: sttattus.languages.v1.SaveImmersionRecordingRequest
-	(*SaveImmersionRecordingResponse)(nil),        // 54: sttattus.languages.v1.SaveImmersionRecordingResponse
-	(*timestamppb.Timestamp)(nil),                 // 55: google.protobuf.Timestamp
+	(ImmersionKind)(0),                              // 0: sttattus.languages.v1.ImmersionKind
+	(ImmersionImportFormat)(0),                      // 1: sttattus.languages.v1.ImmersionImportFormat
+	(ImmersionItemState)(0),                         // 2: sttattus.languages.v1.ImmersionItemState
+	(ImmersionMode)(0),                              // 3: sttattus.languages.v1.ImmersionMode
+	(*ImmersionRights)(nil),                         // 4: sttattus.languages.v1.ImmersionRights
+	(*ImmersionDifficulty)(nil),                     // 5: sttattus.languages.v1.ImmersionDifficulty
+	(*ImmersionProgress)(nil),                       // 6: sttattus.languages.v1.ImmersionProgress
+	(*ImmersionItem)(nil),                           // 7: sttattus.languages.v1.ImmersionItem
+	(*ImmersionConceptMatch)(nil),                   // 8: sttattus.languages.v1.ImmersionConceptMatch
+	(*ImmersionSyntaxToken)(nil),                    // 9: sttattus.languages.v1.ImmersionSyntaxToken
+	(*ImmersionSegment)(nil),                        // 10: sttattus.languages.v1.ImmersionSegment
+	(*ImmersionQuestion)(nil),                       // 11: sttattus.languages.v1.ImmersionQuestion
+	(*ImmersionCapture)(nil),                        // 12: sttattus.languages.v1.ImmersionCapture
+	(*ImmersionReport)(nil),                         // 13: sttattus.languages.v1.ImmersionReport
+	(*ListImmersionLibraryRequest)(nil),             // 14: sttattus.languages.v1.ListImmersionLibraryRequest
+	(*ListImmersionLibraryResponse)(nil),            // 15: sttattus.languages.v1.ListImmersionLibraryResponse
+	(*GetImmersionItemRequest)(nil),                 // 16: sttattus.languages.v1.GetImmersionItemRequest
+	(*GetImmersionItemResponse)(nil),                // 17: sttattus.languages.v1.GetImmersionItemResponse
+	(*ImportImmersionRequest)(nil),                  // 18: sttattus.languages.v1.ImportImmersionRequest
+	(*ImportImmersionResponse)(nil),                 // 19: sttattus.languages.v1.ImportImmersionResponse
+	(*RetryImmersionImportRequest)(nil),             // 20: sttattus.languages.v1.RetryImmersionImportRequest
+	(*RetryImmersionImportResponse)(nil),            // 21: sttattus.languages.v1.RetryImmersionImportResponse
+	(*CancelImmersionImportRequest)(nil),            // 22: sttattus.languages.v1.CancelImmersionImportRequest
+	(*CancelImmersionImportResponse)(nil),           // 23: sttattus.languages.v1.CancelImmersionImportResponse
+	(*UpdateImmersionProgressRequest)(nil),          // 24: sttattus.languages.v1.UpdateImmersionProgressRequest
+	(*UpdateImmersionProgressResponse)(nil),         // 25: sttattus.languages.v1.UpdateImmersionProgressResponse
+	(*CaptureImmersionConceptRequest)(nil),          // 26: sttattus.languages.v1.CaptureImmersionConceptRequest
+	(*CaptureImmersionConceptResponse)(nil),         // 27: sttattus.languages.v1.CaptureImmersionConceptResponse
+	(*ListImmersionCapturesRequest)(nil),            // 28: sttattus.languages.v1.ListImmersionCapturesRequest
+	(*ListImmersionCapturesResponse)(nil),           // 29: sttattus.languages.v1.ListImmersionCapturesResponse
+	(*RemoveImmersionCaptureRequest)(nil),           // 30: sttattus.languages.v1.RemoveImmersionCaptureRequest
+	(*RemoveImmersionCaptureResponse)(nil),          // 31: sttattus.languages.v1.RemoveImmersionCaptureResponse
+	(*AnswerImmersionQuestionRequest)(nil),          // 32: sttattus.languages.v1.AnswerImmersionQuestionRequest
+	(*AnswerImmersionQuestionResponse)(nil),         // 33: sttattus.languages.v1.AnswerImmersionQuestionResponse
+	(*ReportImmersionCaptionRequest)(nil),           // 34: sttattus.languages.v1.ReportImmersionCaptionRequest
+	(*ReportImmersionCaptionResponse)(nil),          // 35: sttattus.languages.v1.ReportImmersionCaptionResponse
+	(*ListImmersionReportsRequest)(nil),             // 36: sttattus.languages.v1.ListImmersionReportsRequest
+	(*ListImmersionReportsResponse)(nil),            // 37: sttattus.languages.v1.ListImmersionReportsResponse
+	(*WithdrawImmersionReportRequest)(nil),          // 38: sttattus.languages.v1.WithdrawImmersionReportRequest
+	(*WithdrawImmersionReportResponse)(nil),         // 39: sttattus.languages.v1.WithdrawImmersionReportResponse
+	(*TrashImmersionItemRequest)(nil),               // 40: sttattus.languages.v1.TrashImmersionItemRequest
+	(*TrashImmersionItemResponse)(nil),              // 41: sttattus.languages.v1.TrashImmersionItemResponse
+	(*RestoreImmersionItemRequest)(nil),             // 42: sttattus.languages.v1.RestoreImmersionItemRequest
+	(*RestoreImmersionItemResponse)(nil),            // 43: sttattus.languages.v1.RestoreImmersionItemResponse
+	(*EraseImmersionItemRequest)(nil),               // 44: sttattus.languages.v1.EraseImmersionItemRequest
+	(*EraseImmersionItemResponse)(nil),              // 45: sttattus.languages.v1.EraseImmersionItemResponse
+	(*ExportImmersionRequest)(nil),                  // 46: sttattus.languages.v1.ExportImmersionRequest
+	(*ExportImmersionResponse)(nil),                 // 47: sttattus.languages.v1.ExportImmersionResponse
+	(*GetImmersionOfflinePackRequest)(nil),          // 48: sttattus.languages.v1.GetImmersionOfflinePackRequest
+	(*GetImmersionOfflinePackResponse)(nil),         // 49: sttattus.languages.v1.GetImmersionOfflinePackResponse
+	(*ValidateImmersionOfflinePacksRequest)(nil),    // 50: sttattus.languages.v1.ValidateImmersionOfflinePacksRequest
+	(*ImmersionLeaseStatus)(nil),                    // 51: sttattus.languages.v1.ImmersionLeaseStatus
+	(*ValidateImmersionOfflinePacksResponse)(nil),   // 52: sttattus.languages.v1.ValidateImmersionOfflinePacksResponse
+	(*SaveImmersionRecordingRequest)(nil),           // 53: sttattus.languages.v1.SaveImmersionRecordingRequest
+	(*ImmersionRecording)(nil),                      // 54: sttattus.languages.v1.ImmersionRecording
+	(*RequestImmersionRecordingUploadRequest)(nil),  // 55: sttattus.languages.v1.RequestImmersionRecordingUploadRequest
+	(*RequestImmersionRecordingUploadResponse)(nil), // 56: sttattus.languages.v1.RequestImmersionRecordingUploadResponse
+	(*RemoveImmersionRecordingRequest)(nil),         // 57: sttattus.languages.v1.RemoveImmersionRecordingRequest
+	(*RemoveImmersionRecordingResponse)(nil),        // 58: sttattus.languages.v1.RemoveImmersionRecordingResponse
+	(*RevisePersonalImmersionRequest)(nil),          // 59: sttattus.languages.v1.RevisePersonalImmersionRequest
+	(*RevisePersonalImmersionResponse)(nil),         // 60: sttattus.languages.v1.RevisePersonalImmersionResponse
+	(*GenerateImmersionAidsRequest)(nil),            // 61: sttattus.languages.v1.GenerateImmersionAidsRequest
+	(*GenerateImmersionAidsResponse)(nil),           // 62: sttattus.languages.v1.GenerateImmersionAidsResponse
+	(*SaveImmersionRecordingResponse)(nil),          // 63: sttattus.languages.v1.SaveImmersionRecordingResponse
+	(*timestamppb.Timestamp)(nil),                   // 64: google.protobuf.Timestamp
 }
 var file_sttattus_languages_v1_immersion_proto_depIdxs = []int32{
-	55, // 0: sttattus.languages.v1.ImmersionRights.starts_at:type_name -> google.protobuf.Timestamp
-	55, // 1: sttattus.languages.v1.ImmersionRights.ends_at:type_name -> google.protobuf.Timestamp
+	64, // 0: sttattus.languages.v1.ImmersionRights.starts_at:type_name -> google.protobuf.Timestamp
+	64, // 1: sttattus.languages.v1.ImmersionRights.ends_at:type_name -> google.protobuf.Timestamp
 	3,  // 2: sttattus.languages.v1.ImmersionProgress.mode:type_name -> sttattus.languages.v1.ImmersionMode
-	55, // 3: sttattus.languages.v1.ImmersionProgress.updated_at:type_name -> google.protobuf.Timestamp
+	64, // 3: sttattus.languages.v1.ImmersionProgress.updated_at:type_name -> google.protobuf.Timestamp
 	0,  // 4: sttattus.languages.v1.ImmersionItem.kind:type_name -> sttattus.languages.v1.ImmersionKind
 	2,  // 5: sttattus.languages.v1.ImmersionItem.state:type_name -> sttattus.languages.v1.ImmersionItemState
 	4,  // 6: sttattus.languages.v1.ImmersionItem.rights:type_name -> sttattus.languages.v1.ImmersionRights
 	5,  // 7: sttattus.languages.v1.ImmersionItem.difficulty:type_name -> sttattus.languages.v1.ImmersionDifficulty
 	6,  // 8: sttattus.languages.v1.ImmersionItem.progress:type_name -> sttattus.languages.v1.ImmersionProgress
-	55, // 9: sttattus.languages.v1.ImmersionItem.created_at:type_name -> google.protobuf.Timestamp
+	64, // 9: sttattus.languages.v1.ImmersionItem.created_at:type_name -> google.protobuf.Timestamp
 	8,  // 10: sttattus.languages.v1.ImmersionSegment.concepts:type_name -> sttattus.languages.v1.ImmersionConceptMatch
 	9,  // 11: sttattus.languages.v1.ImmersionSegment.syntax:type_name -> sttattus.languages.v1.ImmersionSyntaxToken
-	55, // 12: sttattus.languages.v1.ImmersionCapture.created_at:type_name -> google.protobuf.Timestamp
-	55, // 13: sttattus.languages.v1.ImmersionReport.created_at:type_name -> google.protobuf.Timestamp
+	64, // 12: sttattus.languages.v1.ImmersionCapture.created_at:type_name -> google.protobuf.Timestamp
+	64, // 13: sttattus.languages.v1.ImmersionReport.created_at:type_name -> google.protobuf.Timestamp
 	0,  // 14: sttattus.languages.v1.ListImmersionLibraryRequest.kind:type_name -> sttattus.languages.v1.ImmersionKind
 	7,  // 15: sttattus.languages.v1.ListImmersionLibraryResponse.items:type_name -> sttattus.languages.v1.ImmersionItem
 	0,  // 16: sttattus.languages.v1.ListImmersionLibraryResponse.available_kinds:type_name -> sttattus.languages.v1.ImmersionKind
 	7,  // 17: sttattus.languages.v1.GetImmersionItemResponse.item:type_name -> sttattus.languages.v1.ImmersionItem
 	10, // 18: sttattus.languages.v1.GetImmersionItemResponse.segments:type_name -> sttattus.languages.v1.ImmersionSegment
 	11, // 19: sttattus.languages.v1.GetImmersionItemResponse.questions:type_name -> sttattus.languages.v1.ImmersionQuestion
-	55, // 20: sttattus.languages.v1.GetImmersionItemResponse.media_expires_at:type_name -> google.protobuf.Timestamp
-	1,  // 21: sttattus.languages.v1.ImportImmersionRequest.format:type_name -> sttattus.languages.v1.ImmersionImportFormat
-	7,  // 22: sttattus.languages.v1.ImportImmersionResponse.item:type_name -> sttattus.languages.v1.ImmersionItem
-	7,  // 23: sttattus.languages.v1.RetryImmersionImportResponse.item:type_name -> sttattus.languages.v1.ImmersionItem
-	7,  // 24: sttattus.languages.v1.CancelImmersionImportResponse.item:type_name -> sttattus.languages.v1.ImmersionItem
-	3,  // 25: sttattus.languages.v1.UpdateImmersionProgressRequest.mode:type_name -> sttattus.languages.v1.ImmersionMode
-	6,  // 26: sttattus.languages.v1.UpdateImmersionProgressResponse.progress:type_name -> sttattus.languages.v1.ImmersionProgress
-	12, // 27: sttattus.languages.v1.CaptureImmersionConceptResponse.capture:type_name -> sttattus.languages.v1.ImmersionCapture
-	12, // 28: sttattus.languages.v1.ListImmersionCapturesResponse.captures:type_name -> sttattus.languages.v1.ImmersionCapture
-	13, // 29: sttattus.languages.v1.ReportImmersionCaptionResponse.report:type_name -> sttattus.languages.v1.ImmersionReport
-	13, // 30: sttattus.languages.v1.ListImmersionReportsResponse.reports:type_name -> sttattus.languages.v1.ImmersionReport
-	13, // 31: sttattus.languages.v1.WithdrawImmersionReportResponse.report:type_name -> sttattus.languages.v1.ImmersionReport
-	7,  // 32: sttattus.languages.v1.TrashImmersionItemResponse.item:type_name -> sttattus.languages.v1.ImmersionItem
-	7,  // 33: sttattus.languages.v1.RestoreImmersionItemResponse.item:type_name -> sttattus.languages.v1.ImmersionItem
-	55, // 34: sttattus.languages.v1.GetImmersionOfflinePackResponse.expires_at:type_name -> google.protobuf.Timestamp
-	51, // 35: sttattus.languages.v1.ValidateImmersionOfflinePacksResponse.leases:type_name -> sttattus.languages.v1.ImmersionLeaseStatus
-	55, // 36: sttattus.languages.v1.SaveImmersionRecordingResponse.expires_at:type_name -> google.protobuf.Timestamp
-	14, // 37: sttattus.languages.v1.ImmersionService.ListImmersionLibrary:input_type -> sttattus.languages.v1.ListImmersionLibraryRequest
-	16, // 38: sttattus.languages.v1.ImmersionService.GetImmersionItem:input_type -> sttattus.languages.v1.GetImmersionItemRequest
-	18, // 39: sttattus.languages.v1.ImmersionService.ImportImmersion:input_type -> sttattus.languages.v1.ImportImmersionRequest
-	20, // 40: sttattus.languages.v1.ImmersionService.RetryImmersionImport:input_type -> sttattus.languages.v1.RetryImmersionImportRequest
-	22, // 41: sttattus.languages.v1.ImmersionService.CancelImmersionImport:input_type -> sttattus.languages.v1.CancelImmersionImportRequest
-	24, // 42: sttattus.languages.v1.ImmersionService.UpdateImmersionProgress:input_type -> sttattus.languages.v1.UpdateImmersionProgressRequest
-	26, // 43: sttattus.languages.v1.ImmersionService.CaptureImmersionConcept:input_type -> sttattus.languages.v1.CaptureImmersionConceptRequest
-	28, // 44: sttattus.languages.v1.ImmersionService.ListImmersionCaptures:input_type -> sttattus.languages.v1.ListImmersionCapturesRequest
-	30, // 45: sttattus.languages.v1.ImmersionService.RemoveImmersionCapture:input_type -> sttattus.languages.v1.RemoveImmersionCaptureRequest
-	32, // 46: sttattus.languages.v1.ImmersionService.AnswerImmersionQuestion:input_type -> sttattus.languages.v1.AnswerImmersionQuestionRequest
-	34, // 47: sttattus.languages.v1.ImmersionService.ReportImmersionCaption:input_type -> sttattus.languages.v1.ReportImmersionCaptionRequest
-	36, // 48: sttattus.languages.v1.ImmersionService.ListImmersionReports:input_type -> sttattus.languages.v1.ListImmersionReportsRequest
-	38, // 49: sttattus.languages.v1.ImmersionService.WithdrawImmersionReport:input_type -> sttattus.languages.v1.WithdrawImmersionReportRequest
-	40, // 50: sttattus.languages.v1.ImmersionService.TrashImmersionItem:input_type -> sttattus.languages.v1.TrashImmersionItemRequest
-	42, // 51: sttattus.languages.v1.ImmersionService.RestoreImmersionItem:input_type -> sttattus.languages.v1.RestoreImmersionItemRequest
-	44, // 52: sttattus.languages.v1.ImmersionService.EraseImmersionItem:input_type -> sttattus.languages.v1.EraseImmersionItemRequest
-	46, // 53: sttattus.languages.v1.ImmersionService.ExportImmersion:input_type -> sttattus.languages.v1.ExportImmersionRequest
-	48, // 54: sttattus.languages.v1.ImmersionService.GetImmersionOfflinePack:input_type -> sttattus.languages.v1.GetImmersionOfflinePackRequest
-	50, // 55: sttattus.languages.v1.ImmersionService.ValidateImmersionOfflinePacks:input_type -> sttattus.languages.v1.ValidateImmersionOfflinePacksRequest
-	53, // 56: sttattus.languages.v1.ImmersionService.SaveImmersionRecording:input_type -> sttattus.languages.v1.SaveImmersionRecordingRequest
-	15, // 57: sttattus.languages.v1.ImmersionService.ListImmersionLibrary:output_type -> sttattus.languages.v1.ListImmersionLibraryResponse
-	17, // 58: sttattus.languages.v1.ImmersionService.GetImmersionItem:output_type -> sttattus.languages.v1.GetImmersionItemResponse
-	19, // 59: sttattus.languages.v1.ImmersionService.ImportImmersion:output_type -> sttattus.languages.v1.ImportImmersionResponse
-	21, // 60: sttattus.languages.v1.ImmersionService.RetryImmersionImport:output_type -> sttattus.languages.v1.RetryImmersionImportResponse
-	23, // 61: sttattus.languages.v1.ImmersionService.CancelImmersionImport:output_type -> sttattus.languages.v1.CancelImmersionImportResponse
-	25, // 62: sttattus.languages.v1.ImmersionService.UpdateImmersionProgress:output_type -> sttattus.languages.v1.UpdateImmersionProgressResponse
-	27, // 63: sttattus.languages.v1.ImmersionService.CaptureImmersionConcept:output_type -> sttattus.languages.v1.CaptureImmersionConceptResponse
-	29, // 64: sttattus.languages.v1.ImmersionService.ListImmersionCaptures:output_type -> sttattus.languages.v1.ListImmersionCapturesResponse
-	31, // 65: sttattus.languages.v1.ImmersionService.RemoveImmersionCapture:output_type -> sttattus.languages.v1.RemoveImmersionCaptureResponse
-	33, // 66: sttattus.languages.v1.ImmersionService.AnswerImmersionQuestion:output_type -> sttattus.languages.v1.AnswerImmersionQuestionResponse
-	35, // 67: sttattus.languages.v1.ImmersionService.ReportImmersionCaption:output_type -> sttattus.languages.v1.ReportImmersionCaptionResponse
-	37, // 68: sttattus.languages.v1.ImmersionService.ListImmersionReports:output_type -> sttattus.languages.v1.ListImmersionReportsResponse
-	39, // 69: sttattus.languages.v1.ImmersionService.WithdrawImmersionReport:output_type -> sttattus.languages.v1.WithdrawImmersionReportResponse
-	41, // 70: sttattus.languages.v1.ImmersionService.TrashImmersionItem:output_type -> sttattus.languages.v1.TrashImmersionItemResponse
-	43, // 71: sttattus.languages.v1.ImmersionService.RestoreImmersionItem:output_type -> sttattus.languages.v1.RestoreImmersionItemResponse
-	45, // 72: sttattus.languages.v1.ImmersionService.EraseImmersionItem:output_type -> sttattus.languages.v1.EraseImmersionItemResponse
-	47, // 73: sttattus.languages.v1.ImmersionService.ExportImmersion:output_type -> sttattus.languages.v1.ExportImmersionResponse
-	49, // 74: sttattus.languages.v1.ImmersionService.GetImmersionOfflinePack:output_type -> sttattus.languages.v1.GetImmersionOfflinePackResponse
-	52, // 75: sttattus.languages.v1.ImmersionService.ValidateImmersionOfflinePacks:output_type -> sttattus.languages.v1.ValidateImmersionOfflinePacksResponse
-	54, // 76: sttattus.languages.v1.ImmersionService.SaveImmersionRecording:output_type -> sttattus.languages.v1.SaveImmersionRecordingResponse
-	57, // [57:77] is the sub-list for method output_type
-	37, // [37:57] is the sub-list for method input_type
-	37, // [37:37] is the sub-list for extension type_name
-	37, // [37:37] is the sub-list for extension extendee
-	0,  // [0:37] is the sub-list for field type_name
+	64, // 20: sttattus.languages.v1.GetImmersionItemResponse.media_expires_at:type_name -> google.protobuf.Timestamp
+	54, // 21: sttattus.languages.v1.GetImmersionItemResponse.recordings:type_name -> sttattus.languages.v1.ImmersionRecording
+	1,  // 22: sttattus.languages.v1.ImportImmersionRequest.format:type_name -> sttattus.languages.v1.ImmersionImportFormat
+	7,  // 23: sttattus.languages.v1.ImportImmersionResponse.item:type_name -> sttattus.languages.v1.ImmersionItem
+	7,  // 24: sttattus.languages.v1.RetryImmersionImportResponse.item:type_name -> sttattus.languages.v1.ImmersionItem
+	7,  // 25: sttattus.languages.v1.CancelImmersionImportResponse.item:type_name -> sttattus.languages.v1.ImmersionItem
+	3,  // 26: sttattus.languages.v1.UpdateImmersionProgressRequest.mode:type_name -> sttattus.languages.v1.ImmersionMode
+	6,  // 27: sttattus.languages.v1.UpdateImmersionProgressResponse.progress:type_name -> sttattus.languages.v1.ImmersionProgress
+	12, // 28: sttattus.languages.v1.CaptureImmersionConceptResponse.capture:type_name -> sttattus.languages.v1.ImmersionCapture
+	12, // 29: sttattus.languages.v1.ListImmersionCapturesResponse.captures:type_name -> sttattus.languages.v1.ImmersionCapture
+	13, // 30: sttattus.languages.v1.ReportImmersionCaptionResponse.report:type_name -> sttattus.languages.v1.ImmersionReport
+	13, // 31: sttattus.languages.v1.ListImmersionReportsResponse.reports:type_name -> sttattus.languages.v1.ImmersionReport
+	13, // 32: sttattus.languages.v1.WithdrawImmersionReportResponse.report:type_name -> sttattus.languages.v1.ImmersionReport
+	7,  // 33: sttattus.languages.v1.TrashImmersionItemResponse.item:type_name -> sttattus.languages.v1.ImmersionItem
+	7,  // 34: sttattus.languages.v1.RestoreImmersionItemResponse.item:type_name -> sttattus.languages.v1.ImmersionItem
+	64, // 35: sttattus.languages.v1.GetImmersionOfflinePackResponse.expires_at:type_name -> google.protobuf.Timestamp
+	51, // 36: sttattus.languages.v1.ValidateImmersionOfflinePacksResponse.leases:type_name -> sttattus.languages.v1.ImmersionLeaseStatus
+	64, // 37: sttattus.languages.v1.ImmersionRecording.expires_at:type_name -> google.protobuf.Timestamp
+	64, // 38: sttattus.languages.v1.RequestImmersionRecordingUploadResponse.expires_at:type_name -> google.protobuf.Timestamp
+	10, // 39: sttattus.languages.v1.RevisePersonalImmersionRequest.corrected_segments:type_name -> sttattus.languages.v1.ImmersionSegment
+	7,  // 40: sttattus.languages.v1.RevisePersonalImmersionResponse.item:type_name -> sttattus.languages.v1.ImmersionItem
+	64, // 41: sttattus.languages.v1.SaveImmersionRecordingResponse.expires_at:type_name -> google.protobuf.Timestamp
+	14, // 42: sttattus.languages.v1.ImmersionService.ListImmersionLibrary:input_type -> sttattus.languages.v1.ListImmersionLibraryRequest
+	16, // 43: sttattus.languages.v1.ImmersionService.GetImmersionItem:input_type -> sttattus.languages.v1.GetImmersionItemRequest
+	18, // 44: sttattus.languages.v1.ImmersionService.ImportImmersion:input_type -> sttattus.languages.v1.ImportImmersionRequest
+	20, // 45: sttattus.languages.v1.ImmersionService.RetryImmersionImport:input_type -> sttattus.languages.v1.RetryImmersionImportRequest
+	22, // 46: sttattus.languages.v1.ImmersionService.CancelImmersionImport:input_type -> sttattus.languages.v1.CancelImmersionImportRequest
+	24, // 47: sttattus.languages.v1.ImmersionService.UpdateImmersionProgress:input_type -> sttattus.languages.v1.UpdateImmersionProgressRequest
+	26, // 48: sttattus.languages.v1.ImmersionService.CaptureImmersionConcept:input_type -> sttattus.languages.v1.CaptureImmersionConceptRequest
+	28, // 49: sttattus.languages.v1.ImmersionService.ListImmersionCaptures:input_type -> sttattus.languages.v1.ListImmersionCapturesRequest
+	30, // 50: sttattus.languages.v1.ImmersionService.RemoveImmersionCapture:input_type -> sttattus.languages.v1.RemoveImmersionCaptureRequest
+	32, // 51: sttattus.languages.v1.ImmersionService.AnswerImmersionQuestion:input_type -> sttattus.languages.v1.AnswerImmersionQuestionRequest
+	34, // 52: sttattus.languages.v1.ImmersionService.ReportImmersionCaption:input_type -> sttattus.languages.v1.ReportImmersionCaptionRequest
+	36, // 53: sttattus.languages.v1.ImmersionService.ListImmersionReports:input_type -> sttattus.languages.v1.ListImmersionReportsRequest
+	38, // 54: sttattus.languages.v1.ImmersionService.WithdrawImmersionReport:input_type -> sttattus.languages.v1.WithdrawImmersionReportRequest
+	40, // 55: sttattus.languages.v1.ImmersionService.TrashImmersionItem:input_type -> sttattus.languages.v1.TrashImmersionItemRequest
+	42, // 56: sttattus.languages.v1.ImmersionService.RestoreImmersionItem:input_type -> sttattus.languages.v1.RestoreImmersionItemRequest
+	44, // 57: sttattus.languages.v1.ImmersionService.EraseImmersionItem:input_type -> sttattus.languages.v1.EraseImmersionItemRequest
+	46, // 58: sttattus.languages.v1.ImmersionService.ExportImmersion:input_type -> sttattus.languages.v1.ExportImmersionRequest
+	48, // 59: sttattus.languages.v1.ImmersionService.GetImmersionOfflinePack:input_type -> sttattus.languages.v1.GetImmersionOfflinePackRequest
+	50, // 60: sttattus.languages.v1.ImmersionService.ValidateImmersionOfflinePacks:input_type -> sttattus.languages.v1.ValidateImmersionOfflinePacksRequest
+	53, // 61: sttattus.languages.v1.ImmersionService.SaveImmersionRecording:input_type -> sttattus.languages.v1.SaveImmersionRecordingRequest
+	55, // 62: sttattus.languages.v1.ImmersionService.RequestImmersionRecordingUpload:input_type -> sttattus.languages.v1.RequestImmersionRecordingUploadRequest
+	57, // 63: sttattus.languages.v1.ImmersionService.RemoveImmersionRecording:input_type -> sttattus.languages.v1.RemoveImmersionRecordingRequest
+	59, // 64: sttattus.languages.v1.ImmersionService.RevisePersonalImmersion:input_type -> sttattus.languages.v1.RevisePersonalImmersionRequest
+	61, // 65: sttattus.languages.v1.ImmersionService.GenerateImmersionAids:input_type -> sttattus.languages.v1.GenerateImmersionAidsRequest
+	15, // 66: sttattus.languages.v1.ImmersionService.ListImmersionLibrary:output_type -> sttattus.languages.v1.ListImmersionLibraryResponse
+	17, // 67: sttattus.languages.v1.ImmersionService.GetImmersionItem:output_type -> sttattus.languages.v1.GetImmersionItemResponse
+	19, // 68: sttattus.languages.v1.ImmersionService.ImportImmersion:output_type -> sttattus.languages.v1.ImportImmersionResponse
+	21, // 69: sttattus.languages.v1.ImmersionService.RetryImmersionImport:output_type -> sttattus.languages.v1.RetryImmersionImportResponse
+	23, // 70: sttattus.languages.v1.ImmersionService.CancelImmersionImport:output_type -> sttattus.languages.v1.CancelImmersionImportResponse
+	25, // 71: sttattus.languages.v1.ImmersionService.UpdateImmersionProgress:output_type -> sttattus.languages.v1.UpdateImmersionProgressResponse
+	27, // 72: sttattus.languages.v1.ImmersionService.CaptureImmersionConcept:output_type -> sttattus.languages.v1.CaptureImmersionConceptResponse
+	29, // 73: sttattus.languages.v1.ImmersionService.ListImmersionCaptures:output_type -> sttattus.languages.v1.ListImmersionCapturesResponse
+	31, // 74: sttattus.languages.v1.ImmersionService.RemoveImmersionCapture:output_type -> sttattus.languages.v1.RemoveImmersionCaptureResponse
+	33, // 75: sttattus.languages.v1.ImmersionService.AnswerImmersionQuestion:output_type -> sttattus.languages.v1.AnswerImmersionQuestionResponse
+	35, // 76: sttattus.languages.v1.ImmersionService.ReportImmersionCaption:output_type -> sttattus.languages.v1.ReportImmersionCaptionResponse
+	37, // 77: sttattus.languages.v1.ImmersionService.ListImmersionReports:output_type -> sttattus.languages.v1.ListImmersionReportsResponse
+	39, // 78: sttattus.languages.v1.ImmersionService.WithdrawImmersionReport:output_type -> sttattus.languages.v1.WithdrawImmersionReportResponse
+	41, // 79: sttattus.languages.v1.ImmersionService.TrashImmersionItem:output_type -> sttattus.languages.v1.TrashImmersionItemResponse
+	43, // 80: sttattus.languages.v1.ImmersionService.RestoreImmersionItem:output_type -> sttattus.languages.v1.RestoreImmersionItemResponse
+	45, // 81: sttattus.languages.v1.ImmersionService.EraseImmersionItem:output_type -> sttattus.languages.v1.EraseImmersionItemResponse
+	47, // 82: sttattus.languages.v1.ImmersionService.ExportImmersion:output_type -> sttattus.languages.v1.ExportImmersionResponse
+	49, // 83: sttattus.languages.v1.ImmersionService.GetImmersionOfflinePack:output_type -> sttattus.languages.v1.GetImmersionOfflinePackResponse
+	52, // 84: sttattus.languages.v1.ImmersionService.ValidateImmersionOfflinePacks:output_type -> sttattus.languages.v1.ValidateImmersionOfflinePacksResponse
+	63, // 85: sttattus.languages.v1.ImmersionService.SaveImmersionRecording:output_type -> sttattus.languages.v1.SaveImmersionRecordingResponse
+	56, // 86: sttattus.languages.v1.ImmersionService.RequestImmersionRecordingUpload:output_type -> sttattus.languages.v1.RequestImmersionRecordingUploadResponse
+	58, // 87: sttattus.languages.v1.ImmersionService.RemoveImmersionRecording:output_type -> sttattus.languages.v1.RemoveImmersionRecordingResponse
+	60, // 88: sttattus.languages.v1.ImmersionService.RevisePersonalImmersion:output_type -> sttattus.languages.v1.RevisePersonalImmersionResponse
+	62, // 89: sttattus.languages.v1.ImmersionService.GenerateImmersionAids:output_type -> sttattus.languages.v1.GenerateImmersionAidsResponse
+	66, // [66:90] is the sub-list for method output_type
+	42, // [42:66] is the sub-list for method input_type
+	42, // [42:42] is the sub-list for extension type_name
+	42, // [42:42] is the sub-list for extension extendee
+	0,  // [0:42] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_languages_v1_immersion_proto_init() }
@@ -4418,7 +5088,7 @@ func file_sttattus_languages_v1_immersion_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_languages_v1_immersion_proto_rawDesc), len(file_sttattus_languages_v1_immersion_proto_rawDesc)),
 			NumEnums:      4,
-			NumMessages:   51,
+			NumMessages:   60,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

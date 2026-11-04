@@ -19,26 +19,30 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ImmersionService_ListImmersionLibrary_FullMethodName          = "/sttattus.languages.v1.ImmersionService/ListImmersionLibrary"
-	ImmersionService_GetImmersionItem_FullMethodName              = "/sttattus.languages.v1.ImmersionService/GetImmersionItem"
-	ImmersionService_ImportImmersion_FullMethodName               = "/sttattus.languages.v1.ImmersionService/ImportImmersion"
-	ImmersionService_RetryImmersionImport_FullMethodName          = "/sttattus.languages.v1.ImmersionService/RetryImmersionImport"
-	ImmersionService_CancelImmersionImport_FullMethodName         = "/sttattus.languages.v1.ImmersionService/CancelImmersionImport"
-	ImmersionService_UpdateImmersionProgress_FullMethodName       = "/sttattus.languages.v1.ImmersionService/UpdateImmersionProgress"
-	ImmersionService_CaptureImmersionConcept_FullMethodName       = "/sttattus.languages.v1.ImmersionService/CaptureImmersionConcept"
-	ImmersionService_ListImmersionCaptures_FullMethodName         = "/sttattus.languages.v1.ImmersionService/ListImmersionCaptures"
-	ImmersionService_RemoveImmersionCapture_FullMethodName        = "/sttattus.languages.v1.ImmersionService/RemoveImmersionCapture"
-	ImmersionService_AnswerImmersionQuestion_FullMethodName       = "/sttattus.languages.v1.ImmersionService/AnswerImmersionQuestion"
-	ImmersionService_ReportImmersionCaption_FullMethodName        = "/sttattus.languages.v1.ImmersionService/ReportImmersionCaption"
-	ImmersionService_ListImmersionReports_FullMethodName          = "/sttattus.languages.v1.ImmersionService/ListImmersionReports"
-	ImmersionService_WithdrawImmersionReport_FullMethodName       = "/sttattus.languages.v1.ImmersionService/WithdrawImmersionReport"
-	ImmersionService_TrashImmersionItem_FullMethodName            = "/sttattus.languages.v1.ImmersionService/TrashImmersionItem"
-	ImmersionService_RestoreImmersionItem_FullMethodName          = "/sttattus.languages.v1.ImmersionService/RestoreImmersionItem"
-	ImmersionService_EraseImmersionItem_FullMethodName            = "/sttattus.languages.v1.ImmersionService/EraseImmersionItem"
-	ImmersionService_ExportImmersion_FullMethodName               = "/sttattus.languages.v1.ImmersionService/ExportImmersion"
-	ImmersionService_GetImmersionOfflinePack_FullMethodName       = "/sttattus.languages.v1.ImmersionService/GetImmersionOfflinePack"
-	ImmersionService_ValidateImmersionOfflinePacks_FullMethodName = "/sttattus.languages.v1.ImmersionService/ValidateImmersionOfflinePacks"
-	ImmersionService_SaveImmersionRecording_FullMethodName        = "/sttattus.languages.v1.ImmersionService/SaveImmersionRecording"
+	ImmersionService_ListImmersionLibrary_FullMethodName            = "/sttattus.languages.v1.ImmersionService/ListImmersionLibrary"
+	ImmersionService_GetImmersionItem_FullMethodName                = "/sttattus.languages.v1.ImmersionService/GetImmersionItem"
+	ImmersionService_ImportImmersion_FullMethodName                 = "/sttattus.languages.v1.ImmersionService/ImportImmersion"
+	ImmersionService_RetryImmersionImport_FullMethodName            = "/sttattus.languages.v1.ImmersionService/RetryImmersionImport"
+	ImmersionService_CancelImmersionImport_FullMethodName           = "/sttattus.languages.v1.ImmersionService/CancelImmersionImport"
+	ImmersionService_UpdateImmersionProgress_FullMethodName         = "/sttattus.languages.v1.ImmersionService/UpdateImmersionProgress"
+	ImmersionService_CaptureImmersionConcept_FullMethodName         = "/sttattus.languages.v1.ImmersionService/CaptureImmersionConcept"
+	ImmersionService_ListImmersionCaptures_FullMethodName           = "/sttattus.languages.v1.ImmersionService/ListImmersionCaptures"
+	ImmersionService_RemoveImmersionCapture_FullMethodName          = "/sttattus.languages.v1.ImmersionService/RemoveImmersionCapture"
+	ImmersionService_AnswerImmersionQuestion_FullMethodName         = "/sttattus.languages.v1.ImmersionService/AnswerImmersionQuestion"
+	ImmersionService_ReportImmersionCaption_FullMethodName          = "/sttattus.languages.v1.ImmersionService/ReportImmersionCaption"
+	ImmersionService_ListImmersionReports_FullMethodName            = "/sttattus.languages.v1.ImmersionService/ListImmersionReports"
+	ImmersionService_WithdrawImmersionReport_FullMethodName         = "/sttattus.languages.v1.ImmersionService/WithdrawImmersionReport"
+	ImmersionService_TrashImmersionItem_FullMethodName              = "/sttattus.languages.v1.ImmersionService/TrashImmersionItem"
+	ImmersionService_RestoreImmersionItem_FullMethodName            = "/sttattus.languages.v1.ImmersionService/RestoreImmersionItem"
+	ImmersionService_EraseImmersionItem_FullMethodName              = "/sttattus.languages.v1.ImmersionService/EraseImmersionItem"
+	ImmersionService_ExportImmersion_FullMethodName                 = "/sttattus.languages.v1.ImmersionService/ExportImmersion"
+	ImmersionService_GetImmersionOfflinePack_FullMethodName         = "/sttattus.languages.v1.ImmersionService/GetImmersionOfflinePack"
+	ImmersionService_ValidateImmersionOfflinePacks_FullMethodName   = "/sttattus.languages.v1.ImmersionService/ValidateImmersionOfflinePacks"
+	ImmersionService_SaveImmersionRecording_FullMethodName          = "/sttattus.languages.v1.ImmersionService/SaveImmersionRecording"
+	ImmersionService_RequestImmersionRecordingUpload_FullMethodName = "/sttattus.languages.v1.ImmersionService/RequestImmersionRecordingUpload"
+	ImmersionService_RemoveImmersionRecording_FullMethodName        = "/sttattus.languages.v1.ImmersionService/RemoveImmersionRecording"
+	ImmersionService_RevisePersonalImmersion_FullMethodName         = "/sttattus.languages.v1.ImmersionService/RevisePersonalImmersion"
+	ImmersionService_GenerateImmersionAids_FullMethodName           = "/sttattus.languages.v1.ImmersionService/GenerateImmersionAids"
 )
 
 // ImmersionServiceClient is the client API for ImmersionService service.
@@ -65,6 +69,10 @@ type ImmersionServiceClient interface {
 	GetImmersionOfflinePack(ctx context.Context, in *GetImmersionOfflinePackRequest, opts ...grpc.CallOption) (*GetImmersionOfflinePackResponse, error)
 	ValidateImmersionOfflinePacks(ctx context.Context, in *ValidateImmersionOfflinePacksRequest, opts ...grpc.CallOption) (*ValidateImmersionOfflinePacksResponse, error)
 	SaveImmersionRecording(ctx context.Context, in *SaveImmersionRecordingRequest, opts ...grpc.CallOption) (*SaveImmersionRecordingResponse, error)
+	RequestImmersionRecordingUpload(ctx context.Context, in *RequestImmersionRecordingUploadRequest, opts ...grpc.CallOption) (*RequestImmersionRecordingUploadResponse, error)
+	RemoveImmersionRecording(ctx context.Context, in *RemoveImmersionRecordingRequest, opts ...grpc.CallOption) (*RemoveImmersionRecordingResponse, error)
+	RevisePersonalImmersion(ctx context.Context, in *RevisePersonalImmersionRequest, opts ...grpc.CallOption) (*RevisePersonalImmersionResponse, error)
+	GenerateImmersionAids(ctx context.Context, in *GenerateImmersionAidsRequest, opts ...grpc.CallOption) (*GenerateImmersionAidsResponse, error)
 }
 
 type immersionServiceClient struct {
@@ -275,6 +283,46 @@ func (c *immersionServiceClient) SaveImmersionRecording(ctx context.Context, in 
 	return out, nil
 }
 
+func (c *immersionServiceClient) RequestImmersionRecordingUpload(ctx context.Context, in *RequestImmersionRecordingUploadRequest, opts ...grpc.CallOption) (*RequestImmersionRecordingUploadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RequestImmersionRecordingUploadResponse)
+	err := c.cc.Invoke(ctx, ImmersionService_RequestImmersionRecordingUpload_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *immersionServiceClient) RemoveImmersionRecording(ctx context.Context, in *RemoveImmersionRecordingRequest, opts ...grpc.CallOption) (*RemoveImmersionRecordingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RemoveImmersionRecordingResponse)
+	err := c.cc.Invoke(ctx, ImmersionService_RemoveImmersionRecording_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *immersionServiceClient) RevisePersonalImmersion(ctx context.Context, in *RevisePersonalImmersionRequest, opts ...grpc.CallOption) (*RevisePersonalImmersionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevisePersonalImmersionResponse)
+	err := c.cc.Invoke(ctx, ImmersionService_RevisePersonalImmersion_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *immersionServiceClient) GenerateImmersionAids(ctx context.Context, in *GenerateImmersionAidsRequest, opts ...grpc.CallOption) (*GenerateImmersionAidsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateImmersionAidsResponse)
+	err := c.cc.Invoke(ctx, ImmersionService_GenerateImmersionAids_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ImmersionServiceServer is the server API for ImmersionService service.
 // All implementations must embed UnimplementedImmersionServiceServer
 // for forward compatibility.
@@ -299,6 +347,10 @@ type ImmersionServiceServer interface {
 	GetImmersionOfflinePack(context.Context, *GetImmersionOfflinePackRequest) (*GetImmersionOfflinePackResponse, error)
 	ValidateImmersionOfflinePacks(context.Context, *ValidateImmersionOfflinePacksRequest) (*ValidateImmersionOfflinePacksResponse, error)
 	SaveImmersionRecording(context.Context, *SaveImmersionRecordingRequest) (*SaveImmersionRecordingResponse, error)
+	RequestImmersionRecordingUpload(context.Context, *RequestImmersionRecordingUploadRequest) (*RequestImmersionRecordingUploadResponse, error)
+	RemoveImmersionRecording(context.Context, *RemoveImmersionRecordingRequest) (*RemoveImmersionRecordingResponse, error)
+	RevisePersonalImmersion(context.Context, *RevisePersonalImmersionRequest) (*RevisePersonalImmersionResponse, error)
+	GenerateImmersionAids(context.Context, *GenerateImmersionAidsRequest) (*GenerateImmersionAidsResponse, error)
 	mustEmbedUnimplementedImmersionServiceServer()
 }
 
@@ -368,6 +420,18 @@ func (UnimplementedImmersionServiceServer) ValidateImmersionOfflinePacks(context
 }
 func (UnimplementedImmersionServiceServer) SaveImmersionRecording(context.Context, *SaveImmersionRecordingRequest) (*SaveImmersionRecordingResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method SaveImmersionRecording not implemented")
+}
+func (UnimplementedImmersionServiceServer) RequestImmersionRecordingUpload(context.Context, *RequestImmersionRecordingUploadRequest) (*RequestImmersionRecordingUploadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RequestImmersionRecordingUpload not implemented")
+}
+func (UnimplementedImmersionServiceServer) RemoveImmersionRecording(context.Context, *RemoveImmersionRecordingRequest) (*RemoveImmersionRecordingResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RemoveImmersionRecording not implemented")
+}
+func (UnimplementedImmersionServiceServer) RevisePersonalImmersion(context.Context, *RevisePersonalImmersionRequest) (*RevisePersonalImmersionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevisePersonalImmersion not implemented")
+}
+func (UnimplementedImmersionServiceServer) GenerateImmersionAids(context.Context, *GenerateImmersionAidsRequest) (*GenerateImmersionAidsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateImmersionAids not implemented")
 }
 func (UnimplementedImmersionServiceServer) mustEmbedUnimplementedImmersionServiceServer() {}
 func (UnimplementedImmersionServiceServer) testEmbeddedByValue()                          {}
@@ -750,6 +814,78 @@ func _ImmersionService_SaveImmersionRecording_Handler(srv interface{}, ctx conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ImmersionService_RequestImmersionRecordingUpload_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RequestImmersionRecordingUploadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ImmersionServiceServer).RequestImmersionRecordingUpload(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ImmersionService_RequestImmersionRecordingUpload_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ImmersionServiceServer).RequestImmersionRecordingUpload(ctx, req.(*RequestImmersionRecordingUploadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ImmersionService_RemoveImmersionRecording_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RemoveImmersionRecordingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ImmersionServiceServer).RemoveImmersionRecording(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ImmersionService_RemoveImmersionRecording_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ImmersionServiceServer).RemoveImmersionRecording(ctx, req.(*RemoveImmersionRecordingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ImmersionService_RevisePersonalImmersion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevisePersonalImmersionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ImmersionServiceServer).RevisePersonalImmersion(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ImmersionService_RevisePersonalImmersion_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ImmersionServiceServer).RevisePersonalImmersion(ctx, req.(*RevisePersonalImmersionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ImmersionService_GenerateImmersionAids_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateImmersionAidsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ImmersionServiceServer).GenerateImmersionAids(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ImmersionService_GenerateImmersionAids_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ImmersionServiceServer).GenerateImmersionAids(ctx, req.(*GenerateImmersionAidsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ImmersionService_ServiceDesc is the grpc.ServiceDesc for ImmersionService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -836,6 +972,22 @@ var ImmersionService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SaveImmersionRecording",
 			Handler:    _ImmersionService_SaveImmersionRecording_Handler,
+		},
+		{
+			MethodName: "RequestImmersionRecordingUpload",
+			Handler:    _ImmersionService_RequestImmersionRecordingUpload_Handler,
+		},
+		{
+			MethodName: "RemoveImmersionRecording",
+			Handler:    _ImmersionService_RemoveImmersionRecording_Handler,
+		},
+		{
+			MethodName: "RevisePersonalImmersion",
+			Handler:    _ImmersionService_RevisePersonalImmersion_Handler,
+		},
+		{
+			MethodName: "GenerateImmersionAids",
+			Handler:    _ImmersionService_GenerateImmersionAids_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
