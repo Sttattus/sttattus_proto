@@ -1,0 +1,417 @@
+syntax = "proto3";
+
+package sttattus.languages.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/sttattus/proto/gen/go/sttattus/languages/v1;languagesv1";
+
+// Choice 6: public governed input and private member imports share a reader,
+// never publication authority. Staff operate grants, editions, extraction
+// health and correction decisions through authenticated Admin server actions.
+enum ImmersionKind {
+  IMMERSION_KIND_UNSPECIFIED = 0;
+  IMMERSION_KIND_READING = 1;
+  IMMERSION_KIND_DIALOGUE = 2;
+  IMMERSION_KIND_NEWS = 3;
+  IMMERSION_KIND_CULTURE = 4;
+  IMMERSION_KIND_PROFESSIONAL = 5;
+  IMMERSION_KIND_PODCAST = 6;
+  IMMERSION_KIND_INTERVIEW = 7;
+  IMMERSION_KIND_VIDEO = 8;
+}
+
+enum ImmersionImportFormat {
+  IMMERSION_IMPORT_FORMAT_UNSPECIFIED = 0;
+  IMMERSION_IMPORT_FORMAT_TEXT = 1;
+  IMMERSION_IMPORT_FORMAT_WEB = 2;
+  IMMERSION_IMPORT_FORMAT_PDF = 3;
+  IMMERSION_IMPORT_FORMAT_SUBTITLES = 4;
+  IMMERSION_IMPORT_FORMAT_AUDIO = 5;
+}
+
+enum ImmersionItemState {
+  IMMERSION_ITEM_STATE_UNSPECIFIED = 0;
+  IMMERSION_ITEM_STATE_QUEUED = 1;
+  IMMERSION_ITEM_STATE_EXTRACTING = 2;
+  IMMERSION_ITEM_STATE_READY = 3;
+  IMMERSION_ITEM_STATE_FAILED = 4;
+  IMMERSION_ITEM_STATE_CANCELLED = 5;
+  IMMERSION_ITEM_STATE_TRASHED = 6;
+  IMMERSION_ITEM_STATE_UNAVAILABLE = 7;
+}
+
+enum ImmersionMode {
+  IMMERSION_MODE_UNSPECIFIED = 0;
+  IMMERSION_MODE_EXTENSIVE = 1;
+  IMMERSION_MODE_INTENSIVE = 2;
+}
+
+message ImmersionRights {
+  string source = 1;
+  string license = 2;
+  string attribution = 3;
+  string creator = 4;
+  repeated string territories = 5; // ISO country codes; WORLD is explicit.
+  google.protobuf.Timestamp starts_at = 6;
+  google.protobuf.Timestamp ends_at = 7;
+  bool offline_allowed = 8;
+  int32 epoch = 9;
+  string provenance = 10; // original/permission/public-domain/member assertion
+}
+
+message ImmersionDifficulty {
+  int32 tokens = 1;
+  int32 matched_tokens = 2;
+  int32 known_tokens = 3;
+  int32 grammar_points = 4;
+  int32 known_grammar_points = 5;
+  bool enough_evidence = 6;
+  string method = 7;
+  string evidence_digest = 8;
+}
+
+message ImmersionProgress {
+  int32 edition = 1;
+  int32 segment = 2;
+  int32 offset_ms = 3;
+  ImmersionMode mode = 4;
+  bool finished = 5; // self-reported exposure, not verified mastery
+  int32 version = 6;
+  google.protobuf.Timestamp updated_at = 7;
+}
+
+message ImmersionItem {
+  string id = 1;
+  string title = 2;
+  string language = 3;
+  string cefr_level = 4;
+  ImmersionKind kind = 5;
+  bool personal = 6;
+  ImmersionItemState state = 7;
+  int32 edition = 8;
+  string description = 9;
+  string variety = 10;
+  ImmersionRights rights = 11;
+  ImmersionDifficulty difficulty = 12;
+  ImmersionProgress progress = 13;
+  int32 segment_count = 14;
+  int32 duration_ms = 15;
+  string failure_code = 16; // safe enumerated code, never a provider response
+  bool can_retry = 17;
+  string parser_version = 18;
+  string model_version = 19;
+  google.protobuf.Timestamp created_at = 20;
+  string source_unit_id = 21;
+  int32 source_revision = 22;
+  string media_kind = 23; // recording/video/generated-speech/text
+  int32 version = 24;
+}
+
+message ImmersionConceptMatch {
+  string concept_id = 1;
+  string lexeme_id = 2;
+  string concept_key = 3;
+  string text = 4;
+  string sense = 5;
+  string morphology = 6;
+  bool known = 7;
+}
+
+message ImmersionSyntaxToken {
+  string text = 1;
+  string role = 2;
+  string morphology = 3;
+  int32 head = 4; // zero-based dependency, -1 means root
+}
+
+message ImmersionSegment {
+  int32 index = 1;
+  string text = 2;
+  string translation = 3;
+  string literal_translation = 4;
+  string explanation = 5;
+  int32 start_ms = 6;
+  int32 end_ms = 7;
+  string timing_basis = 8; // captions/recorded/estimated/none; never invented alignment
+  repeated ImmersionConceptMatch concepts = 9;
+  repeated ImmersionSyntaxToken syntax = 10;
+  string annotation_basis = 11; // reviewed/AI proposal/unavailable
+}
+
+message ImmersionQuestion {
+  string id = 1;
+  string prompt = 2;
+  repeated string options = 3;
+  int32 segment = 4;
+}
+
+message ImmersionCapture {
+  string id = 1;
+  string item_id = 2;
+  int32 edition = 3;
+  int32 segment = 4;
+  string concept_id = 5;
+  string lexeme_id = 6;
+  string text = 7;
+  string context = 8;
+  string sense = 9;
+  bool in_review = 10;
+  google.protobuf.Timestamp created_at = 11;
+}
+
+message ImmersionReport {
+  string id = 1;
+  string item_id = 2;
+  int32 edition = 3;
+  int32 segment = 4;
+  string category = 5;
+  string status = 6;
+  string member_note = 7;
+  string decision_note = 8;
+  int32 replacement_edition = 9;
+  int32 version = 10;
+  google.protobuf.Timestamp created_at = 11;
+}
+
+message ListImmersionLibraryRequest {
+  string language = 1;
+  string cefr_level = 2; // optional; PRE_A1 is explicit, only available levels listed
+  ImmersionKind kind = 3;
+  string query = 4;
+  string scope = 5; // catalog/personal/trash, validated by the server
+  string cursor = 6;
+  int32 page_size = 7;
+}
+message ListImmersionLibraryResponse {
+  repeated ImmersionItem items = 1;
+  string next_cursor = 2;
+  repeated string available_levels = 3;
+  repeated ImmersionKind available_kinds = 4;
+}
+
+message GetImmersionItemRequest {
+  string item_id = 1;
+}
+message GetImmersionItemResponse {
+  ImmersionItem item = 1;
+  repeated ImmersionSegment segments = 2;
+  repeated ImmersionQuestion questions = 3;
+  string media_url = 4; // short-lived member-authorized URL; never an export locator
+  google.protobuf.Timestamp media_expires_at = 5;
+  string copy_language = 6;
+}
+
+message ImportImmersionRequest {
+  ImmersionImportFormat format = 1;
+  string title = 2;
+  string language = 3;
+  string cefr_hint = 4; // member estimate, not calibrated classification
+  string text = 5;
+  bytes content = 6;
+  string source_url = 7;
+  string filename = 8;
+  string mime_type = 9;
+  bool rights_confirmed = 10;
+  bool model_processing_consent = 11;
+  string client_event_id = 12;
+}
+message ImportImmersionResponse {
+  ImmersionItem item = 1;
+  bool replayed = 2;
+}
+
+message RetryImmersionImportRequest {
+  string item_id = 1;
+  int32 expected_version = 2;
+  string client_event_id = 3;
+}
+message RetryImmersionImportResponse {
+  ImmersionItem item = 1;
+}
+message CancelImmersionImportRequest {
+  string item_id = 1;
+  int32 expected_version = 2;
+  string client_event_id = 3;
+}
+message CancelImmersionImportResponse {
+  ImmersionItem item = 1;
+}
+
+message UpdateImmersionProgressRequest {
+  string item_id = 1;
+  int32 edition = 2;
+  int32 segment = 3;
+  int32 offset_ms = 4;
+  ImmersionMode mode = 5;
+  bool finished = 6;
+  int32 expected_version = 7;
+  string client_event_id = 8;
+}
+message UpdateImmersionProgressResponse {
+  ImmersionProgress progress = 1;
+}
+
+message CaptureImmersionConceptRequest {
+  string item_id = 1;
+  int32 edition = 2;
+  int32 segment = 3;
+  string lexeme_id = 4; // explicit member selection from source-bound matches
+  string client_event_id = 5;
+}
+message CaptureImmersionConceptResponse {
+  ImmersionCapture capture = 1;
+}
+message ListImmersionCapturesRequest {
+  string language = 1;
+  string cursor = 2;
+  int32 page_size = 3;
+}
+message ListImmersionCapturesResponse {
+  repeated ImmersionCapture captures = 1;
+  string next_cursor = 2;
+}
+message RemoveImmersionCaptureRequest {
+  string capture_id = 1;
+}
+message RemoveImmersionCaptureResponse {
+  bool removed = 1;
+}
+
+message AnswerImmersionQuestionRequest {
+  string item_id = 1;
+  int32 edition = 2;
+  string question_id = 3;
+  int32 selected_option = 4;
+  string client_event_id = 5;
+}
+message AnswerImmersionQuestionResponse {
+  bool correct = 1;
+  string explanation = 2;
+  string source_quote = 3;
+  bool replayed = 4;
+}
+
+message ReportImmersionCaptionRequest {
+  string item_id = 1;
+  int32 edition = 2;
+  int32 segment = 3;
+  string category = 4;
+  string note = 5;
+  string client_event_id = 6;
+}
+message ReportImmersionCaptionResponse {
+  ImmersionReport report = 1;
+}
+message ListImmersionReportsRequest {
+  string cursor = 1;
+  int32 page_size = 2;
+}
+message ListImmersionReportsResponse {
+  repeated ImmersionReport reports = 1;
+  string next_cursor = 2;
+}
+message WithdrawImmersionReportRequest {
+  string report_id = 1;
+  int32 expected_version = 2;
+}
+message WithdrawImmersionReportResponse {
+  ImmersionReport report = 1;
+}
+
+message TrashImmersionItemRequest {
+  string item_id = 1;
+  int32 expected_version = 2;
+  string client_event_id = 3;
+}
+message TrashImmersionItemResponse {
+  ImmersionItem item = 1;
+}
+message RestoreImmersionItemRequest {
+  string item_id = 1;
+  int32 expected_version = 2;
+  string client_event_id = 3;
+}
+message RestoreImmersionItemResponse {
+  ImmersionItem item = 1;
+}
+message EraseImmersionItemRequest {
+  string item_id = 1;
+  int32 expected_version = 2;
+  string client_event_id = 3;
+}
+message EraseImmersionItemResponse {
+  string receipt_id = 1;
+  string status = 2;
+}
+message ExportImmersionRequest {
+  string item_id = 1;
+}
+message ExportImmersionResponse {
+  string filename = 1;
+  bytes content = 2; // portable UTF-8 JSON without signed URLs/storage keys
+  string sha256 = 3;
+}
+
+message GetImmersionOfflinePackRequest {
+  string item_id = 1;
+}
+message GetImmersionOfflinePackResponse {
+  string lease_id = 1;
+  int32 edition = 2;
+  int32 rights_epoch = 3;
+  google.protobuf.Timestamp expires_at = 4;
+  bytes document = 5; // typed reader protobuf, encrypted before local persistence
+  string sha256 = 6;
+  string media_url = 7;
+  string media_sha256 = 8;
+  int64 media_bytes = 9;
+}
+message ValidateImmersionOfflinePacksRequest {
+  repeated string lease_ids = 1;
+}
+message ImmersionLeaseStatus {
+  string lease_id = 1;
+  bool valid = 2;
+  string reason = 3;
+}
+message ValidateImmersionOfflinePacksResponse {
+  repeated ImmersionLeaseStatus leases = 1;
+}
+
+message SaveImmersionRecordingRequest {
+  string item_id = 1;
+  int32 edition = 2;
+  int32 segment = 3;
+  string audio_url = 4; // existing MediaService upload; owned private recording only
+  bool keep_recording = 5;
+  string client_event_id = 6;
+}
+message SaveImmersionRecordingResponse {
+  string recording_id = 1;
+  string status = 2; // saved / erasure_scheduled, never a pronunciation judgement
+  google.protobuf.Timestamp expires_at = 3;
+}
+
+service ImmersionService {
+  rpc ListImmersionLibrary(ListImmersionLibraryRequest) returns (ListImmersionLibraryResponse);
+  rpc GetImmersionItem(GetImmersionItemRequest) returns (GetImmersionItemResponse);
+  rpc ImportImmersion(ImportImmersionRequest) returns (ImportImmersionResponse);
+  rpc RetryImmersionImport(RetryImmersionImportRequest) returns (RetryImmersionImportResponse);
+  rpc CancelImmersionImport(CancelImmersionImportRequest) returns (CancelImmersionImportResponse);
+  rpc UpdateImmersionProgress(UpdateImmersionProgressRequest) returns (UpdateImmersionProgressResponse);
+  rpc CaptureImmersionConcept(CaptureImmersionConceptRequest) returns (CaptureImmersionConceptResponse);
+  rpc ListImmersionCaptures(ListImmersionCapturesRequest) returns (ListImmersionCapturesResponse);
+  rpc RemoveImmersionCapture(RemoveImmersionCaptureRequest) returns (RemoveImmersionCaptureResponse);
+  rpc AnswerImmersionQuestion(AnswerImmersionQuestionRequest) returns (AnswerImmersionQuestionResponse);
+  rpc ReportImmersionCaption(ReportImmersionCaptionRequest) returns (ReportImmersionCaptionResponse);
+  rpc ListImmersionReports(ListImmersionReportsRequest) returns (ListImmersionReportsResponse);
+  rpc WithdrawImmersionReport(WithdrawImmersionReportRequest) returns (WithdrawImmersionReportResponse);
+  rpc TrashImmersionItem(TrashImmersionItemRequest) returns (TrashImmersionItemResponse);
+  rpc RestoreImmersionItem(RestoreImmersionItemRequest) returns (RestoreImmersionItemResponse);
+  rpc EraseImmersionItem(EraseImmersionItemRequest) returns (EraseImmersionItemResponse);
+  rpc ExportImmersion(ExportImmersionRequest) returns (ExportImmersionResponse);
+  rpc GetImmersionOfflinePack(GetImmersionOfflinePackRequest) returns (GetImmersionOfflinePackResponse);
+  rpc ValidateImmersionOfflinePacks(ValidateImmersionOfflinePacksRequest) returns (ValidateImmersionOfflinePacksResponse);
+  rpc SaveImmersionRecording(SaveImmersionRecordingRequest) returns (SaveImmersionRecordingResponse);
+}
