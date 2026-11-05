@@ -31,6 +31,14 @@
       "types": "./sttattus/languages/v1/languages_connect.ts",
       "default": "./sttattus/languages/v1/languages_connect.ts"
     },
+    "./immersion": {
+      "types": "./sttattus/languages/v1/immersion_connect.ts",
+      "default": "./sttattus/languages/v1/immersion_connect.ts"
+    },
+    "./immersion-pb": {
+      "types": "./sttattus/languages/v1/immersion_pb.ts",
+      "default": "./sttattus/languages/v1/immersion_pb.ts"
+    },
     "./travel": {
       "types": "./sttattus/travel/v1/travel_connect.ts",
       "default": "./sttattus/travel/v1/travel_connect.ts"
