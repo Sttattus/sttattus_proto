@@ -41,6 +41,9 @@ const (
 	ImmersionService_SaveImmersionRecording_FullMethodName          = "/sttattus.languages.v1.ImmersionService/SaveImmersionRecording"
 	ImmersionService_RequestImmersionRecordingUpload_FullMethodName = "/sttattus.languages.v1.ImmersionService/RequestImmersionRecordingUpload"
 	ImmersionService_RemoveImmersionRecording_FullMethodName        = "/sttattus.languages.v1.ImmersionService/RemoveImmersionRecording"
+	ImmersionService_ListImmersionPrivacy_FullMethodName            = "/sttattus.languages.v1.ImmersionService/ListImmersionPrivacy"
+	ImmersionService_RetryImmersionErasure_FullMethodName           = "/sttattus.languages.v1.ImmersionService/RetryImmersionErasure"
+	ImmersionService_ExportImmersionRecording_FullMethodName        = "/sttattus.languages.v1.ImmersionService/ExportImmersionRecording"
 	ImmersionService_RevisePersonalImmersion_FullMethodName         = "/sttattus.languages.v1.ImmersionService/RevisePersonalImmersion"
 	ImmersionService_GenerateImmersionAids_FullMethodName           = "/sttattus.languages.v1.ImmersionService/GenerateImmersionAids"
 	ImmersionService_ClearImmersionAids_FullMethodName              = "/sttattus.languages.v1.ImmersionService/ClearImmersionAids"
@@ -72,6 +75,9 @@ type ImmersionServiceClient interface {
 	SaveImmersionRecording(ctx context.Context, in *SaveImmersionRecordingRequest, opts ...grpc.CallOption) (*SaveImmersionRecordingResponse, error)
 	RequestImmersionRecordingUpload(ctx context.Context, in *RequestImmersionRecordingUploadRequest, opts ...grpc.CallOption) (*RequestImmersionRecordingUploadResponse, error)
 	RemoveImmersionRecording(ctx context.Context, in *RemoveImmersionRecordingRequest, opts ...grpc.CallOption) (*RemoveImmersionRecordingResponse, error)
+	ListImmersionPrivacy(ctx context.Context, in *ListImmersionPrivacyRequest, opts ...grpc.CallOption) (*ListImmersionPrivacyResponse, error)
+	RetryImmersionErasure(ctx context.Context, in *RetryImmersionErasureRequest, opts ...grpc.CallOption) (*RetryImmersionErasureResponse, error)
+	ExportImmersionRecording(ctx context.Context, in *ExportImmersionRecordingRequest, opts ...grpc.CallOption) (*ExportImmersionRecordingResponse, error)
 	RevisePersonalImmersion(ctx context.Context, in *RevisePersonalImmersionRequest, opts ...grpc.CallOption) (*RevisePersonalImmersionResponse, error)
 	GenerateImmersionAids(ctx context.Context, in *GenerateImmersionAidsRequest, opts ...grpc.CallOption) (*GenerateImmersionAidsResponse, error)
 	ClearImmersionAids(ctx context.Context, in *ClearImmersionAidsRequest, opts ...grpc.CallOption) (*ClearImmersionAidsResponse, error)
@@ -305,6 +311,36 @@ func (c *immersionServiceClient) RemoveImmersionRecording(ctx context.Context, i
 	return out, nil
 }
 
+func (c *immersionServiceClient) ListImmersionPrivacy(ctx context.Context, in *ListImmersionPrivacyRequest, opts ...grpc.CallOption) (*ListImmersionPrivacyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListImmersionPrivacyResponse)
+	err := c.cc.Invoke(ctx, ImmersionService_ListImmersionPrivacy_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *immersionServiceClient) RetryImmersionErasure(ctx context.Context, in *RetryImmersionErasureRequest, opts ...grpc.CallOption) (*RetryImmersionErasureResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RetryImmersionErasureResponse)
+	err := c.cc.Invoke(ctx, ImmersionService_RetryImmersionErasure_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *immersionServiceClient) ExportImmersionRecording(ctx context.Context, in *ExportImmersionRecordingRequest, opts ...grpc.CallOption) (*ExportImmersionRecordingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ExportImmersionRecordingResponse)
+	err := c.cc.Invoke(ctx, ImmersionService_ExportImmersionRecording_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *immersionServiceClient) RevisePersonalImmersion(ctx context.Context, in *RevisePersonalImmersionRequest, opts ...grpc.CallOption) (*RevisePersonalImmersionResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(RevisePersonalImmersionResponse)
@@ -361,6 +397,9 @@ type ImmersionServiceServer interface {
 	SaveImmersionRecording(context.Context, *SaveImmersionRecordingRequest) (*SaveImmersionRecordingResponse, error)
 	RequestImmersionRecordingUpload(context.Context, *RequestImmersionRecordingUploadRequest) (*RequestImmersionRecordingUploadResponse, error)
 	RemoveImmersionRecording(context.Context, *RemoveImmersionRecordingRequest) (*RemoveImmersionRecordingResponse, error)
+	ListImmersionPrivacy(context.Context, *ListImmersionPrivacyRequest) (*ListImmersionPrivacyResponse, error)
+	RetryImmersionErasure(context.Context, *RetryImmersionErasureRequest) (*RetryImmersionErasureResponse, error)
+	ExportImmersionRecording(context.Context, *ExportImmersionRecordingRequest) (*ExportImmersionRecordingResponse, error)
 	RevisePersonalImmersion(context.Context, *RevisePersonalImmersionRequest) (*RevisePersonalImmersionResponse, error)
 	GenerateImmersionAids(context.Context, *GenerateImmersionAidsRequest) (*GenerateImmersionAidsResponse, error)
 	ClearImmersionAids(context.Context, *ClearImmersionAidsRequest) (*ClearImmersionAidsResponse, error)
@@ -439,6 +478,15 @@ func (UnimplementedImmersionServiceServer) RequestImmersionRecordingUpload(conte
 }
 func (UnimplementedImmersionServiceServer) RemoveImmersionRecording(context.Context, *RemoveImmersionRecordingRequest) (*RemoveImmersionRecordingResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method RemoveImmersionRecording not implemented")
+}
+func (UnimplementedImmersionServiceServer) ListImmersionPrivacy(context.Context, *ListImmersionPrivacyRequest) (*ListImmersionPrivacyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListImmersionPrivacy not implemented")
+}
+func (UnimplementedImmersionServiceServer) RetryImmersionErasure(context.Context, *RetryImmersionErasureRequest) (*RetryImmersionErasureResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RetryImmersionErasure not implemented")
+}
+func (UnimplementedImmersionServiceServer) ExportImmersionRecording(context.Context, *ExportImmersionRecordingRequest) (*ExportImmersionRecordingResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ExportImmersionRecording not implemented")
 }
 func (UnimplementedImmersionServiceServer) RevisePersonalImmersion(context.Context, *RevisePersonalImmersionRequest) (*RevisePersonalImmersionResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method RevisePersonalImmersion not implemented")
@@ -866,6 +914,60 @@ func _ImmersionService_RemoveImmersionRecording_Handler(srv interface{}, ctx con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ImmersionService_ListImmersionPrivacy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListImmersionPrivacyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ImmersionServiceServer).ListImmersionPrivacy(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ImmersionService_ListImmersionPrivacy_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ImmersionServiceServer).ListImmersionPrivacy(ctx, req.(*ListImmersionPrivacyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ImmersionService_RetryImmersionErasure_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RetryImmersionErasureRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ImmersionServiceServer).RetryImmersionErasure(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ImmersionService_RetryImmersionErasure_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ImmersionServiceServer).RetryImmersionErasure(ctx, req.(*RetryImmersionErasureRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ImmersionService_ExportImmersionRecording_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExportImmersionRecordingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ImmersionServiceServer).ExportImmersionRecording(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ImmersionService_ExportImmersionRecording_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ImmersionServiceServer).ExportImmersionRecording(ctx, req.(*ExportImmersionRecordingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _ImmersionService_RevisePersonalImmersion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(RevisePersonalImmersionRequest)
 	if err := dec(in); err != nil {
@@ -1014,6 +1116,18 @@ var ImmersionService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RemoveImmersionRecording",
 			Handler:    _ImmersionService_RemoveImmersionRecording_Handler,
+		},
+		{
+			MethodName: "ListImmersionPrivacy",
+			Handler:    _ImmersionService_ListImmersionPrivacy_Handler,
+		},
+		{
+			MethodName: "RetryImmersionErasure",
+			Handler:    _ImmersionService_RetryImmersionErasure_Handler,
+		},
+		{
+			MethodName: "ExportImmersionRecording",
+			Handler:    _ImmersionService_ExportImmersionRecording_Handler,
 		},
 		{
 			MethodName: "RevisePersonalImmersion",

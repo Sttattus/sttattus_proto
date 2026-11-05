@@ -1373,6 +1373,15 @@ const ImmersionRecording$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'expiresAt'
     },
+    {'1': 'item_id', '3': 7, '4': 1, '5': 9, '10': 'itemId'},
+    {
+      '1': 'created_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
   ],
 };
 
@@ -1381,7 +1390,234 @@ final $typed_data.Uint8List immersionRecordingDescriptor = $convert.base64Decode
     'ChJJbW1lcnNpb25SZWNvcmRpbmcSDgoCaWQYASABKAlSAmlkEhgKB2VkaXRpb24YAiABKAVSB2'
     'VkaXRpb24SGAoHc2VnbWVudBgDIAEoBVIHc2VnbWVudBIWCgZzdGF0dXMYBCABKAlSBnN0YXR1'
     'cxIbCglhdWRpb191cmwYBSABKAlSCGF1ZGlvVXJsEjkKCmV4cGlyZXNfYXQYBiABKAsyGi5nb2'
-    '9nbGUucHJvdG9idWYuVGltZXN0YW1wUglleHBpcmVzQXQ=');
+    '9nbGUucHJvdG9idWYuVGltZXN0YW1wUglleHBpcmVzQXQSFwoHaXRlbV9pZBgHIAEoCVIGaXRl'
+    'bUlkEjkKCmNyZWF0ZWRfYXQYCCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcm'
+    'VhdGVkQXQ=');
+
+@$core.Deprecated('Use listImmersionPrivacyRequestDescriptor instead')
+const ListImmersionPrivacyRequest$json = {
+  '1': 'ListImmersionPrivacyRequest',
+  '2': [
+    {'1': 'recording_cursor', '3': 1, '4': 1, '5': 9, '10': 'recordingCursor'},
+    {'1': 'receipt_cursor', '3': 2, '4': 1, '5': 9, '10': 'receiptCursor'},
+    {'1': 'page_size', '3': 3, '4': 1, '5': 5, '10': 'pageSize'},
+    {'1': 'note_cursor', '3': 4, '4': 1, '5': 9, '10': 'noteCursor'},
+    {'1': 'aid_cursor', '3': 5, '4': 1, '5': 9, '10': 'aidCursor'},
+  ],
+};
+
+/// Descriptor for `ListImmersionPrivacyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listImmersionPrivacyRequestDescriptor = $convert.base64Decode(
+    'ChtMaXN0SW1tZXJzaW9uUHJpdmFjeVJlcXVlc3QSKQoQcmVjb3JkaW5nX2N1cnNvchgBIAEoCV'
+    'IPcmVjb3JkaW5nQ3Vyc29yEiUKDnJlY2VpcHRfY3Vyc29yGAIgASgJUg1yZWNlaXB0Q3Vyc29y'
+    'EhsKCXBhZ2Vfc2l6ZRgDIAEoBVIIcGFnZVNpemUSHwoLbm90ZV9jdXJzb3IYBCABKAlSCm5vdG'
+    'VDdXJzb3ISHQoKYWlkX2N1cnNvchgFIAEoCVIJYWlkQ3Vyc29y');
+
+@$core.Deprecated('Use immersionPrivateNoteRefDescriptor instead')
+const ImmersionPrivateNoteRef$json = {
+  '1': 'ImmersionPrivateNoteRef',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'item_id', '3': 2, '4': 1, '5': 9, '10': 'itemId'},
+    {
+      '1': 'created_at',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+  ],
+};
+
+/// Descriptor for `ImmersionPrivateNoteRef`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List immersionPrivateNoteRefDescriptor = $convert.base64Decode(
+    'ChdJbW1lcnNpb25Qcml2YXRlTm90ZVJlZhIOCgJpZBgBIAEoCVICaWQSFwoHaXRlbV9pZBgCIA'
+    'EoCVIGaXRlbUlkEjkKCmNyZWF0ZWRfYXQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0'
+    'YW1wUgljcmVhdGVkQXQ=');
+
+@$core.Deprecated('Use immersionPrivateAidRefDescriptor instead')
+const ImmersionPrivateAidRef$json = {
+  '1': 'ImmersionPrivateAidRef',
+  '2': [
+    {'1': 'item_id', '3': 1, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'segments', '3': 2, '4': 1, '5': 5, '10': 'segments'},
+    {
+      '1': 'updated_at',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `ImmersionPrivateAidRef`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List immersionPrivateAidRefDescriptor = $convert.base64Decode(
+    'ChZJbW1lcnNpb25Qcml2YXRlQWlkUmVmEhcKB2l0ZW1faWQYASABKAlSBml0ZW1JZBIaCghzZW'
+    'dtZW50cxgCIAEoBVIIc2VnbWVudHMSOQoKdXBkYXRlZF9hdBgDIAEoCzIaLmdvb2dsZS5wcm90'
+    'b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdA==');
+
+@$core.Deprecated('Use immersionErasureReceiptDescriptor instead')
+const ImmersionErasureReceipt$json = {
+  '1': 'ImmersionErasureReceipt',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+    {
+      '1': 'created_at',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'completed_at',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'completedAt'
+    },
+  ],
+};
+
+/// Descriptor for `ImmersionErasureReceipt`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List immersionErasureReceiptDescriptor = $convert.base64Decode(
+    'ChdJbW1lcnNpb25FcmFzdXJlUmVjZWlwdBIOCgJpZBgBIAEoCVICaWQSFgoGc3RhdHVzGAIgAS'
+    'gJUgZzdGF0dXMSOQoKY3JlYXRlZF9hdBgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3Rh'
+    'bXBSCWNyZWF0ZWRBdBI9Cgxjb21wbGV0ZWRfYXQYBCABKAsyGi5nb29nbGUucHJvdG9idWYuVG'
+    'ltZXN0YW1wUgtjb21wbGV0ZWRBdA==');
+
+@$core.Deprecated('Use listImmersionPrivacyResponseDescriptor instead')
+const ListImmersionPrivacyResponse$json = {
+  '1': 'ListImmersionPrivacyResponse',
+  '2': [
+    {
+      '1': 'recordings',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.ImmersionRecording',
+      '10': 'recordings'
+    },
+    {
+      '1': 'receipts',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.ImmersionErasureReceipt',
+      '10': 'receipts'
+    },
+    {
+      '1': 'next_recording_cursor',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'nextRecordingCursor'
+    },
+    {
+      '1': 'next_receipt_cursor',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'nextReceiptCursor'
+    },
+    {
+      '1': 'notes',
+      '3': 5,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.ImmersionPrivateNoteRef',
+      '10': 'notes'
+    },
+    {'1': 'next_note_cursor', '3': 6, '4': 1, '5': 9, '10': 'nextNoteCursor'},
+    {
+      '1': 'aids',
+      '3': 7,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.ImmersionPrivateAidRef',
+      '10': 'aids'
+    },
+    {'1': 'next_aid_cursor', '3': 8, '4': 1, '5': 9, '10': 'nextAidCursor'},
+  ],
+};
+
+/// Descriptor for `ListImmersionPrivacyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listImmersionPrivacyResponseDescriptor = $convert.base64Decode(
+    'ChxMaXN0SW1tZXJzaW9uUHJpdmFjeVJlc3BvbnNlEkkKCnJlY29yZGluZ3MYASADKAsyKS5zdH'
+    'RhdHR1cy5sYW5ndWFnZXMudjEuSW1tZXJzaW9uUmVjb3JkaW5nUgpyZWNvcmRpbmdzEkoKCHJl'
+    'Y2VpcHRzGAIgAygLMi4uc3R0YXR0dXMubGFuZ3VhZ2VzLnYxLkltbWVyc2lvbkVyYXN1cmVSZW'
+    'NlaXB0UghyZWNlaXB0cxIyChVuZXh0X3JlY29yZGluZ19jdXJzb3IYAyABKAlSE25leHRSZWNv'
+    'cmRpbmdDdXJzb3ISLgoTbmV4dF9yZWNlaXB0X2N1cnNvchgEIAEoCVIRbmV4dFJlY2VpcHRDdX'
+    'Jzb3ISRAoFbm90ZXMYBSADKAsyLi5zdHRhdHR1cy5sYW5ndWFnZXMudjEuSW1tZXJzaW9uUHJp'
+    'dmF0ZU5vdGVSZWZSBW5vdGVzEigKEG5leHRfbm90ZV9jdXJzb3IYBiABKAlSDm5leHROb3RlQ3'
+    'Vyc29yEkEKBGFpZHMYByADKAsyLS5zdHRhdHR1cy5sYW5ndWFnZXMudjEuSW1tZXJzaW9uUHJp'
+    'dmF0ZUFpZFJlZlIEYWlkcxImCg9uZXh0X2FpZF9jdXJzb3IYCCABKAlSDW5leHRBaWRDdXJzb3'
+    'I=');
+
+@$core.Deprecated('Use retryImmersionErasureRequestDescriptor instead')
+const RetryImmersionErasureRequest$json = {
+  '1': 'RetryImmersionErasureRequest',
+  '2': [
+    {'1': 'receipt_id', '3': 1, '4': 1, '5': 9, '10': 'receiptId'},
+  ],
+};
+
+/// Descriptor for `RetryImmersionErasureRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List retryImmersionErasureRequestDescriptor =
+    $convert.base64Decode(
+        'ChxSZXRyeUltbWVyc2lvbkVyYXN1cmVSZXF1ZXN0Eh0KCnJlY2VpcHRfaWQYASABKAlSCXJlY2'
+        'VpcHRJZA==');
+
+@$core.Deprecated('Use retryImmersionErasureResponseDescriptor instead')
+const RetryImmersionErasureResponse$json = {
+  '1': 'RetryImmersionErasureResponse',
+  '2': [
+    {'1': 'receipt_id', '3': 1, '4': 1, '5': 9, '10': 'receiptId'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+  ],
+};
+
+/// Descriptor for `RetryImmersionErasureResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List retryImmersionErasureResponseDescriptor =
+    $convert.base64Decode(
+        'Ch1SZXRyeUltbWVyc2lvbkVyYXN1cmVSZXNwb25zZRIdCgpyZWNlaXB0X2lkGAEgASgJUglyZW'
+        'NlaXB0SWQSFgoGc3RhdHVzGAIgASgJUgZzdGF0dXM=');
+
+@$core.Deprecated('Use exportImmersionRecordingRequestDescriptor instead')
+const ExportImmersionRecordingRequest$json = {
+  '1': 'ExportImmersionRecordingRequest',
+  '2': [
+    {'1': 'recording_id', '3': 1, '4': 1, '5': 9, '10': 'recordingId'},
+  ],
+};
+
+/// Descriptor for `ExportImmersionRecordingRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List exportImmersionRecordingRequestDescriptor =
+    $convert.base64Decode(
+        'Ch9FeHBvcnRJbW1lcnNpb25SZWNvcmRpbmdSZXF1ZXN0EiEKDHJlY29yZGluZ19pZBgBIAEoCV'
+        'ILcmVjb3JkaW5nSWQ=');
+
+@$core.Deprecated('Use exportImmersionRecordingResponseDescriptor instead')
+const ExportImmersionRecordingResponse$json = {
+  '1': 'ExportImmersionRecordingResponse',
+  '2': [
+    {'1': 'filename', '3': 1, '4': 1, '5': 9, '10': 'filename'},
+    {'1': 'content', '3': 2, '4': 1, '5': 12, '10': 'content'},
+    {'1': 'sha256', '3': 3, '4': 1, '5': 9, '10': 'sha256'},
+  ],
+};
+
+/// Descriptor for `ExportImmersionRecordingResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List exportImmersionRecordingResponseDescriptor =
+    $convert.base64Decode(
+        'CiBFeHBvcnRJbW1lcnNpb25SZWNvcmRpbmdSZXNwb25zZRIaCghmaWxlbmFtZRgBIAEoCVIIZm'
+        'lsZW5hbWUSGAoHY29udGVudBgCIAEoDFIHY29udGVudBIWCgZzaGEyNTYYAyABKAlSBnNoYTI1'
+        'Ng==');
 
 @$core
     .Deprecated('Use requestImmersionRecordingUploadRequestDescriptor instead')

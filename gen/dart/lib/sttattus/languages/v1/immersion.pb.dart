@@ -5129,6 +5129,8 @@ class ImmersionRecording extends $pb.GeneratedMessage {
     $core.String? status,
     $core.String? audioUrl,
     $1.Timestamp? expiresAt,
+    $core.String? itemId,
+    $1.Timestamp? createdAt,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -5137,6 +5139,8 @@ class ImmersionRecording extends $pb.GeneratedMessage {
     if (status != null) result.status = status;
     if (audioUrl != null) result.audioUrl = audioUrl;
     if (expiresAt != null) result.expiresAt = expiresAt;
+    if (itemId != null) result.itemId = itemId;
+    if (createdAt != null) result.createdAt = createdAt;
     return result;
   }
 
@@ -5160,6 +5164,9 @@ class ImmersionRecording extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'status')
     ..aOS(5, _omitFieldNames ? '' : 'audioUrl')
     ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'expiresAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOS(7, _omitFieldNames ? '' : 'itemId')
+    ..aOM<$1.Timestamp>(8, _omitFieldNames ? '' : 'createdAt',
         subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false;
 
@@ -5237,6 +5244,793 @@ class ImmersionRecording extends $pb.GeneratedMessage {
   void clearExpiresAt() => $_clearField(6);
   @$pb.TagNumber(6)
   $1.Timestamp ensureExpiresAt() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $core.String get itemId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set itemId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasItemId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearItemId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $1.Timestamp get createdAt => $_getN(7);
+  @$pb.TagNumber(8)
+  set createdAt($1.Timestamp value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCreatedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCreatedAt() => $_clearField(8);
+  @$pb.TagNumber(8)
+  $1.Timestamp ensureCreatedAt() => $_ensure(7);
+}
+
+/// Owner privacy history remains accessible after a source is withdrawn or
+/// erased. It contains no source prose, resource locator or provider payload.
+class ListImmersionPrivacyRequest extends $pb.GeneratedMessage {
+  factory ListImmersionPrivacyRequest({
+    $core.String? recordingCursor,
+    $core.String? receiptCursor,
+    $core.int? pageSize,
+    $core.String? noteCursor,
+    $core.String? aidCursor,
+  }) {
+    final result = create();
+    if (recordingCursor != null) result.recordingCursor = recordingCursor;
+    if (receiptCursor != null) result.receiptCursor = receiptCursor;
+    if (pageSize != null) result.pageSize = pageSize;
+    if (noteCursor != null) result.noteCursor = noteCursor;
+    if (aidCursor != null) result.aidCursor = aidCursor;
+    return result;
+  }
+
+  ListImmersionPrivacyRequest._();
+
+  factory ListImmersionPrivacyRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListImmersionPrivacyRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListImmersionPrivacyRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'recordingCursor')
+    ..aOS(2, _omitFieldNames ? '' : 'receiptCursor')
+    ..aI(3, _omitFieldNames ? '' : 'pageSize')
+    ..aOS(4, _omitFieldNames ? '' : 'noteCursor')
+    ..aOS(5, _omitFieldNames ? '' : 'aidCursor')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListImmersionPrivacyRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListImmersionPrivacyRequest copyWith(
+          void Function(ListImmersionPrivacyRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListImmersionPrivacyRequest))
+          as ListImmersionPrivacyRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListImmersionPrivacyRequest create() =>
+      ListImmersionPrivacyRequest._();
+  @$core.override
+  ListImmersionPrivacyRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListImmersionPrivacyRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListImmersionPrivacyRequest>(create);
+  static ListImmersionPrivacyRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get recordingCursor => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set recordingCursor($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRecordingCursor() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRecordingCursor() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get receiptCursor => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set receiptCursor($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReceiptCursor() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReceiptCursor() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get pageSize => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set pageSize($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPageSize() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPageSize() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get noteCursor => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set noteCursor($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasNoteCursor() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNoteCursor() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get aidCursor => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set aidCursor($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAidCursor() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAidCursor() => $_clearField(5);
+}
+
+class ImmersionPrivateNoteRef extends $pb.GeneratedMessage {
+  factory ImmersionPrivateNoteRef({
+    $core.String? id,
+    $core.String? itemId,
+    $1.Timestamp? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (itemId != null) result.itemId = itemId;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  ImmersionPrivateNoteRef._();
+
+  factory ImmersionPrivateNoteRef.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ImmersionPrivateNoteRef.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ImmersionPrivateNoteRef',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'itemId')
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ImmersionPrivateNoteRef clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ImmersionPrivateNoteRef copyWith(
+          void Function(ImmersionPrivateNoteRef) updates) =>
+      super.copyWith((message) => updates(message as ImmersionPrivateNoteRef))
+          as ImmersionPrivateNoteRef;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ImmersionPrivateNoteRef create() => ImmersionPrivateNoteRef._();
+  @$core.override
+  ImmersionPrivateNoteRef createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ImmersionPrivateNoteRef getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ImmersionPrivateNoteRef>(create);
+  static ImmersionPrivateNoteRef? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get itemId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set itemId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasItemId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearItemId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $1.Timestamp get createdAt => $_getN(2);
+  @$pb.TagNumber(3)
+  set createdAt($1.Timestamp value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCreatedAt() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCreatedAt() => $_clearField(3);
+  @$pb.TagNumber(3)
+  $1.Timestamp ensureCreatedAt() => $_ensure(2);
+}
+
+class ImmersionPrivateAidRef extends $pb.GeneratedMessage {
+  factory ImmersionPrivateAidRef({
+    $core.String? itemId,
+    $core.int? segments,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (itemId != null) result.itemId = itemId;
+    if (segments != null) result.segments = segments;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  ImmersionPrivateAidRef._();
+
+  factory ImmersionPrivateAidRef.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ImmersionPrivateAidRef.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ImmersionPrivateAidRef',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aI(2, _omitFieldNames ? '' : 'segments')
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'updatedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ImmersionPrivateAidRef clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ImmersionPrivateAidRef copyWith(
+          void Function(ImmersionPrivateAidRef) updates) =>
+      super.copyWith((message) => updates(message as ImmersionPrivateAidRef))
+          as ImmersionPrivateAidRef;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ImmersionPrivateAidRef create() => ImmersionPrivateAidRef._();
+  @$core.override
+  ImmersionPrivateAidRef createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ImmersionPrivateAidRef getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ImmersionPrivateAidRef>(create);
+  static ImmersionPrivateAidRef? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get segments => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set segments($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSegments() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSegments() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $1.Timestamp get updatedAt => $_getN(2);
+  @$pb.TagNumber(3)
+  set updatedAt($1.Timestamp value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasUpdatedAt() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUpdatedAt() => $_clearField(3);
+  @$pb.TagNumber(3)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(2);
+}
+
+class ImmersionErasureReceipt extends $pb.GeneratedMessage {
+  factory ImmersionErasureReceipt({
+    $core.String? id,
+    $core.String? status,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? completedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (status != null) result.status = status;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (completedAt != null) result.completedAt = completedAt;
+    return result;
+  }
+
+  ImmersionErasureReceipt._();
+
+  factory ImmersionErasureReceipt.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ImmersionErasureReceipt.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ImmersionErasureReceipt',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'createdAt',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(4, _omitFieldNames ? '' : 'completedAt',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ImmersionErasureReceipt clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ImmersionErasureReceipt copyWith(
+          void Function(ImmersionErasureReceipt) updates) =>
+      super.copyWith((message) => updates(message as ImmersionErasureReceipt))
+          as ImmersionErasureReceipt;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ImmersionErasureReceipt create() => ImmersionErasureReceipt._();
+  @$core.override
+  ImmersionErasureReceipt createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ImmersionErasureReceipt getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ImmersionErasureReceipt>(create);
+  static ImmersionErasureReceipt? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $1.Timestamp get createdAt => $_getN(2);
+  @$pb.TagNumber(3)
+  set createdAt($1.Timestamp value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCreatedAt() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCreatedAt() => $_clearField(3);
+  @$pb.TagNumber(3)
+  $1.Timestamp ensureCreatedAt() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $1.Timestamp get completedAt => $_getN(3);
+  @$pb.TagNumber(4)
+  set completedAt($1.Timestamp value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCompletedAt() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCompletedAt() => $_clearField(4);
+  @$pb.TagNumber(4)
+  $1.Timestamp ensureCompletedAt() => $_ensure(3);
+}
+
+class ListImmersionPrivacyResponse extends $pb.GeneratedMessage {
+  factory ListImmersionPrivacyResponse({
+    $core.Iterable<ImmersionRecording>? recordings,
+    $core.Iterable<ImmersionErasureReceipt>? receipts,
+    $core.String? nextRecordingCursor,
+    $core.String? nextReceiptCursor,
+    $core.Iterable<ImmersionPrivateNoteRef>? notes,
+    $core.String? nextNoteCursor,
+    $core.Iterable<ImmersionPrivateAidRef>? aids,
+    $core.String? nextAidCursor,
+  }) {
+    final result = create();
+    if (recordings != null) result.recordings.addAll(recordings);
+    if (receipts != null) result.receipts.addAll(receipts);
+    if (nextRecordingCursor != null)
+      result.nextRecordingCursor = nextRecordingCursor;
+    if (nextReceiptCursor != null) result.nextReceiptCursor = nextReceiptCursor;
+    if (notes != null) result.notes.addAll(notes);
+    if (nextNoteCursor != null) result.nextNoteCursor = nextNoteCursor;
+    if (aids != null) result.aids.addAll(aids);
+    if (nextAidCursor != null) result.nextAidCursor = nextAidCursor;
+    return result;
+  }
+
+  ListImmersionPrivacyResponse._();
+
+  factory ListImmersionPrivacyResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListImmersionPrivacyResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListImmersionPrivacyResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..pPM<ImmersionRecording>(1, _omitFieldNames ? '' : 'recordings',
+        subBuilder: ImmersionRecording.create)
+    ..pPM<ImmersionErasureReceipt>(2, _omitFieldNames ? '' : 'receipts',
+        subBuilder: ImmersionErasureReceipt.create)
+    ..aOS(3, _omitFieldNames ? '' : 'nextRecordingCursor')
+    ..aOS(4, _omitFieldNames ? '' : 'nextReceiptCursor')
+    ..pPM<ImmersionPrivateNoteRef>(5, _omitFieldNames ? '' : 'notes',
+        subBuilder: ImmersionPrivateNoteRef.create)
+    ..aOS(6, _omitFieldNames ? '' : 'nextNoteCursor')
+    ..pPM<ImmersionPrivateAidRef>(7, _omitFieldNames ? '' : 'aids',
+        subBuilder: ImmersionPrivateAidRef.create)
+    ..aOS(8, _omitFieldNames ? '' : 'nextAidCursor')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListImmersionPrivacyResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListImmersionPrivacyResponse copyWith(
+          void Function(ListImmersionPrivacyResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ListImmersionPrivacyResponse))
+          as ListImmersionPrivacyResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListImmersionPrivacyResponse create() =>
+      ListImmersionPrivacyResponse._();
+  @$core.override
+  ListImmersionPrivacyResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListImmersionPrivacyResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListImmersionPrivacyResponse>(create);
+  static ListImmersionPrivacyResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ImmersionRecording> get recordings => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<ImmersionErasureReceipt> get receipts => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.String get nextRecordingCursor => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set nextRecordingCursor($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNextRecordingCursor() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNextRecordingCursor() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get nextReceiptCursor => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set nextReceiptCursor($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasNextReceiptCursor() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNextReceiptCursor() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<ImmersionPrivateNoteRef> get notes => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.String get nextNoteCursor => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set nextNoteCursor($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasNextNoteCursor() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearNextNoteCursor() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<ImmersionPrivateAidRef> get aids => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.String get nextAidCursor => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set nextAidCursor($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNextAidCursor() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNextAidCursor() => $_clearField(8);
+}
+
+class RetryImmersionErasureRequest extends $pb.GeneratedMessage {
+  factory RetryImmersionErasureRequest({
+    $core.String? receiptId,
+  }) {
+    final result = create();
+    if (receiptId != null) result.receiptId = receiptId;
+    return result;
+  }
+
+  RetryImmersionErasureRequest._();
+
+  factory RetryImmersionErasureRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RetryImmersionErasureRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RetryImmersionErasureRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'receiptId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RetryImmersionErasureRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RetryImmersionErasureRequest copyWith(
+          void Function(RetryImmersionErasureRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as RetryImmersionErasureRequest))
+          as RetryImmersionErasureRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RetryImmersionErasureRequest create() =>
+      RetryImmersionErasureRequest._();
+  @$core.override
+  RetryImmersionErasureRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RetryImmersionErasureRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RetryImmersionErasureRequest>(create);
+  static RetryImmersionErasureRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get receiptId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set receiptId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReceiptId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReceiptId() => $_clearField(1);
+}
+
+class RetryImmersionErasureResponse extends $pb.GeneratedMessage {
+  factory RetryImmersionErasureResponse({
+    $core.String? receiptId,
+    $core.String? status,
+  }) {
+    final result = create();
+    if (receiptId != null) result.receiptId = receiptId;
+    if (status != null) result.status = status;
+    return result;
+  }
+
+  RetryImmersionErasureResponse._();
+
+  factory RetryImmersionErasureResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RetryImmersionErasureResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RetryImmersionErasureResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'receiptId')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RetryImmersionErasureResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RetryImmersionErasureResponse copyWith(
+          void Function(RetryImmersionErasureResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RetryImmersionErasureResponse))
+          as RetryImmersionErasureResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RetryImmersionErasureResponse create() =>
+      RetryImmersionErasureResponse._();
+  @$core.override
+  RetryImmersionErasureResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RetryImmersionErasureResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RetryImmersionErasureResponse>(create);
+  static RetryImmersionErasureResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get receiptId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set receiptId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReceiptId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReceiptId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+}
+
+class ExportImmersionRecordingRequest extends $pb.GeneratedMessage {
+  factory ExportImmersionRecordingRequest({
+    $core.String? recordingId,
+  }) {
+    final result = create();
+    if (recordingId != null) result.recordingId = recordingId;
+    return result;
+  }
+
+  ExportImmersionRecordingRequest._();
+
+  factory ExportImmersionRecordingRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ExportImmersionRecordingRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ExportImmersionRecordingRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'recordingId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExportImmersionRecordingRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExportImmersionRecordingRequest copyWith(
+          void Function(ExportImmersionRecordingRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ExportImmersionRecordingRequest))
+          as ExportImmersionRecordingRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExportImmersionRecordingRequest create() =>
+      ExportImmersionRecordingRequest._();
+  @$core.override
+  ExportImmersionRecordingRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ExportImmersionRecordingRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ExportImmersionRecordingRequest>(
+          create);
+  static ExportImmersionRecordingRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get recordingId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set recordingId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRecordingId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRecordingId() => $_clearField(1);
+}
+
+class ExportImmersionRecordingResponse extends $pb.GeneratedMessage {
+  factory ExportImmersionRecordingResponse({
+    $core.String? filename,
+    $core.List<$core.int>? content,
+    $core.String? sha256,
+  }) {
+    final result = create();
+    if (filename != null) result.filename = filename;
+    if (content != null) result.content = content;
+    if (sha256 != null) result.sha256 = sha256;
+    return result;
+  }
+
+  ExportImmersionRecordingResponse._();
+
+  factory ExportImmersionRecordingResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ExportImmersionRecordingResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ExportImmersionRecordingResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'filename')
+    ..a<$core.List<$core.int>>(
+        2, _omitFieldNames ? '' : 'content', $pb.PbFieldType.OY)
+    ..aOS(3, _omitFieldNames ? '' : 'sha256')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExportImmersionRecordingResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExportImmersionRecordingResponse copyWith(
+          void Function(ExportImmersionRecordingResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ExportImmersionRecordingResponse))
+          as ExportImmersionRecordingResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExportImmersionRecordingResponse create() =>
+      ExportImmersionRecordingResponse._();
+  @$core.override
+  ExportImmersionRecordingResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ExportImmersionRecordingResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ExportImmersionRecordingResponse>(
+          create);
+  static ExportImmersionRecordingResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get filename => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set filename($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFilename() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFilename() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get content => $_getN(1);
+  @$pb.TagNumber(2)
+  set content($core.List<$core.int> value) => $_setBytes(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContent() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContent() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sha256 => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sha256($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSha256() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSha256() => $_clearField(3);
 }
 
 class RequestImmersionRecordingUploadRequest extends $pb.GeneratedMessage {

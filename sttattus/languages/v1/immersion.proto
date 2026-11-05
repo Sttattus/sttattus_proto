@@ -411,6 +411,59 @@ message ImmersionRecording {
   string status = 4;
   string audio_url = 5; // short-lived, owner-authorized; absent after withdrawal
   google.protobuf.Timestamp expires_at = 6;
+  string item_id = 7;
+  google.protobuf.Timestamp created_at = 8;
+}
+
+// Owner privacy history remains accessible after a source is withdrawn or
+// erased. It contains no source prose, resource locator or provider payload.
+message ListImmersionPrivacyRequest {
+  string recording_cursor = 1;
+  string receipt_cursor = 2;
+  int32 page_size = 3;
+  string note_cursor = 4;
+  string aid_cursor = 5;
+}
+message ImmersionPrivateNoteRef {
+  string id = 1;
+  string item_id = 2;
+  google.protobuf.Timestamp created_at = 3;
+}
+message ImmersionPrivateAidRef {
+  string item_id = 1;
+  int32 segments = 2;
+  google.protobuf.Timestamp updated_at = 3;
+}
+message ImmersionErasureReceipt {
+  string id = 1;
+  string status = 2;
+  google.protobuf.Timestamp created_at = 3;
+  google.protobuf.Timestamp completed_at = 4;
+}
+message ListImmersionPrivacyResponse {
+  repeated ImmersionRecording recordings = 1;
+  repeated ImmersionErasureReceipt receipts = 2;
+  string next_recording_cursor = 3;
+  string next_receipt_cursor = 4;
+  repeated ImmersionPrivateNoteRef notes = 5;
+  string next_note_cursor = 6;
+  repeated ImmersionPrivateAidRef aids = 7;
+  string next_aid_cursor = 8;
+}
+message RetryImmersionErasureRequest {
+  string receipt_id = 1;
+}
+message RetryImmersionErasureResponse {
+  string receipt_id = 1;
+  string status = 2;
+}
+message ExportImmersionRecordingRequest {
+  string recording_id = 1;
+}
+message ExportImmersionRecordingResponse {
+  string filename = 1;
+  bytes content = 2; // the owner's bounded, retained WAV; no source-rights bypass
+  string sha256 = 3;
 }
 
 message RequestImmersionRecordingUploadRequest {
@@ -496,6 +549,9 @@ service ImmersionService {
   rpc SaveImmersionRecording(SaveImmersionRecordingRequest) returns (SaveImmersionRecordingResponse);
   rpc RequestImmersionRecordingUpload(RequestImmersionRecordingUploadRequest) returns (RequestImmersionRecordingUploadResponse);
   rpc RemoveImmersionRecording(RemoveImmersionRecordingRequest) returns (RemoveImmersionRecordingResponse);
+  rpc ListImmersionPrivacy(ListImmersionPrivacyRequest) returns (ListImmersionPrivacyResponse);
+  rpc RetryImmersionErasure(RetryImmersionErasureRequest) returns (RetryImmersionErasureResponse);
+  rpc ExportImmersionRecording(ExportImmersionRecordingRequest) returns (ExportImmersionRecordingResponse);
   rpc RevisePersonalImmersion(RevisePersonalImmersionRequest) returns (RevisePersonalImmersionResponse);
   rpc GenerateImmersionAids(GenerateImmersionAidsRequest) returns (GenerateImmersionAidsResponse);
   rpc ClearImmersionAids(ClearImmersionAidsRequest) returns (ClearImmersionAidsResponse);

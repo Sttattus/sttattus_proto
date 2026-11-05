@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AnswerImmersionQuestionRequest, AnswerImmersionQuestionResponse, CancelImmersionImportRequest, CancelImmersionImportResponse, CaptureImmersionConceptRequest, CaptureImmersionConceptResponse, ClearImmersionAidsRequest, ClearImmersionAidsResponse, EraseImmersionItemRequest, EraseImmersionItemResponse, ExportImmersionRequest, ExportImmersionResponse, GenerateImmersionAidsRequest, GenerateImmersionAidsResponse, GetImmersionItemRequest, GetImmersionItemResponse, GetImmersionOfflinePackRequest, GetImmersionOfflinePackResponse, ImportImmersionRequest, ImportImmersionResponse, ListImmersionCapturesRequest, ListImmersionCapturesResponse, ListImmersionLibraryRequest, ListImmersionLibraryResponse, ListImmersionReportsRequest, ListImmersionReportsResponse, RemoveImmersionCaptureRequest, RemoveImmersionCaptureResponse, RemoveImmersionRecordingRequest, RemoveImmersionRecordingResponse, ReportImmersionCaptionRequest, ReportImmersionCaptionResponse, RequestImmersionRecordingUploadRequest, RequestImmersionRecordingUploadResponse, RestoreImmersionItemRequest, RestoreImmersionItemResponse, RetryImmersionImportRequest, RetryImmersionImportResponse, RevisePersonalImmersionRequest, RevisePersonalImmersionResponse, SaveImmersionRecordingRequest, SaveImmersionRecordingResponse, TrashImmersionItemRequest, TrashImmersionItemResponse, UpdateImmersionProgressRequest, UpdateImmersionProgressResponse, ValidateImmersionOfflinePacksRequest, ValidateImmersionOfflinePacksResponse, WithdrawImmersionReportRequest, WithdrawImmersionReportResponse } from "./immersion_pb.js";
+import { AnswerImmersionQuestionRequest, AnswerImmersionQuestionResponse, CancelImmersionImportRequest, CancelImmersionImportResponse, CaptureImmersionConceptRequest, CaptureImmersionConceptResponse, ClearImmersionAidsRequest, ClearImmersionAidsResponse, EraseImmersionItemRequest, EraseImmersionItemResponse, ExportImmersionRecordingRequest, ExportImmersionRecordingResponse, ExportImmersionRequest, ExportImmersionResponse, GenerateImmersionAidsRequest, GenerateImmersionAidsResponse, GetImmersionItemRequest, GetImmersionItemResponse, GetImmersionOfflinePackRequest, GetImmersionOfflinePackResponse, ImportImmersionRequest, ImportImmersionResponse, ListImmersionCapturesRequest, ListImmersionCapturesResponse, ListImmersionLibraryRequest, ListImmersionLibraryResponse, ListImmersionPrivacyRequest, ListImmersionPrivacyResponse, ListImmersionReportsRequest, ListImmersionReportsResponse, RemoveImmersionCaptureRequest, RemoveImmersionCaptureResponse, RemoveImmersionRecordingRequest, RemoveImmersionRecordingResponse, ReportImmersionCaptionRequest, ReportImmersionCaptionResponse, RequestImmersionRecordingUploadRequest, RequestImmersionRecordingUploadResponse, RestoreImmersionItemRequest, RestoreImmersionItemResponse, RetryImmersionErasureRequest, RetryImmersionErasureResponse, RetryImmersionImportRequest, RetryImmersionImportResponse, RevisePersonalImmersionRequest, RevisePersonalImmersionResponse, SaveImmersionRecordingRequest, SaveImmersionRecordingResponse, TrashImmersionItemRequest, TrashImmersionItemResponse, UpdateImmersionProgressRequest, UpdateImmersionProgressResponse, ValidateImmersionOfflinePacksRequest, ValidateImmersionOfflinePacksResponse, WithdrawImmersionReportRequest, WithdrawImmersionReportResponse } from "./immersion_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -208,6 +208,33 @@ export const ImmersionService = {
       name: "RemoveImmersionRecording",
       I: RemoveImmersionRecordingRequest,
       O: RemoveImmersionRecordingResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.ImmersionService.ListImmersionPrivacy
+     */
+    listImmersionPrivacy: {
+      name: "ListImmersionPrivacy",
+      I: ListImmersionPrivacyRequest,
+      O: ListImmersionPrivacyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.ImmersionService.RetryImmersionErasure
+     */
+    retryImmersionErasure: {
+      name: "RetryImmersionErasure",
+      I: RetryImmersionErasureRequest,
+      O: RetryImmersionErasureResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.ImmersionService.ExportImmersionRecording
+     */
+    exportImmersionRecording: {
+      name: "ExportImmersionRecording",
+      I: ExportImmersionRecordingRequest,
+      O: ExportImmersionRecordingResponse,
       kind: MethodKind.Unary,
     },
     /**
