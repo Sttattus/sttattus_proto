@@ -819,6 +819,13 @@ export class ImmersionSegment extends Message<ImmersionSegment> {
    */
   annotationBasis = "";
 
+  /**
+   * actual translation/explanation language, including a labelled fallback
+   *
+   * @generated from field: string copy_language = 12;
+   */
+  copyLanguage = "";
+
   constructor(data?: PartialMessage<ImmersionSegment>) {
     super();
     proto3.util.initPartial(data, this);
@@ -838,6 +845,7 @@ export class ImmersionSegment extends Message<ImmersionSegment> {
     { no: 9, name: "concepts", kind: "message", T: ImmersionConceptMatch, repeated: true },
     { no: 10, name: "syntax", kind: "message", T: ImmersionSyntaxToken, repeated: true },
     { no: 11, name: "annotation_basis", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "copy_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ImmersionSegment {
@@ -2228,6 +2236,11 @@ export class AnswerImmersionQuestionResponse extends Message<AnswerImmersionQues
    */
   replayed = false;
 
+  /**
+   * @generated from field: string copy_language = 5;
+   */
+  copyLanguage = "";
+
   constructor(data?: PartialMessage<AnswerImmersionQuestionResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -2240,6 +2253,7 @@ export class AnswerImmersionQuestionResponse extends Message<AnswerImmersionQues
     { no: 2, name: "explanation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "source_quote", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "replayed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "copy_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AnswerImmersionQuestionResponse {

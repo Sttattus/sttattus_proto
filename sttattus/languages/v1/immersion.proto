@@ -137,6 +137,7 @@ message ImmersionSegment {
   repeated ImmersionConceptMatch concepts = 9;
   repeated ImmersionSyntaxToken syntax = 10;
   string annotation_basis = 11; // reviewed/AI proposal/unavailable
+  string copy_language = 12; // actual translation/explanation language, including a labelled fallback
 }
 
 message ImmersionQuestion {
@@ -303,6 +304,7 @@ message AnswerImmersionQuestionResponse {
   string explanation = 2;
   string source_quote = 3;
   bool replayed = 4;
+  string copy_language = 5;
 }
 
 message ReportImmersionCaptionRequest {

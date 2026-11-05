@@ -373,6 +373,7 @@ const ImmersionSegment$json = {
       '10': 'syntax'
     },
     {'1': 'annotation_basis', '3': 11, '4': 1, '5': 9, '10': 'annotationBasis'},
+    {'1': 'copy_language', '3': 12, '4': 1, '5': 9, '10': 'copyLanguage'},
   ],
 };
 
@@ -386,7 +387,7 @@ final $typed_data.Uint8List immersionSegmentDescriptor = $convert.base64Decode(
     'MoCzIsLnN0dGF0dHVzLmxhbmd1YWdlcy52MS5JbW1lcnNpb25Db25jZXB0TWF0Y2hSCGNvbmNl'
     'cHRzEkMKBnN5bnRheBgKIAMoCzIrLnN0dGF0dHVzLmxhbmd1YWdlcy52MS5JbW1lcnNpb25TeW'
     '50YXhUb2tlblIGc3ludGF4EikKEGFubm90YXRpb25fYmFzaXMYCyABKAlSD2Fubm90YXRpb25C'
-    'YXNpcw==');
+    'YXNpcxIjCg1jb3B5X2xhbmd1YWdlGAwgASgJUgxjb3B5TGFuZ3VhZ2U=');
 
 @$core.Deprecated('Use immersionQuestionDescriptor instead')
 const ImmersionQuestion$json = {
@@ -975,6 +976,7 @@ const AnswerImmersionQuestionResponse$json = {
     {'1': 'explanation', '3': 2, '4': 1, '5': 9, '10': 'explanation'},
     {'1': 'source_quote', '3': 3, '4': 1, '5': 9, '10': 'sourceQuote'},
     {'1': 'replayed', '3': 4, '4': 1, '5': 8, '10': 'replayed'},
+    {'1': 'copy_language', '3': 5, '4': 1, '5': 9, '10': 'copyLanguage'},
   ],
 };
 
@@ -983,7 +985,8 @@ final $typed_data.Uint8List answerImmersionQuestionResponseDescriptor =
     $convert.base64Decode(
         'Ch9BbnN3ZXJJbW1lcnNpb25RdWVzdGlvblJlc3BvbnNlEhgKB2NvcnJlY3QYASABKAhSB2Nvcn'
         'JlY3QSIAoLZXhwbGFuYXRpb24YAiABKAlSC2V4cGxhbmF0aW9uEiEKDHNvdXJjZV9xdW90ZRgD'
-        'IAEoCVILc291cmNlUXVvdGUSGgoIcmVwbGF5ZWQYBCABKAhSCHJlcGxheWVk');
+        'IAEoCVILc291cmNlUXVvdGUSGgoIcmVwbGF5ZWQYBCABKAhSCHJlcGxheWVkEiMKDWNvcHlfbG'
+        'FuZ3VhZ2UYBSABKAlSDGNvcHlMYW5ndWFnZQ==');
 
 @$core.Deprecated('Use reportImmersionCaptionRequestDescriptor instead')
 const ReportImmersionCaptionRequest$json = {

@@ -972,6 +972,7 @@ type ImmersionSegment struct {
 	Concepts           []*ImmersionConceptMatch `protobuf:"bytes,9,rep,name=concepts,proto3" json:"concepts,omitempty"`
 	Syntax             []*ImmersionSyntaxToken  `protobuf:"bytes,10,rep,name=syntax,proto3" json:"syntax,omitempty"`
 	AnnotationBasis    string                   `protobuf:"bytes,11,opt,name=annotation_basis,json=annotationBasis,proto3" json:"annotation_basis,omitempty"` // reviewed/AI proposal/unavailable
+	CopyLanguage       string                   `protobuf:"bytes,12,opt,name=copy_language,json=copyLanguage,proto3" json:"copy_language,omitempty"`          // actual translation/explanation language, including a labelled fallback
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -1079,6 +1080,13 @@ func (x *ImmersionSegment) GetSyntax() []*ImmersionSyntaxToken {
 func (x *ImmersionSegment) GetAnnotationBasis() string {
 	if x != nil {
 		return x.AnnotationBasis
+	}
+	return ""
+}
+
+func (x *ImmersionSegment) GetCopyLanguage() string {
+	if x != nil {
+		return x.CopyLanguage
 	}
 	return ""
 }
@@ -2741,6 +2749,7 @@ type AnswerImmersionQuestionResponse struct {
 	Explanation   string                 `protobuf:"bytes,2,opt,name=explanation,proto3" json:"explanation,omitempty"`
 	SourceQuote   string                 `protobuf:"bytes,3,opt,name=source_quote,json=sourceQuote,proto3" json:"source_quote,omitempty"`
 	Replayed      bool                   `protobuf:"varint,4,opt,name=replayed,proto3" json:"replayed,omitempty"`
+	CopyLanguage  string                 `protobuf:"bytes,5,opt,name=copy_language,json=copyLanguage,proto3" json:"copy_language,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2801,6 +2810,13 @@ func (x *AnswerImmersionQuestionResponse) GetReplayed() bool {
 		return x.Replayed
 	}
 	return false
+}
+
+func (x *AnswerImmersionQuestionResponse) GetCopyLanguage() string {
+	if x != nil {
+		return x.CopyLanguage
+	}
+	return ""
 }
 
 type ReportImmersionCaptionRequest struct {
@@ -4786,7 +4802,7 @@ const file_sttattus_languages_v1_immersion_proto_rawDesc = "" +
 	"\n" +
 	"morphology\x18\x03 \x01(\tR\n" +
 	"morphology\x12\x12\n" +
-	"\x04head\x18\x04 \x01(\x05R\x04head\"\xc0\x03\n" +
+	"\x04head\x18\x04 \x01(\x05R\x04head\"\xe5\x03\n" +
 	"\x10ImmersionSegment\x12\x14\n" +
 	"\x05index\x18\x01 \x01(\x05R\x05index\x12\x12\n" +
 	"\x04text\x18\x02 \x01(\tR\x04text\x12 \n" +
@@ -4799,7 +4815,8 @@ const file_sttattus_languages_v1_immersion_proto_rawDesc = "" +
 	"\bconcepts\x18\t \x03(\v2,.sttattus.languages.v1.ImmersionConceptMatchR\bconcepts\x12C\n" +
 	"\x06syntax\x18\n" +
 	" \x03(\v2+.sttattus.languages.v1.ImmersionSyntaxTokenR\x06syntax\x12)\n" +
-	"\x10annotation_basis\x18\v \x01(\tR\x0fannotationBasis\"o\n" +
+	"\x10annotation_basis\x18\v \x01(\tR\x0fannotationBasis\x12#\n" +
+	"\rcopy_language\x18\f \x01(\tR\fcopyLanguage\"o\n" +
 	"\x11ImmersionQuestion\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
 	"\x06prompt\x18\x02 \x01(\tR\x06prompt\x12\x18\n" +
@@ -4940,12 +4957,13 @@ const file_sttattus_languages_v1_immersion_proto_rawDesc = "" +
 	"\vquestion_id\x18\x03 \x01(\tR\n" +
 	"questionId\x12'\n" +
 	"\x0fselected_option\x18\x04 \x01(\x05R\x0eselectedOption\x12&\n" +
-	"\x0fclient_event_id\x18\x05 \x01(\tR\rclientEventId\"\x9c\x01\n" +
+	"\x0fclient_event_id\x18\x05 \x01(\tR\rclientEventId\"\xc1\x01\n" +
 	"\x1fAnswerImmersionQuestionResponse\x12\x18\n" +
 	"\acorrect\x18\x01 \x01(\bR\acorrect\x12 \n" +
 	"\vexplanation\x18\x02 \x01(\tR\vexplanation\x12!\n" +
 	"\fsource_quote\x18\x03 \x01(\tR\vsourceQuote\x12\x1a\n" +
-	"\breplayed\x18\x04 \x01(\bR\breplayed\"\xc4\x01\n" +
+	"\breplayed\x18\x04 \x01(\bR\breplayed\x12#\n" +
+	"\rcopy_language\x18\x05 \x01(\tR\fcopyLanguage\"\xc4\x01\n" +
 	"\x1dReportImmersionCaptionRequest\x12\x17\n" +
 	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x18\n" +
 	"\aedition\x18\x02 \x01(\x05R\aedition\x12\x18\n" +

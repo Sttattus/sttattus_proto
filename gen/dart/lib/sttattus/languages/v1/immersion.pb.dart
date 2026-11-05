@@ -1034,6 +1034,7 @@ class ImmersionSegment extends $pb.GeneratedMessage {
     $core.Iterable<ImmersionConceptMatch>? concepts,
     $core.Iterable<ImmersionSyntaxToken>? syntax,
     $core.String? annotationBasis,
+    $core.String? copyLanguage,
   }) {
     final result = create();
     if (index != null) result.index = index;
@@ -1048,6 +1049,7 @@ class ImmersionSegment extends $pb.GeneratedMessage {
     if (concepts != null) result.concepts.addAll(concepts);
     if (syntax != null) result.syntax.addAll(syntax);
     if (annotationBasis != null) result.annotationBasis = annotationBasis;
+    if (copyLanguage != null) result.copyLanguage = copyLanguage;
     return result;
   }
 
@@ -1078,6 +1080,7 @@ class ImmersionSegment extends $pb.GeneratedMessage {
     ..pPM<ImmersionSyntaxToken>(10, _omitFieldNames ? '' : 'syntax',
         subBuilder: ImmersionSyntaxToken.create)
     ..aOS(11, _omitFieldNames ? '' : 'annotationBasis')
+    ..aOS(12, _omitFieldNames ? '' : 'copyLanguage')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1185,6 +1188,15 @@ class ImmersionSegment extends $pb.GeneratedMessage {
   $core.bool hasAnnotationBasis() => $_has(10);
   @$pb.TagNumber(11)
   void clearAnnotationBasis() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get copyLanguage => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set copyLanguage($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasCopyLanguage() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearCopyLanguage() => $_clearField(12);
 }
 
 class ImmersionQuestion extends $pb.GeneratedMessage {
@@ -3458,12 +3470,14 @@ class AnswerImmersionQuestionResponse extends $pb.GeneratedMessage {
     $core.String? explanation,
     $core.String? sourceQuote,
     $core.bool? replayed,
+    $core.String? copyLanguage,
   }) {
     final result = create();
     if (correct != null) result.correct = correct;
     if (explanation != null) result.explanation = explanation;
     if (sourceQuote != null) result.sourceQuote = sourceQuote;
     if (replayed != null) result.replayed = replayed;
+    if (copyLanguage != null) result.copyLanguage = copyLanguage;
     return result;
   }
 
@@ -3485,6 +3499,7 @@ class AnswerImmersionQuestionResponse extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'explanation')
     ..aOS(3, _omitFieldNames ? '' : 'sourceQuote')
     ..aOB(4, _omitFieldNames ? '' : 'replayed')
+    ..aOS(5, _omitFieldNames ? '' : 'copyLanguage')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -3545,6 +3560,15 @@ class AnswerImmersionQuestionResponse extends $pb.GeneratedMessage {
   $core.bool hasReplayed() => $_has(3);
   @$pb.TagNumber(4)
   void clearReplayed() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get copyLanguage => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set copyLanguage($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCopyLanguage() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCopyLanguage() => $_clearField(5);
 }
 
 class ReportImmersionCaptionRequest extends $pb.GeneratedMessage {
