@@ -1931,6 +1931,7 @@ class GetImmersionItemResponse extends $pb.GeneratedMessage {
     $core.String? copyLanguage,
     $core.Iterable<ImmersionRecording>? recordings,
     $core.int? nextSegment,
+    $core.Iterable<ImmersionAidStatus>? aids,
   }) {
     final result = create();
     if (item != null) result.item = item;
@@ -1941,6 +1942,7 @@ class GetImmersionItemResponse extends $pb.GeneratedMessage {
     if (copyLanguage != null) result.copyLanguage = copyLanguage;
     if (recordings != null) result.recordings.addAll(recordings);
     if (nextSegment != null) result.nextSegment = nextSegment;
+    if (aids != null) result.aids.addAll(aids);
     return result;
   }
 
@@ -1971,6 +1973,8 @@ class GetImmersionItemResponse extends $pb.GeneratedMessage {
     ..pPM<ImmersionRecording>(7, _omitFieldNames ? '' : 'recordings',
         subBuilder: ImmersionRecording.create)
     ..aI(8, _omitFieldNames ? '' : 'nextSegment')
+    ..pPM<ImmersionAidStatus>(9, _omitFieldNames ? '' : 'aids',
+        subBuilder: ImmersionAidStatus.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2050,6 +2054,100 @@ class GetImmersionItemResponse extends $pb.GeneratedMessage {
   $core.bool hasNextSegment() => $_has(7);
   @$pb.TagNumber(8)
   void clearNextSegment() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $pb.PbList<ImmersionAidStatus> get aids => $_getList(8);
+}
+
+class ImmersionAidStatus extends $pb.GeneratedMessage {
+  factory ImmersionAidStatus({
+    $core.int? segment,
+    $core.String? status,
+    $core.String? failureCode,
+    $core.String? modelVersion,
+  }) {
+    final result = create();
+    if (segment != null) result.segment = segment;
+    if (status != null) result.status = status;
+    if (failureCode != null) result.failureCode = failureCode;
+    if (modelVersion != null) result.modelVersion = modelVersion;
+    return result;
+  }
+
+  ImmersionAidStatus._();
+
+  factory ImmersionAidStatus.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ImmersionAidStatus.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ImmersionAidStatus',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.languages.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'segment')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..aOS(3, _omitFieldNames ? '' : 'failureCode')
+    ..aOS(4, _omitFieldNames ? '' : 'modelVersion')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ImmersionAidStatus clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ImmersionAidStatus copyWith(void Function(ImmersionAidStatus) updates) =>
+      super.copyWith((message) => updates(message as ImmersionAidStatus))
+          as ImmersionAidStatus;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ImmersionAidStatus create() => ImmersionAidStatus._();
+  @$core.override
+  ImmersionAidStatus createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ImmersionAidStatus getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ImmersionAidStatus>(create);
+  static ImmersionAidStatus? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get segment => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set segment($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSegment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSegment() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get failureCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set failureCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasFailureCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFailureCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get modelVersion => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set modelVersion($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasModelVersion() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearModelVersion() => $_clearField(4);
 }
 
 class ImportImmersionRequest extends $pb.GeneratedMessage {
@@ -4183,11 +4281,13 @@ class EraseImmersionItemRequest extends $pb.GeneratedMessage {
     $core.String? itemId,
     $core.int? expectedVersion,
     $core.String? clientEventId,
+    $core.bool? retryCleanup,
   }) {
     final result = create();
     if (itemId != null) result.itemId = itemId;
     if (expectedVersion != null) result.expectedVersion = expectedVersion;
     if (clientEventId != null) result.clientEventId = clientEventId;
+    if (retryCleanup != null) result.retryCleanup = retryCleanup;
     return result;
   }
 
@@ -4208,6 +4308,7 @@ class EraseImmersionItemRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'itemId')
     ..aI(2, _omitFieldNames ? '' : 'expectedVersion')
     ..aOS(3, _omitFieldNames ? '' : 'clientEventId')
+    ..aOB(4, _omitFieldNames ? '' : 'retryCleanup')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -4256,6 +4357,15 @@ class EraseImmersionItemRequest extends $pb.GeneratedMessage {
   $core.bool hasClientEventId() => $_has(2);
   @$pb.TagNumber(3)
   void clearClientEventId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get retryCleanup => $_getBF(3);
+  @$pb.TagNumber(4)
+  set retryCleanup($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRetryCleanup() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRetryCleanup() => $_clearField(4);
 }
 
 class EraseImmersionItemResponse extends $pb.GeneratedMessage {

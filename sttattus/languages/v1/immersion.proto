@@ -204,6 +204,14 @@ message GetImmersionItemResponse {
   string copy_language = 6;
   repeated ImmersionRecording recordings = 7;
   int32 next_segment = 8; // zero when the reader has reached the final page
+  repeated ImmersionAidStatus aids = 9;
+}
+
+message ImmersionAidStatus {
+  int32 segment = 1;
+  string status = 2; // queued/ready/failed for this member and explanation language
+  string failure_code = 3;
+  string model_version = 4;
 }
 
 message ImportImmersionRequest {
@@ -344,6 +352,7 @@ message EraseImmersionItemRequest {
   string item_id = 1;
   int32 expected_version = 2;
   string client_event_id = 3;
+  bool retry_cleanup = 4; // explicit retry of failed deletion, never implicit polling
 }
 message EraseImmersionItemResponse {
   string receipt_id = 1;
@@ -354,7 +363,7 @@ message ExportImmersionRequest {
 }
 message ExportImmersionResponse {
   string filename = 1;
-  bytes content = 2; // portable UTF-8 JSON without signed URLs/storage keys
+  bytes content = 2; // portable ZIP of UTF-8 JSON without signed URLs/storage keys
   string sha256 = 3;
 }
 
@@ -388,7 +397,7 @@ message SaveImmersionRecordingRequest {
   string item_id = 1;
   int32 edition = 2;
   int32 segment = 3;
-  string audio_url = 4; // existing MediaService upload; owned private recording only
+  string audio_url = 4; // dedicated Immersion upload; owned private recording only
   bool keep_recording = 5;
   string client_event_id = 6;
 }

@@ -604,6 +604,14 @@ const GetImmersionItemResponse$json = {
       '10': 'recordings'
     },
     {'1': 'next_segment', '3': 8, '4': 1, '5': 5, '10': 'nextSegment'},
+    {
+      '1': 'aids',
+      '3': 9,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.languages.v1.ImmersionAidStatus',
+      '10': 'aids'
+    },
   ],
 };
 
@@ -617,7 +625,25 @@ final $typed_data.Uint8List getImmersionItemResponseDescriptor = $convert.base64
     'EoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSDm1lZGlhRXhwaXJlc0F0EiMKDWNvcHlf'
     'bGFuZ3VhZ2UYBiABKAlSDGNvcHlMYW5ndWFnZRJJCgpyZWNvcmRpbmdzGAcgAygLMikuc3R0YX'
     'R0dXMubGFuZ3VhZ2VzLnYxLkltbWVyc2lvblJlY29yZGluZ1IKcmVjb3JkaW5ncxIhCgxuZXh0'
-    'X3NlZ21lbnQYCCABKAVSC25leHRTZWdtZW50');
+    'X3NlZ21lbnQYCCABKAVSC25leHRTZWdtZW50Ej0KBGFpZHMYCSADKAsyKS5zdHRhdHR1cy5sYW'
+    '5ndWFnZXMudjEuSW1tZXJzaW9uQWlkU3RhdHVzUgRhaWRz');
+
+@$core.Deprecated('Use immersionAidStatusDescriptor instead')
+const ImmersionAidStatus$json = {
+  '1': 'ImmersionAidStatus',
+  '2': [
+    {'1': 'segment', '3': 1, '4': 1, '5': 5, '10': 'segment'},
+    {'1': 'status', '3': 2, '4': 1, '5': 9, '10': 'status'},
+    {'1': 'failure_code', '3': 3, '4': 1, '5': 9, '10': 'failureCode'},
+    {'1': 'model_version', '3': 4, '4': 1, '5': 9, '10': 'modelVersion'},
+  ],
+};
+
+/// Descriptor for `ImmersionAidStatus`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List immersionAidStatusDescriptor = $convert.base64Decode(
+    'ChJJbW1lcnNpb25BaWRTdGF0dXMSGAoHc2VnbWVudBgBIAEoBVIHc2VnbWVudBIWCgZzdGF0dX'
+    'MYAiABKAlSBnN0YXR1cxIhCgxmYWlsdXJlX2NvZGUYAyABKAlSC2ZhaWx1cmVDb2RlEiMKDW1v'
+    'ZGVsX3ZlcnNpb24YBCABKAlSDG1vZGVsVmVyc2lvbg==');
 
 @$core.Deprecated('Use importImmersionRequestDescriptor instead')
 const ImportImmersionRequest$json = {
@@ -1156,6 +1182,7 @@ const EraseImmersionItemRequest$json = {
     {'1': 'item_id', '3': 1, '4': 1, '5': 9, '10': 'itemId'},
     {'1': 'expected_version', '3': 2, '4': 1, '5': 5, '10': 'expectedVersion'},
     {'1': 'client_event_id', '3': 3, '4': 1, '5': 9, '10': 'clientEventId'},
+    {'1': 'retry_cleanup', '3': 4, '4': 1, '5': 8, '10': 'retryCleanup'},
   ],
 };
 
@@ -1163,7 +1190,8 @@ const EraseImmersionItemRequest$json = {
 final $typed_data.Uint8List eraseImmersionItemRequestDescriptor = $convert.base64Decode(
     'ChlFcmFzZUltbWVyc2lvbkl0ZW1SZXF1ZXN0EhcKB2l0ZW1faWQYASABKAlSBml0ZW1JZBIpCh'
     'BleHBlY3RlZF92ZXJzaW9uGAIgASgFUg9leHBlY3RlZFZlcnNpb24SJgoPY2xpZW50X2V2ZW50'
-    'X2lkGAMgASgJUg1jbGllbnRFdmVudElk');
+    'X2lkGAMgASgJUg1jbGllbnRFdmVudElkEiMKDXJldHJ5X2NsZWFudXAYBCABKAhSDHJldHJ5Q2'
+    'xlYW51cA==');
 
 @$core.Deprecated('Use eraseImmersionItemResponseDescriptor instead')
 const EraseImmersionItemResponse$json = {

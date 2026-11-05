@@ -1335,6 +1335,11 @@ export class GetImmersionItemResponse extends Message<GetImmersionItemResponse> 
    */
   nextSegment = 0;
 
+  /**
+   * @generated from field: repeated sttattus.languages.v1.ImmersionAidStatus aids = 9;
+   */
+  aids: ImmersionAidStatus[] = [];
+
   constructor(data?: PartialMessage<GetImmersionItemResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1351,6 +1356,7 @@ export class GetImmersionItemResponse extends Message<GetImmersionItemResponse> 
     { no: 6, name: "copy_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "recordings", kind: "message", T: ImmersionRecording, repeated: true },
     { no: 8, name: "next_segment", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "aids", kind: "message", T: ImmersionAidStatus, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetImmersionItemResponse {
@@ -1367,6 +1373,63 @@ export class GetImmersionItemResponse extends Message<GetImmersionItemResponse> 
 
   static equals(a: GetImmersionItemResponse | PlainMessage<GetImmersionItemResponse> | undefined, b: GetImmersionItemResponse | PlainMessage<GetImmersionItemResponse> | undefined): boolean {
     return proto3.util.equals(GetImmersionItemResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.ImmersionAidStatus
+ */
+export class ImmersionAidStatus extends Message<ImmersionAidStatus> {
+  /**
+   * @generated from field: int32 segment = 1;
+   */
+  segment = 0;
+
+  /**
+   * queued/ready/failed for this member and explanation language
+   *
+   * @generated from field: string status = 2;
+   */
+  status = "";
+
+  /**
+   * @generated from field: string failure_code = 3;
+   */
+  failureCode = "";
+
+  /**
+   * @generated from field: string model_version = 4;
+   */
+  modelVersion = "";
+
+  constructor(data?: PartialMessage<ImmersionAidStatus>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.ImmersionAidStatus";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "segment", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "failure_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "model_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ImmersionAidStatus {
+    return new ImmersionAidStatus().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ImmersionAidStatus {
+    return new ImmersionAidStatus().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ImmersionAidStatus {
+    return new ImmersionAidStatus().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ImmersionAidStatus | PlainMessage<ImmersionAidStatus> | undefined, b: ImmersionAidStatus | PlainMessage<ImmersionAidStatus> | undefined): boolean {
+    return proto3.util.equals(ImmersionAidStatus, a, b);
   }
 }
 
@@ -2657,6 +2720,13 @@ export class EraseImmersionItemRequest extends Message<EraseImmersionItemRequest
    */
   clientEventId = "";
 
+  /**
+   * explicit retry of failed deletion, never implicit polling
+   *
+   * @generated from field: bool retry_cleanup = 4;
+   */
+  retryCleanup = false;
+
   constructor(data?: PartialMessage<EraseImmersionItemRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -2668,6 +2738,7 @@ export class EraseImmersionItemRequest extends Message<EraseImmersionItemRequest
     { no: 1, name: "item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "expected_version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "client_event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "retry_cleanup", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EraseImmersionItemRequest {
@@ -2777,7 +2848,7 @@ export class ExportImmersionResponse extends Message<ExportImmersionResponse> {
   filename = "";
 
   /**
-   * portable UTF-8 JSON without signed URLs/storage keys
+   * portable ZIP of UTF-8 JSON without signed URLs/storage keys
    *
    * @generated from field: bytes content = 2;
    */
@@ -3085,7 +3156,7 @@ export class SaveImmersionRecordingRequest extends Message<SaveImmersionRecordin
   segment = 0;
 
   /**
-   * existing MediaService upload; owned private recording only
+   * dedicated Immersion upload; owned private recording only
    *
    * @generated from field: string audio_url = 4;
    */
