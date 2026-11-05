@@ -224,6 +224,13 @@ class ImmersionServiceClient extends $grpc.Client {
     return $createUnaryCall(_$generateImmersionAids, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.ClearImmersionAidsResponse> clearImmersionAids(
+    $0.ClearImmersionAidsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$clearImmersionAids, request, options: options);
+  }
+
   // method descriptors
 
   static final _$listImmersionLibrary = $grpc.ClientMethod<
@@ -356,6 +363,11 @@ class ImmersionServiceClient extends $grpc.Client {
       '/sttattus.languages.v1.ImmersionService/GenerateImmersionAids',
       ($0.GenerateImmersionAidsRequest value) => value.writeToBuffer(),
       $0.GenerateImmersionAidsResponse.fromBuffer);
+  static final _$clearImmersionAids = $grpc.ClientMethod<
+          $0.ClearImmersionAidsRequest, $0.ClearImmersionAidsResponse>(
+      '/sttattus.languages.v1.ImmersionService/ClearImmersionAids',
+      ($0.ClearImmersionAidsRequest value) => value.writeToBuffer(),
+      $0.ClearImmersionAidsResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.languages.v1.ImmersionService')
@@ -581,6 +593,15 @@ abstract class ImmersionServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.GenerateImmersionAidsRequest.fromBuffer(value),
         ($0.GenerateImmersionAidsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ClearImmersionAidsRequest,
+            $0.ClearImmersionAidsResponse>(
+        'ClearImmersionAids',
+        clearImmersionAids_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ClearImmersionAidsRequest.fromBuffer(value),
+        ($0.ClearImmersionAidsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.ListImmersionLibraryResponse> listImmersionLibrary_Pre(
@@ -804,4 +825,13 @@ abstract class ImmersionServiceBase extends $grpc.Service {
 
   $async.Future<$0.GenerateImmersionAidsResponse> generateImmersionAids(
       $grpc.ServiceCall call, $0.GenerateImmersionAidsRequest request);
+
+  $async.Future<$0.ClearImmersionAidsResponse> clearImmersionAids_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ClearImmersionAidsRequest> $request) async {
+    return clearImmersionAids($call, await $request);
+  }
+
+  $async.Future<$0.ClearImmersionAidsResponse> clearImmersionAids(
+      $grpc.ServiceCall call, $0.ClearImmersionAidsRequest request);
 }

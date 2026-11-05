@@ -43,6 +43,7 @@ const (
 	ImmersionService_RemoveImmersionRecording_FullMethodName        = "/sttattus.languages.v1.ImmersionService/RemoveImmersionRecording"
 	ImmersionService_RevisePersonalImmersion_FullMethodName         = "/sttattus.languages.v1.ImmersionService/RevisePersonalImmersion"
 	ImmersionService_GenerateImmersionAids_FullMethodName           = "/sttattus.languages.v1.ImmersionService/GenerateImmersionAids"
+	ImmersionService_ClearImmersionAids_FullMethodName              = "/sttattus.languages.v1.ImmersionService/ClearImmersionAids"
 )
 
 // ImmersionServiceClient is the client API for ImmersionService service.
@@ -73,6 +74,7 @@ type ImmersionServiceClient interface {
 	RemoveImmersionRecording(ctx context.Context, in *RemoveImmersionRecordingRequest, opts ...grpc.CallOption) (*RemoveImmersionRecordingResponse, error)
 	RevisePersonalImmersion(ctx context.Context, in *RevisePersonalImmersionRequest, opts ...grpc.CallOption) (*RevisePersonalImmersionResponse, error)
 	GenerateImmersionAids(ctx context.Context, in *GenerateImmersionAidsRequest, opts ...grpc.CallOption) (*GenerateImmersionAidsResponse, error)
+	ClearImmersionAids(ctx context.Context, in *ClearImmersionAidsRequest, opts ...grpc.CallOption) (*ClearImmersionAidsResponse, error)
 }
 
 type immersionServiceClient struct {
@@ -323,6 +325,16 @@ func (c *immersionServiceClient) GenerateImmersionAids(ctx context.Context, in *
 	return out, nil
 }
 
+func (c *immersionServiceClient) ClearImmersionAids(ctx context.Context, in *ClearImmersionAidsRequest, opts ...grpc.CallOption) (*ClearImmersionAidsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ClearImmersionAidsResponse)
+	err := c.cc.Invoke(ctx, ImmersionService_ClearImmersionAids_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ImmersionServiceServer is the server API for ImmersionService service.
 // All implementations must embed UnimplementedImmersionServiceServer
 // for forward compatibility.
@@ -351,6 +363,7 @@ type ImmersionServiceServer interface {
 	RemoveImmersionRecording(context.Context, *RemoveImmersionRecordingRequest) (*RemoveImmersionRecordingResponse, error)
 	RevisePersonalImmersion(context.Context, *RevisePersonalImmersionRequest) (*RevisePersonalImmersionResponse, error)
 	GenerateImmersionAids(context.Context, *GenerateImmersionAidsRequest) (*GenerateImmersionAidsResponse, error)
+	ClearImmersionAids(context.Context, *ClearImmersionAidsRequest) (*ClearImmersionAidsResponse, error)
 	mustEmbedUnimplementedImmersionServiceServer()
 }
 
@@ -432,6 +445,9 @@ func (UnimplementedImmersionServiceServer) RevisePersonalImmersion(context.Conte
 }
 func (UnimplementedImmersionServiceServer) GenerateImmersionAids(context.Context, *GenerateImmersionAidsRequest) (*GenerateImmersionAidsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GenerateImmersionAids not implemented")
+}
+func (UnimplementedImmersionServiceServer) ClearImmersionAids(context.Context, *ClearImmersionAidsRequest) (*ClearImmersionAidsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ClearImmersionAids not implemented")
 }
 func (UnimplementedImmersionServiceServer) mustEmbedUnimplementedImmersionServiceServer() {}
 func (UnimplementedImmersionServiceServer) testEmbeddedByValue()                          {}
@@ -886,6 +902,24 @@ func _ImmersionService_GenerateImmersionAids_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ImmersionService_ClearImmersionAids_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ClearImmersionAidsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ImmersionServiceServer).ClearImmersionAids(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ImmersionService_ClearImmersionAids_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ImmersionServiceServer).ClearImmersionAids(ctx, req.(*ClearImmersionAidsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ImmersionService_ServiceDesc is the grpc.ServiceDesc for ImmersionService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -988,6 +1022,10 @@ var ImmersionService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GenerateImmersionAids",
 			Handler:    _ImmersionService_GenerateImmersionAids_Handler,
+		},
+		{
+			MethodName: "ClearImmersionAids",
+			Handler:    _ImmersionService_ClearImmersionAids_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

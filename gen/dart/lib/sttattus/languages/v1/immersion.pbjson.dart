@@ -546,13 +546,16 @@ const GetImmersionItemRequest$json = {
   '1': 'GetImmersionItemRequest',
   '2': [
     {'1': 'item_id', '3': 1, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'first_segment', '3': 2, '4': 1, '5': 5, '10': 'firstSegment'},
+    {'1': 'segment_count', '3': 3, '4': 1, '5': 5, '10': 'segmentCount'},
   ],
 };
 
 /// Descriptor for `GetImmersionItemRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getImmersionItemRequestDescriptor =
-    $convert.base64Decode(
-        'ChdHZXRJbW1lcnNpb25JdGVtUmVxdWVzdBIXCgdpdGVtX2lkGAEgASgJUgZpdGVtSWQ=');
+final $typed_data.Uint8List getImmersionItemRequestDescriptor = $convert.base64Decode(
+    'ChdHZXRJbW1lcnNpb25JdGVtUmVxdWVzdBIXCgdpdGVtX2lkGAEgASgJUgZpdGVtSWQSIwoNZm'
+    'lyc3Rfc2VnbWVudBgCIAEoBVIMZmlyc3RTZWdtZW50EiMKDXNlZ21lbnRfY291bnQYAyABKAVS'
+    'DHNlZ21lbnRDb3VudA==');
 
 @$core.Deprecated('Use getImmersionItemResponseDescriptor instead')
 const GetImmersionItemResponse$json = {
@@ -600,6 +603,7 @@ const GetImmersionItemResponse$json = {
       '6': '.sttattus.languages.v1.ImmersionRecording',
       '10': 'recordings'
     },
+    {'1': 'next_segment', '3': 8, '4': 1, '5': 5, '10': 'nextSegment'},
   ],
 };
 
@@ -612,7 +616,8 @@ final $typed_data.Uint8List getImmersionItemResponseDescriptor = $convert.base64
     'b25zEhsKCW1lZGlhX3VybBgEIAEoCVIIbWVkaWFVcmwSRAoQbWVkaWFfZXhwaXJlc19hdBgFIA'
     'EoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSDm1lZGlhRXhwaXJlc0F0EiMKDWNvcHlf'
     'bGFuZ3VhZ2UYBiABKAlSDGNvcHlMYW5ndWFnZRJJCgpyZWNvcmRpbmdzGAcgAygLMikuc3R0YX'
-    'R0dXMubGFuZ3VhZ2VzLnYxLkltbWVyc2lvblJlY29yZGluZ1IKcmVjb3JkaW5ncw==');
+    'R0dXMubGFuZ3VhZ2VzLnYxLkltbWVyc2lvblJlY29yZGluZ1IKcmVjb3JkaW5ncxIhCgxuZXh0'
+    'X3NlZ21lbnQYCCABKAVSC25leHRTZWdtZW50');
 
 @$core.Deprecated('Use importImmersionRequestDescriptor instead')
 const ImportImmersionRequest$json = {
@@ -1446,6 +1451,8 @@ const RevisePersonalImmersionRequest$json = {
       '10': 'correctedSegments'
     },
     {'1': 'client_event_id', '3': 5, '4': 1, '5': 9, '10': 'clientEventId'},
+    {'1': 'first_segment', '3': 6, '4': 1, '5': 5, '10': 'firstSegment'},
+    {'1': 'replace_count', '3': 7, '4': 1, '5': 5, '10': 'replaceCount'},
   ],
 };
 
@@ -1455,7 +1462,8 @@ final $typed_data.Uint8List revisePersonalImmersionRequestDescriptor = $convert.
     'lkEikKEGV4cGVjdGVkX3ZlcnNpb24YAiABKAVSD2V4cGVjdGVkVmVyc2lvbhIUCgV0aXRsZRgD'
     'IAEoCVIFdGl0bGUSVgoSY29ycmVjdGVkX3NlZ21lbnRzGAQgAygLMicuc3R0YXR0dXMubGFuZ3'
     'VhZ2VzLnYxLkltbWVyc2lvblNlZ21lbnRSEWNvcnJlY3RlZFNlZ21lbnRzEiYKD2NsaWVudF9l'
-    'dmVudF9pZBgFIAEoCVINY2xpZW50RXZlbnRJZA==');
+    'dmVudF9pZBgFIAEoCVINY2xpZW50RXZlbnRJZBIjCg1maXJzdF9zZWdtZW50GAYgASgFUgxmaX'
+    'JzdFNlZ21lbnQSIwoNcmVwbGFjZV9jb3VudBgHIAEoBVIMcmVwbGFjZUNvdW50');
 
 @$core.Deprecated('Use revisePersonalImmersionResponseDescriptor instead')
 const RevisePersonalImmersionResponse$json = {
@@ -1519,6 +1527,34 @@ final $typed_data.Uint8List generateImmersionAidsResponseDescriptor =
     $convert.base64Decode(
         'Ch1HZW5lcmF0ZUltbWVyc2lvbkFpZHNSZXNwb25zZRIVCgZqb2JfaWQYASABKAlSBWpvYklkEh'
         'YKBnN0YXR1cxgCIAEoCVIGc3RhdHVz');
+
+@$core.Deprecated('Use clearImmersionAidsRequestDescriptor instead')
+const ClearImmersionAidsRequest$json = {
+  '1': 'ClearImmersionAidsRequest',
+  '2': [
+    {'1': 'item_id', '3': 1, '4': 1, '5': 9, '10': 'itemId'},
+    {'1': 'client_event_id', '3': 2, '4': 1, '5': 9, '10': 'clientEventId'},
+  ],
+};
+
+/// Descriptor for `ClearImmersionAidsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List clearImmersionAidsRequestDescriptor =
+    $convert.base64Decode(
+        'ChlDbGVhckltbWVyc2lvbkFpZHNSZXF1ZXN0EhcKB2l0ZW1faWQYASABKAlSBml0ZW1JZBImCg'
+        '9jbGllbnRfZXZlbnRfaWQYAiABKAlSDWNsaWVudEV2ZW50SWQ=');
+
+@$core.Deprecated('Use clearImmersionAidsResponseDescriptor instead')
+const ClearImmersionAidsResponse$json = {
+  '1': 'ClearImmersionAidsResponse',
+  '2': [
+    {'1': 'removed', '3': 1, '4': 1, '5': 5, '10': 'removed'},
+  ],
+};
+
+/// Descriptor for `ClearImmersionAidsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List clearImmersionAidsResponseDescriptor =
+    $convert.base64Decode(
+        'ChpDbGVhckltbWVyc2lvbkFpZHNSZXNwb25zZRIYCgdyZW1vdmVkGAEgASgFUgdyZW1vdmVk');
 
 @$core.Deprecated('Use saveImmersionRecordingResponseDescriptor instead')
 const SaveImmersionRecordingResponse$json = {

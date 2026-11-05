@@ -1247,6 +1247,16 @@ export class GetImmersionItemRequest extends Message<GetImmersionItemRequest> {
    */
   itemId = "";
 
+  /**
+   * @generated from field: int32 first_segment = 2;
+   */
+  firstSegment = 0;
+
+  /**
+   * @generated from field: int32 segment_count = 3;
+   */
+  segmentCount = 0;
+
   constructor(data?: PartialMessage<GetImmersionItemRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1256,6 +1266,8 @@ export class GetImmersionItemRequest extends Message<GetImmersionItemRequest> {
   static readonly typeName = "sttattus.languages.v1.GetImmersionItemRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "first_segment", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "segment_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetImmersionItemRequest {
@@ -1316,6 +1328,13 @@ export class GetImmersionItemResponse extends Message<GetImmersionItemResponse> 
    */
   recordings: ImmersionRecording[] = [];
 
+  /**
+   * zero when the reader has reached the final page
+   *
+   * @generated from field: int32 next_segment = 8;
+   */
+  nextSegment = 0;
+
   constructor(data?: PartialMessage<GetImmersionItemResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1331,6 +1350,7 @@ export class GetImmersionItemResponse extends Message<GetImmersionItemResponse> 
     { no: 5, name: "media_expires_at", kind: "message", T: Timestamp },
     { no: 6, name: "copy_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "recordings", kind: "message", T: ImmersionRecording, repeated: true },
+    { no: 8, name: "next_segment", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetImmersionItemResponse {
@@ -3410,6 +3430,18 @@ export class RevisePersonalImmersionRequest extends Message<RevisePersonalImmers
    */
   clientEventId = "";
 
+  /**
+   * @generated from field: int32 first_segment = 6;
+   */
+  firstSegment = 0;
+
+  /**
+   * positive patches only this range; zero replaces the source
+   *
+   * @generated from field: int32 replace_count = 7;
+   */
+  replaceCount = 0;
+
   constructor(data?: PartialMessage<RevisePersonalImmersionRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -3423,6 +3455,8 @@ export class RevisePersonalImmersionRequest extends Message<RevisePersonalImmers
     { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "corrected_segments", kind: "message", T: ImmersionSegment, repeated: true },
     { no: 5, name: "client_event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "first_segment", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "replace_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevisePersonalImmersionRequest {
@@ -3588,6 +3622,86 @@ export class GenerateImmersionAidsResponse extends Message<GenerateImmersionAids
 
   static equals(a: GenerateImmersionAidsResponse | PlainMessage<GenerateImmersionAidsResponse> | undefined, b: GenerateImmersionAidsResponse | PlainMessage<GenerateImmersionAidsResponse> | undefined): boolean {
     return proto3.util.equals(GenerateImmersionAidsResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.ClearImmersionAidsRequest
+ */
+export class ClearImmersionAidsRequest extends Message<ClearImmersionAidsRequest> {
+  /**
+   * @generated from field: string item_id = 1;
+   */
+  itemId = "";
+
+  /**
+   * @generated from field: string client_event_id = 2;
+   */
+  clientEventId = "";
+
+  constructor(data?: PartialMessage<ClearImmersionAidsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.ClearImmersionAidsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "client_event_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClearImmersionAidsRequest {
+    return new ClearImmersionAidsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ClearImmersionAidsRequest {
+    return new ClearImmersionAidsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ClearImmersionAidsRequest {
+    return new ClearImmersionAidsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ClearImmersionAidsRequest | PlainMessage<ClearImmersionAidsRequest> | undefined, b: ClearImmersionAidsRequest | PlainMessage<ClearImmersionAidsRequest> | undefined): boolean {
+    return proto3.util.equals(ClearImmersionAidsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.languages.v1.ClearImmersionAidsResponse
+ */
+export class ClearImmersionAidsResponse extends Message<ClearImmersionAidsResponse> {
+  /**
+   * @generated from field: int32 removed = 1;
+   */
+  removed = 0;
+
+  constructor(data?: PartialMessage<ClearImmersionAidsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.languages.v1.ClearImmersionAidsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "removed", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClearImmersionAidsResponse {
+    return new ClearImmersionAidsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ClearImmersionAidsResponse {
+    return new ClearImmersionAidsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ClearImmersionAidsResponse {
+    return new ClearImmersionAidsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ClearImmersionAidsResponse | PlainMessage<ClearImmersionAidsResponse> | undefined, b: ClearImmersionAidsResponse | PlainMessage<ClearImmersionAidsResponse> | undefined): boolean {
+    return proto3.util.equals(ClearImmersionAidsResponse, a, b);
   }
 }
 

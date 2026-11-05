@@ -192,6 +192,8 @@ message ListImmersionLibraryResponse {
 
 message GetImmersionItemRequest {
   string item_id = 1;
+  int32 first_segment = 2;
+  int32 segment_count = 3;
 }
 message GetImmersionItemResponse {
   ImmersionItem item = 1;
@@ -201,6 +203,7 @@ message GetImmersionItemResponse {
   google.protobuf.Timestamp media_expires_at = 5;
   string copy_language = 6;
   repeated ImmersionRecording recordings = 7;
+  int32 next_segment = 8; // zero when the reader has reached the final page
 }
 
 message ImportImmersionRequest {
@@ -426,6 +429,8 @@ message RevisePersonalImmersionRequest {
   string title = 3;
   repeated ImmersionSegment corrected_segments = 4;
   string client_event_id = 5;
+  int32 first_segment = 6;
+  int32 replace_count = 7; // positive patches only this range; zero replaces the source
 }
 message RevisePersonalImmersionResponse {
   ImmersionItem item = 1;
@@ -442,6 +447,14 @@ message GenerateImmersionAidsRequest {
 message GenerateImmersionAidsResponse {
   string job_id = 1;
   string status = 2;
+}
+
+message ClearImmersionAidsRequest {
+  string item_id = 1;
+  string client_event_id = 2;
+}
+message ClearImmersionAidsResponse {
+  int32 removed = 1;
 }
 message SaveImmersionRecordingResponse {
   string recording_id = 1;
@@ -474,4 +487,5 @@ service ImmersionService {
   rpc RemoveImmersionRecording(RemoveImmersionRecordingRequest) returns (RemoveImmersionRecordingResponse);
   rpc RevisePersonalImmersion(RevisePersonalImmersionRequest) returns (RevisePersonalImmersionResponse);
   rpc GenerateImmersionAids(GenerateImmersionAidsRequest) returns (GenerateImmersionAidsResponse);
+  rpc ClearImmersionAids(ClearImmersionAidsRequest) returns (ClearImmersionAidsResponse);
 }
