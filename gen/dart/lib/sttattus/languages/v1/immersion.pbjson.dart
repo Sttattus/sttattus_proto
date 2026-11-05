@@ -276,6 +276,7 @@ const ImmersionItem$json = {
     {'1': 'source_revision', '3': 22, '4': 1, '5': 5, '10': 'sourceRevision'},
     {'1': 'media_kind', '3': 23, '4': 1, '5': 9, '10': 'mediaKind'},
     {'1': 'version', '3': 24, '4': 1, '5': 5, '10': 'version'},
+    {'1': 'media_provenance', '3': 25, '4': 1, '5': 9, '10': 'mediaProvenance'},
   ],
 };
 
@@ -298,7 +299,8 @@ final $typed_data.Uint8List immersionItemDescriptor = $convert.base64Decode(
     'dGVkX2F0GBQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EiQKDn'
     'NvdXJjZV91bml0X2lkGBUgASgJUgxzb3VyY2VVbml0SWQSJwoPc291cmNlX3JldmlzaW9uGBYg'
     'ASgFUg5zb3VyY2VSZXZpc2lvbhIdCgptZWRpYV9raW5kGBcgASgJUgltZWRpYUtpbmQSGAoHdm'
-    'Vyc2lvbhgYIAEoBVIHdmVyc2lvbg==');
+    'Vyc2lvbhgYIAEoBVIHdmVyc2lvbhIpChBtZWRpYV9wcm92ZW5hbmNlGBkgASgJUg9tZWRpYVBy'
+    'b3ZlbmFuY2U=');
 
 @$core.Deprecated('Use immersionConceptMatchDescriptor instead')
 const ImmersionConceptMatch$json = {
@@ -613,6 +615,16 @@ const GetImmersionItemResponse$json = {
       '6': '.sttattus.languages.v1.ImmersionAidStatus',
       '10': 'aids'
     },
+    {'1': 'media_sha256', '3': 10, '4': 1, '5': 9, '10': 'mediaSha256'},
+    {'1': 'media_bytes', '3': 11, '4': 1, '5': 3, '10': 'mediaBytes'},
+    {
+      '1': 'server_time',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'serverTime'
+    },
   ],
 };
 
@@ -627,7 +639,9 @@ final $typed_data.Uint8List getImmersionItemResponseDescriptor = $convert.base64
     'bGFuZ3VhZ2UYBiABKAlSDGNvcHlMYW5ndWFnZRJJCgpyZWNvcmRpbmdzGAcgAygLMikuc3R0YX'
     'R0dXMubGFuZ3VhZ2VzLnYxLkltbWVyc2lvblJlY29yZGluZ1IKcmVjb3JkaW5ncxIhCgxuZXh0'
     'X3NlZ21lbnQYCCABKAVSC25leHRTZWdtZW50Ej0KBGFpZHMYCSADKAsyKS5zdHRhdHR1cy5sYW'
-    '5ndWFnZXMudjEuSW1tZXJzaW9uQWlkU3RhdHVzUgRhaWRz');
+    '5ndWFnZXMudjEuSW1tZXJzaW9uQWlkU3RhdHVzUgRhaWRzEiEKDG1lZGlhX3NoYTI1NhgKIAEo'
+    'CVILbWVkaWFTaGEyNTYSHwoLbWVkaWFfYnl0ZXMYCyABKANSCm1lZGlhQnl0ZXMSOwoLc2Vydm'
+    'VyX3RpbWUYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpzZXJ2ZXJUaW1l');
 
 @$core.Deprecated('Use immersionAidStatusDescriptor instead')
 const ImmersionAidStatus$json = {
@@ -1274,6 +1288,14 @@ const GetImmersionOfflinePackResponse$json = {
     {'1': 'media_url', '3': 7, '4': 1, '5': 9, '10': 'mediaUrl'},
     {'1': 'media_sha256', '3': 8, '4': 1, '5': 9, '10': 'mediaSha256'},
     {'1': 'media_bytes', '3': 9, '4': 1, '5': 3, '10': 'mediaBytes'},
+    {
+      '1': 'server_time',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'serverTime'
+    },
   ],
 };
 
@@ -1284,7 +1306,9 @@ final $typed_data.Uint8List getImmersionOfflinePackResponseDescriptor = $convert
     'aWdodHNFcG9jaBI5CgpleHBpcmVzX2F0GAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdG'
     'FtcFIJZXhwaXJlc0F0EhoKCGRvY3VtZW50GAUgASgMUghkb2N1bWVudBIWCgZzaGEyNTYYBiAB'
     'KAlSBnNoYTI1NhIbCgltZWRpYV91cmwYByABKAlSCG1lZGlhVXJsEiEKDG1lZGlhX3NoYTI1Nh'
-    'gIIAEoCVILbWVkaWFTaGEyNTYSHwoLbWVkaWFfYnl0ZXMYCSABKANSCm1lZGlhQnl0ZXM=');
+    'gIIAEoCVILbWVkaWFTaGEyNTYSHwoLbWVkaWFfYnl0ZXMYCSABKANSCm1lZGlhQnl0ZXMSOwoL'
+    'c2VydmVyX3RpbWUYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpzZXJ2ZXJUaW'
+    '1l');
 
 @$core.Deprecated('Use validateImmersionOfflinePacksRequestDescriptor instead')
 const ValidateImmersionOfflinePacksRequest$json = {

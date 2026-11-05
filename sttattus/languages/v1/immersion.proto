@@ -106,6 +106,7 @@ message ImmersionItem {
   int32 source_revision = 22;
   string media_kind = 23; // recording/video/generated-speech/text
   int32 version = 24;
+  string media_provenance = 25; // generated media is explicitly identified
 }
 
 message ImmersionConceptMatch {
@@ -206,6 +207,9 @@ message GetImmersionItemResponse {
   repeated ImmersionRecording recordings = 7;
   int32 next_segment = 8; // zero when the reader has reached the final page
   repeated ImmersionAidStatus aids = 9;
+  string media_sha256 = 10;
+  int64 media_bytes = 11;
+  google.protobuf.Timestamp server_time = 12; // anchor permission durations without trusting device clock
 }
 
 message ImmersionAidStatus {
@@ -382,6 +386,7 @@ message GetImmersionOfflinePackResponse {
   string media_url = 7;
   string media_sha256 = 8;
   int64 media_bytes = 9;
+  google.protobuf.Timestamp server_time = 10;
 }
 message ValidateImmersionOfflinePacksRequest {
   repeated string lease_ids = 1;

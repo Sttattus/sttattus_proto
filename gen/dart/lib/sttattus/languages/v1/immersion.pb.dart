@@ -483,6 +483,7 @@ class ImmersionItem extends $pb.GeneratedMessage {
     $core.int? sourceRevision,
     $core.String? mediaKind,
     $core.int? version,
+    $core.String? mediaProvenance,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -509,6 +510,7 @@ class ImmersionItem extends $pb.GeneratedMessage {
     if (sourceRevision != null) result.sourceRevision = sourceRevision;
     if (mediaKind != null) result.mediaKind = mediaKind;
     if (version != null) result.version = version;
+    if (mediaProvenance != null) result.mediaProvenance = mediaProvenance;
     return result;
   }
 
@@ -556,6 +558,7 @@ class ImmersionItem extends $pb.GeneratedMessage {
     ..aI(22, _omitFieldNames ? '' : 'sourceRevision')
     ..aOS(23, _omitFieldNames ? '' : 'mediaKind')
     ..aI(24, _omitFieldNames ? '' : 'version')
+    ..aOS(25, _omitFieldNames ? '' : 'mediaProvenance')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -800,6 +803,15 @@ class ImmersionItem extends $pb.GeneratedMessage {
   $core.bool hasVersion() => $_has(23);
   @$pb.TagNumber(24)
   void clearVersion() => $_clearField(24);
+
+  @$pb.TagNumber(25)
+  $core.String get mediaProvenance => $_getSZ(24);
+  @$pb.TagNumber(25)
+  set mediaProvenance($core.String value) => $_setString(24, value);
+  @$pb.TagNumber(25)
+  $core.bool hasMediaProvenance() => $_has(24);
+  @$pb.TagNumber(25)
+  void clearMediaProvenance() => $_clearField(25);
 }
 
 class ImmersionConceptMatch extends $pb.GeneratedMessage {
@@ -1944,6 +1956,9 @@ class GetImmersionItemResponse extends $pb.GeneratedMessage {
     $core.Iterable<ImmersionRecording>? recordings,
     $core.int? nextSegment,
     $core.Iterable<ImmersionAidStatus>? aids,
+    $core.String? mediaSha256,
+    $fixnum.Int64? mediaBytes,
+    $1.Timestamp? serverTime,
   }) {
     final result = create();
     if (item != null) result.item = item;
@@ -1955,6 +1970,9 @@ class GetImmersionItemResponse extends $pb.GeneratedMessage {
     if (recordings != null) result.recordings.addAll(recordings);
     if (nextSegment != null) result.nextSegment = nextSegment;
     if (aids != null) result.aids.addAll(aids);
+    if (mediaSha256 != null) result.mediaSha256 = mediaSha256;
+    if (mediaBytes != null) result.mediaBytes = mediaBytes;
+    if (serverTime != null) result.serverTime = serverTime;
     return result;
   }
 
@@ -1987,6 +2005,10 @@ class GetImmersionItemResponse extends $pb.GeneratedMessage {
     ..aI(8, _omitFieldNames ? '' : 'nextSegment')
     ..pPM<ImmersionAidStatus>(9, _omitFieldNames ? '' : 'aids',
         subBuilder: ImmersionAidStatus.create)
+    ..aOS(10, _omitFieldNames ? '' : 'mediaSha256')
+    ..aInt64(11, _omitFieldNames ? '' : 'mediaBytes')
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'serverTime',
+        subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2069,6 +2091,35 @@ class GetImmersionItemResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(9)
   $pb.PbList<ImmersionAidStatus> get aids => $_getList(8);
+
+  @$pb.TagNumber(10)
+  $core.String get mediaSha256 => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set mediaSha256($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasMediaSha256() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearMediaSha256() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $fixnum.Int64 get mediaBytes => $_getI64(10);
+  @$pb.TagNumber(11)
+  set mediaBytes($fixnum.Int64 value) => $_setInt64(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasMediaBytes() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearMediaBytes() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get serverTime => $_getN(11);
+  @$pb.TagNumber(12)
+  set serverTime($1.Timestamp value) => $_setField(12, value);
+  @$pb.TagNumber(12)
+  $core.bool hasServerTime() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearServerTime() => $_clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureServerTime() => $_ensure(11);
 }
 
 class ImmersionAidStatus extends $pb.GeneratedMessage {
@@ -4667,6 +4718,7 @@ class GetImmersionOfflinePackResponse extends $pb.GeneratedMessage {
     $core.String? mediaUrl,
     $core.String? mediaSha256,
     $fixnum.Int64? mediaBytes,
+    $1.Timestamp? serverTime,
   }) {
     final result = create();
     if (leaseId != null) result.leaseId = leaseId;
@@ -4678,6 +4730,7 @@ class GetImmersionOfflinePackResponse extends $pb.GeneratedMessage {
     if (mediaUrl != null) result.mediaUrl = mediaUrl;
     if (mediaSha256 != null) result.mediaSha256 = mediaSha256;
     if (mediaBytes != null) result.mediaBytes = mediaBytes;
+    if (serverTime != null) result.serverTime = serverTime;
     return result;
   }
 
@@ -4706,6 +4759,8 @@ class GetImmersionOfflinePackResponse extends $pb.GeneratedMessage {
     ..aOS(7, _omitFieldNames ? '' : 'mediaUrl')
     ..aOS(8, _omitFieldNames ? '' : 'mediaSha256')
     ..aInt64(9, _omitFieldNames ? '' : 'mediaBytes')
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'serverTime',
+        subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -4813,6 +4868,17 @@ class GetImmersionOfflinePackResponse extends $pb.GeneratedMessage {
   $core.bool hasMediaBytes() => $_has(8);
   @$pb.TagNumber(9)
   void clearMediaBytes() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $1.Timestamp get serverTime => $_getN(9);
+  @$pb.TagNumber(10)
+  set serverTime($1.Timestamp value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasServerTime() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearServerTime() => $_clearField(10);
+  @$pb.TagNumber(10)
+  $1.Timestamp ensureServerTime() => $_ensure(9);
 }
 
 class ValidateImmersionOfflinePacksRequest extends $pb.GeneratedMessage {

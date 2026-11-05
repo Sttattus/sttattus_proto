@@ -575,6 +575,13 @@ export class ImmersionItem extends Message<ImmersionItem> {
    */
   version = 0;
 
+  /**
+   * generated media is explicitly identified
+   *
+   * @generated from field: string media_provenance = 25;
+   */
+  mediaProvenance = "";
+
   constructor(data?: PartialMessage<ImmersionItem>) {
     super();
     proto3.util.initPartial(data, this);
@@ -607,6 +614,7 @@ export class ImmersionItem extends Message<ImmersionItem> {
     { no: 22, name: "source_revision", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 23, name: "media_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 24, name: "version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 25, name: "media_provenance", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ImmersionItem {
@@ -1348,6 +1356,23 @@ export class GetImmersionItemResponse extends Message<GetImmersionItemResponse> 
    */
   aids: ImmersionAidStatus[] = [];
 
+  /**
+   * @generated from field: string media_sha256 = 10;
+   */
+  mediaSha256 = "";
+
+  /**
+   * @generated from field: int64 media_bytes = 11;
+   */
+  mediaBytes = protoInt64.zero;
+
+  /**
+   * anchor permission durations without trusting device clock
+   *
+   * @generated from field: google.protobuf.Timestamp server_time = 12;
+   */
+  serverTime?: Timestamp;
+
   constructor(data?: PartialMessage<GetImmersionItemResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1365,6 +1390,9 @@ export class GetImmersionItemResponse extends Message<GetImmersionItemResponse> 
     { no: 7, name: "recordings", kind: "message", T: ImmersionRecording, repeated: true },
     { no: 8, name: "next_segment", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 9, name: "aids", kind: "message", T: ImmersionAidStatus, repeated: true },
+    { no: 10, name: "media_sha256", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "media_bytes", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 12, name: "server_time", kind: "message", T: Timestamp },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetImmersionItemResponse {
@@ -2991,6 +3019,11 @@ export class GetImmersionOfflinePackResponse extends Message<GetImmersionOffline
    */
   mediaBytes = protoInt64.zero;
 
+  /**
+   * @generated from field: google.protobuf.Timestamp server_time = 10;
+   */
+  serverTime?: Timestamp;
+
   constructor(data?: PartialMessage<GetImmersionOfflinePackResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -3008,6 +3041,7 @@ export class GetImmersionOfflinePackResponse extends Message<GetImmersionOffline
     { no: 7, name: "media_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "media_sha256", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 9, name: "media_bytes", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 10, name: "server_time", kind: "message", T: Timestamp },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetImmersionOfflinePackResponse {
@@ -4316,3 +4350,4 @@ export class SaveImmersionRecordingResponse extends Message<SaveImmersionRecordi
     return proto3.util.equals(SaveImmersionRecordingResponse, a, b);
   }
 }
+
